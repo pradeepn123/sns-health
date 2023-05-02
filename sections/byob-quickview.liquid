@@ -1,0 +1,298 @@
+<!-- BYOB quickview widget -->
+<style>
+.byob-quickview-container {
+  display: flex;
+  flex-direction: row;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  /* for vue modal */
+  width: 800px;
+  margin: 0px auto;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.byob-quickview-left {
+  padding: 0px 0px 15px 15px;
+}
+.byob-quickview-right {
+  padding: 15px 15px 75px 0px;
+}
+.byob-quickview-panel {
+  margin: 15px;
+  width: 50%;
+  flex-basis: 50%;
+}
+.byob-images-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  line-height: 0;
+  margin: 15px;
+}
+.byob-thubmnails-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  gap: 3px;
+}
+.byob-thubmnail-image {
+  width: 100%;
+}
+.byob-quickview-feature {
+  width: 100%;
+}
+.byob-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.byob-quickview-title {
+  font-size: 20px;
+  font-weight: 400;
+}
+.byob-quickview-price {
+  font-size: 23px;
+  font-weight: 400;
+}
+.byob-product-options {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.byob-product-option {
+  display: grid;
+  grid-template-columns: 75px 65%;
+}
+.byob-quickview-quantity {
+  display: grid;
+  grid-template-columns: 75px 15% 45%;
+}
+#btn-quickview-add {
+  border: none;
+  font-weight: 700;
+  font-size: 12px;
+  box-shadow: none;
+  margin: 0px;
+  margin-left: 12px;
+}
+.full-width {width: 100%;}
+.byob-quickview-close{
+    position: absolute;
+    z-index: 10;
+    top:0;
+    right: -40px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    /* from hystmodal */
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M22 2L2 22'/%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M2 2l20 20'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+    outline: none;
+}
+.byob-quickview-close:focus{
+    outline: 2px dotted #afb3b9;
+    outline-offset: 2px;
+}
+
+.byob-quickview-icon:hover {opacity: 0.7;}
+.byob-quickview-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  padding: 3px;
+  background-color: {{ section.settings.icon_background_color }};
+  cursor: pointer;
+  border-radius: 3px;
+  opacity: 0.9;
+}
+#byob-quickview-label {
+  margin-top: auto;
+  margin-bottom: auto;
+  letter-spacing: 0px;
+}
+@media screen and (max-width: 768px) {
+  .byob-quickview-container {
+    width: 88%;
+  }
+  div.byob-quickview-container {
+    flex-direction: column;
+  }
+  .byob-quickview-panel {
+    margin: 0px;
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .byob-quickview-left {
+    padding: 0px;
+  }
+  .byob-quickview-right {
+    padding: 15px 15px 30px 15px;
+  }
+  .byob-quickview-desc {display: none;}
+  .byob-quickview-close {
+    top:10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' stroke='%23111' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M22 2L2 22'/%3E%3Cpath fill='none' stroke='%23111' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M2 2l20 20'/%3E%3C/svg%3E");
+  }
+}
+</style>
+
+<script type="text/x-template" id="byob-quickview-template">
+  <teleport to="body">
+    <transition name="modal">
+      <div class="byob-modal-mask">
+        <div class="byob-modal-wrapper" @click.self="$emit('close')">
+            <div class="byob-quickview-container">
+              <button class="byob-quickview-close" @click.self="$emit('close')">Close</button>
+
+              <div class="byob-quickview-panel byob-quickview-left">
+                <div class="byob-images-container">
+                  <div class="full-width"><img class="byob-quickview-feature" :src="[[ this.featured_image ]]"/></div>
+                  <div class="byob-thubmnails-container">
+                    <!-- other images -->
+                    <div v-for="image in product.images">
+                      <img class="byob-thubmnail-image" @click="featured_image = image" :src="[[ image ]] + '&width=400'"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="byob-quickview-panel byob-quickview-right">
+                <div class="byob-product-info">
+                  <!-- product bg info -->
+                  <div class="byob-quickview-title">[[ product.title ]]</div>
+                  <div class="byob-quickview-price">[[ currencySymbol ]][[ price ]]</div>
+                  <div class="byob-quickview-desc">[[ product.description ]]</div>
+                </div>
+
+                <div class="byob-product-options">
+                  <!-- product options -->
+                  <template v-if="!product.has_only_default_variant">
+                    <div class="byob-product-option" v-for="(option, index) in product.options">
+                      <label>
+                          [[ option.name ]]:
+                      </label>
+
+                      <select v-model="myOptionValues[index]" @change="selectOption(option, index)">
+                        <option v-for="value in option.values" :selected="myOptionValues[index] == value" :value="value">
+                          [[ value ]]
+                        </option>
+                      </select>
+                    </div>
+                  </template>
+
+                  <div class="byob-quickview-quantity">
+                    <label id="byob-quickview-label">Quantity</label>
+
+                    <input v-model.number="quantity" min="1" :max="maxQuantity" type="number" name="quantity" :disabled="!available || disableAdd">
+
+                    <button type="button" id="btn-quickview-add" class="btn-add-to-bundle" @click="addVariantToBundle" :disabled="!available || disableAdd || isTopTier">
+                      <span class="AddToBundleText">
+                        [[ buttonText ]]
+                      </span>
+                    </button>
+                  </div>
+
+                  <div v-if="itemAdded"><p>The item has been added to the bundle!</p></div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+   		</div>
+    </transition>
+  </teleport>
+</script>
+
+<script>
+  const quickviewModal = {
+    emits: ['add'],
+    props: ['product', 'selectedOptionValues', 'currencySymbol', 'selectedVariantPrice', 'toReadablePrice', 'buttonText',
+            'disableAdd', 'removeEmptyString', 'arraysEqual', 'maxQuantity'],
+    compilerOptions: {
+      delimiters: ['[[', ']]'],
+    },
+    mounted() {
+      console.log('product in qvm', this.product);
+      console.log('selectedOptionValues', this.selectedOptionValues);
+    },
+    data() {
+      return {
+        available: this.product.available,
+        featured_image: this.product.featured_image,
+        quantity: 1,
+        price: this.selectedVariantPrice,
+        myOptionValues: this.selectedOptionValues,
+        pickedVariant: this.product.variants[0],
+        itemAdded: false,
+      }
+    },
+    template: "#byob-quickview-template",
+    methods: {
+      addVariantToBundle() {
+        this.itemAdded = true;
+        this.$emit('add', this.pickedVariant, this.quantity);
+      },
+      selectOption(option, index) {
+//         console.log('myOptionValues', this.myOptionValues)
+//         console.log('option', option)
+        let variants = this.product.variants;
+        for (let i = 0; i < variants.length; i++) {
+            let variant = variants[i];
+            if (this.arraysEqual(variant.options, this.myOptionValues.filter(this.removeEmptyString))) {
+              this.available = variant.available;
+              this.price = this.toReadablePrice(variant.price);
+              this.pickedVariant = variant;
+//               this.NotAvailableMsg = this.$i18n.t('message.soldOut');
+//               this.compare_at_price = (variant.compare_at_price / 100.0).toFixed(2);
+//               this.setFeatureImage(variant);
+//               this.selectedVariantID = variant.id;
+//               this.pickedVariantIndex = i;
+              return;
+            }
+          }
+      }
+    }
+  }
+</script>
+{% schema %}
+  {
+    "name": "BYOB QuickView Pop-up",
+  	"limit": 1,
+    "settings": [
+	  {
+        "type": "header",
+        "content": "Button style"
+	  },
+	  {
+        "type": "paragraph",
+        "content": "Change the quickview buton when mouse is over product image"
+      },
+	  {
+        "type": "color",
+        "id": "icon_background_color",
+      	"label": "Icon background color",
+		"default": "#454545"
+      }],
+      "presets": [
+        {
+          "name": "BYOB QuickView Pop-up",
+          "category": "BYOB Bundles APP"
+        }
+      ]
+  }
+{% endschema %}

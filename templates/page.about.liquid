@@ -1,0 +1,43 @@
+<div class="container page-about">
+  <header class="page__header page__header--centered">
+    <h1 class="page__title heading h1 about-title">{{ page.title }}</h1>
+  </header>
+
+  <div class="page__content rte">
+    
+    <!-- Start: Para -->
+      <p class="p1 about-content">
+        {{ page.content }}
+      </p>
+    <!-- End: Para -->
+
+    <!-- Start: Grid - 2x2 -->
+      <div class="grid-flex">
+        <div class="grid-flex-row">
+          <div class="grid-flex-cell">
+            <img src={{ page.metafields.global.Block_One_Image }} />
+          </div>
+          <div class="grid-flex-cell text-block">
+            {{ page.metafields.global.Block_One_Content }}
+          </div>
+        </div>
+        <div class="grid-flex-row">
+          <div class="grid-flex-cell text-block">
+            {{ page.metafields.global.Block_Two_Content }}
+          </div>
+          <div class="grid-flex-cell">
+            <img src={{ page.metafields.global.Block_Two_Image }} />
+          </div>
+        </div>
+      </div>
+    <!-- End: Grid - 2x2 -->
+
+    <!-- Start: Promotion List -->
+    {% section  'promotion-list' %}
+    <!-- End: Promotion List-->
+
+    <!-- Help for how to modify content -->
+      {% section 'about-page-info' %}
+    <!-- Help for how to modify content -->
+    </div>
+  </div>

@@ -1,0 +1,2190 @@
+{
+  "current": {
+    "heading_color": "#000000",
+    "text_color": "#000000",
+    "accent_color": "#ed1c24",
+    "link_color": "#ed1c24",
+    "border_color": "#e1e3e4",
+    "background": "#ffffff",
+    "secondary_background": "#ffffff",
+    "error_color": "#ff0000",
+    "success_color": "#00aa00",
+    "primary_button_background": "#ed1c24",
+    "primary_button_text_color": "#ffffff",
+    "secondary_button_background": "#000000",
+    "secondary_button_text_color": "#ffffff",
+    "header_background": "#ffffff",
+    "header_text_color": "#000000",
+    "header_light_text_color": "#8a9297",
+    "header_accent_color": "#ed1c24",
+    "footer_background_color": "#ffffff",
+    "footer_heading_text_color": "#000000",
+    "footer_body_text_color": "#000000",
+    "footer_accent_color": "#ed1c24",
+    "product_on_sale_accent": "#ee0000",
+    "product_in_stock_color": "#008a00",
+    "product_low_stock_color": "#ee0000",
+    "product_sold_out_color": "#8a9297",
+    "product_label_1_background": "#ed1c24",
+    "product_label_2_background": "#ed1c24",
+    "product_star_color": "#ffbd00",
+    "base_text_font_size": 16,
+    "heading_font": "poppins_n6",
+    "text_font": "poppins_n4",
+    "underline_links": true,
+    "animation_image_zoom": true,
+    "search_mode": "product,page",
+    "show_vendor": true,
+    "show_secondary_image": true,
+    "show_discount": true,
+    "discount_mode": "percentage",
+    "product_price_position": "after_title",
+    "product_image_size": "square",
+    "show_color_swatch": false,
+    "show_inventory_quantity": false,
+    "low_inventory_threshold": 0,
+    "show_reviews_badge": false,
+    "cart_type": "drawer",
+    "cart_empty_button_link": "shopify:\/\/collections\/all",
+    "cart_show_checkout_button": true,
+    "cart_show_free_shipping_threshold": true,
+    "cart_free_shipping_threshold": "49",
+    "social_facebook": "https:\/\/www.facebook.com\/sportsnutritionsource\/",
+    "social_twitter": "",
+    "social_pinterest": "",
+    "social_instagram": "https:\/\/www.instagram.com\/sportsnutritionsource\/",
+    "social_vimeo": "",
+    "social_tumblr": "",
+    "social_youtube": "",
+    "social_linkedin": "",
+    "social_snapchat": "",
+    "social_fancy": "",
+    "favicon": "shopify:\/\/shop_images\/SNS-Health-FavIcon.png",
+    "checkout_header_image": "shopify:\/\/shop_images\/banner-sns.jpg",
+    "checkout_logo_image": "shopify:\/\/shop_images\/SNS-logo.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#ed1c24",
+    "checkout_button_color": "#ed1c24",
+    "checkout_error_color": "#ff0000",
+    "share_image": "",
+    "social_google_plus": "",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1009675a-56b4-4d69-b878-81a6dcb4beb1": {
+            "type": "mega_menu",
+            "settings": {
+              "menu_item": "Sports Nutrition",
+              "image_1_heading": "Build Your Own Snack Box",
+              "image_1_text": "Choose your 12 favourite snacks and save!",
+              "image_1_link": "https:\/\/snshealth.com\/apps\/bundles\/bundle\/111965",
+              "image_2_heading": "",
+              "image_2_text": "",
+              "image_2_link": ""
+            }
+          },
+          "8ef423aa-0ee0-4433-a085-da43e07bf875": {
+            "type": "mega_menu",
+            "settings": {
+              "menu_item": "Vitamins & Supplements",
+              "image_1_heading": "Your image",
+              "image_1_text": "Tell your story",
+              "image_1_link": "",
+              "image_2_heading": "Your image",
+              "image_2_text": "Tell your story",
+              "image_2_link": ""
+            }
+          },
+          "5f928379-933e-4547-a664-fdf6e88bfb4b": {
+            "type": "mega_menu",
+            "settings": {
+              "menu_item": "Food & Drinks",
+              "image_1_heading": "",
+              "image_1_text": "",
+              "image_1_link": "",
+              "image_2_heading": "Your image",
+              "image_2_text": "Tell your story",
+              "image_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1009675a-56b4-4d69-b878-81a6dcb4beb1",
+          "8ef423aa-0ee0-4433-a085-da43e07bf875",
+          "5f928379-933e-4547-a664-fdf6e88bfb4b"
+        ],
+        "settings": {
+          "enable_sticky_header": true,
+          "logo": "shopify:\/\/shop_images\/Logo.png",
+          "logo_max_width": 200,
+          "mobile_logo_max_width": 150,
+          "show_locale_selector": true,
+          "show_currency_selector": true,
+          "navigation_menu": "main-menu",
+          "desktop_navigation_layout": "inline",
+          "desktop_navigation_open_trigger": "hover",
+          "show_navigation_social_media": true,
+          "navigation_phone_number": "",
+          "navigation_email": "info@snshealth.com",
+          "show_condensed_search": true,
+          "show_search_filter": true,
+          "search_menu": "",
+          "show_search_menu_title": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "text",
+            "settings": {
+              "title": "About SNS Health",
+              "content": "<p>Formerly known as Sports Nutrition Source, SNS Health was officially relaunched in January 2021. We are a performance-meets-wellness resource that offers a carefully curated selection of performance and wellness products designed to help our customers explore their full potential.<\/p>"
+            }
+          },
+          "footer-1": {
+            "type": "links",
+            "settings": {
+              "menu": "popular-brands-footer"
+            }
+          },
+          "6c65e212-e689-4597-83b7-6456a8660a7b": {
+            "type": "links",
+            "settings": {
+              "menu": "resources-footer"
+            }
+          },
+          "footer-2": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Get 10% Off Your First Order",
+              "subheading": "<p>Subscribe to our newsletter and get 10% off. Plus, be the first to find out about new products and sales from SNS Health.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "footer-1",
+          "6c65e212-e689-4597-83b7-6456a8660a7b",
+          "footer-2"
+        ],
+        "settings": {
+          "show_social_media": true,
+          "show_payment_icons": true,
+          "show_locale_selector": true,
+          "show_currency_selector": true,
+          "show_cookie_bar": false,
+          "text": "<p>Use this bar to show information about your cookie policy.<\/p>",
+          "accept_button": "Accept"
+        }
+      },
+      "slideshow": {
+        "type": "slideshow",
+        "blocks": {
+          "2fd6e37e-2330-483c-b394-fe02bd629ae2": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/apr_10_banner_desktop.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/apr_10_banner_mobile.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 30,
+              "text_color": "#ffffff",
+              "title": "",
+              "content": "",
+              "content_position": "middle_center",
+              "button_background": "#ffffff",
+              "button_text_color": "#000000",
+              "button_text": "",
+              "link": "shopify:\/\/collections\/vega-1"
+            }
+          },
+          "6fcbfef9-c4c7-44e9-886f-37d48a1a6360": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/apr_26_banner_desktop_1_1.png",
+              "mobile_image": "shopify:\/\/shop_images\/apr_26_banner_mobile_1_1.png",
+              "show_overlay": false,
+              "overlay_opacity": 30,
+              "text_color": "#ffffff",
+              "title": "",
+              "content": "",
+              "content_position": "middle_center",
+              "button_background": "#ffffff",
+              "button_text_color": "#000000",
+              "button_text": "",
+              "link": "https:\/\/snshealth.com\/collections\/digestivehealth"
+            }
+          },
+          "7a0f6dc4-5fab-4d20-b136-11a7150bef97": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/mar_31_banner_desktop.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/mar_31_banner_mobile.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 30,
+              "text_color": "#ffffff",
+              "title": "",
+              "content": "",
+              "content_position": "middle_center",
+              "button_background": "#ffffff",
+              "button_text_color": "#000000",
+              "button_text": "",
+              "link": "shopify:\/\/collections\/jamieson"
+            }
+          },
+          "cb35534e-5e4c-434a-afa9-6fdd50803ca9": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/mar_10_banner_desktop.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/mar_10_banner_mobile.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 30,
+              "text_color": "#ffffff",
+              "title": "",
+              "content": "",
+              "content_position": "middle_center",
+              "button_background": "#ffffff",
+              "button_text_color": "#000000",
+              "button_text": "",
+              "link": "shopify:\/\/collections\/heal-co-1"
+            }
+          }
+        },
+        "block_order": [
+          "2fd6e37e-2330-483c-b394-fe02bd629ae2",
+          "6fcbfef9-c4c7-44e9-886f-37d48a1a6360",
+          "7a0f6dc4-5fab-4d20-b136-11a7150bef97",
+          "cb35534e-5e4c-434a-afa9-6fdd50803ca9"
+        ],
+        "settings": {
+          "edge_to_edge": true,
+          "fixed_larger": true,
+          "slideshow_bg_color": "#ffffff",
+          "section_size": "preserve_ratio",
+          "carousel_effect": "slide",
+          "autoplay": true,
+          "cycle_speed": 5
+        }
+      },
+      "collection-list": {
+        "type": "collection-list",
+        "blocks": {
+          "collection-0": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "collection-1": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "collection-2": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "collection-3": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "collection-4": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "collection-5": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          }
+        },
+        "block_order": [
+          "collection-0",
+          "collection-1",
+          "collection-2",
+          "collection-3",
+          "collection-4",
+          "collection-5"
+        ],
+        "settings": {
+          "title": "Our collections",
+          "link_title": "View all",
+          "link": "shopify:\/\/collections",
+          "round_images": true,
+          "show_collection_title": true
+        }
+      },
+      "featured-product": {
+        "type": "featured-product",
+        "disabled": true,
+        "settings": {
+          "product": "",
+          "title": "Featured product",
+          "link_title": "View details",
+          "link_url": "",
+          "show_vendor": true,
+          "show_sku": false,
+          "show_share_buttons": true,
+          "show_description": true,
+          "description_below_add_to_cart": false,
+          "selector_mode": "block",
+          "color_mode": "color",
+          "show_quantity_selector": true,
+          "show_reviews_badge": false,
+          "show_payment_button": true,
+          "show_pickup_availability": false,
+          "image_size": "small",
+          "enable_image_zoom": true,
+          "enable_video_looping": false,
+          "zoom_effect": "outside",
+          "carousel_effect": "fade",
+          "show_inventory_quantity": false,
+          "low_inventory_threshold": 0
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "custom_css": [
+
+        ],
+        "settings": {
+          "show_collection_image": true,
+          "collapse_collection_description": false,
+          "collection_image_size": "large",
+          "products_per_row": "4",
+          "default_products_per_page": 24,
+          "default_view_layout": "grid",
+          "show_quick_buy": "list",
+          "show_quick_view": "list_grid",
+          "quick_links": "main-menu",
+          "quick_links_show_products_count": true,
+          "show_filters": true,
+          "show_filter_color_swatch": false,
+          "filter_type": "group",
+          "open_group_filters_mode": "all_open",
+          "filter_group_order": "Brand"
+        }
+      },
+      "recently-viewed-products": {
+        "type": "recently-viewed-products",
+        "settings": {
+          "title": "Recently viewed"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "show_vendor": true,
+          "show_sku": true,
+          "show_share_buttons": true,
+          "show_taxes_included": false,
+          "selector_mode": "block",
+          "color_mode": "color",
+          "show_quantity_selector": true,
+          "show_payment_button": true,
+          "show_pickup_availability": false,
+          "image_size": "small",
+          "enable_video_looping": false,
+          "enable_image_zoom": true,
+          "zoom_effect": "inside",
+          "carousel_effect": "fade",
+          "show_inventory_quantity": false,
+          "low_inventory_threshold": 0,
+          "content_display_mode": "collapse_all_except_description",
+          "expand_additional_information": false,
+          "tab_page_1_handle": "shipping-returns",
+          "tab_page_2_handle": "",
+          "tab_page_3_handle": "",
+          "enable_reviews": true,
+          "show_reviews_badge": true,
+          "trust_title": "Payment & Security",
+          "show_payment_icons": false,
+          "custom_security_badge_width": 200,
+          "show_shipping_estimator": false,
+          "shipping_estimator_default_country": "United States",
+          "show_refunds_policy": true
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "Just For You",
+          "show_quick_buy": true
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": true,
+          "background": "#000000",
+          "text_color": "#ffffff",
+          "text": "Free Shipping $49+",
+          "text_discount": "| Discount SAVE15 Applied!",
+          "text_position": "center",
+          "link": "shopify:\/\/pages\/shipping-returns",
+          "show_newsletter": false,
+          "newsletter_button": "Subscribe & Save",
+          "newsletter_title": "Newsletter",
+          "newsletter_content": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+        }
+      },
+      "1542984811767": {
+        "type": "featured-collection",
+        "settings": {
+          "collection": "new-arrivals",
+          "title": "New Arrivals",
+          "products_count": 20,
+          "layout": "vertical",
+          "stack_products": false,
+          "show_quick_buy": true,
+          "link_title": "View all",
+          "link_url": "shopify:\/\/collections\/new-arrivals"
+        }
+      },
+      "1542984842027": {
+        "type": "newsletter",
+        "disabled": true,
+        "settings": {
+          "title": "Newsletter",
+          "content": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+        }
+      },
+      "1542984882560": {
+        "type": "blog-posts",
+        "disabled": true,
+        "settings": {
+          "blog": "news",
+          "blog_posts_count": 3,
+          "title": "Blog posts",
+          "link_title": "View all",
+          "show_category": true,
+          "show_author": true,
+          "show_date": true,
+          "show_excerpt": false,
+          "stack_mobile": false
+        }
+      },
+      "popups": {
+        "type": "popups",
+        "settings": {
+        }
+      },
+      "text-with-icons": {
+        "type": "text-with-icons",
+        "blocks": {
+          "text-with-icons-0": {
+            "type": "item",
+            "settings": {
+              "icon": "bi-fast-delivery",
+              "title": "Free Canadian Shipping",
+              "content": "<p>On All Orders Over $49<\/p>"
+            }
+          },
+          "text-with-icons-2": {
+            "type": "item",
+            "settings": {
+              "icon": "bi-email",
+              "title": "Send Us An Email",
+              "content": "<p>info@snshealth.com<\/p>"
+            }
+          },
+          "text-with-icons-3": {
+            "type": "item",
+            "settings": {
+              "icon": "bi-secure-payment",
+              "title": "Secure Payments",
+              "content": "<p>Protected Checkout<\/p>"
+            }
+          },
+          "7bc85f43-0eb3-4a93-aace-912d784f3c46": {
+            "type": "item",
+            "settings": {
+              "icon": "bi-heart",
+              "title": "Satisfaction Guarantee",
+              "content": "<p><a href=\"\/pages\/satisfaction-guarantee\" title=\"Satisfaction Guarantee\">Learn More<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "text-with-icons-0",
+          "text-with-icons-2",
+          "text-with-icons-3",
+          "7bc85f43-0eb3-4a93-aace-912d784f3c46"
+        ],
+        "settings": {
+          "show_section": true,
+          "stack_mobile": false
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "enable_order_notes": true,
+          "show_payment_icons": true,
+          "gift_wrap_product": "",
+          "gift_wrap_text": "Do you want a gift wrap?",
+          "gift_wrap_button": "Add a gift wrap",
+          "show_shipping_estimator": true,
+          "shipping_estimator_default_country": "United States",
+          "trust_heading": "Our guarantees",
+          "upsell_heading": "Complete your cart",
+          "upsell_collection": "all-products",
+          "upsell_products_count": 4
+        }
+      },
+      "16147206548d1150eb": {
+        "type": "promotion-list",
+        "blocks": {
+          "e2594e80-f3e6-41e6-a115-2e577569e2bc": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "show_overlay": false,
+              "overlay_opacity": 20,
+              "stretch_image": true,
+              "background": "#000000",
+              "text_color": "#ffffff",
+              "title": "Free Shipping Alert!",
+              "content": "Order any of our in-house products and \nenjoy free shipping.",
+              "content_position": "middle_left",
+              "button_background": "#ffffff",
+              "button_text_color": "#000000",
+              "button_text": "Shop SNSHealth Products",
+              "button_link": "shopify:\/\/collections\/sns-health"
+            }
+          },
+          "b0b10508-5262-41c4-98b3-74e778db0963": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/herbal_supplement111.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 100,
+              "stretch_image": true,
+              "background": "#000000",
+              "text_color": "#000000",
+              "title": "Medicinal Herbs",
+              "content": "A safe & effective way to\nimprove your health and \nwellness, using a holistic \napproach.",
+              "content_position": "middle_left",
+              "button_background": "#000000",
+              "button_text_color": "#ffffff",
+              "button_text": "Discover more",
+              "button_link": "shopify:\/\/collections\/herbs"
+            }
+          },
+          "1614720654a73ae90d-0": {
+            "type": "item",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5555.jpg",
+              "show_overlay": true,
+              "overlay_opacity": 10,
+              "stretch_image": true,
+              "background": "#ffe6c9",
+              "text_color": "#ffffff",
+              "title": "Protein Powders",
+              "content": "Help build strength, grow & maintain \nmuscle, and support endurance \n& recovery.",
+              "content_position": "middle_left",
+              "button_background": "#ffffff",
+              "button_text_color": "#000000",
+              "button_text": "Shop Protein Powders",
+              "button_link": "shopify:\/\/collections\/protein-powders"
+            }
+          },
+          "1614720654a73ae90d-1": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/shutterstock_2047921949.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 100,
+              "stretch_image": true,
+              "background": "#ffbcbf",
+              "text_color": "#000000",
+              "title": "Personal Care",
+              "content": "Explore skin care products including cleansers, \nmoisturizers, serums, oils\n & sunscreens.",
+              "content_position": "middle_left",
+              "button_background": "#000000",
+              "button_text_color": "#ffffff",
+              "button_text": "Shop Personal Care",
+              "button_link": "shopify:\/\/collections\/personal-care"
+            }
+          },
+          "1614720654a73ae90d-2": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/1.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 100,
+              "stretch_image": true,
+              "background": "#cbd6fd",
+              "text_color": "#000000",
+              "title": "Green Powders",
+              "content": "An easy & convenient \nway to get the nutrients \nyour body needs daily",
+              "content_position": "middle_left",
+              "button_background": "#000000",
+              "button_text_color": "#ffffff",
+              "button_text": "Shop Green Powders",
+              "button_link": "shopify:\/\/collections\/greens"
+            }
+          }
+        },
+        "block_order": [
+          "e2594e80-f3e6-41e6-a115-2e577569e2bc",
+          "b0b10508-5262-41c4-98b3-74e778db0963",
+          "1614720654a73ae90d-0",
+          "1614720654a73ae90d-1",
+          "1614720654a73ae90d-2"
+        ],
+        "settings": {
+          "block_heading": "",
+          "expand_items": false,
+          "section_size": "small",
+          "stack_mobile": true
+        }
+      },
+      "16147211343bf49178": {
+        "type": "logo-list",
+        "disabled": true,
+        "blocks": {
+          "16147211343bf49178-1": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/biosteel.jpg",
+              "link": "shopify:\/\/collections\/biosteel"
+            }
+          },
+          "16147211343bf49178-2": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/perfect-sports.jpg",
+              "link": "shopify:\/\/collections\/perfect"
+            }
+          },
+          "16147211343bf49178-0": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/deisel.jpg",
+              "link": "shopify:\/\/collections\/diesel"
+            }
+          },
+          "16147211343bf49178-3": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/healthology.jpg",
+              "link": "shopify:\/\/collections\/healthology"
+            }
+          },
+          "16147211343bf49178-4": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/optimum-nutrition.jpg",
+              "link": "shopify:\/\/collections\/optimum-nutrition"
+            }
+          },
+          "16147211343bf49178-5": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/allmax.jpg",
+              "link": "shopify:\/\/collections\/allmax"
+            }
+          }
+        },
+        "block_order": [
+          "16147211343bf49178-1",
+          "16147211343bf49178-2",
+          "16147211343bf49178-0",
+          "16147211343bf49178-3",
+          "16147211343bf49178-4",
+          "16147211343bf49178-5"
+        ],
+        "settings": {
+          "title": "Popular Brands",
+          "link_title": "View All",
+          "link": "shopify:\/\/pages\/shop-by-brand"
+        }
+      },
+      "161472149580382340": {
+        "type": "featured-collection",
+        "settings": {
+          "collection": "bestsellers",
+          "title": "Best Sellers",
+          "products_count": 20,
+          "layout": "vertical",
+          "stack_products": false,
+          "show_quick_buy": true,
+          "link_title": "View all",
+          "link_url": "shopify:\/\/collections\/bestsellers"
+        }
+      },
+      "1614721539d5b1d73b": {
+        "type": "rich-text",
+        "settings": {
+          "text_width": "regular",
+          "title": "Personal Health Is Not One Size Fits All",
+          "add_top_pad": true,
+          "content": "<p>Personal health is not a one-stop-shop. It is not a box to fit into or a trend to subscribe to. Personal health is about knowing yourself, your body and your mind; an ongoing journey between you - and only you. <\/p><p>SNS Health encourages customers to define personal health on their terms. To create and work towards a vision of themselves that is unwavering in its commitment to being the best person they can be. Your journey, your products, your SNS Health.<\/p>",
+          "button_text": "Learn More About Our Mission",
+          "button_link": "shopify:\/\/pages\/personal-health-is-not-one-size-fits-all"
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "blocks": {
+          "9ce5099d-2b99-4f6b-8439-df401f3c1e66": {
+            "type": "collection",
+            "settings": {
+              "collection": "bcaa-supplements"
+            }
+          },
+          "2db80ab4-74da-42cb-8413-e0deac72c008": {
+            "type": "collection",
+            "settings": {
+              "collection": "detox"
+            }
+          },
+          "66ae4f05-d486-4764-956d-fab207aee0a0": {
+            "type": "collection",
+            "settings": {
+              "collection": "diet-and-weight-management"
+            }
+          },
+          "73f91a4b-69dc-4be4-91fb-438e3300c7df": {
+            "type": "collection",
+            "settings": {
+              "collection": "family-health"
+            }
+          },
+          "ffd809c8-772e-4761-a9cd-14615c23243e": {
+            "type": "collection",
+            "settings": {
+              "collection": "fitness-gear"
+            }
+          },
+          "c246937a-8164-4eae-8fef-8544cf95099a": {
+            "type": "collection",
+            "settings": {
+              "collection": "energy-drinks"
+            }
+          },
+          "3c084337-bd5a-4637-88f1-61fa7ebe8191": {
+            "type": "collection",
+            "settings": {
+              "collection": "post-workout-recovery"
+            }
+          },
+          "f988c4e2-3e38-496d-83bf-f0b5aea84ccf": {
+            "type": "collection",
+            "settings": {
+              "collection": "mass-gainers"
+            }
+          },
+          "e51f3109-b2b6-4061-b31f-cafb3eeaeefb": {
+            "type": "collection",
+            "settings": {
+              "collection": "greens-superfoods"
+            }
+          },
+          "bf7386c5-6cdc-4790-9659-edbf404b672d": {
+            "type": "collection",
+            "settings": {
+              "collection": "probiotics"
+            }
+          },
+          "40dfd9f7-9755-4310-9e3d-4775d85d7aa6": {
+            "type": "collection",
+            "settings": {
+              "collection": "protein-bars-and-snacks"
+            }
+          }
+        },
+        "block_order": [
+          "9ce5099d-2b99-4f6b-8439-df401f3c1e66",
+          "2db80ab4-74da-42cb-8413-e0deac72c008",
+          "66ae4f05-d486-4764-956d-fab207aee0a0",
+          "73f91a4b-69dc-4be4-91fb-438e3300c7df",
+          "ffd809c8-772e-4761-a9cd-14615c23243e",
+          "c246937a-8164-4eae-8fef-8544cf95099a",
+          "3c084337-bd5a-4637-88f1-61fa7ebe8191",
+          "f988c4e2-3e38-496d-83bf-f0b5aea84ccf",
+          "e51f3109-b2b6-4061-b31f-cafb3eeaeefb",
+          "bf7386c5-6cdc-4790-9659-edbf404b672d",
+          "40dfd9f7-9755-4310-9e3d-4775d85d7aa6"
+        ],
+        "settings": {
+          "collections_to_show": "selected",
+          "show_collection_title": true,
+          "show_collection_overlay": true,
+          "collection_overlay_opacity": 20
+        }
+      },
+      "static-newsletter": {
+        "type": "static-newsletter",
+        "settings": {
+          "show_section": false,
+          "title": "Subscribe to our newsletter",
+          "content": "<p>A short sentence describing what someone will receive by subscribing<\/p>",
+          "subtext": "100% free, Unsubscribe any time!",
+          "background": "#1e2d7d",
+          "text": "#ffffff"
+        }
+      },
+      "page-contact-template": {
+        "type": "page-contact-template",
+        "blocks": {
+          "d24279cd-2005-4041-99c2-f65c7bbd3c11": {
+            "type": "text",
+            "settings": {
+              "title": "Phone Number",
+              "use_long_text": false,
+              "is_required": true
+            }
+          },
+          "95c9baae-b35b-4e7e-b481-c88815322e9a": {
+            "type": "dropdown",
+            "settings": {
+              "title": "Subject",
+              "values": "Product Inquiry, Returns, Other"
+            }
+          }
+        },
+        "block_order": [
+          "d24279cd-2005-4041-99c2-f65c7bbd3c11",
+          "95c9baae-b35b-4e7e-b481-c88815322e9a"
+        ],
+        "settings": {
+          "form_heading": "Leave your message",
+          "show_store_info": true,
+          "store_heading": "",
+          "store_image": "shopify:\/\/shop_images\/Logo.png",
+          "store_info": "<p>2500 Williams Parkway<\/p><p>Unit 25 and 26<\/p><p>Brampton, ON. Canada.<\/p><p>L6S 5M9<\/p>"
+        }
+      },
+      "page-faq-template": {
+        "type": "page-faq-template",
+        "blocks": {
+          "page-faq-template-0": {
+            "type": "separator",
+            "settings": {
+              "title": "Company Info"
+            }
+          },
+          "ba700d7d-f2a1-4637-97ec-096badd22c88": {
+            "type": "question",
+            "settings": {
+              "title": "How to get in touch?",
+              "answer": "<p>The best way to get in touch with us is through email or submit a request on <a href=\"\/pages\/contact-us\" title=\"Contact Us\">contact us page.<\/a> <\/p><p>You are guaranteed to get a response from our team within 1 to 2 business days. Thank you for your patience. We look forward to assisting you.<\/p>"
+            }
+          },
+          "page-faq-template-1": {
+            "type": "question",
+            "settings": {
+              "title": "Is this the same company as Sports Nutrition Source?",
+              "answer": "<p>Same...but different! SNS Health is the new venture from the team behind Sports Nutrition Source; a transition that has been many years in the making as we began noticing a shift in the way our customers interpreted the meaning of “health.” For so long, this word solely represented physical fitness and performance - but what we’ve come to now understand (and embrace!) is that health also includes your mental and emotional wellbeing.<br\/><br\/>With this in mind, the Sports Nutrition Source team decided to combine these ideas of wellbeing to launch SNS Health. SNS Health is a performance-meets-wellness resource for consumers looking to create and maintain balance within their physical, mental and emotional wellbeing. <br\/><br\/>Although we said goodbye to Sports Nutrition Source as we once knew it, SNS Health carries the legacy we worked so hard to build into this new journey of total wellbeing. This allows us to support you in all areas of your wellness journey - whether it’s crushing a new personal record or trying to catch better zzz’s.<\/p>"
+            }
+          },
+          "page-faq-template-3": {
+            "type": "question",
+            "settings": {
+              "title": "Does SNS Health have any retail locations?",
+              "answer": "<p>We sure do. You can visit and shop at our retail location in Brampton, Ontario at:<\/p><p><em>2500 Williams Parkway, Unit 25-26, Brampton, Ontario, L6S 5M9.<\/em><br\/><\/p>"
+            }
+          },
+          "page-faq-template-4": {
+            "type": "separator",
+            "settings": {
+              "title": "Product Information"
+            }
+          },
+          "page-faq-template-5": {
+            "type": "question",
+            "settings": {
+              "title": "What kinds of products does SNS Health sell?",
+              "answer": "<p>You’ll still find all of the performance-focused products we’ve become known for over the past 10 years on our website (proteins, amino acids, pre-workouts and more!) What’s new is our wellness offering, which ranges from supplements and vitamins to immunity support and sleep aids. Can’t find a product you’re looking for? Contact us <a href=\"https:\/\/snshealth.com\/pages\/contact-us\" title=\"https:\/\/snshealth.com\/pages\/contact-us\">here<\/a>. Just like you, we’re constantly working to make ourselves even better.<\/p>"
+            }
+          },
+          "a4202b69-99ec-496e-9c26-c28da27198e2": {
+            "type": "question",
+            "settings": {
+              "title": "What if I want something that is out of stock?",
+              "answer": "<p>From time to time, this can happen! At SNS Health we never sacrifice the quality or integrity of our products, which is why we never substitute an alternative brand, product, or flavor without your permission. If an item is not expected to arrive at our warehouse within 48 hours of your order, we’ll always contact you directly with a suggestion for an alternate product that fits your needs. If we can’t find something you like, we’ll issue you an immediate refund - no questions asked. <\/p><p><strong>In the meantime, you can request to be alerted when the product you’re eyeing is available for purchase by clicking on the “Notify When Back in Stock” button found on the product page. All you have to do is submit your email, and we’ll send you an automatic email with a link to purchase once its back on our (virtual!) shelves.<\/strong><\/p>"
+            }
+          },
+          "page-faq-template-6": {
+            "type": "question",
+            "settings": {
+              "title": "I can’t decide between two different brands you have listed on your website. Can your team help me decide which product is best for me?",
+              "answer": "<p>Absolutely. Our team of experts would be happy to help with any questions you have. Feel free to fill out the contact form here with your inquiry and someone from SNS Health will get back to you within 24 hours. <\/p>"
+            }
+          },
+          "786d24db-d3e7-467d-89c0-51edc8c2b9b2": {
+            "type": "question",
+            "settings": {
+              "title": "I’m looking for supplements to help with a medical diagnosis. Can your team help?",
+              "answer": "<p>Thank you for coming to us with such an important decision! If your doctor has recommended you take a specific supplement or vitamin, we can definitely assist you. However, for all other inquiries we suggest contacting your doctor or healthcare provider as SNS Health cannot recommend treatments for medical diagnoses, conditions or diseases. <\/p>"
+            }
+          },
+          "page-faq-template-7": {
+            "type": "separator",
+            "settings": {
+              "title": "Shipping & Returns"
+            }
+          },
+          "70aeb85a-142c-420c-8c2c-695cb4158e2b": {
+            "type": "question",
+            "settings": {
+              "title": "When will my order ship?",
+              "answer": "<p>Our fulfillment center is open from 9 am to 5 pm, Monday through Friday. <\/p><p>Your order will be dispatched within 24-48 hours. We are proud of our current average fulfillment time of 14 hours. Please note that orders placed after 5 pm on Friday will be processed the following Monday.<\/p><p>However, during Christmas and New Year Holidays, our delivery times might be extended due to shipping disruptions expected from our carrier:<\/p><ul><li><em>December 26th & 27th: Closed.<\/em><\/li><li><em>December 28th to 30th: Working.<\/em><\/li><li><em>December 31st to January 2nd: Closed.<\/em><\/li><li><em>January 3rd: Back to normal.<\/em><\/li><\/ul>"
+            }
+          },
+          "page-faq-template-8": {
+            "type": "question",
+            "settings": {
+              "title": "How much is shipping?",
+              "answer": "<p>We offer free standard shipping for orders over $49. For orders under this amount, shipping is calculated at checkout. <\/p><p>If you can't wait to get your order sooner, we also offer express shipping options. Rates are calculated at checkout, based on your location. <\/p>"
+            }
+          },
+          "bd0524eb-1088-4bcf-ab9a-8e2551e2185a": {
+            "type": "question",
+            "settings": {
+              "title": "Do you offer a signature requirement option during checkout?",
+              "answer": "<p>Yes, we offer a signature requirement option during checkout. You can choose to require a signature at delivery for extra security, at no extra cost.<\/p><p>You can also choose to notify us  regarding your delivery preferences by leaving instructions at checkout. Orders with comment \"Leave at door\" will be reconsidered without signature service.<\/p><p>If no signature is chosen, you will be fully responsible for any loss, theft, or damage to your package after delivery.<\/p><p>If we don't have a selected option from you, we will select signature at delivery as default option, to protect you from porch pirates.<\/p>"
+            }
+          },
+          "24408dbf-23fc-4ebf-9691-9036e5abdbad": {
+            "type": "question",
+            "settings": {
+              "title": "How do I return an item?",
+              "answer": "<p>Take a look at our Shipping & Returns page <a href=\"https:\/\/snshealth.com\/pages\/shipping-returns\" title=\"https:\/\/snshealth.com\/pages\/shipping-returns\">here<\/a> for all the details on our return policy and practices. <\/p>"
+            }
+          },
+          "891c0d2b-f832-43de-aa8f-74d46cbc5541": {
+            "type": "separator",
+            "settings": {
+              "title": "Orders & Account"
+            }
+          },
+          "3556b77d-97d9-4ea9-ae69-9e3741c9cf4b": {
+            "type": "question",
+            "settings": {
+              "title": "What payment methods do you accept?",
+              "answer": "<p>We accept Visa, Mastercard, AMEX, Apple Pay and Paypal. <\/p>"
+            }
+          },
+          "7fc03da6-07d4-4820-b163-921ea6348002": {
+            "type": "question",
+            "settings": {
+              "title": "Does SNS Health save my personal info?",
+              "answer": "<p>Privacy is our #1 priority, which is why we offer a safe and secure shopping experience for our customers around the world. We use high-end secure technology to safeguard your details and never store your information unless you provide us with your permission. The only thing we store is the final four digits of your credit card, which are required for validating transactions. <\/p>"
+            }
+          },
+          "35417663-1acf-482f-a121-20832415b45b": {
+            "type": "question",
+            "settings": {
+              "title": "Is it possible to save even more on my order?",
+              "answer": "<p>To stay up to date with seasonal promotions and sales, sign up to our newsletter.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "page-faq-template-0",
+          "ba700d7d-f2a1-4637-97ec-096badd22c88",
+          "page-faq-template-1",
+          "page-faq-template-3",
+          "page-faq-template-4",
+          "page-faq-template-5",
+          "a4202b69-99ec-496e-9c26-c28da27198e2",
+          "page-faq-template-6",
+          "786d24db-d3e7-467d-89c0-51edc8c2b9b2",
+          "page-faq-template-7",
+          "70aeb85a-142c-420c-8c2c-695cb4158e2b",
+          "page-faq-template-8",
+          "bd0524eb-1088-4bcf-ab9a-8e2551e2185a",
+          "24408dbf-23fc-4ebf-9691-9036e5abdbad",
+          "891c0d2b-f832-43de-aa8f-74d46cbc5541",
+          "3556b77d-97d9-4ea9-ae69-9e3741c9cf4b",
+          "7fc03da6-07d4-4820-b163-921ea6348002",
+          "35417663-1acf-482f-a121-20832415b45b"
+        ],
+        "settings": {
+          "show_contact_info": true,
+          "contact_info_heading": "",
+          "contact_info_text": "",
+          "contact_1_icon": "bi-phone",
+          "contact_1_heading": "",
+          "contact_1_text": "",
+          "contact_2_icon": "bi-comment",
+          "contact_2_heading": "Any questions? Send us a message!",
+          "contact_2_text": "<p>If we still haven't answered your question, you can fill out our <a href=\"\/pages\/contact-us\" title=\"Contact Us\">contact form<\/a>.<\/p><p>Our support team will respond within 24 hours and is always happy to help!﻿<\/p>"
+        }
+      },
+      "static-promotion-list": {
+        "type": "static-promotion-list",
+        "settings": {
+          "expand_items": false,
+          "section_size": "medium",
+          "stack_mobile": false
+        }
+      },
+      "static-recently-viewed-products": {
+        "type": "static-recently-viewed-products",
+        "settings": {
+          "show_section": true,
+          "title": "Recently viewed",
+          "show_quick_buy": true
+        }
+      },
+      "minimal-header": {
+        "type": "minimal-header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/SNS-logo.png",
+          "logo_max_width": 300,
+          "mobile_logo_max_width": 100
+        }
+      },
+      "password-template": {
+        "type": "password-template",
+        "settings": {
+          "show_social_media": true,
+          "heading": "We’ll be back soon!",
+          "text": "<p>Sorry for the inconvenience, we are performing some technical maintenance on the website. You can <a href=\"\/pages\/contact-us\" title=\"Contact Us\">contact us here<\/a><em> <\/em>if you have any questions, otherwise we will be back online shortly! - The SNS Health Team<\/p>",
+          "show_newsletter_signup": false,
+          "newsletter_text": "<p>Leave us your email ID to stay in touch. <\/p>"
+        }
+      },
+      "161487318437c456ff": {
+        "type": "collection-with-image",
+        "disabled": true,
+        "settings": {
+          "collection": "protein-bars-and-snacks",
+          "products_count": 8,
+          "image": "shopify:\/\/shop_images\/weight-loss.jpg",
+          "background": "#d1e6ff",
+          "text_color": "#000000",
+          "title": "",
+          "content": "Snacks",
+          "button_background": "#ed1c24",
+          "button_text_color": "#ffffff",
+          "button_text": "Learn more",
+          "button_link": "#"
+        }
+      },
+      "161902088984f08ef0": {
+        "type": "homepage-featured-collection",
+        "settings": {
+          "collection": "snacks",
+          "products_count": 20,
+          "image": "shopify:\/\/shop_images\/Screenshot_2021-06-23_at_10.00.45_PM.png",
+          "background": "rgba(0,0,0,0)",
+          "text_color": "#000000",
+          "title": "SNACCCKKKSSS!",
+          "sub_title": "Featured This Month",
+          "collection_caption": "<p><strong>The best selling healthy<\/strong><em>(ish)<\/em><em><strong> <\/strong><\/em><strong>snacks<\/strong><\/p>",
+          "content": "Whether you’re looking for post-work out fuel or on-the-go bites for your next road trip, our selection of healthy and delicious snacks will have you satiated around the clock.",
+          "button_background": "rgba(0,0,0,0)",
+          "button_text_color": "#000000",
+          "button_text": "Read More",
+          "button_link": "shopify:\/\/collections\/snacks",
+          "layout": "vertical",
+          "stack_products": false,
+          "show_quick_view": true,
+          "link_title": "",
+          "link_url": ""
+        }
+      },
+      "promotion-list": {
+        "type": "promotion-list",
+        "blocks": {
+          "f31d3562-c311-4f4e-ac1c-8bb78e91c54a": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/shutterstock_283178207.jpg",
+              "show_overlay": true,
+              "overlay_opacity": 65,
+              "stretch_image": true,
+              "background": "#000000",
+              "text_color": "#ffffff",
+              "title": "PROTEIN POWDERS",
+              "content": "Help build strength, muscle and to increase overall performance.",
+              "content_position": "middle_left",
+              "button_background": "#000000",
+              "button_text_color": "#ffffff",
+              "button_text": "Shop Protein Powders",
+              "button_link": "shopify:\/\/collections\/protein-powders"
+            }
+          },
+          "8f51204b-388a-438a-9c6c-86f0cbd0f71b": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/sleep-aids.png",
+              "show_overlay": true,
+              "overlay_opacity": 65,
+              "stretch_image": true,
+              "background": "#000000",
+              "text_color": "#ffffff",
+              "title": "SLEEP AIDS",
+              "content": "Sleep helps your body and brain function properly.",
+              "content_position": "middle_left",
+              "button_background": "#000000",
+              "button_text_color": "#ffffff",
+              "button_text": "Shop Sleep Aids",
+              "button_link": "shopify:\/\/collections\/sleep-aids"
+            }
+          },
+          "2a04ab45-7137-4a94-82a6-c4cac2c157bc": {
+            "type": "item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/shutterstock_1041373417.jpg",
+              "show_overlay": true,
+              "overlay_opacity": 65,
+              "stretch_image": true,
+              "background": "#000000",
+              "text_color": "#ffffff",
+              "title": "PROBIOTICS",
+              "content": "Increase your level of important nutritional elements",
+              "content_position": "middle_left",
+              "button_background": "#000000",
+              "button_text_color": "#ffffff",
+              "button_text": "Shop Probiotics",
+              "button_link": "shopify:\/\/collections\/probiotics"
+            }
+          }
+        },
+        "block_order": [
+          "f31d3562-c311-4f4e-ac1c-8bb78e91c54a",
+          "8f51204b-388a-438a-9c6c-86f0cbd0f71b",
+          "2a04ab45-7137-4a94-82a6-c4cac2c157bc"
+        ],
+        "settings": {
+          "block_heading": "",
+          "expand_items": false,
+          "section_size": "medium",
+          "stack_mobile": false
+        }
+      },
+      "about-page-info": {
+        "type": "about-page-info",
+        "settings": {
+        }
+      },
+      "collection-template-boost-pfs-original": {
+        "type": "collection-template-boost-pfs-original",
+        "settings": {
+          "show_collection_image": true,
+          "collapse_collection_description": false,
+          "collection_image_size": "small",
+          "products_per_row": "4",
+          "default_products_per_page": 24,
+          "default_view_layout": "grid",
+          "show_quick_buy": "list",
+          "show_quick_view": "list_grid",
+          "quick_links": "",
+          "quick_links_show_products_count": true,
+          "show_filters": true,
+          "show_filter_color_swatch": true,
+          "filter_type": "tag",
+          "open_group_filters_mode": "all_closed",
+          "filter_group_order": ""
+        }
+      },
+      "search-template": {
+        "type": "search-template",
+        "settings": {
+          "products_per_row": "4",
+          "default_view_layout": "grid",
+          "show_quick_view": "list_grid",
+          "show_quick_buy": "list",
+          "quick_links": ""
+        }
+      },
+      "1648054826313753b3": {
+        "type": "image-with-text",
+        "disabled": true,
+        "settings": {
+          "image": "shopify:\/\/shop_images\/SNS_Store.jpg",
+          "image_position": "left",
+          "image_width": 50,
+          "title": "About Us",
+          "content": "<p>Formerly known as Sports Nutrition Source, SNS Health was officially relaunched in November 2021. Combining our 10 years of industry experience with a modern appreciation for physical, mental, and emotional well-being, we are a performance-meets-wellness resource that helps customers explore their full potential. <\/p>",
+          "button_text": "",
+          "button_link": ""
+        }
+      },
+      "1649726682d4612c22": {
+        "type": "slideshow-reviews",
+        "blocks": {
+          "1649726682d4612c22-0": {
+            "type": "image",
+            "settings": {
+              "show_overlay": false,
+              "overlay_opacity": 30,
+              "text_color": "#2a5096",
+              "title": "“One of the best Sports Nutrition Stores in town. They carry large range of products and had everything that I required.”",
+              "star_rating": 4,
+              "content": "",
+              "content_position": "middle_center",
+              "button_background": "#ffffff",
+              "button_text_color": "#000000",
+              "button_text": "Button",
+              "link": ""
+            }
+          },
+          "1649726682d4612c22-1": {
+            "type": "image",
+            "settings": {
+              "show_overlay": false,
+              "overlay_opacity": 30,
+              "text_color": "#2a5096",
+              "title": "“This company is the most organized and professional sports nutrition and health supplement organization I have seen...”",
+              "star_rating": 5,
+              "content": "",
+              "content_position": "middle_center",
+              "button_background": "#ffffff",
+              "button_text_color": "#000000",
+              "button_text": "Button",
+              "link": ""
+            }
+          },
+          "26839de2-55e5-43b1-a11c-844eb187f679": {
+            "type": "image",
+            "settings": {
+              "show_overlay": false,
+              "overlay_opacity": 30,
+              "text_color": "#2a5096",
+              "title": "“I have been buying health nutrition from SNS for about 3-4 months  and i have had great experience.”",
+              "star_rating": 5,
+              "content": "Tell your story",
+              "content_position": "middle_center",
+              "button_background": "#ffffff",
+              "button_text_color": "#000000",
+              "button_text": "Button",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1649726682d4612c22-0",
+          "1649726682d4612c22-1",
+          "26839de2-55e5-43b1-a11c-844eb187f679"
+        ],
+        "settings": {
+          "edge_to_edge": false,
+          "section_size": "preserve_ratio",
+          "carousel_effect": "slide",
+          "autoplay": true,
+          "cycle_speed": 5
+        }
+      },
+      "16541042873a2a6c10": {
+        "type": "image-with-text",
+        "disabled": true,
+        "settings": {
+          "image": "shopify:\/\/shop_images\/5131059_1.png",
+          "image_position": "left",
+          "image_width": 50,
+          "title": "Build Your Own Snack Box",
+          "content": "<p>Get 12 Snacks for $40. <\/p>",
+          "button_text": "Build Now",
+          "button_link": "https:\/\/snshealth.com\/apps\/bundles\/bundle\/111965"
+        }
+      },
+      "1656983966c580d363": {
+        "type": "custom-html",
+        "settings": {
+          "title": "",
+          "html": "<div class=\"yotpo yotpo-reviews-carousel\" data-background-color=\"transparent\" data-mode=\"top_rated\" data-type=\"both\" data-count=\"5\" data-show-bottomline=\"1\" data-autoplay-enabled=\"1\" data-autoplay-speed=\"3000\" data-show-navigation=\"1\"> <\/div>"
+        }
+      },
+      "16575689909e3ec3e4": {
+        "type": "offers",
+        "disabled": true,
+        "blocks": {
+          "16575689909e3ec3e4-0": {
+            "type": "offer",
+            "settings": {
+              "title": "Step 1",
+              "content": "<p>First, go to “Build your own snack box” page and let your taste buds pick.<\/p>"
+            }
+          },
+          "16575689909e3ec3e4-1": {
+            "type": "offer",
+            "settings": {
+              "title": "Step 2",
+              "content": "<p>Mix & match to make a bundle of <br\/>12, 24 or 36 snacks to get the discount.<\/p>"
+            }
+          },
+          "a840b536-d2ab-4fd9-9afc-9336d73e088f": {
+            "type": "offer",
+            "settings": {
+              "title": "Step 3",
+              "content": "<p>Add your snack box to cart and finish your purchase.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "16575689909e3ec3e4-0",
+          "16575689909e3ec3e4-1",
+          "a840b536-d2ab-4fd9-9afc-9336d73e088f"
+        ],
+        "settings": {
+          "items_per_row": 3,
+          "stack_mobile": true
+        }
+      },
+      "16575691242cc8f846": {
+        "type": "custom-html",
+        "disabled": true,
+        "settings": {
+          "title": "Build Your Own Snack Box",
+          "html": "<a href=\"https:\/\/snshealth.com\/apps\/bundles\/bundle\/111965\" class=\"btn\">Build Now<\/a>"
+        }
+      },
+      "16612815858452006f": {
+        "type": "custom-html",
+        "disabled": true,
+        "settings": {
+          "title": "",
+          "html": "<a href=\"https:\/\/snshealth.com\/collections\/yoga-accessories\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0422\/2255\/1191\/files\/Yoga_Access_Jan_2023.jpg?v=1674141923\"><\/a>"
+        }
+      },
+      "8ae5b5de-3e36-46fc-9368-b65dda64985a": {
+        "type": "rich-text",
+        "settings": {
+          "text_width": "narrow",
+          "title": "Trending Now",
+          "add_top_pad": false,
+          "content": "",
+          "button_text": "",
+          "button_link": ""
+        }
+      },
+      "62ab2e0b-5301-4cd6-90c7-2bb885cff993": {
+        "type": "slideshow",
+        "blocks": {
+          "e2d07ad1-541a-43af-b01e-8c11c3d865db": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/feb_28_banner_desktop.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/feb_28_banner_mobile.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 30,
+              "text_color": "#ffffff",
+              "title": "",
+              "content": "",
+              "content_position": "middle_center",
+              "button_background": "#ffffff",
+              "button_text_color": "#000000",
+              "button_text": "",
+              "link": "shopify:\/\/collections\/sns-health-1"
+            }
+          },
+          "62ab2e0b-5301-4cd6-90c7-2bb885cff993-1675806953dafd265b-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/desktop_9_1.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/mobile_4_1.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 30,
+              "text_color": "#ffffff",
+              "title": "",
+              "content": "",
+              "content_position": "bottom_left",
+              "button_background": "#ff0000",
+              "button_text_color": "#ffffff",
+              "button_text": "Shop Now",
+              "link": "shopify:\/\/collections\/gym-accessories"
+            }
+          },
+          "62ab2e0b-5301-4cd6-90c7-2bb885cff993-1675806953dafd265b-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Yoga_Access_Jan_2023.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Yoga_Access_Jan_2023_mobile.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 30,
+              "text_color": "#ffffff",
+              "title": "",
+              "content": "",
+              "content_position": "bottom_center",
+              "button_background": "#ee0000",
+              "button_text_color": "#ffffff",
+              "button_text": "Shop Now",
+              "link": "shopify:\/\/collections\/yoga-accessories"
+            }
+          }
+        },
+        "block_order": [
+          "e2d07ad1-541a-43af-b01e-8c11c3d865db",
+          "62ab2e0b-5301-4cd6-90c7-2bb885cff993-1675806953dafd265b-0",
+          "62ab2e0b-5301-4cd6-90c7-2bb885cff993-1675806953dafd265b-1"
+        ],
+        "settings": {
+          "edge_to_edge": false,
+          "fixed_larger": false,
+          "slideshow_bg_color": "#ffffff",
+          "section_size": "preserve_ratio",
+          "carousel_effect": "slide",
+          "autoplay": true,
+          "cycle_speed": 5
+        }
+      }
+    },
+    "content_for_index": [
+      "slideshow",
+      "8ae5b5de-3e36-46fc-9368-b65dda64985a",
+      "16147206548d1150eb",
+      "161472149580382340",
+      "1542984811767",
+      "16575691242cc8f846",
+      "16575689909e3ec3e4",
+      "62ab2e0b-5301-4cd6-90c7-2bb885cff993",
+      "16612815858452006f",
+      "161902088984f08ef0",
+      "161487318437c456ff",
+      "16147211343bf49178",
+      "1648054826313753b3",
+      "1614721539d5b1d73b",
+      "1542984842027",
+      "featured-product",
+      "1542984882560",
+      "16541042873a2a6c10",
+      "1649726682d4612c22",
+      "1656983966c580d363"
+    ],
+    "blocks": {
+      "6810535121229352664": {
+        "type": "shopify:\/\/apps\/cart-upsell-free-gift-monster\/blocks\/app-embed\/a1b8e58a-bf1d-4e0f-8768-a387c3f643c0",
+        "disabled": false,
+        "settings": {
+          "markets_rounding": false,
+          "send_gtag_atc": false,
+          "disable_tiktok_tracking": false,
+          "stop_cart_page": false,
+          "apply_discount_before_checkout": false,
+          "bag_selector": "",
+          "hide_when_opened": "",
+          "dev_mode": false,
+          "custom_code": "<script>\n    \/\/ custom code here\n<\/script>"
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  },
+  "presets": {
+    "Metal": {
+      "heading_color": "#1e2d7d",
+      "text_color": "#677279",
+      "accent_color": "#00badb",
+      "link_color": "#00badb",
+      "border_color": "#e1e3e4",
+      "background": "#f3f5f6",
+      "secondary_background": "#ffffff",
+      "error_color": "#ff0000",
+      "success_color": "#00aa00",
+      "primary_button_background": "#00badb",
+      "primary_button_text_color": "#ffffff",
+      "secondary_button_background": "#1e2d7d",
+      "secondary_button_text_color": "#ffffff",
+      "header_background": "#1e2d7d",
+      "header_text_color": "#ffffff",
+      "header_light_text_color": "#a3afef",
+      "header_accent_color": "#00badb",
+      "product_on_sale_accent": "#ee0000",
+      "product_in_stock_color": "#008a00",
+      "product_low_stock_color": "#ee0000",
+      "product_sold_out_color": "#8a9297",
+      "product_label_1_background": "#008a00",
+      "product_label_2_background": "#00a500",
+      "product_star_color": "#ffbd00",
+      "footer_background_color": "#f3f5f6",
+      "footer_heading_text_color": "#1e2d7d",
+      "footer_body_text_color": "#677279",
+      "footer_accent_color": "#00badb",
+      "base_text_font_size": 16,
+      "heading_font": "din_next_n5",
+      "text_font": "din_next_n4",
+      "underline_links": true,
+      "animation_image_zoom": true,
+      "search_mode": "product,article",
+      "show_vendor": true,
+      "show_secondary_image": true,
+      "product_price_position": "after_title",
+      "product_image_size": "natural",
+      "show_discount": true,
+      "discount_mode": "saving",
+      "show_color_swatch": false,
+      "show_inventory_quantity": false,
+      "low_inventory_threshold": 0,
+      "show_reviews_badge": false,
+      "cart_type": "drawer",
+      "cart_empty_button_link": "shopify:\/\/collections\/all",
+      "cart_show_checkout_button": true,
+      "cart_show_free_shipping_threshold": false,
+      "cart_free_shipping_threshold": "50",
+      "share_image": "",
+      "social_facebook": "",
+      "social_twitter": "",
+      "social_google_plus": "",
+      "social_pinterest": "",
+      "social_instagram": "",
+      "social_vimeo": "",
+      "social_tumblr": "",
+      "social_youtube": "",
+      "social_linkedin": "",
+      "social_snapchat": "",
+      "social_fancy": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#00badb",
+      "checkout_button_color": "#00badb",
+      "checkout_error_color": "#ff0000",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo": "",
+            "logo_max_width": 140,
+            "mobile_logo_max_width": 100,
+            "navigation_menu": "main-menu",
+            "desktop_navigation_layout": "inline",
+            "desktop_navigation_open_trigger": "hover",
+            "navigation_phone_number": "Call us 000-000-0000",
+            "navigation_email": "info@yourwebsite.com",
+            "search_menu": ""
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "text",
+              "settings": {
+                "title": "About the shop",
+                "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme settings.<\/p>"
+              }
+            },
+            "footer-1": {
+              "type": "links",
+              "settings": {
+                "menu": "footer"
+              }
+            },
+            "footer-2": {
+              "type": "newsletter",
+              "settings": {
+                "title": "Newsletter",
+                "subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {
+            "show_social_media": true,
+            "show_payment_icons": true
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slide-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "mobile_image": "",
+                "text_color": "#ffffff",
+                "title": "Tell your story",
+                "content": "Tell your story",
+                "content_position": "bottomLeft",
+                "button_background": "#ffffff",
+                "button_text_color": "#000000",
+                "button_text": "Button",
+                "link": ""
+              }
+            },
+            "slide-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "mobile_image": "",
+                "text_color": "#ffffff",
+                "title": "Tell your story",
+                "content": "Tell your story",
+                "content_position": "bottomLeft",
+                "button_background": "#ffffff",
+                "button_text_color": "#000000",
+                "button_text": "Button",
+                "link": ""
+              }
+            }
+          },
+          "block_order": [
+            "slide-0",
+            "slide-1"
+          ],
+          "settings": {
+            "edge_to_edge": true,
+            "section_size": "preserve_ratio",
+            "cycle_speed": 5
+          }
+        },
+        "collection-list": {
+          "type": "collection-list",
+          "blocks": {
+            "collection-0": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            },
+            "collection-1": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            },
+            "collection-3": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            },
+            "collection-4": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            },
+            "collection-5": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            }
+          },
+          "block_order": [
+            "collection-0",
+            "collection-1",
+            "collection-2",
+            "collection-3",
+            "collection-4",
+            "collection-5"
+          ],
+          "settings": {
+            "title": "Our collections",
+            "link_title": "View all",
+            "link": "shopify:\/\/collections"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
+          "settings": {
+            "product": "",
+            "title": "Featured product",
+            "selector_mode": "block",
+            "color_mode": "color",
+            "low_inventory_threshold": 0,
+            "zoom_effect": "outside",
+            "carousel_effect": "fade"
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "collection_image_size": "small",
+            "default_view_layout": "grid",
+            "show_quick_view": "list",
+            "show_quick_buy": "list",
+            "quick_links": "",
+            "filter_type": "tag"
+          }
+        },
+        "recently-viewed-products": {
+          "type": "recently-viewed-products",
+          "settings": {
+            "title": "Recently viewed"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "selector_mode": "block",
+            "color_mode": "color",
+            "low_inventory_threshold": 0,
+            "zoom_effect": "outside",
+            "carousel_effect": "fade",
+            "tab_page_1_handle": "",
+            "tab_page_2_handle": "",
+            "tab_page_3_handle": "",
+            "custom_security_badge": ""
+          }
+        },
+        "product-recommendations": {
+          "type": "product-recommendations",
+          "settings": {
+          }
+        },
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+            "background": "#1e2d7d",
+            "text_color": "#ffffff",
+            "text": "Announce something here",
+            "link": "",
+            "newsletter_button": "Subscribe & Save",
+            "newsletter_title": "Newsletter",
+            "newsletter_content": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          }
+        },
+        "1542984811767": {
+          "type": "featured-collection",
+          "settings": {
+            "collection": "",
+            "title": "Featured collection",
+            "products_count": 12,
+            "layout": "vertical",
+            "link_title": "View all"
+          }
+        },
+        "1542984842027": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Newsletter",
+            "content": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          }
+        },
+        "1542984882560": {
+          "type": "blog-posts",
+          "settings": {
+            "blog": "news",
+            "title": "Blog posts"
+          }
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "1542984811767",
+        "collection-list",
+        "1542984842027",
+        "featured-product",
+        "1542984882560"
+      ]
+    },
+    "Wood": {
+      "heading_color": "#3a2a2f",
+      "text_color": "#3a2a2f",
+      "accent_color": "#ff6128",
+      "link_color": "#ff6128",
+      "border_color": "#e7e2de",
+      "background": "#f7f4f2",
+      "secondary_background": "#ffffff",
+      "error_color": "#f71b1b",
+      "success_color": "#48b448",
+      "primary_button_background": "#ff6128",
+      "primary_button_text_color": "#ffffff",
+      "secondary_button_background": "#3a2a2f",
+      "secondary_button_text_color": "#ffffff",
+      "header_background": "#3a2a2f",
+      "header_text_color": "#ffffff",
+      "header_light_text_color": "#e9e2dd",
+      "header_accent_color": "#ff6128",
+      "product_on_sale_accent": "#ee0000",
+      "product_in_stock_color": "#008a00",
+      "product_low_stock_color": "#ee0000",
+      "product_sold_out_color": "#d1d1d4",
+      "product_label_1_background": "#ff6128",
+      "product_label_2_background": "#a95ebe",
+      "product_star_color": "#ffb647",
+      "footer_background_color": "#f7f4f2",
+      "footer_heading_text_color": "#3a2a2f",
+      "footer_body_text_color": "#3a2a2f",
+      "footer_accent_color": "#ff6128",
+      "base_text_font_size": 15,
+      "heading_font": "itc_avant_garde_gothic_n5",
+      "text_font": "basic_commercial_n4",
+      "underline_links": true,
+      "animation_image_zoom": true,
+      "search_mode": "product,article,page",
+      "show_vendor": true,
+      "show_secondary_image": true,
+      "show_discount": true,
+      "discount_mode": "percentage",
+      "product_price_position": "after_title",
+      "product_image_size": "square",
+      "show_color_swatch": false,
+      "show_inventory_quantity": true,
+      "low_inventory_threshold": 1,
+      "show_reviews_badge": false,
+      "cart_type": "drawer",
+      "cart_empty_button_link": "shopify:\/\/collections\/all",
+      "cart_show_checkout_button": true,
+      "cart_show_free_shipping_threshold": true,
+      "cart_free_shipping_threshold": "50",
+      "checkout_logo_position": "center",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#f7f4f2",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#ff6128",
+      "checkout_button_color": "#ff6128",
+      "checkout_error_color": "#f71b1b",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo": "",
+            "logo_max_width": 140,
+            "mobile_logo_max_width": 100,
+            "navigation_menu": "main-menu",
+            "desktop_navigation_layout": "inline",
+            "desktop_navigation_open_trigger": "hover",
+            "navigation_phone_number": "Call us 000-000-0000",
+            "navigation_email": "info@yourwebsite.com",
+            "search_menu": ""
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "text",
+              "settings": {
+                "title": "About the shop",
+                "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme settings.<\/p>"
+              }
+            },
+            "footer-1": {
+              "type": "links",
+              "settings": {
+                "menu": "footer"
+              }
+            },
+            "footer-2": {
+              "type": "newsletter",
+              "settings": {
+                "title": "Newsletter",
+                "subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {
+            "show_social_media": true,
+            "show_payment_icons": true
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slide-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "mobile_image": "",
+                "text_color": "#ffffff",
+                "title": "Tell your story",
+                "content": "Tell your story",
+                "content_position": "bottomLeft",
+                "button_background": "#ffffff",
+                "button_text_color": "#000000",
+                "button_text": "Button",
+                "link": ""
+              }
+            },
+            "slide-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "mobile_image": "",
+                "text_color": "#ffffff",
+                "title": "Tell your story",
+                "content": "Tell your story",
+                "content_position": "bottomLeft",
+                "button_background": "#ffffff",
+                "button_text_color": "#000000",
+                "button_text": "Button",
+                "link": ""
+              }
+            }
+          },
+          "block_order": [
+            "slide-0",
+            "slide-1"
+          ],
+          "settings": {
+            "edge_to_edge": true,
+            "section_size": "preserve_ratio",
+            "cycle_speed": 5
+          }
+        },
+        "collection-list": {
+          "type": "collection-list",
+          "blocks": {
+            "collection-0": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            },
+            "collection-1": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            },
+            "collection-2": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            },
+            "collection-3": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            },
+            "collection-4": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            },
+            "collection-5": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "image": ""
+              }
+            }
+          },
+          "block_order": [
+            "collection-0",
+            "collection-1",
+            "collection-2",
+            "collection-3",
+            "collection-4",
+            "collection-5"
+          ],
+          "settings": {
+            "title": "Our collections",
+            "link_title": "View all",
+            "link": "shopify:\/\/collections"
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "collection_image_size": "small",
+            "default_view_layout": "grid",
+            "show_quick_view": "list",
+            "show_quick_buy": "list",
+            "quick_links": "",
+            "filter_type": "tag"
+          }
+        },
+        "recently-viewed-products": {
+          "type": "recently-viewed-products",
+          "settings": {
+            "title": "Recently viewed"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "selector_mode": "block",
+            "color_mode": "color",
+            "low_inventory_threshold": 0,
+            "zoom_effect": "outside",
+            "carousel_effect": "fade",
+            "tab_page_1_handle": "",
+            "tab_page_2_handle": "",
+            "tab_page_3_handle": "",
+            "custom_security_badge": ""
+          }
+        },
+        "product-recommendations": {
+          "type": "product-recommendations",
+          "settings": {
+          }
+        },
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+            "background": "#3a2a2f",
+            "text_color": "#ffffff",
+            "text": "Announce something here",
+            "link": "",
+            "newsletter_button": "Subscribe & Save",
+            "newsletter_title": "Newsletter",
+            "newsletter_content": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          }
+        },
+        "1542984811767": {
+          "type": "featured-collection",
+          "settings": {
+            "collection": "",
+            "title": "Featured collection",
+            "products_count": 12,
+            "layout": "vertical",
+            "link_title": "View all"
+          }
+        },
+        "1550833441117": {
+          "type": "collection-with-image",
+          "settings": {
+            "collection": "",
+            "products_count": 12,
+            "image": "",
+            "background": "#3a2a2f",
+            "text_color": "#ffffff",
+            "title": "Our best sellers",
+            "content": "Shop our most popular products for this season.",
+            "button_background": "#e95d2b",
+            "button_text_color": "#ffffff",
+            "button_text": "Learn more",
+            "button_link": ""
+          }
+        },
+        "1555314133560": {
+          "type": "promotion-list",
+          "blocks": {
+            "1555314133560-0": {
+              "type": "item",
+              "settings": {
+                "image": "",
+                "show_overlay": false,
+                "stretch_image": false,
+                "background": "#6f42ef",
+                "text_color": "#ffffff",
+                "title": "Your heading",
+                "content": "Tell more about your product, collection...",
+                "button_background": "#ffffff",
+                "button_text_color": "#6f42ef",
+                "button_text": "Learn more",
+                "button_link": ""
+              }
+            },
+            "1555314133560-1": {
+              "type": "item",
+              "settings": {
+                "image": "",
+                "show_overlay": false,
+                "stretch_image": false,
+                "background": "#fc2a68",
+                "text_color": "#ffffff",
+                "title": "Your heading",
+                "content": "Tell more about your product, collection...",
+                "button_background": "#ffffff",
+                "button_text_color": "#fc2a68",
+                "button_text": "Learn more",
+                "button_link": ""
+              }
+            },
+            "1555314133560-2": {
+              "type": "item",
+              "settings": {
+                "image": "",
+                "show_overlay": false,
+                "stretch_image": false,
+                "background": "#26c1ce",
+                "text_color": "#ffffff",
+                "title": "Your heading",
+                "content": "Tell more about your product, collection...",
+                "button_background": "#ffffff",
+                "button_text_color": "#26c1ce",
+                "button_text": "Learn more",
+                "button_link": ""
+              }
+            }
+          },
+          "block_order": [
+            "1555314133560-0",
+            "1555314133560-1",
+            "1555314133560-2"
+          ],
+          "settings": {
+            "expand_items": false,
+            "section_size": "medium",
+            "stack_mobile": false
+          }
+        },
+        "1542984882560": {
+          "type": "blog-posts",
+          "settings": {
+            "blog": "news",
+            "title": "Blog posts"
+          }
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "1542984811767",
+        "1555314133560",
+        "collection-list",
+        "1550833441117",
+        "1542984882560"
+      ]
+    }
+  }
+}
