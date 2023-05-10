@@ -16,7 +16,7 @@
                   {{- link.title -}} {%- render 'icon', icon: 'arrow-right' -%}
                 </button>
               {%- else -%}
-                <a href="{{ link.url }}" class="mobile-menu__nav-link" data-type="menuitem">{{ link.title }}</a>
+                <a href="{{ link.url }}" class="mobile-menu__nav-link" data-type="menuitem" aria-label="{{ link.title | escape }}">{{ link.title }}</a>
               {%- endif -%}
             </li>
           {%- endfor -%}
