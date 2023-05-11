@@ -81,7 +81,7 @@
 		{%- paginate collection.products by items_per_page -%}
 			<div class="layout__section">
 				<div class="collection">
-					{%- unless collection.template_suffix == 'brand' -%}
+					{%- unless collection.template_suffix == 'brands' -%}
 						{%- if section.settings.show_collection_image and collection.image and collection.all_products_count > 0 -%}
 							{%- if section.settings.collection_image_size == 'preserve_ratio' -%}
 							{%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,500,600,700,800,900,1000, 1200, 1400, 1600', image: collection.image -%}{%- endcapture -%}
@@ -107,8 +107,8 @@
 					{%- endcomment -%}
 
 					<div class="card">
-						<header class="card__header {% unless collection.template_suffix == 'brand' %}card__header--tight{% endunless %}">
-							<div class="collection__header {% if collection.template_suffix == 'brand' %}collection__header--brand{% endif %}">
+						<header class="card__header {% unless collection.template_suffix == 'brands' %}card__header--tight{% endunless %}">
+							<div class="collection__header {% if collection.template_suffix == 'brands' %}collection__header--brand{% endif %}">
 							  	{%- if section.settings.show_collection_image and collection.image and collection.all_products_count > 0 and collection.template_suffix == 'brand' -%}
 								<div class="collection__brand-logo-wrapper hidden-pocket">
 								  	<div class="collection__brand-logo-image lazyload image--fade-in" data-bg="{{ collection.image | img_url: '250x' }}"></div>
