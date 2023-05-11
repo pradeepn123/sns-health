@@ -204,7 +204,7 @@
               "button_background": "#ffffff",
               "button_text_color": "#000000",
               "button_text": "",
-              "link": "shopify:\/\/collections\/vega-1"
+              "link": "shopify:\/\/collections\/vega"
             }
           },
           "6fcbfef9-c4c7-44e9-886f-37d48a1a6360": {
@@ -965,7 +965,7 @@
             "type": "question",
             "settings": {
               "title": "Do you offer a signature requirement option during checkout?",
-              "answer": "<p>Yes, we offer a signature requirement option during checkout. You can choose to require a signature at delivery for extra security, at no extra cost.<\/p><p>You can also choose to notify us  regarding your delivery preferences by leaving instructions at checkout. Orders with comment \"Leave at door\" will be reconsidered without signature service.<\/p><p>If no signature is chosen, you will be fully responsible for any loss, theft, or damage to your package after delivery.<\/p><p>If we don't have a selected option from you, we will select signature at delivery as default option, to protect you from porch pirates.<\/p>"
+              "answer": "<p>Yes, we offer a signature requirement option during checkout. You can choose to require a signature at delivery for extra security, at no extra cost.<\/p><p>You can also choose to notify us  regarding your delivery preferences by leaving instructions at checkout. Orders with comment \"Leave at door\" will be reconsidered without signature service.<\/p><p><strong>If no signature is chosen, you will be fully responsible for any loss, theft, or damage to your package after delivery.<\/strong><\/p><p>If we don't have a selected option from you, we will select signature at delivery as default option, to protect you from porch pirates.<\/p>"
             }
           },
           "24408dbf-23fc-4ebf-9691-9036e5abdbad": {
