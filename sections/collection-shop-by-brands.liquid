@@ -109,7 +109,7 @@
 					<div class="card">
 						<header class="card__header {% unless collection.template_suffix == 'brands' %}card__header--tight{% endunless %}">
 							<div class="collection__header {% if collection.template_suffix == 'brands' %}collection__header--brand{% endif %}">
-							  	{%- if section.settings.show_collection_image and collection.image and collection.all_products_count > 0 and collection.template_suffix == 'brand' -%}
+							  	{%- if section.settings.show_collection_image and collection.image and collection.all_products_count > 0 and collection.template_suffix == 'brands' -%}
 								<div class="collection__brand-logo-wrapper hidden-pocket">
 								  	<div class="collection__brand-logo-image lazyload image--fade-in" data-bg="{{ collection.image | img_url: '250x' }}"></div>
 								</div>
@@ -117,7 +117,7 @@
 							  
 								<div class="collection__header-inner">
 									<div class="collection__meta">
-									  	{%- if section.settings.show_collection_image and collection.image and collection.all_products_count > 0 and collection.template_suffix == 'brand' -%}
+									  	{%- if section.settings.show_collection_image and collection.image and collection.all_products_count > 0 and collection.template_suffix == 'brands' -%}
 										<div class="collection__brand-logo-wrapper hidden-lap-and-up">
 										  	<div class="collection__brand-logo-image lazyload image--fade-in" data-bg="{{ collection.image | img_url: '250x' }}"></div>
 										</div>
