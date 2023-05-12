@@ -19,16 +19,9 @@
         "open_group_filters_mode": "all_open",
         "filter_group_order": "Brand"
       }
-    },
-    "recently-viewed-products": {
-      "type": "recently-viewed-products",
-      "settings": {
-        "title": "Recently viewed"
-      }
     }
   },
   "order": [
-    "collection-template",
-    "recently-viewed-products"
+    "collection-template"
   ]
 }
