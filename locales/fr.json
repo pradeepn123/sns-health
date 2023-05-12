@@ -478,5 +478,18 @@
     "month_day_year": "%d %B %Y",
     "short_month_day_year": "%d\/%B\/%Y",
     "month_day_year_time": "%d %B %Y à %I:%M"
+  },
+  "sections": {
+    "byob-bundle-info": {
+      "selectOnce": "L'article ne peut être sélectionné qu'une seule fois !",
+      "createAnother": "Créer un autre lot"
+    },
+    "byob-subscription": {
+      "CTAbuttonText": "Ajouter au panier",
+      "purchaseOptions": "Options d'achat :",
+      "oneTimePurchase": "Achat en un click",
+      "itemAddedAlert": "Les articles d'abonnement ont été ajoutés au panier !",
+      "optionMissedAlert": "Veuillez sélectionner votre option d'abonnement !"
+    }
   }
 }
