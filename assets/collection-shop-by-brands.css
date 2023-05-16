@@ -202,7 +202,7 @@ border: 2px solid #FFFFFF !important;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1px 10px;
-    background: gray;
+    background: lightgray;
     border-radius: 50%;
 }
 .image-flex-one{
@@ -242,7 +242,7 @@ border: 2px solid #FFFFFF !important;
 }
 @media(max-width:1200px){
     .previous , .next{
-        top: 334px !important;
+        top: 331px !important;
     }
 }
 @media(max-width:1179px) and (min-width:641px){
