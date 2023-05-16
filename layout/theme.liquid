@@ -59,7 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% include 'limespot' %}  
     {%- comment -%}Few prefech to increase performance on commonly used third-parties{%- endcomment -%}
     <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
-    <link rel="preload" as="script" href="{{ 'theme.min.js' | asset_url }}">
+    <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
     {%- comment -%}
       
       <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
@@ -72,6 +72,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {% render 'social-meta-tags' %}
     {% render 'css-variables' %}
+
+    {{ 'collection-shop-by-brands.css' | asset_url | stylesheet_tag }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
     <!-- starapps_scripts_start -->
     <!-- This code is automatically managed by StarApps Studio -->
@@ -152,7 +156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <script src="{{ 'customer_area.js' | shopify_asset_url }}" defer></script>
     {%- endif -%}
 
-    <script src="{{ 'theme.min.js' | asset_url }}" defer type="text/javascript"></script>
+    <script src="{{ 'theme.js' | asset_url }}" defer type="text/javascript"></script>
     <script data-src="{{ 'custom.js' | asset_url }}" defer type="sT_lazyLoad__init"></script>
 
     {%- if request.page_type != 'cart' -%}

@@ -13568,6 +13568,7 @@
       }
 
       this._attachListeners();
+      this._initCollectionBanner();
     }
 
     _createClass(CollectionSection, [{
@@ -13588,6 +13589,19 @@
 
           this._showingCountChanged(this.options['defaultProductsPerPage']);
         }
+      }
+    }, {
+      key: "_initCollectionBanner",
+      value: function _initCollectionBanner() {
+        console.log("init here")
+        if (document.querySelector(".testimonial")){
+          console.log('hhhhhhhh')
+            this.flickityInstance = new js(document.querySelector('.testimonial'), {
+              prevNextButtons: true,
+              contain: true
+            });
+        }
+        
       }
     }, {
       key: "_attachListeners",

@@ -1501,6 +1501,31 @@
             "type": "selected_collection",
             "settings": {
               "featured_collection_item": "acure"
+      "collection-shop-by-brands": {
+        "type": "collection-shop-by-brands",
+        "blocks": {
+          "17d9f299-f11e-42cc-a7f4-eddb83cd618d": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 2,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p><br\/>- Jeanne W<\/p>"
+            }
+          },
+          "d82f7c59-edb9-4677-839a-9b030323340b": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 5,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3 I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p>- Jeanne W<\/p>"
+            }
+          },
+          "89e2c4e9-d225-4606-9726-7663677947d3": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 1,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p>- Jeanne W<\/p>"
             }
           }
         },
@@ -1517,6 +1542,26 @@
           "align_text": "left",
           "brand_title": "",
           "brand_align_text": "left"
+          "17d9f299-f11e-42cc-a7f4-eddb83cd618d",
+          "d82f7c59-edb9-4677-839a-9b030323340b",
+          "89e2c4e9-d225-4606-9726-7663677947d3"
+        ],
+        "settings": {
+          "show_collection_image": true,
+          "collapse_collection_description": false,
+          "collection_image_size": "small",
+          "products_per_row": "4",
+          "default_products_per_page": 24,
+          "default_view_layout": "grid",
+          "show_quick_buy": "list",
+          "show_quick_view": "list",
+          "quick_links": "",
+          "quick_links_show_products_count": true,
+          "show_filters": true,
+          "show_filter_color_swatch": true,
+          "filter_type": "tag",
+          "open_group_filters_mode": "all_closed",
+          "filter_group_order": ""
         }
       }
     },
