@@ -69,3 +69,20 @@
         scroll-snap-align: start;
     }
 }
+
+/* Shop by Brands Featured Collection */
+.shop_by_brands_parent .collection-block-item__title{
+    position: relative;
+    transform: translate(0, 0);
+    text-align: left;
+    color: #000;
+    text-shadow: none;
+    top: 0;
+    left: 0;
+    font-size: 17px;
+    padding: 20px 0 5px 0;
+    margin-bottom: 0;
+}
+.shop_by_brands_parent .shop_by_brands_button{
+    display: block;
+}
