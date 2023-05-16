@@ -15726,6 +15726,18 @@
     return VideoSection;
   }();
 
+  var ShopByBrands = /*#__PURE__*/function () {
+    function ShopByBrands(element) {
+      _classCallCheck(this, ShopByBrands);
+      this.element = element;
+      this.flickityInstance = new js(this.element.querySelector('.shop_by_brands_parent'), {
+        groupCells: true
+      });
+    }
+
+    return ShopByBrands;
+  }();
+
   var smoothscroll = createCommonjsModule(function (module, exports) {
     /* smoothscroll v0.4.4 - 2019 - Dustan Kasten, Jeremias Menichelli - MIT License */
     (function () {
@@ -18232,6 +18244,7 @@
       sections.register('slideshow', SlideshowSection);
       sections.register('text-with-icons', TextWithIconsSection);
       sections.register('video', VideoSection);
+      sections.register('shop-by-brands', ShopByBrands);
       /**
        * ----------------------------------------------------------------------------
        * RTE
