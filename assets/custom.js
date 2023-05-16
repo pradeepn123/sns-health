@@ -78,14 +78,6 @@ playPauseButton.addEventListener('click', () => {
 		videoElement.pause();
 	}
 });
-// videoElement.addEventListener("mouseout", function (e) {
-//   console.log('pauuuuuusseeeeeout')
-//     e.style.display = "none";
-// })
-// videoElement.addEventListener("mouseover", function (e) {
-//   console.log('pauuuuuusseeeee')
-//     e.style.display = "block";
-// })
 
 videoElement.addEventListener('ended', () => {
 	playPauseButton.classList.remove('playing');
