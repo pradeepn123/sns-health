@@ -1464,6 +1464,31 @@
           "cycle_speed": 5
         }
       },
+      "collection-shop-by-brands": {
+        "type": "collection-shop-by-brands",
+        "blocks": {
+          "17d9f299-f11e-42cc-a7f4-eddb83cd618d": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 2,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p><br\/>- Jeanne W<\/p>"
+            }
+          },
+          "d82f7c59-edb9-4677-839a-9b030323340b": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 5,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3 I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p>- Jeanne W<\/p>"
+            }
+          },
+          "89e2c4e9-d225-4606-9726-7663677947d3": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 1,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p>- Jeanne W<\/p>"
       "shop-by-brands": {
         "type": "shop-by-brands",
         "blocks": {
@@ -1562,6 +1587,18 @@
           "filter_type": "tag",
           "open_group_filters_mode": "all_closed",
           "filter_group_order": ""
+          "12c8bddc-2b8f-4e55-b6d8-95663ac5d2ad",
+          "bf7edbd5-2119-4522-aa90-1f3169224514",
+          "c05e58e8-f5d5-4411-8d0b-2ee1464b6549",
+          "1b0c36f0-9eef-47ec-9b8a-6dd7e9d4fbd6",
+          "2931afe1-807e-4bc2-8df0-45ef2d6f11f2",
+          "7a2f6441-604f-42a0-8110-9957f6daae87"
+        ],
+        "settings": {
+          "title": "Shop By Brand",
+          "align_text": "left",
+          "brand_title": "",
+          "brand_align_text": "left"
         }
       }
     },
