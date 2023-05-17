@@ -5,18 +5,16 @@
     background: #F4E6DB;
 }
 .logo-slider-flex .card__header {
-    padding: 55px 40px 0 !important;
+   padding: 0;
 }
 .collection__header--brand {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .collection__brand-logo-wrapper {
     margin-bottom: 45px;
     height: 70px;
-}
-.collection__header-inner{
-    margin-bottom: 95px;
 }
 .collection__title{
     font-weight: 400 !important;
@@ -55,6 +53,11 @@
 }
 .logo-container{
     width: 37%;
+    padding: 55px 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 .slider{
     width: 63%;
@@ -86,13 +89,13 @@
     left: 48%;
 }
 .dot{
-display:inline-block;
-border-radius:50%;
-background:#D9D9D9;
-opacity: 0.5;
-padding:5px;
-margin:0 5px;
-}
+    display:inline-block;
+    border-radius:50%;
+    background:#D9D9D9;
+    opacity: 0.5;
+    padding:5px;
+    margin:0 5px;
+    }
 .container--flush{
     margin-bottom: 20px;
 }
@@ -236,11 +239,6 @@ margin:0 5px;
 .play-btn{
     padding: 10px;
 }
-@media(max-width:1280px){
-    .collection__header-inner{
-        margin-bottom: 36px;
-    }
-}
 @media(max-width:1200px){
     .testimonial .previous ,.testimonial .next{
         top: 331px !important;
@@ -310,18 +308,12 @@ margin:0 5px;
     .collection__title{
         font-size: 12px !important;
     }
-    .collection__header-inner{
-        margin-bottom: 25px !important;
-    }
     .hero-images img{
         height: 240px !important;
     }
     .text-on-image{
         font-size: 16px !important;
         line-height: 24px !important;
-    }
-    .logo-slider-flex .card__header {
-        padding: 21px 10px 0 !important;
     }
     #dot{
         left: 44%;
