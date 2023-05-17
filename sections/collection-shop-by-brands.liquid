@@ -242,6 +242,7 @@
     <div class="container container--flush testimonial-imagevide-wrap">
         <div class="testimonial">
             {%- for block in section.blocks -%}
+			{%- if block.type == "slide" -%}
             <div class="rating-message">
                 <div class="two">
                     {% assign count_gold_stars = block.settings.star_rating %}
@@ -260,6 +261,7 @@
                 <h2 class="review-message">{{ block.settings.review-Message }}</h2>
                 {%- endif -%}
             </div>
+			{%- endif -%}
             {%-endfor-%}
         </div>
         <!-- end part -->
