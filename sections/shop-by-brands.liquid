@@ -81,9 +81,18 @@
                           {% endif %}
                         {% endfor %}
                         {% if collectionMetafield.value.size > 2 %}
+                        <div class="tooltip">
+                          <span class="tooltipText">
+                            {% for item in collectionMetafield.value %}
+                              <ul class="">
+                                <li>{{ item }}</li>
+                              </ul>
+                            {% endfor %}
+                          </span>
                           <span class="shop_by_brands_metafield_tags">
                             +{{ collectionMetafield.value.size | minus : 2}}
                           </span>
+                        </div>
                         {% endif %}
                       </div>
                     {% endif %}
