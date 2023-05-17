@@ -1521,6 +1521,37 @@
       },
       "collection-shop-by-brands": {
         "type": "collection-shop-by-brands",
+        "blocks": {
+          "5c1a8763-e6bc-418f-a2f6-a1982f307497": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 5,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”- Jeanne W<\/p>"
+            }
+          },
+          "56fc10ed-06e3-4149-a41d-f5dfb6c5bf74": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 5,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”- Jeanne W<\/p>"
+            }
+          },
+          "8e70b4f3-6aa6-4f5f-bd2d-4681b78dc39f": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 5,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”- Jeanne W<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "5c1a8763-e6bc-418f-a2f6-a1982f307497",
+          "56fc10ed-06e3-4149-a41d-f5dfb6c5bf74",
+          "8e70b4f3-6aa6-4f5f-bd2d-4681b78dc39f"
+        ],
         "settings": {
           "show_collection_image": true,
           "collapse_collection_description": false,
