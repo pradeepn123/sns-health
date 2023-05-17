@@ -1,10 +1,10 @@
 .layout{
     margin-top: 23px;
 }
-.card__header {
+.logo-slider-flex .card__header {
     background: #F4E6DB;
 }
-.card__header {
+.logo-slider-flex .card__header {
     padding: 55px 40px 0 !important;
 }
 .collection__header--brand {
@@ -231,7 +231,7 @@ border: 2px solid #FFFFFF !important;
     top: 280px !important;
     left: 35px !important;
 }
-.testimonial.next{
+.testimonial .next{
     top: 280px !important;
     left: 95px !important;
 }
@@ -319,7 +319,7 @@ border: 2px solid #FFFFFF !important;
         font-size: 16px !important;
         line-height: 24px !important;
     }
-    .card__header {
+    .logo-slider-flex .card__header {
         padding: 21px 10px 0 !important;
     }
     #dot{
