@@ -13569,7 +13569,8 @@
 
       this._attachListeners();
       this._initCollectionBanner();
-      this._initpromoFlickity()
+      this._initpromoFlickity();
+      this._sliderFlickity();
     }
 
     _createClass(CollectionSection, [{
@@ -13615,7 +13616,20 @@
           document.addEventListener("theme:boost:init", this._initpromoFlickity.bind(this))
         }
       }
-    }, {
+    },{
+      key: "_sliderFlickity",
+      value: function _sliderFlickity() {
+        if (document.querySelector(".logo-slider-flex .sliding_images_container")){
+          this.flickityInstance = new js(document.querySelector('.logo-slider-flex .sliding_images_parent'), {
+          prevNextButtons: false,
+          pageDots: true,
+          contain: true,
+          groupCells: true
+        });
+      }
+      }
+    },
+    {
       key: "_attachListeners",
       value: function _attachListeners() {
         var _this = this;

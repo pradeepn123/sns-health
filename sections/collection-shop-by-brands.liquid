@@ -170,17 +170,16 @@
     </div>
         <!-- end page  -->
         <!-- image slider start -->
-        <div class="slider">
-            {%- for block in collection.metafields.custom.hero_image_slider.value['slider'] -%} 
-            <div class="slides">
-                {% if block.image != blank %}<div class="hero-images"><img src="{{block.image}}" alt=""></div>{% endif %}
-                <p class="text-on-image">{{block.text}}</p>
-            </div>
-            {%- endfor -%}
-            <div id="dot"><span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
+        <div class="sliding_images_parent">
+            {%- for block in collection.metafields.custom.hero_image_slider.value['slider'] -%}
+                <div class="sliding_images_container">
+                    {% if block.image != blank %}
+                        {% comment %} <img class="sliding_image" src="{{block.image}}" alt=""> {% endcomment %}
+                        <div class="sliding_images_content" style="background-image: url({{ block.image }})">{{block.text}}</div>
+                        {% comment %} <p class="textOnImage">{{block.text}}</p> {% endcomment %}
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
         <!-- end slider -->
     </div>
