@@ -31,7 +31,7 @@ var boostPFSTemplate = {
                                     '</div>' +
                                 '</a>' +
                                 '<div class="product-item__info">' +
-                                    '<div class="offer__badge">10% off</div>' + 
+                                    '{{itemInfoRow}}' +
                                     '<div class="product-item__info-inner">' +
                                         '{{itemInfo}}' +
                                         '{{itemReviews}}' +
@@ -203,6 +203,8 @@ var boostPFSTemplate = {
             imagePadding = 100 / (images[0].width / images[0].height);
         }
         itemHtml = itemHtml.replace(/{{imagePadding}}/g, imagePadding);
+
+        itemHtml = itemHtml.replace(/{{itemInfoRow}}/g, buildItemRow(data));
 
         // Add Images
         itemHtml = itemHtml.replace(/{{itemImages}}/g, buildImages(data));
@@ -447,6 +449,31 @@ var boostPFSTemplate = {
         }
 
         return firstImageHtml + secondImageHtml;
+    }
+
+    function buildItemRow(data) {
+        console.log(data)
+        content = `<div class="grid-item-row-info">`
+        if (data.compare_at_price_max) {
+            // Do something
+            discount = ((data.compare_at_price_min - data.price_min) / data.compare_at_price_min) * 100
+            content += `<div>
+                <div class="offer__badge">${Math.ceil(discount)}% off</div>
+            </div>`
+        }
+//        content += `<div>
+//            <div class="yotpo bottomLine"
+//                data-yotpo-element-id="1"
+//                data-appkey="AlaG2GzHOSeeH1BpRHu56aGvz9s0BudbIHVVuFIp"
+//                data-domain="sports-nutrition-source-canada.myshopify.com"
+//                data-product-id="${data.id}"
+//                data-product-models="${data.id}"
+//                data-name="${data.title}"
+//                data-url="https://sports-nutrition-source-canada.myshopify.com/products/${data.handle}">
+//            </div>
+//        </div>`
+        content += '</div>'
+        return content
     }
 
     function buildPromoImages(data) {
