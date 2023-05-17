@@ -13569,6 +13569,7 @@
 
       this._attachListeners();
       this._initCollectionBanner();
+      this._initpromoFlickity()
     }
 
     _createClass(CollectionSection, [{
@@ -13593,15 +13594,26 @@
     }, {
       key: "_initCollectionBanner",
       value: function _initCollectionBanner() {
-        console.log("init here")
         if (document.querySelector(".testimonial")){
-          console.log('hhhhhhhh')
-            this.flickityInstance = new js(document.querySelector('.testimonial'), {
-              prevNextButtons: true,
-              contain: true
-            });
+          this.flickityInstance = new js(document.querySelector('.testimonial'), {
+            prevNextButtons: true,
+            contain: true
+          });
         }
-        
+      }
+    }, {
+      key: "_initpromoFlickity",
+      value: function _initpromoFlickity() {
+        const promoProductWrapper = document.querySelector(".promo-products__wrapper")
+        if (promoProductWrapper){
+          this.flickityInstance1 = new js(promoProductWrapper, {
+            pageDots: true,
+            prevNextButtons: true,
+            contain: true
+          });
+        } else {
+          document.addEventListener("theme:boost:init", this._initpromoFlickity.bind(this))
+        }
       }
     }, {
       key: "_attachListeners",
@@ -18512,3 +18524,38 @@
   })();
 
 })));
+
+
+class TickerHandler extends HTMLElement {
+  constructor() {
+    super();
+    this.width = 0;
+    this.ticker = this.querySelector('.ticker__container');
+    Shopify.designMode ? setTimeout(this.resizeHandler.bind(this), 100) : this.resizeHandler();
+    window.addEventListener("resize", this.resizeHandler.bind(this), false);
+  }
+
+  resizeHandler(){
+    if(this.width == window.innerWidth) return;
+    this.width = window.innerWidth;
+    this.ticker.classList.remove('ticker--animation');
+    var boxes = this.querySelectorAll('.ticker--clone');
+    if(boxes.length){
+      boxes.forEach(e => e.remove());
+    }
+    var length = window.innerWidth / this.ticker.offsetWidth,
+      clone = false;
+    length = length==Infinity?5:length;
+    for(var i=0; i < length; i++){
+      clone = this.ticker.cloneNode(true);
+      clone.classList.add('ticker--clone');
+      clone.classList.add('ticker--animation');
+      this.append(clone);
+    }
+    this.ticker.classList.add('ticker--animation');
+  }
+}
+
+if (customElements.get("ticker-section")) {
+  customElements.define('ticker-section', TickerHandler);
+}
