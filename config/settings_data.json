@@ -1565,12 +1565,11 @@
           },
           "b5971ab5-65c9-40b7-9e07-ed568722d2e6": {
             "type": "promo",
-            "disabled": true,
             "settings": {
-              "collection": "ancient-nutrition",
-              "image": "shopify:\/\/shop_images\/ONE-SMORES_1.jpg",
+              "collection": "new-arrivals",
+              "image": "shopify:\/\/shop_images\/Mask_group.png",
               "position": 4,
-              "title": "<p>New Collections<\/p>"
+              "title": "<p>New Arrivals<\/p>"
             }
           },
           "d5de926c-3fa4-4888-b020-dea2e50b9a0c": {

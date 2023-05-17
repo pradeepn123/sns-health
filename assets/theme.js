@@ -14707,12 +14707,22 @@
         this._setupCssVariablesListener = this._setupCssVariables.bind(this);
         window.addEventListener('resize', this._setupCssVariablesListener);
         this.delegateElement.on('click', '[data-action="toggle-search"]', this._toggleMobileSearch.bind(this));
+        this.flickityInstances = {}
+        document.addEventListener("theme:customFlickity:init", this._initCustomFlickity.bind(this))
       }
       /**
        * We have some positioning that is based on the CSS variables, so we must make sure to update them whenever
        * the section is reloaded into the editor
        */
 
+    }, {
+      key: "_initCustomFlickity",
+      value: function(e) {
+        const selectorElement = document.querySelector(e.detail.selector)
+        if (selectorElement){
+          this.flickityInstances[e.detail.selector] = new js(selectorElement, e.detail.config);
+        }
+      }
     }, {
       key: "_setupCssVariables",
       value: function _setupCssVariables() {
