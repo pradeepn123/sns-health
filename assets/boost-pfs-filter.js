@@ -25,11 +25,14 @@ var boostPFSTemplate = {
 
     // Grid Template
     'productGridItemHtml':  '<div class="product-item product-item--vertical 1/3--tablet-and-up {{gridWidthClass}} ">' +
-                                '<a href="{{itemUrl}}" class="product-item__image-wrapper {{imageWrapperClass}}">' +
-                                    '<div class="aspect-ratio {{imageAspectRatioClass}}" style="padding-bottom: {{imagePadding}}%">' +
-                                        '{{itemImages}}' +
-                                    '</div>' +
-                                '</a>' +
+                                '<div class="product-item__image-wrapper {{imageWrapperClass}}">' +
+                                    '<a href="{{itemUrl}}">' +
+                                        '<div class="aspect-ratio {{imageAspectRatioClass}}" style="padding-bottom: {{imagePadding}}%">' +
+                                            '{{itemImages}}' +
+                                        '</div>' +
+                                    '</a>' +
+                                    '{{quickViewButton}}' + 
+                                '</div>' +
                                 '<div class="product-item__info">' +
                                     '{{itemInfoRow}}' +
                                     '<div class="product-item__info-inner">' +
@@ -40,6 +43,7 @@ var boostPFSTemplate = {
                                     '{{itemQuickView}}' +
                                 '</div>' +
                             '</div>',
+    'quickViewButton': '<button type="button" class="product-item__quickview-button product-item__action-button {{quickViewButtonClass}} button button--small button--ternary hidden-phone" data-action="open-modal" data-secondary-action="open-quick-view" aria-controls="modal-quick-view-'+ boostPFSConfig.custom.template +'-template" data-product-url="{{itemUrl}}">' + boostPFSConfig.label.quick_view +  '</button>',
 
     //QuickView template
     'quickViewHtml':    '<form method="post" action="/cart/add" id="product_form_{{itemId}}" accept-charset="UTF-8" class="product-item__action-list {{quickViewClass}} button-stack" enctype="multipart/form-data">' +
@@ -48,7 +52,6 @@ var boostPFSTemplate = {
                             '<input type="hidden" name="quantity" value="1">' +
                             '<input type="hidden" name="id" value="{{variantId}}">' +
                             '{{quickBuy}}' +
-                            '<button type="button" class="product-item__action-button {{quickViewButtonClass}} button button--small button--ternary hidden-phone" data-action="open-modal" data-secondary-action="open-quick-view" aria-controls="modal-quick-view-'+ boostPFSConfig.custom.template +'-template" data-product-url="{{itemUrl}}">' + boostPFSConfig.label.quick_view +  '</button>' +
                         '</form>',
 
     //QuickBuy Template
@@ -242,6 +245,7 @@ var boostPFSTemplate = {
 
         // Add Quickview
         itemHtml = itemHtml.replace(/{{itemQuickView}}/g, buildQuickView(data));
+        itemHtml = itemHtml.replace(/{{quickViewButton}}/g, buildQuickButton(data));
 
 
         // Add main attribute (Always put at the end of this function)
@@ -690,6 +694,16 @@ var boostPFSTemplate = {
             quickViewHtml = quickViewHtml.replace(/{{quickViewButtonClass}}/g, quickViewButtonClass);
         }
         return quickViewHtml;
+    }
+
+    function buildQuickButton(data) {
+        var quickBuyHtml = '';
+        //Quick buy button
+        if (data.variants && data.variants.length > 0) {
+            quickBuyHtml = boostPFSTemplate.quickViewButton;
+        }
+        quickBuyHtml = quickBuyHtml.replace(/{{quickViewButtonClass}}/g, '');
+        return quickBuyHtml;
     }
 
 
