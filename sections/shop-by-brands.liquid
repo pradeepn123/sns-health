@@ -9,6 +9,14 @@
       max-width: {{ max_width_desktop }}px;
     }
   }
+  {%- for block in section.blocks -%}
+    {%- if block.settings.show_overlay -%}
+      .collection-block-item--overlay:before {
+        {%- assign overlay_opacity = block.settings.overlay_opacity | divided_by: 100.0 -%}
+        background: linear-gradient(to top, rgba(0, 0, 0, 0) 15%, {{ '#000000' | color_modify: 'alpha', overlay_opacity }});
+      }
+    {%- endif -%}
+  {%- endfor -%}
 {% endstyle %}
 <section data-section-id="{{ section.id }}" data-section-type="shop-by-brands">
   <div class="container">
@@ -57,7 +65,7 @@
             <div class="grid__cell 1/2--tablet 1/3--lap-and-up">
               <a href="{{ collection.url }}" class="collection-block-item collection-block-item--overlay">
                 <div class="aspect-ratio" style="padding-bottom: 45%">
-                  <div class="collection-block-item__image lazyload image--fade-in" data-bg="{{ collection.image | img_url: '850x' }}"></div>
+                  <div class="collection-block-item__image lazyload image--fade-in" data-bg="{{ block.settings.featured_collection_image | default: collection.image | img_url: '850x' }}"></div>
                 </div>
               </a>
                 <div class="shop_by_brands_child_container">
@@ -73,7 +81,9 @@
                           {% endif %}
                         {% endfor %}
                         {% if collectionMetafield.value.size > 2 %}
-                          +{{ collectionMetafield.value.size | minus : 2}}
+                          <span class="shop_by_brands_metafield_tags">
+                            +{{ collectionMetafield.value.size | minus : 2}}
+                          </span>
                         {% endif %}
                       </div>
                     {% endif %}
@@ -258,6 +268,28 @@
           "type": "collection",
           "id": "featured_collection_item",
           "label": "Choose a Featured Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "featured_collection_image",
+          "label": "Choose a Featured Collection Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_overlay",
+          "label": "Show overlay",
+          "info": "Increase text readability on busy images.",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "label": "Overlay opacity",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "%",
+          "default": 20
         }
       ]
     }
