@@ -15757,7 +15757,8 @@
       _classCallCheck(this, ShopByBrands);
       this.element = element;
       this.flickityInstance = new js(this.element.querySelector('.shop_by_brands_parent'), {
-        groupCells: true
+        groupCells: true,
+        cellAlign: 'left'
       });
     }
 

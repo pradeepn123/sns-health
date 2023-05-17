@@ -86,3 +86,73 @@
 .shop_by_brands_parent .shop_by_brands_button{
     display: block;
 }
+.shop_by_brands_parent .shop_by_brands_metafield_tags_parent{
+    margin-top: 16px;
+}
+.shop_by_brands_parent .shop_by_brands_metafield_tags_parent .shop_by_brands_metafield_tags {
+    background: #FFFFFF;
+    border: 1px solid #C5C5C5;
+    padding: 5px 12px;
+    border-radius: 16px;
+    margin-right: 10px;
+    color: #4D4949;
+    display: inline-block;
+}
+.shop_by_brands_parent .shop_by_brands_button {
+    margin-top: 15px;
+    display: block;
+    background: #ED1C24;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.shop_by_brands_parent .flickity-prev-next-button.next{
+    right: 0;
+    top: -80px;
+}
+.shop_by_brands_parent .flickity-prev-next-button.previous{
+    left: unset;
+    top: -80px;
+    right: 60px;
+}
+.shop_by_brands_parent.flickity-enabled:hover .flickity-prev-next-button:not([disabled]){
+    transform: scale(0.7);
+}
+.shop_by_brands_parent .shop_by_brands_child_container {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    padding: 0 20px 20px;
+}
+.shop_by_brands_parent .collection-block-item {
+    border-radius: 0;
+}
+.shop_by_brands_parent .collection-block-item .collection-block-item__image{
+    background-position: 10%;
+}
+.shop_by_brands_parent .grid__cell {
+    padding: 0 4px 30px 30px;
+}
+.shop_by_brands_parent .shop_by_brands_metafield_tags_parent .shop_by_brands_metafield_tags{
+    margin-top: 8px;
+    font-size: 14px;
+}
+.no-filter-results {
+    width: 100%;
+    font-weight: 500;
+    padding: 1em;
+}
+@media (max-width: 641px){
+    .shop_by_brands_parent .shop_by_brands_child_container {
+        padding: 0 10px 10px;
+    }
+    .shop_by_brands_parent .shop_by_brands_metafield_tags_parent .shop_by_brands_metafield_tags{
+        margin-top: 8px;
+    }
+    .shop_by_brands_parent .flickity-page-dots {
+        bottom: -15px !important;
+    }
+}
