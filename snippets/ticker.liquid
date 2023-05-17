@@ -1,0 +1,102 @@
+<style>
+  [id*='ticker-'] {
+    display: block;
+    text-decoration: none;
+    color: black;
+  }
+  .no-js ticker-section {
+    display: none;
+  }
+  .ticker {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+  }
+  .ticker__container {
+    display: flex;
+    align-items: center;
+  }
+  .ticker--animation {
+    animation: ticker var(--ticker-delay, 15s) infinite linear;
+  }
+  .ticker--animation.ticker-to-right {
+    animation-direction: reverse;
+  }
+  [id*='ticker']:hover .ticker__container {
+    animation-play-state: paused;
+  }
+  .ticker__container p {
+    margin-top: 0;
+    margin-left: 70px;
+    white-space: nowrap;
+  }
+  .section-background {
+    padding: 20px 0;
+    margin-bottom: 10px;
+    background: #f4e6db;
+  }
+  .section-background--xsmall .ticker.ticker-text-2 {
+    line-height: 130%;
+  }
+  .ticker__container p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ticker__container p svg{
+    padding-right: 10px;
+  }
+  @media (max-width: 576px) {
+    .ticker__icon,
+    .ticker__container p {
+      margin-left: 50px;
+    }
+  }
+  @-moz-keyframes ticker {
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @-webkit-keyframes ticker {
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @-o-keyframes ticker {
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes ticker {
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+
+<div
+  id="ticker-template--16036643504325__df941fc9-53f6-4891-b906-65045bbeef39"
+  class="top-spacing-medium section-background section-background--small"
+  data-section-name="ticker"
+>
+  <ticker-section class="ticker ticker-text-5" style="--ticker-delay:10s">
+    <div class="ticker__container ticker-to-left ticker--animation">
+      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
+    </div>
+    <div class="ticker__container ticker-to-left ticker--clone ticker--animation">
+      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
+    </div>
+    <div class="ticker__container ticker-to-left ticker--clone ticker--animation">
+      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
+    </div>
+    <div class="ticker__container ticker-to-left ticker--clone ticker--animation">
+      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
+    </div>
+    <div class="ticker__container ticker-to-left ticker--clone ticker--animation">
+      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
+    </div>
+    <div class="ticker__container ticker-to-left ticker--clone ticker--animation">
+      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
+    </div>
+  </ticker-section>
+</div>
