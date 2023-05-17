@@ -35,32 +35,34 @@
  */
 
 // hero banner auto slider
-var index = 0;
-var slides = document.querySelectorAll(".slides");
-var dot = document.querySelectorAll(".dot");
+// console.log("yyyyyyyyyyyyyyyyyyyyyyyyy")
 
-function changeSlide() {
+// var index = 0;
+// var slides = document.querySelectorAll(".slides");
+// var dot = document.querySelectorAll(".dot");
 
-  if (index < 0) {
-    index = slides.length - 1;
-  }
+// function changeSlide() {
 
-  if (index > slides.length - 1) {
-    index = 0;
-  }
+//   if (index < 0) {
+//     index = slides.length - 1;
+//   }
 
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    dot[i].classList.remove("active");
-  }
+//   if (index > slides.length - 1) {
+//     index = 0;
+//   }
 
-  slides[index].style.display = "block";
-  dot[index].classList.add("active");
-  index++;
-  setTimeout(changeSlide, 2000);
+//   for (let i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";
+//     dot[i].classList.remove("active");
+//   }
 
-}
-changeSlide();
+//   slides[index].style.display = "block";
+//   dot[index].classList.add("active");
+//   index++;
+//   setTimeout(changeSlide, 2000);
+
+// }
+// changeSlide();
 
 // video control
 // const videoElement = document.querySelector('.video-part');
@@ -89,6 +91,7 @@ changeSlide();
 // image video slider on mobile screeen
 mobileOnlySlider(".image-video-container", false, false, 641);
 function mobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
+  console.log('oooooooooooooo')
   var slider = $($slidername);
   var settings = {
     mobileFirst: true,

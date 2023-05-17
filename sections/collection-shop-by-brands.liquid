@@ -169,6 +169,7 @@
 
 
         <!-- collection page BRANDS -->
+		{%- if collection.metafields.custom.collection_description != blank or  collection.metafields.custom.collection_logo != blank -%}
         <div class="logo-slider-flex">
         <div class="logo-container">
         <header class="card__header {% unless collection.template_suffix == 'brands' %}card__header--tight{% endunless %}">
@@ -209,7 +210,6 @@
                         <div class="rte boost-pfs-filter-collection-description">
                             {{ collection.description }}
                         </div>
-
                         {%- if allow_collapse_description -%}
                             <button class="expandable-content__toggle">
                                 <span class="expandable-content__toggle-icon"></span>
@@ -222,6 +222,7 @@
             </div>
         </header>
     </div>
+	{%- endif -%}
         <!-- end page  -->
         <!-- image slider start -->
         <div class="sliding_images_parent">
@@ -265,7 +266,7 @@
 
     <!-- image and video part -->
 
-    <div class=" image-video-container">
+    <div class="image-video-container">
         
         {%- for block in collection.metafields.custom.image_and_video.value['imageVideoFlex'] -%} 
         <div class="items image-item">
