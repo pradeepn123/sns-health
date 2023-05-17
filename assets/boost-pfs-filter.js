@@ -513,9 +513,9 @@ var boostPFSTemplate = {
             priceHtml += '<span class="price {{priceClass}}" data-money-convertible="">{{amount}}</span>';
 
             var priceAmount = priceAmount = Utils.formatMoney(data.price_min);
-            if (priceVaries) {
-                priceAmount = boostPFSConfig.label.from.replace(/{{price_min}}/g, Utils.formatMoney(data.price_min));
-            }
+//            if (priceVaries) {
+//                priceAmount = boostPFSConfig.label.from.replace(/{{price_min}}/g, Utils.formatMoney(data.price_min));
+//            }
             priceHtml = priceHtml.replace(/{{amount}}/g, priceAmount);
             priceHtml = priceHtml.replace(/{{priceClass}}/g, onSale ? 'price--highlight' : '');
 
