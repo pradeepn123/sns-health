@@ -227,11 +227,11 @@ border: 2px solid #FFFFFF !important;
     display: none;
     bottom: 23px;
 }
-.previous{
+.testimonial .previous{
     top: 280px !important;
     left: 35px !important;
 }
-.next{
+.testimonial.next{
     top: 280px !important;
     left: 95px !important;
 }
@@ -241,7 +241,7 @@ border: 2px solid #FFFFFF !important;
     }
 }
 @media(max-width:1200px){
-    .previous , .next{
+    .testimonial .previous ,.testimonial .next{
         top: 331px !important;
     }
 }
@@ -340,6 +340,9 @@ border: 2px solid #FFFFFF !important;
     }
     .text-below-image{
         font-size: 12px;
+    }
+    #size-chart{
+        width: 77%;
     }
 }
 

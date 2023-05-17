@@ -129,12 +129,14 @@ console.log('hlooooo')
 btn.onclick = function () {
   console.log('---------------')
   cover.style.display = "block";
-  html.style.overflowY = 'hidden !important' ;
+  const elemX = document.querySelector('html')
+  elemX.style.overflowY = 'hidden';
 }
 
 span.onclick = function () {
   console.log('clooooooose')
   cover.style.display = "none";
-  body.style.overflowY = 'auto';
+  const elemX = document.querySelector('html')
+  elemX.style.overflowY = 'auto';
 }
 
