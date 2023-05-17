@@ -101,7 +101,7 @@ border: 2px solid #FFFFFF !important;
 @media(max-width:1270px){
     #dot{
         position: absolute;
-        bottom: 73px;
+        bottom: 19px;
     }
 }
 
@@ -202,7 +202,7 @@ border: 2px solid #FFFFFF !important;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1px 10px;
-    background: lightgray;
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
 }
 .image-flex-one{
@@ -212,7 +212,7 @@ border: 2px solid #FFFFFF !important;
     height: 84%;
     width: 100%;
 }
-.video-part , .image-flex-one img{
+.video-flex-one img , .image-flex-one img{
     width: 100%;
     height: 180px;
     object-fit: cover;
@@ -342,11 +342,52 @@ border: 2px solid #FFFFFF !important;
         font-size: 12px;
     }
 }
-/* @media(max-width:378px){
-    .testimonial
-} */
-
 
 .slick-track{
     display: flex;
 }
+
+#size-container{
+    display: none;
+    position: fixed !important;
+    z-index: 999999 !important;
+    padding-top: 5%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+  }
+  #size-chart{
+    position: relative;
+    margin: auto;
+    width: 60%;
+    animation-name: animatecenter;
+    animation-duration: 0.4s;
+  
+  }
+
+  .close{
+    font-size: 23px;
+    font-weight: bold;
+    float:right;
+    background: #FFFFFF;
+    padding-left: 14px;
+    padding-right: 14px;
+    position: relative;
+    border-radius: 30px;
+  }
+  .video-part{
+    width: 100%;
+  }
+
+  @-webkit-keyframes animatecenter {
+    from {center:-300px; opacity:0} 
+    to {center:0; opacity:1}
+    }
+    
+    @keyframes animatecenter {
+    from {center:-300px; opacity:0}
+    to {center:0; opacity:1}
+    }
