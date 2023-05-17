@@ -26,9 +26,13 @@
     animation-play-state: paused;
   }
   .ticker__container p {
+    display: flex;
+    align-items: center;
     margin-top: 0;
-    margin-left: 70px;
+    margin-bottom: 0;
+    {% comment %} margin-left: 0px; {% endcomment %}
     white-space: nowrap;
+
   }
   .section-background {
     padding: 20px 0;
@@ -38,11 +42,7 @@
   .section-background--xsmall .ticker.ticker-text-2 {
     line-height: 130%;
   }
-  .ticker__container p{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+
   .ticker__container p svg{
     padding-right: 10px;
   }
@@ -80,23 +80,10 @@
   data-section-name="ticker"
 >
   <ticker-section class="ticker ticker-text-5" style="--ticker-delay:10s">
-    <div class="ticker__container ticker-to-left ticker--animation">
-      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
-    </div>
-    <div class="ticker__container ticker-to-left ticker--clone ticker--animation">
-      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
-    </div>
-    <div class="ticker__container ticker-to-left ticker--clone ticker--animation">
-      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
-    </div>
-    <div class="ticker__container ticker-to-left ticker--clone ticker--animation">
-      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
-    </div>
-    <div class="ticker__container ticker-to-left ticker--clone ticker--animation">
-      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
-    </div>
-    <div class="ticker__container ticker-to-left ticker--clone ticker--animation">
-      <p>{%- render 'star-icon' -%}<strong>Flat 20% OFF </strong> on Cork yoga Mats</p>
-    </div>
+    {% for i in (1..6) %}
+      <div class="ticker__container ticker-to-left ticker--animation">
+          <div>{%- render 'star-icon' -%}  {{ block.settings.ticker_text }}</div> 
+      </div>
+    {% endfor %}
   </ticker-section>
 </div>
