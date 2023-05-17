@@ -183,7 +183,6 @@ var boostPFSTemplate = {
         if (!data) data = this.data;
         if (!index) index = this.index;
         // Get Template
-        // console.log(this.data, this.index)
         var itemHtml = boostPFSTemplate.productGridItemHtml;
         // Customize API data to get the Shopify data
         data = prepareShopifyData(data);
@@ -258,22 +257,15 @@ var boostPFSTemplate = {
         // Promotional Banner
         if (boostPFSConfig.custom.promo && index == boostPFSConfig.custom.promo.position - 1) {
             itemHtml += this.promoBanner(boostPFSConfig.custom.promo)
-            setTimeout(this.initPromoFlickity.bind(this), 1500)
         }
 
         return itemHtml;
     };
 
-    ProductGridItem.prototype.initPromoFlickity = function () {
-        const promoWrapper = document.querySelector(".shop__by-promo-wrapper")
-        promoWrapper.classList.remove("shop-d-none")
-        document.dispatchEvent(new CustomEvent("theme:boost:init"))
-    }
-
     ProductGridItem.prototype.promoBanner = function (data) {
         return `<div class='1/4--desk width-100 shop__by-promo-wrapper shop-d-none'>
             <div class="promo-image__wrapper-container">
-                <img class="promo-banner" src="${data.image.src}"/>
+                <img class="promo-banner" src="${data.image}"/>
             </div>
             <div class="promo-products__wrapper-container">
                 <div class="promo-products__wrapper">
@@ -322,6 +314,7 @@ var boostPFSTemplate = {
             '{{itemPrice}}{{itemTitleWrapper}}{{itemVendor}}{{itemSwatch}}';
 
         itemHtml = itemHtml.replace(/{{itemInfo}}/g, itemInfoHtml);
+        itemHtml = itemHtml.replace(/{{itemInfoRow}}/g, buildItemRow(data));
 
         // Add Vendor
         var itemVendorHtml = boostPFSConfig.custom.show_vendor ? ('<a href="#" class="product-item__vendor link">' + data.vendor + '</a>') : '';
@@ -333,7 +326,6 @@ var boostPFSTemplate = {
 
         // Add price
         data.price_min = data.price_min / 100
-        console.log("price",data.price_min)
         data.compare_at_price_min = data.compare_at_price_min / 100
 
         itemHtml = itemHtml.replace(/{{itemPrice}}/g, buildPrice(data));
@@ -353,7 +345,7 @@ var boostPFSTemplate = {
 
         // Add Quickview
         itemHtml = itemHtml.replace(/{{itemQuickView}}/g, buildQuickView(data));
-
+        itemHtml = itemHtml.replace(/{{quickViewButton}}/g, buildQuickButton(data));
 
         // Add main attribute (Always put at the end of this function)
         itemHtml = itemHtml.replace(/{{itemId}}/g, data.id);
@@ -456,7 +448,6 @@ var boostPFSTemplate = {
     }
 
     function buildItemRow(data) {
-        console.log(data)
         content = `<div class="grid-item-row-info">`
         if (data.compare_at_price_max) {
             // Do something
@@ -911,6 +902,21 @@ var boostPFSTemplate = {
         if (boostPFSConfig.custom.currency_conversion_enabled) {
             convertAll();
         }
+        const promoWrapper = document.querySelector(".shop__by-promo-wrapper")
+        if (promoWrapper) {
+            promoWrapper.classList.remove("shop-d-none")
+        }
+
+        document.dispatchEvent(new CustomEvent("theme:customFlickity:init", {detail: {
+            config: {
+                pageDots: true,
+                prevNextButtons: true,
+                contain: true,
+                groupCells: true,
+                wrapAround: false
+            },
+            selector: ".promo-products__wrapper"
+        }}))
     };
 
     // Build additional elements
