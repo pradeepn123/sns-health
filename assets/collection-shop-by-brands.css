@@ -217,10 +217,6 @@ margin:0 5px;
 .flickity-prev-next-button {
     opacity: 1 !important;
 }
-.flickity-page-dots{
-    display: none;
-    bottom: 23px;
-}
 .testimonial .previous{
     top: 280px !important;
     left: 35px !important;
@@ -388,3 +384,72 @@ margin:0 5px;
     from {center:-300px; opacity:0}
     to {center:0; opacity:1}
     }
+/* Collections Genius Gourment */
+.sliding_images_parent{
+    width: 62%;
+    margin-left: auto;
+}
+.sliding_images_parent .flickity-viewport{
+    height: 100%;
+}
+.sliding_images_container{
+    height: 100%;
+    width: 100%;
+}
+.sliding_images_container .sliding_images_content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+    font-size: 28px;
+    font-weight: 600;
+    padding-left: 30px;
+    line-height: 42px;
+}
+
+.sliding_images_parent .flickity-page-dots .dot.is-selected {
+    background: red;
+}
+
+.sliding_images_parent .flickity-page-dots{
+    bottom: 20px;
+}
+
+.sliding_images_parent .flickity-page-dots .dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 8px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    transform: none !important;
+    transition: background .25s;
+}
+
+@media screen and (max-width: 800px){
+    /* Flickity Container */
+    .sliding_images_parent{
+        width: 100%;
+        height: 200px;
+    }
+    .sliding_images_container .sliding_images_content{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFFFFF;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .sliding_images_parent{
+        height: 200px;
+    }
+
+    .sliding_images_container .sliding_images_content {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFFFFF;
+        background-size: cover;
+    }
+}
