@@ -1565,6 +1565,7 @@
           },
           "b5971ab5-65c9-40b7-9e07-ed568722d2e6": {
             "type": "promo",
+            "disabled": true,
             "settings": {
               "collection": "ancient-nutrition",
               "image": "shopify:\/\/shop_images\/ONE-SMORES_1.jpg",
@@ -1575,7 +1576,7 @@
           "d5de926c-3fa4-4888-b020-dea2e50b9a0c": {
             "type": "ticker",
             "settings": {
-              "ticker_text": "<p><strong>20% off  <\/strong>on All brands<\/p>",
+              "ticker_text": "<p><strong>20% off  <\/strong>on all brands<\/p>",
               "direction": "ticker-to-left"
             }
           }
