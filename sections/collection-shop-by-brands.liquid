@@ -1,9 +1,9 @@
 <style>
-    .button--primary:hover {
+    {% comment %} .button--primary:hover {
         background: #ffffff;
         color: #ED1C24;
         border: 1px solid #ED1C24;
-    }
+    } {% endcomment %}
     .width-100{
         width: 100%;
     }
@@ -46,7 +46,16 @@
     .flickity-enabled .flickity-prev-next-button:not([disabled]) {
       transform: scale(1);
       opacity: 1;
-  }
+    }
+    .product-item__vendor{
+        font-weight: 500;
+    }
+    .product-item__title{
+        font-weight: 400;
+    }
+    .product-item__title{
+        font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 15px));
+    }
 </style>
 
 {%- assign items_per_page = cart.attributes.collection_products_per_page | default: section.settings.default_products_per_page -%}
