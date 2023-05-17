@@ -145,7 +145,49 @@
     font-weight: 500;
     padding: 1em;
 }
+.shop_by_brands_parent .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.shop_by_brands_parent .tooltipText {
+    background-color: #fff;
+    position: absolute;
+    bottom: 100%;
+    display: flex;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    border: 1px solid #000;
+    transition: all .5s;
+    flex-direction: column;
+    flex-wrap: wrap;
+    left: -100%;
+    width: 160px;
+}
+.shop_by_brands_parent .tooltipText::after {
+    content: '';
+    border-width: 5px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    margin-left: 5%;
+}
+.shop_by_brands_parent .tooltip:hover .tooltipText{
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
 @media (max-width: 641px){
+    .shop_by_brands_parent .tooltip .tooltipText{
+        display: none;
+    }
+    .shop_by_brands_parent .grid__cell {
+        padding: 0 4px 20px 20px;
+    }
     .shop_by_brands_parent .shop_by_brands_child_container {
         padding: 0 10px 10px;
     }
