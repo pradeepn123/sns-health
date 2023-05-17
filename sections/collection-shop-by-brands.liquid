@@ -180,14 +180,14 @@
 		{%- if block.video != blank -%}
 		<div class="items video-item">
 			<div class="video-sec video-flex-one">
-				<video class="video-part" onended="videoEnded(this)"><source src="{{block.video}}" type="video/mp4"></video>
+				<img class="image-flex" src="{{block.image1}}">
 				<button class="video-control">
 					<span class="video-control-play">
-						<span class="video-control-symbol play-btn" aria-hidden="true">▶</span>
+						<span class="video-control-symbol play-btn" id="myBtn" aria-hidden="true">▶</span>
 					</span>
-					<span class="video-control-pause">
+					<!-- <span class="video-control-pause">
 						<span class="video-control-symbol pause-btn" aria-hidden="true">||</span>
-					</span>
+					</span> -->
 				</button>
 			</div>
 			<div class="video-flex-two">
@@ -198,6 +198,22 @@
 		{%- endfor -%}
 	</div>
 </div>
+
+
+	<div id="size-container">
+
+		<div id="size-chart" class="mfp-hide">
+		  <span class="close">x</span>
+		  <div class="main-chart-container">
+			{%- for block in collection.metafields.custom.image_and_video.value['imageVideoFlex'] -%}
+				<video class="video-part" controls><source src="{{block.video}}" type="video/mp4"></video>
+			{%- endfor -%}
+		  </div>
+		</div>
+	  
+	</div>
+
+
 	<!-- end image and video part -->
 
 		<div class="layout">

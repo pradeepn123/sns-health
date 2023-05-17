@@ -39,89 +39,102 @@ var index = 0;
 var slides = document.querySelectorAll(".slides");
 var dot = document.querySelectorAll(".dot");
 
-function changeSlide(){
+function changeSlide() {
 
-  if(index<0){
-    index = slides.length-1;
+  if (index < 0) {
+    index = slides.length - 1;
   }
-  
-  if(index>slides.length-1){
+
+  if (index > slides.length - 1) {
     index = 0;
   }
-  
-  for(let i=0;i<slides.length;i++){
+
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
     dot[i].classList.remove("active");
   }
-  
-  slides[index].style.display= "block";
+
+  slides[index].style.display = "block";
   dot[index].classList.add("active");
   index++;
-  setTimeout(changeSlide,2000);
-  
+  setTimeout(changeSlide, 2000);
+
 }
 changeSlide();
 
 // video control
-const videoElement = document.querySelector('.video-part');
-const playPauseButton = document.querySelector('.video-control');
-const videopause = document.querySelector('.pause-btn');
-console.log('videeeeeooooo')
+// const videoElement = document.querySelector('.video-part');
+// const playPauseButton = document.querySelector('.video-control');
+// const videopause = document.querySelector('.pause-btn');
+// console.log('videeeeeooooo')
 
-playPauseButton.addEventListener('click', () => {
-  console.log('ooooooooooooooooooo')
-	playPauseButton.classList.toggle('playing');
-	if (playPauseButton.classList.contains('playing')) {
-		videoElement.play();
-	}
-	else {
-		videoElement.pause();
-	}
-});
+// playPauseButton.addEventListener('click', () => {
+//   console.log('ooooooooooooooooooo')
+// 	playPauseButton.classList.toggle('playing');
+// 	if (playPauseButton.classList.contains('playing')) {
+// 		videoElement.play();
+// 	}
+// 	else {
+// 		videoElement.pause();
+// 	}
+// });
 
-videoElement.addEventListener('ended', () => {
-	playPauseButton.classList.remove('playing');
-});
-function videoEnded(video) {
-  video.load();
-};
+// videoElement.addEventListener('ended', () => {
+// 	playPauseButton.classList.remove('playing');
+// });
+// function videoEnded(video) {
+//   video.load();
+// };
 
 // image video slider on mobile screeen
 mobileOnlySlider(".image-video-container", false, false, 641);
 function mobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
-	var slider = $($slidername);
-	var settings = {
-		mobileFirst: true,
-    autoplay:false,
-    infinite:false,
-    slidesToShow:1.1,
-		dots: $dots,
-		arrows: $arrows,
-		responsive: [
-			{
-				breakpoint: $breakpoint,
-				settings: "unslick"
-			}
-		]
-	};
+  var slider = $($slidername);
+  var settings = {
+    mobileFirst: true,
+    autoplay: false,
+    infinite: false,
+    slidesToShow: 1.1,
+    dots: $dots,
+    arrows: $arrows,
+    responsive: [
+      {
+        breakpoint: $breakpoint,
+        settings: "unslick"
+      }
+    ]
+  };
 
-	slider.slick(settings);
+  slider.slick(settings);
 
-	$(window).on("resize", function () {
-		if ($(window).width() > $breakpoint) {
-			return;
-		}
-		if (!slider.hasClass("slick-initialized")) {
-			return slider.slick(settings);
-		}
-	});
+  $(window).on("resize", function () {
+    if ($(window).width() > $breakpoint) {
+      return;
+    }
+    if (!slider.hasClass("slick-initialized")) {
+      return slider.slick(settings);
+    }
+  });
 }
 
 
-$('.testimonial').flickity({
-  // options
-  cellAlign: 'center',
-  pageDots: true,
-  prevNextButtons: true
+const html = document.html;
+var cover = document.getElementById("size-container");
+var modal = document.getElementById("size-chart");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
 
-});
+
+console.log('hlooooo')
+btn.onclick = function () {
+  console.log('---------------')
+  cover.style.display = "block";
+  html.style.overflowY = 'hidden !important' ;
+}
+
+span.onclick = function () {
+  console.log('clooooooose')
+  cover.style.display = "none";
+  body.style.overflowY = 'auto';
+}
+
