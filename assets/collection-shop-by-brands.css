@@ -1,10 +1,10 @@
 .layout{
     margin-top: 23px;
 }
-.card__header {
+.logo-slider-flex .card__header {
     background: #F4E6DB;
 }
-.card__header {
+.logo-slider-flex .card__header {
     padding: 55px 40px 0 !important;
 }
 .collection__header--brand {
@@ -87,12 +87,6 @@ background:#D9D9D9;
 opacity: 0.5;
 padding:5px;
 margin:0 5px;
-}
-
-.active{
-background:#ED1C24;
-opacity: 1;
-border: 2px solid #FFFFFF !important;
 }
 .container--flush{
     margin-bottom: 20px;
@@ -227,11 +221,11 @@ border: 2px solid #FFFFFF !important;
     display: none;
     bottom: 23px;
 }
-.previous{
+.testimonial .previous{
     top: 280px !important;
     left: 35px !important;
 }
-.next{
+.testimonial .next{
     top: 280px !important;
     left: 95px !important;
 }
@@ -241,7 +235,7 @@ border: 2px solid #FFFFFF !important;
     }
 }
 @media(max-width:1200px){
-    .previous , .next{
+    .testimonial .previous ,.testimonial .next{
         top: 331px !important;
     }
 }
@@ -319,7 +313,7 @@ border: 2px solid #FFFFFF !important;
         font-size: 16px !important;
         line-height: 24px !important;
     }
-    .card__header {
+    .logo-slider-flex .card__header {
         padding: 21px 10px 0 !important;
     }
     #dot{
@@ -340,6 +334,9 @@ border: 2px solid #FFFFFF !important;
     }
     .text-below-image{
         font-size: 12px;
+    }
+    #size-chart{
+        width: 77%;
     }
 }
 
