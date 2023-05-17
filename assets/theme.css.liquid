@@ -14115,10 +14115,44 @@ h3.green {
 .boost-pfs-filter-products .price--highlight {
   color: black !important;
 }
-.product-item__info-inner .product-item__title{
+.boost-pfs-filter-products .product-item__info-inner .product-item__title{
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.boost-pfs-filter-products .product-item__image-wrapper {
+  position: relative;
+}
+
+.boost-pfs-filter-products .product-item__quickview-button {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform .3s ease,opacity .3s ease;
+  will-change: transform,opacity,visibility;
+  z-index: 2;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  background: black;
+  visibility: hidden;
+  color: white;
+  margin: 0 !important;
+}
+
+.boost-pfs-filter-products .product-item__image-wrapper:hover .product-item__quickview-button {
+  visibility: visible;
+  opacity: 0.7;
+  transform: translate(0);
+}
+
+.boost-pfs-filter-products .product-item__image-wrapper:hover .product-item__quickview-button:hover {
+  opacity: 1;
+}
+
+.boost-pfs-filter-products .product-item__image-wrapper {
+  padding-bottom: 20px;
+  margin-bottom: 0;
 }

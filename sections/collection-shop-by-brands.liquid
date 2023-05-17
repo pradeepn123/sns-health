@@ -23,9 +23,9 @@
         height: 100%;
         object-fit: cover;
     }
-    .boost-pfs-filter-products .product-item__action-list  .button--ternary{
+    /*.boost-pfs-filter-products .product-item__action-list  .button--ternary{
         display: none;
-    }
+    }*/
     .boost-pfs-filter-products .promo-products__wrapper .product-item{
         width: 40%;
     }
@@ -410,8 +410,7 @@
     QUICK VIEW CONTAINER
     --------------------------------------------------------------------------------------
     {%- endcomment -%}
-
-    <div id="modal-quick-view-{{ section.id }}" class="modal" aria-hidden="true">
+    <div id="modal-quick-view-{{ section.id }}-template" class="modal" aria-hidden="true">
         <div class="modal__dialog modal__dialog--stretch" role="dialog">
         <button class="modal__close link" data-action="close-modal">{%- include 'icon' with 'close' -%}</button>
 
@@ -490,7 +489,7 @@
             show_sorting: true,
             show_color_swatch: {% if settings.show_color_swatch  %} {{ settings.show_color_swatch | json }} {% else %} false {% endif %},
             currency_conversion_enabled: {% if settings.currency_conversion_enabled %} {{ settings.currency_conversion_enabled | json }} {% else %} false {% endif %},
-            template: {{ request.page_type | json }},
+            template: {{ section.id | json }},
             promo: null
         }
     };
