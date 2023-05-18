@@ -33,6 +33,10 @@
         .boost-pfs-filter-products .flickity-page-dots {
             display: none;
         }
+
+        .promo-image__wrapper-container_innner_wrap {
+            height: 100%;
+        }
     }
 
     .promo-image__wrapper-container {
@@ -60,6 +64,14 @@
         object-fit: cover;
     }
 
+    .boost-pfs-filter-products .shop__by-promo-wrapper .promo-banner-desktop {
+
+    }
+
+    .boost-pfs-filter-products .shop__by-promo-wrapper .promo-banner-mobile {
+        display: none;
+    }
+
     /*.boost-pfs-filter-products .product-item__action-list .button--ternary{
         display: none;
     }*/
@@ -67,6 +79,8 @@
     .boost-pfs-filter-products .promo-products__wrapper .product-item{
         min-width: 270px;
         background-color: initial;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     @media screen and (min-width: 641px) and (max-width: 1024px) {
@@ -77,7 +91,7 @@
 
     @media screen and (max-width: 640px) {
         h2.promo__wrap_title {            
-            top:45%;
+            top: 45%;
             font-size: 18px;
             line-height: 1;
         }
@@ -103,9 +117,16 @@
         }
 
         .promo-image__wrapper-container {
-            max-height: 200px;
             overflow: hidden;
             padding: 0 20px;
+        }
+
+        .boost-pfs-filter-products .shop__by-promo-wrapper .promo-banner-desktop {
+            display: none;
+        }
+
+        .boost-pfs-filter-products .shop__by-promo-wrapper .promo-banner-mobile {
+            display: unset;
         }
     }
 
@@ -596,6 +617,7 @@
                 collection: {{ block.settings.collection | json }},
                 position: position,
                 image: {{ block.settings.image | json }},
+                mobileImage: {{ block.settings.image_mobile | json }},
                 title: {{ block.settings.title | json }},
                 products: [
                     {%- for product in promo_collection.products limit: 10 -%}
@@ -824,7 +846,11 @@
                     }, {
                         "type": "image_picker",
                         "id": "image",
-                        "label": "Image"
+                        "label": "Image for Desktop"
+                    }, {
+                        "type": "image_picker",
+                        "id": "image_mobile",
+                        "label": "Image for mobile"
                     }, {
                         "type": "header",
                         "content": "Layout"

@@ -13722,11 +13722,10 @@
           _this2.element.querySelectorAll('.product-item').forEach(function (item) {
             if (newLayoutMode === 'grid') {
               item.className = "product-item product-item--vertical ".concat(_this2.options['gridClasses']);
-            } else {
+            } else if (!item.parentElement.classList.contains("flickity-slider")){
               item.className = 'product-item product-item--list';
             }
           }); // Reload the swatches
-
 
           _this2.productItemColorSwatch.recalculateSwatches();
         });
