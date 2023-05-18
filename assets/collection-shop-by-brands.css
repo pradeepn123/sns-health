@@ -247,6 +247,9 @@
 .sliding_images_parent.slider_height .flickity-viewport{
     max-height: 300px;
 }
+.product-item.product-item--list .grid-item-row-info{
+    display: none;
+}
 @media(max-width:1200px){
     .testimonial .previous ,.testimonial .next{
         top: 81% !important;
