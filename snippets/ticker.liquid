@@ -4,17 +4,10 @@
     text-decoration: none;
     color: black;
   }
-  .no-js ticker-section {
-    display: none;
-  }
   .ticker {
     display: flex;
     overflow: hidden;
     width: 100%;
-  }
-  .ticker__container {
-    display: flex;
-    align-items: center;
   }
   .ticker--animation {
     animation: ticker var(--ticker-delay, 15s) infinite linear;
@@ -32,23 +25,19 @@
     margin-bottom: 0;
     margin-left: 70px;
     white-space: nowrap;
-
   }
   .ticker__container .ticker-element svg {
     margin-right: 15px;
+  }
+  .ticker__container .ticker-element p {
+    font-size: 18px;
   }
   .section-background {
     padding: 20px 0;
     margin-bottom: 10px;
     background: #f4e6db;
   }
-  .section-background--xsmall .ticker.ticker-text-2 {
-    line-height: 130%;
-  }
 
-  .ticker__container p svg{
-    padding-right: 10px;
-  }
   @media (max-width: 576px) {
     .ticker__icon,
     .ticker__container .ticker-element {
@@ -75,16 +64,20 @@
       transform: translateX(-100%);
     }
   }
+
+  .width {
+    width: 100%
+  }
 </style>
 
 <div
-  id="ticker-template--16036643504325__df941fc9-53f6-4891-b906-65045bbeef39"
+  id="ticker-template"
   class="top-spacing-medium section-background section-background--small"
   data-section-name="ticker"
 >
   <ticker-section class="ticker ticker-text-5" style="--ticker-delay:10s">
     {% for i in (1..6) %}
-      <div class="ticker__container ticker-to-left ticker--animation">
+      <div class="ticker__container {{ block.settings.direction }} ticker--animation">
           <div class="ticker-element">{%- render 'star-icon' -%}  {{ block.settings.ticker_text }}</div> 
       </div>
     {% endfor %}

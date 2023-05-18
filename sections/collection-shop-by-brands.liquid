@@ -549,9 +549,17 @@
     {%- for block in section.blocks -%}
         {%- if block.type == "promo" -%}
             {% assign promo_collection = collections[block.settings.collection] %}
+
+            let = position = {{ block.settings.position_desktop | json }} 
+            if (window.innerWidth >= 641 && window.innerWidth < 999){
+                position = {{ block.settings.position_tablet | json }}
+            }
+            else if (window.innerWidth <= 640){
+                position = {{ block.settings.position_mobile | json }} 
+            }        
             boostPFSConfig.custom[{{ block.type | json }}] = {
                 collection: {{ block.settings.collection | json }},
-                position: {{ block.settings.position | json }},
+                position: position,
                 image: {{ block.settings.image | json }},
                 title: {{ block.settings.title | json }},
                 products: [
@@ -778,13 +786,30 @@
                         "content": "Layout"
                     }, {
                         "type": "range",
-                        "id": "position",
-                        "label": "Show in position",
+                        "id": "position_desktop",
+                        "label": "Show position in desktop",
                         "min": 4,
                         "max": 48,
                         "step": 4,
                         "default": 4
-                    }, {
+                    },{
+                        "type": "range",
+                        "id": "position_tablet",
+                        "label": "Show position in tablet",
+                        "min": 3,
+                        "max": 36,
+                        "step": 3,
+                        "default": 3
+                    },{
+                        "type": "range",
+                        "id": "position_mobile",
+                        "label": "Show position in mobile",
+                        "min": 2,
+                        "max": 24,
+                        "step": 2,
+                        "default": 2
+                    },
+                    {
                         "type": "header",
                         "content": "Text"
                     }, {
