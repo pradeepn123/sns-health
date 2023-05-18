@@ -295,11 +295,11 @@ var boostPFSTemplate = {
     }
 
     ProductGridItem.prototype.promoBanner = function (data) {
-        console.log(data,"jiiiiii")
         return `<div class='1/4--desk width-100 shop__by-promo-wrapper shop-d-none'>
             <div class="promo-image__wrapper-container">
                 <div class="promo-image__wrapper-container_innner_wrap">
-                    <img class="promo-banner" src="${data.image}"/>
+                    <img class="promo-banner promo-banner-desktop" src="${data.image}"/>
+                    <img class="promo-banner promo-banner-mobile" src="${data.mobileImage}"/>
                 </div>
                 <h2 class="promo__wrap_title">${data.title}</h2>
             </div>
