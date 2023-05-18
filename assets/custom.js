@@ -34,61 +34,10 @@
  * }));
  */
 
-// hero banner auto slider
-var index = 0;
-var slides = document.querySelectorAll(".slides");
-var dot = document.querySelectorAll(".dot");
-
-function changeSlide() {
-
-  if (index < 0) {
-    index = slides.length - 1;
-  }
-
-  if (index > slides.length - 1) {
-    index = 0;
-  }
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    dot[i].classList.remove("active");
-  }
-
-  slides[index].style.display = "block";
-  dot[index].classList.add("active");
-  index++;
-  setTimeout(changeSlide, 2000);
-
-}
-changeSlide();
-
-// video control
-// const videoElement = document.querySelector('.video-part');
-// const playPauseButton = document.querySelector('.video-control');
-// const videopause = document.querySelector('.pause-btn');
-// console.log('videeeeeooooo')
-
-// playPauseButton.addEventListener('click', () => {
-//   console.log('ooooooooooooooooooo')
-// 	playPauseButton.classList.toggle('playing');
-// 	if (playPauseButton.classList.contains('playing')) {
-// 		videoElement.play();
-// 	}
-// 	else {
-// 		videoElement.pause();
-// 	}
-// });
-
-// videoElement.addEventListener('ended', () => {
-// 	playPauseButton.classList.remove('playing');
-// });
-// function videoEnded(video) {
-//   video.load();
-// };
-
 // image video slider on mobile screeen
 mobileOnlySlider(".image-video-container", false, false, 641);
 function mobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
+  console.log('oooooooooooooo')
   var slider = $($slidername);
   var settings = {
     mobileFirst: true,

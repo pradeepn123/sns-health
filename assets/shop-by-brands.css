@@ -140,10 +140,12 @@
     margin-top: 8px;
     font-size: 14px;
 }
+.no-filter-results p{
+    padding: 1em;
+}
 .no-filter-results {
     width: 100%;
-    font-weight: 500;
-    padding: 1em;
+    font-weight: 500;    
 }
 .shop_by_brands_parent .tooltip {
     position: relative;

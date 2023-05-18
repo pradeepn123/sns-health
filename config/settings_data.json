@@ -1471,7 +1471,7 @@
             "type": "selected_collection",
             "settings": {
               "featured_collection_item": "yoga-design-lab",
-              "featured_collection_image": "shopify:\/\/shop_images\/yoga.jpg",
+              "featured_collection_image": "shopify:\/\/shop_images\/yoga_design_lab.png",
               "show_overlay": true,
               "overlay_opacity": 0
             }
@@ -1480,7 +1480,7 @@
             "type": "selected_collection",
             "settings": {
               "featured_collection_item": "beast",
-              "featured_collection_image": "shopify:\/\/shop_images\/yoga.jpg",
+              "featured_collection_image": "shopify:\/\/shop_images\/beast.png",
               "show_overlay": false,
               "overlay_opacity": 50
             }
@@ -1489,7 +1489,7 @@
             "type": "selected_collection",
             "settings": {
               "featured_collection_item": "organika",
-              "featured_collection_image": "shopify:\/\/shop_images\/yoga.jpg",
+              "featured_collection_image": "shopify:\/\/shop_images\/yoga_design_lab.png",
               "show_overlay": false,
               "overlay_opacity": 50
             }
@@ -1497,7 +1497,8 @@
           "1b0c36f0-9eef-47ec-9b8a-6dd7e9d4fbd6": {
             "type": "selected_collection",
             "settings": {
-              "featured_collection_item": "yoga-design-lab",
+              "featured_collection_item": "beast",
+              "featured_collection_image": "shopify:\/\/shop_images\/beast.png",
               "show_overlay": false,
               "overlay_opacity": 50
             }

@@ -13624,7 +13624,8 @@
           prevNextButtons: false,
           pageDots: true,
           contain: true,
-          groupCells: true
+          groupCells: true,
+          autoPlay: 5000
         });
       }
       }
