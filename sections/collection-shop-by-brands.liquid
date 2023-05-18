@@ -37,6 +37,17 @@
 
     .promo-image__wrapper-container {
         width: 100%;
+        position: relative;
+    }
+
+    h2.promo__wrap_title {
+        position: absolute;
+        top: 30px;
+        color: #fff;
+        left: 30px;
+        font-weight: 600;
+        font-size: 44px;
+        line-height: 1;
     }
 
     .promo-image__wrapper-container p {
@@ -65,6 +76,11 @@
     }
 
     @media screen and (max-width: 640px) {
+        h2.promo__wrap_title {            
+            top:45%;
+            font-size: 18px;
+            line-height: 1;
+        }
         .boost-pfs-filter-products .promo-products__wrapper .product-item {
             min-width: 50%;
         }
@@ -74,6 +90,7 @@
         }
 
         .boost-pfs-filter-products .shop__by-promo-wrapper {
+            padding: 1.6rem 0rem;
             padding-bottom: 3.5rem;
         }
 
@@ -87,6 +104,8 @@
 
         .promo-image__wrapper-container {
             max-height: 200px;
+            overflow: hidden;
+            padding: 0 20px;
         }
     }
 
