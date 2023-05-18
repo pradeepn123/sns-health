@@ -170,100 +170,100 @@
 
         <!-- collection page BRANDS -->
 		{%- if collection.metafields.custom.collection_description != blank or  collection.metafields.custom.collection_logo != blank -%}
-        <div class="logo-slider-flex">
-        <div class="logo-container">
-        <header class="card__header {% unless collection.template_suffix == 'brands' %}card__header--tight{% endunless %}">
-            <div class="collection__header {% if collection.template_suffix == 'brands' %}collection__header--brand{% endif %}">
-                  {%- if section.settings.show_collection_image and collection.image and collection.all_products_count > 0 and collection.template_suffix == 'brands' -%}
-                <!-- <div class="collection__brand-logo-wrapper hidden-pocket">
-                      <div class="collection__brand-logo-image lazyload image--fade-in" data-bg="{{ collection.image | img_url: '250x' }}"></div>
-                </div> -->
-				{{ collection.metafields.custom.collection_logo | img_tag }}
-                {%- endif -%}
-				
-              
-                <div class="collection__header-inner">
-                    <div class="collection__meta">
-                        <!-- {%- if section.settings.show_collection_image and collection.image and collection.all_products_count > 0 and collection.template_suffix == 'brands' -%}
-                        <div class="collection__brand-logo-wrapper hidden-lap-and-up">
-                              <div class="collection__brand-logo-image lazyload image--fade-in" data-bg="{{ collection.image | img_url: '250x' }}"></div>
-                        </div>
-                        {%- endif -%} -->
-						{% assign aNewMetafieldVar =  collection.metafields.custom.collection_description.value['collectionDesc'] %}
-						{%- for itemValue in aNewMetafieldVar -%}
-                            <h3 class="logo-heading">{{itemValue.heading}}</h3>
-							<div class="collection__meta-inner">
-								<h1 class="boost-pfs-filter-collection-header collection__title heading h1">
-									{{itemValue.Description}}
-								</h1>
-							</div>
-						{%- endfor -%}
-                    </div>
+            <div class="logo-slider-flex">
+                <div class="logo-container">
+                    <header class="card__header {% unless collection.template_suffix == 'brands' %}card__header--tight{% endunless %}">
+                        <div class="collection__header {% if collection.template_suffix == 'brands' %}collection__header--brand{% endif %}">
+                        {% assign aNewMetafieldVar =  collection.metafields.custom.collection_description.value['collectionDesc'] %}
+                            {%- if section.settings.show_collection_image and collection.image and collection.all_products_count > 0 and collection.template_suffix == 'brands' and collection.metafields.custom.collection_logo != blank -%}
+                                <img src="{{collection.metafields.custom.collection_logo | img_url }}" alt=""  style="{% unless aNewMetafieldVar.first['Description'] %}margin-bottom: 0{% endunless %}">
+                            {%- endif -%}
+                            
+                            <div class="collection__header-inner">
+                                <div class="collection__meta">
+                                    {%- for itemValue in aNewMetafieldVar -%}
+                                        <h3 class="logo-heading">{{itemValue.heading}}</h3>
+                                        <div class="collection__meta-inner">
+                                            <h1 class="boost-pfs-filter-collection-header collection__title heading h1">
+                                               {{itemValue.Description}}
+                                            </h1>
+                                        </div>
+                                    {%- endfor -%}
+                                </div>
 
-                    {%- if collection.description != blank -%}
-                    {%- assign allow_collapse_description = false -%}
-                    {%- if section.settings.collapse_collection_description -%}
-                        {%- assign allow_collapse_description = true -%}
-                    {%- endif -%}
+                                {%- if collection.description != blank -%}
+                                {%- assign allow_collapse_description = false -%}
+                                {%- if section.settings.collapse_collection_description -%}
+                                    {%- assign allow_collapse_description = true -%}
+                                {%- endif -%}
 
-                    <div class="collection__description {% if allow_collapse_description %}expandable-content{% endif %}" aria-expanded="false">
-                        <div class="rte boost-pfs-filter-collection-description">
-                            {{ collection.description }}
+                                <div class="collection__description {% if allow_collapse_description %}expandable-content{% endif %}" aria-expanded="false">
+                                    <div class="rte boost-pfs-filter-collection-description">
+                                        {{ collection.description }}
+                                    </div>
+                                    {%- if allow_collapse_description -%}
+                                        <button class="expandable-content__toggle">
+                                            <span class="expandable-content__toggle-icon"></span>
+                                            <span class="expandable-content__toggle-text" data-view-more="{{ 'collection.general.view_more' | t | escape }}" data-view-less="{{ 'collection.general.view_less' | t | escape }}">{{- 'collection.general.view_more' | t -}}</span>
+                                        </button>
+                                    {%- endif -%}
+                                </div>
+                                {%- endif -%}
+                            </div>
                         </div>
-                        {%- if allow_collapse_description -%}
-                            <button class="expandable-content__toggle">
-                                <span class="expandable-content__toggle-icon"></span>
-                                <span class="expandable-content__toggle-text" data-view-more="{{ 'collection.general.view_more' | t | escape }}" data-view-less="{{ 'collection.general.view_less' | t | escape }}">{{- 'collection.general.view_more' | t -}}</span>
-                            </button>
-                        {%- endif -%}
-                    </div>
-                    {%- endif -%}
+                    </header>
                 </div>
-            </div>
-        </header>
-    </div>
-	{%- endif -%}
+	    {%- endif -%}
         <!-- end page  -->
         <!-- image slider start -->
-        <div class="sliding_images_parent">
-            {%- for block in collection.metafields.custom.hero_image_slider.value['slider'] -%}
-                <div class="sliding_images_container">
-                    {% if block.image != blank %}
-                        {% comment %} <img class="sliding_image" src="{{block.image}}" alt=""> {% endcomment %}
-                        <div class="sliding_images_content" style="background-image: url({{ block.image }})">{{block.text}}</div>
-                        {% comment %} <p class="textOnImage">{{block.text}}</p> {% endcomment %}
-                    {% endif %}
-                </div>
-            {% endfor %}
-        </div>
+        {% if collection.metafields.custom.hero_image_slider.value['slider'] != blank %}
+            <div class="sliding_images_parent">
+                {%- for block in collection.metafields.custom.hero_image_slider.value['slider'] -%}
+                    <div class="sliding_images_container">
+                        {% if block.image != blank %}
+                            {% comment %} <img class="sliding_image" src="{{block.image}}" alt=""> {% endcomment %}
+                            <div class="sliding_images_content" style="background-image: url({{ block.image }})">{{block.text}}</div>
+                            {% comment %} <p class="textOnImage">{{block.text}}</p> {% endcomment %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
         <!-- end slider -->
     </div>
 
-    <div class="container container--flush testimonial-imagevide-wrap">
-        <div class="testimonial">
-            {%- for block in section.blocks -%}
-			{%- if block.type == "slide" -%}
-            <div class="rating-message">
-                <div class="two">
-                    {% assign count_gold_stars = block.settings.star_rating %}
-                    {% assign range_gold_stars = (1..count_gold_stars) %}
-                    {% assign count_grey_stars = block.settings.star_rating | minus: '5' | abs %}
-                    {% assign range_grey_stars = (1..count_grey_stars) %}
-                    {% for count in range_gold_stars  %} 
-                        {%- render 'icon', icon: 'star-gold' -%}
-                    {% endfor %}
-                    {% for count in range_grey_stars  %}
-                        {%- render 'icon', icon: 'star-gray' -%}
-                    {% endfor %}
-                </div>
+    {% liquid
+        assign slide_block = section.blocks | where: "type", "slide"
+        assign slide_block_size = slide_block | size
+    %}
 
-                {%- if block.settings.review-Message != blank -%}
-                <h2 class="review-message">{{ block.settings.review-Message }}</h2>
-                {%- endif -%}
+    <div class="container container--flush testimonial-imagevide-wrap">
+        {% if slide_block_size > 0 and collection.metafields.custom.show_testimonials == true %}
+            <div class="testimonial">
+                {%- for block in section.blocks -%}
+                    {%- if block.type == "slide" -%}
+                        <div class="rating-message">
+                            <div class="two">
+                                {% assign count_gold_stars = block.settings.star_rating %}
+                                {% assign range_gold_stars = (1..count_gold_stars) %}
+                                {% assign count_grey_stars = block.settings.star_rating | minus: '5' | abs %}
+                                {% assign range_grey_stars = (1..count_grey_stars) %}
+                                {% for count in range_gold_stars  %} 
+                                    {%- render 'icon', icon: 'star-gold' -%}
+                                {% endfor %}
+                                {% for count in range_grey_stars  %}
+                                    {%- render 'icon', icon: 'star-gray' -%}
+                                {% endfor %}
+                            </div>
+
+                            {%- if block.settings.review-Message != blank -%}
+                            <h2 class="review-message">{{ block.settings.review-Message }}</h2>
+                            {%- endif -%}
+                        </div>
+                    {%- endif -%}
+                {%-endfor-%}
             </div>
-			{%- endif -%}
-            {%-endfor-%}
-        </div>
+        {% endif %}
         <!-- end part -->
 
     <!-- image and video part -->
