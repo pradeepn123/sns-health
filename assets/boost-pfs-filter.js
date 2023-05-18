@@ -287,7 +287,6 @@ var boostPFSTemplate = {
                     data-variant-ids="${variantIds.join()}"
                     class="product-item__action-button 
                     button button--small button--primary"
-                    data-action="add-to-cart"
                 >
                     Get this bundle at ${bundlePrice}
                 </button>
@@ -451,6 +450,9 @@ var boostPFSTemplate = {
 
     function handleBundleItemAddToCart(e) {
         const button = this;
+        const loadingBar = document.querySelector(".loading-bar")
+        loadingBar.classList.add("is-visible")
+        loadingBar.style.width = '50%'
 
         const variantIds = this.getAttribute("data-variant-ids").split(",")
         const items = variantIds.map((variantId) => {
@@ -468,7 +470,6 @@ var boostPFSTemplate = {
             }
         })
         .then(() => {
-            const loadingBar = document.querySelector(".loading-bar")
             if (loadingBar) {
                 loadingBar.style.width = '100%'
                 setTimeout(() => {
@@ -477,7 +478,7 @@ var boostPFSTemplate = {
                 }, 200)
             }
             monster_refresh()
-            button.removeAttr("disabled")
+            button.removeAttribute("disabled")
         })
     }
 
