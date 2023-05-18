@@ -182,6 +182,11 @@
     opacity: 1;
     transform: translateY(-10px);
 }
+.collection-list__section .quick-links{
+    border: unset;
+    border-left: 1px solid var(--border-color) !important;
+    border-top: 1px solid var(--border-color) !important;
+}
 
 @media (max-width: 641px){
     .shop_by_brands_parent .tooltip .tooltipText{
