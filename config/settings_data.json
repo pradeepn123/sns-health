@@ -1569,7 +1569,10 @@
             "settings": {
               "collection": "new-arrivals",
               "image": "shopify:\/\/shop_images\/Mask_group.png",
-              "position": 4,
+              "image_mobile": "shopify:\/\/shop_images\/tyler-nix-gowVxm66M88-unsplash_1.png",
+              "position_desktop": 4,
+              "position_tablet": 3,
+              "position_mobile": 2,
               "title": "<p>New Arrivals<\/p>"
             }
           },
