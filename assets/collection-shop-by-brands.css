@@ -25,11 +25,12 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .collection__header img{
-    width: 140px;
-    height: 40px;
-    margin-bottom: 45px;
+    width: auto;
+    height: 50px;
+    margin-bottom: 35px;
 }
 @media(max-width:1000px){
     .collection__header--brand .collection__meta{
@@ -52,7 +53,7 @@
     width: 100%;
 }
 .logo-container{
-    flex: 1 0 37%;
+    flex: 1 0 36%;
     padding: 55px 40px;
     display: flex;
     align-items: center;
@@ -149,25 +150,27 @@
     width: 100%;
 }
 .testimonial{
-    flex: 1 0 37%;
-    border: 1px solid #E6E6F1;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    flex: 1 0 36%;
+    box-shadow: 0 0 10px #00000080;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,.5);
+    margin-right: 20px;
 }
 .image-video-container{
     display: flex;
-    flex: 1 0 63%; 
-    margin-left: 20px;
+    flex: 1 0 62%;    
 }
 .review-message p:last-child {
     font-size: 14px;
     font-weight: 500 !important;
 }
 .video-item {
-    margin: 0 0 0 10px !important;
+    margin: 0 0 0 20px !important;
 }
-.image-item , .video-item {
-    border: 1px solid #E6E6F1;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px;
+.image-item, .video-item {
+    box-shadow: 0 0 10px #00000080;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,.5);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -177,6 +180,7 @@
     font-weight: 600;
     top: 50%;
     color: #FFFFFF;
+    line-height: 1.4;
     left: 29%;
     width: 51%;
     transform: translate(-50%, -50%);
@@ -205,8 +209,7 @@
     color: white;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);    
     border-radius: 50%;
 }
 .image-flex-one{
@@ -241,6 +244,9 @@
 .testimonial .flickity-page-dots{
     display: none;
 }
+.sliding_images_parent.slider_height .flickity-viewport{
+    max-height: 300px;
+}
 @media(max-width:1200px){
     .testimonial .previous ,.testimonial .next{
         top: 81% !important;
@@ -272,6 +278,15 @@
     }
 }
 @media(max-width:641px){
+    .sliding_images_container .sliding_images_content h2{
+        width: 100%;
+    }
+    .image-video-container{
+        display: flex;
+    }
+    .logo-container{
+        padding: 20px;
+    }
     .image-video-container{
         display: block;
     }
@@ -283,8 +298,7 @@
     .logo-heading{
         font-size: 15px;
         font-weight: 600;
-        display: block;
-        padding-bottom: 10.8px;
+        display: block;        
     }
     .collection__brand-logo-wrapper {
         margin-bottom: 15px;
@@ -340,7 +354,7 @@
         width: 77%;
     }
     .collection__header img{
-        width: 100px;
+        width: 80px;
         height: 29px;
         margin-bottom: 15px;
     }
@@ -376,12 +390,16 @@
     font-weight: bold;
     float:right;
     background: #FFFFFF;
-    padding-left: 14px;
-    padding-right: 14px;
     position: absolute;
-    right: 0;
+    right: -18px;
+    top: -18px;
+    width: 40px;
+    height: 40px;
     z-index: 1;
+    text-align: center;
+    line-height: 45px;
     border-radius: 30px;
+    cursor: pointer;
   }
   .video-part{
     width: 100%;
@@ -412,16 +430,21 @@
     height: 100%;
     display: flex;
     align-items: center;
-
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #FFFFFF;
     font-size: 28px;
     font-weight: 600;
     padding-left: 30px;
     line-height: 42px;
 }
+.sliding_images_container .sliding_images_content h2{
+    width: 50%;
+}
 
 .sliding_images_parent .flickity-page-dots .dot.is-selected {
     background: red;
+    opacity: 1;
 }
 
 .sliding_images_parent .flickity-page-dots{
@@ -437,10 +460,12 @@
     transform: none !important;
     transition: background .25s;
 }
-
+.layout.collection__toolbar_mt .collection__toolbar{
+    margin-top: 0;
+}
 @media screen and (min-width: 801px){
-    .sliding_images_parent{
-        margin-left: 20px;
+    .logo-container{
+        margin-right: 20px;
     }
 }
 @media screen and (max-width: 800px){
