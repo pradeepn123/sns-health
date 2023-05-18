@@ -19,13 +19,18 @@
         margin: 1rem 0;
     }
 
+    .boost-pfs-filter-products .shop__by--wrapper-bundle {
+        background: linear-gradient(180deg, #FFE8D3 0%, #FFD0C1 100%);
+        padding: 1.6rem 1.2rem;
+    }
+
     @media (min-width: 641px) {
         .boost-pfs-filter-products .shop__by-promo-wrapper {
             grid-template-columns: 1.2fr 2.8fr;
             column-gap: 1.5rem;
         }
 
-        .boost-pfs-filter-products .promo-products__wrapper .flickity-page-dots {
+        .boost-pfs-filter-products .flickity-page-dots {
             display: none;
         }
     }
@@ -64,7 +69,7 @@
             min-width: 50%;
         }
 
-        .boost-pfs-filter-products .promo-products__wrapper .flickity-page-dots {
+        .boost-pfs-filter-products .flickity-page-dots {
             bottom: -25px !important;
         }
 
@@ -85,7 +90,8 @@
         }
     }
 
-    .boost-pfs-filter-products .promo-products__wrapper-container {
+    .boost-pfs-filter-products .promo-products__wrapper-container,
+    .boost-pfs-filter-products .bundle-products__wrapper-container {
         width: 100%;
     }
     .boost-pfs-filter-products .shop-d-none {
@@ -542,7 +548,8 @@
             show_color_swatch: {% if settings.show_color_swatch  %} {{ settings.show_color_swatch | json }} {% else %} false {% endif %},
             currency_conversion_enabled: {% if settings.currency_conversion_enabled %} {{ settings.currency_conversion_enabled | json }} {% else %} false {% endif %},
             template: {{ section.id | json }},
-            promo: null
+            promo: null,
+            bundle: null
         }
     };
 
@@ -563,6 +570,15 @@
             }
         {%- endif -%}
     {%- endfor -%}
+
+    {% if collection.metafields.custom.bundle_products %}
+        boostPFSConfig.custom.bundle = {"products": []}
+        boostPFSConfig.custom.bundle.title = "Offer Bundles"
+        boostPFSConfig.custom.bundle.description = "Enhance Your Practice with These Yoga Product Bundles"
+        {% for bundle_product in collection.metafields.custom.bundle_products.value %}
+            boostPFSConfig.custom.bundle.products.push({{ bundle_product | json }})
+        {% endfor %}
+    {% endif %}
 </script>
 {% schema %}
     {

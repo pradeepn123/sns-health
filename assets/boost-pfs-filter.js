@@ -3,6 +3,7 @@ var soldOut = false;
 var priceVaries = false;
 var images = [];
 var firstVariant = {};
+var bundlesHTML = '';
 
 // Override Settings
 var boostPFSFilterConfig = {
@@ -259,8 +260,40 @@ var boostPFSTemplate = {
             itemHtml += this.promoBanner(boostPFSConfig.custom.promo)
         }
 
+        if(boostPFSConfig.custom.bundle && index == boostPFSConfig.custom.products_per_page - 1 && Globals.queryParams.page == 1 ) {
+            itemHtml += this.bundleSection(boostPFSConfig.custom.bundle)
+        }
+
         return itemHtml;
     };
+
+    ProductGridItem.prototype.bundleSection = function (data) {
+        const variantIds = data.products.map((product) => product.variants[0].id)
+        const bundlePrice = Utils.formatMoney(data.products.reduce((acc, obj) => {
+            return acc + (obj.variants[0].price / 100)
+        }, 0))
+        return `<div class='1/4--desk width-100 shop__by--wrapper-bundle'>
+            ${data.title ? `<h3 class="bundle-section-title">${data.title}</h3>` : ''}
+            ${data.description ? `<p class="bundle-section-description">${data.description}</p>` : ''}
+            <div class="bundle-products__wrapper-container">
+                <div class="bundle-products__wrapper">
+                    ${this.getPromoProductGridItem(data.products)}
+                </div>
+            </div>
+            <div class="bundle-items-btn-wrapper">
+                <button
+                    type="submit"
+                    data-bundle-items-section
+                    data-variant-ids="${variantIds.join()}"
+                    class="product-item__action-button 
+                    button button--small button--primary"
+                    data-action="add-to-cart"
+                >
+                    Get this bundle at ${bundlePrice}
+                </button>
+            </div>
+        </div>`
+    }
 
     ProductGridItem.prototype.promoBanner = function (data) {
         return `<div class='1/4--desk width-100 shop__by-promo-wrapper shop-d-none'>
@@ -414,6 +447,38 @@ var boostPFSTemplate = {
 
         // Build Labels
         return tagLabelHtmls + saleLabelHtml;
+    }
+
+    function handleBundleItemAddToCart(e) {
+        const button = this;
+
+        const variantIds = this.getAttribute("data-variant-ids").split(",")
+        const items = variantIds.map((variantId) => {
+            return {
+                quantity: 1,
+                id: variantId
+            }
+        })
+        return fetch(`${Shopify.routes.root}cart/add.js`, {
+            method: 'POST',
+            body: JSON.stringify({items: items}),
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            }
+        })
+        .then(() => {
+            const loadingBar = document.querySelector(".loading-bar")
+            if (loadingBar) {
+                loadingBar.style.width = '100%'
+                setTimeout(() => {
+                    loadingBar.style.width = '0%'
+                    loadingBar.classList.remove("is-visible")
+                }, 200)
+            }
+            monster_refresh()
+            button.removeAttr("disabled")
+        })
     }
 
     function buildImages(data) {
@@ -706,6 +771,8 @@ var boostPFSTemplate = {
         var currentPage = parseInt(Globals.queryParams.page);
         var totalPage = Math.ceil(totalProduct / Globals.queryParams.limit);
 
+
+
         if (totalPage > 1) {
             var paginationHtml = boostPFSTemplate.paginateHtml;
             // Build Previous
@@ -917,6 +984,22 @@ var boostPFSTemplate = {
             },
             selector: ".promo-products__wrapper"
         }}))
+
+        document.dispatchEvent(new CustomEvent("theme:customFlickity:init", {detail: {
+            config: {
+                pageDots: true,
+                prevNextButtons: true,
+                contain: true,
+                groupCells: true,
+                wrapAround: false
+            },
+            selector: ".bundle-products__wrapper"
+        }}))
+
+        const bundleBtn = document.querySelector('[data-bundle-items-section]')
+        if (bundleBtn) {
+            bundleBtn.addEventListener("click", handleBundleItemAddToCart)
+        }
     };
 
     // Build additional elements
