@@ -1,6 +1,9 @@
 .layout{
     margin-top: 23px;
 }
+#main{
+    overflow-x: hidden;
+}
 .logo-container {
     background: #F4E6DB;
 }
@@ -371,12 +374,23 @@
         font-size: 12px;
     }
     #size-chart{
-        width: 77%;
+        width: 80% !important;
+        top: 40%;
     }
     .collection__header img{
         width: 80px;
         height: 29px;
         margin-bottom: 15px;
+    }
+    #size-chart .close{
+        width: 30px;
+        height: 30px;
+        line-height: 38px;
+    }
+    #size-chart .close svg{
+        width: 20px;
+        height: 20px;
+        display: inline-block;
     }
 }
 
