@@ -76,9 +76,9 @@
   data-section-name="ticker"
 >
   <ticker-section class="ticker ticker-text-5" style="--ticker-delay:10s">
-    {% for i in (1..6) %}
-      <div class="ticker__container {{ block.settings.direction }} ticker--animation">
-          <div class="ticker-element">{%- render 'star-icon' -%}  {{ block.settings.ticker_text }}</div> 
+    {% for i in (1..9) %}
+      <div class="ticker__container {{ section.settings.direction }} ticker--animation">
+          <div class="ticker-element">{%- render 'star-icon' -%}  {{ section.settings.ticker_text }}</div> 
       </div>
     {% endfor %}
   </ticker-section>

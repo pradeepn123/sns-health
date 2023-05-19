@@ -1,0 +1,32 @@
+{%- render 'ticker' -%}
+
+{% schema %}
+    {
+        "name": "Ticker",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "ticker_text",
+                "label": "text",
+                "default": "<p>Ticker text</p>",
+                "info": "Highlight one or two key words in your heading by italicizing them, then choose the highlight option below"
+            },
+            {
+                "type": "select",
+                "id": "direction",
+                "options": [
+                  {
+                    "value": "ticker-to-left",
+                    "label": "left"
+                  },
+                  {
+                    "value": "ticker-to-right",
+                    "label": "right"
+                  }        
+                ],
+                "default": "ticker-to-left",
+                "label": "Direction"
+              }
+        ]
+    }
+{% endschema %}
