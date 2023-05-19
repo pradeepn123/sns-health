@@ -336,6 +336,9 @@
     .testimonial .flickity-page-dots{
         bottom: 29px !important;
     }
+    .product-item.product-item--list .grid-item-row-info{
+        display: inline-block ;
+    }
 }
 @media(max-width:520px){
     .collection__title{
