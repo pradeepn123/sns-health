@@ -367,12 +367,6 @@
         
         </div>
 
-        {%- for block in section.blocks -%}
-            {%- if block.type == "ticker" -%}
-                {%- render 'ticker', block: block -%}
-            {%- endif -%}
-        {%- endfor -%}
-
         <!-- end image and video part -->
 
         <div class="layout {% if collection.template_suffix == 'brands' %}collection__toolbar_mt{% endif %}">
