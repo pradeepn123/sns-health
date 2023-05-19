@@ -1608,6 +1608,13 @@
           "open_group_filters_mode": "all_closed",
           "filter_group_order": ""
         }
+      },
+      "ticker": {
+        "type": "ticker",
+        "settings": {
+          "ticker_text": "<p><strong>Flat 20%<\/strong> off on all brands<\/p>",
+          "direction": "ticker-to-left"
+        }
       }
     },
     "content_for_index": [
