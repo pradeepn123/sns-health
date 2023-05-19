@@ -1,0 +1,115 @@
+<style>
+    [id*='ticker-'] {
+      display: block;
+      text-decoration: none;
+      color: black;
+    }
+    .ticker {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+    }
+    .ticker--animation {
+      animation: ticker var(--ticker-delay, 15s) infinite linear;
+    }
+    .ticker--animation.ticker-to-right {
+      animation-direction: reverse;
+    }
+    [id*='ticker']:hover .ticker__container {
+      animation-play-state: paused;
+    }
+    .ticker__container .ticker-element {
+      display: flex;
+      align-items: center;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 70px;
+      white-space: nowrap;
+    }
+    .ticker__container .ticker-element svg {
+      margin-right: 15px;
+    }
+    .ticker__container .ticker-element p {
+      font-size: 18px;
+    }
+    .section-background {
+      padding: 20px 0;
+      margin-bottom: 10px;
+      background: #f4e6db;
+    }
+  
+    @media (max-width: 576px) {
+      .ticker__icon,
+      .ticker__container .ticker-element {
+        margin-left: 50px;
+      }
+    }
+    @-moz-keyframes ticker {
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @-webkit-keyframes ticker {
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @-o-keyframes ticker {
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @keyframes ticker {
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  
+    .width {
+      width: 100%
+    }
+  </style>
+  
+  <div
+    id="ticker-template"
+    class="section-background"
+    data-section-name="ticker">
+        <ticker-section class="ticker ticker-text-5" style="--ticker-delay:10s">
+            {% for i in (1..8) %}
+                <div class="ticker__container {{ section.settings.direction }} ticker--animation">
+                    <div class="ticker-element">{%- render 'star-icon' -%}  {{ section.settings.ticker_text }}</div> 
+                </div>
+            {% endfor %}
+        </ticker-section>
+  </div>
+
+{% schema %}
+    {
+        "name": "Ticker",
+        "settings": [
+            {
+                "type": "richtext",
+                "id": "ticker_text",
+                "label": "text",
+                "default": "<p>Ticker text</p>",
+                "info": "Highlight one or two key words in your heading by italicizing them, then choose the highlight option below"
+            },
+            {
+                "type": "select",
+                "id": "direction",
+                "options": [
+                  {
+                    "value": "ticker-to-left",
+                    "label": "left"
+                  },
+                  {
+                    "value": "ticker-to-right",
+                    "label": "right"
+                  }        
+                ],
+                "default": "ticker-to-left",
+                "label": "Direction"
+              }
+        ]
+    }
+{% endschema %}
