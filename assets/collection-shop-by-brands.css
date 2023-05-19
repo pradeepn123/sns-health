@@ -28,7 +28,7 @@
     margin-bottom: 20px;
 }
 .collection__header img{
-    width: auto;
+    width: 140px;
     height: 50px;
     margin-bottom: 35px;
 }
@@ -261,6 +261,11 @@
         width: 66%;
     }
 }
+@media(max-width:767px){
+    .image-video-container{
+        padding: 0 10px 30px;
+    }
+}
 @media(max-width:1000px){
     .collection__header--brand .collection__meta{
         display: flex;
@@ -268,31 +273,40 @@
     }
     .testimonial-imagevide-wrap{
         flex-direction: column;
-    }
-    .image-video-container{
-        width: 100%;
-        margin-left: 0;
-    }
+    }    
     .testimonial{
         width: 100%;
     }
+    .image-video-container .items {    
+        flex: 0 0 auto;
+        white-space: normal;
+        scroll-snap-align: start;
+    }
+        
     .image-video-container{
         margin-top: 20px;
+        width: 100%;
+        margin-left: 0;
+        display: flex;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        -ms-scroll-snap-type: x mandatory;
+        white-space: nowrap;
+        padding: 0 20px 30px;
+    }
+    .image-item, .video-item {
+        width: 90%;
     }
 }
 @media(max-width:641px){
     .sliding_images_container .sliding_images_content h2{
         width: 100%;
-    }
-    .image-video-container{
-        display: flex;
-    }
+    }    
     .logo-container{
         padding: 20px;
-    }
-    .image-video-container{
-        display: block;
-    }
+    }    
     .video-part , .image-flex-one img{
         width: 100%;
         height: 162.05px;

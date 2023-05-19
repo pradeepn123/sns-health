@@ -35,36 +35,36 @@
  */
 
 // image video slider on mobile screeen
-mobileOnlySlider(".image-video-container", false, false, 641);
-function mobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
-  console.log('oooooooooooooo')
-  var slider = $($slidername);
-  var settings = {
-    mobileFirst: true,
-    autoplay: false,
-    infinite: false,
-    slidesToShow: 1.1,
-    dots: $dots,
-    arrows: $arrows,
-    responsive: [
-      {
-        breakpoint: $breakpoint,
-        settings: "unslick"
-      }
-    ]
-  };
+// mobileOnlySlider(".image-video-container", false, false, 641);
+// function mobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
+//   console.log('oooooooooooooo')
+//   var slider = $($slidername);
+//   var settings = {
+//     mobileFirst: true,
+//     autoplay: false,
+//     infinite: false,
+//     slidesToShow: 1.1,
+//     dots: $dots,
+//     arrows: $arrows,
+//     responsive: [
+//       {
+//         breakpoint: $breakpoint,
+//         settings: "unslick"
+//       }
+//     ]
+//   };
 
-  slider.slick(settings);
+//   slider.slick(settings);
 
-  $(window).on("resize", function () {
-    if ($(window).width() > $breakpoint) {
-      return;
-    }
-    if (!slider.hasClass("slick-initialized")) {
-      return slider.slick(settings);
-    }
-  });
-}
+//   $(window).on("resize", function () {
+//     if ($(window).width() > $breakpoint) {
+//       return;
+//     }
+//     if (!slider.hasClass("slick-initialized")) {
+//       return slider.slick(settings);
+//     }
+//   });
+// }
 
 
 const html = document.html;

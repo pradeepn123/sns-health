@@ -1,0 +1,93 @@
+<div class="breadcrumb-collection">
+    <div class="container container--flush">
+        <div class="page__sub-header">
+            <nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb">
+                <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item">
+                        <a class="breadcrumb__link link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a> {%- render 'icon', icon: 'arrow-right' -%}
+                    </li>
+
+                    <li class="breadcrumb__item">
+                        {%- if current_tags -%}
+                        <a class="boost-pfs-filter-collection-header breadcrumb__link link" href="{{ collection.url }}" {% unless current_tags %}aria-current="page"{% endunless %}>
+                            {%- if collection.handle == 'all' -%}
+                            {{- 'collection.general.all_products' | t -}}
+                            {%- else -%}
+                            {{- collection.title -}}
+                            {%- endif -%}
+                        </a>
+
+                        {%- render 'icon', icon: 'arrow-right' -%}
+                        {%- else -%}
+                        <span class="boost-pfs-filter-collection-header breadcrumb__link" aria-current="page">
+                            {%- if collection.handle == 'all' -%}
+                            {{- 'collection.general.all_products' | t -}}
+                            {%- else -%}
+                            {{- collection.title -}}
+                            {%- endif -%}
+                        </span>
+                        {%- endif -%}
+                    </li>
+
+                    {%- if current_tags -%}
+                    <li class="breadcrumb__item">
+                        {%- if section.settings.filter_type == 'tag' -%}
+                        {%- assign tag = current_tags.first -%}
+                        {%- elsif section.settings.filter_type == 'group' -%}
+                        {%- assign tag = current_tags.first | split: '_' | last -%}
+                        {%- endif -%}
+
+                        <span class="breadcrumb__link" aria-current="page">{{ tag | capitalize }}</span>
+                    </li>
+                    {%- endif -%}
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Collection breadcrumb",
+        "settings": [
+            {
+                "type": "select",
+                "id": "filter_type",
+                "label": "Filter type",
+                "info": "Filters by group requires specific tag formatting. [Learn more](https://help.shopify.com/manual/using-themes/themes-by-shopify/supply#product-tips-tips-specific)",
+                "options": [
+                    {
+                        "value": "tag",
+                        "label": "By tag"
+                    }, {
+                        "value": "group",
+                        "label": "By group"
+                    }
+                ],
+                "default": "tag"
+            }, {
+                "type": "select",
+                "id": "open_group_filters_mode",
+                "label": "Filter opening mode (desktop)",
+                "options": [
+                    {
+                        "value": "all_closed",
+                        "label": "All closed"
+                    }, {
+                        "value": "all_open",
+                        "label": "All open"
+                    }, {
+                        "value": "first_open",
+                        "label": "First open"
+                    }
+                ],
+                "default": "all_closed"
+            }, {
+                "type": "text",
+                "id": "filter_group_order",
+                "label": "Group order",
+                "info": "List items must be identical to the group name. If left empty, all groups will be displayed in alphabetical order. Example: Color, Brand, Size."
+            }
+        ]
+    }
+{% endschema %}

@@ -1575,21 +1575,13 @@
               "position_mobile": 2,
               "title": "<p>New Arrivals<\/p>"
             }
-          },
-          "d5de926c-3fa4-4888-b020-dea2e50b9a0c": {
-            "type": "ticker",
-            "settings": {
-              "ticker_text": "<p><strong>20% off  <\/strong>on all brands<\/p>",
-              "direction": "ticker-to-left"
-            }
           }
         },
         "block_order": [
           "5c1a8763-e6bc-418f-a2f6-a1982f307497",
           "56fc10ed-06e3-4149-a41d-f5dfb6c5bf74",
           "8e70b4f3-6aa6-4f5f-bd2d-4681b78dc39f",
-          "b5971ab5-65c9-40b7-9e07-ed568722d2e6",
-          "d5de926c-3fa4-4888-b020-dea2e50b9a0c"
+          "b5971ab5-65c9-40b7-9e07-ed568722d2e6"
         ],
         "settings": {
           "show_collection_image": true,
@@ -1609,10 +1601,64 @@
           "filter_group_order": ""
         }
       },
+      "brand-breadcrumb": {
+        "type": "brand-breadcrumb",
+        "settings": {
+          "filter_type": "tag",
+          "open_group_filters_mode": "all_closed",
+          "filter_group_order": ""
+        }
+      },
+      "collection-brand-heading": {
+        "type": "collection-brand-heading",
+        "blocks": {
+          "0d89e1ad-426f-4871-adef-91170f247b15": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 5,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p><strong>- Jeanne W<\/strong><\/p>"
+            }
+          },
+          "ee3040d2-6f1e-4cbd-9c24-7a7803ddca0a": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 5,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p><strong>- Jeanne W<\/strong><\/p>"
+            }
+          },
+          "5d1aea09-39e2-4d3d-afb4-af32e470c93a": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 5,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p><strong>- Jeanne W<\/strong><\/p>"
+            }
+          },
+          "cff8f44c-d91e-4e25-9195-282def1306d8": {
+            "type": "slide",
+            "settings": {
+              "star_rating": 5,
+              "rating-size": 10,
+              "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p><strong>- Jeanne W<\/strong><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "0d89e1ad-426f-4871-adef-91170f247b15",
+          "ee3040d2-6f1e-4cbd-9c24-7a7803ddca0a",
+          "5d1aea09-39e2-4d3d-afb4-af32e470c93a",
+          "cff8f44c-d91e-4e25-9195-282def1306d8"
+        ],
+        "settings": {
+          "show_collection_image": true
+        }
+      },
       "ticker": {
         "type": "ticker",
         "settings": {
-          "ticker_text": "<p><strong>Flat 20%<\/strong> off on all brands<\/p>",
+          "ticker_text": "<p><strong>Flat 20% OFF<\/strong> on Cork yoga Mats<\/p>",
           "direction": "ticker-to-left"
         }
       }
