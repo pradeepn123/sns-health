@@ -1551,10 +1551,20 @@
               "position_mobile": 2,
               "title": "<p>New Arrivals<\/p>"
             }
+          },
+          "b7b215c5-6881-4dd6-acbf-ec46fb0b3d14": {
+            "type": "bundle",
+            "settings": {
+              "title": "Shop Bundle",
+              "description": "",
+              "collection": "",
+              "limit": 3
+            }
           }
         },
         "block_order": [
-          "b5971ab5-65c9-40b7-9e07-ed568722d2e6"
+          "b5971ab5-65c9-40b7-9e07-ed568722d2e6",
+          "b7b215c5-6881-4dd6-acbf-ec46fb0b3d14"
         ],
         "settings": {
           "show_collection_image": true,
