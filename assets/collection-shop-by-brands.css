@@ -342,6 +342,9 @@
     .product-item.product-item--list .grid-item-row-info{
         display: inline-block ;
     }
+    .product-item.product-item--list .grid-item-row-info:empty{
+        display: none ;
+    }
 }
 @media(max-width:520px){
     .collection__title{
