@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "breadcrumb": {
+      "type": "brand-breadcrumb",
+      "settings": {
+        "filter_type": "tag",
+        "open_group_filters_mode": "all_closed",
+        "filter_group_order": ""
+      }
+    },
+    "9b284a1b-cd08-43ac-b891-bc267741d964": {
+      "type": "ticker",
+      "settings": {
+        "ticker_text": "<p><strong>20% off <\/strong>on all brands<\/p>",
+        "direction": "ticker-to-left"
+      }
+    },
+    "main-collection": {
+      "type": "collection-shop-by-brands",
+      "settings": {
+        "show_collection_image": true,
+        "collapse_collection_description": false,
+        "collection_image_size": "small",
+        "products_per_row": "4",
+        "default_products_per_page": 24,
+        "default_view_layout": "grid",
+        "show_quick_buy": "list",
+        "show_quick_view": "list",
+        "quick_links": "",
+        "quick_links_show_products_count": true,
+        "show_filters": true,
+        "show_filter_color_swatch": true,
+        "filter_type": "tag",
+        "open_group_filters_mode": "all_closed",
+        "filter_group_order": ""
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "9b284a1b-cd08-43ac-b891-bc267741d964",
+    "main-collection"
+  ]
+}
