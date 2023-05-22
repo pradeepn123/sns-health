@@ -409,18 +409,24 @@
                         {%- unless forloop.last -%},{%- endunless -%}
                     {%- endfor -%}
                 ]   
-            }
-        {%- endif -%}
+            };
+        {%- elsif block.type == "bundle" -%}
+            boostPFSConfig.custom.bundle = {"products": []}
+            boostPFSConfig.custom.bundle.title = "{{ block.settings.title | default: "Offer Bundles" }}"
+            boostPFSConfig.custom.bundle.description = "{{ block.settings.description | default: "Enhance Your Practice with These Yoga Product Bundles" }}"
+            {% assign selectCollection = block.settings.collection %}
+            {% if collection.metafields.custom.bundle_products %}
+                {% for bundle_product in collection.metafields.custom.bundle_products.value limit: block.settings.limit %}
+                    boostPFSConfig.custom.bundle.products.push({{ bundle_product | json }})
+                {% endfor %}
+            {% elsif selectCollection %}
+                {% for bundle_product in selectCollection.products limit: block.settings.limit %}
+                    console.log("bundle-product-information")
+                    boostPFSConfig.custom.bundle.products.push({{ bundle_product | json }})
+                {% endfor %}
+            {% endif %}
+        {%- endif -%} 
     {%- endfor -%}
-
-    {% if collection.metafields.custom.bundle_products %}
-        boostPFSConfig.custom.bundle = {"products": []}
-        boostPFSConfig.custom.bundle.title = "Offer Bundles"
-        boostPFSConfig.custom.bundle.description = "Enhance Your Practice with These Yoga Product Bundles"
-        {% for bundle_product in collection.metafields.custom.bundle_products.value %}
-            boostPFSConfig.custom.bundle.products.push({{ bundle_product | json }})
-        {% endfor %}
-    {% endif %}
 </script>
 {% schema %}
     {
@@ -589,35 +595,6 @@
         ],
         "blocks": [
             {
-                "type": "slide",
-                "name": "Review Testimonial",
-                "settings": [
-                    {
-                        "type": "range",
-                        "id": "star_rating",
-                        "label": "Star Rating",
-                        "min": 0,
-                        "max": 5,
-                        "step": 1,
-                        "default": 5
-                    },
-                    {
-                        "type": "range",
-                        "id": "rating-size",
-                        "min": 10,
-                        "max": 60,
-                        "step": 1,
-                        "unit": "px",
-                        "label": "Rating Font Size",
-                        "default": 10
-                    },
-                    {
-                        "type": "richtext",
-                        "id": "review-Message",
-                        "label": "Message"
-                    }
-                ]
-            }, {
                 "type": "promo",
                 "name": "Promo",
                 "limit": 1,
@@ -675,7 +652,36 @@
                     }
                 ]
 
+            }, {
+                "type": "bundle",
+                "name": "Bundle",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Title"
+                    },{
+                        "type": "richtext",
+                        "id": "description",
+                        "label": "Description"
+                    },{
+                        "type": "collection",
+                        "id": "collection",
+                        "label": "Collection",
+                        "info": "Show on specific collection only"
+                    }, {
+                        "type": "range",
+                        "id": "limit", 
+                        "min": 3,
+                        "max": 8,
+                        "step": 1,
+                        "default": 3,
+                        "label": "Choose Bundle Product Limit"
+                    }
+                ]
             }
+            
         ]
     }
 {% endschema %}
