@@ -161,14 +161,15 @@
 }
 .image-video-container{
     display: flex;
-    flex: 1 0 62%;    
+    flex: 1 0 62%;
+    column-gap: 20px;    
 }
 .review-message p:last-child {
     font-size: 14px;
     font-weight: 500 !important;
 }
 .video-item {
-    margin: 0 0 0 20px !important;
+    margin: 0 !important;
 }
 .image-item, .video-item {
     box-shadow: 0 0 10px #00000080;
