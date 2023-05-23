@@ -1470,8 +1470,7 @@
           "7c25aa18-16ae-4427-9987-8bf674e9905b": {
             "type": "selected_collection",
             "settings": {
-              "featured_collection_item": "3d-energy",
-              "featured_collection_image": "shopify:\/\/shop_images\/Nettle-2-min.png",
+              "featured_collection_item": "",
               "show_overlay": false,
               "overlay_opacity": 20
             }
