@@ -1607,6 +1607,7 @@
         "blocks": {
           "0d89e1ad-426f-4871-adef-91170f247b15": {
             "type": "slide",
+            "disabled": true,
             "settings": {
               "star_rating": 5,
               "rating-size": 10,
@@ -1615,6 +1616,7 @@
           },
           "ee3040d2-6f1e-4cbd-9c24-7a7803ddca0a": {
             "type": "slide",
+            "disabled": true,
             "settings": {
               "star_rating": 5,
               "rating-size": 10,
@@ -1623,6 +1625,7 @@
           },
           "5d1aea09-39e2-4d3d-afb4-af32e470c93a": {
             "type": "slide",
+            "disabled": true,
             "settings": {
               "star_rating": 5,
               "rating-size": 10,
@@ -1631,6 +1634,7 @@
           },
           "cff8f44c-d91e-4e25-9195-282def1306d8": {
             "type": "slide",
+            "disabled": true,
             "settings": {
               "star_rating": 5,
               "rating-size": 10,
