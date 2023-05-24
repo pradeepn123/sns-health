@@ -32,7 +32,7 @@
 }
 .collection__header img{
     width: 140px;
-    height: 50px;
+    height: 40px;
     margin-bottom: 35px;
 }
 @media(max-width:1000px){
@@ -254,6 +254,12 @@
 .product-item.product-item--list .grid-item-row-info{
     display: none;
 }
+.sliderimage-desktop{
+    display: block;
+}
+.sliderimage-mobile{
+    display: none;
+}
 @media(max-width:1200px){
     .testimonial .previous ,.testimonial .next{
         top: 81% !important;
@@ -355,6 +361,12 @@
     }
     .product-item.product-item--list .grid-item-row-info:empty{
         display: none ;
+    }
+    .sliderimage-desktop{
+        display: none;
+    }
+    .sliderimage-mobile{
+        display: block;
     }
 }
 @media(max-width:520px){
@@ -532,7 +544,6 @@
         line-height: 24px;
         color: #FFFFFF;
         background-size: cover;
-        background-position: top;
     }
     /* Testimonials Flickity Container */
     .testimonial .flickity-viewport{

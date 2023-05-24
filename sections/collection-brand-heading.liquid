@@ -31,11 +31,18 @@
             {% if collection.metafields.custom.collection_header_slider.value %}
                 <div class="sliding_images_parent {% if collection.metafields.custom.collection_description == blank and collection.metafields.custom.collection_logo == blank %} slider_height {% endif%}">
                     {%- for block in collection.metafields.custom.collection_header_slider.value -%}
-                        <div class="sliding_images_container">
+                        <div class="sliding_images_container sliderimage-desktop">
                             {% if block.image != blank %}
                                 <div class="sliding_images_content" style="background-image: url({{ block.image | img_url : 'master'}})">
                                     <h2>{{ block.description | metafield_tag }}</h2>
                                 </div>
+                            {% endif %}
+                        </div>
+                        <div class="sliding_images_container sliderimage-mobile">
+                            {% if block.mobile_image != blank %}
+                            <div class="sliding_images_content" style="background-image: url({{ block.mobile_image | img_url : 'master'}})">
+                                <h2>{{ block.description | metafield_tag }}</h2>
+                            </div>
                             {% endif %}
                         </div>
                     {% endfor %}
