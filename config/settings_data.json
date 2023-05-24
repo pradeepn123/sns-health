@@ -1520,6 +1520,15 @@
               "show_overlay": false,
               "overlay_opacity": 50
             }
+          },
+          "dd8723a0-6d62-4bb3-be5c-c25b6d71edac": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "calcium",
+              "featured_collection_image": "shopify:\/\/shop_images\/Vector_79aa197e-714c-49e6-a894-79ebe74b4430.png",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
           }
         },
         "block_order": [
@@ -1528,7 +1537,8 @@
           "c05e58e8-f5d5-4411-8d0b-2ee1464b6549",
           "1b0c36f0-9eef-47ec-9b8a-6dd7e9d4fbd6",
           "2931afe1-807e-4bc2-8df0-45ef2d6f11f2",
-          "7a2f6441-604f-42a0-8110-9957f6daae87"
+          "7a2f6441-604f-42a0-8110-9957f6daae87",
+          "dd8723a0-6d62-4bb3-be5c-c25b6d71edac"
         ],
         "settings": {
           "title": "Shop By Brand",
