@@ -32,8 +32,13 @@
 }
 .collection__header img{
     width: 140px;
-    height: 40px;
     margin-bottom: 35px;
+}
+.logo-slider-flex-desktop{
+    display: block;
+}
+.logo-slider-flex-mobile{
+    display: none;
 }
 @media(max-width:1000px){
     .collection__header--brand .collection__meta{
@@ -286,7 +291,7 @@
     }
     .image-video-container{
         margin-top: 10px !important;
-        padding-left: 0 !important;
+        padding-left: 10px !important;
     }
 }
 @media(max-width:1000px){
@@ -371,6 +376,12 @@
     .sliderimage-mobile{
         display: block;
     }
+    .logo-slider-flex-desktop{
+        display: none;
+    }
+    .logo-slider-flex-mobile{
+        display: block;
+    }
 }
 @media(max-width:520px){
     .collection__title{
@@ -408,7 +419,6 @@
     }
     .collection__header img{
         width: 80px;
-        height: 28px;
         margin-bottom: 15px;
     }
     #size-chart .close{

@@ -2,34 +2,68 @@
     <div class="container container--flush">
         <!-- collection page BRANDS -->
         <div class="logo-slider-flex">
-            {% if collection.metafields.custom.collection_hero_section.value != blank %}
-                <div class="logo-container">
-                    <header class="card__header">
-                        <div class="collection__header collection__header--brand">
-                            <img
-                                src="{{ collection.metafields.custom.collection_hero_section.value.hero_logo | img_url : 'master' }}"
-                                style="{% unless collection.metafields.custom.collection_hero_section.value.description %}margin-bottom: 0{% endunless %}"
-                            >
-                        </div>
-                        <div class="collection__header-inner">
-                            <div class="collection__meta">
-                                <h3 class="logo-heading">
-                                    {{collection.title}}
-                                </h3>
-                                <div class="collection__meta-inner">
-                                    <h1 class="boost-pfs-filter-collection-header collection__title heading h1">
-                                        {{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}
-                                    </h1>
+            <div class="logo-slider-flex-desktop">
+                {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank or collection.metafields.custom.collection_hero_section.value.description != blank %}
+                    <div class="logo-container">
+                        <header class="card__header">
+                            {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank %}
+                            <div class="collection__header collection__header--brand">
+                                <img
+                                    src="{{ collection.metafields.custom.collection_hero_section.value.hero_logo | img_url : 'master' }}"
+                                    style="{% unless collection.metafields.custom.collection_hero_section.value.description %}margin-bottom: 0{% endunless %}"
+                                >
+                            </div>
+                            {% endif %}
+                            <div class="collection__header-inner">
+                                <div class="collection__meta">
+                                    <h3 class="logo-heading">
+                                        {{collection.title}}
+                                    </h3>
+                                    <div class="collection__meta-inner">
+                                        <h1 class="boost-pfs-filter-collection-header collection__title heading h1">
+                                            {{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}
+                                        </h1>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </header>
-                </div>
-            {% endif %}
+                        </header>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="logo-slider-flex-mobile">
+                {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank or collection.metafields.custom.collection_hero_section.value.description != blank or collection.title != blank %}
+                    <div class="logo-container logo-slider-flex-mobile">
+                        <header class="card__header">
+                            {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank %}
+                            <div class="collection__header collection__header--brand">
+                                <img
+                                    src="{{ collection.metafields.custom.collection_hero_section.value.hero_logo | img_url : 'master' }}"
+                                    style="{% unless collection.metafields.custom.collection_hero_section.value.description %}margin-bottom: 0{% endunless %}"
+                                >
+                            </div>
+                            {% endif %}
+                            <div class="collection__header-inner">
+                                <div class="collection__meta">
+                                    <h3 class="logo-heading">
+                                        {{collection.title}}
+                                    </h3>
+                                    <div class="collection__meta-inner">
+                                        <h1 class="boost-pfs-filter-collection-header collection__title heading h1">
+                                            {{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                {% endif %}
+            </div>
 
             <!-- image slider start -->
             {% if collection.metafields.custom.collection_header_slider.value %}
-                <div class="sliding_images_parent {% if collection.metafields.custom.collection_description == blank and collection.metafields.custom.collection_logo == blank %} slider_height {% endif%}">
+                <div class="sliding_images_parent {% if collection.metafields.custom.collection_description == blank and collection.metafields.custom.collection_logo == blank %} slider_height {% endif%}"
+                     style="{% unless collection.metafields.custom.collection_hero_section.value.hero_logo != blank or collection.metafields.custom.collection_hero_section.value.description != blank %}height: 300px !important{% endunless %}"
+                >
                     {%- for block in collection.metafields.custom.collection_header_slider.value -%}
                         <div class="sliding_images_container sliderimage-desktop">
                             {% if block.image != blank %}
