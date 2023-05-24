@@ -8,6 +8,12 @@
         "filter_group_order": ""
       }
     },
+    "19c018de-3523-40ac-a377-435eed53aaa0": {
+      "type": "collection-brand-heading",
+      "settings": {
+        "show_collection_image": true
+      }
+    },
     "9b284a1b-cd08-43ac-b891-bc267741d964": {
       "type": "ticker",
       "settings": {
@@ -38,6 +44,7 @@
   },
   "order": [
     "breadcrumb",
+    "19c018de-3523-40ac-a377-435eed53aaa0",
     "9b284a1b-cd08-43ac-b891-bc267741d964",
     "main-collection"
   ]
