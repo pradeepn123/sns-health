@@ -1636,22 +1636,13 @@
               "rating-size": 10,
               "review-Message": "<p>“Firstly, I teach and practice, a lot, everywhere. I need stability, portabilty and inspo, THANK YOU Yoga design Lab for nailing all 3.”<\/p><p><strong>- Jeanne W<\/strong><\/p>"
             }
-          },
-          "830357ce-32c6-49d8-95e3-5890b33cf0d0": {
-            "type": "slide",
-            "settings": {
-              "star_rating": 5,
-              "rating-size": 10,
-              "review-Message": "<p>test review<\/p><p>- John<\/p>"
-            }
           }
         },
         "block_order": [
           "0d89e1ad-426f-4871-adef-91170f247b15",
           "ee3040d2-6f1e-4cbd-9c24-7a7803ddca0a",
           "5d1aea09-39e2-4d3d-afb4-af32e470c93a",
-          "cff8f44c-d91e-4e25-9195-282def1306d8",
-          "830357ce-32c6-49d8-95e3-5890b33cf0d0"
+          "cff8f44c-d91e-4e25-9195-282def1306d8"
         ],
         "settings": {
           "show_collection_image": true
