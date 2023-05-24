@@ -1467,6 +1467,15 @@
       "shop-by-brands": {
         "type": "shop-by-brands",
         "blocks": {
+          "2054d47e-4f7c-4414-938e-e51abfe0e48a": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "calcium",
+              "featured_collection_image": "shopify:\/\/shop_images\/Desktop.png",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
           "12c8bddc-2b8f-4e55-b6d8-95663ac5d2ad": {
             "type": "selected_collection",
             "settings": {
@@ -1520,25 +1529,16 @@
               "show_overlay": false,
               "overlay_opacity": 50
             }
-          },
-          "7c25aa18-16ae-4427-9987-8bf674e9905b": {
-            "type": "selected_collection",
-            "disabled": true,
-            "settings": {
-              "featured_collection_item": "",
-              "show_overlay": false,
-              "overlay_opacity": 20
-            }
           }
         },
         "block_order": [
+          "2054d47e-4f7c-4414-938e-e51abfe0e48a",
           "12c8bddc-2b8f-4e55-b6d8-95663ac5d2ad",
           "bf7edbd5-2119-4522-aa90-1f3169224514",
           "c05e58e8-f5d5-4411-8d0b-2ee1464b6549",
           "1b0c36f0-9eef-47ec-9b8a-6dd7e9d4fbd6",
           "2931afe1-807e-4bc2-8df0-45ef2d6f11f2",
-          "7a2f6441-604f-42a0-8110-9957f6daae87",
-          "7c25aa18-16ae-4427-9987-8bf674e9905b"
+          "7a2f6441-604f-42a0-8110-9957f6daae87"
         ],
         "settings": {
           "title": "Shop By Brand",
