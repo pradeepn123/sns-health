@@ -40,12 +40,20 @@
         "open_group_filters_mode": "all_closed",
         "filter_group_order": ""
       }
+    },
+    "4b2ab2e0-50c3-4912-bdbd-83ea8c461b76": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed",
+        "show_quick_buy": false
+      }
     }
   },
   "order": [
     "breadcrumb",
     "19c018de-3523-40ac-a377-435eed53aaa0",
     "9b284a1b-cd08-43ac-b891-bc267741d964",
-    "main-collection"
+    "main-collection",
+    "4b2ab2e0-50c3-4912-bdbd-83ea8c461b76"
   ]
 }
