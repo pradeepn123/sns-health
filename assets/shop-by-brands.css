@@ -187,7 +187,7 @@
     border-left: 1px solid var(--border-color) !important;
     border-top: 1px solid var(--border-color) !important;
 }
-.flickity-page-dots .dot.is-selected {
+.shop_by_brands_parent .flickity-page-dots .dot.is-selected {
     background: var(--footer-accent-color);
     opacity: 1;
 }
