@@ -272,11 +272,14 @@
     .image-video-container{
         padding: 0 10px 30px;
     }
+    .testimonial{
+        box-shadow: none;
+    }
     .testimonial-imagevide-wrap{
-        margin-top: 0;
+        margin-top: 10px;
     }
     .image-video-container{
-        margin-top: 0 !important;
+        margin-top: 10px !important;
         padding-left: 0 !important;
     }
 }
