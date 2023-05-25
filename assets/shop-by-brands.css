@@ -127,6 +127,14 @@
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
     padding: 0 20px 20px;
     min-height: 272px;
+    display: flex;
+    flex-direction: column;
+}
+.shop_by_brands_child_container_wrap{
+    flex: 1;
+}
+.main_shop_by_brands_button{
+    margin-top: auto;
 }
 .shop_by_brands_parent .collection-block-item {
     border-radius: 0;
@@ -196,6 +204,7 @@
     font-size: 14px;
     line-height: 25px;
 }
+
 @media (max-width: 641px){
     .shop_by_brands_parent .tooltip .tooltipText{
         display: none;

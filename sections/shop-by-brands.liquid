@@ -71,10 +71,11 @@
                 </div>
               </a>
                 <div class="shop_by_brands_child_container">
+                  <div class="shop_by_brands_child_container_wrap">
                   <p class="collection-block-item__title heading h2">{{ collection.title }}</p>
                   <div class="collection-block-item__description">{{ collection.description | truncatewords: 17}}</div>
-                    {% if collectionMetafield != blank %}
-                      <div class="shop_by_brands_metafield_tags_parent">
+                    <div class="shop_by_brands_metafield_tags_parent">
+                      {% if collectionMetafield != blank %}
                         {% for item in collectionMetafield.value %}
                           {% if forloop.index <= 2 %}
                             <span class="shop_by_brands_metafield_tags">
@@ -96,11 +97,14 @@
                           </span>
                         </div>
                         {% endif %}
-                      </div>
-                    {% endif %}
-                  <a href="{{ collection.url }}" class="shop_by_brands_button">
-                    Shop {{ collection.title | truncate: 20, '...'}}
-                  </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="main_shop_by_brands_button">
+                    <a href="{{ collection.url }}" class="shop_by_brands_button">
+                      Shop {{ collection.title | truncate: 20, '...'}}
+                    </a>
+                  </div>
                 </div>
             </div>
           {% endfor %}
