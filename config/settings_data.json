@@ -453,7 +453,7 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement": true,
+          "show_announcement": false,
           "background": "#000000",
           "text_color": "#ffffff",
           "text": "Free Shipping $49+",
