@@ -13,7 +13,7 @@
         </header>
       {%- endif -%}
 
-      <div class="recently-viewed-products-placeholder">
+      <div class="recently-viewed-products-placeholder {{ section.settings.custom_classes }}">
         {%- if template.name == 'search' -%}
           <div class="scroller">
             <div class="scroller__inner">
@@ -31,7 +31,7 @@
 
                   {%- for product in search.results -%}
                     {%- if product.id == id -%}
-                      {%- render 'product-item', product: product, grid_classes: '1/4--lap 1/5--desk 1/6--wide', show_add_to_cart: section.settings.show_quick_buy -%}
+                      {%- render 'product-card', product: product, grid_classes: '1/4--lap 1/5--desk 1/6--wide', show_add_to_cart: section.settings.show_quick_buy, section: section -%}
                       {%- break -%}
                     {%- endif -%}
                   {%- endfor -%}
@@ -72,6 +72,17 @@
       <div class="modal__inner"></div>
     </div>
   </div>
+  <div id="modal-quick-view-static-recently-viewed-products" class="modal" aria-hidden="true">
+    <div class="modal__dialog modal__dialog--stretch" role="dialog">
+      <button class="modal__close link" data-action="close-modal" title="{{ 'general.accessibility.close' | t | escape }}">
+        {%- render 'icon', icon: 'close' -%}
+      </button>
+      <div class="modal__loader">
+        {%- render 'icon', icon: 'search-loader' -%}
+      </div>
+      <div class="modal__inner"></div>
+    </div>
+  </div>
 {%- endif -%}
 
 {% schema %}
@@ -99,6 +110,16 @@
       "id": "show_quick_buy",
       "label": "Show quick buy",
       "default": false
+    }, {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom Class"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Collection",
+      "name": "Static Recently viewed products"
     }
   ]
 }

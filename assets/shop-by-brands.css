@@ -225,3 +225,12 @@
         display: none !important;
     }
 }
+
+.product-item::after {
+  border: none !important;
+  box-shadow: none;
+}
+
+.product-list::before {
+  border: none !important;
+}
