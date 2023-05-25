@@ -1469,7 +1469,6 @@
         "blocks": {
           "12c8bddc-2b8f-4e55-b6d8-95663ac5d2ad": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "yoga-design-lab",
               "featured_collection_image": "shopify:\/\/shop_images\/yoga_design_lab.png",
@@ -1479,7 +1478,6 @@
           },
           "bf7edbd5-2119-4522-aa90-1f3169224514": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "beast",
               "featured_collection_image": "shopify:\/\/shop_images\/beast.png",
@@ -1489,7 +1487,6 @@
           },
           "c05e58e8-f5d5-4411-8d0b-2ee1464b6549": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "organika",
               "featured_collection_image": "shopify:\/\/shop_images\/yoga_design_lab.png",
