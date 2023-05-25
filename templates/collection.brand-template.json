@@ -47,7 +47,7 @@
         "show_section": true,
         "title": "Recently viewed",
         "show_quick_buy": true,
-        "custom_classes": "boost-pfs-filter-products"
+        "custom_classes": "custom-pfs-filter-products"
       }
     }
   },
