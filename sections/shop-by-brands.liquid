@@ -54,9 +54,11 @@
 
     {%- if has_normal_collections -%}
       <div class="collection-list__section">
-        <header class="page__header page__header--stack page__header--{{section.settings.align_text}}">
-          <h1 class="page__title heading h1 text-{{ section.settings.align_text }}">{{ section.settings.title | default: page.title }}</h1>
-        </header>
+        {% if section.settings.title != blank %}
+          <header class="page__header page__header--stack page__header--{{section.settings.align_text}}">
+            <h1 class="page__title heading h1 text-{{ section.settings.align_text }}">{{ section.settings.title }}</h1>
+          </header>
+        {% endif %}
 
         <div class="grid shop_by_brands_parent">
           {% for block in section.blocks %}
