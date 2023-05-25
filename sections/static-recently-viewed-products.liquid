@@ -12,7 +12,6 @@
           <h2 class="section__title heading h3">{{ section.settings.title | escape }}</h2>
         </header>
       {%- endif -%}
-
       <div class="recently-viewed-products-placeholder {{ section.settings.custom_classes }}">
         {%- if template.name == 'search' -%}
           <div class="scroller">
@@ -87,7 +86,7 @@
 
 {% schema %}
 {
-  "name": "Recently viewed products",
+  "name": "S Recently viewed product",
   "settings": [
     {
       "type": "paragraph",
