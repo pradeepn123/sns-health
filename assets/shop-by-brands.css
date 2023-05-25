@@ -126,7 +126,7 @@
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
     padding: 0 20px 20px;
-    height: 272px;
+    min-height: 272px;
 }
 .shop_by_brands_parent .collection-block-item {
     border-radius: 0;
