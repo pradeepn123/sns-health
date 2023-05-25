@@ -119,7 +119,7 @@
 
   <div class="product-item__info">
     <div class="grid-item-row-info">
-      {%- if settings.show_discount and product.price < product.compare_at_price -%}
+      {%- if product.price < product.compare_at_price -%}
         {%- assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
       {%- endif -%}
       <div>
@@ -139,7 +139,7 @@
 
               <span class="price price--compare ">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
-                {{- product.compare_at_price_min | money -}}
+                {{- product.compare_at_price | money -}}
               </span>
           {%- else -%}
             <span class="price">

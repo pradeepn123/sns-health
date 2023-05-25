@@ -41,7 +41,7 @@
         "filter_group_order": ""
       }
     },
-    "273b9478-0f37-41da-922d-b1000a5c7c45": {
+    "5a7e51b1-1184-4973-842c-344451f677f6": {
       "type": "static-recently-viewed-products",
       "settings": {
         "show_section": true,
@@ -56,6 +56,6 @@
     "19c018de-3523-40ac-a377-435eed53aaa0",
     "9b284a1b-cd08-43ac-b891-bc267741d964",
     "main-collection",
-    "273b9478-0f37-41da-922d-b1000a5c7c45"
+    "5a7e51b1-1184-4973-842c-344451f677f6"
   ]
 }

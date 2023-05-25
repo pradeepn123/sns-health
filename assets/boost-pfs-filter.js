@@ -523,9 +523,11 @@ var boostPFSTemplate = {
         if (data.compare_at_price_max) {
             // Do something
             discount = ((data.compare_at_price_min - data.price_min) / data.compare_at_price_min) * 100
-            content += `<div>
-                <div class="offer__badge">${Math.ceil(discount)}% off</div>
-            </div>`
+            if (discount > 0) {
+                content += `<div>
+                    <div class="offer__badge">${Math.ceil(discount)}% off</div>
+                </div>`
+            }
         }
 //        content += `<div>
 //            <div class="yotpo bottomLine"
