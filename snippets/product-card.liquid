@@ -132,42 +132,19 @@
       {%- capture price_list -%}
         <div class="product-item__price-list price-list">
           {%- if product.price < product.compare_at_price -%}
-            {%- if product.price_varies -%}
-              {%- capture price_min -%}<span>{{ product.price_min | money }}</span>{%- endcapture -%}
-              {%- capture price_max -%}<span>{{ product.price_max | money }}</span>{%- endcapture -%}
               <span class="price price--highlight">
                 <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_min -}}
+                {{- product.price_min | money -}}
               </span>
 
-              <span class="price price--compare">
+              <span class="price price--compare ">
                 <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
                 {{- product.compare_at_price_min | money -}}
               </span>
-            {%- else -%}
-            <span class="price price--compare">
-              <span class="visually-hidden">{{ 'product.general.regular_price' | t }}</span>
-              {{- product.compare_at_price | money -}}
-            </span>
-
-              <span class="price price--highlight">
-                <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-                {{- product.price | money -}}
-              </span>
-
-            {%- endif -%}
-          {%- elsif product.price_varies -%}
-            {%- capture price_min -%}<span>{{ product.price_min | money_with_currency }}</span>{%- endcapture -%}
-            {%- capture price_max -%}<span>{{ product.price_max | money_with_currency }}</span>{%- endcapture -%}
-
-            <span class="price">
-              <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-              {{- 'collection.product.from_price_html' | t: price_min: price_min, price_max: price_max -}}
-            </span>
           {%- else -%}
             <span class="price">
               <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
-              {{- product.price | money_with_currency -}}
+              {{- product.price | money -}}
             </span>
           {%- endif -%}
         </div>
