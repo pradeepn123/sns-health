@@ -1,0 +1,8 @@
+.product-item::after {
+  box-shadow: 0 !important;
+}
+
+.product-list::before {
+  box-shadow: 0 !important;
+}
+

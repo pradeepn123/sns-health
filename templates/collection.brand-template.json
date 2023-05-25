@@ -41,11 +41,13 @@
         "filter_group_order": ""
       }
     },
-    "4b2ab2e0-50c3-4912-bdbd-83ea8c461b76": {
-      "type": "recently-viewed-products",
+    "273b9478-0f37-41da-922d-b1000a5c7c45": {
+      "type": "static-recently-viewed-products",
       "settings": {
+        "show_section": true,
         "title": "Recently viewed",
-        "show_quick_buy": false
+        "show_quick_buy": true,
+        "custom_classes": "boost-pfs-filter-products"
       }
     }
   },
@@ -54,6 +56,6 @@
     "19c018de-3523-40ac-a377-435eed53aaa0",
     "9b284a1b-cd08-43ac-b891-bc267741d964",
     "main-collection",
-    "4b2ab2e0-50c3-4912-bdbd-83ea8c461b76"
+    "273b9478-0f37-41da-922d-b1000a5c7c45"
   ]
 }
