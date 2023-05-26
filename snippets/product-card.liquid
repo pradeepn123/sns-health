@@ -120,7 +120,7 @@
   <div class="product-item__info">
     <div class="grid-item-row-info">
       {%- if product.price < product.compare_at_price -%}
-        {%- assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+        {%- assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | ceil -%}
       {%- endif -%}
       <div>
         {% if savings > 0 %}
