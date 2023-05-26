@@ -103,10 +103,12 @@
     opacity: 0.5;
     padding:5px;
     margin:0 5px;
-    }
-.container--flush{
-    margin-bottom: 20px;
 }
+
+.breadcrumb-collection .container--flush .page__sub-header {
+    margin: 10px 0
+}
+
 .collection__header--brand .collection__meta{
     display: flex !important;
     align-items: start !important;
