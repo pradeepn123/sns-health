@@ -47,7 +47,8 @@
         {%- continue -%}
       {%- endunless -%}
 
-      {%- if link.object.template_suffix contains 'brand' -%}
+      {% assign linktemplate = link.object.template_suffix | downcase %}
+      {%- if linktemplate contains 'brand' -%}
         {%- assign has_brand_collections = true -%}
       {%- else -%}
         {%- assign has_normal_collections = true -%}
@@ -136,8 +137,8 @@
             {%- unless link.type == 'collection_link' -%}
               {%- continue -%}
             {%- endunless -%}
-
-            {%- if link.object.template_suffix contains 'brand' -%}
+            {% assign linktemplate = link.object.template_suffix | downcase %}
+            {%- if linktemplate contains 'brand' -%}
               {%- assign collection_image = link.object.image | default: link.object.products.first.featured_media -%}
               {%- assign max_height_mobile = 50 -%}
               {%- assign max_height_desktop = 90 -%}
