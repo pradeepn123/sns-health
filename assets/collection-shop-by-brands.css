@@ -576,10 +576,13 @@
         font-size: 16px;
         line-height: 24px;
         color: #FFFFFF;
-        background-size: cover;
+        background-size: contain;
     }
     .testimonial-imagevide-wrap .flickity-viewport{
         height: 243px !important;
+    }
+   .logo-slider-flex .sliding_images_parent .flickity-viewport{
+        height: 180px !important;
     }
 }
 

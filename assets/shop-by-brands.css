@@ -190,8 +190,8 @@
 }
 
 .shop_by_brands_parent .tooltipText ul li{
-    text-indent: -1em;
-    padding-left: 1em;
+    text-indent: -1.3em;
+    padding-left: 1.3em;
 }
 .shop_by_brands_parent .tooltipText::after {
     content: '';
