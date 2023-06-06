@@ -359,7 +359,7 @@
     .testimonial .flickity-prev-next-button{
         display: none !important;
     }
-    .testimonial .flickity-page-dots .dot.is-selected{
+    .flickity-page-dots .dot.is-selected{
         background: #ED1C24 !important;
         opacity: 1;
     }
