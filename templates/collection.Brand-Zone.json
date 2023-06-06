@@ -23,6 +23,22 @@
     },
     "main-collection": {
       "type": "collection-shop-by-brands",
+      "blocks": {
+        "9ef65302-aff8-4855-97b2-53286b20d646": {
+          "type": "promo",
+          "settings": {
+            "collection": "all-american-pharmaceutical",
+            "image": "shopify:\/\/shop_images\/CorePower_Elite_banner_June2023_Desktop.png",
+            "position_desktop": 4,
+            "position_tablet": 3,
+            "position_mobile": 2,
+            "title": "<p>Promotion title<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "9ef65302-aff8-4855-97b2-53286b20d646"
+      ],
       "settings": {
         "show_collection_image": true,
         "collapse_collection_description": false,
