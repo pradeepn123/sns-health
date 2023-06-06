@@ -4,9 +4,9 @@
 #main{
     overflow-x: hidden;
 }
-.logo-container {
+/* .logo-container {
     background: #F4E6DB;
-}
+} */
 .logo-slider-flex .card__header {
    padding: 0;
 }
@@ -31,7 +31,7 @@
     margin-bottom: 20px;
 }
 .collection__header img{
-    width: 140px;
+    width: 160px;
     margin-bottom: 35px;
 }
 .logo-slider-flex-desktop{
@@ -420,7 +420,7 @@
         top: 40%;
     }
     .collection__header img{
-        width: 80px;
+        width: 120px;
         margin-bottom: 15px;
     }
     #size-chart .close{

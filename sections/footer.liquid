@@ -163,8 +163,8 @@
             {%- endform -%}
           {%- endif -%}
 
-          {%- capture copyright_info -%}© {{ 'now' | date: '%Y' }} {{ shop.name }}<br><a target="_blank" rel="nofollow noopener" href="https://www.shopify.com?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore" aria-describedby="a11y-new-window-message" aria-label="Powered by"> </a>{%- endcapture -%}
-          <p class="hidden-pocket">{{ copyright_info }}</p>
+          {%- capture copyright_info -%}© {{ 'now' | date: '%Y' }} {{ shop.name }}<a target="_blank" rel="nofollow noopener" href="https://www.shopify.com?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore" aria-describedby="a11y-new-window-message" aria-label="Powered by"> </a>{%- endcapture -%}
+          <p class="hidden-pocket">{{ copyright_info }} Canada</p>
         </div>
 
         {%- if section.settings.show_social_media -%}
@@ -189,9 +189,9 @@
           </div>
         {%- endif -%}
 
-        <div class="footer__aside-item footer__aside-item--copyright hidden-lap-and-up">
+        <div clascopyright_infos="footer__aside-item footer__aside-item--copyright hidden-lap-and-up">
           <p>
-            {{ copyright_info }}
+            {{ copyright_info }} Canada
             <span id="accessibilityWidget" tabindex="0" class="footer__link-item link">Accessibility</span>
           </p>
         </div>
