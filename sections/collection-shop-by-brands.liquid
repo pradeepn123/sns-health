@@ -82,7 +82,7 @@
         padding-top: 0;
         padding-bottom: 0;
     }
-    @media(max-width:1200px){
+    @media(min-width:991px) and (max-width:1200px){
         .boost-pfs-filter-products .button--primary{
            font-size: 0.7em;
         }
@@ -144,6 +144,12 @@
             width: 30%;
             top: 37%;
         }
+        .boost-pfs-filter-products .button--primary{
+            font-size: 0.7em;
+         }
+       .collection__dynamic-part .boost-pfs-filter-products .product-item--vertical .product-item__action-button{
+             font-size: 0.7em;
+         }
     }
 
     .boost-pfs-filter-products .promo-products__wrapper-container,
@@ -157,6 +163,7 @@
     .boost-pfs-filter-products.product-list {
         overflow: visible;
     }
+
 </style>
 
 {%- assign items_per_page = cart.attributes.collection_products_per_page | default: section.settings.default_products_per_page -%}
