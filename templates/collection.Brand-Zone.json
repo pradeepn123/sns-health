@@ -29,6 +29,7 @@
           "settings": {
             "collection": "allmax",
             "image": "shopify:\/\/shop_images\/CorePower_Elite_banner_June2023_Desktop.png",
+            "image_mobile": "shopify:\/\/shop_images\/CorePower_Elite_banner_June2023_mobile.png",
             "position_desktop": 4,
             "position_tablet": 3,
             "position_mobile": 2,
