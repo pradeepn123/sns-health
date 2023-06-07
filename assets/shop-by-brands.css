@@ -183,6 +183,15 @@
     flex-wrap: wrap;
     left: -100%;
     width: 160px;
+    z-index: 1;
+}
+.shop_by_brands_parent .tooltipText ul:nth-child(-n+2) {
+    display: none;
+}
+
+.shop_by_brands_parent .tooltipText ul li{
+    text-indent: -1.3em;
+    padding-left: 1.3em;
 }
 .shop_by_brands_parent .tooltipText::after {
     content: '';
