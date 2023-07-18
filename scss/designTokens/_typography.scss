@@ -1,4 +1,4 @@
-@import 'accoutrement/sass/plugin/type';
+@use 'accoutrement/sass/type';
 
 
 
@@ -171,7 +171,7 @@ $typography: (
   )
 );
 
-@include import-webfonts;
+@include type.import-webfonts;
 
 
 /// @param {string} $token - One of keys of $typography map above.

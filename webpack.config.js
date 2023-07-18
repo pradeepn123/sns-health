@@ -9,7 +9,7 @@ const storeUrl = process.env.STORE_URL;
 const themeId = process.env.THEME_ID;
 
 const scssEntryPoint = glob.sync('./scss/sections/**.scss').reduce((acc, path) => {
-  const entry = path.replace(/^.*[\\\/]/, '').replace('.js', '');
+  const entry = path.replace(/^.*[\\\/]/, '').replace('.scss', '');
   acc[entry] = path;
   return acc;
 }, {});
@@ -44,9 +44,8 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.(sc|sa|c)ss$/,
+        test: /\.(sc|sa)ss$/,
         use: [
-          "style-loader",
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
@@ -67,7 +66,7 @@ module.exports = {
     ]
   },
   output: {
-    clean: true,
+    clean: false,
     filename: './[name].js',
     path: path.resolve(__dirname, 'assets'),
     chunkFilename: './[name].js?[chunkhash]' //added chunkhash for dynamically created chunk, else browser wont know if file has been changed and will show cached version.
