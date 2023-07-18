@@ -1,0 +1,205 @@
+@import 'accoutrement/sass/plugin/type';
+
+
+
+//use 'use-text-style' mixin to access predefined styles under $typography
+/*
+.heading-1 {
+    @include use-text-style('heading-1');
+}
+*/
+
+// Set the a path to your fonts directory
+
+$fonts: (
+  // describe locally-hosted font files for import and access
+  'brice': (
+    'name': 'brice',
+    'stack': ('helvetica', 'arial', sans-serif),
+    'formats': 'otf',
+    '400': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-Regular.otf?v=1687331055',
+    '600': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-SemiBold.otf?v=1687331058',
+    '700': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-Bold.otf?v=1687331054'
+  ),
+  'brice-condensed': (
+    'name': 'brice-condensed', 
+    'stack': ('helvetica', 'arial', sans-serif),
+    'formats': 'otf',
+    '400': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-RegularCondensed.otf?v=1687332334',
+    '600': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-SemiBoldCondensed.otf?v=1687332334',
+    '700': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-BoldCondensed.otf?v=1687332334'
+  ),
+  'moranga': (
+    'name': 'moranga', 
+    'stack': ('helvetica', 'arial', serif),
+    'formats': 'otf',
+    '300': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Moranga-Light.otf?v=1687343495',
+    '400': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Moranga-Regular.otf?v=1687343495',
+    '600': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Moranga-Medium.otf?v=1687343495',
+    '700': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Moranga-Bold.otf?v=1687343495'
+  ),
+  'circular': (
+    'name': 'circular', 
+    'stack': ('helvetica', 'arial', serif),
+    'formats': 'otf',
+    '400': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Circular-Std-Book.otf?v=1687343642',
+    '600': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Circular-Std-Medium.otf?v=1687343642',
+    '700': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Circular-Std-Bold.otf?v=1687343642'
+  ),
+
+);
+
+$typography: (
+  'nav-item' : (
+    'font': var(--primary-font-condensed),
+    'size': var(--nav-item-size),
+    'weight': var(--nav-item-weight),
+    'height': var(--nav-item-height),
+    'spacing': var(--nav-item-spacing)
+  ),
+  'nav-heading' : (
+    'font': var(--primary-font-condensed),
+    'size': var(--nav-heading-size),
+    'weight': var(--nav-heading-weight),
+    'height': var(--nav-heading-height),
+    'spacing': var(--nav-heading-spacing)
+  ),
+  'heading-large' : (
+    'font': var(--secondary-font),
+    'size': var(--heading-large-font-size),
+    'weight': var(--heading-font-weight),
+    'height': var(--heading-large-line-height),
+    'spacing': var(--heading-large-spacing)
+  ),
+  'heading-1' : (
+    'font': var(--secondary-font),
+    'size': var(--heading-1-font-size),
+    'weight': var(--heading-font-weight),
+    'height': var(--heading-1-line-height),
+    'spacing': var(--heading-1-spacing)
+  ),
+  'heading-2' : (
+    'font': var(--secondary-font),
+    'size': var(--heading-2-font-size),
+    'weight': var(--heading-font-weight),
+    'height': var(--heading-2-line-height),
+    'spacing': var(--heading-2-spacing)
+  ),
+  'heading-3' : (
+    'font': var(--secondary-font),
+    'size': var(--heading-3-font-size),
+    'weight': var(--heading-font-weight),
+    'height': var(--heading-3-line-height),
+    'spacing': var(--heading-3-spacing)
+  ),
+  'heading-4' : (
+    'font': var(--secondary-font),
+    'size': var(--heading-4-font-size),
+    'weight': var(--heading-font-weight),
+    'height': var(--heading-4-line-height),
+    'spacing': var(--heading-4-spacing)
+  ),
+  'paragraph-lead' : (
+    'font': var(--paragraph-font),
+    'size': var(--paragraph-lead-font-size),
+    'weight': var(--paragraph-lead-font-weight),
+    'height': var(--paragraph-lead-line-height),
+    'spacing': var(--paragraph-lead-spacing)
+  ),
+  'body' : (
+    'font': var(--paragraph-font),
+    'size': var(--body-font-size),
+    'weight': var(--body-weight),
+    'height': var(--body-line-height),
+    'spacing': var(--body-spacing)
+  ),
+  'cta' : (
+    'font': var(--primary-font-condensed),
+    'size': var(--cta-font-size),
+    'weight': var(--cta-font-weight),
+    'height': var(--cta-line-height),
+    'spacing': var(--cta-spacing)
+  ),
+  'section-heading' : (
+    'font': var(--secondary-font),
+    'size': var(--section-heading-font-size),
+    'weight': var(--heading-font-weight),
+    'height': var(--section-heading-line-height),
+    'spacing': var(--section-heading-spacing)
+  ),
+  'text-link' : (
+    'font': var(--paragraph-font),
+    'size': var(--text-link-size),
+    'weight': var(--text-link-weight),
+    'height': var(--text-link-height),
+    'spacing': var(--text-link-spacing)
+  ),
+  'text-title' : (
+    'font': var(--primary-font-condensed),
+    'size': var(--text-title-size),
+    'weight': var(--text-title-weight),
+    'height': var( --text-title-height),
+    'spacing': var( --text-title-spacing)
+  ),
+  'text-title-alt' : (
+    'font': var(--secondary-font),
+    'size': var(--text-title-alt-size),
+    'weight': var(--text-title-alt-weight),
+    'height': var( --text-title-alt-height),
+    'spacing': var( --text-title-alt-spacing)
+  ),
+  'body-alt' : (
+    'font': var(--paragraph-font),
+    'size': var(--body-alt-font-size),
+    'weight': var(--body-alt-weight),
+    'height': var(--body-alt-line-height),
+    'spacing': var( --body-alt-spacing)
+  ),
+  'body-small' : (
+    'font': var(--paragraph-font),
+    'size': var(--body-small-font-size),
+    'weight': var(--body-small-weight),
+    'height': var(--body-small-line-height),
+    'spacing': var( --body-small-spacing)
+  ),
+  'body-extra-small' : (
+    'font': var(--paragraph-font),
+    'size': var(--body-extrasmall-font-size),
+    'weight': var(--body-extrasmall-weight),
+    'height': var(--body-extrasmall-line-height),
+    'spacing': var( --body-extrasmall-spacing)
+  )
+);
+
+@include import-webfonts;
+
+
+/// @param {string} $token - One of keys of $typography map above.
+
+@mixin use-text-style($token: "body") {
+  $type: get-token($typography, $token);
+
+  @if (get-token($type, "font") != "font") {
+    font-family: get-token($type, "font");
+  }
+
+  @if (get-token($type, "size") != "size") {
+    font-size: get-token($type, "size");
+  }
+
+  @if (get-token($type, "weight") != "weight") {
+    font-weight: get-token($type, "weight");
+  }
+
+  @if (get-token($type, "height") != "height") {
+    line-height: get-token($type, "height");
+  }
+
+  @if (get-token($type, "spacing") != "spacing") {
+    letter-spacing: get-token($type, "spacing");
+  }
+
+  @if (get-token($type, "style") != "style") {
+    font-style: get-token($type, "style");
+  }
+}

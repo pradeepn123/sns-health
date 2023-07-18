@@ -1,0 +1,25 @@
+@import 'accoutrement/sass/plugin/color';
+
+/*
+Use 'color('token') to access the defined color
+
+.border--dark {
+    border: 1px solid color('primary-dark');
+}
+
+.text--error {
+    color: color('secondary-red');
+}
+
+*/
+
+$primary: (
+    'primary-dark': var(--color-black),
+  );
+
+$secondary: (
+    'secondary-red': var(--color-red)
+);
+
+// merge everything into the main $colors map…
+@include add-colors($primary, $secondary);
