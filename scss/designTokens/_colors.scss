@@ -1,4 +1,5 @@
 @use 'accoutrement/sass/color';
+@use './variables';
 
 /*
 Use 'color('token') to access the defined color
@@ -14,12 +15,23 @@ Use 'color('token') to access the defined color
 */
 
 $primary: (
-    'primary-dark': var(--color-black),
+    'primary-active': variables.$red,
+    'primary-text': variables.$black
   );
 
 $secondary: (
-    'secondary-red': var(--color-red)
+   'secondary-active': variables.$black,
+   'secondary-text': variables.$white
+);
+
+$background: (
+    //active
+   'background-active': variables.$red,
+   'background-text': variables.$white
+    //passive
+   'background-passive': variables.$white
+   'background-passive-text': variables.$black
 );
 
 // merge everything into the main $colors map…
-@include color.add-colors($primary, $secondary);
+@include color.add-colors($primary, $secondary, $background);

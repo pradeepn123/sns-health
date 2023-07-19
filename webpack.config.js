@@ -2,6 +2,7 @@ const glob = require('glob');
 const path = require('path'); //get absolute paths
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //extract css from js imports
 const WebpackShellPluginNext = require('webpack-shell-plugin-next'); //execute shell commands
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts'); //remove unwanted js created while compiling scss
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 const stats = mode === 'development' ? 'errors-only' : { children: false }; //hide or show warning
 require('dotenv').config();
@@ -73,6 +74,7 @@ module.exports = {
   },
 
   plugins: [
+    new RemoveEmptyScriptsPlugin(),
     new MiniCssExtractPlugin({
       filename: './[name].css'
     })

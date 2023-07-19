@@ -1,5 +1,17 @@
 @use 'Token';
 
-.h1 {
-    font-size: 2px;
+@custom-media --md (width >= 768px);
+@custom-selector :--CTA .button,.link--button;
+
+
+:root {
+    --main-color: #000;
+}
+
+:--CTA {
+    background: green;
+
+    @media (--md) {
+        background: red;
+    }
 }

@@ -1,1 +1,1 @@
-.h1{font-size:2px}
+:root{--main-color: #000}.button,.link--button{background:green}@media(min-width: 768px){.button,.link--button{background:red}}
