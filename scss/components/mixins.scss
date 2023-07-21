@@ -1,0 +1,8 @@
+@use 'StyleComponents/layout';
+
+//mixins
+@mixin container  {
+    max-width: calc(100% - 2*#{layout.$base-margin});
+    margin-left: auto;
+    margin-right: auto;
+}

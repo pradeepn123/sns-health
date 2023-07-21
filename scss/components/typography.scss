@@ -1,0 +1,46 @@
+@use 'StyleComponents/breakpoints';
+
+//Typography
+$heading-weight: 700;
+$medium-weight: 500;
+$semi-weight: 600;
+$regular-weight: 400;
+
+//heading-1
+$heading-1-size: 32px;
+$heading-1-height: 1.2;
+$heading-1-weight: #{$heading-weight};
+
+//heading-2
+$heading-2-size: 24px;
+$heading-2-height: 1.2;
+$heading-2-weight: #{$heading-weight};
+
+
+//body title
+$body-title-size: 14px;
+$body-title-height: 1.2;
+$body-title-weight: #{$medium-weight};
+
+//body regular
+$body-alt-size: 12px;
+$body-alt-height: 1.2;
+$body-alt-weight: #{$semi-weight};
+
+//body regular
+$body-regular-size: 12px;
+$body-regular-height: 1.2;
+$body-regular-weight: #{$regular-weight};
+
+//body small
+$body-small-size: 10px;
+$body-small-height: 1.2;
+$body-small-weight: #{$semi-weight};
+
+@media (--md) {
+    $heading-1-size: 32px;
+    $heading-2-size: 24px;
+    $body-title-size: 20px;
+    $body-regular-size: 16px;
+    $body-small-size: 12px; 
+}

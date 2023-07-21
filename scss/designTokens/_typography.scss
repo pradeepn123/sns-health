@@ -1,4 +1,6 @@
 @use 'accoutrement/sass/type';
+@import 'StyleComponents/typography';
+
 
 $fonts: (
   'poppins': (
@@ -7,124 +9,41 @@ $fonts: (
 );
 
 $typography: (
-  'nav-item' : (
-    'font': var(--primary-font-condensed),
-    'size': var(--nav-item-size),
-    'weight': var(--nav-item-weight),
-    'height': var(--nav-item-height),
-    'spacing': var(--nav-item-spacing)
-  ),
-  'nav-heading' : (
-    'font': var(--primary-font-condensed),
-    'size': var(--nav-heading-size),
-    'weight': var(--nav-heading-weight),
-    'height': var(--nav-heading-height),
-    'spacing': var(--nav-heading-spacing)
-  ),
-  'heading-large' : (
-    'font': var(--secondary-font),
-    'size': var(--heading-large-font-size),
-    'weight': var(--heading-font-weight),
-    'height': var(--heading-large-line-height),
-    'spacing': var(--heading-large-spacing)
-  ),
   'heading-1' : (
-    'font': var(--secondary-font),
-    'size': var(--heading-1-font-size),
-    'weight': var(--heading-font-weight),
-    'height': var(--heading-1-line-height),
-    'spacing': var(--heading-1-spacing)
+    'font': 'poppins',
+    'size': #{$heading-1-size},
+    'weight': #{$heading-1-weight},
+    'height': #{$heading-1-height}
   ),
   'heading-2' : (
-    'font': var(--secondary-font),
-    'size': var(--heading-2-font-size),
-    'weight': var(--heading-font-weight),
-    'height': var(--heading-2-line-height),
-    'spacing': var(--heading-2-spacing)
+    'font': 'poppins',
+    'size': #{$heading-2-size},
+    'weight': #{$heading-2-weight},
+    'height': #{$heading-2-height}
   ),
-  'heading-3' : (
-    'font': var(--secondary-font),
-    'size': var(--heading-3-font-size),
-    'weight': var(--heading-font-weight),
-    'height': var(--heading-3-line-height),
-    'spacing': var(--heading-3-spacing)
+  'body-title' : (
+    'font': 'poppins',
+    'size': #{$body-title-size},
+    'weight': #{$body-title-weight},
+    'height': #{$body-title-height}
   ),
-  'heading-4' : (
-    'font': var(--secondary-font),
-    'size': var(--heading-4-font-size),
-    'weight': var(--heading-font-weight),
-    'height': var(--heading-4-line-height),
-    'spacing': var(--heading-4-spacing)
-  ),
-  'paragraph-lead' : (
-    'font': var(--paragraph-font),
-    'size': var(--paragraph-lead-font-size),
-    'weight': var(--paragraph-lead-font-weight),
-    'height': var(--paragraph-lead-line-height),
-    'spacing': var(--paragraph-lead-spacing)
-  ),
-  'body' : (
-    'font': var(--paragraph-font),
-    'size': var(--body-font-size),
-    'weight': var(--body-weight),
-    'height': var(--body-line-height),
-    'spacing': var(--body-spacing)
-  ),
-  'cta' : (
-    'font': var(--primary-font-condensed),
-    'size': var(--cta-font-size),
-    'weight': var(--cta-font-weight),
-    'height': var(--cta-line-height),
-    'spacing': var(--cta-spacing)
-  ),
-  'section-heading' : (
-    'font': var(--secondary-font),
-    'size': var(--section-heading-font-size),
-    'weight': var(--heading-font-weight),
-    'height': var(--section-heading-line-height),
-    'spacing': var(--section-heading-spacing)
-  ),
-  'text-link' : (
-    'font': var(--paragraph-font),
-    'size': var(--text-link-size),
-    'weight': var(--text-link-weight),
-    'height': var(--text-link-height),
-    'spacing': var(--text-link-spacing)
-  ),
-  'text-title' : (
-    'font': var(--primary-font-condensed),
-    'size': var(--text-title-size),
-    'weight': var(--text-title-weight),
-    'height': var( --text-title-height),
-    'spacing': var( --text-title-spacing)
-  ),
-  'text-title-alt' : (
-    'font': var(--secondary-font),
-    'size': var(--text-title-alt-size),
-    'weight': var(--text-title-alt-weight),
-    'height': var( --text-title-alt-height),
-    'spacing': var( --text-title-alt-spacing)
+  'body-regular' : (
+    'font': 'poppins',
+    'size': #{$body-regular-size},
+    'weight': #{$body-regular-weight},
+    'height': #{$body-regular-height}
   ),
   'body-alt' : (
-    'font': var(--paragraph-font),
-    'size': var(--body-alt-font-size),
-    'weight': var(--body-alt-weight),
-    'height': var(--body-alt-line-height),
-    'spacing': var( --body-alt-spacing)
+    'font': 'poppins',
+    'size': #{$body-alt-size},
+    'weight': #{$body-alt-weight},
+    'height': #{$body-alt-height}
   ),
   'body-small' : (
-    'font': var(--paragraph-font),
-    'size': var(--body-small-font-size),
-    'weight': var(--body-small-weight),
-    'height': var(--body-small-line-height),
-    'spacing': var( --body-small-spacing)
-  ),
-  'body-extra-small' : (
-    'font': var(--paragraph-font),
-    'size': var(--body-extrasmall-font-size),
-    'weight': var(--body-extrasmall-weight),
-    'height': var(--body-extrasmall-line-height),
-    'spacing': var( --body-extrasmall-spacing)
+    'font': 'poppins',
+    'size': #{$body-small-size},
+    'weight': #{$body-small-weight},
+    'height': #{$body-small-height}
   )
 );
 

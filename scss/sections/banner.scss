@@ -1,22 +1,24 @@
-@import '../components/variables';
+@use 'StyleComponents/mixins';
+@import 'StyleComponents/breakpoints';
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
+@import '../components/custom-carousel';
 
 .banner {
     @media (--sm) {
-        @include container;
+        @include mixins.container;
     }
 
     &__content {
         display: grid;
-        grid-template-columns: repeat((3,minmax(0,1fr)));
+        grid-template-columns: repeat((3, minmax(0, 1fr)));
         grid-auto-rows: 90px;
         column-gap: 10px;
         row-gap: 20px;
 
         @media(--sm) {
-          column-gap: 20px;
+            column-gap: 20px;
         }
 
         @media (--md) {
@@ -24,91 +26,31 @@
             grid-auto-rows: 196px;
         }
     }
+
     img {
         width: 100%;
         height: 100%;
-        object-fit: cover; 
+        object-fit: cover;
+
         @media (--md) {
-            object-fit: unset; 
+            object-fit: unset;
         }
     }
 
-    .image {
+    &__item * {
         height: 100%;
     }
 
-    &__carousel * {
-     height: 100%;
-    }  
-
     &__carousel {
-       position: relative;
-    }
-    .text-image {
-        order:2;
+        position: relative;
     }
 
     &__item:nth-of-type(1) {
         grid-column: span 3;
         grid-row: span 2;
+
         @media (--sm) {
-            grid-column: span 2;  
+            grid-column: span 2;
         }
     }
-}
-
-.swiper-pagination {
-  display: flex;
-  width: 9px;
-  height: 9px;
-  bottom: 24px !important;
-  left: 50% !important;
-  box-sizing: content-box;
-transform:  translateX(-50%) !important;
-justify-content: center;
-
-    &-bullet {
-        background: $white;
-        opacity: 1;
-      &-active {
-        background:  transparent;
-        border: 2px solid $white;
-      }
-
-    }
-}
-
-.swiper-navigation {
-top: 50%;
-transform: translateY(-50%);
-position: absolute;
-height: unset;
-z-index: 10;
-cursor: pointer;
-
-&--next {
-    right: 20px;
-}
-
-&--prev {
-    left: 13px;
-}
-
-svg {
-    @media (--md) {
-        width: 42px;
-        height: 42px;
-    }
-}
-
-&.swiper-button-disabled {
-    pointer-events: none;
-   svg circle {
-     fill: $gray-200;
-   }
-}
-}
-
-:root {
-    --swiper-pagination-bullet-width: 9px;
 }

@@ -1,0 +1,59 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/breakpoints';
+
+.swiper-pagination {
+    display: flex;
+    height: 9px !important;
+    bottom: 24px !important;
+    left: 50% !important;
+    box-sizing: content-box;
+  transform:  translateX(-50%) !important;
+  justify-content: center;
+  
+      &-bullet {
+          background: colors.$white;
+          opacity: 1;
+        &-active {
+          background:  transparent;
+          border: 2px solid colors.$white;
+        }
+  
+      }
+  }
+  
+  .swiper-navigation {
+  height: unset !important;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  height: unset;
+  z-index: 10;
+  cursor: pointer;
+  
+  &--next {
+      right: 20px;
+  }
+  
+  &--prev {
+      left: 13px;
+  }
+  
+  svg {
+      @media (--md) {
+          width: 42px;
+          height: 42px;
+      }
+  }
+  
+  &.swiper-button-disabled {
+      pointer-events: none;
+     svg circle {
+       fill: colors.$gray-200;
+     }
+  }
+  }
+  
+  :root {
+      --swiper-pagination-bullet-width: 9px;
+  }
+  
