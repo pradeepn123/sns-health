@@ -189,6 +189,7 @@
       },
       "slideshow": {
         "type": "slideshow",
+        "disabled": true,
         "blocks": {
           "0ba27629-0cb5-4216-b413-2c6796a39ed0": {
             "type": "image",
@@ -468,6 +469,7 @@
       },
       "1542984811767": {
         "type": "featured-collection",
+        "disabled": true,
         "settings": {
           "collection": "new-arrivals",
           "title": "New Arrivals",
@@ -572,6 +574,7 @@
       },
       "16147206548d1150eb": {
         "type": "promotion-list",
+        "disabled": true,
         "blocks": {
           "e2594e80-f3e6-41e6-a115-2e577569e2bc": {
             "type": "item",
@@ -742,6 +745,7 @@
       },
       "161472149580382340": {
         "type": "featured-collection",
+        "disabled": true,
         "settings": {
           "collection": "bestsellers",
           "title": "Best Sellers",
@@ -755,6 +759,7 @@
       },
       "1614721539d5b1d73b": {
         "type": "rich-text",
+        "disabled": true,
         "settings": {
           "text_width": "regular",
           "title": "Personal Health Is Not One Size Fits All",
@@ -1108,6 +1113,7 @@
       },
       "161902088984f08ef0": {
         "type": "homepage-featured-collection",
+        "disabled": true,
         "settings": {
           "collection": "snacks",
           "products_count": 20,
@@ -1249,6 +1255,7 @@
       },
       "1649726682d4612c22": {
         "type": "slideshow-reviews",
+        "disabled": true,
         "blocks": {
           "1649726682d4612c22-0": {
             "type": "image",
@@ -1397,6 +1404,7 @@
       },
       "62ab2e0b-5301-4cd6-90c7-2bb885cff993": {
         "type": "slideshow",
+        "disabled": true,
         "blocks": {
           "e2d07ad1-541a-43af-b01e-8c11c3d865db": {
             "type": "image",
@@ -1656,9 +1664,66 @@
           "ticker_text": "<p><strong>Flat 20% OFF<\/strong> on Cork yoga Mats<\/p>",
           "direction": "ticker-to-left"
         }
+      },
+      "ae8c5f8a-1c86-492f-80b7-a1e9da551e60": {
+        "type": "Banner",
+        "blocks": {
+          "5984eb08-08b3-47e4-be13-5da21dbca50c": {
+            "type": "image_with_text_overlay",
+            "settings": {
+              "is_carousel_content": false,
+              "show_logo": false,
+              "text_color": "",
+              "image_desktop": "shopify:\/\/shop_images\/banner-new.png",
+              "image_mobile": "shopify:\/\/shop_images\/Dr-8-54470_5.jpg",
+              "eyebrow": "Hello",
+              "heading": "Test",
+              "subheading": "Test",
+              "cta_text": "",
+              "cta_url": ""
+            }
+          },
+          "ed3ae549-9da0-4852-a64a-a2b2d379e7d7": {
+            "type": "image_with_text_overlay",
+            "settings": {
+              "is_carousel_content": true,
+              "show_logo": false,
+              "text_color": "",
+              "image_desktop": "shopify:\/\/shop_images\/banner-new.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/Dr-8-54470_5.jpg",
+              "eyebrow": "Test",
+              "heading": "Test",
+              "subheading": "Test",
+              "cta_text": "",
+              "cta_url": ""
+            }
+          },
+          "56205fb4-b0ed-4e35-baaa-742afc2a67b9": {
+            "type": "image_with_text_overlay",
+            "settings": {
+              "is_carousel_content": true,
+              "show_logo": false,
+              "text_color": "",
+              "image_desktop": "shopify:\/\/shop_images\/banner-new.png",
+              "eyebrow": "",
+              "heading": "",
+              "subheading": "",
+              "cta_text": "",
+              "cta_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "5984eb08-08b3-47e4-be13-5da21dbca50c",
+          "ed3ae549-9da0-4852-a64a-a2b2d379e7d7",
+          "56205fb4-b0ed-4e35-baaa-742afc2a67b9"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
+      "ae8c5f8a-1c86-492f-80b7-a1e9da551e60",
       "slideshow",
       "8ae5b5de-3e36-46fc-9368-b65dda64985a",
       "16147206548d1150eb",

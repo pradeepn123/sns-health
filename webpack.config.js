@@ -15,7 +15,7 @@ const scssEntryPoint = glob.sync('./scss/sections/**.scss').reduce((acc, path) =
   return acc;
 }, {});
 
-const jsEntryPoints = glob.sync('.js/sections/**.js').reduce((acc, path) => {
+const jsEntryPoints = glob.sync('./js/sections/**.js').reduce((acc, path) => {
   const entry = path.replace(/^.*[\\\/]/, '').replace('.js', '');
   acc[entry] = path;
   return acc;

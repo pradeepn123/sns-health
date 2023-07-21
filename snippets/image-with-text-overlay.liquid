@@ -1,0 +1,33 @@
+{% if image_desktop or image_mobile %}
+{% liquid 
+ assign desktop_image = image_desktop | default: image_mobile
+ assign mobile_image = image_mobile | default: image_desktop
+  
+%}
+<div class="text-image {{wrapper_class}}">
+ <div class="text-image__image-wrapper image">
+  <div class="image image--desktop">
+    {% render 'shopify-responsive-image',
+        image: desktop_image 
+      %}
+  </div>
+  <div class="image image--mobile">
+    {% render 'shopify-responsive-image',
+        image: mobile_image
+      %}
+    </div>
+</div>
+<div class="text-image__image-wrapper content">
+    {% render text, 
+        id: id,
+        color: color, 
+        eyebrow: eyebrow, 
+        heading: heading , 
+        subheading: subheading , 
+        cta_text: cta_text, 
+        wrapper_class: 'banner'
+        cta_url: cta_url %}
+  </div>
+</div>
+
+{% endif %}

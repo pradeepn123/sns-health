@@ -17,31 +17,14 @@
     "9b284a1b-cd08-43ac-b891-bc267741d964": {
       "type": "ticker",
       "settings": {
-        "ticker_text": "<p><strong>20% off <\/strong>on all brands<\/p>",
+        "ticker_text": "{{ collection.metafields.custom.ticker_message | metafield_tag }}",
         "direction": "ticker-to-left"
       }
     },
     "main-collection": {
       "type": "collection-shop-by-brands",
-      "blocks": {
-        "9ef65302-aff8-4855-97b2-53286b20d646": {
-          "type": "promo",
-          "settings": {
-            "collection": "allmax",
-            "image": "shopify:\/\/shop_images\/CorePower_Elite_banner_June2023_Desktop.png",
-            "image_mobile": "shopify:\/\/shop_images\/CorePower_Elite_banner_June2023_mobile.png",
-            "position_desktop": 4,
-            "position_tablet": 3,
-            "position_mobile": 2,
-            "title": "<p>Promotion title<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "9ef65302-aff8-4855-97b2-53286b20d646"
-      ],
       "settings": {
-        "show_collection_image": true,
+        "show_collection_image": false,
         "collapse_collection_description": false,
         "collection_image_size": "small",
         "products_per_row": "4",

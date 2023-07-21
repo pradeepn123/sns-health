@@ -46,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {%- if settings.favicon -%}
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '96x96' }}" type="image/png">
     {%- endif -%}
-
+ 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async data-src="https://www.googletagmanager.com/gtag/js?id=G-VHN3KVKJKN" type="sT_lazyLoad__init"></script>
     <script type="sT_lazyLoad__init">
@@ -269,5 +269,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   </script>
   {% include 'monster-mo-script' %}
+  {{ 'global.js' | asset_url |  script_tag }}
 </body>
 </html>

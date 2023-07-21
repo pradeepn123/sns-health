@@ -1,55 +1,5 @@
 @use 'accoutrement/sass/type';
 
-
-
-//use 'use-text-style' mixin to access predefined styles under $typography
-/*
-.heading-1 {
-    @include use-text-style('heading-1');
-}
-*/
-
-// Set the a path to your fonts directory
-
-// $fonts: (
-//   // describe locally-hosted font files for import and access
-//   'brice': (
-//     'name': 'brice',
-//     'stack': ('helvetica', 'arial', sans-serif),
-//     'formats': 'otf',
-//     '400': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-Regular.otf?v=1687331055',
-//     '600': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-SemiBold.otf?v=1687331058',
-//     '700': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-Bold.otf?v=1687331054'
-//   ),
-//   'brice-condensed': (
-//     'name': 'brice-condensed', 
-//     'stack': ('helvetica', 'arial', sans-serif),
-//     'formats': 'otf',
-//     '400': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-RegularCondensed.otf?v=1687332334',
-//     '600': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-SemiBoldCondensed.otf?v=1687332334',
-//     '700': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Brice-BoldCondensed.otf?v=1687332334'
-//   ),
-//   'moranga': (
-//     'name': 'moranga', 
-//     'stack': ('helvetica', 'arial', serif),
-//     'formats': 'otf',
-//     '300': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Moranga-Light.otf?v=1687343495',
-//     '400': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Moranga-Regular.otf?v=1687343495',
-//     '600': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Moranga-Medium.otf?v=1687343495',
-//     '700': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Moranga-Bold.otf?v=1687343495'
-//   ),
-//   'circular': (
-//     'name': 'circular', 
-//     'stack': ('helvetica', 'arial', serif),
-//     'formats': 'otf',
-//     '400': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Circular-Std-Book.otf?v=1687343642',
-//     '600': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Circular-Std-Medium.otf?v=1687343642',
-//     '700': 'https://cdn.shopify.com/s/files/1/0780/8181/8922/files/Circular-Std-Bold.otf?v=1687343642'
-//   ),
-
-// );
-
-
 $fonts: (
   'poppins': (
     'source': 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap',

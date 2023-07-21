@@ -1,13 +1,6 @@
-//Breakpoints
-$sm: 768px;
-$md: 1024px;
-$lg: 1440px;
-
-@custom-media --sm (width >= $sm);
-@custom-media --md (width >= $md);
-@custom-media --lg (width >= $lg);
-
-
+@custom-media --sm (width >= 768px);
+@custom-media --md (width >= 1024px);
+@custom-media --lg (width >= 1440px);
 
 @custom-selector :--CTA .button,.link--button;
 
@@ -43,3 +36,14 @@ $gray-200: #BABABA;
 $gray-100: #BFBFBF;
 
 
+
+$base-margin: 40px;
+
+
+//mixins
+
+@mixin container  {
+    max-width: calc(100% - 2*#{$base-margin});
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,21 @@
+{% style %} 
+ {% if color %} 
+   .text__{{id}} {
+    color: {{color}};
+   }
+ {% endif %}
+{% endstyle %}
+<div class="{{wrapper_class}}__text text__{{id}}" > 
+  {% if eyebrow %}
+   <p class="{{wrapper_class}}__eyebrow">{{eyebrow}}</p>
+  {% endif %}
+  {% if heading %}
+   <p class="{{wrapper_class}}__heading">{{heading}}</p>
+  {% endif %}
+  {% if subheading %}
+   <p class="{{wrapper_class}}__subheading">{{subheading}}</p>
+  {% endif %}
+   {% if cta_text and cta_url %}
+   <a class="button{{wrapper_class}}__cta" {%if cta_url %} href="{{cta_url}} {% endif%}">{{cta_text}}</a>
+   {% endif %}
+</div> 

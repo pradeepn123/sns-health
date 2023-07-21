@@ -331,7 +331,7 @@
       "secure_payments": "Paiements 100% sécurisés",
       "free_shipping": "Vous bénéficiez des frais de port gratuits !",
       "free_shipping_remaining_html": "Encore {{remaining_amount}} pour bénéficier des frais de port gratuits !",
-      "amount_saved_html": "{{amount_saved}} d'économisés !",
+      "amount_saved_html": "{{amount_saved}} d'économie !",
       "free": "Gratuit !",
       "shipping_and_taxes_notice": "Livraison et taxes calculées à la caisse",
       "taxes_and_shipping_at_checkout": "Taxes et livraison calculées au moment de payer",
@@ -339,7 +339,7 @@
       "taxes_included_but_shipping_at_checkout": "Taxes incluses. Livraison calculée au moment de payer",
       "taxes_included_and_shipping_policy_html": "Taxes incluses. <a href=\"{{ link }}\">Livraison<\/a> calculée au moment de payer",
       "total": "Total",
-      "checkout": "Payer"
+      "checkout": "Caisse"
     },
     "items": {
       "decrease_quantity": "Diminuer la quantité de 1",

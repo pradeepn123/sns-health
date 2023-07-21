@@ -1,5 +1,5 @@
 @use 'accoutrement/sass/color';
-@use './variables';
+@use '../components/variables.scss';
 
 /*
 Use 'color('token') to access the defined color
@@ -25,11 +25,9 @@ $secondary: (
 );
 
 $background: (
-    //active
    'background-active': variables.$red,
-   'background-text': variables.$white
-    //passive
-   'background-passive': variables.$white
+   'background-text': variables.$white,
+   'background-passive': variables.$white,
    'background-passive-text': variables.$black
 );
 
