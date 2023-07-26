@@ -1,0 +1,13 @@
+@use 'StyleComponents/mixins';
+
+.section {
+    &__heading {
+      margin-bottom: var(--section-heading-margin);
+      @include use-text-style('heading-3');
+      @include mixins.container;
+      @media(--md) {
+        @include use-text-style('heading-1');
+      }
+     
+    }
+}

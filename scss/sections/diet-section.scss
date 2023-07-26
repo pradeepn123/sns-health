@@ -1,0 +1,108 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/text';
+@import 'StyleComponents/layout';
+@import 'StyleComponents/section-header';
+@import 'StyleComponents/custom-carousel';
+@import 'StyleComponents/icon-text';
+
+@custom-selector :--text .diet-section__subheading.text__subheading;
+@custom-selector :--text-wrapper .diet-section__text.text__container;
+
+@custom-selector :--icon-text .diet-section__icon-text.icon-text;
+@custom-selector :--icon .icon__container.diet-section__icon;
+@custom-selector :--cta .button.diet-section__cta;
+
+.diet-section {
+  margin-top: var(--section-margin);
+  padding: var(--section-padding) 0 0;
+
+  &__wrapper {
+    @include mixins.container;
+  }
+
+  &__content {
+    @include mixins.grid(3, 106px, 150px);
+  }
+
+  :--icon-text {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 25px 5px 10px 5px;
+    cursor: pointer;
+    justify-content: center;
+
+    @media(--md) {
+      padding: 0;
+      justify-content: space-between;
+
+      &:hover {
+        :--text {
+          color: colors.$red;
+        }
+
+        :--icon {
+          background-color: colors.$red;
+          color: colors.$white;
+        }
+
+        @include mixins.toggleSvgIcon;
+      }
+    }
+  }
+
+  :--icon {
+    line-height: 1;
+    position: relative;
+
+    @media(--md) {
+      width: 50%;
+      height: 100%;
+    }
+
+    svg {
+      width: 35px;
+      height: 35px;
+
+      @media(--md) {
+        width: unset;
+        height: unset;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  :--text {
+    font-weight: typography.$heading-weight;
+    margin-top: 0;
+
+    @media (--md) {
+      @include use-text-style('heading-2');
+    }
+  }
+
+  :--cta {
+    margin-top: 5px;
+    padding: 0;
+    display: none;
+
+    @media(--md) {
+      display: block;
+    }
+  }
+
+  :--text-wrapper {
+    width: 100%;
+
+    @media(--md) {
+      width: 50%;
+    }
+  }
+}

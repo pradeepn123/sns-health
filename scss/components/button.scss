@@ -1,0 +1,28 @@
+@use 'StyleComponents/colors';
+
+.button {
+    background: colors.$red;
+    color: currentColor;
+    border-radius: 4px;
+    padding: 13px 28px;
+    line-height: 1;
+    font-family: 'poppins';
+    box-shadow: none;
+    outline: 0;
+
+    svg {
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+
+    &--text:hover {
+        border:0;
+        outline:0;
+        box-shadow: none;
+    }
+
+    &--transparent {
+        background:  transparent !important;
+        color: currentColor !important;
+    }
+}

@@ -1,0 +1,69 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/text';
+@import 'StyleComponents/layout';
+@import 'StyleComponents/section-header';
+@import 'StyleComponents/custom-carousel';
+@import 'StyleComponents/icon-text';
+
+@custom-selector :--text .category-section__eyebrow.text__eyebrow;
+@custom-selector :--icon-text .category-section__icon-text.icon-text;
+@custom-selector :--icon .icon__container.category-section__icon;
+
+
+.category-section {
+  margin-top: var(--section-margin);
+  padding: var(--section-padding) 0 0;
+
+  &__wrapper {
+    @media(--md) {
+      @include mixins.container;
+    }
+  }
+
+  :--icon-text {
+    padding: 14.5px 10px;
+
+    @media(--md) {
+      padding: 39px 20px 39px 20px;
+    }
+
+    &:hover {
+      border-color: colors.$red;
+      box-shadow:rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
+      cursor: pointer;
+    }
+  }
+
+  .carousel__container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+
+  :--icon {
+    line-height: 1;
+
+    svg {
+      width: 24px;
+      height: 31px;
+
+      @media (--md) {
+        width: 31px;
+        height: 40px;
+      }
+    }
+  }
+
+  :--text {
+    @media (--md) {
+      margin-top: 8px;
+    }
+  }
+
+  @include mixins.overflowCarousel;
+
+}

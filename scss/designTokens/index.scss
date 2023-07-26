@@ -1,4 +1,2 @@
-@use 'accoutrement';
-@use './typography';
-@use './colors';
-
+@import 'accoutrement/sass/core';
+@import './typography';

@@ -7,7 +7,45 @@ class CustomCarousel extends HTMLElement {
     this.HTMLElement = this.innerHTML;
     this.carouselSettings = JSON.parse(this.querySelector('[data-settings]')?.innerHTML || "{}");
     this.currentWidth = window.innerWidth;
-    const {breakpoints, ...otherSettings } = this.carouselSettings;
+    this.innerHTML = `<div class="carousel__container swiper" data-swiper-container>
+    <div class="swiper-wrapper">
+    ${this.HTMLElement}
+    </div> </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
+      <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
+      <path d="M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531" stroke="white" stroke-width="2" stroke-linecap="square"/>
+      </svg>
+    </div>
+    <div class="swiper-navigation swiper-navigation--prev ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '' } ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
+        <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
+        <path d="M22.7061 26.353L16.9413 20.5883L22.7061 14.8236" stroke="white" stroke-width="2" stroke-linecap="square"/>
+      </svg>
+    </div>`
+    this.container = this.querySelector('[data-swiper-container]');
+  }
+
+  connectedCallback() {
+    this.initCarousel();
+    window.addEventListener('resize', () => { console.log("resize triggered");this.initCarousel()});
+  }
+
+  getCarouselSettings () {
+    this.currentWidth = window.innerWidth;
+    //default settings
+    const defaultSettings = {
+        slidesPerView: 1,
+        spaceBetween: 15,
+        speed: 1000,
+        navigation: false
+    }
+    let carouselSettings = defaultSettings;
+    //end of default settings 
+
+    //handle breakpoint
+    const {breakpoints,...otherSettings } = this.carouselSettings;
     if(breakpoints) {
       this.breakpoints = Object.keys(breakpoints);
        this.breakpoints.forEach((breakpoint,index) => {
@@ -18,74 +56,74 @@ class CustomCarousel extends HTMLElement {
           else {
             this.breakpointSettings = breakpoints[this.breakpoints[index-1]];
           }
+
           const {pagination, navigation, ...otherResponsiveSettings } = this.breakpointSettings;
-          this.carouselSettings = {pagination, navigation, ...otherSettings, ...otherResponsiveSettings};
+          this.carouselSettings = {...otherSettings, ...otherResponsiveSettings, pagination, navigation};
           }
        })
     }
-    this.innerHTML = `<div class="carousel__container swiper" data-swiper-container>
-    <div class="swiper-wrapper">
-    ${this.HTMLElement}
-    </div> </div>
-    <div class="swiper-pagination"></div>
-    ${this.carouselSettings.navigation ?  
-    `<div class="swiper-navigation swiper-navigation--next">
-      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
-      <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
-      <path d="M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531" stroke="white" stroke-width="2" stroke-linecap="square"/>
-      </svg>
-    </div>
-    <div class="swiper-navigation swiper-navigation--prev">
-      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
-        <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
-        <path d="M22.7061 26.353L16.9413 20.5883L22.7061 14.8236" stroke="white" stroke-width="2" stroke-linecap="square"/>
-      </svg>
-    </div>` : ''
-    }
-   `
-    this.container = this.querySelector('[data-swiper-container]');
-
-  }
-
-  // Observe one or multiple elements
-  connectedCallback() {
-    this.initCarousel();
-  }
-
-  getCarouselSettings () {
-    const defaultSettings = {
-        slidesPerView: 1,
-        spaceBetween: 15,
-        speed: 1000,
-        navigation: false
-    }
-    let carouselSettings = defaultSettings;
     if(this.carouselSettings && Object.keys(this.carouselSettings).length > 0) {
-          const {navigation , pagination, ...otherSwiperSettings } = this.carouselSettings;
+          const {navigation , pagination, progressPagination, ...otherSwiperSettings } = this.carouselSettings;
           carouselSettings = {...otherSwiperSettings};
             if(navigation) {
+              const navigationNext = this.querySelector('.swiper-navigation--next');
+              const navigationPrev = this.querySelector('.swiper-navigation--prev');
               carouselSettings = {...carouselSettings,navigation: {
-                nextEl: '.swiper-navigation--next',
-                prevEl: '.swiper-navigation--prev',
+                nextEl: navigationNext,
+                prevEl: navigationPrev
               } }
             }
             if(pagination) {
-              carouselSettings = {...carouselSettings, pagination: {
-                el: '.swiper-pagination',
+              const swiperPagination = this.querySelector('.swiper-pagination');
+              let pagination = {
+                el: swiperPagination,
                 clickable: true
-              }, }
+              }
+              if(progressPagination ) {
+                pagination = {
+                  el: swiperPagination,
+                  type: 'progressbar'
+                }
+              }
+
+              carouselSettings = {...carouselSettings, pagination}
             }
     }
     return carouselSettings;
   }
-
+  
   initCarousel() {
- 
       const carouselSettings = this.getCarouselSettings() || {};
+      console.log(carouselSettings, "carousel settings");
       this.swiper = new Swiper(this.container, {
+        on: {
+          beforeInit: () => {
+            const {navigation,pagination} = carouselSettings || {};
+            if(!navigation) {
+              this.querySelectorAll('.swiper-navigation').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
+            }
+            else {
+              this.querySelector('.swiper-navigation--hide') && this.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            }
+
+            if(!pagination) {
+              this.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
+            }
+            else {
+              this.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            }
+          }
+        },
         modules: [Navigation, Pagination],
         ...carouselSettings
       });
+
+      this.swiper.on('activeIndexChange', (current) => {
+        this.querySelector('.swiper-pagination-bullet-active')?.classList.remove('swiper-pagination-bullet-active');
+        this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]?.classList.add('swiper-pagination-bullet-active');
+      })
+
+
   }
 }
 export default CustomCarousel;

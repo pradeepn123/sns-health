@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _excluded = ["breakpoints"],
   _excluded2 = ["pagination", "navigation"],
-  _excluded3 = ["navigation", "pagination"];
+  _excluded3 = ["navigation", "pagination", "progressPagination"];
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
@@ -32,6 +32,29 @@ class CustomCarousel extends HTMLElement {
     this.HTMLElement = this.innerHTML;
     this.carouselSettings = JSON.parse(((_this$querySelector = this.querySelector('[data-settings]')) === null || _this$querySelector === void 0 ? void 0 : _this$querySelector.innerHTML) || "{}");
     this.currentWidth = window.innerWidth;
+    this.innerHTML = "<div class=\"carousel__container swiper\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.HTMLElement, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    <div class=\"swiper-navigation swiper-navigation--next ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>");
+    this.container = this.querySelector('[data-swiper-container]');
+  }
+  connectedCallback() {
+    this.initCarousel();
+    window.addEventListener('resize', () => {
+      console.log("resize triggered");
+      this.initCarousel();
+    });
+  }
+  getCarouselSettings() {
+    this.currentWidth = window.innerWidth;
+    //default settings
+    var defaultSettings = {
+      slidesPerView: 1,
+      spaceBetween: 15,
+      speed: 1000,
+      navigation: false
+    };
+    var carouselSettings = defaultSettings;
+    //end of default settings 
+
+    //handle breakpoint
     var _this$carouselSetting = this.carouselSettings,
       {
         breakpoints
@@ -52,51 +75,46 @@ class CustomCarousel extends HTMLElement {
               navigation
             } = _this$breakpointSetti,
             otherResponsiveSettings = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$breakpointSetti, _excluded2);
-          this.carouselSettings = _objectSpread(_objectSpread({
+          this.carouselSettings = _objectSpread(_objectSpread(_objectSpread({}, otherSettings), otherResponsiveSettings), {}, {
             pagination,
             navigation
-          }, otherSettings), otherResponsiveSettings);
+          });
         }
       });
     }
-    this.innerHTML = "<div class=\"carousel__container swiper\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.HTMLElement, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    ").concat(this.carouselSettings.navigation ? "<div class=\"swiper-navigation swiper-navigation--next\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>" : '', "\n   ");
-    this.container = this.querySelector('[data-swiper-container]');
-  }
-
-  // Observe one or multiple elements
-  connectedCallback() {
-    this.initCarousel();
-  }
-  getCarouselSettings() {
-    var defaultSettings = {
-      slidesPerView: 1,
-      spaceBetween: 15,
-      speed: 1000,
-      navigation: false
-    };
-    var carouselSettings = defaultSettings;
     if (this.carouselSettings && Object.keys(this.carouselSettings).length > 0) {
       var _this$carouselSetting2 = this.carouselSettings,
         {
           navigation,
-          pagination
+          pagination,
+          progressPagination
         } = _this$carouselSetting2,
         otherSwiperSettings = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$carouselSetting2, _excluded3);
       carouselSettings = _objectSpread({}, otherSwiperSettings);
       if (navigation) {
+        var navigationNext = this.querySelector('.swiper-navigation--next');
+        var navigationPrev = this.querySelector('.swiper-navigation--prev');
         carouselSettings = _objectSpread(_objectSpread({}, carouselSettings), {}, {
           navigation: {
-            nextEl: '.swiper-navigation--next',
-            prevEl: '.swiper-navigation--prev'
+            nextEl: navigationNext,
+            prevEl: navigationPrev
           }
         });
       }
       if (pagination) {
+        var swiperPagination = this.querySelector('.swiper-pagination');
+        var _pagination = {
+          el: swiperPagination,
+          clickable: true
+        };
+        if (progressPagination) {
+          _pagination = {
+            el: swiperPagination,
+            type: 'progressbar'
+          };
+        }
         carouselSettings = _objectSpread(_objectSpread({}, carouselSettings), {}, {
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          }
+          pagination: _pagination
         });
       }
     }
@@ -104,9 +122,33 @@ class CustomCarousel extends HTMLElement {
   }
   initCarousel() {
     var carouselSettings = this.getCarouselSettings() || {};
+    console.log(carouselSettings, "carousel settings");
     this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
+      on: {
+        beforeInit: () => {
+          var {
+            navigation,
+            pagination
+          } = carouselSettings || {};
+          if (!navigation) {
+            this.querySelectorAll('.swiper-navigation').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
+          } else {
+            this.querySelector('.swiper-navigation--hide') && this.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+          }
+          if (!pagination) {
+            this.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
+          } else {
+            this.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+          }
+        }
+      },
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
     }, carouselSettings));
+    this.swiper.on('activeIndexChange', current => {
+      var _this$querySelector2, _this$querySelectorAl;
+      (_this$querySelector2 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.classList.remove('swiper-pagination-bullet-active');
+      (_this$querySelectorAl = this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _this$querySelectorAl === void 0 ? void 0 : _this$querySelectorAl.classList.add('swiper-pagination-bullet-active');
+    });
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomCarousel);

@@ -1,6 +1,6 @@
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/banner.scss ***!
-  \**********************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/health-condition-section.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************/
 :root {
   --base-margin: 20px;
   --grid-row-gap: 10px;
@@ -100,21 +100,81 @@
   margin-top: 16px;
 }
 
-.text-image {
-  position: relative;
+:root {
+  --base-margin: 20px;
+  --grid-row-gap: 10px;
+  --section-content-margin: 16px;
+  --section-margin: 20px;
+  --section-padding:20px;
+  --section-heading-margin: 10px;
+  --grid-column-gap: 10px;
 }
-.text-image__text-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  color: #fff;
-  padding: 0 20px;
-  padding: 0 var(--base-margin);
+@media (min-width: 768px) {
+  :root {
+    --grid-column-gap: 20px;
+    --grid-row-gap: 20px;
+  }
 }
-.text-image .image .responsive-image__image {
-  border-radius: 10px;
+@media (min-width: 1024px) {
+  :root {
+    --base-margin: 40px;
+    --section-content-margin: 20px;
+    --section-margin: 40px;
+    --section-padding:40px;
+    --section-heading-margin: 40px;
+  }
+}
+
+:root {
+  --base-margin: 20px;
+  --grid-row-gap: 10px;
+  --section-content-margin: 16px;
+  --section-margin: 20px;
+  --section-padding:20px;
+  --section-heading-margin: 10px;
+  --grid-column-gap: 10px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --grid-column-gap: 20px;
+    --grid-row-gap: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --base-margin: 40px;
+    --section-content-margin: 20px;
+    --section-margin: 40px;
+    --section-padding:40px;
+    --section-heading-margin: 40px;
+  }
+}
+.section__heading {
+  margin-bottom: 10px;
+  margin-bottom: var(--section-heading-margin);
+  font-family: "poppins";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: calc(100% - 2 * 20px);
+  max-width: calc(100% - 2 * var(--base-margin));
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1440px) {
+  .section__heading {
+    max-width: calc(1440px - 2 * 20px);
+    max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}
+@media (min-width: 1024px) {
+  .section__heading {
+    font-family: "poppins";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
 }
 
 :root {
@@ -909,24 +969,36 @@ img {
 custom-carousel {
   position: relative;
 }
-@media (min-width: 768px) {
-  .banner {
+
+.icon-text {
+  border: 1px solid #DADADA;
+  border-radius: 10px;
+  text-align: center;
+}
+.health-condition-section {
+  margin-top: 20px;
+  margin-top: var(--section-margin);
+  padding: 20px 0 0;
+  padding: var(--section-padding) 0 0;
+}
+@media (min-width: 1024px) {
+  .health-condition-section__wrapper {
     max-width: calc(100% - 2 * 20px);
     max-width: calc(100% - 2 * var(--base-margin));
     margin-left: auto;
     margin-right: auto;
   }
 }
-@media (min-width: 768px) and (min-width: 1440px) {
-  .banner {
+@media (min-width: 1024px) and (min-width: 1440px) {
+  .health-condition-section__wrapper {
     max-width: calc(1440px - 2 * 20px);
     max-width: calc(1440px - 2 * var(--base-margin));
   }
 }
-.banner__content {
+.health-condition-section__content {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: minmax(90px, auto);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: minmax(65px, auto);
   grid-column-gap: 10px;
   grid-column-gap: var(--grid-column-gap);
   -webkit-column-gap: 10px;
@@ -942,88 +1014,113 @@ custom-carousel {
   grid-template-columns: repeat(auto-fit, minmax(unset, 1fr));
 }
 @media (min-width: 1024px) {
-  .banner__content {
-    grid-auto-rows: minmax(196px, auto);
-    grid-template-columns: repeat(auto-fit, minmax(unset, 1fr));
+  .health-condition-section__content {
+    grid-auto-rows: minmax(76px, auto);
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   }
 }
-.banner img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.health-condition-section__content--desktop {
+  display: none;
 }
 @media (min-width: 1024px) {
-  .banner img {
-    -o-object-fit: initial;
-       object-fit: initial;
+  .health-condition-section__content--desktop {
+    display: grid;
   }
 }
-.banner__item div:not(.banner__item__text-wrapper):not(.banner__text-wrapper):not(.content) {
-  height: 100%;
-}
-.banner__carousel {
-  position: relative;
-}
-@media (min-width: 768px) {
-  .banner__item {
-    grid-row: span 2;
-  }
-}
-@media (min-width: 1024px) {
-  .banner__item {
-    grid-row: span 1;
-  }
-}
-.banner__item:nth-of-type(1) {
-  grid-column: span 3;
-  grid-row: span 2;
-}
-@media (min-width: 768px) {
-  .banner__item:nth-of-type(1) {
-    grid-column: span 1;
-  }
-}
-@media (min-width: 1024px) {
-  .banner__item:nth-of-type(1) {
-    grid-row: span 2;
-    grid-column: span 2;
-  }
-}
-.banner__text-wrapper {
-  max-width: 151px;
-}
-.banner .banner__heading.text__heading {
-  font-family: "poppins";
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 1.2;
-  font-weight: 600;
-  line-height: 1;
-}
-.banner .banner__subheading.text__subheading {
-  font-weight: 600;
+.health-condition-section__content--mobile {
   display: block;
 }
 @media (min-width: 1024px) {
-  .banner .banner__subheading.text__subheading {
-    display: inline;
-    display: initial;
+  .health-condition-section__content--mobile {
+    display: none;
   }
 }
-.banner--desktop {
+.health-condition-section .health-condition-section__icon-text.icon-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (min-width: 1024px) {
+  .health-condition-section .health-condition-section__icon-text.icon-text {
+    padding: 20px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .health-condition-section .health-condition-section__icon-text.icon-text:hover {
+    border-color: #ED1C24;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px 0px;
+    cursor: pointer;
+  }
+  .health-condition-section .health-condition-section__icon-text.icon-text:hover .health-condition-section__eyebrow.text__eyebrow {
+    color: #ED1C24;
+  }
+}
+.health-condition-section .icon__container.health-condition-section__icon {
+  line-height: 1;
+}
+.health-condition-section .icon__container.health-condition-section__icon svg {
+  width: 24px;
+  height: 24px;
+}
+@media (min-width: 1024px) {
+  .health-condition-section .icon__container.health-condition-section__icon svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+@media (min-width: 1024px) {
+  .health-condition-section .icon__container.health-condition-section__icon {
+    margin-right: 10px;
+  }
+}
+.health-condition-section .health-condition-section__eyebrow.text__eyebrow {
+  font-weight: 700;
+  margin-top: 5px;
+}
+@media (min-width: 1024px) {
+  .health-condition-section .health-condition-section__eyebrow.text__eyebrow {
+    margin-top: 0;
+  }
+}
+.health-condition-section .button.health-condition-section__cta {
+  margin-top: 5px;
+  padding: 0;
   display: none;
 }
-@media (min-width: 768px) {
-  .banner--desktop {
+@media (min-width: 1024px) {
+  .health-condition-section .button.health-condition-section__cta {
     display: block;
   }
 }
-.banner--mobile {
-  display: block;
+.health-condition-section .health-condition-section__text.text__container {
+  max-width: 100%;
 }
-@media (min-width: 768px) {
-  .banner--mobile {
-    display: none;
+@media (min-width: 1024px) {
+  .health-condition-section .health-condition-section__text.text__container {
+    max-width: 70%;
+  }
+}
+.health-condition-section .swiper-initialized {
+  padding-left: 20px;
+  padding-left: var(--base-margin);
+  padding-right: 20px;
+  padding-right: var(--base-margin);
+}
+@media (min-width: 1024px) {
+  .health-condition-section .swiper-initialized {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

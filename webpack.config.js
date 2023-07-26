@@ -34,6 +34,7 @@ module.exports = {
     alias: {
       StyleComponents: path.resolve(__dirname, 'scss/components'),
       Token: path.resolve(__dirname, 'scss/designTokens/index.scss'),
+      breakpoints: path.resolve(__dirname, 'scss/components/breakpoints.scss'),
       JsComponents: path.resolve(__dirname, 'js/components')
     }
   },

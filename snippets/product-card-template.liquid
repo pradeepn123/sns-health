@@ -1,0 +1,24 @@
+<template id="product-card-template">
+  <link rel="stylesheet" href="{{'product-card.css' | asset_url }}" />
+  <div class="product-card">
+    <div class="product-card__image">
+      <slot name="image"></slot>
+    </div>
+    <div class="product-card__header">
+      <div class="product-card__discount"> <slot name="discount"></slot></div>
+      <div class="product-card__star"><slot name="star"></slot></div>
+    </div>
+    <div class="product-card__body">
+      <div class="product-card__vendor">
+        <slot name="vendor"></slot></div>
+      </div>
+      <div class="product-card__title">
+        <slot name="title"></slot></div>
+      </div>
+    </div>
+    <div class="product-card__footer">
+      <div class="product-card__price"><slot name="price"></slot></div></div>
+      <div class="product-card__atc"><slot name="atc"></slot></div></div>
+    </div>
+  </div>
+</template>

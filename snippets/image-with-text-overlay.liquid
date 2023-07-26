@@ -8,25 +8,33 @@
  <div class="text-image__image-wrapper image {{wrapper_class}}__image">
   <div class="image image--desktop {{wrapper_class}}__image">
     {% render 'shopify-responsive-image',
-        image: desktop_image 
+        image: desktop_image,
+        aspect_ratio: desktop_aspect_ratio,
+        crop: desktop_crop
       %}
   </div>
   <div class="image image--mobile {{wrapper_class}}__image">
     {% render 'shopify-responsive-image',
-        image: mobile_image
+        image: mobile_image,
+        aspect_ratio: mobile_aspect_ratio,
+        crop: mobile_crop
       %}
     </div>
 </div>
-<div class="text-image__image-wrapper content {{wrapper_class}}__image-wrapper">
-    {% render text, 
+<div class="text-image__text-wrapper content {{wrapper_class}}__text-wrapper">
+    {% render 'text', 
         id: id,
         color: color, 
         eyebrow: eyebrow, 
         heading: heading , 
         subheading: subheading , 
         cta_text: cta_text, 
-        wrapper_class: 'banner'
-        cta_url: cta_url %}
+        wrapper_class: text_wrapper_class,
+        inline_heading: inline_heading
+        cta_url: cta_url,
+        button_type: button_type
+        button_background_type: button_background_type
+      %}
   </div>
 </div>
 

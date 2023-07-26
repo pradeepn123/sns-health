@@ -1,0 +1,20 @@
+@use 'StyleComponents/colors';
+
+.text-image {
+    position: relative;
+
+    &__text-wrapper {
+        position: absolute;
+        top: 50%;
+        left:0;
+        transform: translateY(-50%);
+        color: colors.$white;
+        padding: 0 var(--base-margin);
+    }
+
+    .image {
+        .responsive-image__image {
+            border-radius: 10px;
+        }
+    }
+}

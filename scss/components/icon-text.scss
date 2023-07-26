@@ -1,0 +1,7 @@
+@use 'StyleComponents/colors';
+
+.icon-text {
+   border: 1px solid colors.$gray-300;
+   border-radius: 10px;
+   text-align: center;
+}

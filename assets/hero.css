@@ -1,18 +1,6 @@
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/hero.scss ***!
   \********************************************************************************************************************************************************************************************************************/
-/*
-Use 'color('token') to access the defined color
-
-.border--dark {
-    border: 1px solid color('primary-dark');
-}
-
-.text--error {
-    color: color('secondary-red');
-}
-
-*/
 :root {
   --main-color: #000;
 }

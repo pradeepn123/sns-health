@@ -1,1 +1,25 @@
-$base-margin: 40px;
+:root {
+    --base-margin: 20px;
+    --grid-row-gap: 10px;
+    --section-content-margin: 16px;
+    --section-margin: 20px;
+    --section-padding:20px;
+    --section-heading-margin: 10px;
+    --grid-column-gap: 10px;
+
+
+    @media(min-width: 768px) {
+        --grid-column-gap: 20px;
+        --grid-row-gap: 20px;
+    }
+
+    @media(min-width: 1024px) {
+        --base-margin: 40px;
+        --section-content-margin: 20px;
+        --section-margin: 40px;
+        --section-padding:40px;
+        --section-heading-margin: 40px;
+       
+    }
+
+}

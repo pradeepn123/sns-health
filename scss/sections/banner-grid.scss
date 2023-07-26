@@ -1,0 +1,67 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/text';
+@import 'StyleComponents/text-image';
+@import 'StyleComponents/breakpoints';
+@import 'StyleComponents/custom-carousel';
+
+
+@custom-selector :--heading .banner-grid__heading.text__heading;
+@custom-selector :--subheading .banner-grid__subheading.text__subheading;
+@custom-selector :--text-wrapper .text-image__text-wrapper;
+
+
+.banner-grid {
+    &__wrapper {
+        @media(--md) {
+            @include mixins.container;
+        }
+        margin-top: var(--grid-row-gap);
+    }
+
+    :--text-wrapper {
+        padding: 0 var(--section-content-margin);
+    }
+
+    :--heading {
+        margin-bottom: 2px;
+    }
+
+    &__cta.button {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: left;
+        left:0;
+        padding-top:20px;
+        padding-bottom: 20px;
+        display: none; 
+
+        @media (--md) {
+            display: block;
+        }
+
+        &:hover {
+            background: colors.$red !important;
+        }
+    }
+
+    .text-image__text-wrapper {
+        width: 100%;
+        height: unset;
+        top: unset;
+        bottom:var(--section-content-margin);
+        transform: unset;
+
+        @media (--md) {
+            height:100%;
+            top: 50%;
+            bottom: unset;
+            transform: translateY(-50%);
+        }
+    }
+    @include mixins.overflowCarousel;
+}

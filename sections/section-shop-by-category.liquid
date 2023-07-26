@@ -1,0 +1,127 @@
+{{'category-section.css' | asset_url | stylesheet_tag }}
+<div class="category-section">
+    {% render 'section-heading', heading: section.settings.heading %}
+<div class="category-section__wrapper">
+        <div class="category-section__carousel carousel"> 
+          <custom-carousel>
+              {% for block in section.blocks %} 
+              {% liquid 
+                assign id = block.id
+                assign color = block.settings.color
+                assign eyebrow = block.settings.eyebrow
+                assign subheading = block.settings.subheading
+                assign cta_text = block.settings.cta_text
+                assign cta_url = block.settings.cta_url
+                assign icon = block.settings.icon
+              %}
+              {% render 'icon-text', 
+                    wrapper_class: 'category-section', 
+                    id: id,
+                    color: color, 
+                    eyebrow: eyebrow, 
+                    subheading: subheading,
+                    icon: icon,
+                    button_type: 'text',
+                    button_background_type: 'transparent',
+                    cta_text: cta_text,
+                    cta_url: cta_url,
+                    is_slider: true
+                 %}
+              {% endfor %}
+              <script type="text/json" data-settings>
+                {
+                  "slidesPerView": 2.1,
+                  "spaceBetween": 10,
+                  "overflowNagivation": true,
+                  "breakpoints": {
+                    "375": {
+                        "slidesPerView": 3.01,
+                        "pagination": true,
+                        "progressPagination": true
+                    },
+                    "768": {
+                      "spaceBetween": 20,
+                      "navigation": false,
+                      "slidesPerView": 3.1
+                    },
+                    "1024": {
+                        "navigation": true,
+                        "slidesPerView": 4,
+                        "spaceBetween": 20,
+                        "pagination": false
+                      },
+                      "1366": {
+                        "navigation": true,
+                        "slidesPerView": 6,
+                        "spaceBetween": 32
+                      }
+                  }
+                }
+              </script>
+            </custom-carousel>
+        </div>
+</div>
+</div>
+
+
+{% schema %}
+ {
+   "name": "Category - section",
+   "settings": [
+     {
+       "type": "text",
+       "id": "heading",
+       "label": "Section Heading"
+     }
+   ],
+   "blocks": [
+    {
+        "type": "category",
+        "name": "category",
+        "settings": [
+         {
+           "type": "header",
+           "content": "Block Group"
+         },
+    
+         {
+           "type": "header",
+           "content": "Block Contents"
+         },
+           {
+               "type": "color",
+               "id": "text_color",
+               "label": "Text color"
+           },
+           {
+            "type": "html",
+             "id": "icon",
+             "label": "SVG Icon",
+             "info": "Paste SVG html"
+           },
+           {
+             "type": "text",
+             "id": "eyebrow",
+             "label": "Text"
+           },
+           {
+             "type": "text",
+             "id":  "cta_text",
+             "label": "CTA Text"
+           },
+           {
+             "type": "url",
+             "id":  "cta_url",
+             "label": "CTA Text"
+           }
+        ]
+       }
+    ],
+   "presets": [
+    {
+      "name": "Category-Section"
+    }
+   ]
+ }
+
+{% endschema %}

@@ -1,8 +1,35 @@
-@import '../components/variables.scss';
-
+@use 'StyleComponents/typography';
+@import 'StyleComponents/button';
 
 .text {
   &__eyebrow {
+    @include use-text-style('body-alt-small');
 
+    @media (--md) {
+      @include use-text-style('body-alt');
+      font-weight: typography.$semi-weight;
+    }
+  }
+
+  &__heading {
+    @include use-text-style('heading-3');
+
+    @media (--md) {
+      @include use-text-style('heading-1');
+    }
+  }
+
+  &__subheading {
+    @include use-text-style('body-regular');
+
+    @media (--md) {
+      @include use-text-style('heading-3');
+      font-weight: typography.$medium-weight;
+    }
+    font-weight: 600;
+  }
+
+  &__cta {
+    margin-top:16px;
   }
 }

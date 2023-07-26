@@ -1,59 +1,104 @@
 @use 'StyleComponents/colors';
-@use 'StyleComponents/breakpoints';
+@use 'StyleComponents/mixins';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+
+.carousel {
+  position: relative;
+}
 
 .swiper-pagination {
-    display: flex;
+
+
+  display: flex;
+  &:not(.swiper-pagination-progressbar){
     height: 9px !important;
     bottom: 24px !important;
-    left: 50% !important;
-    box-sizing: content-box;
-  transform:  translateX(-50%) !important;
-  justify-content: center;
-  
-      &-bullet {
-          background: colors.$white;
-          opacity: 1;
-        &-active {
-          background:  transparent;
-          border: 2px solid colors.$white;
-        }
-  
-      }
   }
-  
-  .swiper-navigation {
+  left: 50% !important;
+  box-sizing: content-box;
+  transform: translateX(-50%) !important;
+  justify-content: center;
+
+  &-bullet {
+    background: colors.$white;
+    opacity: 1;
+
+    &-active {
+      background: transparent;
+      border: 2px solid colors.$white;
+    }
+  }
+  &--hide {
+    display: none;
+  }
+}
+
+.swiper-navigation {
   height: unset !important;
   top: 50%;
   transform: translateY(-50%);
   position: absolute;
   height: unset;
-  z-index: 10;
+  z-index: 4;
   cursor: pointer;
-  
+
   &--next {
-      right: 20px;
+    right: 20px;
+    &.swiper-navigation--overflow {
+      right: -20px;
+    }
   }
-  
+
   &--prev {
-      left: 13px;
+    left: 13px;
+    &.swiper-navigation--overflow {
+      left: -20px;
+    }
   }
-  
+
+
+
   svg {
-      @media (--md) {
-          width: 42px;
-          height: 42px;
-      }
+    @media (--md) {
+      width: 42px;
+      height: 42px;
+    }
   }
-  
+
   &.swiper-button-disabled {
-      pointer-events: none;
-     svg circle {
-       fill: colors.$gray-200;
-     }
+    pointer-events: none;
+
+    svg circle {
+      fill: colors.$gray-200;
+    }
   }
+
+  &--hide{
+    display: none;
   }
-  
-  :root {
-      --swiper-pagination-bullet-width: 9px;
-  }
-  
+}
+img{
+  width: 100%;
+}
+
+:root {
+  --swiper-pagination-bullet-width: 9px;
+  --swiper-pagination-bullet-height: 9px;
+  --swiper-pagination-progressbar-bg-color: #{colors.$gray-300};
+  --swiper-pagination-progressbar-size: 1px;
+  --swiper-pagination-color: #{colors.$black}
+}
+
+.swiper-pagination-progressbar  {
+  position: relative !important;
+  margin-top: 10px;
+  @include mixins.container;
+  left: 45% !important;
+}
+
+custom-carousel {
+  position: relative;
+}

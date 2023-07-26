@@ -1,0 +1,32 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/layout';
+@import 'StyleComponents/section-header';
+@import 'StyleComponents/custom-carousel';
+
+
+.featured-brand-section {
+  margin-top: var(--section-margin);
+  padding: var(--section-padding) 0 0;
+
+  &__wrapper {
+    @media(--md) {
+     @include mixins.container;
+    }
+  }
+
+  &__item {
+    border: 1px solid colors.$gray-300;
+    border-radius: 10px;
+    text-align: center;
+    padding:10px;
+
+    @media(--md) {
+      padding: 20px;
+    }
+  }
+  @include mixins.overflowCarousel;
+}
