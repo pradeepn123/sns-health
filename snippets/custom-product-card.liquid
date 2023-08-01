@@ -8,6 +8,15 @@
   assign rating = 5
   assign vendor = product.vendor
   assign title = product.title
+  assign tags = product.tags | join: ','
+  assign bestseller = false
+  assign onsale = false
+  if tags contains 'bestseller' 
+   assign bestseller = true
+  endif
+  if tags contains 'onsale' 
+    assign onsale = false
+ endif
 %}
 
 <product-card>
@@ -18,6 +27,8 @@
       </div>
       <div class="product-card__header">
         {% if discount_percentage > 0 %}<div class="product-card__discount">{{discount_percentage}}% off </div> {% endif %}
+        {% if bestseller %}<div class="product-card__discount"> Best Seller </div> {% endif %}
+        {% if onsale %}<div class="product-card__discount"> On Sale </div> {% endif %}
         <div class="product-card__star">{% render 'icon-star' %}<span class="product-card__star-text">{{rating}}</span></div>
       </div>
       {% if vendor %}

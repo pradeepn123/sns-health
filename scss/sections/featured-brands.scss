@@ -27,6 +27,10 @@
     @media(--md) {
       padding: 20px;
     }
+
+    &:hover {
+      @include mixins.box_hover;
+    }
   }
 
   .responsive-image__wrapper  {
@@ -52,4 +56,5 @@
     }
   }
   @include mixins.overflowCarousel;
+  @include mixins.shadow_margins;
 }

@@ -48,6 +48,8 @@
         :--icon {
           background-color: colors.$red;
           color: colors.$white;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
         }
 
         @include mixins.toggleSvgIcon;

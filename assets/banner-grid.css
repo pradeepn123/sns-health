@@ -1073,6 +1073,12 @@ custom-carousel {
             transform: translateY(-50%);
   }
 }
+.banner-grid .banner-grid-content__text-image:hover {
+  cursor: pointer;
+}
+.banner-grid .banner-grid-content__text-image:hover .banner-grid__cta.button {
+  background: #ED1C24 !important;
+}
 .banner-grid .swiper-initialized {
   padding-left: 20px;
   padding-left: var(--base-margin);

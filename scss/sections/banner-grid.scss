@@ -12,9 +12,12 @@
 @custom-selector :--heading .banner-grid__heading.text__heading;
 @custom-selector :--subheading .banner-grid__subheading.text__subheading;
 @custom-selector :--text-wrapper .banner-grid-content__text-wrapper.text-image__text-wrapper;
+@custom-selector :--content .banner-grid-content__text-image;
 
 
 .banner-grid {
+    $block: &;
+
     &__wrapper {
         @media(--sm) {
             @include mixins.container;
@@ -63,6 +66,16 @@
             transform: translateY(-50%);
         }
     }
+
+    :--content {
+        &:hover{
+            cursor: pointer;
+            #{$block}__cta.button {
+                background: colors.$red !important;
+            }
+        }
+    }
+
     @include mixins.overflowCarousel;
    .swiper-initialized {
     @media (--sm) {

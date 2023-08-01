@@ -36,6 +36,12 @@
             display: none;
         }
     }
+    &:hover {
+      @include mixins.box_hover;
+      .article-content__url {
+        color: colors.$red;
+      }
+    }
    }
    .responsive-image__image {
     border-radius: 10px;
@@ -98,4 +104,5 @@
         }
     }
 }
+@include mixins.shadow_margins;
 }

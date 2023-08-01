@@ -982,6 +982,12 @@ custom-carousel {
     padding: 20px;
   }
 }
+.featured-brand-section__item:hover {
+  border-color: #ED1C24;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
+  cursor: pointer;
+}
 .featured-brand-section .responsive-image__wrapper {
   margin-left: auto;
   margin-right: auto;
@@ -1013,4 +1019,10 @@ custom-carousel {
     padding-left: 0;
     padding-right: 0;
   }
+}
+.featured-brand-section .swiper-wrapper {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: -10px;
+  margin-bottom: -10px;
 }

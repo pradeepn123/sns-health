@@ -1138,6 +1138,8 @@ custom-carousel {
   .diet-section .diet-section__icon-text.icon-text:hover .icon__container.diet-section__icon {
     background-color: #ED1C24;
     color: #fff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
   .diet-section .diet-section__icon-text.icon-text:hover .icon__container--toggle-icon {
     display: none !important;
