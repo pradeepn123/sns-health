@@ -1,0 +1,103 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/layout';
+@import 'StyleComponents/custom-carousel';
+
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  justify-content: space-between;
+  height:100%;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    @include use-text-style('body-regular');
+  }
+
+  &__star {
+    display: flex;
+    align-items: center;
+
+    &-text {
+      padding-top: 2px;
+      margin-left: 5px;
+      color: colors.$gray-500;
+    }
+  }
+
+  &__discount {
+    font-weight: typography.$medium-weight;
+    padding: 0 12px;
+    background: colors.$black;
+    color: colors.$white;
+  }
+
+  &__vendor {
+    @include use-text-style('body-small');
+    font-weight: typography.$medium-weight;
+
+    @media(--md) {
+      font-size: typography.$body-regular-size;
+    }
+  }
+
+  &__price {
+    &-container {
+      justify-content: space-between;
+      display: flex;
+    }
+
+    @include use-text-style('body-small');
+    font-weight: typography.$medium-weight;
+
+    @media(--md) {
+      font-size: typography.$body-alt-size
+    }
+
+    &--compare {
+      color: colors.$gray-500;
+      text-decoration: line-through;
+    }
+  }
+
+  &__title {
+    @include use-text-style('body-regular');
+    font-weight: typography.$semi-weight;
+    min-height: 28px;
+    @media(--md) {
+      font-size: typography.$body-alt-size;
+      min-height: 44px;
+    }
+  }
+
+  .product-card__atc button , a {
+    width: 100%;
+    color: colors.$white;
+    @include use-text-style('body-regular');
+    font-weight: typography.$semi-weight;
+    margin-top:10px;
+
+    @media(--md) {
+      @include use-text-style('body-alt');
+      font-weight: typography.$semi-weight;
+    }
+  }
+
+  .product-card__atc .button--disabled {
+    background: colors.$white;
+    color: colors.$red;
+    border: 1px solid colors.$red;
+  }
+}

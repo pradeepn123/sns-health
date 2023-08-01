@@ -1,0 +1,63 @@
+@custom-selector :--text-image .text-image.sidebar-banner-content__text-image;
+@custom-selector :--text-wrapper  .text-image__text-wrapper.sidebar-banner-content__text-wrapper;
+@custom-selector :--cta  .sidebar-banner__cta.text__cta;
+@custom-selector :--eyebrow  .sidebar-banner__eyebrow.text__eyebrow;
+@custom-selector :--heading .text__heading.sidebar-banner__heading;
+@custom-selector :--subheading .sidebar-banner__subheading.text__subheading;
+
+:--text-image {
+    @media(--sm) {
+    grid-column: span 2;
+    width: 100%;
+    }
+}
+:--text-wrapper {
+    top: unset;
+    bottom: 28px;
+    transform: none;
+
+    @media(--md) {
+        bottom: 45px
+    }
+}
+
+
+:--cta,:--eyebrow,:--subheading {
+    @include use-text-style('body-regular');
+    @media(--md) {
+        @include use-text-style('body-alt');
+    }
+
+    font-weight: typography.$semi-weight !important;
+}
+
+:--subheading {
+    @media(--md) {
+        margin-top: 12px;
+    }
+}
+
+:--cta  {
+    margin-top: 10px;
+
+    @media(--md) {
+        margin-top: 28px;
+    }
+}
+
+:--heading {
+    @include use-text-style('body-alt');
+    margin-top: 2px;
+
+    @media (--md) {
+        @include use-text-style('heading-1')
+    }
+    br {
+        display: none; 
+
+        @media(--md) {
+            display: block;
+        }
+    }
+    font-weight: typography.$heading-weight !important;
+}

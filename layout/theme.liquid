@@ -56,7 +56,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       gtag('config', 'G-VHN3KVKJKN');
     </script>
 
-    {% include 'limespot' %}  
+    {% comment %} {% include 'limespot' %}   {% endcomment %}
     {%- comment -%}Few prefech to increase performance on commonly used third-parties{%- endcomment -%}
     <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
     <link rel="preload" as="script" href="{{ 'theme.js' | asset_url }}">
@@ -74,13 +74,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% render 'css-variables' %}
 
     {{ 'collection-shop-by-brands.css' | asset_url | stylesheet_tag }}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" async></script>      
 
     <!-- starapps_scripts_start -->
     <!-- This code is automatically managed by StarApps Studio -->
     <!-- Please contact support@starapps.studio for any help -->
-    <script type="sT_lazyLoad__init" data-src="https://code.jquery.com/jquery-3.3.1.min.js"  async></script>
-    {% render "starapps-product-json", product: product, starapps_app: "VIA", starapps_attribute: "sa-product-json" %}<script type="sT_lazyLoad__init" data-src="https://bcdn.starapps.studio/apps/via/sports-nutrition-source-canada/script-1674239768.js?shop={{shop.permanent_domain}}" async></script>
+    {% comment %} <script type="sT_lazyLoad__init" data-src="https://code.jquery.com/jquery-3.3.1.min.js"  async></script>
+    {% render "starapps-product-json", product: product, starapps_app: "VIA", starapps_attribute: "sa-product-json" %}<script type="sT_lazyLoad__init" data-src="https://bcdn.starapps.studio/apps/via/sports-nutrition-source-canada/script-1674239768.js?shop={{shop.permanent_domain}}" async></script> {% endcomment %}
     <!-- starapps_scripts_end -->
 
     <!-- Shopify app scripts =========================================================== -->
@@ -270,6 +270,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   </script>
   {% include 'monster-mo-script' %}
-  {{ 'global.js' | asset_url |  script_tag }}
+  <script src="{{'global.js' | asset_url }}" defer></script>  
 </body>
 </html>

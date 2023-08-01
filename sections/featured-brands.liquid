@@ -2,38 +2,83 @@
 <div class="featured-brand-section">
     {% render 'section-heading', heading: section.settings.heading %}
     <div class="featured-brand-section__wrapper">
-         <div class="featured-brand-section__content"> 
+         <div class="featured-brand-section__content">
+          <div class="featured-brand-section__content-wrapper  featured-brand-section__content-wrapper--desktop">
          <custom-carousel>
          {% for block in section.blocks %} 
          {% liquid 
            assign id = block.id
            assign image = block.settings.image
+           assign url = block.settings.url
          %}
-         <div class="swiper-slide featured-brand-section__item">
+         <a class="swiper-slide featured-brand-section__item" {% if url%} href="{{url}}" {% endif%}>
           {% render 'shopify-responsive-image',
             image: image,
-            aspect_ratio: 3.45
+            aspect_ratio: 3.5,
+            contain: true
           %}
-         </div>
+        </a>
          {% endfor %}
          <script type="text/json" data-settings>
-             {
-               "slidesPerView": 3.01,
-               "spaceBetween": 10,
-               "overflowNagivation": true,
-               "progressPagination": true,
-               "pagination": true,
-               "breakpoints": {
-                "1024": {
-                   "pagination": false,
-                   "navigation": true,
-                   "slidesPerView": 6,
-                   "spaceBetween": 32
-                 }
-               }
-             }
-           </script>
+          {
+            "slidesPerView": 3.01,
+            "spaceBetween": 10,
+            "overflowNagivation": true,
+            "progressPagination": true,
+            "pagination": true,
+            "breakpoints": {
+             "1024": {
+                "pagination": false,
+                "navigation": true,
+                "slidesPerView": 6,
+                "spaceBetween": 32
+              }
+            }
+          }
+        </script>
+      </custom-carousel>
+        </div>
+        <div class="featured-brand-section__content-wrapper  featured-brand-section__content-wrapper--mobile">
+          <custom-carousel>
+          {% for block in section.blocks %} 
+          {% liquid 
+            assign id = block.id
+            assign image = block.settings.image
+            assign url = block.settings.url
+          %}
+          <a class="swiper-slide featured-brand-section__item" {% if url%} href="{{url}}" {% endif%}>
+           {% render 'shopify-responsive-image',
+             image: image,
+             aspect_ratio: 2.5,
+             contain: true
+           %}
+         </a>
+          {% endfor %}
+         <script type="text/json" data-settings>
+          {
+            "slidesPerView": 3.01,
+            "spaceBetween": 10,
+            "overflowNagivation": true,
+            "progressPagination": true,
+            "pagination": true,
+            "breakpoints": {
+              "768": {
+                "pagination": true,
+                "navigation": false,
+                "slidesPerView": 5,
+                "spaceBetween": 20
+              },
+             "1024": {
+                "pagination": false,
+                "navigation": true,
+                "slidesPerView": 6,
+                "spaceBetween": 32
+              }
+            }
+          }
+        </script>
      </custom-carousel>
+    </div>
    </div>
  </div>
 </div>
@@ -63,6 +108,11 @@
               "type": "image_picker",
               "id": "image",
               "label": "Brand Logo"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Brand url"
           }
         ]
       }

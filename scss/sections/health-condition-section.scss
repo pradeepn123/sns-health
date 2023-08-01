@@ -27,12 +27,25 @@
   }
 
   &__content {
-    @include mixins.grid(6, 65px, 76px,unset,210px);
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--grid-column-gap);
+    justify-content: flex-start;
+
+    @media(--md) {
+      column-gap: 18px;
+    }
+
+    @media(--md-large) {
+      justify-content: space-between;
+    }
+    
+    row-gap: var(--grid-row-gap);
     &--desktop {
         display: none;
 
         @media (--md) {
-            display: grid;
+            display: flex;
         }
     }
     &--mobile {
@@ -48,13 +61,16 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    
     padding: 10px;
     cursor: pointer;
     justify-content: center;
+    flex-direction: column;
 
     @media(--md) {
       padding: 20px;
       justify-content: space-between;
+      flex-direction: row;
 
       &:hover {
         :--text {
@@ -83,11 +99,13 @@
   }
 
   :--text {
-    font-weight: typography.$heading-weight;
+    font-weight: typography.$medium-weight;
     margin-top: 5px;
-
+    padding: 0 7px;
+   
     @media(--md) {
       margin-top:0;
+      font-weight: typography.$semi-weight;
     }
   }
 
@@ -102,9 +120,6 @@
   }
   :--text-wrapper  {
     max-width: 100%;
-    @media(--md) {
-      max-width: 70%;
-    }
   }
 
   @include mixins.overflowCarousel;

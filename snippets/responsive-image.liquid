@@ -74,10 +74,32 @@
       object-fit: cover;
     }
    {% endif %}
+
+   {% if fill == true %} 
+   #Image-{{ image_id }}-{{ generated_image_id }} {
+    object-fit: fill;
+  }
+{% endif %}
+
+{% if background == true %} 
+#Image-{{ image_id }}-{{ generated_image_id }} {
+  background-color:#f5f5f5;
+}
+{% endif %}
+
+
+  {% if contain == true %} 
+  #Image-{{ image_id }}-{{ generated_image_id }} {
+   object-fit: contain;
+ }
+  {% endif %}
+
+
   #ImageWrapper-{{ image_id }}-{{ generated_image_id }} {
     max-width: {{ max_width_image }}px;
     height: 100%;
     position: relative;
+    max-height:100%;
   
   }
 

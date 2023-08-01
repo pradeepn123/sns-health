@@ -11,19 +11,19 @@
 
 @custom-selector :--heading .banner-grid__heading.text__heading;
 @custom-selector :--subheading .banner-grid__subheading.text__subheading;
-@custom-selector :--text-wrapper .text-image__text-wrapper;
+@custom-selector :--text-wrapper .banner-grid-content__text-wrapper.text-image__text-wrapper;
 
 
 .banner-grid {
     &__wrapper {
-        @media(--md) {
+        @media(--sm) {
             @include mixins.container;
         }
         margin-top: var(--grid-row-gap);
     }
 
     :--text-wrapper {
-        padding: 0 var(--section-content-margin);
+        padding: var(--section-content-margin);
     }
 
     :--heading {
@@ -64,4 +64,10 @@
         }
     }
     @include mixins.overflowCarousel;
+   .swiper-initialized {
+    @media (--sm) {
+        padding-left:0 !important;
+        padding-right: 0 !important;
+       }
+    }
 }

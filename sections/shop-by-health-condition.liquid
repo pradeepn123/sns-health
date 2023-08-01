@@ -8,12 +8,14 @@
                  assign id = block.id
                  assign eyebrow = block.settings.eyebrow
                  assign icon = block.settings.icon
+                 assign url = block.settings.url
                %}
                {% render 'icon-text', 
                      wrapper_class: 'health-condition-section',
                      id: id,
                      eyebrow: eyebrow,
                      icon: icon,
+                     cta_url: url
                   %}
                {% endfor %}
          </div>
@@ -25,6 +27,7 @@
            assign eyebrow = block.settings.eyebrow
            assign icon = block.settings.icon
            assign icon_hover = block.settings.icon_hover
+           assign url = block.settings.url
          %}
   
          {% render 'icon-text', 
@@ -33,7 +36,8 @@
                eyebrow: eyebrow,
                icon: icon,
                icon_hover: icon_hover,
-               is_slider: true
+               is_slider: true,
+               cta_url: url
             %}
          {% endfor %}
          <script type="text/json" data-settings>
@@ -45,7 +49,9 @@
                "pagination": true,
                "breakpoints": {
                 "1024": {
-                   "pagination": false
+                   "pagination": true,
+                   "slidesPerView": 3.5,
+                   "spaceBetween": 20
                  }
                }
              }
@@ -91,7 +97,12 @@
              "type": "text",
              "id": "eyebrow",
              "label": "Text"
-           }
+           },
+           {
+            "type": "url",
+            "id": "url",
+            "label": "Url"
+          }
         ]
        }
     ],

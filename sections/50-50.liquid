@@ -1,0 +1,78 @@
+
+{{'50-50.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+ assign image = section.settings.image
+ assign mobile_image = section.settings.mobile_image | default: image
+ assign heading = section.settings.heading 
+ assign content = section.settings.content
+ assign cta_text = section.settings.cta_text
+ assign cta_url = section.settings.cta_url
+%}
+
+<div class="section-50-50">
+ <div class="section-50-50__wrapper">
+
+    <div class= "section-50-50__image--desktop">
+        {% render 'shopify-responsive-image', image:image, aspect_ratio: 1.25 %}
+    </div>
+    <div class= "section-50-50__image--mobile">
+        {% render 'shopify-responsive-image', image: mobile_image, aspect_ratio: 1.5 %}
+    </div>
+  <div class="section-50-50__text">
+    <h1 class="section-50-50__heading">{{heading}} </h1>
+    <div class="section-50-50__content">{{content}}</div>
+    <div class="section-50-50__cta">
+        <a class="button" href="{{cta_url}}">{{cta_text}}</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+{% schema %} 
+{
+  "name": "50-50",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image desktop"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image mobile"
+    }, 
+    {
+      "type": "header",
+      "content": "Text Settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+        "type": "richtext",
+        "id": "content",
+        "label": "Heading"
+    },
+    {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text"
+    },
+    {
+        "type": "url",
+        "id": "cta_url",
+        "label": "CTA Url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "section-50-50"
+    }
+  ]
+}
+{% endschema %}

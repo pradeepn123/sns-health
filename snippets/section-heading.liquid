@@ -1,3 +1,8 @@
 {% if heading != blank %} 
+<div class="section__heading-wrapper">
  <div class="section__heading">{{heading}} </div>
+ {% if url %}
+    <a class="section__url" href="{{url}}">view all</a>
+ {% endif%}
+</div>
 {% endif %}

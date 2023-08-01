@@ -1,0 +1,327 @@
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/footer-newsletter.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+:root {
+  --base-margin: 20px;
+  --grid-row-gap: 10px;
+  --grid-row-gap-large: 20px;
+  --section-content-margin: 16px;
+  --section-margin: 20px;
+  --section-padding:20px;
+  --section-heading-margin: 10px;
+  --grid-column-gap: 10px;
+}
+@media (min-width: 768px) {
+  :root {
+    --grid-column-gap: 20px;
+    --grid-row-gap: 20px;
+    --base-margin: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --base-margin: 40px;
+    --section-content-margin: 20px;
+    --section-margin: 40px;
+    --section-padding:40px;
+    --section-heading-margin: 40px;
+    --grid-row-gap-large: 20px;
+  }
+}
+:root {
+  --base-margin: 20px;
+  --grid-row-gap: 10px;
+  --grid-row-gap-large: 20px;
+  --section-content-margin: 16px;
+  --section-margin: 20px;
+  --section-padding:20px;
+  --section-heading-margin: 10px;
+  --grid-column-gap: 10px;
+}
+@media (min-width: 768px) {
+  :root {
+    --grid-column-gap: 20px;
+    --grid-row-gap: 20px;
+    --base-margin: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --base-margin: 40px;
+    --section-content-margin: 20px;
+    --section-margin: 40px;
+    --section-padding:40px;
+    --section-heading-margin: 40px;
+    --grid-row-gap-large: 20px;
+  }
+}
+
+:root {
+  --base-margin: 20px;
+  --grid-row-gap: 10px;
+  --grid-row-gap-large: 20px;
+  --section-content-margin: 16px;
+  --section-margin: 20px;
+  --section-padding:20px;
+  --section-heading-margin: 10px;
+  --grid-column-gap: 10px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --grid-column-gap: 20px;
+    --grid-row-gap: 20px;
+    --base-margin: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --base-margin: 40px;
+    --section-content-margin: 20px;
+    --section-margin: 40px;
+    --section-padding:40px;
+    --section-heading-margin: 40px;
+    --grid-row-gap-large: 20px;
+  }
+}
+.section__heading-wrapper {
+  max-width: calc(100% - 2 * 20px);
+  max-width: calc(100% - 2 * var(--base-margin));
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-bottom: var(--section-heading-margin);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media (min-width: 1440px) {
+  .section__heading-wrapper {
+    max-width: calc(1440px - 2 * 20px);
+    max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}
+.section__heading {
+  font-family: "poppins";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 1024px) {
+  .section__heading {
+    font-family: "poppins";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+.section__url {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  text-transform: capitalize;
+  font-family: "poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-weight: 600;
+}
+@media (min-width: 1024px) {
+  .section__url {
+    font-family: "poppins";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+}
+
+.footer-newsletter {
+  margin-top: 20px;
+  margin-top: var(--section-margin);
+}
+.footer-newsletter__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px;
+  padding: var(--base-margin);
+  -webkit-column-gap: 60px;
+     -moz-column-gap: 60px;
+          column-gap: 60px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ED1C24;
+}
+@media (min-width: 1024px) {
+  .footer-newsletter__wrapper {
+    -webkit-column-gap: 100px;
+       -moz-column-gap: 100px;
+            column-gap: 100px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.footer-newsletter__text-content {
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .footer-newsletter__text-content {
+    max-width: 350px;
+    width: 30%;
+  }
+}
+@media (min-width: 1200px) {
+  .footer-newsletter__text-content {
+    max-width: 448px;
+    width: 50%;
+  }
+}
+.footer-newsletter__title {
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+@media (min-width: 1024px) {
+  .footer-newsletter__title {
+    font-family: "poppins";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+.footer-newsletter__text {
+  font-family: "poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.footer-newsletter__form {
+  margin-top: 0;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .footer-newsletter__form {
+    max-width: 58%;
+  }
+}
+@media (min-width: 1200px) {
+  .footer-newsletter__form {
+    max-width: 30%;
+  }
+}
+.footer-newsletter__form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media (min-width: 390px) {
+  .footer-newsletter__form form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+.footer-newsletter__form form .form__input-wrapper {
+  margin-bottom: 0;
+}
+.footer-newsletter__form form button {
+  margin-top: 10px;
+  font-family: "poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-weight: 600;
+  padding: 7px 13px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+@media (min-width: 390px) {
+  .footer-newsletter__form form button {
+    margin-left: 15px;
+    margin-top: 0;
+  }
+}
+@media (min-width: 768px) {
+  .footer-newsletter__form form button {
+    padding: 14px 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .footer-newsletter__form form button {
+    font-family: "poppins";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+}
+.footer-newsletter__form form .form__field--text {
+  border-radius: 4px;
+  width: 100%;
+  height: auto;
+  height: initial;
+  padding: 8px 15px;
+  font-family: "poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .footer-newsletter__form form .form__field--text {
+    margin-left: auto;
+    height: 45px;
+  }
+  .footer-newsletter__form form .form__field--text::-webkit-input-placeholder {
+    color: #BABABA;
+    font-weight: 500;
+  }
+  .footer-newsletter__form form .form__field--text::-moz-placeholder {
+    color: #BABABA;
+    font-weight: 500;
+  }
+  .footer-newsletter__form form .form__field--text:-ms-input-placeholder {
+    color: #BABABA;
+    font-weight: 500;
+  }
+  .footer-newsletter__form form .form__field--text::-ms-input-placeholder {
+    color: #BABABA;
+    font-weight: 500;
+  }
+  .footer-newsletter__form form .form__field--text::placeholder {
+    color: #BABABA;
+    font-weight: 500;
+  }
+}
+@media (min-width: 1200px) {
+  .footer-newsletter__form form .form__field--text {
+    min-width: 255px;
+  }
+}

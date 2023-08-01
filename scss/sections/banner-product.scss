@@ -1,0 +1,48 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/text';
+@import 'StyleComponents/text-image';
+@import 'StyleComponents/custom-carousel';
+@import 'StyleComponents/sidebar-banner';
+
+
+@custom-selector :--product .banner-product__products-wrapper;
+
+
+.banner-product {
+    @include mixins.container;
+    &__content {
+        padding: var(--section-padding) 0 0;
+        @media(--sm) {
+          @include mixins.grid(5,250,250);
+          column-gap: 27px;
+        }
+    }
+
+    :--product {
+        @media(--sm) {
+          max-width: 100%;
+          grid-column: span 3;
+        }
+        
+      }
+
+    &__products-content--desktop {
+        display: none;
+
+        @media(--sm) {
+            display: block;
+        }
+    }
+
+    &__products-content--mobile {
+        display: grid;
+        margin-top: var(--grid-row-gap-large);
+        @include mixins.product-grid;
+        @media(--sm) {
+            display: none;
+        }
+    }
+} 

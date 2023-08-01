@@ -155,6 +155,27 @@ class CustomCarousel extends HTMLElement {
 
 /***/ }),
 
+/***/ "./js/components/product-card.js":
+/*!***************************************!*\
+  !*** ./js/components/product-card.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class ProductCard extends HTMLElement {
+  constructor() {
+    super();
+    this.HTMLElement = this.innerHTML;
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductCard);
+
+/***/ }),
+
 /***/ "./node_modules/lazysizes/lazysizes.js":
 /*!*********************************************!*\
   !*** ./node_modules/lazysizes/lazysizes.js ***!
@@ -12448,6 +12469,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lazysizes/plugins/respimg/ls.respimg */ "./node_modules/lazysizes/plugins/respimg/ls.respimg.js");
 /* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_custom_carousel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/custom-carousel */ "./js/components/custom-carousel.js");
+/* harmony import */ var _components_product_card__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/product-card */ "./js/components/product-card.js");
 
 
 
@@ -12458,8 +12480,23 @@ __webpack_require__.r(__webpack_exports__);
 
 //Custom Carousel
 
+
+var handleRedirectOnDiv = item => {
+  var url = item.dataset.url;
+  if (url) {
+    window.location.href = url;
+  }
+};
 document.addEventListener('DOMContentLoaded', () => {
   customElements.define('custom-carousel', _components_custom_carousel__WEBPACK_IMPORTED_MODULE_6__["default"]);
+  customElements.define('product-card', _components_product_card__WEBPACK_IMPORTED_MODULE_7__["default"]);
+  var clickHandle = document.querySelectorAll('[data-redirect-click]');
+  clickHandle.forEach(item => item.addEventListener('click', ev => {
+    if (ev.target.closest('.swiper-navigation')) {
+      return;
+    }
+    handleRedirectOnDiv(item);
+  }));
 });
 })();
 

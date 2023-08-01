@@ -17,8 +17,9 @@
                 assign button_type = 'text'
                 assign button_background_type = 'transparent'
               %}  
+               <div class="swiper-slide">
                   {% render 'image-with-text-overlay', 
-                    wrapper_class: "swiper-slide"
+                    wrapper_class: "banner-grid-content"
                     id: id,
                     color: color,
                     eyebrow: eyebrow,
@@ -38,6 +39,7 @@
                     button_type: button_type,
                     button_background_type: button_background_type
                     %}
+                </div>
               {% endfor %}
               <script type="text/json" data-settings>
                 {
@@ -47,19 +49,9 @@
                   "breakpoints": {
                     "768": {
                       "spaceBetween": 20,
-                      "navigation": false,
+                      "navigation": true,
                       "slidesPerView": 3
-                    },
-                    "1024": {
-                        "navigation": true,
-                        "slidesPerView": 2.1,
-                        "spaceBetween": 20
-                      },
-                      "1366": {
-                        "navigation": true,
-                        "slidesPerView": 3,
-                        "spaceBetween": 20
-                      }
+                    }
                   }
                 }
               </script>
@@ -94,12 +86,12 @@
            {
              "type": "image_picker",
              "id": "image_desktop",
-             "label": "Image"
+             "label": "Image Desktop"
            },
            {
              "type": "image_picker",
              "id": "image_mobile",
-             "label": "Image"
+             "label": "Image Mobile"
            },
            {
              "type": "text",
@@ -130,7 +122,7 @@
            {
              "type": "url",
              "id":  "cta_url",
-             "label": "CTA Text"
+             "label": "CTA Url"
            }
         ]
        }

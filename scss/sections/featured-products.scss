@@ -1,0 +1,34 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/layout';
+@import 'StyleComponents/section-header';
+@import 'StyleComponents/custom-carousel';
+
+
+.featured-products {
+    margin-top: var(--section-margin);
+    padding: var(--section-padding) 0 0;
+  
+    &__wrapper {
+      @include mixins.container;
+    }
+
+    &__content {
+        &--desktop {
+            display: none;
+            @media(--md) {
+                display: block;
+            }
+        }
+        
+        &--mobile {
+            @include mixins.product-grid;
+            @media(--md) {
+                display: none;
+            }
+        }
+    }
+}

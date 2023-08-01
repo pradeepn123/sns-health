@@ -28,5 +28,28 @@
       padding: 20px;
     }
   }
+
+  .responsive-image__wrapper  {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__content-wrapper {
+    &--desktop {
+      display: none;
+
+      @media(--md-large) {
+        display: block;
+      }
+    }
+
+    &--mobile {
+      display: block;
+
+      @media(--md-large) {
+        display: none;
+      }
+    }
+  }
   @include mixins.overflowCarousel;
 }

@@ -33,8 +33,9 @@
               assign inline_heading = block.settings.inline_heading
             %}  
               {% if is_slider %}
+                <div class="swiper-slide">
                 {% render 'image-with-text-overlay', 
-                  wrapper_class: "swiper-slide"
+                  wrapper_class: "banner-content"
                   id: id,
                   color: color,
                   eyebrow: eyebrow,
@@ -45,8 +46,12 @@
                   image_desktop: image_desktop,
                   image_mobile: image_mobile,
                   text_wrapper_class: 'banner',
-                  inline_heading: inline_heading
+                  inline_heading: inline_heading,
+                  desktop_aspect_ratio: 2.18,
+                  mobile_aspect_ratio: 1.95,
+                  fill: true
                   %}
+                </div>
                 {% endif %}
             {% endfor %}
             <script type="text/json" data-settings>
@@ -85,6 +90,7 @@
         assign image_desktop = block.settings.image_desktop
         assign image_mobile = block.settings.image_mobile
         assign inline_heading = block.settings.inline_heading
+       
 
       %}     
         {% unless is_slider %}
@@ -100,7 +106,10 @@
             image_mobile: image_mobile,
             wrapper_class: 'banner__item',
             text_wrapper_class: 'banner',
-            inline_heading: inline_heading
+            inline_heading: inline_heading,
+            desktop_aspect_ratio: 2.27,
+            mobile_aspect_ratio: 1.95,
+            fill: true
             %}
         {% endunless %}
      {% endfor %}
@@ -125,9 +134,9 @@
               assign image_mobile = block.settings.image_mobile
               assign inline_heading = block.settings.inline_heading
             %}  
-
+              <div class="swiper-slide">
                 {% render 'image-with-text-overlay', 
-                  wrapper_class: "swiper-slide"
+                  wrapper_class: "banner-content"
                   id: id,
                   color: color,
                   eyebrow: eyebrow,
@@ -138,8 +147,12 @@
                   image_desktop: image_desktop,
                   image_mobile: image_mobile,
                   text_wrapper_class: 'banner',
-                  inline_heading: inline_heading
+                  inline_heading: inline_heading,
+                  desktop_aspect_ratio: 2.27,
+                  mobile_aspect_ratio: 1.95,
+                  fill: true
                   %}
+                </div>
             {% endfor %}
             <script type="text/json" data-settings>
               {
@@ -187,56 +200,19 @@
         "content": "Block Contents"
       },
         {
-          "type": "checkbox",
-          "id": "show_logo",
-          "label": "Show Logo ?",
-          "default": false
-        },
-        {
-            "type": "color",
-            "id": "text_color",
-            "label": "Text color"
-        },
-        {
           "type": "image_picker",
           "id": "image_desktop",
-          "label": "Image"
+          "label": "Image Desktop"
         },
         {
           "type": "image_picker",
           "id": "image_mobile",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "eyebrow",
-          "label": "Eyebrow"
-        },
-        {
-          "type": "text",
-          "id":  "heading",
-          "label": "Heading"
-        },
-        {
-          "type": "checkbox",
-          "id":  "inline_heading",
-          "label": "Inline Heading ?",
-          "default": false
-        },
-        {
-          "type": "text",
-          "id":  "subheading",
-          "label": "Subheading"
-        },
-        {
-          "type": "text",
-          "id":  "cta_text",
-          "label": "CTA Text"
+          "label": "Image Mobile"
         },
         {
           "type": "url",
-          "id":  "cta_url",
-          "label": "CTA Text"
+          "id": "cta_url",
+          "label": "Url"
         }
      ]
     }

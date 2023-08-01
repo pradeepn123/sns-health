@@ -1,13 +1,30 @@
 @use 'StyleComponents/mixins';
 
 .section {
+
+    &__heading-wrapper {
+        @include mixins.container;
+        margin-bottom: var(--section-heading-margin);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     &__heading {
-      margin-bottom: var(--section-heading-margin);
       @include use-text-style('heading-3');
-      @include mixins.container;
       @media(--md) {
         @include use-text-style('heading-1');
       }
-     
+    }
+
+    &__url{
+        text-decoration: underline;
+        text-transform: capitalize;
+        @include use-text-style('body-regular');
+        font-weight: 600;
+        @media(--md) {
+            @include use-text-style('heading-3');
+            font-weight: 500;
+        }
     }
 }

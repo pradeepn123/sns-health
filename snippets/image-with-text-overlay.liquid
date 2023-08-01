@@ -2,15 +2,24 @@
 {% liquid 
  assign desktop_image = image_desktop | default: image_mobile
  assign mobile_image = image_mobile | default: image_desktop
-  
+ assign fill = fill | default: false
 %}
-<div class="text-image {{wrapper_class}}__text-image {{wrapper_class}}">
- <div class="text-image__image-wrapper image {{wrapper_class}}__image">
+
+{% if text_background %} 
+<style>
+.text-image__text-wrapper-{{id}} {
+  background: {{text_background}}
+}
+</style>
+{% endif %}
+<div class="text-image {{wrapper_class}}__text-image {{wrapper_class}}" {% if cta_url %} data-redirect-click data-url="{{cta_url}}"{% endif %}>
+ <div class="text-image__image-wrapper image {{wrapper_class}}__image {% if overlay == false %} image--no-radius {% endif%}">
   <div class="image image--desktop {{wrapper_class}}__image">
     {% render 'shopify-responsive-image',
         image: desktop_image,
         aspect_ratio: desktop_aspect_ratio,
         crop: desktop_crop
+        fill: fill
       %}
   </div>
   <div class="image image--mobile {{wrapper_class}}__image">
@@ -18,10 +27,13 @@
         image: mobile_image,
         aspect_ratio: mobile_aspect_ratio,
         crop: mobile_crop
+        fill: fill
       %}
     </div>
 </div>
-<div class="text-image__text-wrapper content {{wrapper_class}}__text-wrapper">
+<div class="text-image__text-wrapper text-image__text-wrapper-{{id}} content {{wrapper_class}}__text-wrapper {% if overlay == false %} text-image__text-wrapper--no-overlay {% endif%}"
+  {% if cta_url %} onclick="location.href='{{cta_url}}';" {% endif %}
+>
     {% render 'text', 
         id: id,
         color: color, 
@@ -33,7 +45,8 @@
         inline_heading: inline_heading
         cta_url: cta_url,
         button_type: button_type
-        button_background_type: button_background_type
+        button_background_type: button_background_type,
+       
       %}
   </div>
 </div>

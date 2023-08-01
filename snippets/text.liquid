@@ -7,16 +7,16 @@
 {% endstyle %}
 <div class="{{wrapper_class}}__text text__{{id}}" > 
 <div class="text-wrapper {{wrapper_class}}__text-wrapper">
-    {% if eyebrow %}
+    {% if eyebrow != blank %}
     <p class="{{wrapper_class}}__eyebrow text__eyebrow">{{eyebrow}}</p>
     {% endif %}
     {% if inline_heading %}
       <p class="{{wrapper_class}}__heading text__heading">{{heading}} <span class="{{wrapper_class}}__subheading text__subheading">{{subheading}}</span></p>
       {% else %}
-      {% if heading %}
+      {% if heading  != blank%}
         <p class="text__heading {{wrapper_class}}__heading">{{heading}}</p>
         {% endif %}
-        {% if subheading %}
+        {% if subheading  != blank %}
           <p class="{{wrapper_class}}__subheading text__subheading">{{subheading}}</p>
         {% endif %}
     {% endif %}
@@ -26,6 +26,8 @@
    <a class="button {{wrapper_class}}__cta text__cta
      {% if button_type %} button--{{button_type}} {% endif %}
      {% if button_background_type %} button--{{button_background_type}} {% endif %}
-     " {%if cta_url %} href="{{cta_url}} {% endif%}">{{ cta_text }} {% if button_type == "text"%}{% render 'chevron-right-icon'%} {% endif%}</a>
+     " {%if cta_url %} href="{{cta_url}} {% endif%}">{{ cta_text }} 
+     {% if button_type == "text" or button_type == "outline"%}{% render 'chevron-right-icon'%} {% endif%}
+     </a>
    {% endif %}
 </div> 

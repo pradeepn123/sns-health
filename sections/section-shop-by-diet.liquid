@@ -1,6 +1,6 @@
 {{'diet-section.css' | asset_url | stylesheet_tag }}
 <div class="diet-section">
-    {% render 'section-heading', heading: section.settings.heading %}
+    {% render 'section-heading', heading: section.settings.heading, url: section.settings.url %}
     <div class="diet-section__wrapper">
             <div class="diet-section__content"> 
                 {% for block in section.blocks %} 
@@ -39,7 +39,12 @@
        "type": "text",
        "id": "heading",
        "label": "Section Heading"
-     }
+     },
+     {
+      "type": "url",
+      "id": "url",
+      "label": "View all url"
+    }
    ],
    "blocks": [
     {

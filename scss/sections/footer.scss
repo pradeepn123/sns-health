@@ -1,0 +1,220 @@
+
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/layout';
+@import 'StyleComponents/section-header';
+
+.footer {
+ &__block-item {
+    padding:0;
+ }
+
+ &__title {
+    @include use-text-style('body-regular');
+    font-weight: typography.$semi-weight;
+    padding: 20px 0;
+
+    @media(--sm) {
+        margin-bottom: 10px;
+    }
+
+    @media(--md) {
+        @include use-text-style('body-alt'); 
+        font-weight: typography.$semi-weight;
+        padding: 0; 
+    }
+ }
+
+ &__block-list {
+    margin:0;
+    @media(--sm) {
+     @include mixins.grid(4,auto,auto);
+    }
+ }
+
+ &__wrapper {
+    @include mixins.container;
+     padding-top:0;
+     @media(--sm) {
+        padding-top: var(--section-content-margin);
+     }
+ }
+
+ &__block-item {
+    margin-left:0;
+    margin-right: 0;
+ }
+
+ &__aside-item {
+    margin:0;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+
+    &--copyright {
+        @include use-text-style('body-regular');
+
+        @media(--sm) {
+            font-weight: typography.$medium-weight;
+        }
+    }
+ }
+
+ &__aside-group {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    &--localisation {
+        border-bottom: 1px solid colors.$gray-200;
+    }
+
+    @media(--sm) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        &--payment {
+            flex-direction: row-reverse;
+        }
+    }
+ }
+
+ &__link-item, &__image-text-content p {
+    @include use-text-style('body-regular');
+
+    @media(--sm) {
+    font-weight: typography.$medium-weight;
+    }
+ }
+
+&__linklist li:first-child &__link-item {
+    @media(--sm) {
+       padding-top:0;
+    }
+ }
+
+ &__image-text-content p {
+    max-width: 90%;
+    margin-top: 10px;
+    @media(--sm) {
+        margin-top: 20px;
+        font-weight: typography.$medium-weight;
+    }
+
+ }
+
+ &__linklist {
+    margin: 0;
+ }
+
+ &__aside-title {
+    @include use-text-style('body-regular');
+    font-weight: typography.$semi-weight;
+    margin-bottom: 0;
+ }
+
+ .select-button {
+    @include use-text-style('body-small');
+    padding: 0 30px 0 10px;
+    font-weight: typography.$medium-weight;
+    display: flex;
+    align-items: center;
+    svg {
+        right: 10px;
+    }
+
+    .block-icon {
+        position: static;
+        width: 18px;
+        height:18px;
+        margin-right: 5px;
+    }
+ }
+
+ &__aside {
+    @media(--sm) {
+        display: block;
+        margin-top:var(--section-content-margin);
+    }
+ }
+
+ &__localization-form {
+    margin-bottom: 0;
+ }
+
+&__aside-item--localization, &__aside-item--copyright {
+    width: auto;
+ }
+
+&__aside-item--copyright:not(:only-child) {
+    margin-top:0;
+}
+
+&__image-text-logo {
+    max-width: 150px;
+
+    @media(--sm) {
+      max-width: 200px;
+    }
+}
+
+&__image-text-wrapper {
+    &--desktop {
+        display: none; 
+
+        @media(--sm) {
+            display: block;
+        }
+    }
+    &--mobile {
+        display: block; 
+         padding: 20px 0;
+         max-width: 288px;
+        @media(--sm) {
+            display: none;
+        }
+    }
+}
+
+&-seo {
+    margin-top: var(--base-margin);
+    * {
+        color: #969696;
+    }
+
+    &__heading {
+        @include use-text-style('body-regular');
+        font-weight: typography.$semi-weight;
+        line-height: 1.5;
+        margin-bottom: 0;
+
+        @media(--md) {
+            @include use-text-style('body-title');
+            font-weight: typography.$semi-weight;
+            line-height: 1.2;
+        }
+    }
+
+    &__content * {
+        @include use-text-style('body-regular');
+        font-weight: typography.$regular-weight;
+        line-height: 1.5;
+        @media(--md) {
+            @include use-text-style('body-small');
+            font-weight: typography.$regular-weight;
+            line-height: 24px !important;
+        }
+    }
+}
+
+&-seo-content {
+    display: block;
+    margin-bottom: var(--grid-row-gap);
+}
+
+}

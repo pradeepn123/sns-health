@@ -1,0 +1,135 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/layout';
+@import 'StyleComponents/section-header';
+
+.footer-newsletter {
+    margin-top: var(--section-margin);
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        padding: var(--base-margin);
+        column-gap: 60px;
+        justify-content: flex-start;
+
+        @media(--md) {
+            column-gap: 100px;
+            justify-content: center;
+        }
+
+        align-items: center;
+        background-color: colors.$red;
+    }
+
+    &__text-content {
+
+        @media(--sm) {
+            max-width: 350px;
+            width: 30%;
+        }
+
+        @media(--md-large) {
+            max-width: 448px;
+            width: 50%;
+        }
+
+        color: colors.$white;
+    }
+
+    &__title {
+        @include use-text-style('body-alt');
+        font-weight: typography.$heading-weight;
+        margin-bottom: 10px;
+
+        @media(--md) {
+            @include use-text-style('heading-2');
+        }
+    }
+
+    &__text {
+        @include use-text-style('body-regular');
+        font-weight: typography.$semi-weight;
+        margin-bottom: 10px;
+    }
+
+    &__form {
+        margin-top: 0;
+        width: 100%;
+
+        @media(--sm) {
+            max-width: 58%;
+        }
+
+        @media(--md-large) {
+            max-width: 30%;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            margin-top: 0;
+            flex-direction: column;
+
+            @media(--xs) {
+                flex-direction: row;
+            }
+
+            .form__input-wrapper {
+                margin-bottom: 0;
+
+            }
+
+            button {
+                margin-top: 10px;
+                @include use-text-style('body-regular');
+
+                font-weight: typography.$semi-weight;
+                padding: 7px 13px;
+
+                @media(--xs) {
+                    margin-left: 15px;
+                    margin-top: 0;
+                }
+
+                @media(--sm) {
+                    padding: 14px 40px;
+                }
+
+                @media(--md) {
+                    @include use-text-style('body-alt');
+                    font-weight: typography.$semi-weight;
+                }
+
+                color: colors.$white;
+                border:1px solid colors.$white;
+                border-radius: 10px;
+            }
+
+            .form__field--text {
+                border-radius: 4px;
+                width: 100%;
+                height: unset;
+                padding: 8px 15px;
+                @include use-text-style('body-regular');
+
+                @media(--sm) {
+                    margin-left: auto;
+                    height: 45px;
+
+                    &::placeholder {
+                        color: colors.$gray-200;
+                        font-weight: typography.$medium-weight;
+                    }
+                }
+
+                @media(--md-large) {
+                    min-width: 255px;
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,10 @@
 
-<div class="icon-text {% if wrapper_class %}{{ wrapper_class }}__icon-text {% endif %}{% if is_slider %} swiper-slide {% endif %}">
+<div class="icon-text {% if wrapper_class %}{{ wrapper_class }}__icon-text {% endif %}{% if is_slider %} swiper-slide {% endif %}" {% if cta_url %} data-redirect-click data-url="{{cta_url}}"{% endif %}>
   <div class="icon__container {% if wrapper_class %}{{ wrapper_class }}__icon {% endif %} 
     {% if icon_hover %} icon__container--toggle-icon {% endif %}">{{icon}}
 </div>
   {% if icon_hover %}<div class="icon__container icon__container__icon--hover {% if wrapper_class %}{{ wrapper_class }}__icon" {% endif %} style="display: none">{{icon_hover}}</div>{% endif %}
-  <div class="text__container {% if wrapper_class %}{{ wrapper_class }}__text {% endif %}">
+  <div class="text__container {% if wrapper_class %}{{ wrapper_class }}__text {% endif %}" {% if cta_url %} data-redirect-click data-url="{{cta_url}}"{% endif %}>
     {% render 'text', 
         id: id,
         color: color, 

@@ -1,26 +1,24 @@
+{{
+  'footer.css' | asset_url | stylesheet_tag
+}}
+
 <footer class="footer" data-section-id="{{ section.id }}" data-section-type="footer" role="contentinfo">
-  <div class="container">
     <div class="footer__wrapper">
       {%- if section.blocks.size > 0 -%}
         <div class="footer__block-list">
           {%- for block in section.blocks -%}
             {%- case block.type -%}
-              {%- when 'text' -%}
-                <div class="footer__block-item footer__block-item--text" {{ block.shopify_attributes }}>
-                  <button class="footer__title heading h6" disabled aria-expanded="false" aria-controls="block-{{ block.id }}" data-action="toggle-collapsible">
-                    <span>{{ block.settings.title | escape }}</span>
-                    <span class="plus-button"></span>
-                  </button>
-
-                  <div id="block-{{ block.id }}" class="footer__collapsible">
-                    <div class="footer__collapsible-content">
-                      <div class="rte">
-                        {{ block.settings.content }}
-                      </div>
-                    </div>
+              {%- when 'image-text' -%}
+              <div class="footer__image-text-wrapper footer__image-text-wrapper--desktop">
+                {% if block.settings.image %}
+                  <div class="footer__image-text-logo">
+                    {% render 'shopify-responsive-image', image: block.settings.image, aspect_ratio: 5.5, crop: true %}
                   </div>
-                </div>
-
+                {% endif%}
+                  <div class="footer__image-text-content">
+                    {{ block.settings.content }}
+                   </div>
+              </div>
               {%- when 'links' -%}
                 {%- assign menu = linklists[block.settings.menu] -%}
 
@@ -44,48 +42,44 @@
                     </div>
                   </div>
                 {%- endunless -%}
-
-              {%- when 'newsletter' -%}
-                <div class="footer__block-item footer__block-item--newsletter" {{ block.shopify_attributes }}>
-                  <p class="footer__title heading h6">{{ block.settings.title | escape }}</p>
-
-                  <div class="footer__newsletter-wrapper">
-                    {%- if block.settings.subheading != blank -%}
-                      <div class="footer__newsletter-text rte">{{ block.settings.subheading }}</div>
-                    {%- endif -%}
-
-                    {%- form 'customer', id: 'footer-newsletter', class: 'footer__newsletter-form' -%}
-                      {%- if form.posted_successfully? -%}
-                        <p class="alert alert--success alert--center">{{ 'footer.newsletter.success' | t }}</p>
-                      {%- else -%}
-                        {%- if form.errors -%}
-                          <p class="alert alert--error alert--center">{{ form.errors.messages['email'] }}</p>
-                        {%- endif -%}
-
-                        <input type="hidden" name="contact[tags]" value="newsletter">
-
-                        <div class="form__input-wrapper form__input-wrapper--labelled">
-                          <input type="email" id="footer[{{ section.id }}][contact][email]" name="contact[email]" class="form__field form__field--text" required="">
-                          <label for="footer[{{ section.id }}][contact][email]" class="form__floating-label">{{ 'footer.newsletter.input' | t }}</label>
-                        </div>
-
-                        <button type="submit" class="form__submit form__submit--tight button button--primary">{{ 'footer.newsletter.submit' | t }}</button>
-                      {%- endif -%}
-                    {%- endform -%}
-                  </div>
-                </div>
             {%- endcase -%}
           {%- endfor -%}
         </div>
       {%- endif -%}
 
       <aside class="footer__aside">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'image-text' -%}
+            <div class="footer__image-text-wrapper footer__image-text-wrapper--mobile">
+              {% if block.settings.image %}
+                <div class="footer__image-text-logo">
+                  {% render 'shopify-responsive-image', image: block.settings.image, aspect_ratio: 5.5, crop: true %}
+                </div>
+              {% endif%}
+                <div class="footer__image-text-content">
+                  {{ block.settings.content }}
+                 </div>
+            </div>
+          {% endcase %} 
+        {% endfor %}
         {%- if section.settings.show_currency_selector and shop.enabled_currencies.size > 1 -%}
           {%- assign currency_selector = true -%}
         {%- endif -%}
 
         {%- if section.settings.show_locale_selector and shop.published_locales.size > 1 -%}
           {%- assign locale_selector = true -%}
+        {%- endif -%}
+       <div class="footer__aside-group footer__aside-group--localisation">
+        {%- if section.settings.show_social_media -%}
+          {%- capture social_media -%}{% render 'social-media', show_social_media_name: false %}{%- endcapture -%}
+
+          {%- if social_media != blank -%}
+            <div class="footer__aside-item footer__aside-item--social">
+              <p class="footer__aside-title">{{ 'footer.general.follow_us' | t }}</p>
+              {{ social_media }}
+            </div>
+          {%- endif -%}
         {%- endif -%}
 
         <div class="footer__aside-item footer__aside-item--localization">
@@ -98,6 +92,9 @@
 
                   <div class="value-picker-wrapper">
                     <button type="button" class="select-button select-button--mini" aria-haspopup="true" aria-expanded="false" aria-controls="footer-locale-picker" data-action="open-value-picker">
+                      <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                        <path d="M9.6525 11.9125L7.7475 10.03L7.77 10.0075C9.075 8.55248 10.005 6.87999 10.5525 5.10999H12.75V3.60999H7.5V2.10999H6V3.60999H0.75V5.10249H9.1275C8.625 6.54998 7.83 7.92249 6.75 9.12249C6.0525 8.34999 5.475 7.50249 5.0175 6.60999H3.5175C4.065 7.83249 4.815 8.98749 5.7525 10.03L1.935 13.795L3 14.86L6.75 11.11L9.0825 13.4425L9.6525 11.9125ZM13.875 8.10999H12.375L9 17.11H10.5L11.34 14.86H14.9025L15.75 17.11H17.25L13.875 8.10999ZM11.91 13.36L13.125 10.1125L14.34 13.36H11.91Z" fill="black"/>
+                        </svg>
                       {{- form.current_locale.endonym_name | capitalize -}}
                       {%- render 'icon', icon: 'arrow-bottom' -%}
                     </button>
@@ -133,6 +130,9 @@
 
                   <div class="value-picker-wrapper">
                     <button type="button" class="select-button select-button--mini" aria-haspopup="true" aria-expanded="false" aria-controls="footer-currency-picker" data-action="open-value-picker">
+                      <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                        <path d="M9.6675 8.93499C8.3325 8.49249 7.6875 8.21499 7.6875 7.50998C7.6875 6.74499 8.52 6.46749 9.045 6.46749C10.0275 6.46749 10.3875 7.20999 10.47 7.47249L11.655 6.96999C11.5425 6.63248 11.04 5.52998 9.75 5.28999V4.35999H8.25V5.30499C6.39 5.72499 6.3825 7.44999 6.3825 7.52499C6.3825 9.22749 8.07 9.70749 8.895 10.0075C10.08 10.4275 10.605 10.81 10.605 11.53C10.605 12.3775 9.8175 12.7375 9.12 12.7375C7.755 12.7375 7.365 11.335 7.32 11.17L6.075 11.6725C6.5475 13.315 7.785 13.7575 8.25 13.8925V14.86H9.75V13.93C10.05 13.8625 11.925 13.4875 11.925 11.515C11.925 10.4725 11.4675 9.55749 9.6675 8.93499ZM2.25 16.36H0.75V11.86H5.25V13.36H3.39C4.5975 15.1675 6.66 16.36 9 16.36C12.7275 16.36 15.75 13.3375 15.75 9.60999H17.25C17.25 14.17 13.56 17.86 9 17.86C6.21 17.86 3.7425 16.4725 2.25 14.3575V16.36ZM0.75 9.60999C0.75 5.04999 4.44 1.35999 9 1.35999C11.79 1.35999 14.2575 2.74749 15.75 4.86249V2.85999H17.25V7.35999H12.75V5.85999H14.61C13.4025 4.05249 11.34 2.85999 9 2.85999C5.2725 2.85999 2.25 5.88249 2.25 9.60999H0.75Z" fill="black"/>
+                        </svg>
                       {{ form.current_currency.iso_code }} {% if form.current_currency.symbol %}{{ form.current_currency.symbol }}{% endif %}
                       {%- render 'icon', icon: 'arrow-bottom' -%}
                     </button>
@@ -164,21 +164,11 @@
           {%- endif -%}
 
           {%- capture copyright_info -%}© {{ 'now' | date: '%Y' }} {{ shop.name }}<a target="_blank" rel="nofollow noopener" href="https://www.shopify.com?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore" aria-describedby="a11y-new-window-message" aria-label="Powered by"> </a>{%- endcapture -%}
-          <p class="hidden-pocket">{{ copyright_info }} Canada</p>
+       
+        </div>
         </div>
 
-        {%- if section.settings.show_social_media -%}
-          {%- capture social_media -%}{% render 'social-media', show_social_media_name: false %}{%- endcapture -%}
-
-          {%- if social_media != blank -%}
-            <div class="footer__aside-item footer__aside-item--social">
-              <p class="footer__aside-title">{{ 'footer.general.follow_us' | t }}</p>
-
-              {{ social_media }}
-            </div>
-          {%- endif -%}
-        {%- endif -%}
-
+        <div class="footer__aside-group footer__aside-group--payment">
         {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
           <div class="footer__aside-item footer__aside-item--payment">
             <div class="payment-list">
@@ -189,15 +179,29 @@
           </div>
         {%- endif -%}
 
-        <div class="footer__aside-item footer__aside-item--copyright hidden-lap-and-up">
+        <div class="footer__aside-item footer__aside-item--copyright">
           <p>
             {{ copyright_info }} Canada
-            <span id="accessibilityWidget" tabindex="0" class="footer__link-item link">Accessibility</span>
           </p>
         </div>
+      </div>
       </aside>
+     
+      <div class="footer-seo">
+        {% for block in section.blocks %} 
+        <div class="footer-seo-content">
+         {% if block.type == "seo_text" %}
+            <h2 class="footer-seo__heading">
+               {{ block.settings.SEO_title }}
+            </h2>
+            <div class="footer-seo__content">
+              {{ block.settings.SEO_content }}
+            </div>
+         {% endif %}
+        </div>
+      {% endfor %}
+      </div>
     </div>
-  </div>
 
   {%- comment -%}
     In order to reduce the number of static sections, we were asked by Shopify team to move the cookie bar to the footer instead of its own
@@ -286,20 +290,19 @@
   ],
   "blocks": [
     {
-      "type": "text",
-      "name": "Text",
+      "type": "image-text",
+      "name": "image-text",
       "settings": [
         {
-          "type": "text",
-          "id": "title",
-          "label": "Heading",
-          "default": "About our store"
+          "type": "image_picker",
+          "id": "image",
+          "label": "logo"
         },
         {
           "type": "richtext",
           "id": "content",
           "label": "Content",
-          "default": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>"
+          "default": "<p>Discover Your Full Potential with SNS Health. Your Trusted Source for Curated Performance and Wellness Products.</p>"
         }
       ]
     },
@@ -316,25 +319,18 @@
       ]
     },
     {
-      "type": "newsletter",
-      "name": "Newsletter",
-      "limit": 1,
+      "type": "seo_text",
+      "name": "SEO Content",
       "settings": [
         {
-          "type": "paragraph",
-          "content": "Customers who subscribe will have their email address added to the \"accepts marketing\" [customer list](/admin/customers?query=&accepts_marketing=1)."
-        },
-        {
           "type": "text",
-          "id": "title",
-          "label": "Heading",
-          "default": "Newsletter"
+          "id": "SEO_title",
+          "label": "SEO Content Heading"
         },
         {
           "type": "richtext",
-          "id": "subheading",
-          "label": "Subheading",
-          "default": "<p>A short sentence describing what someone will receive by subscribing</p>"
+          "id": "SEO_content",
+          "label": "SEO Content"
         }
       ]
     }
@@ -342,7 +338,7 @@
   "default": {
     "blocks": [
       {
-        "type": "text",
+        "type": "image-text",
         "settings": {}
       },
       {
@@ -350,10 +346,6 @@
         "settings": {
           "menu": "footer"
         }
-      },
-      {
-        "type": "newsletter",
-        "settings": {}
       }
     ]
   }

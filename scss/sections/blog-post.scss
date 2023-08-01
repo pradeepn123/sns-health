@@ -1,0 +1,101 @@
+
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/layout';
+@import 'StyleComponents/section-header';
+
+
+.blog-post-section {
+    margin-top: var(--section-margin);
+    padding: var(--section-padding) 0 0;
+
+    &__content {
+        @include mixins.container;
+    }
+
+   &__article {
+    border: 1px solid colors.$gray-300;
+    cursor: pointer;
+    border-radius: 10px;
+    @media(--md) {
+      padding: 10px;
+    }
+
+    &-image--desktop {
+        display: none;
+        @media(--md) {
+            display: block;
+        }
+    }
+    &-image--mobile {
+        display: block;
+        @media(--md) {
+            display: none;
+        }
+    }
+   }
+   .responsive-image__image {
+    border-radius: 10px;
+   }
+
+   .article-content{
+    margin-top: 10px;
+    padding: 0 10px 10px;
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+
+    &__title {
+        margin-bottom: 0;
+        @include use-text-style('body-alt');
+        font-weight: typography.$heading-weight;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        line-height: 1.5;
+
+        @media(--md) {
+            @include use-text-style('heading-2');
+            -webkit-line-clamp: 2;
+            line-height: 1.5;
+        }
+    }
+
+    @media(--md) {
+        row-gap: 15px;
+        padding:0 31px 21px;
+        margin-top: var(--grid-row-gap-large);
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      @include use-text-style('body-small');
+      color: colors.$gray-200;
+
+      @media(--md) {
+        @include use-text-style('body-regular');
+        font-weight: typography.$medium-weight;
+      }
+
+    }
+
+    &__url {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        @include use-text-style('body-regular');
+        font-weight: typography.$semi-weight;
+
+        @media (--md) {
+            @include use-text-style('body-alt');
+            font-weight: typography.$semi-weight;
+            column-gap: 10px;
+        }
+    }
+}
+}

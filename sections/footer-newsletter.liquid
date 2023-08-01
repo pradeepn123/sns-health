@@ -1,0 +1,61 @@
+{{'footer-newsletter.css' | asset_url | stylesheet_tag}}
+<div class="footer-newsletter" {{ section.shopify_attributes }}>
+  
+   
+    <div class="footer-newsletter__wrapper">
+        <div class="footer-newsletter__text-content">
+            <h1 class="footer-newsletter__title">{{ section.settings.title | escape }}</h1>
+            {%- if section.settings.subheading != blank -%}
+            <div class="footer-newsletter__text rte">{{ section.settings.subheading }}</div>
+            {%- endif -%}
+        </div>
+     <div class="footer-newsletter__form">
+      {%- form 'customer', id: 'footer-newsletter', class: 'footer__newsletter-form' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="alert alert--success alert--center">{{ 'footer.newsletter.success' | t }}</p>
+        {%- else -%}
+          {%- if form.errors -%}
+            <p class="alert alert--error alert--center">{{ form.errors.messages['email'] }}</p>
+          {%- endif -%}
+
+          <input type="hidden" name="contact[tags]" value="newsletter">
+
+          <div class="form__input-wrapper form__input-wrapper--labelled">
+            <input type="email" id="footer[{{ section.id }}][contact][email]" name="contact[email]" class="form__field form__field--text" required="" placeholder="{{ 'footer.newsletter.input' | t }}">
+          </div>
+
+          <button type="submit" class="form__submit form__submit--tight button button--primary">{{ 'footer.newsletter.submit' | t }}</button>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+    </div>
+  </div>
+{% schema %}
+  {
+    "name": "Newsletter",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Customers who subscribe will have their email address added to the \"accepts marketing\" [customer list](/admin/customers?query=&accepts_marketing=1)."
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Newsletter"
+      },
+      {
+        "type": "richtext",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "<p>A short sentence describing what someone will receive by subscribing</p>"
+      }
+    ],
+    "presets": [
+        {
+          "name": "Newsletter"
+        }
+    ]
+  }
+  {% endschema %}

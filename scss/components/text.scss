@@ -3,6 +3,7 @@
 
 .text {
   &__eyebrow {
+    margin-bottom: 0;
     @include use-text-style('body-alt-small');
 
     @media (--md) {
@@ -13,6 +14,7 @@
 
   &__heading {
     @include use-text-style('heading-3');
+    margin-bottom: 0;
 
     @media (--md) {
       @include use-text-style('heading-1');
