@@ -24,7 +24,15 @@
     display: flex;
     justify-content: space-between;
     @include use-text-style('body-regular');
-    column-gap: 10px;
+
+    &-tags {
+      column-gap: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 80%;
+      align-items: center;
+      row-gap: 5px;
+    }
   }
 
   &__star {

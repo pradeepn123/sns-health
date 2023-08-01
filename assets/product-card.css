@@ -901,9 +901,21 @@ custom-carousel {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.2;
+}
+.product-card__header-tags {
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 5px;
 }
 .product-card__star {
   display: -webkit-box;

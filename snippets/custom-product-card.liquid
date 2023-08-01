@@ -26,9 +26,11 @@
         {% render 'shopify-responsive-image' , image: image , aspect_ratio: 1, contain: true, background: true %} 
       </div>
       <div class="product-card__header">
-        {% if discount_percentage > 0 %}<div class="product-card__discount">{{discount_percentage}}% off </div> {% endif %}
-        {% if bestseller %}<div class="product-card__discount"> Best Seller </div> {% endif %}
-        {% if onsale %}<div class="product-card__discount"> On Sale </div> {% endif %}
+        <div class="product-card__header-tags">
+          {% if discount_percentage > 0 %}<div class="product-card__discount">{{discount_percentage}}% off </div> {% endif %}
+          {% if bestseller %}<div class="product-card__discount"> Best Seller </div> {% endif %}
+          {% if onsale %}<div class="product-card__discount"> On Sale </div> {% endif %}
+        </div>
         <div class="product-card__star">{% render 'icon-star' %}<span class="product-card__star-text">{{rating}}</span></div>
       </div>
       {% if vendor %}
