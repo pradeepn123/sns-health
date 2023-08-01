@@ -187,8 +187,8 @@
 }
 .blog-post-section__article:hover {
   border-color: #ED1C24;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px 0px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px 0px;
   cursor: pointer;
 }
 .blog-post-section__article:hover .article-content__url {

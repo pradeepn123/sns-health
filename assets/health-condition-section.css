@@ -1172,8 +1172,8 @@ custom-carousel {
   }
   .health-condition-section .health-condition-section__icon-text.icon-text:hover {
     border-color: #ED1C24;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px 0px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px 0px;
     cursor: pointer;
   }
   .health-condition-section .health-condition-section__icon-text.icon-text:hover .health-condition-section__eyebrow.text__eyebrow {

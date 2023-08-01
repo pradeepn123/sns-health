@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main": {
+      "type": "Banner",
+      "settings": {
+      }
+    },
+    "64ecae27-2060-4e72-b5b1-89884fdf7ee7": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Featured Products",
+        "url": "",
+        "collection": "all-products"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "64ecae27-2060-4e72-b5b1-89884fdf7ee7"
+  ]
+}

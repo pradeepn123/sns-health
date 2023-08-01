@@ -1099,15 +1099,17 @@ custom-carousel {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-color: #ED1C24;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
-  cursor: pointer;
 }
 @media (min-width: 1024px) {
   .category-section .category-section__icon-text.icon-text {
     padding: 39px 20px 39px 20px;
   }
+}
+.category-section .category-section__icon-text.icon-text:hover {
+  border-color: #ED1C24;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px 0px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px 0px;
+  cursor: pointer;
 }
 .category-section .icon__container.category-section__icon {
   line-height: 1;

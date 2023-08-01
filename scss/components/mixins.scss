@@ -55,7 +55,7 @@
 
 @mixin box_hover {
     border-color: colors.$red;
-    box-shadow:rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
+    box-shadow:rgba(0, 0, 0, 0.1) 0px 0px 8px 0px;
     cursor: pointer;
 }
 

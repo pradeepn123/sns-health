@@ -984,8 +984,8 @@ custom-carousel {
 }
 .featured-brand-section__item:hover {
   border-color: #ED1C24;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px 0px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px 0px;
   cursor: pointer;
 }
 .featured-brand-section .responsive-image__wrapper {
