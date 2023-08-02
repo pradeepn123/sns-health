@@ -13,7 +13,7 @@
 </style>
 {% endif %}
 <div class="text-image {{wrapper_class}}__text-image {{wrapper_class}}" {% if cta_url %} data-redirect-click data-url="{{cta_url}}"{% endif %}>
- <div class="text-image__image-wrapper image {{wrapper_class}}__image {% if overlay == false %} image--no-radius {% endif%}">
+ <div class="text-image__image-wrapper image {{wrapper_class}}__image-wrapper {% if overlay == false %} image--no-radius {% endif%}">
   <div class="image image--desktop {{wrapper_class}}__image">
     {% render 'shopify-responsive-image',
         image: desktop_image,
