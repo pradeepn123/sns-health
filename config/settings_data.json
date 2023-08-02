@@ -127,13 +127,9 @@
           "logo": "shopify:\/\/shop_images\/Logo.png",
           "logo_max_width": 200,
           "mobile_logo_max_width": 150,
-          "show_locale_selector": true,
-          "show_currency_selector": true,
           "navigation_menu": "main-menu",
           "desktop_navigation_layout": "inline",
           "desktop_navigation_open_trigger": "hover",
-          "show_navigation_social_media": true,
-          "navigation_phone_number": "",
           "navigation_email": "info@snshealth.com",
           "show_condensed_search": true,
           "show_search_filter": true,
@@ -1893,7 +1889,6 @@
         "type": "featured-products",
         "settings": {
           "heading": "Featured Products",
-          "url": "shopify:\/\/collections\/all-products",
           "collection": "all-products"
         }
       },
@@ -2002,7 +1997,6 @@
         "type": "featured-products",
         "settings": {
           "heading": "Just For You",
-          "url": "",
           "collection": "antioxidants"
         }
       },
