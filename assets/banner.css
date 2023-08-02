@@ -199,6 +199,23 @@
   border-bottom-right-radius: 0;
 }
 
+.image--desktop {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .image--desktop {
+    display: block;
+  }
+}
+.image--mobile {
+  display: block;
+}
+@media (min-width: 1024px) {
+  .image--mobile {
+    display: none;
+  }
+}
+
 :root {
   --base-margin: 20px;
   --grid-row-gap: 10px;
@@ -1049,8 +1066,6 @@ custom-carousel {
   }
 }
 .banner img {
-  width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
