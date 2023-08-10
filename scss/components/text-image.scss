@@ -1,5 +1,5 @@
 @use 'StyleComponents/colors';
-@use 'StyleComponents/breakpoints';
+@import 'StyleComponents/breakpoints';
 
 .text-image {
     position: relative;
