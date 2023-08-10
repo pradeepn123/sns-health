@@ -12,10 +12,10 @@
           <div class="blog-post-section__article swiper-slide" onclick="location.href='{{article.url}}';">
            <div class="blog-post-section__article-image">
             <div class="blog-post-section__article-image--desktop">
-              {% render 'shopify-responsive-image', image: article.image , aspect_ratio:2.11, fill:true %}
+              {% render 'shopify-responsive-image', image: article.image , aspect_ratio:2.11, crop:true %}
             </div>
             <div class="blog-post-section__article-image--mobile">
-                {% render 'shopify-responsive-image', image: article.image , aspect_ratio:1.3, fill: true %}
+                {% render 'shopify-responsive-image', image: article.image , aspect_ratio:1.3, crop: true %}
               </div>
            </div>
      
