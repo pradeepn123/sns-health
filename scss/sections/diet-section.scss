@@ -3,10 +3,6 @@
 @use 'StyleComponents/colors';
 @import 'Token';
 @import 'breakpoints';
-@import 'StyleComponents/text';
-@import 'StyleComponents/layout';
-@import 'StyleComponents/section-header';
-@import 'StyleComponents/custom-carousel';
 @import 'StyleComponents/icon-text';
 
 @custom-selector :--text .diet-section__subheading.text__subheading;
@@ -54,6 +50,10 @@
 
         @include mixins.toggleSvgIcon;
       }
+    }
+
+    &:hover {
+      @include mixins.box_hover;
     }
   }
 

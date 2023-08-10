@@ -452,8 +452,28 @@
         "heading": "Featured Brands"
       }
     },
+    "16915928351b796753": {
+      "type": "apps",
+      "blocks": {
+        "8d5fd17d-8036-47d7-b04f-65f4d91c60b6": {
+          "type": "shopify:\/\/apps\/rebuy-personalization-engine\/blocks\/rebuy-widget\/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "100897",
+            "product_id_enabled": true,
+            "collection_id_enabled": true
+          }
+        }
+      },
+      "block_order": [
+        "8d5fd17d-8036-47d7-b04f-65f4d91c60b6"
+      ],
+      "settings": {
+      }
+    },
     "bdf697cd-fd45-40c5-b148-1b64a6b26e13": {
       "type": "featured-products",
+      "disabled": true,
       "settings": {
         "heading": "Featured Products",
         "collection": "all-products"
@@ -562,9 +582,29 @@
     },
     "477d4363-8c6d-473a-a8d7-911093ed1f81": {
       "type": "featured-products",
+      "disabled": true,
       "settings": {
         "heading": "Just For You",
-        "collection": "antioxidants"
+        "collection": "best-sellers"
+      }
+    },
+    "1691495798e833d062": {
+      "type": "apps",
+      "blocks": {
+        "418bb95f-2aa3-43d9-a0f9-f00152f4ac3e": {
+          "type": "shopify:\/\/apps\/rebuy-personalization-engine\/blocks\/rebuy-widget\/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+          "settings": {
+            "enabled": true,
+            "id": "100894",
+            "product_id_enabled": true,
+            "collection_id_enabled": true
+          }
+        }
+      },
+      "block_order": [
+        "418bb95f-2aa3-43d9-a0f9-f00152f4ac3e"
+      ],
+      "settings": {
       }
     },
     "4aa52242-6a1d-45f5-863a-eb800312ea2c": {
@@ -573,13 +613,6 @@
         "heading": "Blog Post",
         "url": "#",
         "blog": "beauty-and-wellness"
-      }
-    },
-    "b1b4c397-b6ac-40e6-bddb-72cef284566b": {
-      "type": "footer-newsletter",
-      "settings": {
-        "title": "Get 10% Off Your First Order",
-        "subheading": "<p>Subscribe to our newsletter and get 10% off. Plus, be the first to find out about new products and sales from SNS Health.<\/p>"
       }
     },
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7": {
@@ -591,6 +624,13 @@
         "cta_text": "Learn More About Our Mission",
         "cta_url": "#"
       }
+    },
+    "b1b4c397-b6ac-40e6-bddb-72cef284566b": {
+      "type": "footer-newsletter",
+      "settings": {
+        "title": "Get 10% Off Your First Order",
+        "subheading": "<p>Subscribe to our newsletter and get 10% off. Plus, be the first to find out about new products and sales from SNS Health.<\/p>"
+      }
     }
   },
   "order": [
@@ -600,11 +640,13 @@
     "88989b64-0e7b-4c39-8df1-c43fabfa105d",
     "1d4fa870-6d24-4c65-a956-7a709e0e2b0f",
     "932e9d3c-0311-4a00-af68-f2426cae7d02",
+    "16915928351b796753",
     "bdf697cd-fd45-40c5-b148-1b64a6b26e13",
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
     "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
     "477d4363-8c6d-473a-a8d7-911093ed1f81",
+    "1691495798e833d062",
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
     "b1b4c397-b6ac-40e6-bddb-72cef284566b"

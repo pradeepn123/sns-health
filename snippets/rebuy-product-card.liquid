@@ -1,0 +1,97 @@
+{{'rebuy-widget.css' | asset_url | stylesheet_tag }}
+<script id="rebuy-recommended-template" type="text/template">
+    <div class="rebuy-widget"
+    v-cloak
+    v-on:click="stopPropagation($event)"
+    v-bind:id="'rebuy-widget-' + id"
+    v-bind:class="['product-card-widget', 'widget-type-' + config.type.replace('_','-'), 'widget-display-' + config.display_type, products.length > 0 ? 'is-visible' : 'is-hidden', 'widget-layout-' + currentLayout()]">
+    
+        <div
+            class="rebuy-widget-container"
+            v-cloak
+            v-bind:class="['widget-display-' + config.display_type, visible ? 'is-visible' : 'is-hidden' ]"
+            v-on:click.self="hide()">
+    
+            <div class="rebuy-widget-content">
+                <div class="rebuy-modal-close" v-on:click="hide()">
+                    <i class="fas fa-times"></i>
+                </div>
+    
+                <div class="rebuy-timer" v-if="hasTimer()">
+                    <h5 class="rebuy-timer-title" v-if="config.language.timer_title">
+                        <span v-html="config.language.timer_title"></span> <span class="rebuy-timer-minutes" v-html="config.timer.duration_minutes"></span>:<span class="rebuy-timer-seconds" v-html="config.timer.duration_seconds"></span>
+                    </h5>
+                </div>
+    
+                <h4 class="super-title" v-if="config.language.super_title != ''" v-html="config.language.super_title"></h4>
+                <div class="section__heading-wrapper" :data-tag="window?.rebuy?.selectedFilter">
+                  <h3 class="section__heading" v-if="config.language.title != ''" v-html="config.language.title"></h3>
+                </div>
+    
+                <div class="description" v-if="config.language.description != ''" v-html="config.language.description"></div>
+    
+                <div class="rebuy-product-grid product-card" v-bind:class="layoutClasses" tabindex="0" role="list">
+                    <div
+                        v-for="(product, product_index) in products"
+                        v-bind:class="[product.handle, 'product-id-' + product.id, cartHasProduct(product) ? 'cart-has-item' : '', productTagClasses(product)]"
+                        aria-label="product"
+                        class="rebuy-product-block product-card__body"
+                        role="listitem"
+                    >
+    
+                        <div class="product-card__image">
+                            <a
+                                tabindex="-1"
+                                v-bind:href="learnMoreURL(product)"
+                                v-bind:style="imageStyles"
+                                v-on:click="learnMore(product);"
+                                v-bind:class="[hasLearnMore() ? 'clickable' : '']"
+                            >
+                                <img v-bind:loading="product_index > 1 ? 'lazy' : 'eager'" v-bind:src="itemImage(product, product.selected_variant, '250x250')" v-bind:alt="itemImageAlt(product, product.selected_variant)">
+                            </a>
+                        </div>
+
+                        <div class="product-card__header" :data-discount="Math.round(((variantCompareAtPrice(product, product.selected_variant) - variantPrice(product, product.selected_variant))*100) / variantCompareAtPrice(product, product.selected_variant))">
+                            <div class="product-card__header-tags">
+                              <div class="product-card__discount" v-if="Math.round(((variantCompareAtPrice(product, product.selected_variant) - variantPrice(product, product.selected_variant))*100) / variantCompareAtPrice(product, product.selected_variant)) > 0" v-html="Math.round(((variantCompareAtPrice(product, product.selected_variant) - variantPrice(product, product.selected_variant))*100) / variantCompareAtPrice(product, product.selected_variant)) + '%off'" ></div> 
+                              <div class="product-card__discount" v-if="((product.tags).toString()).includes('bestseller-disabled')"> Best Seller </div> 
+                              <div class="product-card__discount" v-if="((product.tags).toString()).includes('onsale')"> On Sale </div>
+                            </div>
+                            <div class="product-card__star" v-if="product.reviews.star_rating">{% render 'icon-star' %}<span class="product-card__star-text" v-html="product.reviews.star_rating"></span></div>
+                          </div>
+                          <div class="product-card__vendor" v-html="product.vendor" v-if="product.vendor"></div>
+                          <div class="product-card__title" v-html="product.title"></div>
+                          <div class="product-card__footer">
+                            <div class="product-card__price-container">
+                              <div  class=" product-card__price product-card__price--compare" v-if="Math.round(((variantCompareAtPrice(product, product.selected_variant) - variantPrice(product, product.selected_variant))*100) / variantCompareAtPrice(product, product.selected_variant)) > 0" v-html="formatMoney(variantCompareAtPrice(product, product.selected_variant))"></div>
+                              <div class="product-card__price" v-html="formatMoney(variantPrice(product, product.selected_variant))"></div>
+                            </div>
+                            <div class="product-card__atc"> 
+                                <button
+                                    class="rebuy-button product-card__cta"
+                                    v-bind:class="{ working: (product.status != 'ready' && product.status != 'selecting') }"
+                                    v-bind:disabled="!(variantAvailable(product.selected_variant)) || (product.status != 'ready' && product.status != 'selecting')"
+                                    v-bind:aria-label="buttonAriaLabel(product)"
+                                    v-on:click="window.location.href=learnMore(product)"
+                                    type="button"
+                                    v-if="product.variants.length > 1"
+                                    >
+                                        <span>See Options</span>
+                                </button>
+                                <form method="post" action="/cart/add"  v-else> 
+                                <input type="hidden" name="quantity" value="1">
+                                <input type="hidden" name="id" v-bind:value="product.selected_variant.id">
+                                <button
+                                    v-bind:class="{ working: (product.status != 'ready' && product.status != 'selecting') }"
+                                    type="submit" 
+                                    class="product-item__action-button product-item__action-button--list-view-only button button--small button--primary" 
+                                    data-action="add-to-cart"
+                                     v-html="buttonLabel(product)">
+                                  </button>
+                               </form>
+        
+                        </div>
+                        </div>
+                    </div>
+                </div>
+    

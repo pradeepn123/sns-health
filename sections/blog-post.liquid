@@ -7,7 +7,7 @@
 
          <div class="blog-post-section__content"> 
          <custom-carousel>
-         {% for article in blog.articles limit: 3 %} 
+         {% for article in blog.articles limit: 4 %} 
    
           <div class="blog-post-section__article swiper-slide" onclick="location.href='{{article.url}}';">
            <div class="blog-post-section__article-image">
@@ -40,7 +40,7 @@
             "breakpoints": {
               "1024": {
                   "navigation": true,
-                  "slidesPerView": 3,
+                  "slidesPerView": 4,
                   "spaceBetween": 20
                 }
             }

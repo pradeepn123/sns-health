@@ -11,20 +11,73 @@ import CustomCarousel from '../components/custom-carousel';
 import ProductCard from '../components/product-card';
 
 const handleRedirectOnDiv = (item) => {
-   const url =  item.dataset.url;
-   if(url) {
+  const url = item.dataset.url;
+  if (url) {
     window.location.href = url;
-   }
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    customElements.define('custom-carousel', CustomCarousel);
-    customElements.define('product-card', ProductCard);
-    const clickHandle = document.querySelectorAll('[data-redirect-click]');
-    clickHandle.forEach(item => item.addEventListener('click', (ev) => { 
-        if(ev.target.closest('.swiper-navigation')) {
-            return;
+  customElements.define('custom-carousel', CustomCarousel);
+  customElements.define('product-card', ProductCard);
+  const clickHandle = document.querySelectorAll('[data-redirect-click]');
+  clickHandle.forEach(item => item.addEventListener('click', (ev) => {
+    if (ev.target.closest('.swiper-navigation')) {
+      return;
+    }
+    handleRedirectOnDiv(item)
+  }));
+
+
+  //mobile header megamenu
+  document.querySelectorAll('[data-megamenu-mobile]').forEach(megamenu => {
+    const targetId = megamenu.dataset.megamenuId;
+    if (targetId) {
+      const targetContainer = document.querySelector(`[data-mobile-megamenu-target-${targetId}]`);
+      if (targetContainer) {
+        targetContainer.appendChild(megamenu);
+      }
+    }
+  })
+
+  document.querySelectorAll('[data-megamenu-desktop]').forEach(megamenu => {
+    const targetId = megamenu.dataset.megamenuId;
+    if (targetId) {
+      const targetContainer = document.querySelector(`[data-desktop-megamenu-target-${targetId}]`);
+      if (targetContainer) {
+        targetContainer.appendChild(megamenu);
+      }
+    }
+  })
+
+
+  //header
+  const headerWrapper = document.querySelector('.shopify-section__header');
+  const searchBar = document.querySelector('.header__search-bar-wrapper--mobile');
+  const navBar = document.querySelector('.nav-bar__inner');
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    searchBar.style.opacity = 1 - scrollTop / 85
+    navBar.style.opacity = 1 - scrollTop / 10;
+      if (scrollTop == 0) {
+        if (headerWrapper.classList.contains('shopify-section__header--fixed')) {
+          headerWrapper.classList.remove('shopify-section__header--fixed');
         }
-        handleRedirectOnDiv(item)}));
+      }
+      else {
+        headerWrapper.classList.add('shopify-section__header--fixed');
+      }
+  }
+
+
+  //For rebuy tag based
+  Window.custom = {
+    'rebuyTag': 'minerals'
+  };
+
+  window.searchOpen = true;
+  window.addEventListener('scroll', () => {
+    handleScroll();
+  })
 })
 

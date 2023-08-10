@@ -22,7 +22,7 @@
 <product-card>
   <div class="product-card">
     <div class="product-card__body">
-      <div class="product-card__image">
+      <div class="product-card__image" data-redirect-click data-url="{{product.url}}">
         {% render 'shopify-responsive-image' , image: image , aspect_ratio: 1, contain: true, background: true %} 
       </div>
       <div class="product-card__header">

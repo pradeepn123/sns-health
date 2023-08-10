@@ -97,10 +97,6 @@ if (mode === 'development') {
       }
     })
   );
-}
-
-//minification,create chunks,treeshake on production
-if(mode === 'production') {
   module.exports.optimization = {
     usedExports: true, //check for ununsed exports for treeshaking within file
     splitChunks: {
@@ -113,17 +109,27 @@ if(mode === 'production') {
           chunks :'all', //create chunk for all sync , async and cjs modules
           type: /javascript/,
           enforce: true // ignores minSize: 2000, minChunks: 1,priority: 0,
-        },
-        common: { //create a common chunk
-          chunks: "all", //create chunk for all sync , async and cjs modules
-          minChunks: 2, //minimum import for creating chunk
-          name: 'common',
-          priority: -20, //-ve value denotes that it will be in lowest priority
-          minSize: 1000,//minimum size that required for creating a chunk, we would not want just few lines of code getting chunked together, so minimum size set to 1kb
-          type: /javascript/
         }
       },
     }
   }
 }
 
+if(mode == "production") {
+  module.exports.optimization = {
+    usedExports: true, //check for ununsed exports for treeshaking within file
+    splitChunks: {
+      usedExports: true, //check for ununsed exports for treeshaking within chunk
+      cacheGroups: {
+        default: false, //override default
+        Vendors: {  //create a seperate chunk for vendor
+          test: /[\\/]node_modules[\\/]/, //required both / & \ to support cross platform between unix and windows
+          name: 'vendors',//only create chunk for dependencies
+          chunks :'all', //create chunk for all sync , async and cjs modules
+          type: /javascript/,
+          enforce: true // ignores minSize: 2000, minChunks: 1,priority: 0,
+        }
+      },
+    }
+  }
+}

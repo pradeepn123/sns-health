@@ -232,6 +232,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 input::placeholder,
 textarea::placeholder {
   color: inherit;
+
 }
 
 .is-tabbing input[type=radio]:focus + label {
@@ -5494,7 +5495,6 @@ select::-ms-expand {
   padding: 13px 0;
   background: var(--header-background);
   color: var(--header-text-color);
-  transition: margin-bottom 0.25s ease-in-out;
 }
 
 .header__inner {
@@ -5556,6 +5556,7 @@ select::-ms-expand {
 
 .header__search-bar-wrapper {
   flex: 1 0 auto;
+  padding-left: 0 44px;
 }
 
 
@@ -5566,6 +5567,10 @@ select::-ms-expand {
 .header .icon--cart,
 .header .icon--close {
   display: block;
+}
+
+.header .icon--search {
+  fill: none !important;
 }
 
 .header .icon--account {
@@ -5589,8 +5594,8 @@ select::-ms-expand {
 }
 
 .header .icon--search {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   margin: 0 auto;
 }
 
@@ -5604,7 +5609,6 @@ select::-ms-expand {
   .header {
     display: flex;
     align-items: center;
-    min-height: 64px;
   }
 
   .header > .container {
@@ -5769,7 +5773,7 @@ select::-ms-expand {
     they will move at a slightly different speed, which is not desirable. It's therefore either all HW-accelerated or not.
    */
   .header__search-bar-wrapper {
-    visibility: hidden;
+    visibility: none;
     position: absolute; /* We move it outside of the document for easier positioning for other elements */
     padding: 0 20px 0 20px;
     width: 100%;
@@ -5777,12 +5781,12 @@ select::-ms-expand {
     left: 0;
     background: var(--header-background);
     z-index: -1; /* because the position is absolutely positioned it get a higher z-index, but we need to revert it to avoid any trouble */
-    transition: visibility 0.25s ease-in-out, margin-bottom 0.25s ease-in-out;
+    transition: margin-bottom 0.25s ease-in-out;
   }
 
   .header__search-bar-wrapper.is-visible {
-    visibility: visible;
-    margin-bottom: -59px;
+    display: block;
+    margin-bottom: -40px;
   }
 
   /* When the user focus it, it becomes a fixed element */
@@ -5819,16 +5823,6 @@ select::-ms-expand {
 @media screen and (min-width: 1000px) {
   .header__action-list {
     padding-left: 5px;
-  }
-
-  .header__action-item:not(:last-child)::after {
-    position: absolute;
-    content: "";
-    right: 0;
-    top: calc(50% - 17px);
-    background: var(--header-border-color);
-    height: 34px;
-    width: 1px;
   }
 
   .header__action-item--currency {
@@ -5890,7 +5884,7 @@ select::-ms-expand {
 .search-bar__top {
   position: relative;
   display: flex;
-  height: 44px;
+  height: 40px;
   align-items: center;
   border-radius: 3px;
   background: var(--secondary-background);
@@ -5914,7 +5908,7 @@ select::-ms-expand {
 .search-bar__input {
   height: 100%;
   width: 100%;
-  padding: 0 0 1px 15px;
+  padding: 0 0 1px 10px;
   border: none;
   background: transparent;
   line-height: normal;
@@ -5983,13 +5977,8 @@ select::-ms-expand {
 
 .search-bar__submit {
   flex: none;
-  width: 50px;
-  height: 100%;
-  color: var(--secondary-background);
-  background: var(--header-accent-color);
   border-radius: 0 3px 3px 0;
-  position: absolute;
-  right: 0;
+  line-height: 1;
 }
 
 .search-bar__submit svg {
@@ -6211,11 +6200,15 @@ select::-ms-expand {
   display: block;
 }
 
+.search-bar.is-loading .search-bar__submit .icon--search-loader {
+  display: block;
+}
+
 /* This is not really mobile-first for this specific part, but the mobile styles are way too specific so I prefer to have them here rather than having complex overwritings */
 @media screen and (max-width: 640px) {
   .search-bar {
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    /* transition: opacity 0.2s ease-in-out; */
   }
 
   .search-bar__inner {
@@ -6244,11 +6237,6 @@ select::-ms-expand {
     transition: width 0.25s ease-in-out, opacity 0.25s ease-in-out;
   }
 
-  .search-bar__close-text {
-    padding-left: 6px;
-    display: flex;
-    align-items: center;
-  }
 
   .header__search-bar-wrapper.is-visible .search-bar {
     opacity: 1;
@@ -7221,10 +7209,6 @@ select::-ms-expand {
  * --------------------------------------------------------------------
  */
 
-.nav-bar {
-  display: none;
-}
-
 @media screen and (min-width: 1000px) {
   .nav-bar {
     display: block;
@@ -7283,13 +7267,6 @@ select::-ms-expand {
     transition: 0.2s ease-in-out;
   }
 
-  .nav-bar__link[aria-expanded=true] {
-    color: var(--accent-color);
-  }
-
-  .nav-bar__link[aria-expanded=true] .icon--nav-triangle {
-    opacity: 1;
-  }
 }
 
 /**
@@ -7307,11 +7284,11 @@ select::-ms-expand {
   visibility: hidden;
   max-height: 0; /* This is needed to fix a bug on iOS, DO NOT REMOVE */
   z-index: 1;
-  opacity: 0;
+  left: -100%;
+  opacity: 1;
   color: var(--text-color);
   font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 16px));
-  transform: scale(0.9);
-  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out, visibility 0.25s ease-in-out, max-height 0s linear 0.25s;
+  transition: left 0.25s ease-in-out, max-height 0s linear 0.25s;
   will-change: transform;
 }
 
@@ -7323,9 +7300,9 @@ select::-ms-expand {
 
 .mobile-menu[aria-hidden=false] {
   opacity: 1;
+  left:0;
   visibility: visible;
-  transform: scale(1);
-  transition: opacity 0.4s cubic-bezier(0, 1, 0.4, 1), transform 0.4s cubic-bezier(0.18, 1.25, 0.4, 1), visibility 0.4s linear;
+  transition: left 0.25s ease-in-out;
 }
 
 .mobile-menu__inner {
@@ -7504,7 +7481,7 @@ select::-ms-expand {
 }
 
 /* States */
-.mobile-menu[aria-hidden=false] .mobile-menu__panel.is-open {
+.mobile-menu__panel.is-open {
   transform: translateX(0);
   visibility: visible;
 }
@@ -8304,17 +8281,15 @@ select::-ms-expand {
   }
 
   .popover--unlogged {
-    right: 0;
+    right: -50px;
+    top: 50px;
     transform: scale(0.9) translateX(calc(50% - 7px));
   }
 
-  .popover--unlogged .icon--nav-triangle-borderless {
-    left: calc(50% - 8px);
-  }
 
-  .popover--unlogged[aria-hidden=false] {
+  /* .popover--unlogged[aria-hidden=false] {
     transform: scale(1) translateX(calc(50% - 7px));
-  }
+  } */
 }
 /**
  * --------------------------------------------------------------------
@@ -13533,6 +13508,7 @@ select::-ms-expand {
   background: var(--secondary-background);
   transform: translateY(100%);
   transition: visibility 0.2s ease-in-out, transform 0.2s ease-in-out;
+  padding-bottom: 15px;
 }
 
 .value-picker__header {
@@ -13726,12 +13702,6 @@ select::-ms-expand {
 }
 
 @media screen and (min-width: 768px) {
-  .announcement-bar{
-    background: url({{ 'footsteps.png' | asset_url }}) #000 !important;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-    background-position: center !important;
-  }
   .desktop-search-icon {
     height: 100%;
     display: block;
@@ -13805,9 +13775,7 @@ h3.ls-box-title {
 .homepage.product-list-header {
   margin-top: 20px;
 }
-li.nav-bar__item:last-of-type a.nav-bar__link{
-  color: #ed1c24;
-}
+
 .button--ghost {
   background: #fff;
   border: 1px solid #000;

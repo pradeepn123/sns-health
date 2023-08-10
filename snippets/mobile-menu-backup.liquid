@@ -1,0 +1,48 @@
+{%- assign mega_menus = section.blocks | map: 'settings' | map: 'menu_item' -%}
+
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu__inner">
+    <div class="mobile-menu__panel">
+      <div class="mobile-menu__section">
+        <ul class="mobile-menu__nav" data-type="menu" role="list">
+          {%- for link in menu.links -%}
+            <li class="mobile-menu__nav-item">
+              {%- if link.url contains 'megamenu' -%}
+                {% assign panel_id = link.url | split: '#' | last %}
+                <button class="mobile-menu__nav-link" data-type="menuitem" aria-haspopup="true" aria-expanded="false" aria-controls="{{panel_id}}" data-action="open-panel">
+                  {{- link.title -}} {%- render 'icon', icon: 'arrow-right' -%}
+                </button>
+              {%- else -%}
+                <a href="{{ link.url }}" class="mobile-menu__nav-link" data-type="menuitem" aria-label="{{ link.title | escape }}">{{ link.title }}</a>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="mobile-content__section">
+        {%- if section.settings.navigation_phone_number != blank or section.settings.navigation_email != blank -%}
+          <div class="mobile-menu__section mobile-menu__section--loose">
+            <p class="mobile-menu__section-title heading h5">{{ 'header.navigation.need_help' | t }}</p>
+
+            {%- if section.settings.navigation_phone_number != blank -%}
+              <div class="mobile-menu__help-wrapper">
+                {%- render 'icon', icon: 'bi-phone' -%}
+                <span>{{ section.settings.navigation_phone_number | escape }}</span>
+              </div>
+            {%- endif -%}
+
+            {%- if section.settings.navigation_email != blank -%}
+              <div class="mobile-menu__help-wrapper">
+                {%- render 'icon', icon: 'bi-email' -%}
+                <a href="mailto:{{ section.settings.navigation_email }}">{{ section.settings.navigation_email | escape }}</a>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="megamenu__content"> </div>
+  </div>
+</div>
+
+

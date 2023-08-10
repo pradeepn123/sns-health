@@ -1,3 +1,5 @@
+{{'header.css' | asset_url | stylesheet_tag}}
+
 {%- capture section_settings -%}
 {
   "navigationLayout": {{ section.settings.desktop_navigation_layout | json }},
@@ -7,11 +9,12 @@
 {%- endcapture -%}
 
 {%- assign navigation_menu_handle = section.settings.navigation_menu | default: 'main-menu' -%}
+{%- assign mobile_menu_handle = section.settings.mobile_menu | default: 'main-menu' -%}
 {%- assign navigation_menu = linklists[navigation_menu_handle] -%}
+{%- assign mobile_menu = linklists[mobile_menu_handle] -%}
 
 <section data-section-id="{{ section.id }}" data-section-type="header" data-section-settings='{{ section_settings }}'>
-  <header class="header header--{{ section.settings.desktop_navigation_layout }} {% unless section.settings.show_condensed_search %}header--search-expanded{% endunless %}" role="banner">
-    <div class="container">
+  <header class="header header--{{ section.settings.desktop_navigation_layout }}" role="banner">
       <div class="header__inner">
         {%- comment -%}
         --------------------------------------------------------------------------------------
@@ -19,14 +22,16 @@
         --------------------------------------------------------------------------------------
         {%- endcomment -%}
 
-        {%- if navigation_menu.links.size > 0 -%}
+        {%- if mobile_menu.links.size > 0 -%}
           <nav class="header__mobile-nav hidden-lap-and-up">
             <button class="header__mobile-nav-toggle icon-state touch-area" data-action="toggle-menu" aria-expanded="false" aria-haspopup="true" aria-controls="mobile-menu" aria-label="{{ 'header.navigation.open_menu' | t }}">
               <span class="icon-state__primary">{%- render 'icon', icon: 'hamburger-mobile' -%}</span>
               <span class="icon-state__secondary">{%- render 'icon', icon: 'close' -%}</span>
             </button>
 
-            {%- render 'mobile-menu', menu: navigation_menu -%}
+            {% assign special_nav_item = section.settings.special_nav_item  %}
+
+            {%- render 'mobile-menu', menu: mobile_menu , special_nav_item: special_nav_item -%}
           </nav>
         {%- endif -%}
 
@@ -42,7 +47,7 @@
               <span>{%- render 'icon', icon: 'hamburger' -%} <span class="header__desktop-nav-text">{{- 'header.navigation.menu' | t -}}</span></span>
             </button>
 
-            {%- render 'desktop-menu', menu: navigation_menu, index: 'desktop-menu-0' -%}
+            {%- render 'desktop-menu', menu: navigation_menu, index: 'desktop-menu-0'-%}
           </nav>
         {%- endif -%}
 
@@ -80,15 +85,22 @@
         --------------------------------------------------------------------------------------
         {%- endcomment -%}
 
-        <div class="header__search-bar-wrapper {% unless section.settings.show_condensed_search %}is-visible{% endunless %}">
+        <div class="header__search-bar-wrapper is-visible header__search-bar-wrapper--desktop">
           <form action="{{ routes.search_url }}" method="get" role="search" class="search-bar">
             {%- assign search_menu = linklists[section.settings.search_menu] -%}
 
             <div class="search-bar__top-wrapper">
+              <button type="button" class="search-bar__close-button hidden-tablet-and-up" data-action="unfix-search">
+                <span class="search-bar__close-text">{% render 'icon', icon: 'close' %}</span>
+              </button>
               <div class="search-bar__top">
                 <input type="hidden" name="type" value="product">
                 <input type="hidden" name="options[prefix]" value="last">
                 <input type="hidden" name="options[unavailable_products]" value="{{ settings.search_unavailable_products }}">
+                <button type="submit" class="search-bar__submit" aria-label="{{ 'header.search.submit' | t }}">
+                  {%- render 'icon', icon: 'search' -%}
+                  {%- render 'icon', icon: 'search-loader' -%}
+                </button>
 
                 <div class="search-bar__input-wrapper">
                   <input class="search-bar__input" type="text" name="q" autocomplete="off" autocorrect="off" aria-label="{{ 'header.search.input_placeholder' | t }}" placeholder="{{ 'header.search.input_placeholder' | t }}">
@@ -126,15 +138,111 @@
                   </div>
                 {%- endif -%}
 
+              </div>
+
+            </div>
+
+            <div class="search-bar__inner">
+              <div class="search-bar__inner-animation">
+                <div class="search-bar__results" aria-hidden="true">
+                  <div class="skeleton-container">
+                    {%- for i in (1..3) -%}
+                      <div class="search-bar__result-item search-bar__result-item--skeleton">
+                        <div class="search-bar__image-container">
+                          <div class="aspect-ratio aspect-ratio--square">
+                            <div class="skeleton-image"></div>
+                          </div>
+                        </div>
+
+                        <div class="search-bar__item-info">
+                          <div class="skeleton-paragraph">
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-text"></div>
+                          </div>
+                        </div>
+                      </div>
+                    {%- endfor -%}
+                  </div>
+
+                  <div class="search-bar__results-inner">
+                    {%- comment -%}Placeholder div for real results{%- endcomment -%}
+                  </div>
+                </div>
+
+                {%- if search_menu.links.size > 0 -%}
+                  <div class="search-bar__menu-wrapper" aria-hidden="true">
+                    {%- if section.settings.show_search_menu_title -%}
+                      <p class="search-bar__menu-title heading">{{ search_menu.title }}</p>
+                    {%- endif -%}
+
+                    <ul class="search-bar__menu-linklist list--unstyled" role="list">
+                      {%- for link in search_menu.links -%}
+                        <li>
+                          <a href="{{ link.url }}" class="search-bar__menu-link">{{ link.title }}</a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="header__search-bar-wrapper is-visible header__search-bar-wrapper--mobile">
+          <form action="{{ routes.search_url }}" method="get" role="search" class="search-bar">
+            {%- assign search_menu = linklists[section.settings.search_menu] -%}
+
+            <div class="search-bar__top-wrapper">
+              <button type="button" class="search-bar__close-button hidden-tablet-and-up" data-action="unfix-search">
+                <span class="search-bar__close-text">{% render 'icon', icon: 'close' %}</span>
+              </button>
+              <div class="search-bar__top">
+                <input type="hidden" name="type" value="product">
+                <input type="hidden" name="options[prefix]" value="last">
+                <input type="hidden" name="options[unavailable_products]" value="{{ settings.search_unavailable_products }}">
                 <button type="submit" class="search-bar__submit" aria-label="{{ 'header.search.submit' | t }}">
                   {%- render 'icon', icon: 'search' -%}
                   {%- render 'icon', icon: 'search-loader' -%}
                 </button>
+
+                <div class="search-bar__input-wrapper">
+                  <input class="search-bar__input" type="text" name="q" autocomplete="off" autocorrect="off" aria-label="{{ 'header.search.input_placeholder' | t }}" placeholder="{{ 'header.search.input_placeholder' | t }}">
+                  <button type="button" class="search-bar__input-clear hidden-lap-and-up" data-action="clear-input">
+                    <span class="visually-hidden">{{ 'header.search.clear' | t }}</span>
+                    {% render 'icon', icon: 'close' %}
+                  </button>
+                </div>
+
+                {%- comment -%}The type detection is sometimes a bit inaccurate as it returns empty type, so we do an additional logic{%- endcomment -%}
+
+                {%- assign has_at_least_one_type = false -%}
+                {%- for product_type in shop.types -%}
+                  {%- if product_type != blank -%}
+                    {%- assign has_at_least_one_type = true -%}
+                    {%- break -%}
+                  {%- endif -%}
+                {%- endfor -%}
+
+                {%- if section.settings.show_search_filter and has_at_least_one_type -%}
+                  <div class="search-bar__filter">
+                    <label for="search-product-type" class="search-bar__filter-label">
+                      <span class="search-bar__filter-active">{{ 'header.search.all_categories' | t }}</span> {%- render 'icon', icon: 'arrow-bottom' -%}
+                    </label>
+
+                    <select id="search-product-type">
+                      <option value="" selected="selected">{{ 'header.search.all_categories' | t }}</option>
+
+                      {%- for product_type in shop.types -%}
+                        {%- if product_type != blank -%}
+                          <option value="{{ product_type | escape }}">{{ product_type | escape }}</option>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </select>
+                  </div>
+                {%- endif -%}
+
               </div>
 
-              <button type="button" class="search-bar__close-button hidden-tablet-and-up" data-action="unfix-search">
-                <span class="search-bar__close-text">{% render 'icon', icon: 'close' %}</span>
-              </button>
             </div>
 
             <div class="search-bar__inner">
@@ -184,107 +292,30 @@
           </form>
         </div>
 
-        {%- comment -%}
+      {%- comment -%}
         --------------------------------------------------------------------------------------
         HEADER ACTIONS
         --------------------------------------------------------------------------------------
         {%- endcomment -%}
 
-        {%- if section.settings.show_currency_selector and shop.enabled_currencies.size > 1 -%}
-          {%- assign currency_selector = true -%}
-        {%- endif -%}
-
-        {%- if section.settings.show_locale_selector and shop.published_locales.size > 1 -%}
-          {%- assign locale_selector = true -%}
-        {%- endif -%}
 
         <div class="header__action-list">
-          {%- if locale_selector -%}
-            <div class="header__action-item header__action-item--locale hidden-pocket">
-              {%- form 'localization', id: 'localization_form_header_locale' -%}
-                <span class="header__action-item-title">{{ 'header.general.language' | t }}</span>
-                <input type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}">
-
-                <div class="header__action-item-content">
-                  <button class="header__action-item-link" data-action="toggle-popover" aria-controls="desktop-locale-selector" aria-expanded="false">
-                    <span class="locale-selector__value">{{ form.current_locale.endonym_name | capitalize }}</span> {% render 'icon', icon: 'arrow-bottom' %}
-                  </button>
-
-                  <div id="desktop-locale-selector" class="popover popover--locale" aria-hidden="true">
-                    {%- render 'icon', icon: 'nav-triangle-borderless' -%}
-
-                    <div class="popover__inner popover__inner--no-padding">
-                      <ul class="popover__linklist" role="list">
-                        {%- for locale in form.available_locales -%}
-                          <li class="popover__linklist-item">
-                            <button type="submit" name="locale_code" class="popover__link-item" value="{{ locale.iso_code }}" {% if locale.iso_code == form.current_locale.iso_code %}aria-current="true"{% endif %}>
-                              {{- locale.endonym_name | capitalize -}}
-                            </button>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
-                    </div>
-                  </div>
-                {%- endform -%}
-              </div>
-            </div>
-          {%- endif -%}
-
-          {%- if currency_selector -%}
-            <div class="header__action-item header__action-item--currency hidden-pocket">
-              {%- form 'localization', id: 'localization_form_header_currency' -%}
-                <span class="header__action-item-title">{{ 'header.general.currency' | t }}</span>
-                <input type="hidden" name="currency_code" value="{{ form.current_currency.iso_code }}">
-
-                <div class="header__action-item-content">
-                  <button class="header__action-item-link" data-action="toggle-popover" aria-controls="desktop-currency-selector" aria-expanded="false">
-                    <span class="currency-selector__value">{{ form.current_currency.iso_code }} {% if form.current_currency.symbol %}{{ form.current_currency.symbol }}{% endif %}</span> {% render 'icon', icon: 'arrow-bottom' %}
-                  </button>
-
-                  <div id="desktop-currency-selector" class="popover popover--currency" aria-hidden="true">
-                    {%- render 'icon', icon: 'nav-triangle-borderless' -%}
-
-                    <div class="popover__inner popover__inner--no-padding">
-                      <ul class="popover__linklist" role="list">
-                        {%- for currency in form.available_currencies -%}
-                          <li class="popover__linklist-item">
-                            <button type="submit" name="currency_code" class="popover__link-item" value="{{ currency.iso_code }}" {% if currency.iso_code == form.current_currency.iso_code %}aria-current="true"{% endif %}>
-                              {{ currency.iso_code }} {% if currency.symbol %}{{ currency.symbol }}{% endif %}
-                            </button>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
-                    </div>
-                  </div>
-                {%- endform -%}
-              </div>
-            </div>
-          {%- endif -%}
-
           {%- if section.settings.show_condensed_search -%}
             <div class="header__action-item hidden-tablet-and-up">
-              <a class="header__action-item-link" href="{{ routes.search_url }}" data-action="toggle-search" aria-expanded="false" aria-label="{{ 'header.search.open_search' | t }}">{% render 'icon', icon: 'search' %}</a>
+              <a class="header__action-item-link header__action-item-link--search" href="{{ routes.search_url }}" data-action="toggle-search" aria-expanded="false" aria-label="{{ 'header.search.open_search' | t }}">{% render 'icon', icon: 'search' %}</a>
             </div>
           {%- endif -%}
-
-          {%- if shop.customer_accounts_enabled -%}
+          {% comment %} Need to move within the popup {% endcomment %}
+           {%- if shop.customer_accounts_enabled -%}
             <div class="header__action-item header__action-item--account">
-              {%- if customer -%}
-                <span class="header__action-item-title hidden-pocket hidden-lap">{{ 'header.general.welcome' | t: first_name: customer.first_name | truncate: 20 }}</span>
-              {%- else -%}
-                <span class="header__action-item-title hidden-pocket hidden-lap">{{ 'header.general.login' | t }}</span>
-              {%- endif -%}
-
-              <div class="header__action-item-content">
-                <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="header__action-item-link header__account-icon icon-state hidden-desk" aria-label="{{ 'header.general.account' | t }}" aria-controls="account-popover" aria-expanded="false" data-action="toggle-popover" {% if customer %}data-follow-link="phone"{% endif %}>
-                  <span class="icon-state__primary">{%- render 'icon', icon: 'account' -%}</span>
-                  <span class="icon-state__secondary">{%- render 'icon', icon: 'close' -%}</span>
+              <div class="header__action-item-content header__action-item-content--flex " aria-label="{{ 'header.general.account' | t }}" aria-controls="account-popover" aria-expanded="false" data-action="toggle-popover">
+                <div class="header-account__icon-wrapper ">
+                  {% render 'icon', icon: 'header-account' %} Sign In
+                </div>
+                {% render 'icon', icon: 'arrow-right'%}
                 </a>
 
-                <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="header__action-item-link hidden-pocket hidden-lap" aria-controls="account-popover" aria-expanded="false" data-action="toggle-popover">{{ 'header.general.account' | t }} {% render 'icon', icon: 'arrow-bottom' %}</a>
-
                 <div id="account-popover" class="popover {% if customer %}popover--logged{% else %}popover--large popover--unlogged{% endif %}" aria-hidden="true">
-                  {%- render 'icon', icon: 'nav-triangle-borderless' -%}
 
                   {%- if customer -%}
                     <div class="popover__inner popover__inner--no-padding">
@@ -402,7 +433,7 @@
                 </div>
               </div>
             </div>
-          {%- endif -%}
+          {%- endif -%} 
 
           <div class="header__action-item header__action-item--cart">
             <a class="header__action-item-link header__cart-toggle" href="{{ routes.cart_url }}" {% if settings.cart_type != 'page' and template != 'cart' %}aria-controls="mini-cart" aria-expanded="false" data-action="toggle-mini-cart"{% endif %} data-no-instant>
@@ -412,11 +443,8 @@
                     {%- render 'icon', icon: 'cart-custom' -%}
                     <span class="header__cart-count">{{ cart.item_count }}</span>
                   </span>
-
                   <span class="icon-state__secondary">{%- render 'icon', icon: 'close' -%}</span>
                 </div>
-
-                <span class="hidden-pocket hidden-lap">{{ 'header.general.cart' | t }}</span>
               </div>
             </a>
 
@@ -426,7 +454,6 @@
           </div>
         </div>
       </div>
-    </div>
   </header>
 
   {%- if section.settings.desktop_navigation_layout == 'inline' and navigation_menu.links.size > 0 -%}
@@ -434,19 +461,27 @@
       <div class="nav-bar__inner">
         <div class="container">
           <ul class="nav-bar__linklist list--unstyled" data-type="menu" role="list">
+            {% assign special_nav_item = section.settings.special_nav_item %}
             {%- for link in navigation_menu.links -%}
-              <li class="nav-bar__item">
+              {% liquid 
+                assign special_nav_item = special_nav_item | downcase | strip
+                assign nav_item = link.title | downcase | strip
+                assign is_special_item = false 
+                if special_nav_item == nav_item 
+                  assign is_special_item = true
+                endif %}
+              <li class="nav-bar__item {% if link.links.size > 0 %} hide-mobile {% endif%}">
                 {%- if link.links.size == 0 -%}
-                  <a href="{{ link.url }}" class="nav-bar__link link" data-type="menuitem">{{ link.title }}</a>
+                  <a href="{{ link.url }}" class="nav-bar__link link {% if is_special_item %} nav-bar__link--special {% endif %}" data-type="menuitem">{{ link.title }}</a>
                 {%- else -%}
                   {%- capture index -%}desktop-menu-0-{{ forloop.index }}{%- endcapture -%}
 
-                  <a href="{{ link.url }}" class="nav-bar__link link" data-type="menuitem" aria-expanded="false" aria-controls="{{ index }}" aria-haspopup="true">
+                  <a href="{{ link.url }}" class="nav-bar__link link nav-bar__link--nested {% if is_special_item %} nav-bar__link--special {% endif %}" data-type="menuitem" aria-expanded="false" aria-controls="{{ index }}" aria-haspopup="true">
+                    {%- render 'icon', icon: 'desktop-hamburger' -%} 
                     {{- link.title -}}
                     {%- render 'icon', icon: 'arrow-bottom' -%}
-                    {%- render 'icon', icon: 'nav-triangle' -%}
                   </a>
-
+                  {% assign special_nav_item = section.settings.special_nav_item %}
                   {%- render 'desktop-menu', menu: link, index: index -%}
                 {%- endif -%}
               </li>
@@ -469,9 +504,7 @@
     z-index: 5;
 
     {%- if section.settings.enable_sticky_header -%}
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
+
     {%- endif -%}
   }
 
@@ -488,9 +521,6 @@
   {%- endif -%}
 
   {%- if settings.header_background == settings.secondary_background -%}
-    .search-bar__top {
-      box-shadow: 1px 1px var(--header-border-color) inset, -1px -1px var(--header-border-color) inset;
-    }
 
     @media screen and (min-width: 1000px) {
       /* This allows to reduce the padding if header background is the same as secondary background to avoid space that is too big */
@@ -558,30 +588,25 @@
       "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
     },
     {
-      "type": "checkbox",
-      "id": "show_locale_selector",
-      "label": "Show language selector",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Currency selector",
-      "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_currency_selector",
-      "label": "Show currency selector",
-      "default": true
-    },
-    {
       "type": "header",
       "content": "Navigation"
     },
     {
+      "type": "text",
+      "id": "special_nav_item",
+      "label": "Name of the menu that you want to highlight ",
+      "info": "You might want to highlight the certain menu like clearance. Just add the name of that menu"
+    },
+    {
       "type": "link_list",
       "id": "navigation_menu",
-      "label": "Menu",
+      "label": "Desktop Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "mobile_menu",
+      "label": "Mobile Menu",
       "default": "main-menu"
     },
     {
@@ -619,17 +644,6 @@
     {
       "type": "header",
       "content": "Mobile navigation"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_navigation_social_media",
-      "label": "Show social media",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "navigation_phone_number",
-      "label": "Phone number text"
     },
     {
       "type": "text",

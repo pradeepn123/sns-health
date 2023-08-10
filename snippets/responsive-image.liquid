@@ -55,7 +55,7 @@
     {%- else -%}
       {%- assign max_width_image = image_width | at_most: max_width -%}
     {%- endif -%}
-    {%- assign max_height_image = max_width_image | divided_by: image_aspect_ratio -%}
+    {%- assign max_height_image = max_width_image | divided_by: image_aspect_ratio | at_most: max_height -%}
   {%- endif -%}
 
   {%- assign max_width_image_float = max_width_image | times: 1.0  -%}

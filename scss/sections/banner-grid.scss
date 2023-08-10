@@ -3,10 +3,7 @@
 @use 'StyleComponents/typography';
 @import 'Token';
 @import 'breakpoints';
-@import 'StyleComponents/text';
-@import 'StyleComponents/text-image';
 @import 'StyleComponents/breakpoints';
-@import 'StyleComponents/custom-carousel';
 
 
 @custom-selector :--heading .banner-grid__heading.text__heading;

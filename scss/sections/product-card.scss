@@ -3,8 +3,6 @@
 @use 'StyleComponents/colors';
 @import 'Token';
 @import 'breakpoints';
-@import 'StyleComponents/layout';
-@import 'StyleComponents/custom-carousel';
 
 
 .product-card {
@@ -13,6 +11,11 @@
   row-gap: 10px;
   justify-content: space-between;
   height:100%;
+  text-align: left;
+
+  &__image {
+    cursor: pointer;
+  }
 
   &__body {
     display: flex;
@@ -24,6 +27,7 @@
     display: flex;
     justify-content: space-between;
     @include use-text-style('body-regular');
+    min-height: 20px;
 
     &-tags {
       column-gap: 10px;
@@ -83,6 +87,7 @@
 
   &__title {
     @include use-text-style('body-regular');
+    text-align: left;
     font-weight: typography.$semi-weight;
     min-height: 28px;
     @media(--md) {

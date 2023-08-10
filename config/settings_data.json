@@ -150,6 +150,12 @@
           "footer-1": {
             "type": "links",
             "settings": {
+              "menu": "shop-by-category"
+            }
+          },
+          "ddd2c909-dc16-413b-8375-d03400f5987c": {
+            "type": "links",
+            "settings": {
               "menu": "popular-brands-footer"
             }
           },
@@ -157,12 +163,6 @@
             "type": "links",
             "settings": {
               "menu": "resources-footer"
-            }
-          },
-          "ddd2c909-dc16-413b-8375-d03400f5987c": {
-            "type": "links",
-            "settings": {
-              "menu": "popular-brands-footer"
             }
           },
           "39813f37-d9f4-41bf-b364-c92ed4a1a8a0": {
@@ -183,8 +183,8 @@
         "block_order": [
           "2c11ad23-6f8d-4fbb-86ce-0e19844818b3",
           "footer-1",
-          "6c65e212-e689-4597-83b7-6456a8660a7b",
           "ddd2c909-dc16-413b-8375-d03400f5987c",
+          "6c65e212-e689-4597-83b7-6456a8660a7b",
           "39813f37-d9f4-41bf-b364-c92ed4a1a8a0",
           "922f7567-eb4b-4432-ae0a-3e7b384c0fe8"
         ],
@@ -465,12 +465,12 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement": false,
+          "show_announcement": true,
           "background": "#000000",
           "text_color": "#ffffff",
           "text": "Free Shipping $49+",
           "text_discount": "| Discount SAVE15 Applied!",
-          "text_position": "center",
+          "text_position": "left",
           "link": "shopify:\/\/pages\/shipping-returns",
           "show_newsletter": false,
           "newsletter_button": "Subscribe & Save",
@@ -2170,7 +2170,6 @@
             "navigation_menu": "main-menu",
             "desktop_navigation_layout": "inline",
             "desktop_navigation_open_trigger": "hover",
-            "navigation_phone_number": "Call us 000-000-0000",
             "navigation_email": "info@yourwebsite.com",
             "search_menu": ""
           }
@@ -2455,7 +2454,6 @@
             "navigation_menu": "main-menu",
             "desktop_navigation_layout": "inline",
             "desktop_navigation_open_trigger": "hover",
-            "navigation_phone_number": "Call us 000-000-0000",
             "navigation_email": "info@yourwebsite.com",
             "search_menu": ""
           }
@@ -2587,8 +2585,8 @@
           "settings": {
             "collection_image_size": "small",
             "default_view_layout": "grid",
-            "show_quick_view": "list",
             "show_quick_buy": "list",
+            "show_quick_view": "list",
             "quick_links": "",
             "filter_type": "tag"
           }
@@ -2604,9 +2602,9 @@
           "settings": {
             "selector_mode": "block",
             "color_mode": "color",
-            "low_inventory_threshold": 0,
             "zoom_effect": "outside",
             "carousel_effect": "fade",
+            "low_inventory_threshold": 0,
             "tab_page_1_handle": "",
             "tab_page_2_handle": "",
             "tab_page_3_handle": "",

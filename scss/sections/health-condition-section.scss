@@ -3,10 +3,6 @@
 @use 'StyleComponents/colors';
 @import 'Token';
 @import 'breakpoints';
-@import 'StyleComponents/text';
-@import 'StyleComponents/layout';
-@import 'StyleComponents/section-header';
-@import 'StyleComponents/custom-carousel';
 @import 'StyleComponents/icon-text';
 
 @custom-selector :--text .health-condition-section__eyebrow.text__eyebrow;

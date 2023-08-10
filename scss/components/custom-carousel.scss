@@ -15,6 +15,7 @@
 
 
   display: flex;
+  z-index: 1;
   &:not(.swiper-pagination-progressbar){
     height: 9px !important;
     bottom: 24px !important;
@@ -102,6 +103,7 @@ img{
   margin-top: 10px;
   @include mixins.container;
   left: 45% !important;
+  z-index: 0;
 }
 
 custom-carousel {

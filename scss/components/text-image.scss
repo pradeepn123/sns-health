@@ -1,4 +1,5 @@
 @use 'StyleComponents/colors';
+@use 'StyleComponents/breakpoints';
 
 .text-image {
     position: relative;
@@ -44,21 +45,21 @@
             }
         }
     }
-}
 
-.image {
-    &--desktop {
-       display: none;
-
-       @media (--md) { 
-        display: block;
-       }
-    }
-    &--mobile {
-        display: block;
- 
-        @media (--md) { 
-         display: none;
+    .image {
+        &--desktop {
+           display: none;
+    
+           @media (--md) { 
+            display: block;
+           }
         }
-     }
+        &--mobile {
+            display: block;
+     
+            @media (--md) { 
+             display: none;
+            }
+         }
+    }
 }

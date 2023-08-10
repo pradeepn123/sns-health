@@ -1,3 +1,5 @@
+{{'announcement-bar.css' | asset_url | stylesheet_tag }}
+
 <script>
   window.addEventListener('load', function() {
     
@@ -98,6 +100,84 @@
               {{- section.settings.newsletter_button | escape -}}
             </button>
           {%- endif -%}
+
+          <div class="announcement-bar__aside-item announcement-bar__aside-item--localization">
+              {%- form 'localization', id: 'localization_form_announcement-bar', class: 'announcement-bar__localization-form' -%}
+                  <div class="announcement-bar__localization-form-item">
+                    <input type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}">
+                    <span class="visually-hidden">{{ 'footer.general.language' | t }}</span>
+  
+                    <div class="value-picker-wrapper">
+                      <button type="button" class="select-button select-button--mini" aria-haspopup="true" aria-expanded="false" aria-controls="announcement-bar-locale-picker" data-action="open-value-picker">
+                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                          <path d="M9.6525 11.9125L7.7475 10.03L7.77 10.0075C9.075 8.55248 10.005 6.87999 10.5525 5.10999H12.75V3.60999H7.5V2.10999H6V3.60999H0.75V5.10249H9.1275C8.625 6.54998 7.83 7.92249 6.75 9.12249C6.0525 8.34999 5.475 7.50249 5.0175 6.60999H3.5175C4.065 7.83249 4.815 8.98749 5.7525 10.03L1.935 13.795L3 14.86L6.75 11.11L9.0825 13.4425L9.6525 11.9125ZM13.875 8.10999H12.375L9 17.11H10.5L11.34 14.86H14.9025L15.75 17.11H17.25L13.875 8.10999ZM11.91 13.36L13.125 10.1125L14.34 13.36H11.91Z" fill="currentColor"/>
+                          </svg>
+                        <span class="hide-desktop">En</span>
+                        <span class="hide-mobile">{{- form.current_locale.endonym_name | capitalize -}}</span>
+                        {%- render 'icon', icon: 'arrow-bottom' -%}
+                      </button>
+  
+                      <div id="announcement-bar-locale-picker" class="value-picker value-picker--small" data-picker-position="top" aria-hidden="true">
+                        {% render 'icon', icon: 'nav-triangle-borderless' %}
+                        <div class="value-picker__inner">
+                          <header class="value-picker__header">
+                            <span class="value-picker__title text--strong">{{ 'footer.general.language' | t }}</span>
+                            <button type="button" class="value-picker__close" data-action="close-value-picker" aria-controls="announcement-bar-locale-picker" aria-label="{{ 'general.accessibility.close' | t }}">{% render 'icon', icon: 'close' %}</button>
+                          </header>
+  
+                          <ul class="value-picker__choice-list" role="list">
+                            {%- for locale in form.available_locales -%}
+                              <li class="value-picker__choice-list-item">
+                                <button type="submit" name="locale_code" class="value-picker__choice-item" value="{{ locale.iso_code }}" {% if locale.iso_code == form.current_locale.iso_code %}aria-current="true"{% endif %}>
+                                  {{- locale.endonym_name | capitalize -}}
+                                </button>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+       
+  
+        
+                  <div class="announcement-bar__localization-form-item">
+                    <input type="hidden" name="currency_code" value="{{ form.current_currency.iso_code }}">
+                    <span class="visually-hidden">{{ 'footer.general.currency' | t }}</span>
+  
+                    <div class="value-picker-wrapper">
+                      <button type="button" class="select-button select-button--mini" aria-haspopup="true" aria-expanded="false" aria-controls="announcement-bar-currency-picker" data-action="open-value-picker">
+                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                          <path d="M9.6675 8.93499C8.3325 8.49249 7.6875 8.21499 7.6875 7.50998C7.6875 6.74499 8.52 6.46749 9.045 6.46749C10.0275 6.46749 10.3875 7.20999 10.47 7.47249L11.655 6.96999C11.5425 6.63248 11.04 5.52998 9.75 5.28999V4.35999H8.25V5.30499C6.39 5.72499 6.3825 7.44999 6.3825 7.52499C6.3825 9.22749 8.07 9.70749 8.895 10.0075C10.08 10.4275 10.605 10.81 10.605 11.53C10.605 12.3775 9.8175 12.7375 9.12 12.7375C7.755 12.7375 7.365 11.335 7.32 11.17L6.075 11.6725C6.5475 13.315 7.785 13.7575 8.25 13.8925V14.86H9.75V13.93C10.05 13.8625 11.925 13.4875 11.925 11.515C11.925 10.4725 11.4675 9.55749 9.6675 8.93499ZM2.25 16.36H0.75V11.86H5.25V13.36H3.39C4.5975 15.1675 6.66 16.36 9 16.36C12.7275 16.36 15.75 13.3375 15.75 9.60999H17.25C17.25 14.17 13.56 17.86 9 17.86C6.21 17.86 3.7425 16.4725 2.25 14.3575V16.36ZM0.75 9.60999C0.75 5.04999 4.44 1.35999 9 1.35999C11.79 1.35999 14.2575 2.74749 15.75 4.86249V2.85999H17.25V7.35999H12.75V5.85999H14.61C13.4025 4.05249 11.34 2.85999 9 2.85999C5.2725 2.85999 2.25 5.88249 2.25 9.60999H0.75Z" fill="currentColor"/>
+                          </svg>
+                          <span class="hide-desktop">$</span>
+                          <span class="hide-mobile">{{ form.current_currency.iso_code }} {% if form.current_currency.symbol %}{{ form.current_currency.symbol }}{% endif %}</span>
+                        {%- render 'icon', icon: 'arrow-bottom' -%}
+                      </button>
+  
+                      <div id="announcement-bar-currency-picker" class="value-picker value-picker--auto value-picker--small" data-picker-position="top" aria-hidden="true">
+                        <div class="value-picker__inner">
+                          <header class="value-picker__header">
+                            <span class="value-picker__title text--strong">{{ 'footer.general.currency' | t }}</span>
+                            <button type="button" class="value-picker__close" data-action="close-value-picker" aria-controls="announcement-bar-currency-picker" aria-label="{{ 'general.accessibility.close' | t }}">{% render 'icon', icon: 'close' %}</button>
+                          </header>
+  
+                          <ul class="value-picker__choice-list" role="list">
+                            {%- for currency in form.available_currencies -%}
+                              <li class="value-picker__choice-list-item">
+                                <button type="submit" name="currency_code" class="value-picker__choice-item" value="{{ currency.iso_code }}" {% if currency.iso_code == form.current_currency.iso_code %}aria-current="true"{% endif %}>
+                                  {{ currency.iso_code }} {% if currency.symbol %}{{ currency.symbol }}{% endif %}
+                                </button>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+      
+              {%- endform -%}
+          </div>
         </div>
       </div>
     </div>

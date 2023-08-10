@@ -3,8 +3,6 @@
 @use 'StyleComponents/colors';
 @import 'Token';
 @import 'breakpoints';
-@import 'StyleComponents/layout';
-@import 'StyleComponents/section-header';
 
 .footer-newsletter {
     margin-top: var(--section-margin);

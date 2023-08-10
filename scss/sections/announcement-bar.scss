@@ -1,0 +1,94 @@
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'breakpoints';
+@import 'Token';
+
+.announcement-bar {
+   &__aside-item {
+    padding-left: 20px;
+    border-left: 1px solid;
+
+    @media(--sm) {
+      padding-left: 50px;
+    }
+   }
+    &__aside-item--localization {
+        display:  flex;
+    }
+    &__localization-form {
+        display: flex;
+
+        &-item {
+           margin-right: 20px;
+           &:last-child {
+            margin-right: 0;
+           }
+
+           .select-button  {
+            background: transparent;
+            @include use-text-style('body-small');
+            font-weight:typography.$medium-weight;
+            border:0;
+            box-shadow: none;
+            outline: none;
+            display: flex;
+            align-items: center;
+            
+            height: 20px;
+            padding:0;
+           @media(--sm) {
+            column-gap: 10px;
+           }
+            svg {
+                position: static;
+                width: 18px;
+                height: 18px;
+                opacity: 1;
+
+                &.block-icon {
+                    display: none;
+
+                    @media(--md) {
+                        display: block;
+                    }
+                }
+
+            }
+           }
+
+           .value-picker {
+            top:30px;
+            bottom: unset;
+            z-index:6;
+            color: colors.$black;
+            height: 100% !important;
+           }
+        }
+    }
+
+    &__content {
+        @include use-text-style('body-small');
+        padding:0;
+    }
+
+    &__inner {
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hide-desktop {
+        display: block;
+        @media(--sm) {
+            display: none;
+        }
+    }
+
+    .hide-mobile {
+        display: none;
+        @media(--sm) {
+            display: block;
+        }
+    }
+}

@@ -2,9 +2,6 @@
 @use 'StyleComponents/typography';
 @import 'Token';
 @import 'breakpoints';
-@import 'StyleComponents/text';
-@import 'StyleComponents/text-image';
-@import 'StyleComponents/custom-carousel';
 
 
 @custom-selector :--heading .banner__heading.text__heading;
@@ -12,10 +9,9 @@
 @custom-selector :--mobile-image .image--mobile.banner-content__image;
 
 .banner {
-
-    margin-top: var(--section-margin);
     @media (--sm) {
         @include mixins.container;
+        margin-top: var(--section-margin);
     }
 
     &__content {

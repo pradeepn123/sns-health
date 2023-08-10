@@ -1,0 +1,204 @@
+{% if title != blank %}
+  <div class="megamenu megamenu--mobile" data-megamenu-mobile data-megamenu-id="{{title}}">
+    <div class="megamenu__wrapper">
+      {% for block in blocks %}
+        {% if block.type == 'menu' %}
+          <div class="megamenu__menu-wrapper">
+            {% assign menu = block.settings.menu %}
+            {% for link in menu.links %}
+              <div class="mobile-menu__nav-list">
+                <div class="mobile-menu__nav-list-item">
+                  {%- if link.levels == 0 -%}
+                    <a href="{{ link.url }}" class="mobile-menu__nav-list-toggle text--strong">{{ link.title }}</a>
+                  {%- else -%}
+                    {%- capture mobile_list_id -%}mobile-list-{% increment mobile_list %}{%- endcapture -%}
+                    <button
+                      class="mobile-menu__nav-list-toggle text--strong"
+                      aria-controls="{{ mobile_list_id }}"
+                      aria-expanded="false"
+                      data-action="toggle-collapsible"
+                      data-close-siblings="false"
+                    >
+                      {{- link.title -}}
+                      {% render 'icon', icon: 'arrow-bottom' %}
+                    </button>
+                    <div id="{{ mobile_list_id }}" class="mobile-menu__nav-collapsible">
+                      <div class="mobile-menu__nav-collapsible-content">
+                        <ul class="mobile-menu__nav" data-type="menu" role="list">
+                          {%- for sub_link in link.links -%}
+                            {%- capture mobile_list_id -%}mobile-list-{% increment mobile_list %}{%- endcapture -%}
+                            <div class="{%if sub_link.levels == 1 %}mobile-menu__nav-list-item {%else%} mobile-menu__nav-list-wrapper" {% endif %}>
+                              {%- if sub_link.levels == 0 -%}
+                                <a href="{{ sub_link.url }}" class="mobile-menu__nav-link text--strong">
+                                  {{- sub_link.title -}}
+                                </a>
+                              {%- else -%}
+                                <button
+                                  class="mobile-menu__nav-list-toggle text--strong"
+                                  aria-controls="{{ mobile_list_id }}"
+                                  aria-expanded="false"
+                                  data-action="toggle-collapsible"
+                                  data-close-siblings="false"
+                                >
+                                  {{- sub_link.title -}}
+                                  {% render 'icon', icon: 'arrow-bottom' %}
+                                </button>
+                                <div id="{{ mobile_list_id }}" class="mobile-menu__nav-collapsible">
+                                  <div class="mobile-menu__nav-collapsible-content">
+                                    <ul class="mobile-menu__nav" data-type="menu" role="list">
+                                      {%- for sub_sub_link in sub_link.links -%}
+                                        <li class="mobile-menu__nav-item">
+                                          <a
+                                            href="{{ sub_sub_link.url }}"
+                                            class="mobile-menu__nav-link"
+                                            data-type="menuitem"
+                                          >
+                                            {{- sub_sub_link.title -}}
+                                          </a>
+                                        </li>
+                                      {%- endfor -%}
+                                    </ul>
+                                  </div>
+                                </div>
+                              {%- endif -%}
+                            </div>
+                          {%- endfor -%}
+                        </ul>
+                      </div>
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if block.type == 'banner' %}
+          {% liquid
+            assign id = block.id
+            assign color = block.settings.color
+            assign eyebrow = block.settings.eyebrow | default: blank
+            assign heading = block.settings.heading
+            assign subheading = block.settings.subheading
+            assign cta_text = block.settings.cta_text
+            assign cta_url = block.settings.cta_url
+            assign image_desktop = block.settings.image_desktop
+            assign image_mobile = block.settings.image_mobile
+            assign inline_heading = block.settings.inline_heading
+          %}
+          {% render 'image-with-text-overlay',
+            wrapper_class: 'megamenu-content',
+            id: id,
+            color: color,
+            eyebrow: eyebrow,
+            heading: heading,
+            subheading: subheading,
+            cta_text: cta_text,
+            cta_url: cta_url,
+            image_desktop: image_desktop,
+            image_mobile: image_mobile,
+            text_wrapper_class: 'megamenu',
+            inline_heading: inline_heading,
+            mobile_aspect_ratio: 1.19,
+            mobile_crop: true,
+            button_type: button_type,
+            button_background_type: button_background_type,
+            cta_arrow: true
+          %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="megamenu megamenu--desktop" data-megamenu-desktop data-megamenu-id="{{title}}">
+    <div class="megamenu__wrapper">
+      {% for block in blocks %}
+        {% if block.type == 'menu' %}
+          <div class="megamenu__menu-wrapper">
+            {% assign menu = block.settings.menu %}
+            {% for link in menu.links %}
+              {% if link.links.size == 0 %}
+                <a href="{{link.url}}" class="desktop-menu__title">{{ link.title }} </a>
+              {% else %}
+                {% if link.levels == 2 %}
+                  <a href="{{ link.url }}" class="desktop-menu__title desktop-menu__title--row">{{ link.title }}</a>
+                    {%- for sub_link in link.links -%}
+                      <div class="desktop-menu__nav-list-item">
+                      {%- capture mobile_list_id -%}mobile-list-{% increment mobile_list %}{%- endcapture -%}
+                      <a href="{{ sub_link.url }}" class="desktop-menu__title">{{ sub_link.title }}</a>
+                      <div class="desktop-menu__subnav-wrapper">
+                        {% if sub_link.links.size == 0 %}
+                          <a href="{{ sub_link.url }}" class="desktop-menu__nav-link">{{ sub_link.title }}</a>
+                        {% else %}
+                          {%- for sub_sub_link in sub_link.links -%}
+                            <li class="desktop-menu__nav-item">
+                              <a href="{{ sub_sub_link.url }}" class="desktop-menu__nav-link">
+                                {{- sub_sub_link.title -}}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        {% endif %}
+                      </div>
+                    </div>
+                    {%- endfor -%}
+                {% else %}
+                  <div class="desktop-menu__nav-list-item">
+                      <a href="{{link.url}}" class="desktop-menu__title">{{ link.title }} </a>
+                    {%- for sub_link in link.links -%}
+                      {%- capture mobile_list_id -%}mobile-list-{% increment mobile_list %}{%- endcapture -%}
+                      <div class="desktop-menu__subnav-wrapper">
+                        {% if sub_link.links.size == 0 %}
+                          <a href="{{ sub_link.url }}" class="desktop-menu__nav-link">{{ sub_link.title }}</a>
+                        {% else %}
+                          {%- for sub_sub_link in sub_link.links -%}
+                            <li class="desktop-menu__nav-item">
+                              <a href="{{ sub_sub_link.url }}" class="desktop-menu__nav-link">
+                                {{- sub_sub_link.title -}}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        {% endif %}
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if block.type == 'banner' %}
+          {% liquid
+            assign id = block.id
+            assign color = block.settings.color
+            assign eyebrow = block.settings.eyebrow | default: blank
+            assign heading = block.settings.heading
+            assign subheading = block.settings.subheading
+            assign cta_text = block.settings.cta_text
+            assign cta_url = block.settings.cta_url
+            assign image_desktop = block.settings.image_desktop
+            assign image_mobile = block.settings.image_mobile
+            assign inline_heading = block.settings.inline_heading
+          %}
+          {% render 'image-with-text-overlay',
+            wrapper_class: 'megamenu-content',
+            id: id,
+            color: color,
+            eyebrow: eyebrow,
+            heading: heading,
+            subheading: subheading,
+            cta_text: cta_text,
+            cta_url: cta_url,
+            image_desktop: image_desktop,
+            image_mobile: image_mobile,
+            text_wrapper_class: 'megamenu',
+            inline_heading: inline_heading,
+            desktop_crop: true,
+            button_type: button_type,
+            desktop_aspect_ratio: 0.8,
+            button_background_type: button_background_type,
+            cta_arrow: true,
+            max_height: 450
+          %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

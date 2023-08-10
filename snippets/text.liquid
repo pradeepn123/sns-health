@@ -27,7 +27,7 @@
      {% if button_type %} button--{{button_type}} {% endif %}
      {% if button_background_type %} button--{{button_background_type}} {% endif %}
      " {%if cta_url %} href="{{cta_url}} {% endif%}">{{ cta_text }} 
-     {% if button_type == "text" or button_type == "outline"%}{% render 'chevron-right-icon'%} {% endif%}
+     {% if button_type == "text" or button_type == "outline" or cta_arrow == true %}{% render 'chevron-right-icon'%} {% endif%}
      </a>
    {% endif %}
 </div> 

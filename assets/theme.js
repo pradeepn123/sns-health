@@ -1205,7 +1205,23 @@
         var menuToOpen = Dom.getSiblings(target, '[aria-hidden]')[0];
 
         var callback = function callback() {
+          const isopened = document.querySelector('.nav-dropdown[aria-hidden="false"]');
+          if(!isopened) {
+          //make first megamenu active 
+          document.querySelectorAll('[data-trigger-first-megamenu]').forEach(trigger => {
+            trigger.ariaExpanded = true
+          })
+
+          document.querySelectorAll('[data-target-first-megamenu]').forEach(target => {
+            target.ariaHidden = false
+          })
+        }
+        document.querySelectorAll('.popover')?.forEach(pops => {
+          pops.ariaHidden = true;
+        })
+
           target.setAttribute('aria-expanded', 'true');
+          target.closest('[data-target-parent]')?.classList.add('active');
           target.parentNode.classList.add('is-dropdown-open');
           menuToOpen.setAttribute('aria-hidden', 'false'); // If this menu was scheduled for deactivation, we remove the scheduling as it is now meant to open
 
@@ -1281,6 +1297,9 @@
         var callback = function callback() {
           target.classList.remove('is-dropdown-open');
           target.querySelector('[data-type="menuitem"]').setAttribute('aria-expanded', 'false');
+          if( target.closest('[data-target-parent]')?.classList.contains('active')) {
+            target.closest('[data-target-parent]')?.classList.remove('active');
+          }
           var menuToClose = target.querySelector('[aria-hidden]');
           menuToClose.setAttribute('aria-hidden', 'true');
           target.closest('[data-type="menu"]').classList.remove('nav-dropdown--glued'); // If on click, we also close all sub-menus that may be open
@@ -1664,6 +1683,7 @@
         document.querySelector('[aria-controls="mobile-collection-filters"]').setAttribute('aria-expanded', 'false');
         document.getElementById('mobile-collection-filters').setAttribute('aria-hidden', 'true');
         document.body.classList.remove('no-mobile-scroll');
+
       }
     }, {
       key: "_computeDrawerHeight",
@@ -1998,6 +2018,7 @@
 
         Accessibility.trapFocus(this.miniCartElement, 'mini-cart');
         document.body.classList.add('no-mobile-scroll');
+
       }
     }, {
       key: "_closeMiniCart",
@@ -2013,6 +2034,7 @@
         this.miniCartElement.setAttribute('aria-hidden', 'true');
         this.isMiniCartOpen = false;
         document.body.classList.remove('no-mobile-scroll');
+
       }
     }, {
       key: "_calculateMiniCartHeight",
@@ -2216,8 +2238,8 @@
         var _this3 = this;
 
         this.itemCount += event.detail.quantity;
-        /* Add the quantity added */
-
+              /* Add the quantity added */
+  
         this._onCartRefresh().then(function () {
           if (window.theme.pageType !== 'cart') {
             // If we don't have the sticky header enabled, we scroll to top to make sure it is visible
@@ -2237,6 +2259,7 @@
 
             if (window.theme.pageType !== 'cart' && window.theme.cartType === 'drawer') {
               _this3._openMiniCart();
+
             }
           }
         });
@@ -2282,6 +2305,8 @@
       this.delegateElement = new Delegate(this.element);
       this.delegateRoot = new Delegate(document.documentElement);
       this.mobileMenuElement = this.element.querySelector('.mobile-menu');
+      this.announcementBar = document.querySelector('.announcement-bar')?.clientHeight || 0;
+      this.overlay = document.querySelector('.overlay');
       this.mobileMenuToggleElement = this.element.querySelector("[aria-controls=\"".concat(this.mobileMenuElement.id, "\"]"));
       this.isOpen = false;
 
@@ -2311,7 +2336,7 @@
         this.isOpen = !this.isOpen;
         this.mobileMenuToggleElement.setAttribute('aria-expanded', this.isOpen ? 'true' : 'false');
         this.mobileMenuElement.setAttribute('aria-hidden', this.isOpen ? 'false' : 'true');
-
+        this.overlay?.classList?.toggle('overlay--active');
         if (!this.isOpen) {
           this.mobileMenuElement.style.maxHeight = ''; // If closed, we need to close all sub-menus
 
@@ -2319,18 +2344,27 @@
             item.classList.remove('is-open');
           });
           document.body.classList.remove('no-mobile-scroll');
+          document.querySelector('.shopify-section__header.overlay-active')?.classList.remove('overlay-active');
+
+       
         } else {
           // We need to restrict the height
+          document.querySelector('.shopify-section__header').classList.add('overlay-active');
           this._calculateMaxHeight();
-
           document.body.classList.add('no-mobile-scroll');
+ 
         }
       }
     }, {
       key: "_openPanel",
       value: function _openPanel(event, target) {
+        const childDrawersHolder = document.querySelector('[data-child-drawers]');
+        const drawers = childDrawersHolder?.querySelectorAll('.mobile-menu__panel.is-open');
+        drawers.forEach(drawer => {
+          drawer.classList.remove('is-open');
+        })
         target.setAttribute('aria-expanded', 'true');
-        this.element.querySelector("#".concat(target.getAttribute('aria-controls'))).classList.add('is-open');
+        document.querySelector("#".concat(target.getAttribute('aria-controls'))).classList.add('is-open');
       }
     }, {
       key: "_closePanel",
@@ -2345,7 +2379,7 @@
       key: "_calculateMaxHeight",
       value: function _calculateMaxHeight() {
         if (this.isOpen) {
-          this.mobileMenuElement.style.maxHeight = "".concat(window.innerHeight - document.querySelector('.header').getBoundingClientRect().bottom, "px");
+          this.mobileMenuElement.style.maxHeight = "".concat(window.innerHeight - (document.querySelector('.header')).clientHeight - this.announcementBar, "px");
         }
       }
     }, {
@@ -12946,6 +12980,7 @@
     }, {
       key: "_open",
       value: function _open() {
+
         document.querySelector("[data-action=\"open-value-picker\"][aria-controls=\"".concat(this.id, "\"]")).setAttribute('aria-expanded', 'true');
         document.getElementById(this.id).setAttribute('aria-hidden', 'false'); // This is quite ugly, but in order to avoid an issue with the header that has a higher z-index, we have to temporarily reduce
         // it while we have the element open
@@ -12969,6 +13004,7 @@
         headerElement.style.zIndex = '';
         this.isOpen = false;
         document.body.classList.remove('no-mobile-scroll');
+
       }
     }, {
       key: "_selectValue",
@@ -13031,6 +13067,8 @@
 
       this.element = element;
       this.domDelegate = new Delegate(this.element);
+      this.localeValuePicker = new ValuePicker('announcement-bar-locale-picker');
+      this.currencyValuePicker = new ValuePicker('announcement-bar-currency-picker');
       this.options = JSON.parse(this.element.getAttribute('data-section-settings'));
       this.isOpen = false; // We set the new width of the announcement bar button if any
 
@@ -13060,6 +13098,8 @@
     }, {
       key: "onUnload",
       value: function onUnload() {
+        this.localeValuePicker.destroy();
+        this.currencyValuePicker.destroy();
         this.domDelegate.off();
       }
     }, {
@@ -14397,12 +14437,13 @@
     }, {
       key: "toggleMobileSearch",
       value: function toggleMobileSearch() {
+        this.isSearchOpen = false;
         if (this.isSearchOpen) {
-          this.headerElement.classList.remove('header--search-expanded');
           this.element.classList.remove('is-visible');
+          this._onFocusOut();
         } else {
-          this.headerElement.classList.add('header--search-expanded');
           this.element.classList.add('is-visible');
+          this._onInputFocus();
         }
 
         this.isSearchOpen = !this.isSearchOpen;
@@ -14411,11 +14452,13 @@
       key: "_unfixMobileSearch",
       value: function _unfixMobileSearch() {
         this.element.classList.remove('is-fixed');
+        document.querySelector('.shopify-section__header--fixed')?.classList.remove('shopify-section__header--fixed');
         this.closeButtonElement.style.width = '';
         this.searchBarElement.classList.remove('is-expanded');
         this.searchResultsElement.setAttribute('aria-hidden', 'true');
         this.inputElement.classList.remove('is-filled');
         document.body.classList.remove('no-mobile-scroll');
+
 
         if (this.searchMenuElement) {
           this.searchMenuElement.setAttribute('aria-hidden', 'true');
@@ -14481,7 +14524,8 @@
         }
 
         this.element.classList.remove('is-fixed');
-        document.body.classList.remove('no-mobile-scroll'); // event.relatedTarget allows to get the new element that get focus. If it's outside the div that contains the search, we close it
+        document.body.classList.remove('no-mobile-scroll');
+ // event.relatedTarget allows to get the new element that get focus. If it's outside the div that contains the search, we close it
 
         if (!this.element.contains(event.relatedTarget)) {
           if (this.searchMenuElement) {
@@ -14649,7 +14693,7 @@
       this.element = element;
       this.delegateElement = new Delegate(this.element);
       this.options = JSON.parse(this.element.getAttribute('data-section-settings'));
-      this.searchBar = new SearchBar(this.element.querySelector('.header__search-bar-wrapper'));
+      this.searchBar = new SearchBar(this.element.querySelector('.header__search-bar-wrapper--mobile'));
       this.cart = new Cart(this.element.querySelector('.header__action-item--cart'), {
         useStickyHeader: this.options['useStickyHeader']
       }); // We create the desktop and mobile navigation conditionally as we've found that some merchants may have no menu

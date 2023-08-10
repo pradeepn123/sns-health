@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "webpack",
-    "deploy": "webpack && shopify theme push --path dist",
+    "deploy": "webpack && shopify theme push",
     "start": "NODE_ENV=development webpack --watch",
     "eslint": "eslint 'src/js/**'",
     "stylelint": "stylelint '**/*.scss'",

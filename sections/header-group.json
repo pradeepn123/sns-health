@@ -1,0 +1,146 @@
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "enable_sticky_header": true,
+        "logo": "shopify:\/\/shop_images\/logo_70dd2596-6d15-4b19-8837-dc103f75ec17.png",
+        "logo_max_width": 140,
+        "mobile_logo_max_width": 100,
+        "special_nav_item": "Clearance",
+        "navigation_menu": "megamenu-desktop",
+        "mobile_menu": "megamenu-mobile",
+        "desktop_navigation_layout": "inline",
+        "desktop_navigation_open_trigger": "hover",
+        "navigation_email": "info@snshealth.com",
+        "show_condensed_search": true,
+        "show_search_filter": true,
+        "search_menu": "",
+        "show_search_menu_title": true
+      }
+    },
+    "cf02a161-1eef-4056-b6c2-7b12a36239f2": {
+      "type": "megamenu",
+      "blocks": {
+        "9e79c21c-c0ef-4b23-bd94-e5afdc0b217a": {
+          "type": "menu",
+          "settings": {
+            "menu": "sport-navigation"
+          }
+        },
+        "0ac21017-411f-487b-97a0-304159da7f86": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/OM-Nutrition.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/OM-Nutrition.jpg",
+            "eyebrow": "",
+            "heading": "Get <br> 20% off",
+            "subheading": "",
+            "color": "#00aa00",
+            "cta_text": "Shop",
+            "cta_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "9e79c21c-c0ef-4b23-bd94-e5afdc0b217a",
+        "0ac21017-411f-487b-97a0-304159da7f86"
+      ],
+      "settings": {
+        "title": "megamenu-sport"
+      }
+    },
+    "8b4fd574-7ef8-48da-a983-71b280d8e161": {
+      "type": "megamenu",
+      "blocks": {
+        "8207700a-89eb-4c92-b266-fb054813688c": {
+          "type": "menu",
+          "settings": {
+            "menu": "vitamins-and-suplements"
+          }
+        },
+        "a5a47b33-158d-4fab-a175-517b1e3feb68": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/GG-640.png",
+            "image_mobile": "shopify:\/\/shop_images\/GG-640.png",
+            "eyebrow": "",
+            "heading": "",
+            "subheading": "",
+            "color": "",
+            "cta_text": "",
+            "cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "8207700a-89eb-4c92-b266-fb054813688c",
+        "a5a47b33-158d-4fab-a175-517b1e3feb68"
+      ],
+      "settings": {
+        "title": "megamenu-Vitamins"
+      }
+    },
+    "ffe7636d-671d-48ae-beb8-d5dce7d4b41b": {
+      "type": "megamenu",
+      "blocks": {
+        "2e94fb5e-41e0-4f2a-9984-307674b47fb2": {
+          "type": "menu",
+          "settings": {
+            "menu": "food-drinks"
+          }
+        }
+      },
+      "block_order": [
+        "2e94fb5e-41e0-4f2a-9984-307674b47fb2"
+      ],
+      "settings": {
+        "title": "megamenu-food-drinks"
+      }
+    },
+    "2b6a02d3-f8cc-490d-93b0-65cc5b7a5809": {
+      "type": "megamenu",
+      "blocks": {
+        "6570bbbf-7124-4a96-b8b1-8be9db608d03": {
+          "type": "menu",
+          "settings": {
+            "menu": "gym-accessories"
+          }
+        }
+      },
+      "block_order": [
+        "6570bbbf-7124-4a96-b8b1-8be9db608d03"
+      ],
+      "settings": {
+        "title": "megamenu-gym-accessories"
+      }
+    },
+    "d9f1743c-ac85-46e4-91b2-616e2478dac7": {
+      "type": "megamenu",
+      "blocks": {
+        "678cef90-ecba-4ecc-acc5-15ed5371ad2e": {
+          "type": "menu",
+          "settings": {
+            "menu": "personal-care"
+          }
+        }
+      },
+      "block_order": [
+        "678cef90-ecba-4ecc-acc5-15ed5371ad2e"
+      ],
+      "settings": {
+        "title": "megamenu-personal-care"
+      }
+    }
+  },
+  "order": [
+    "header",
+    "cf02a161-1eef-4056-b6c2-7b12a36239f2",
+    "8b4fd574-7ef8-48da-a983-71b280d8e161",
+    "ffe7636d-671d-48ae-beb8-d5dce7d4b41b",
+    "2b6a02d3-f8cc-490d-93b0-65cc5b7a5809",
+    "d9f1743c-ac85-46e4-91b2-616e2478dac7"
+  ]
+}

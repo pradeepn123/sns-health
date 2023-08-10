@@ -19,7 +19,9 @@
         image: desktop_image,
         aspect_ratio: desktop_aspect_ratio,
         crop: desktop_crop
-        fill: fill
+        contain: desktop_contain
+        fill: fill,
+        max_height: max_height
       %}
   </div>
   <div class="image image--mobile {{wrapper_class}}__image">
@@ -27,7 +29,9 @@
         image: mobile_image,
         aspect_ratio: mobile_aspect_ratio,
         crop: mobile_crop
-        fill: fill
+        contain: mobile_contain
+        fill: fill,
+        max_height: max_height
       %}
     </div>
 </div>
@@ -46,7 +50,7 @@
         cta_url: cta_url,
         button_type: button_type
         button_background_type: button_background_type,
-       
+        cta_arrow: cta_arrow
       %}
   </div>
 </div>

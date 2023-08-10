@@ -172,7 +172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         })();
       </script>
     {%- endif -%}
-    <script type="sT_lazyLoad__init">
+    <script type="sT_lazyLoad__init" async>
       (function(d){var s = d.createElement("script");s.setAttribute("data-account", "zP5oVTsQPt");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)
     </script><noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
   
@@ -194,6 +194,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {% render 'gsf-conversion-pixels' %}
     {% render 'speed-optimization' %}
+    <link rel="stylesheet" href="{{ 'common-imports.css' | asset_url }}">
   </head>
 
   <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
@@ -206,9 +207,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {% section 'popups' %}
     {%- endunless -%}
 
-    {% section 'header' %}
+    {% sections 'header-group' %}
 
     <main id="main" role="main">
+      <div class="overlay"> </div>
       {{ content_for_layout }}
       <limespot></limespot>
     </main>
@@ -234,6 +236,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% render 'product-card-template' %}
     <!--end-boost-pfs-js-->
     <script type="sT_lazyLoad__init" data-src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
+
     <script type="sT_lazyLoad__init">
       var klaviyo = klaviyo || [];
       klaviyo.init({
@@ -270,6 +273,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   </script>
   {% include 'monster-mo-script' %}
+  <script src="{{'vendors.js' | asset_url }}" defer></script>  
   <script src="{{'global.js' | asset_url }}" defer></script>  
+  {% render 'rebuy-product-card' %}
 </body>
 </html>
