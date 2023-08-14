@@ -200,7 +200,6 @@
       },
       "slideshow": {
         "type": "slideshow",
-        "disabled": true,
         "blocks": {
           "0ba27629-0cb5-4216-b413-2c6796a39ed0": {
             "type": "image",
@@ -297,6 +296,7 @@
           "cb35534e-5e4c-434a-afa9-6fdd50803ca9",
           "2fd6e37e-2330-483c-b394-fe02bd629ae2"
         ],
+        "disabled": true,
         "settings": {
           "edge_to_edge": true,
           "fixed_larger": true,
@@ -562,7 +562,6 @@
       },
       "16147211343bf49178": {
         "type": "logo-list",
-        "disabled": true,
         "blocks": {
           "16147211343bf49178-1": {
             "type": "logo",
@@ -615,6 +614,7 @@
           "16147211343bf49178-4",
           "16147211343bf49178-5"
         ],
+        "disabled": true,
         "settings": {
           "title": "Popular Brands",
           "link_title": "View All",
@@ -1108,7 +1108,6 @@
       },
       "16575689909e3ec3e4": {
         "type": "offers",
-        "disabled": true,
         "blocks": {
           "16575689909e3ec3e4-0": {
             "type": "offer",
@@ -1137,6 +1136,7 @@
           "16575689909e3ec3e4-1",
           "a840b536-d2ab-4fd9-9afc-9336d73e088f"
         ],
+        "disabled": true,
         "settings": {
           "items_per_row": 3,
           "stack_mobile": true
@@ -1172,7 +1172,6 @@
       },
       "62ab2e0b-5301-4cd6-90c7-2bb885cff993": {
         "type": "slideshow",
-        "disabled": true,
         "blocks": {
           "e2d07ad1-541a-43af-b01e-8c11c3d865db": {
             "type": "image",
@@ -1231,6 +1230,7 @@
           "62ab2e0b-5301-4cd6-90c7-2bb885cff993-1675806953dafd265b-0",
           "62ab2e0b-5301-4cd6-90c7-2bb885cff993-1675806953dafd265b-1"
         ],
+        "disabled": true,
         "settings": {
           "edge_to_edge": false,
           "fixed_larger": false,
