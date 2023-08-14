@@ -13072,30 +13072,10 @@
       this.options = JSON.parse(this.element.getAttribute('data-section-settings'));
       this.isOpen = false; // We set the new width of the announcement bar button if any
 
-      if (this.options['showNewsletter']) {
-        document.documentElement.style.setProperty('--announcement-bar-button-width', this.element.querySelector('.announcement-bar__button').clientWidth + 'px');
-      } else {
-        document.documentElement.style.removeProperty('--announcement-bar-button-width');
-      }
-
       this._attachListeners();
     }
 
     _createClass(AnnouncementBarSection, [{
-      key: "onSelect",
-      value: function onSelect() {
-        if (this.options['showNewsletter'] && !this.isOpen) {
-          this._toggleNewsletter();
-        }
-      }
-    }, {
-      key: "onDeselect",
-      value: function onDeselect() {
-        if (this.options['showNewsletter'] && this.isOpen) {
-          this._toggleNewsletter();
-        }
-      }
-    }, {
       key: "onUnload",
       value: function onUnload() {
         this.localeValuePicker.destroy();

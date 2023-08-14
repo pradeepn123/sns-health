@@ -1,14 +1,30 @@
 <script>
-  import { onMount } from 'svelte';
-  import { customerLocation } from 'JsComponents/get-data';
+  import { onMount } from "svelte";
+  import { customerLocation } from "JsComponents/get-data";
 
-  let country = null;
+  let country;
+  export let data;
+  const blockData = data;
 
+  const handleLocationBasedAnnouncement = () => {
+    for (let countryBlock in blockData) {
+      if (blockData[countryBlock]?.handle?.includes(country)) {
+        const announcementBar = document.querySelector(
+          "[data-announcement-bar]"
+        );
+        announcementBar.classList.remove("hidden");
+        announcementBar
+          ?.querySelectorAll("[ data-announcement-text]")
+          ?.forEach((text) => {
+            text.innerHTML = blockData[countryBlock]?.text;
+          });
+        break;
+      }
+    }
+  };
+  
   onMount(async () => {
     country = await customerLocation();
+    handleLocationBasedAnnouncement();
   });
-   
 </script>
-
-<h1>Hello {country}!</h1>
-

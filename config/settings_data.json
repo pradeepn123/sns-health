@@ -464,6 +464,26 @@
       },
       "announcement-bar": {
         "type": "announcement-bar",
+        "blocks": {
+          "eb1afa66-0259-4a7d-aaf3-61073dc8e22b": {
+            "type": "country_specific",
+            "settings": {
+              "country_iso": "IN",
+              "announcement_text": "This is only available on india"
+            }
+          },
+          "599da0e9-6abf-4fb3-ad51-f675e23a4ba0": {
+            "type": "country_specific",
+            "settings": {
+              "country_iso": "CA,US",
+              "announcement_text": "This is for canada and USA"
+            }
+          }
+        },
+        "block_order": [
+          "eb1afa66-0259-4a7d-aaf3-61073dc8e22b",
+          "599da0e9-6abf-4fb3-ad51-f675e23a4ba0"
+        ],
         "settings": {
           "show_announcement": true,
           "background": "#000000",
@@ -471,11 +491,7 @@
           "text": "Free Shipping $49+",
           "text_discount": "| Discount SAVE15 Applied!",
           "text_position": "left",
-          "link": "shopify:\/\/pages\/shipping-returns",
-          "show_newsletter": false,
-          "newsletter_button": "Subscribe & Save",
-          "newsletter_title": "Newsletter",
-          "newsletter_content": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          "link": "shopify:\/\/pages\/shipping-returns"
         }
       },
       "1542984811767": {
@@ -2347,13 +2363,8 @@
         "announcement-bar": {
           "type": "announcement-bar",
           "settings": {
-            "background": "#1e2d7d",
-            "text_color": "#ffffff",
             "text": "Announce something here",
-            "link": "",
-            "newsletter_button": "Subscribe & Save",
-            "newsletter_title": "Newsletter",
-            "newsletter_content": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+            "link": ""
           }
         },
         "1542984811767": {
@@ -2619,13 +2630,8 @@
         "announcement-bar": {
           "type": "announcement-bar",
           "settings": {
-            "background": "#3a2a2f",
-            "text_color": "#ffffff",
             "text": "Announce something here",
-            "link": "",
-            "newsletter_button": "Subscribe & Save",
-            "newsletter_title": "Newsletter",
-            "newsletter_content": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+            "link": ""
           }
         },
         "1542984811767": {

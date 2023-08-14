@@ -1,1 +1,86 @@
-.banner-grid__wrapper{margin-top:var(--grid-row-gap)}@media(min-width: 768px){.banner-grid__wrapper{max-width:calc(100% - 2*var(--base-margin));margin-left:auto;margin-right:auto}}@media(min-width: 768px)and (min-width: 1440px){.banner-grid__wrapper{max-width:calc(1440px - 2*var(--base-margin))}}.banner-grid .banner-grid-content__text-wrapper.text-image__text-wrapper{padding:var(--section-content-margin)}.banner-grid .banner-grid__heading.text__heading{margin-bottom:2px}.banner-grid__cta.button{position:absolute;bottom:0;width:100%;text-align:left;left:0;padding-top:20px;padding-bottom:20px;display:none}@media(min-width: 1024px){.banner-grid__cta.button{display:block}}.banner-grid__cta.button:hover{background:#ed1c24 !important}.banner-grid .text-image__text-wrapper{width:100%;height:auto;height:initial;top:auto;top:initial;bottom:var(--section-content-margin);-webkit-transform:none;transform:none;-webkit-transform:initial;transform:initial}@media(min-width: 1024px){.banner-grid .text-image__text-wrapper{height:100%;top:50%;bottom:auto;bottom:initial;-webkit-transform:translateY(-50%);transform:translateY(-50%)}}.banner-grid .banner-grid-content__text-image:hover{cursor:pointer}.banner-grid .banner-grid-content__text-image:hover .banner-grid__cta.button{background:#ed1c24 !important}.banner-grid .swiper-initialized{padding-left:var(--base-margin);padding-right:var(--base-margin)}@media(min-width: 1024px){.banner-grid .swiper-initialized{padding-left:0;padding-right:0}}@media(min-width: 768px){.banner-grid .swiper-initialized{padding-left:0 !important;padding-right:0 !important}}
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/banner-grid.scss ***!
+  \***************************************************************************************************************************************************************************************************************************/
+.banner-grid__wrapper {
+  margin-top: var(--grid-row-gap);
+}
+@media (min-width: 768px) {
+  .banner-grid__wrapper {
+    max-width: calc(100% - 2 * var(--base-margin));
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 768px) and (min-width: 1440px) {
+  .banner-grid__wrapper {
+    max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}
+.banner-grid .banner-grid-content__text-wrapper.text-image__text-wrapper {
+  padding: var(--section-content-margin);
+}
+.banner-grid .banner-grid__heading.text__heading {
+  margin-bottom: 2px;
+}
+.banner-grid__cta.button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  left: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: none;
+}
+@media (min-width: 1024px) {
+  .banner-grid__cta.button {
+    display: block;
+  }
+}
+.banner-grid__cta.button:hover {
+  background: #ED1C24 !important;
+}
+.banner-grid .text-image__text-wrapper {
+  width: 100%;
+  height: auto;
+  height: initial;
+  top: auto;
+  top: initial;
+  bottom: var(--section-content-margin);
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transform: initial;
+          transform: initial;
+}
+@media (min-width: 1024px) {
+  .banner-grid .text-image__text-wrapper {
+    height: 100%;
+    top: 50%;
+    bottom: auto;
+    bottom: initial;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+.banner-grid .banner-grid-content__text-image:hover {
+  cursor: pointer;
+}
+.banner-grid .banner-grid-content__text-image:hover .banner-grid__cta.button {
+  background: #ED1C24 !important;
+}
+.banner-grid .swiper-initialized {
+  padding-left: var(--base-margin);
+  padding-right: var(--base-margin);
+}
+@media (min-width: 1024px) {
+  .banner-grid .swiper-initialized {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (min-width: 768px) {
+  .banner-grid .swiper-initialized {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

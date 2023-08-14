@@ -4,6 +4,9 @@
 @import 'Token';
 
 .announcement-bar {
+    &.hidden {
+        display: none !important; 
+    }
    &__aside-item {
     padding-left: 20px;
     border-left: 1px solid;

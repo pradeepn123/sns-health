@@ -1,9 +1,21 @@
-export default (Component,container) => {
+export default (Component, container, propsEl) => {
+	//component is a pre-compiled class
+	//container is where you want to inject component
+	//propEl pass prop when injecting
+
 	const appContainer = document.querySelector(container);
-	if(appContainer) {
-const instance = new Component({
-	target: document.querySelector(container)
-});
-return instance;
-}
+	let props = {};
+	if (appContainer) {
+		if (propsEl) {
+			props = JSON.parse(document.querySelector(propsEl)?.innerHTML) || {}; //get json from the script id 
+		}
+		//inject component into container
+		const instance = new Component({
+			target: document.querySelector(container),
+			props: {
+				data: props?.data //pass the prop on data prop as default
+			}
+		});
+		return instance;
+	}
 }

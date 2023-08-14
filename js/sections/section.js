@@ -1,4 +1,4 @@
-import announcementBar from "./announcement-bar";
+import announcementBar from "./announcementBar";
  
 document.addEventListener('DOMContentLoaded', () => {
     announcementBar();
