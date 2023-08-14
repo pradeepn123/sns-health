@@ -227,14 +227,6 @@
             "url": ""
           }
         },
-        "feb96edf-55fc-4ac7-8c1d-9676ad16538a": {
-          "type": "category",
-          "settings": {
-            "icon": "",
-            "eyebrow": "",
-            "url": ""
-          }
-        },
         "244511a2-1a34-4a6d-be19-699a39ff68fc": {
           "type": "category",
           "settings": {
@@ -259,7 +251,6 @@
         "20ff6541-2f1e-49fd-8b4c-f2bab3a74a62",
         "6d3de7bc-222f-43f4-83da-0e03b2f0c134",
         "bdbb866b-1963-4367-961c-b04cb5d0b47f",
-        "feb96edf-55fc-4ac7-8c1d-9676ad16538a",
         "244511a2-1a34-4a6d-be19-699a39ff68fc"
       ],
       "settings": {
