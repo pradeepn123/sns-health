@@ -475,7 +475,7 @@
           "599da0e9-6abf-4fb3-ad51-f675e23a4ba0": {
             "type": "country_specific",
             "settings": {
-              "country_iso": "CA,US",
+              "country_iso": "GB",
               "announcement_text": "This is for canada and USA"
             }
           }
