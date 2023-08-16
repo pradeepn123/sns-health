@@ -329,46 +329,6 @@
         "title": "Get 10% Off Your First Order",
         "subheading": "<p>Subscribe to our newsletter and get 10% off. Plus, be the first to find out about new products and sales from SNS Health.<\/p>"
       }
-    },
-    "b14d34d0-4c10-473f-b5ef-0537d0477ccf": {
-      "type": "shop-by-health-condition",
-      "blocks": {
-        "04a05d05-73f4-42e8-bacb-e65a0c4fbea0": {
-          "type": "health_condition",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Frame_8348.png",
-            "eyebrow": "Hello world",
-            "url": ""
-          }
-        }
-      },
-      "block_order": [
-        "04a05d05-73f4-42e8-bacb-e65a0c4fbea0"
-      ],
-      "settings": {
-        "heading": ""
-      }
-    },
-    "8307dffc-f4f0-434d-a88b-48f9592a58c3": {
-      "type": "section-shop-by-diet",
-      "blocks": {
-        "6612c0c5-452f-4228-9848-cdc9918a1cf8": {
-          "type": "diet",
-          "settings": {
-            "text_color": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "6612c0c5-452f-4228-9848-cdc9918a1cf8"
-      ],
-      "settings": {
-        "heading": "",
-        "url": ""
-      }
     }
   },
   "order": [
@@ -382,8 +342,6 @@
     "fb95bcfd-aa24-42a8-92cf-b94fa307f70d",
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
-    "b1b4c397-b6ac-40e6-bddb-72cef284566b",
-    "b14d34d0-4c10-473f-b5ef-0537d0477ccf",
-    "8307dffc-f4f0-434d-a88b-48f9592a58c3"
+    "b1b4c397-b6ac-40e6-bddb-72cef284566b"
   ]
 }
