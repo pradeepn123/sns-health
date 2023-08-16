@@ -5,43 +5,25 @@
   export let shopifyData; //for parent level props
   let productData = []; //to store api data
 
-  const {currency= "$", soldOutText="Sold Out", chooseMoreText="Choose Options", addToCartText="Add To Cart", fromRebuy = true, blocks = []} = shopifyData || {};
+  const {currency= "$", soldOutText="Sold Out", chooseMoreText="Choose Options", addToCartText="Add To Cart", blocks = []} = shopifyData || {};
   const otherData = {
     currency,soldOutText,chooseMoreText,addToCartText
   }
 
   const paramsHash =  blocks.reduce((accumulator,block) => {
-        if(fromRebuy) {
         return accumulator = {...accumulator,[block.text] : {
-          shopify_collection_id: `${block?.id}`,
-          text: block?.text,
-          fromRebuy
-         }
-       }
-      }
-      else {
-        return accumulator = {...accumulator,[block.text] : {
-          fromRebuy,
-          collectionHandle: block?.handle,
+          ruleId: `${block?.ruleId}`,
           text: block?.text
          }
-      }
-  }},{});
+       }
+  },{});
 
   const collectionTexts = Object.keys(paramsHash);
+  let selectedParams = {...paramsHash[collectionTexts[0]]};
 
-  let selectedParams = collectionTexts.length ? {...paramsHash[collectionTexts[0]]} : {
-    fromRebuy
-  };
-  
   const requestData = async (selectedParams) => {
     const responseData = await getProductData(selectedParams);
-    if(selectedParams.fromRebuy) {
     productData = responseData.data;
-    }
-    else {
-      productData = responseData;
-    }
   }
 
   const updateParams = async (text) => {

@@ -6,10 +6,10 @@ export const customerLocation = async () => {
 
 
 export const getProductData = async (additionalParams) => {
-    const {fromRebuy = true,collectionHandle='',text='',...otherparams} = additionalParams || {};
+    const {ruleId='',text='',...otherparams} = additionalParams || {};
     let url = '';
-    if(fromRebuy) {
-    url =  new URL("https://rebuyengine.com/api/v1/products/recommended");
+
+    url =  new URL(`https://rebuyengine.com/api/v1/custom/id/${ruleId}`);
     const params = {
         limit: 10,
         filter_oos: "yes",
@@ -21,10 +21,6 @@ export const getProductData = async (additionalParams) => {
     Object.keys(params).forEach((param)=> {
      url.searchParams.append(param, params[param]);
     }) //set params
-   }
-   else {
-    url = `/collections/${collectionHandle}?view=data-json` //shopify support
-   }
 
     const data = await fetch(url);
     const productData = await data.json();

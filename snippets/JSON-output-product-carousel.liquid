@@ -1,11 +1,10 @@
 { "currency": "{{ cart.currency.symbol }}",
-  "fromRebuy": {{section.settings.from_rebuy}},
   "soldOutText": "{{- 'collection.product.sold_out' | t -}}",
   "chooseMoreText": "{{- 'collection.product.choose_options' | t -}}",
   "addToCartText": "{{- 'collection.product.add_to_cart' | t -}}",
 "blocks":[
 {% for block in section.blocks %}
-  { "text": "{{ block.settings.collection_text }}", "id": "{{ block.settings.collection.id }}", "handle": "{{block.settings.collection.handle}}" }
+  { "text": "{{ block.settings.collection_text }}", "ruleId": "{{block.settings.rule_id }}" }
   {%- unless forloop.last %}, {% endunless %}
 {% endfor %}
 ] }

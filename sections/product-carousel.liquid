@@ -1,6 +1,6 @@
 {{ 'featured-products.css' | asset_url | stylesheet_tag }}
 <div class="featured-products">
-    {% render 'section-heading', heading: section.settings.heading, url: collection.url %}
+    {% render 'section-heading', heading: section.settings.heading, url: section.settings.url %}
        <div data-wrapper>
         <product-carousel> </product-carousel>
         <script id="product-data" type="text/json">
@@ -13,8 +13,6 @@
     </div>
 </div>
 
-
-
 {% schema %}
 {
   "name": "product-carousel",
@@ -23,17 +21,6 @@
       "type": "text",
       "id": "heading",
       "label": "Section Heading"
-    },
-    {
-      "type": "url",
-      "id": "url",
-      "label": "View all url"
-    },
-    {
-      "type": "checkbox",
-      "id": "from_rebuy",
-      "label": "From Rebuy ?",
-      "default" : true
     }
   ],
   "blocks": [
@@ -48,10 +35,9 @@
             "info": "required field"
         },
         {
-        "type": "collection",
-        "id": "collection",
-        "label": "Collection",
-        "info": "Leave blank for AI recommendation"
+          "type": "text",
+          "id": "rule_id",
+          "label": "Rebuy Rule ID"
         }
       ]
     }
