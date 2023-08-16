@@ -1,9 +1,9 @@
 
 <div class="icon-text {% if wrapper_class %}{{ wrapper_class }}__icon-text {% endif %}{% if is_slider %} swiper-slide {% endif %}" {% if cta_url %} data-redirect-click data-url="{{cta_url}}"{% endif %}>
   <div class="icon__container {% if wrapper_class %}{{ wrapper_class }}__icon {% endif %} 
-    {% if icon_hover %} icon__container--toggle-icon {% endif %}">{{icon}}
+    {% if icon_hover %} icon__container--toggle-icon {% endif %}"><img src="{{icon | img_url}}"/>
 </div>
-  {% if icon_hover %}<div class="icon__container icon__container__icon--hover {% if wrapper_class %}{{ wrapper_class }}__icon" {% endif %} style="display: none">{{icon_hover}}</div>{% endif %}
+  {% if icon_hover %}<div class="icon__container icon__container__icon--hover {% if wrapper_class %}{{ wrapper_class }}__icon" {% endif %} style="display: none"><img src="{{icon_hover | img_url}}"/></div>{% endif %}
   <div class="text__container {% if wrapper_class %}{{ wrapper_class }}__text {% endif %}" {% if cta_url %} data-redirect-click data-url="{{cta_url}}"{% endif %}>
     {% render 'text', 
         id: id,
