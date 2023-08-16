@@ -478,11 +478,19 @@
               "country_iso": "GB",
               "announcement_text": "This is for canada and USA"
             }
+          },
+          "ac89ab32-5fbf-4c19-ac77-09c827474b95": {
+            "type": "country_specific",
+            "settings": {
+              "country_iso": "FR, BE",
+              "announcement_text": "Test"
+            }
           }
         },
         "block_order": [
           "eb1afa66-0259-4a7d-aaf3-61073dc8e22b",
-          "599da0e9-6abf-4fb3-ad51-f675e23a4ba0"
+          "599da0e9-6abf-4fb3-ad51-f675e23a4ba0",
+          "ac89ab32-5fbf-4c19-ac77-09c827474b95"
         ],
         "settings": {
           "show_announcement": true,
