@@ -659,7 +659,7 @@
     if (!addButton) return false;
   
     addButton.addEventListener('click', function(event) {
-      //console.log('1. Button Clicked');
+      //('1. Button Clicked');
         addButton.disabled = false;
         fetch('/cart/add.js', {
             body: JSON.stringify({
@@ -673,7 +673,7 @@
             },
             method: 'POST'
         }).then(function(response) {
-            console.log('2. Response:' + response.json());
+            ('2. Response:' + response.json());
             return response.json();
         }).then(function(json) {
             document.dispatchEvent(new CustomEvent('ajaxProduct:added'));

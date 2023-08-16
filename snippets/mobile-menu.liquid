@@ -24,7 +24,7 @@
                         {{- link.title -}} {%- render 'icon', icon: 'arrow-right' -%}
                       </button>
                     {%- else -%}
-                      <a href="{{ link.url }}" class="mobile-menu__nav-link {% if is_special_item %} mobile-menu__nav-link--special {% endif %}" data-type="menuitem" aria-label="{{ link.title | escape }}">{{ link.title }}</a>
+                      <a href="{{ link.url }}" class="mobile-menu__nav-link" data-type="menuitem" aria-label="{{ link.title | escape }}">{{ link.title }}</a>
                     {%- endif -%}
                   {%- else -%}
                   {%- capture mobile_list_id -%}mobile-list-{% increment mobile_list %}{%- endcapture -%}
@@ -44,7 +44,7 @@
                                     {{- sub_link.title -}} {%- render 'icon', icon: 'arrow-right' -%}
                                   </button>
                                 {%- else -%}
-                                  <a href="{{ sub_link.url }}" class="mobile-menu__nav-link {% if is_special_item %} mobile-menu__nav-link--special {% endif %}" data-type="menuitem" aria-label="{{ sub_link.title | escape }}">{{ sub_link.title }}</a>
+                                  <a href="{{ sub_link.url }}" class="mobile-menu__nav-link" data-type="menuitem" aria-label="{{ sub_link.title | escape }}"> {{ sub_link.title }}</a>
                                 {%- endif -%}
                               {%- else -%}
                               {% if sub_link.levels == 1 %}

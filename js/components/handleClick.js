@@ -8,9 +8,6 @@ export default () => {
       }
     const clickHandle = document.querySelectorAll('[data-redirect-click]');
     clickHandle.forEach(item => item.addEventListener('click', (ev) => {
-      if (ev.target.closest('.swiper-navigation')) {
-        return;
-      }
       handleRedirectOnDiv(item)
     }));
 }

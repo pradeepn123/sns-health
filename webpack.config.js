@@ -73,7 +73,10 @@ module.exports = {
         use: {
           loader: 'svelte-loader',
           options: {
-            emitCss: true
+            emitCss: true,
+            compilerOptions: {
+              customElement: true
+            }
           }
         }
       },

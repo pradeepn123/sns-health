@@ -7,13 +7,14 @@ export default (Component, container, propsEl) => {
 	let props = {};
 	if (appContainer) {
 		if (propsEl) {
+			console.log(document.querySelector(propsEl)?.innerHTML);
 			props = JSON.parse(document.querySelector(propsEl)?.innerHTML) || {}; //get json from the script id 
 		}
 		//inject component into container
 		const instance = new Component({
 			target: document.querySelector(container),
 			props: {
-				data: props?.data //pass the prop on data prop as default
+				shopifyData: props?.data //pass the prop on data prop as default
 			}
 		});
 		return instance;

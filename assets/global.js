@@ -26,20 +26,31 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 class CustomCarousel extends HTMLElement {
   constructor() {
-    var _this$querySelector;
     super();
-    this.HTMLElement = this.innerHTML;
-    this.carouselSettings = JSON.parse(((_this$querySelector = this.querySelector('[data-settings]')) === null || _this$querySelector === void 0 ? void 0 : _this$querySelector.innerHTML) || "{}");
-    this.currentWidth = window.innerWidth;
-    this.innerHTML = "<div class=\"carousel__container swiper\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.HTMLElement, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    <div class=\"swiper-navigation swiper-navigation--next ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>");
-    this.container = this.querySelector('[data-swiper-container]');
+    this.HTMLElement;
+    this.carouselSettings;
+    this.currentWidth;
+    this.innerHTML;
+    this.container;
   }
   connectedCallback() {
-    this.initCarousel();
-    window.addEventListener('resize', () => {
-      console.log("resize triggered");
+    if (this.innerHTML.length > 0) {
       this.initCarousel();
-    });
+    } else {
+      var that = this;
+      var checkHtmlLength = window.setInterval(() => {
+        if (this.innerHTML.length > 0) {
+          that.initCarousel();
+          window.clearInterval(checkHtmlLength);
+          checkHtmlLength = false;
+        }
+      }, 500);
+      window.setTimeout(() => {
+        if (checkHtmlLength) {
+          window.clearInterval(checkHtmlLength);
+        }
+      }, 5000);
+    }
   }
   getCarouselSettings() {
     this.currentWidth = window.innerWidth;
@@ -120,8 +131,13 @@ class CustomCarousel extends HTMLElement {
     return carouselSettings;
   }
   initCarousel() {
+    var _this$querySelector;
+    this.HTMLElement = this.innerHTML;
+    this.carouselSettings = JSON.parse(((_this$querySelector = this.querySelector('[data-settings]')) === null || _this$querySelector === void 0 ? void 0 : _this$querySelector.innerHTML) || "{}");
+    this.currentWidth = window.innerWidth;
+    this.innerHTML = "<div class=\"carousel__container swiper\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.HTMLElement, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    <div class=\"swiper-navigation swiper-navigation--next ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>");
+    this.container = this.querySelector('[data-swiper-container]');
     var carouselSettings = this.getCarouselSettings() || {};
-    console.log(carouselSettings, "carousel settings");
     this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
       on: {
         beforeInit: () => {
@@ -172,9 +188,6 @@ class CustomCarousel extends HTMLElement {
   };
   var clickHandle = document.querySelectorAll('[data-redirect-click]');
   clickHandle.forEach(item => item.addEventListener('click', ev => {
-    if (ev.target.closest('.swiper-navigation')) {
-      return;
-    }
     handleRedirectOnDiv(item);
   }));
 });

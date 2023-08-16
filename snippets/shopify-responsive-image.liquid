@@ -20,7 +20,7 @@
     - {% include 'responsive-image' with image: featured_image, image_class: "css-class", wrapper_class: "wrapper-css-class", max_width: 700, max_height: 800 %}
 {%- endcomment -%}
 
-{%- assign default_image_url =  image | img_url: src_token | default: '300x' -%}
+{%- assign default_image_url =  '300x' -%}
 {%- assign lazy_image_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 {%- assign noscript_image_url = image | img_url: '2048x2048' -%}
 
@@ -38,7 +38,7 @@
     image_height: image.height,
     image_alt: image.alt,
     image_class: image_class,
-    image_attributes: image_attributes,
+    image_attributes: image_apttributes,
     wrapper_class: wrapper_class,
     crop: crop | default: false,
     fill: fill | default: false,

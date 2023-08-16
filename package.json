@@ -37,6 +37,7 @@
     "@babel/preset-react": "^7.22.5",
     "accoutrement": "^2.1.3",
     "babel-loader": "^8.1.0",
+    "classnames": "^2.3.2",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
     "dotenv": "^16.0.0",

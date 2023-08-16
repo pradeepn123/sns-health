@@ -495,7 +495,7 @@ iframe#ShopifyChat {display: none;}
 <script src="https://unpkg.com/vue-i18n@9.1.6/dist/vue-i18n.global.prod.js"></script>
 <script>
 function remountVueApp() {
-    console.log('listen to shopify theme editor re-render. Render app to respond to DOM update');
+    ('listen to shopify theme editor re-render. Render app to respond to DOM update');
     vueApp = createMyApp();
   	vueApp.component('tab', tab);
     vueApp.component('product-card', productCard);
@@ -556,7 +556,7 @@ document.addEventListener('shopify:section:select', themeEventHandler);
         }
       })
       this.validateSubscriptionDiscount();
-      console.log('BYOB bundle page loaded');
+      ('BYOB bundle page loaded');
     },
     computed: {
       completedTier() {
@@ -676,7 +676,7 @@ document.addEventListener('shopify:section:select', themeEventHandler);
             variant.options = options;
           }
         }
-        console.log('in formatProductsData, ', products)
+        ('in formatProductsData, ', products)
         return products
       },
       loadMoreProducts(i) {
@@ -685,7 +685,7 @@ document.addEventListener('shopify:section:select', themeEventHandler);
           fetch('https://' + window.location.hostname + '/collections/' + this.buildrules[i].handle + '/products.json?limit=50&page=' + (paginate.current_page + 1))
             .then(response => response.json())
             .then(data => {
-//               console.log('Successfully load more products:', data.products);
+//               ('Successfully load more products:', data.products);
               this.buildrules[i].json_products =  this.buildrules[i].json_products.concat(this.formatProductsData(data.products));
               this.buildrules[i].paginate.current_page++;
             })
@@ -719,7 +719,7 @@ document.addEventListener('shopify:section:select', themeEventHandler);
           buildrulesCopy[variant.buildrulesIndex].variants.push(variant)  // for max br use
         });
         this.buildrules.forEach((buildrule, i) => buildrule.remaining_quantity = buildrulesCopy[i].quantity);  // remaining_quantity used for quantity input calc
-//         console.log('buildrulesCopy', buildrulesCopy)
+//         ('buildrulesCopy', buildrulesCopy)
         this.buildrules.forEach((buildrule, i) => buildrule.isCompleted = this.isCompleted(buildrulesCopy[i]))
       },
       // setTimeout hack to show loading icon & button text. Otherwise `this.isLoading = true;` cannot update DOM immediately
@@ -781,11 +781,11 @@ document.addEventListener('shopify:section:select', themeEventHandler);
             })
             .then(response => response.json())
             .then(data => {
-              console.log('Adding variant to cart:', data);
+              ('Adding variant to cart:', data);
               if (data.status != 422) {
                 clearInterval(myVar);
                 setTimeout(function(){ vm1.showModal = true }, 10000);
-                console.log('Success - added variant to cart');
+                ('Success - added variant to cart');
                 // support custom liquid added by partners
                 if (typeof afterBYOBAddtoCart === 'function') afterBYOBAddtoCart(variants, variant_id)
               }
@@ -823,7 +823,7 @@ document.addEventListener('shopify:section:select', themeEventHandler);
         this.setLoading(true);
         let data = this.getRequestDataFromVariants(this.selectedVariants);
         data.bundleID = bundleID;
-        console.log('data', data)
+        ('data', data)
         // discount code bundle, redirect to checkout, no variant generated
         if (discount.type == 'DC') {this.redirectToCheckout(this.selectedVariants); return;}
         // validate variants must be included for all buildRules
@@ -843,8 +843,8 @@ document.addEventListener('shopify:section:select', themeEventHandler);
         })
         .then(response => response.json())
         .then(data => {
-          console.log('Success creating variant:', data);
-          console.log('variant_id:', data.variant_id);
+          ('Success creating variant:', data);
+          ('variant_id:', data.variant_id);
 
           if (data.variant_id) {
             vm1.addNewVariantToCart(this.selectedVariants, data.variant_id);
@@ -1022,7 +1022,7 @@ document.addEventListener('shopify:section:select', themeEventHandler);
         selectVariant(index) {
           let variants = this.product.variants;
 
-          console.log('selectedOptionValues = ' + this.selectedOptionValues);
+          ('selectedOptionValues = ' + this.selectedOptionValues);
           for (let i = 0; i < variants.length; i++) {
             let variant = variants[i];
             if (this.arraysEqual(variant.options, this.selectedOptionValues.filter(this.removeEmptyString))) {
@@ -1071,7 +1071,7 @@ document.addEventListener('shopify:section:select', themeEventHandler);
         },
         updateQuantity() {
           if (this.buildrule.operator == ">=") return true
-          console.log('this.pickedVariant', this.pickedVariant);
+          ('this.pickedVariant', this.pickedVariant);
           if (this.quantity > this.maxQuantity)
             this.quantity = this.maxQuantity
           else if (this.quantity < 1)
@@ -1081,7 +1081,7 @@ document.addEventListener('shopify:section:select', themeEventHandler);
           if (this.linkDisabled) event.preventDefault()
         },
         addVariantFromQV(variant, quantity) {
-//           console.log('variant', variant)
+//           ('variant', variant)
           this.pickedVariant = variant;
           this.quantity = quantity;
           this.addVariantToBundle();
@@ -1209,7 +1209,7 @@ document.addEventListener('shopify:section:select', themeEventHandler);
       buttonText() {
         if (this.isLoading)
           return this.$i18n.t('message.loading');
-		console.log('this.itemsLeft', this.itemsLeft);
+		('this.itemsLeft', this.itemsLeft);
         if (discount.type != 'TD') {
           if (this.itemsLeft <= 0) { // < 0 is at least, can add more than required, = 0 is any
             let addToCart = this.$i18n.t('message.addBundleToCart');

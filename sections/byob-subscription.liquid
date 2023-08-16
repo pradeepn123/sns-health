@@ -279,7 +279,7 @@ input[type="radio"] {
       delimiters: ['[[', ']]'],
     },
     mounted() {
-      console.log('product in sm', byob_bundle_product);
+      ('product in sm', byob_bundle_product);
       if (this.product.selling_plan_groups.length > 0 && this.product.selling_plan_groups[0].app_id == '294517') {
         this.subscription_app = 'recharge'
         this.setInitOptions(this.subscription_app)
@@ -367,13 +367,13 @@ input[type="radio"] {
         return Object.values(dictionary);
       },
       addSubscriptionToCart() {
-        console.log('selected_options = ', this.selected_options)
+        ('selected_options = ', this.selected_options)
         if (this.selected_group_name != 'single' && this.selected_plan === '') { // check if no option selected in dropdown
           this.option_not_selected = true;
           return
         }
         let formData = {'items': []}
-        console.log('this.variants = ', this.variants)
+        ('this.variants = ', this.variants)
         for (variant of this.variants) {
           let item = {
             id: parseInt(variant.id),
@@ -390,10 +390,10 @@ input[type="radio"] {
           }
           formData.items.push(item)
         }
-//        console.log('this.variants = ', this.variants)
-//        console.log('formData 1 = ', formData)
+//        ('this.variants = ', this.variants)
+//        ('formData 1 = ', formData)
 	   formData = {'items': this.aggregateByID(formData.items)}
-       console.log('formData 2 = ', formData)
+       ('formData 2 = ', formData)
 // 		return;
        let vm1 = this;
        fetch(window.Shopify.routes.root + 'cart/add.js', {
@@ -405,7 +405,7 @@ input[type="radio"] {
        })
        .then(response => response.json())
        .then(data => {
-         console.log('Adding variant to cart:', data);
+         ('Adding variant to cart:', data);
 		 vm1.itemAdded = true;
          vm1.option_not_selected = false;
          vm1.redirectUsers()
@@ -442,17 +442,17 @@ input[type="radio"] {
         }
       },
       updateSelectedPlan(option, plans, index) {
-        console.log('option, index = ', option);
-        console.log('selected_options[index] = ', this.selected_options[index])
-        console.log('selected_options = ', this.selected_options)
-        console.log('plans = ', plans)
+        ('option, index = ', option);
+        ('selected_options[index] = ', this.selected_options[index])
+        ('selected_options = ', this.selected_options)
+        ('plans = ', plans)
         let vm = this;
 //         for (let plan of plans)
         for (let i=0; i<plans.length; i++)
           if (plans[i].options.every((option, index) => { return option.value ===  vm.selected_options[index]} )) {
             this.selected_plan = plans[i];
             this.selected_plan_index = i;
-            console.log('this.selected_plan = ', this.selected_plan);
+            ('this.selected_plan = ', this.selected_plan);
             return;
           }
       },

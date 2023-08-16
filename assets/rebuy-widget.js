@@ -9,16 +9,16 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   customerLocation: () => (/* binding */ customerLocation),
 /* harmony export */   getProductData: () => (/* binding */ getProductData)
 /* harmony export */ });
+/* unused harmony export customerLocation */
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
 
 
 
-var _excluded = ["fromRebuy", "collectionHandle", "text"];
+var _excluded = ["fromRebuy", "collectionHandle"];
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var customerLocation = /*#__PURE__*/function () {
@@ -42,8 +42,7 @@ var getProductData = /*#__PURE__*/function () {
     var _ref3 = additionalParams || {},
       {
         fromRebuy = true,
-        collectionHandle = '',
-        text = ''
+        collectionHandle = ''
       } = _ref3,
       otherparams = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref3, _excluded);
     var url = '';
@@ -54,12 +53,12 @@ var getProductData = /*#__PURE__*/function () {
         filter_oos: "yes",
         context: "default",
         key: "7af510977e690f362f5dae7f36a736bbeefdfc25"
-      }, otherparams);
+      }, additionalParams);
       Object.keys(params).forEach(param => {
         url.searchParams.append(param, params[param]);
       }); //set params
     } else {
-      url = "/collections/".concat(collectionHandle, "?view=data-json"); //shopify support
+      url = '/collectionHandle?view=data-json'; //shopify support
     }
 
     var data = yield fetch(url);
@@ -93,7 +92,7 @@ var getProductData = /*#__PURE__*/function () {
     var _props;
     if (propsEl) {
       var _document$querySelect, _document$querySelect2;
-      console.log((_document$querySelect = document.querySelector(propsEl)) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.innerHTML);
+      (_document$querySelect = document.querySelector(propsEl)) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.innerHTML;
       props = JSON.parse((_document$querySelect2 = document.querySelector(propsEl)) === null || _document$querySelect2 === void 0 ? void 0 : _document$querySelect2.innerHTML) || {}; //get json from the script id 
     }
     //inject component into container
@@ -110,132 +109,19 @@ var getProductData = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./js/sections/announcementBar.js":
-/*!****************************************!*\
-  !*** ./js/sections/announcementBar.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
-/* harmony import */ var SvelteComponents_AnnouncementBar_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/AnnouncementBar.svelte */ "./js/components/svelte/AnnouncementBar.svelte");
- //wrapper that inject svelte into DOM
- //svelte component to load
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_AnnouncementBar_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'announcement-bar', '#announcement-bar-data');
-});
-
-/***/ }),
-
-/***/ "./js/sections/product-carousel.js":
-/*!*****************************************!*\
-  !*** ./js/sections/product-carousel.js ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
-/* harmony import */ var SvelteComponents_product_carousel_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/product-carousel.svelte */ "./js/components/svelte/product-carousel.svelte");
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_product_carousel_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'product-carousel', '#product-data');
-});
-
-/***/ }),
-
-/***/ "./js/sections/section.js":
-/*!********************************!*\
-  !*** ./js/sections/section.js ***!
-  \********************************/
+/***/ "./js/sections/rebuy-widget.js":
+/*!*************************************!*\
+  !*** ./js/sections/rebuy-widget.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* harmony import */ var _announcementBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./announcementBar */ "./js/sections/announcementBar.js");
-/* harmony import */ var _product_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product-carousel */ "./js/sections/product-carousel.js");
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_rebuy_widget_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/rebuy-widget.svelte */ "./js/components/svelte/rebuy-widget.svelte");
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  (0,_announcementBar__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_product_carousel__WEBPACK_IMPORTED_MODULE_1__["default"])();
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_rebuy_widget_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'rebuy-widget', '#rebuy-data');
 });
-
-/***/ }),
-
-/***/ "./js/components/svelte/AnnouncementBar.svelte":
-/*!*****************************************************!*\
-  !*** ./js/components/svelte/AnnouncementBar.svelte ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
-/* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
-/* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
-/* harmony import */ var JsComponents_get_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! JsComponents/get-data */ "./js/components/get-data.js");
-/* js/components/svelte/AnnouncementBar.svelte generated by Svelte v4.2.0 */
-
-
-
-
-
-
-function instance($$self, $$props, $$invalidate) {
-	let country;
-	let { shopifyData } = $$props;
-	const blockData = shopifyData;
-
-	const handleLocationBasedAnnouncement = () => {
-		for (let countryBlock in blockData) {
-			if (blockData[countryBlock]?.handle?.includes(country)) {
-				const announcementBar = document.querySelector("[data-announcement-bar]");
-				announcementBar.classList.remove("hidden");
-
-				announcementBar?.querySelectorAll("[ data-announcement-text]")?.forEach(text => {
-					text.innerHTML = blockData[countryBlock]?.text;
-				});
-
-				break;
-			}
-		}
-	};
-
-	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(async () => {
-		country = await (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_3__.customerLocation)();
-		handleLocationBasedAnnouncement();
-	});
-
-	$$self.$$set = $$props => {
-		if ('shopifyData' in $$props) $$invalidate(0, shopifyData = $$props.shopifyData);
-	};
-
-	return [shopifyData];
-}
-
-class AnnouncementBar extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
-	constructor(options) {
-		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, null, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 0 });
-	}
-
-	get shopifyData() {
-		return this.$$.ctx[0];
-	}
-
-	set shopifyData(shopifyData) {
-		this.$$set({ shopifyData });
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
-	}
-}
-
-(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(AnnouncementBar, {"shopifyData":{}}, [], [], true);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AnnouncementBar);
 
 /***/ }),
 
@@ -282,7 +168,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (36:8) {#if bestseller}
+// (37:8) {#if bestseller}
 function create_if_block_4(ctx) {
 	let div;
 
@@ -303,7 +189,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (38:8) {#if onsale}
+// (39:8) {#if onsale}
 function create_if_block_3(ctx) {
 	let div;
 
@@ -324,7 +210,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (54:4) {#if vendor}
+// (55:4) {#if vendor}
 function create_if_block_2(ctx) {
 	let div;
 
@@ -346,7 +232,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (65:6) {#if discountPercentage > 0}
+// (66:6) {#if discountPercentage > 0}
 function create_if_block_1(ctx) {
 	let div;
 
@@ -368,7 +254,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (89:8) {:else}
+// (90:8) {:else}
 function create_else_block(ctx) {
 	let a;
 	let t;
@@ -398,7 +284,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (81:8) {#if product.variants.size == 1}
+// (82:8) {#if product.variants.size == 1}
 function create_if_block(ctx) {
 	let button;
 
@@ -638,7 +524,7 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let { product } = $$props;
 	let { otherData } = $$props;
-	const { image, variants: [{ compare_at_price: comparePrice, price }], ratings: { yotpo_average_star_rating: rating } = {}, vendor, title, tags } = product;
+	const { image, variants: [{ compare_at_price: comparePrice, price }], ratings: { yotpo_average_star_rating: rating }, vendor, title, tags } = product;
 	const { currency, soldOutText, chooseMoreText, addToCartText } = otherData || {};
 	const discountPercentage = (comparePrice - price * 100) / price;
 	const bestseller = tags.includes("bestseller");
@@ -697,10 +583,10 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 
 /***/ }),
 
-/***/ "./js/components/svelte/product-carousel.svelte":
-/*!******************************************************!*\
-  !*** ./js/components/svelte/product-carousel.svelte ***!
-  \******************************************************/
+/***/ "./js/components/svelte/rebuy-widget.svelte":
+/*!**************************************************!*\
+  !*** ./js/components/svelte/rebuy-widget.svelte ***!
+  \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -711,7 +597,7 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 /* harmony import */ var JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/get-data */ "./js/components/get-data.js");
 /* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
 /* harmony import */ var SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! SvelteComponents/product-card.svelte */ "./js/components/svelte/product-card.svelte");
-/* js/components/svelte/product-carousel.svelte generated by Svelte v4.2.0 */
+/* js/components/svelte/rebuy-widget.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -721,25 +607,19 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[15] = list[i];
-	child_ctx[17] = i;
+	child_ctx[10] = list[i];
+	child_ctx[12] = i;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[15] = list[i];
-	child_ctx[17] = i;
+	child_ctx[10] = list[i];
+	child_ctx[12] = i;
 	return child_ctx;
 }
 
-function get_each_context_2(ctx, list, i) {
-	const child_ctx = ctx.slice();
-	child_ctx[19] = list[i];
-	return child_ctx;
-}
-
-// (101:0) {:else}
+// (69:0) {:else}
 function create_else_block(ctx) {
 	let div;
 
@@ -761,18 +641,16 @@ function create_else_block(ctx) {
 	};
 }
 
-// (60:0) {#if productData.length}
+// (35:0) {#if productData.length}
 function create_if_block(ctx) {
-	let t0;
 	let div2;
 	let div0;
 	let custom_carousel;
-	let t1;
+	let t0;
 	let script;
-	let t3;
+	let t2;
 	let div1;
 	let current;
-	let if_block = /*collectionTexts*/ ctx[3].length > 1 && create_if_block_2(ctx);
 	let each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 	let each_blocks_1 = [];
 
@@ -797,8 +675,6 @@ function create_if_block(ctx) {
 
 	return {
 		c() {
-			if (if_block) if_block.c();
-			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			custom_carousel = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("custom-carousel");
@@ -807,10 +683,10 @@ function create_if_block(ctx) {
 				each_blocks_1[i].c();
 			}
 
-			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			script = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("script");
 			script.textContent = "{\n        \"slidesPerView\": 3.01,\n        \"spaceBetween\": 10,\n        \"overflowNagivation\": true,\n        \"progressPagination\": true,\n        \"pagination\": false,\n        \"breakpoints\": {\n         \"1024\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 5,\n            \"spaceBetween\": 27.5\n          }\n        }\n      }";
-			t3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -824,8 +700,6 @@ function create_if_block(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "featured-products__wrapper product-card-wrapper");
 		},
 		m(target, anchor) {
-			if (if_block) if_block.m(target, anchor);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, t0, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div2, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div0);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div0, custom_carousel);
@@ -836,9 +710,9 @@ function create_if_block(ctx) {
 				}
 			}
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t1);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t0);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, script);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t3);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t2);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div1);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -850,9 +724,7 @@ function create_if_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*collectionTexts*/ ctx[3].length > 1) if_block.p(ctx, dirty);
-
-			if (dirty & /*productData, otherData*/ 5) {
+			if (dirty & /*productData, otherData*/ 3) {
 				each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 				let i;
 
@@ -866,7 +738,7 @@ function create_if_block(ctx) {
 						each_blocks_1[i] = create_each_block_1(child_ctx);
 						each_blocks_1[i].c();
 						(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(each_blocks_1[i], 1);
-						each_blocks_1[i].m(custom_carousel, t1);
+						each_blocks_1[i].m(custom_carousel, t0);
 					}
 				}
 
@@ -879,7 +751,7 @@ function create_if_block(ctx) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.check_outros)();
 			}
 
-			if (dirty & /*productData, otherData*/ 5) {
+			if (dirty & /*productData, otherData*/ 3) {
 				each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 				let i;
 
@@ -936,140 +808,24 @@ function create_if_block(ctx) {
 		},
 		d(detaching) {
 			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(t0);
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div2);
 			}
 
-			if (if_block) if_block.d(detaching);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks_1, detaching);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks, detaching);
 		}
 	};
 }
 
-// (61:2) {#if collectionTexts.length > 1 }
-function create_if_block_2(ctx) {
-	let each_1_anchor;
-	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[3]);
-	let each_blocks = [];
-
-	for (let i = 0; i < each_value_2.length; i += 1) {
-		each_blocks[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
-	}
-
-	return {
-		c() {
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].c();
-			}
-
-			each_1_anchor = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.empty)();
-		},
-		m(target, anchor) {
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				if (each_blocks[i]) {
-					each_blocks[i].m(target, anchor);
-				}
-			}
-
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, each_1_anchor, anchor);
-		},
-		p(ctx, dirty) {
-			if (dirty & /*selectedParams, collectionTexts, updateParams*/ 26) {
-				each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[3]);
-				let i;
-
-				for (i = 0; i < each_value_2.length; i += 1) {
-					const child_ctx = get_each_context_2(ctx, each_value_2, i);
-
-					if (each_blocks[i]) {
-						each_blocks[i].p(child_ctx, dirty);
-					} else {
-						each_blocks[i] = create_each_block_2(child_ctx);
-						each_blocks[i].c();
-						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
-					}
-				}
-
-				for (; i < each_blocks.length; i += 1) {
-					each_blocks[i].d(1);
-				}
-
-				each_blocks.length = each_value_2.length;
-			}
-		},
-		d(detaching) {
-			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(each_1_anchor);
-			}
-
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks, detaching);
-		}
-	};
-}
-
-// (62:2) {#each collectionTexts as text }
-function create_each_block_2(ctx) {
-	let div;
-	let button;
-	let t0_value = /*text*/ ctx[19] + "";
-	let t0;
-	let button_class_value;
-	let t1;
-	let mounted;
-	let dispose;
-
-	function click_handler() {
-		return /*click_handler*/ ctx[6](/*text*/ ctx[19]);
-	}
-
-	return {
-		c() {
-			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
-			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t0_value);
-			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[1].text == /*text*/ ctx[19] && "product-category__button--active"}`);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "featured-products__Category");
-		},
-		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, button);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(button, t0);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, t1);
-
-			if (!mounted) {
-				dispose = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button, "click", click_handler);
-				mounted = true;
-			}
-		},
-		p(new_ctx, dirty) {
-			ctx = new_ctx;
-
-			if (dirty & /*selectedParams*/ 2 && button_class_value !== (button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[1].text == /*text*/ ctx[19] && "product-category__button--active"}`)) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value);
-			}
-		},
-		d(detaching) {
-			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
-			}
-
-			mounted = false;
-			dispose();
-		}
-	};
-}
-
-// (72:8) {#if product.variants[0].price > 0 }
+// (40:8) {#if product.variants[0].price > 0 }
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
 
 	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
 			props: {
-				product: /*product*/ ctx[15],
-				otherData: /*otherData*/ ctx[2]
+				product: /*product*/ ctx[10],
+				otherData: /*otherData*/ ctx[1]
 			}
 		});
 
@@ -1083,7 +839,7 @@ function create_if_block_1(ctx) {
 		},
 		p(ctx, dirty) {
 			const productcard_changes = {};
-			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[15];
+			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[10];
 			productcard.$set(productcard_changes);
 		},
 		i(local) {
@@ -1101,11 +857,11 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (71:6) {#each productData as product, index}
+// (39:6) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
-	let if_block = /*product*/ ctx[15].variants[0].price > 0 && create_if_block_1(ctx);
+	let if_block = /*product*/ ctx[10].variants[0].price > 0 && create_if_block_1(ctx);
 
 	return {
 		c() {
@@ -1118,7 +874,7 @@ function create_each_block_1(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*product*/ ctx[15].variants[0].price > 0) {
+			if (/*product*/ ctx[10].variants[0].price > 0) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 
@@ -1160,15 +916,15 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (96:4) {#each productData as product, index}
+// (64:4) {#each productData as product, index}
 function create_each_block(ctx) {
 	let productcard;
 	let current;
 
 	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
 			props: {
-				product: /*product*/ ctx[15],
-				otherData: /*otherData*/ ctx[2]
+				product: /*product*/ ctx[10],
+				otherData: /*otherData*/ ctx[1]
 			}
 		});
 
@@ -1182,7 +938,7 @@ function create_each_block(ctx) {
 		},
 		p(ctx, dirty) {
 			const productcard_changes = {};
-			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[15];
+			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[10];
 			productcard.$set(productcard_changes);
 		},
 		i(local) {
@@ -1284,85 +1040,44 @@ function instance($$self, $$props, $$invalidate) {
 		addToCartText
 	};
 
-	const paramsHash = blocks.reduce(
-		(accumulator, block) => {
-			if (fromRebuy) {
-				return accumulator = {
-					...accumulator,
-					[block.text]: {
-						shopify_collection_id: `${block?.id}`,
-						text: block?.text,
-						fromRebuy
-					}
-				};
-			} else {
-				return accumulator = {
-					...accumulator,
-					[block.text]: {
-						fromRebuy,
-						collectionHandle: block?.handle,
-						text: block?.text
-					}
-				};
-			}
-		},
-		{}
-	);
-
-	const collectionTexts = Object.keys(paramsHash);
-
-	let selectedParams = collectionTexts.length
-	? { ...paramsHash[collectionTexts[0]] }
-	: { fromRebuy };
-
-	const requestData = async selectedParams => {
-		const responseData = await (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__.getProductData)(selectedParams);
-
-		if (selectedParams.fromRebuy) {
-			$$invalidate(0, productData = responseData.data);
+	const paramsMap = () => blocks.reduce(block => {
+		if (fromRebuy) {
+			return {
+				[block.handle]: {
+					shopify_collection_id: block?.id,
+					fromRebuy
+				}
+			};
 		} else {
-			$$invalidate(0, productData = responseData);
+			return {
+				[block.handle]: {
+					fromRebuy,
+					collectionHandle: block?.handle
+				}
+			};
 		}
-	};
-
-	const updateParams = async text => {
-		$$invalidate(1, selectedParams = paramsHash[text]);
-		await requestData(selectedParams);
-	};
-
-	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(async () => {
-		await requestData(selectedParams);
 	});
 
-	console.log(productData, "product Data");
-
-	const click_handler = text => {
-		updateParams(text);
-	};
+	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(async () => {
+		const responseData = await (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__.getProductData)();
+		$$invalidate(0, productData = responseData.data);
+	});
 
 	$$self.$$set = $$props => {
-		if ('shopifyData' in $$props) $$invalidate(5, shopifyData = $$props.shopifyData);
+		if ('shopifyData' in $$props) $$invalidate(2, shopifyData = $$props.shopifyData);
 	};
 
-	return [
-		productData,
-		selectedParams,
-		otherData,
-		collectionTexts,
-		updateParams,
-		shopifyData,
-		click_handler
-	];
+	return [productData, otherData, shopifyData];
 }
 
-class Product_carousel extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
+class Rebuy_widget extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 5 });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 2 });
 	}
 
 	get shopifyData() {
-		return this.$$.ctx[5];
+		return this.$$.ctx[2];
 	}
 
 	set shopifyData(shopifyData) {
@@ -1371,8 +1086,8 @@ class Product_carousel extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 	}
 }
 
-(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Product_carousel, {"shopifyData":{}}, [], [], true);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Product_carousel);
+(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Rebuy_widget, {"shopifyData":{}}, [], [], true);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Rebuy_widget);
 
 /***/ }),
 
@@ -1393,7 +1108,7 @@ class Product_carousel extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 
 
 function add_css(target) {
-	(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append_styles)(target, "svelte-kd6kh0", ".responsive-image__wrapper.svelte-kd6kh0:before{content:'';width:100%;display:block;padding-top:var(--padding-top)}.responsive-image__wrapper.svelte-kd6kh0{max-width:1900px;height:100%;position:relative;max-height:100%}.responsive-image__image.svelte-kd6kh0{position:absolute;top:0;height:100%;left:0;width:100%}");
+	(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append_styles)(target, "svelte-7sts7d", ".responsive-image__wrapper.svelte-7sts7d:before{content:'';width:100%;display:block;padding-top:var(--padding-top)}.responsive-image__wrapper.svelte-7sts7d{max-width:1900px;height:100%;position:relative;max-height:100%}.responsive-image__image.svelte-7sts7d{position:absolute;top:0;height:100%;left:0;width:100%;background-color:#f5f5f5}");
 }
 
 function create_fragment(ctx) {
@@ -1412,7 +1127,7 @@ function create_fragment(ctx) {
 			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			img = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "id", img_id_value = "Image-" + /*image_id*/ ctx[2] + "-" + /*generated_image_id*/ ctx[1]);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "class", "responsive-image__image lazyload svelte-kd6kh0");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "class", "responsive-image__image lazyload svelte-7sts7d");
 			if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img.src, img_src_value = /*srcUrl*/ ctx[5])) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "src", img_src_value);
 			if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.srcset_url_equal)(img, img_srcset_value = "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/u3zfwAJrQPhbkYXzAAAAABJRU5ErkJggg==")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "srcset", img_srcset_value);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "data-src", /*dataSrcUrl*/ ctx[4]);
@@ -1423,7 +1138,7 @@ function create_fragment(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "style", img_style_value = /*getImageStyle*/ ctx[7]());
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "id", div_id_value = "ImageWrapper-" + /*image_id*/ ctx[2] + "-" + /*generated_image_id*/ ctx[1]);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "data-image-id", /*image_id*/ ctx[2]);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "responsive-image__wrapper svelte-kd6kh0");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "responsive-image__wrapper svelte-7sts7d");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "style", div_style_value = /*getWrapperStyles*/ ctx[6]());
 		},
 		m(target, anchor) {
@@ -1662,7 +1377,7 @@ class Responsive_image extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"section": 0
+/******/ 			"rebuy-widget": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -1712,7 +1427,7 @@ class Responsive_image extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./js/sections/section.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./js/sections/rebuy-widget.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

@@ -3,8 +3,8 @@
   import { customerLocation } from "JsComponents/get-data";
 
   let country;
-  export let data;
-  const blockData = data;
+  export let shopifyData;
+  const blockData = shopifyData;
 
   const handleLocationBasedAnnouncement = () => {
     for (let countryBlock in blockData) {

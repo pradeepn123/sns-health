@@ -1,4 +1,10 @@
 {% if title != blank %}
+  {% for block in section.blocks %}
+    {% assign is_banner_block_exist = false  %}
+    {% if block.type == 'banner'%}
+       {% assign is_banner_block_exist = true  %}
+    {% endif %}
+  {% endfor %}
   <div class="megamenu megamenu--mobile" data-megamenu-mobile data-megamenu-id="{{title}}">
     <div class="megamenu__wrapper">
       {% for block in blocks %}
@@ -109,10 +115,11 @@
     </div>
   </div>
   <div class="megamenu megamenu--desktop" data-megamenu-desktop data-megamenu-id="{{title}}">
-    <div class="megamenu__wrapper">
+
+    <div class="megamenu__wrapper" >
       {% for block in blocks %}
         {% if block.type == 'menu' %}
-          <div class="megamenu__menu-wrapper">
+          <div class="megamenu__menu-wrapper {% if is_banner_block_exist == false %}megamenu__menu-wrapper--full-width {% endif %}">
             {% assign menu = block.settings.menu %}
             {% for link in menu.links %}
               {% if link.links.size == 0 %}

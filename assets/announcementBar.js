@@ -11,10 +11,18 @@
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   customerLocation: () => (/* binding */ customerLocation)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
+/* unused harmony export getProductData */
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
 
+
+
+var _excluded = ["fromRebuy", "collectionHandle", "text"];
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var customerLocation = /*#__PURE__*/function () {
-  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* () {
     var data = yield fetch('/browsing_context_suggestions.json');
     var {
       detected_values: {
@@ -27,6 +35,39 @@ var customerLocation = /*#__PURE__*/function () {
   });
   return function customerLocation() {
     return _ref.apply(this, arguments);
+  };
+}();
+var getProductData = /*#__PURE__*/function () {
+  var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* (additionalParams) {
+    var _ref3 = additionalParams || {},
+      {
+        fromRebuy = true,
+        collectionHandle = '',
+        text = ''
+      } = _ref3,
+      otherparams = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref3, _excluded);
+    var url = '';
+    if (fromRebuy) {
+      url = new URL("https://rebuyengine.com/api/v1/products/recommended");
+      var params = _objectSpread({
+        limit: 10,
+        filter_oos: "yes",
+        context: "default",
+        key: "7af510977e690f362f5dae7f36a736bbeefdfc25"
+      }, otherparams);
+      Object.keys(params).forEach(param => {
+        url.searchParams.append(param, params[param]);
+      }); //set params
+    } else {
+      url = "/collections/".concat(collectionHandle, "?view=data-json"); //shopify support
+    }
+
+    var data = yield fetch(url);
+    var productData = yield data.json();
+    return productData;
+  });
+  return function getProductData(_x) {
+    return _ref2.apply(this, arguments);
   };
 }();
 
@@ -51,14 +92,15 @@ var customerLocation = /*#__PURE__*/function () {
   if (appContainer) {
     var _props;
     if (propsEl) {
-      var _document$querySelect;
-      props = JSON.parse((_document$querySelect = document.querySelector(propsEl)) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.innerHTML) || {}; //get json from the script id 
+      var _document$querySelect, _document$querySelect2;
+      console.log((_document$querySelect = document.querySelector(propsEl)) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.innerHTML);
+      props = JSON.parse((_document$querySelect2 = document.querySelector(propsEl)) === null || _document$querySelect2 === void 0 ? void 0 : _document$querySelect2.innerHTML) || {}; //get json from the script id 
     }
     //inject component into container
     var instance = new Component({
       target: document.querySelector(container),
       props: {
-        data: (_props = props) === null || _props === void 0 ? void 0 : _props.data //pass the prop on data prop as default
+        shopifyData: (_props = props) === null || _props === void 0 ? void 0 : _props.data //pass the prop on data prop as default
       }
     });
 
@@ -107,8 +149,8 @@ var customerLocation = /*#__PURE__*/function () {
 
 function instance($$self, $$props, $$invalidate) {
 	let country;
-	let { data } = $$props;
-	const blockData = data;
+	let { shopifyData } = $$props;
+	const blockData = shopifyData;
 
 	const handleLocationBasedAnnouncement = () => {
 		for (let countryBlock in blockData) {
@@ -131,19 +173,29 @@ function instance($$self, $$props, $$invalidate) {
 	});
 
 	$$self.$$set = $$props => {
-		if ('data' in $$props) $$invalidate(0, data = $$props.data);
+		if ('shopifyData' in $$props) $$invalidate(0, shopifyData = $$props.shopifyData);
 	};
 
-	return [data];
+	return [shopifyData];
 }
 
 class AnnouncementBar extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, null, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { data: 0 });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, null, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 0 });
+	}
+
+	get shopifyData() {
+		return this.$$.ctx[0];
+	}
+
+	set shopifyData(shopifyData) {
+		this.$$set({ shopifyData });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
 	}
 }
 
+(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(AnnouncementBar, {"shopifyData":{}}, [], [], true);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AnnouncementBar);
 
 /***/ })

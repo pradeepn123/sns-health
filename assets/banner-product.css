@@ -151,12 +151,12 @@
 }
 @media (min-width: 768px) {
   .banner-product__products-content--mobile {
-    grid-template-columns: repeat(auto-fit, minmax(0, calc(25% - 3 * var(--grid-column-gap) / 4)));
+    grid-template-columns: repeat(auto-fill, minmax(0, calc(25% - 3 * var(--grid-column-gap) / 4)));
   }
 }
 @media (min-width: 1024px) {
   .banner-product__products-content--mobile {
-    grid-template-columns: repeat(auto-fit, minmax(0, calc(20% - 4 * var(--grid-column-gap) / 5)));
+    grid-template-columns: repeat(auto-fill, minmax(0, calc(20% - 4 * var(--grid-column-gap) / 5)));
   }
 }
 @media (min-width: 768px) {

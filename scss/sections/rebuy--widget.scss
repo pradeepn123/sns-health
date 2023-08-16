@@ -1,0 +1,13 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/mixins';
+@import 'Token';
+@import 'StyleComponents/breakpoints';
+
+.rebuy-widget {
+    margin-top: var(--section-margin);
+    padding: var(--section-padding) 0 0;
+   &__wrapper {
+    @include mixins.container;
+   }
+}
+

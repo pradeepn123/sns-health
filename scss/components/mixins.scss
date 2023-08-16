@@ -32,13 +32,13 @@
   column-gap: var(--grid-column-gap);
   row-gap: var(--grid-row-gap); 
    @if $mobile-min-width {
-    grid-template-columns: repeat(auto-fit, minmax($mobile-min-width, 1fr ));
+    grid-template-columns: repeat(auto-fill, minmax($mobile-min-width, 1fr ));
   }
   @media (--md) {
     grid-auto-rows: minmax($desktop-row-height, auto);
 
     @if $desktop-min-width {
-      grid-template-columns: repeat(auto-fit, minmax($desktop-min-width, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax($desktop-min-width, 1fr));
     }
   }
 }
@@ -73,10 +73,10 @@
   row-gap: var(--grid-row-gap-large);
 
   @media (--sm) {
-    grid-template-columns: repeat(auto-fit, minmax(0, calc(25% - 3*(var(--grid-column-gap)/4))));
+    grid-template-columns: repeat(auto-fill, minmax(0, calc(25% - 3*(var(--grid-column-gap)/4))));
   }
 
   @media (--md) {
-    grid-template-columns: repeat(auto-fit, minmax(0, calc(20% - 4*(var(--grid-column-gap)/5))));
+    grid-template-columns: repeat(auto-fill, minmax(0, calc(20% - 4*(var(--grid-column-gap)/5))));
   }
 }

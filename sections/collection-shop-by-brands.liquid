@@ -443,7 +443,7 @@
                 {% endfor %}
             {% elsif selectCollection %}
                 {% for bundle_product in selectCollection.products limit: block.settings.limit %}
-                    console.log("bundle-product-information")
+                    ("bundle-product-information")
                     boostPFSConfig.custom.bundle.products.push({{ bundle_product | json }})
                 {% endfor %}
             {% endif %}

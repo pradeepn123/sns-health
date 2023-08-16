@@ -7,7 +7,7 @@
       "settings": {
         "enable_sticky_header": true,
         "logo": "shopify:\/\/shop_images\/logo_70dd2596-6d15-4b19-8837-dc103f75ec17.png",
-        "logo_max_width": 140,
+        "logo_max_width": 170,
         "mobile_logo_max_width": 100,
         "special_nav_item": "Clearance",
         "navigation_menu": "megamenu-desktop",
@@ -29,24 +29,10 @@
           "settings": {
             "menu": "sport-navigation"
           }
-        },
-        "0ac21017-411f-487b-97a0-304159da7f86": {
-          "type": "banner",
-          "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/OM-Nutrition.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/OM-Nutrition.jpg",
-            "eyebrow": "",
-            "heading": "Get <br> 20% off",
-            "subheading": "",
-            "color": "#00aa00",
-            "cta_text": "Shop",
-            "cta_url": "#"
-          }
         }
       },
       "block_order": [
-        "9e79c21c-c0ef-4b23-bd94-e5afdc0b217a",
-        "0ac21017-411f-487b-97a0-304159da7f86"
+        "9e79c21c-c0ef-4b23-bd94-e5afdc0b217a"
       ],
       "settings": {
         "title": "megamenu-sport"

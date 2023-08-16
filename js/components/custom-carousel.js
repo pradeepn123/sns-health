@@ -4,32 +4,32 @@ import { Navigation, Pagination } from 'swiper/modules';
 class CustomCarousel extends HTMLElement {
   constructor() {
     super();
-    this.HTMLElement = this.innerHTML;
-    this.carouselSettings = JSON.parse(this.querySelector('[data-settings]')?.innerHTML || "{}");
-    this.currentWidth = window.innerWidth;
-    this.innerHTML = `<div class="carousel__container swiper" data-swiper-container>
-    <div class="swiper-wrapper">
-    ${this.HTMLElement}
-    </div> </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
-      <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
-      <path d="M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531" stroke="white" stroke-width="2" stroke-linecap="square"/>
-      </svg>
-    </div>
-    <div class="swiper-navigation swiper-navigation--prev ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '' } ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
-        <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
-        <path d="M22.7061 26.353L16.9413 20.5883L22.7061 14.8236" stroke="white" stroke-width="2" stroke-linecap="square"/>
-      </svg>
-    </div>`
-    this.container = this.querySelector('[data-swiper-container]');
+    this.HTMLElement;
+    this.carouselSettings;
+    this.currentWidth;
+    this.innerHTML;
+    this.container;
   }
 
   connectedCallback() {
+    if(this.innerHTML.length > 0) { 
     this.initCarousel();
-    window.addEventListener('resize', () => { console.log("resize triggered");this.initCarousel()});
+    }
+    else {
+      const that = this;
+      let checkHtmlLength = window.setInterval(() => {
+           if(this.innerHTML.length > 0) {
+            that.initCarousel();
+              window.clearInterval(checkHtmlLength);
+              checkHtmlLength = false
+           }
+      },500);
+      window.setTimeout(() => {
+        if(checkHtmlLength) {
+          window.clearInterval(checkHtmlLength);
+        }
+      },5000)
+    } 
   }
 
   getCarouselSettings () {
@@ -93,8 +93,28 @@ class CustomCarousel extends HTMLElement {
   }
   
   initCarousel() {
+    this.HTMLElement = this.innerHTML;
+    this.carouselSettings = JSON.parse(this.querySelector('[data-settings]')?.innerHTML || "{}");
+    this.currentWidth = window.innerWidth;
+    this.innerHTML = `<div class="carousel__container swiper" data-swiper-container>
+    <div class="swiper-wrapper">
+    ${this.HTMLElement}
+    </div> </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
+      <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
+      <path d="M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531" stroke="white" stroke-width="2" stroke-linecap="square"/>
+      </svg>
+    </div>
+    <div class="swiper-navigation swiper-navigation--prev ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '' } ">
+      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
+        <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
+        <path d="M22.7061 26.353L16.9413 20.5883L22.7061 14.8236" stroke="white" stroke-width="2" stroke-linecap="square"/>
+      </svg>
+    </div>`
+    this.container = this.querySelector('[data-swiper-container]');
       const carouselSettings = this.getCarouselSettings() || {};
-      console.log(carouselSettings, "carousel settings");
       this.swiper = new Swiper(this.container, {
         on: {
           beforeInit: () => {

@@ -459,9 +459,11 @@
   {%- if section.settings.desktop_navigation_layout == 'inline' and navigation_menu.links.size > 0 -%}
     <nav class="nav-bar">
       <div class="nav-bar__inner">
-        <div class="container">
+        <div class="container nav-bar__container">
+          <a  class="nav-bar__link link hide-mobile" data-type="menuitem">{% render 'location-icon'%} Location</a>
           <ul class="nav-bar__linklist list--unstyled" data-type="menu" role="list">
             {% assign special_nav_item = section.settings.special_nav_item %}
+
             {%- for link in navigation_menu.links -%}
               {% liquid 
                 assign special_nav_item = special_nav_item | downcase | strip
@@ -472,7 +474,7 @@
                 endif %}
               <li class="nav-bar__item {% if link.links.size > 0 %} hide-mobile {% endif%}">
                 {%- if link.links.size == 0 -%}
-                  <a href="{{ link.url }}" class="nav-bar__link link {% if is_special_item %} nav-bar__link--special {% endif %}" data-type="menuitem">{{ link.title }}</a>
+                  <a href="{{ link.url }}" class="nav-bar__link link" data-type="menuitem">{% if is_special_item %}<img src="{{'fire-emo.png' | asset_url}}" height="17" width="17"/>  {% endif %}{{ link.title }}</a>
                 {%- else -%}
                   {%- capture index -%}desktop-menu-0-{{ forloop.index }}{%- endcapture -%}
 

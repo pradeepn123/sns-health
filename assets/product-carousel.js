@@ -9,9 +9,9 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   customerLocation: () => (/* binding */ customerLocation),
 /* harmony export */   getProductData: () => (/* binding */ getProductData)
 /* harmony export */ });
+/* unused harmony export customerLocation */
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
@@ -110,132 +110,19 @@ var getProductData = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./js/sections/announcementBar.js":
-/*!****************************************!*\
-  !*** ./js/sections/announcementBar.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
-/* harmony import */ var SvelteComponents_AnnouncementBar_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/AnnouncementBar.svelte */ "./js/components/svelte/AnnouncementBar.svelte");
- //wrapper that inject svelte into DOM
- //svelte component to load
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_AnnouncementBar_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'announcement-bar', '#announcement-bar-data');
-});
-
-/***/ }),
-
 /***/ "./js/sections/product-carousel.js":
 /*!*****************************************!*\
   !*** ./js/sections/product-carousel.js ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
 /* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
 /* harmony import */ var SvelteComponents_product_carousel_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/product-carousel.svelte */ "./js/components/svelte/product-carousel.svelte");
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
   (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_product_carousel_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'product-carousel', '#product-data');
 });
-
-/***/ }),
-
-/***/ "./js/sections/section.js":
-/*!********************************!*\
-  !*** ./js/sections/section.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
-
-/* harmony import */ var _announcementBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./announcementBar */ "./js/sections/announcementBar.js");
-/* harmony import */ var _product_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product-carousel */ "./js/sections/product-carousel.js");
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  (0,_announcementBar__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_product_carousel__WEBPACK_IMPORTED_MODULE_1__["default"])();
-});
-
-/***/ }),
-
-/***/ "./js/components/svelte/AnnouncementBar.svelte":
-/*!*****************************************************!*\
-  !*** ./js/components/svelte/AnnouncementBar.svelte ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
-/* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
-/* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
-/* harmony import */ var JsComponents_get_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! JsComponents/get-data */ "./js/components/get-data.js");
-/* js/components/svelte/AnnouncementBar.svelte generated by Svelte v4.2.0 */
-
-
-
-
-
-
-function instance($$self, $$props, $$invalidate) {
-	let country;
-	let { shopifyData } = $$props;
-	const blockData = shopifyData;
-
-	const handleLocationBasedAnnouncement = () => {
-		for (let countryBlock in blockData) {
-			if (blockData[countryBlock]?.handle?.includes(country)) {
-				const announcementBar = document.querySelector("[data-announcement-bar]");
-				announcementBar.classList.remove("hidden");
-
-				announcementBar?.querySelectorAll("[ data-announcement-text]")?.forEach(text => {
-					text.innerHTML = blockData[countryBlock]?.text;
-				});
-
-				break;
-			}
-		}
-	};
-
-	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(async () => {
-		country = await (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_3__.customerLocation)();
-		handleLocationBasedAnnouncement();
-	});
-
-	$$self.$$set = $$props => {
-		if ('shopifyData' in $$props) $$invalidate(0, shopifyData = $$props.shopifyData);
-	};
-
-	return [shopifyData];
-}
-
-class AnnouncementBar extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
-	constructor(options) {
-		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, null, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 0 });
-	}
-
-	get shopifyData() {
-		return this.$$.ctx[0];
-	}
-
-	set shopifyData(shopifyData) {
-		this.$$set({ shopifyData });
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
-	}
-}
-
-(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(AnnouncementBar, {"shopifyData":{}}, [], [], true);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AnnouncementBar);
 
 /***/ }),
 
@@ -1662,7 +1549,7 @@ class Responsive_image extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"section": 0
+/******/ 			"product-carousel": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -1712,7 +1599,7 @@ class Responsive_image extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./js/sections/section.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./js/sections/product-carousel.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

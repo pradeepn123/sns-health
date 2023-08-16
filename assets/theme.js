@@ -2822,7 +2822,6 @@
     function Currency() {
       _classCallCheck(this, Currency);
     }
-
     _createClass(Currency, null, [{
       key: "formatMoney",
 
@@ -2896,7 +2895,7 @@
         }
       }
     }]);
-
+    window.formatCurrency = Currency.formatMoney;
     return Currency;
   }();
 
