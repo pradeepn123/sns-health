@@ -178,6 +178,24 @@
         "heading": "Featured Brands"
       }
     },
+    "0b3ea745-2c54-4e66-a525-b80b7acd1b49": {
+      "type": "product-carousel",
+      "blocks": {
+        "800a2157-2753-4def-9998-c8aa3e0e8622": {
+          "type": "collection",
+          "settings": {
+            "collection_text": "Rebuy",
+            "rule_id": "110179"
+          }
+        }
+      },
+      "block_order": [
+        "800a2157-2753-4def-9998-c8aa3e0e8622"
+      ],
+      "settings": {
+        "heading": "Featured Products"
+      }
+    },
     "bdf697cd-fd45-40c5-b148-1b64a6b26e13": {
       "type": "featured-products",
       "settings": {
@@ -335,6 +353,7 @@
     "main",
     "65868ffb-1036-425b-a0dc-ebc8bcff334b",
     "932e9d3c-0311-4a00-af68-f2426cae7d02",
+    "0b3ea745-2c54-4e66-a525-b80b7acd1b49",
     "bdf697cd-fd45-40c5-b148-1b64a6b26e13",
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
     "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
