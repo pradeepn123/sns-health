@@ -468,8 +468,8 @@
           "eb1afa66-0259-4a7d-aaf3-61073dc8e22b": {
             "type": "country_specific",
             "settings": {
-              "country_iso": "CA",
-              "announcement_text": "This is only available on india"
+              "country_iso": "CA, IN",
+              "announcement_text": "Free Shipping on orders above $49"
             }
           },
           "599da0e9-6abf-4fb3-ad51-f675e23a4ba0": {
