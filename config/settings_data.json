@@ -476,14 +476,14 @@
             "type": "country_specific",
             "settings": {
               "country_iso": "GB",
-              "announcement_text": "This is for canada and USA"
+              "announcement_text": "Free Shipping on orders above £60"
             }
           },
           "ac89ab32-5fbf-4c19-ac77-09c827474b95": {
             "type": "country_specific",
             "settings": {
               "country_iso": "FR, BE",
-              "announcement_text": "Test"
+              "announcement_text": "Free Shipping on orders above €80"
             }
           }
         },
