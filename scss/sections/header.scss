@@ -105,6 +105,10 @@
             &[aria-expanded="true"] {
                 color: colors.$red;
             }
+
+            &--link {
+                text-decoration: underline;
+            }
         }
 
 
