@@ -318,18 +318,10 @@
             "collection_text": "Default",
             "rule_id": "110176"
           }
-        },
-        "59603513-1042-4937-a420-9e2aedd114d0": {
-          "type": "collection",
-          "settings": {
-            "collection_text": "tab2",
-            "rule_id": "110176"
-          }
         }
       },
       "block_order": [
-        "1bd5fa8b-9f28-4601-83d4-430d5cdb7c42",
-        "59603513-1042-4937-a420-9e2aedd114d0"
+        "1bd5fa8b-9f28-4601-83d4-430d5cdb7c42"
       ],
       "settings": {
         "heading": "New Arrivals",
