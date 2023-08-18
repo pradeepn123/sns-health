@@ -189,15 +189,15 @@ class CustomCarousel extends HTMLElement {
         },
         init: swiper => {
           console.log(swiper, "Swiper");
+          swiper.onLoad(() => {
+            console.log("loaded");
+          });
           if (!!swiper.navigation) {
             swiper.navigation.destroy();
           }
           if (window.handleJsClick) {
             window.handleJsClick();
           }
-        },
-        load: () => {
-          console.log("loaded");
         }
         // afterInit: () => {
         //   setTimeout(() => {
