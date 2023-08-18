@@ -125,20 +125,27 @@
     {%- for link in menu.links -%}
       {%- if link.url contains 'megamenu' -%}
         {% assign panel_id = link.url | split: '#' | last %}
+        {% assign megamenu_url =  link.url | split: 'megamenu-' | last %}
+        {% assign megamenu_url = '/collections/' | append: megamenu_url %}
         <div class="mobile-menu__panel is-nested" id="{{ panel_id }}" aria-hidden="false" data-mobile-megamenu-target-{{panel_id}} >
           <div class="is-sticky">
             <button class="mobile-menu__back-button" data-action="close-panel">{% render 'icon', icon: 'arrow-right' %} {{ 'header.navigation.back' | t }}</button>
           </div>
+          <a class="mobile-menu__nav-list-toggle text--strong  mobile-menu__nav-list-toggle--link" href="{{ megamenu_url }}">View All</a>
         </div>
+       
       {% endif %}
       {% if link.links.size > 0 %}
           {% for sublink in link.links %} 
             {%- if sublink.url contains 'megamenu' -%}
               {% assign panel_id = sublink.url | split: '#' | last %}
+              {% assign megamenu_url =  link.url | split: 'megamenu-' | last %}
+              {% assign megamenu_url = '/collections/' | append: megamenu_url %}
               <div class="mobile-menu__panel is-nested" id="{{ panel_id }}" aria-hidden="false" data-mobile-megamenu-target-{{panel_id}} >
                 <div class="is-sticky">
                   <button class="mobile-menu__back-button" data-action="close-panel">{% render 'icon', icon: 'arrow-right' %} {{ 'header.navigation.back' | t }}</button>
                 </div>
+                <a class="mobile-menu__nav-list-toggle text--strong  mobile-menu__nav-list-toggle--link" href="{{ megamenu_url }}">View All</a>
               </div>
             {% endif %}
           {% endfor %}

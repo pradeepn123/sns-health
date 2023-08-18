@@ -22,7 +22,11 @@
 
                 {%- if block.settings.content != blank -%}
                   <div class="text-with-icons__text rte">
-                    {{ block.settings.content  }}
+                    {% if block.settings.content contains 'info@snshealth.com' %}
+                      <a href="mailto:info@snshealth.com">info@snshealth.com</a>
+                      {% else %}
+                    {{ block.settings.content }}
+                    {% endif %}
                   </div>
                 {%- endif -%}
               </div>
@@ -51,7 +55,11 @@
 
                 {%- if block.settings.content != blank -%}
                   <div class="text-with-icons__text rte">
-                    {{ block.settings.content  }}
+                    {% if block.settings.content contains 'info@snshealth.com' %}
+                      <a href="mailto:info@snshealth.com">info@snshealth.com</a>
+                      {% else %}
+                    {{ block.settings.content }}
+                    {% endif %}
                   </div>
                 {%- endif -%}
               </div>

@@ -35,17 +35,19 @@ always visible.
     {%- endif -%}
 
       {% for link in menu.links %}
-        {% assign url = link.url | split: "#" | last%}
+        {% assign url = link.url | split: "#" | last %}
         {% if url contains 'megamenu' %} 
           {% assign is_mega_menu = true %}
           {% assign megamenu_tag = url %}
+          {% assign megamenu_url =  url | split: 'megamenu-' | last %}
+          {% assign megamenu_url = '/collections/' | append: megamenu_url %}
           {% else %}
           {% assign is_mega_menu = false %}
         {% endif %}
       <li class="nav-dropdown__item {% if is_mega_menu %}has-mega-menu{% endif %}"  data-target-parent>
           {%- capture index_nested -%}{{ index }}-{% increment nav_dropdown %}{%- endcapture -%}
           {%- if is_mega_menu -%}
-            <a href="{{ link.url }}" class="nav-dropdown__link link" data-type="menuitem" aria-expanded="false" aria-controls="{{ megamenu_tag }}" aria-haspopup="true" {% if is_first_megamenu %} data-trigger-first-megamenu {% endif %}>{{- link.title -}} {%- render 'icon', icon: 'arrow-right' -%}</a>
+            <a href="{{ megamenu_url }}" class="nav-dropdown__link link" data-type="menuitem" aria-expanded="false" aria-controls="{{ megamenu_tag }}" aria-haspopup="true" {% if is_first_megamenu %} data-trigger-first-megamenu {% endif %}>{{- link.title -}} {%- render 'icon', icon: 'arrow-right' -%}</a>
             <div id="{{ megamenu_tag }}" data-desktop-megamenu-target-{{megamenu_tag}}  class="mega-menu {% if is_floating %}mega-menu--floating{% endif %}" data-type="menu" aria-hidden="true" role="list" {{ mega_menu_block.shopify_attributes }} {% if is_first_megamenu %} data-target-first-megamenu {% endif %}> </div>
             {% if is_first_megamenu == true %}
               {% assign is_first_megamenu = false %} 
