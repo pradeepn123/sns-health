@@ -188,20 +188,22 @@ class CustomCarousel extends HTMLElement {
           }
         },
         init: swiper => {
+          console.log(swiper, "Swiper");
           if (!!swiper.navigation) {
             swiper.navigation.destroy();
           }
           if (window.handleJsClick) {
             window.handleJsClick();
           }
-        },
-        afterInit: () => {
-          setTimeout(() => {
-            that.classList.has('hide') ? that.classList.remove('hide') : '';
-            this.querySelector('.carousel-placeholders').classList.add('hide');
-          }, 1000);
         }
+        // afterInit: () => {
+        //   setTimeout(() => {
+        //     // that.classList.has('hide') ? that.classList.remove('hide') : '';
+        //     this.querySelector('.carousel-placeholders').classList.add('hide');
+        //   },1000)
+        // }
       },
+
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
     }, carouselSettings));
     this.swiper.on('activeIndexChange', current => {
