@@ -664,7 +664,7 @@ function get_each_context_2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (126:0) {:else}
+// (123:0) {:else}
 function create_else_block(ctx) {
 	let div5;
 
@@ -688,7 +688,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (58:0) {#if productData.length && !isLoading}
+// (55:0) {#if productData.length && !isLoading}
 function create_if_block(ctx) {
 	let t;
 	let previous_key = /*productData*/ ctx[0];
@@ -747,7 +747,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (59:2) {#if collectionTexts.length > 1}
+// (56:2) {#if collectionTexts.length > 1}
 function create_if_block_2(ctx) {
 	let div;
 	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[5]);
@@ -810,7 +810,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (61:6) {#each collectionTexts as text}
+// (58:6) {#each collectionTexts as text}
 function create_each_block_2(ctx) {
 	let div;
 	let button;
@@ -863,7 +863,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (85:12) {#if product.variants[0].price > 0}
+// (82:12) {#if product.variants[0].price > 0}
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
@@ -903,7 +903,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (84:10) {#each productData as product, index}
+// (81:10) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
@@ -962,7 +962,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (120:8) {#each productData as product, index}
+// (117:8) {#each productData as product, index}
 function create_each_block(ctx) {
 	let productcard;
 	let current;
@@ -1002,7 +1002,7 @@ function create_each_block(ctx) {
 	};
 }
 
-// (76:2) {#key productData}
+// (73:2) {#key productData}
 function create_key_block(ctx) {
 	let div2;
 	let div0;
@@ -1059,11 +1059,11 @@ function create_key_block(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "type", "text/json");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "data-settings", "");
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", div0_class_value = `featured-products__content featured-products__content--desktop ${/*mobileCarousel*/ ctx[3] == true
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", div0_class_value = `featured-products__content featured-products__content--desktop ${JSON.parse(/*mobileCarousel*/ ctx[3])
 			? "featured-products__content--show-mobile"
 			: ""}`);
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", div1_class_value = `featured-products__content featured-products__content--mobile ${/*mobileCarousel*/ ctx[3] == true
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", div1_class_value = `featured-products__content featured-products__content--mobile ${JSON.parse(/*mobileCarousel*/ ctx[3])
 			? "featured-products__content--hide-mobile"
 			: ""}`);
 
@@ -1264,7 +1264,6 @@ function instance($$self, $$props, $$invalidate) {
 	let productData = []; //to store api data
 	let isLoading = true;
 	const { currency = "$", soldOutText = "Sold Out", chooseMoreText = "Choose Options", addToCartText = "Add To Cart", mobileCarousel = false, blocks = [] } = shopifyData || {};
-	console.log(mobileCarousel, "mobileCarousel");
 
 	const otherData = {
 		currency,
