@@ -61,8 +61,6 @@
   {%- assign max_width_image_float = max_width_image | times: 1.0  -%}
 
   #Image-{{ image_id }}-{{ generated_image_id }} {
-    max-width: {{ max_width_image }}px;
-    max-height: {{ max_height_image }}px;
     position: absolute;
     top:0;
     height:100%;
@@ -97,8 +95,9 @@
 
 
   #ImageWrapper-{{ image_id }}-{{ generated_image_id }} {
-    max-width: {{ max_width_image }}px;
     position: relative;
+    max-width: {{ max_width_image }}px;
+    max-height: {{ max_height_image }}px;
   }
 
   #ImageWrapper-{{ image_id }}-{{ generated_image_id }}::before {
