@@ -1133,5 +1133,6 @@ custom-carousel {
 }
 
 custom-carousel .swiper:not(.swiper-initialized) .swiper-slide {
-  display: none;
+  height: 530px;
+  opacity: 0;
 }
