@@ -132,6 +132,7 @@ class CustomCarousel extends HTMLElement {
       carouselSettings = _objectSpread({}, otherSwiperSettings);
       if (navigation) {
         var navigationNext = this.querySelector('.swiper-navigation--next');
+        console.log(navigationNext);
         var navigationPrev = this.querySelector('.swiper-navigation--prev');
         carouselSettings = _objectSpread(_objectSpread({}, carouselSettings), {}, {
           navigation: {
