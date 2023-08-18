@@ -16,8 +16,8 @@
   <div class="banner__content">
     {% if carousel_exist %}
       <div class="banner__carousel banner__item"> 
-      <div class="custom-carousel__content hide" data-carousel-content>
         <custom-carousel>
+          <div class="custom-carousel__content hide" data-carousel-content>
             {% for block in section.blocks %} 
             {% liquid 
               assign id = block.id
@@ -119,7 +119,7 @@
 
 <div class="banner banner--mobile">
   <div class="banner__content">
-      <div class="banner__carousel banner__item"> 
+    <div class="banner__carousel banner__item"> 
         <custom-carousel>
           <div class="custom-carousel__content hide" data-carousel-content>
             {% for block in section.blocks %} 
