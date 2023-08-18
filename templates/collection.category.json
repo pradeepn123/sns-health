@@ -96,6 +96,7 @@
         "1c17000b-725e-43a0-9ecd-25ead8a16940"
       ],
       "settings": {
+        "mobile_carousel": true
       }
     },
     "d11d382c-8951-47c2-a6cd-ca238efd7dac": {
@@ -173,7 +174,8 @@
         "c40e2fb9-7998-490b-86ad-3de1deaaecf1"
       ],
       "settings": {
-        "heading": "Featured Products"
+        "heading": "Featured Products",
+        "mobile_carousel": true
       }
     },
     "4d89401b-332c-4ecb-9c2e-37615234ab7d": {
@@ -211,7 +213,8 @@
         "b098653e-eebb-4002-aa1c-780a24395bf4"
       ],
       "settings": {
-        "heading": "Recommended for you"
+        "heading": "Recommended for you",
+        "mobile_carousel": true
       }
     },
     "7a0d2423-3835-49cd-87bf-aa13d0fda0c5": {
@@ -336,6 +339,13 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "5c621f1d-ee6f-4595-a7c6-77191be89e64": {
+      "type": "customer-review",
+      "settings": {
+        "section_heading": "Customer Reviews",
+        "collection_id": "293453168791"
+      }
     }
   },
   "order": [
@@ -354,6 +364,7 @@
     "333be3ce-5bf5-4a5b-984e-98116e03a72e",
     "c06c2ac2-8a0a-4934-a3e8-9034e4ec8551",
     "398fa20a-99f7-4200-ac45-f9ca3cd7d4b9",
-    "1691994536cf5133e2"
+    "1691994536cf5133e2",
+    "5c621f1d-ee6f-4595-a7c6-77191be89e64"
   ]
 }
