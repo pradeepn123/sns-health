@@ -664,7 +664,7 @@ function get_each_context_2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (129:0) {:else}
+// (127:0) {:else}
 function create_else_block(ctx) {
 	let div5;
 
@@ -944,7 +944,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (85:12) {#if product.variants[0].price > 0}
+// (84:12) {#if product.variants[0].price > 0}
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
@@ -984,7 +984,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (84:10) {#each productData as product, index}
+// (83:10) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
@@ -1148,7 +1148,7 @@ function create_key_block(ctx) {
 	};
 }
 
-// (123:8) {#each productData as product, index}
+// (121:8) {#each productData as product, index}
 function create_each_block(ctx) {
 	let productcard;
 	let current;
