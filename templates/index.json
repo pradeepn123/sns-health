@@ -193,14 +193,15 @@
         "800a2157-2753-4def-9998-c8aa3e0e8622"
       ],
       "settings": {
-        "heading": "Featured Products"
+        "heading": "Featured Products",
+        "mobile_carousel": true
       }
     },
-    "bdf697cd-fd45-40c5-b148-1b64a6b26e13": {
-      "type": "featured-products",
+    "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854": {
+      "type": "customer-review",
       "settings": {
-        "heading": "Featured Products",
-        "collection": "all-products"
+        "section_heading": "Customer Reviews",
+        "collection_id": "264113651863"
       }
     },
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7": {
@@ -233,6 +234,7 @@
         "93f70bd8-2553-4ff0-a4e5-6de297d8c9fb"
       ],
       "settings": {
+        "mobile_carousel": true
       }
     },
     "56ecedde-e3f2-4a8c-8643-e00c72e3c291": {
@@ -265,6 +267,7 @@
         "1b4caa03-125f-44da-8296-256d97a34fe6"
       ],
       "settings": {
+        "mobile_carousel": true
       }
     },
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e": {
@@ -303,13 +306,7 @@
         "9f264aba-de45-4d65-b645-670ea4d270f6"
       ],
       "settings": {
-      }
-    },
-    "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854": {
-      "type": "customer-review",
-      "settings": {
-        "section_heading": "Customer Reviews",
-        "collection_id": "264113651863"
+        "mobile_carousel": true
       }
     },
     "fb95bcfd-aa24-42a8-92cf-b94fa307f70d": {
@@ -335,7 +332,8 @@
         "59603513-1042-4937-a420-9e2aedd114d0"
       ],
       "settings": {
-        "heading": "New Arrivals"
+        "heading": "New Arrivals",
+        "mobile_carousel": true
       }
     },
     "4aa52242-6a1d-45f5-863a-eb800312ea2c": {
@@ -369,11 +367,10 @@
     "65868ffb-1036-425b-a0dc-ebc8bcff334b",
     "932e9d3c-0311-4a00-af68-f2426cae7d02",
     "0b3ea745-2c54-4e66-a525-b80b7acd1b49",
-    "bdf697cd-fd45-40c5-b148-1b64a6b26e13",
+    "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854",
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
     "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
-    "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854",
     "fb95bcfd-aa24-42a8-92cf-b94fa307f70d",
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
