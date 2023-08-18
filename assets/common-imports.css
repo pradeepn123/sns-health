@@ -1125,6 +1125,12 @@ custom-carousel {
   background: #f5f5f5;
 }
 
+.swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .hide {
   display: none !important;
 }
