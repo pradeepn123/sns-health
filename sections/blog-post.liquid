@@ -7,6 +7,7 @@
 
          <div class="blog-post-section__content"> 
          <custom-carousel>
+          <div class="custom-carousel__content hide" data-carousel-content>
          {% for article in blog.articles limit: 4 %} 
    
           <div class="blog-post-section__article swiper-slide" onclick="location.href='{{article.url}}';">
@@ -32,6 +33,7 @@
          </div>
 
          {% endfor %}
+        </div>
          <script type="text/json" data-settings>
           {
             "slidesPerView": 2,
