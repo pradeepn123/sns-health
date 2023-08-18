@@ -171,9 +171,9 @@ function get_each_context_1(ctx, list, i) {
 
 // (61:0) {#if curatedReviewData.length}
 function create_if_block(ctx) {
+	let div8;
 	let div7;
 	let div6;
-	let div5;
 	let div3;
 	let div2;
 	let div0;
@@ -185,8 +185,9 @@ function create_if_block(ctx) {
 	let t1;
 	let t2;
 	let t3;
-	let div4;
+	let div5;
 	let custom_carousel;
+	let div4;
 	let t4;
 	let script;
 	let current;
@@ -212,9 +213,9 @@ function create_if_block(ctx) {
 
 	return {
 		c() {
+			div8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
@@ -228,8 +229,9 @@ function create_if_block(ctx) {
 			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t1_value);
 			t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(" Reviews");
 			t3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			custom_carousel = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("custom-carousel");
+			div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
@@ -242,18 +244,20 @@ function create_if_block(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", "total_reviews-text");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "total_reviews");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", "reviews_header");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", "custom-carousel__content hide");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "data-carousel-content", "");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "type", "text/json");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "data-settings", "");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", "review_carousel");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "customer-review__wrapper");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", "customer-review__content");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div7, "class", "customer-review customer-review__container product-card-wrapper");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "review_carousel");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", "customer-review__wrapper");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div7, "class", "customer-review__content");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "class", "customer-review customer-review__container product-card-wrapper");
 		},
 		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div7, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div8, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div7);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, div6);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div5);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div3);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div3);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, div2);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div0);
 
@@ -267,13 +271,14 @@ function create_if_block(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div1);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, t1);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, t2);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t3);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div4);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, custom_carousel);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, t3);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div5);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, custom_carousel);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div4);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(custom_carousel, null);
+					each_blocks[i].m(div4, null);
 				}
 			}
 
@@ -303,7 +308,7 @@ function create_if_block(ctx) {
 						each_blocks[i] = create_each_block(child_ctx);
 						each_blocks[i].c();
 						(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(each_blocks[i], 1);
-						each_blocks[i].m(custom_carousel, t4);
+						each_blocks[i].m(div4, null);
 					}
 				}
 
@@ -336,7 +341,7 @@ function create_if_block(ctx) {
 		},
 		d(detaching) {
 			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div7);
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div8);
 			}
 
 			for (let i = 0; i < each_blocks_1.length; i += 1) {
@@ -384,7 +389,7 @@ function create_each_block_1(key_1, ctx) {
 	};
 }
 
-// (79:10) {#each curatedReviewData as review}
+// (80:12) {#each curatedReviewData as review}
 function create_each_block(ctx) {
 	let div;
 	let reviewcard;
