@@ -637,7 +637,7 @@
   -webkit-column-gap: 5px;
      -moz-column-gap: 5px;
           column-gap: 5px;
-  padding: 10px;
+  padding: 0;
   border-radius: 10px;
   text-transform: capitalize;
 }
@@ -651,6 +651,11 @@
     font-weight: 400;
     line-height: 1.2;
     font-weight: 500;
+  }
+}
+@media (min-width: 390px) {
+  .nav-bar__link {
+    padding: 10px;
   }
 }
 .nav-bar__link:hover {
