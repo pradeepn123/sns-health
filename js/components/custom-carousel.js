@@ -70,7 +70,7 @@ class CustomCarousel extends HTMLElement {
               const navigationPrev = this.querySelector('.swiper-navigation--prev');
               carouselSettings = {...carouselSettings,navigation: {
                 nextEl: navigationNext,
-                prevEl: navigationPrev
+                prevEl: navigationPrev,
               } }
             }
             if(pagination) {
@@ -96,8 +96,8 @@ class CustomCarousel extends HTMLElement {
     this.HTMLElement = this.innerHTML;
     this.carouselSettings = JSON.parse(this.querySelector('[data-settings]')?.innerHTML || "{}");
     this.currentWidth = window.innerWidth;
-    this.innerHTML = `<div class="carousel__container swiper" data-swiper-container>
-    <div class="swiper-wrapper">
+    this.innerHTML = `<div class="carousel__container swiper hide" data-swiper-container>
+    <div class="swiper-wrapper ">
     ${this.HTMLElement}
     </div> </div>
     <div class="swiper-pagination"></div>
@@ -112,7 +112,15 @@ class CustomCarousel extends HTMLElement {
         <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
         <path d="M22.7061 26.353L16.9413 20.5883L22.7061 14.8236" stroke="white" stroke-width="2" stroke-linecap="square"/>
       </svg>
-    </div>`
+    </div>
+    <div class="carousel-placeholders">
+      <div class="placeholder"></div>
+      <div class="placeholder"></div>
+      <div class="placeholder"></div>
+      <div class="placeholder"></div>
+      <div class="placeholder"></div>
+    </div>
+    `
     this.container = this.querySelector('[data-swiper-container]');
       const carouselSettings = this.getCarouselSettings() || {};
       this.swiper = new Swiper(this.container, {
@@ -131,6 +139,15 @@ class CustomCarousel extends HTMLElement {
             }
             else {
               this.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            }
+          },
+          init: (swiper) => {
+            setTimeout(() => {
+              this.querySelector('.carousel__container').classList.remove('hide');
+              this.querySelector('.carousel-placeholders').classList.add('hide');
+            },1000)
+            if (!!swiper.navigation) {
+              swiper.navigation.destroy();
             }
           }
         },

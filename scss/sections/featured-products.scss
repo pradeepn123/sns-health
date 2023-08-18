@@ -2,8 +2,9 @@
 @use 'StyleComponents/typography';
 @use 'StyleComponents/colors';
 @import 'Token';
-@import 'breakpoints';
+@import 'breakpoints'; 
 
+@custom-selector :--button .product-category__button.button;
 
 
 .featured-products {
@@ -11,7 +12,7 @@
     padding: var(--section-padding) 0 0;
   
     &__wrapper {
-      @include mixins.container;
+      @include mixins.container; 
     }
 
     &__content {
@@ -29,4 +30,24 @@
             }
         }
     }
+    &__Category_wrapp{
+        @include mixins.container;
+        display: flex;
+        column-gap: 16px;
+        margin-bottom: 35px;
+    }
+
+    :--button{
+        color: colors.$red;
+        border: 1px solid colors.$red;
+        background: transparent;
+    }
+
+    .product-category__button--active{
+        color: colors.$white !important;
+        border: 1px solid colors.$red !important;
+        background: colors.$red !important;
+    }
+
 }
+

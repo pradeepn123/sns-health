@@ -55,3 +55,30 @@
     display: none;
   }
 }
+.featured-products__Category_wrapp {
+  max-width: calc(100% - 2 * var(--base-margin));
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+  margin-bottom: 35px;
+}
+@media (min-width: 1440px) {
+  .featured-products__Category_wrapp {
+    max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}
+.featured-products .product-category__button.button {
+  color: #ED1C24;
+  border: 1px solid #ED1C24;
+  background: transparent;
+}
+.featured-products .product-category__button--active {
+  color: #fff !important;
+  border: 1px solid #ED1C24 !important;
+  background: #ED1C24 !important;
+}

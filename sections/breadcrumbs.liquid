@@ -1,0 +1,36 @@
+{{
+  'breadcrumb.css' | asset_url | stylesheet_tag
+}}
+
+<div class='breadcrumb'>
+<div class='breadcrumb__wrapper'>
+<div class="breadcrumb__content">
+      <nav class="breadcrumb">
+        <ol class="breadcrumb__list" style="font-weight:400;">
+          <li class="breadcrumb__item">
+            <a class="breadcrumb__link link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a>
+            {%- render 'icon', icon: 'arrow-right' -%}
+          </li>
+
+          <li class="breadcrumb__item">
+            <a class="breadcrumb__link link" href="{{ collection.url }}">
+              {{- collection.title -}}
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Category BreadCrumbs",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Category BreadCrumbs"
+    }
+  ]
+}
+{% endschema %}

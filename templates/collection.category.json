@@ -1,0 +1,359 @@
+{
+  "sections": {
+    "main": {
+      "type": "about-page-info",
+      "settings": {
+      }
+    },
+    "c5d9e8dc-b108-4c9d-8fdb-f6a459906248": {
+      "type": "breadcrumbs",
+      "settings": {
+      }
+    },
+    "c406d849-1052-4d9b-8e69-778d76d8f081": {
+      "type": "collection-banner",
+      "blocks": {
+        "de35a0e1-bb6f-44aa-a468-8ceac0e05f2c": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "font-color": "#000000",
+            "background-color": "#ecf0fa",
+            "inline_cta": true,
+            "cta_text": "readmore",
+            "cta_url": "#shopify-section-template--16114872418455__398fa20a-99f7-4200-ac45-f9ca3cd7d4b9"
+          }
+        }
+      },
+      "block_order": [
+        "de35a0e1-bb6f-44aa-a468-8ceac0e05f2c"
+      ],
+      "settings": {
+      }
+    },
+    "bd300b68-79a0-4efa-84e4-5109ea2347ff": {
+      "type": "category-collection-grid",
+      "blocks": {
+        "774e87a5-ac09-4ba0-98c9-9701cdb74891": {
+          "type": "image_with_text_overlay",
+          "repeater": "{{ collection.metafields.custom.collection_banner_grid.value }}",
+          "settings": {
+            "no_of_column_desktop": "{{ block.repeater.no_of_column_desktop.value }}",
+            "no_of_rows_desktop": "{{ block.repeater.no_of_rows_desktop.value }}",
+            "no_of_column_mobile": "{{ block.repeater.column_mobile.value }}",
+            "no_of_rows_mobile": "{{ block.repeater.row_mobile.value }}",
+            "image_desktop": "{{ block.repeater.image_desktop.value }}",
+            "image_mobile": "{{ block.repeater.image_mobile.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "cta_text": "{{ block.repeater.cta_text.value }}",
+            "cta_url": "{{ block.repeater.cta_url.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "774e87a5-ac09-4ba0-98c9-9701cdb74891"
+      ],
+      "settings": {
+        "column": 4,
+        "rows": 2
+      }
+    },
+    "5a453bc2-2bd2-4824-bc65-9b855821ca28": {
+      "type": "banner-carousel-grid",
+      "blocks": {
+        "4bfad745-e3da-4024-86bc-1c8e5b63f343": {
+          "type": "banner",
+          "source": "{{ collection.metafields.custom.banner_carousel_grid.value }}",
+          "settings": {
+            "image_desktop": "{{ collection.metafields.custom.banner_carousel_grid.value.image_desktop.value }}",
+            "image_mobile": "{{ collection.metafields.custom.banner_carousel_grid.value.image_mobile.value }}",
+            "eyebrow": "{{ collection.metafields.custom.banner_carousel_grid.value.eyebrow.value }}",
+            "heading": "{{ collection.metafields.custom.banner_carousel_grid.value.heading.value }}",
+            "inline_heading": false,
+            "subheading": "{{ collection.metafields.custom.banner_carousel_grid.value.sub_heading.value }}",
+            "cta_text": "{{ collection.metafields.custom.banner_carousel_grid.value.cta_text.value }}",
+            "cta_url": "{{ collection.metafields.custom.banner_carousel_grid.value.cta_url.value }}"
+          }
+        },
+        "1c17000b-725e-43a0-9ecd-25ead8a16940": {
+          "type": "banner_grid",
+          "repeater": "{{ collection.metafields.custom.offer_banner.value }}",
+          "settings": {
+            "text_color": "{{ block.repeater.text_color.value }}",
+            "background_color": "{{ block.repeater.background_color.value }}",
+            "image_desktop": "{{ block.repeater.desktop_image.value }}",
+            "image_mobile": "{{ block.repeater.mobile_image.value }}",
+            "eyebrow": "{{ block.repeater.eyebrow.value }}",
+            "inline_heading": false,
+            "heading": "{{ block.repeater.heading.value }}",
+            "subheading": "{{ block.repeater.subheading.value }}",
+            "cta_text": "{{ block.repeater.button_text.value }}",
+            "cta_url": "{{ block.repeater.button_url.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "4bfad745-e3da-4024-86bc-1c8e5b63f343",
+        "1c17000b-725e-43a0-9ecd-25ead8a16940"
+      ],
+      "settings": {
+      }
+    },
+    "d11d382c-8951-47c2-a6cd-ca238efd7dac": {
+      "type": "shop-by-health-condition",
+      "blocks": {
+        "d855ab07-54a9-4d7a-98a8-1422e03c9623": {
+          "type": "health_condition",
+          "repeater": "{{ collection.metafields.custom.family_health_condition.value }}",
+          "settings": {
+            "icon": "{{ block.repeater.condition_icon.value }}",
+            "eyebrow": "{{ block.repeater.condition_text.value }}",
+            "url": "{{ block.repeater.condition_url.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "d855ab07-54a9-4d7a-98a8-1422e03c9623"
+      ],
+      "settings": {
+        "heading": "Shop By Family Health"
+      }
+    },
+    "fa56ec1c-336d-4207-8ee5-afb07871d216": {
+      "type": "shop-by-health-condition",
+      "blocks": {
+        "42f35daa-78bc-4be2-99dc-8d2f6c4006c8": {
+          "type": "health_condition",
+          "repeater": "{{ collection.metafields.custom.health_conditions.value }}",
+          "settings": {
+            "icon": "{{ block.repeater.condition_icon.value }}",
+            "eyebrow": "{{ block.repeater.condition_text.value }}",
+            "url": "{{ block.repeater.condition_url.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "42f35daa-78bc-4be2-99dc-8d2f6c4006c8"
+      ],
+      "settings": {
+        "heading": "Shop By Health Condition"
+      }
+    },
+    "f1909b2c-b24e-4044-b170-e57b14d2b722": {
+      "type": "collection-category-list",
+      "blocks": {
+        "54e195a4-648e-4f3d-8f16-d6eb5b42dce8": {
+          "type": "icon_navigation",
+          "repeater": "{{ collection.metafields.custom.category_list.value }}",
+          "settings": {
+            "image": "{{ block.repeater.icon.value }}",
+            "navigation_title": "{{ block.repeater.navigation_title.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "54e195a4-648e-4f3d-8f16-d6eb5b42dce8"
+      ],
+      "settings": {
+        "title": "Explore Categories"
+      }
+    },
+    "72bbac35-766a-453b-9fee-37b7877be787": {
+      "type": "product-carousel",
+      "blocks": {
+        "c40e2fb9-7998-490b-86ad-3de1deaaecf1": {
+          "type": "collection",
+          "repeater": "{{ collection.metafields.custom.product_carousel.value }}",
+          "settings": {
+            "collection_text": "{{ block.repeater.tab_text.value }}",
+            "rule_id": "{{ block.repeater.rebuy_rule_id.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "c40e2fb9-7998-490b-86ad-3de1deaaecf1"
+      ],
+      "settings": {
+        "heading": "Featured Products"
+      }
+    },
+    "4d89401b-332c-4ecb-9c2e-37615234ab7d": {
+      "type": "featured-brands",
+      "blocks": {
+        "e9e91606-0792-43ef-a5e2-65208fbfdcb2": {
+          "type": "featured_brand",
+          "repeater": "{{ collection.metafields.custom.featured_brand.value }}",
+          "settings": {
+            "image": "{{ block.repeater.image.value }}",
+            "url": "{{ block.repeater.url.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "e9e91606-0792-43ef-a5e2-65208fbfdcb2"
+      ],
+      "settings": {
+        "heading": "Featured Brands"
+      }
+    },
+    "3af0aaa2-14cc-4a5e-8504-f066a0f54533": {
+      "type": "product-carousel",
+      "blocks": {
+        "b098653e-eebb-4002-aa1c-780a24395bf4": {
+          "type": "collection",
+          "repeater": "{{ collection.metafields.custom.product_carousel.value }}",
+          "settings": {
+            "collection_text": "{{ block.repeater.tab_text.value }}",
+            "rule_id": "{{ block.repeater.rebuy_rule_id.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "b098653e-eebb-4002-aa1c-780a24395bf4"
+      ],
+      "settings": {
+        "heading": "Recommended for you"
+      }
+    },
+    "7a0d2423-3835-49cd-87bf-aa13d0fda0c5": {
+      "type": "category-grid-banner",
+      "blocks": {
+        "31edcf4c-4916-4b7f-9eae-6a6e8c4b6e5b": {
+          "type": "Banner",
+          "source": "{{ collection.metafields.custom.vitamin_banner_section.value }}",
+          "settings": {
+            "image_desktop": "{{ collection.metafields.custom.vitamin_banner_section.value.image_desktop.value }}",
+            "image_mobile": "{{ collection.metafields.custom.vitamin_banner_section.value.image_mobile.value }}",
+            "image_span_Desktop": "{{ collection.metafields.custom.vitamin_banner_section.value.image_span_desktop.value }}",
+            "image_span_Mobile": "{{ collection.metafields.custom.vitamin_banner_section.value.image_span_mobile.value }}",
+            "heading": "{{ collection.metafields.custom.vitamin_banner_section.value.heading.value }}",
+            "subheading": "{{ collection.metafields.custom.vitamin_banner_section.value.subheading.value }}",
+            "font-color": "{{ collection.metafields.custom.vitamin_banner_section.value.font_color.value }}",
+            "cta_text": "{{ collection.metafields.custom.vitamin_banner_section.value.cta_text.value }}",
+            "cta_url": "{{ collection.metafields.custom.vitamin_banner_section.value.cta_url.value }}"
+          }
+        },
+        "d837f91e-221e-4080-94d4-a065f39aa9d1": {
+          "type": "image_with_text_overlay",
+          "repeater": "{{ collection.metafields.custom.vitamin_grid_banner.value }}",
+          "settings": {
+            "image_desktop": "{{ block.repeater.image_desktop.value }}",
+            "image_mobile": "{{ block.repeater.image_mobile.value }}",
+            "image_span_desktop": "{{ block.repeater.image_span_desktop.value }}",
+            "image_span_mobile": "{{ block.repeater.image_span_mobile.value }}",
+            "heading": "{{ block.repeater.subheading.value }}",
+            "subheading": "{{ block.repeater.heading.value }}",
+            "font-color": "{{ block.repeater.font_color.value }}",
+            "cta_text": "{{ block.repeater.cta_text.value }}",
+            "cta_url": "{{ block.repeater.cta_url.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "31edcf4c-4916-4b7f-9eae-6a6e8c4b6e5b",
+        "d837f91e-221e-4080-94d4-a065f39aa9d1"
+      ],
+      "settings": {
+      }
+    },
+    "333be3ce-5bf5-4a5b-984e-98116e03a72e": {
+      "type": "banner-featured-products",
+      "blocks": {
+        "7c1e525c-ee1c-4623-b5e6-4ff7675cd98c": {
+          "type": "featured_products",
+          "settings": {
+            "collection": "beast",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/Group_7791.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_8360.png",
+            "eyebrow": "Popular in",
+            "heading": "Superfoods",
+            "inline_heading": false,
+            "subheading": "",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/pages\/reviews"
+          }
+        }
+      },
+      "block_order": [
+        "7c1e525c-ee1c-4623-b5e6-4ff7675cd98c"
+      ],
+      "settings": {
+      }
+    },
+    "c06c2ac2-8a0a-4934-a3e8-9034e4ec8551": {
+      "type": "section-shop-by-category",
+      "blocks": {
+        "a0c66a7c-4ddc-4d1d-9b8a-63d83a95c21e": {
+          "type": "category",
+          "repeater": "{{ collection.metafields.custom.explore_other.value }}",
+          "settings": {
+            "icon": "{{ block.repeater.icon.value }}",
+            "eyebrow": "{{ block.repeater.title.value }}",
+            "url": "{{ block.repeater.url.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "a0c66a7c-4ddc-4d1d-9b8a-63d83a95c21e"
+      ],
+      "settings": {
+        "heading": ""
+      }
+    },
+    "398fa20a-99f7-4200-ac45-f9ca3cd7d4b9": {
+      "type": "category-title-description",
+      "blocks": {
+        "1fb3a5a2-162c-4823-9a2a-c3c470027829": {
+          "type": "text",
+          "settings": {
+            "heading-color": "#bc3434",
+            "description-color": ""
+          }
+        }
+      },
+      "block_order": [
+        "1fb3a5a2-162c-4823-9a2a-c3c470027829"
+      ],
+      "settings": {
+      }
+    },
+    "1691994536cf5133e2": {
+      "type": "apps",
+      "blocks": {
+        "2c1ffe42-81ea-45be-b490-288154cfa4b4": {
+          "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/reviews-carousel\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "show_heading": false,
+            "heading": "",
+            "badge_link": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "2c1ffe42-81ea-45be-b490-288154cfa4b4"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "c5d9e8dc-b108-4c9d-8fdb-f6a459906248",
+    "c406d849-1052-4d9b-8e69-778d76d8f081",
+    "bd300b68-79a0-4efa-84e4-5109ea2347ff",
+    "5a453bc2-2bd2-4824-bc65-9b855821ca28",
+    "d11d382c-8951-47c2-a6cd-ca238efd7dac",
+    "fa56ec1c-336d-4207-8ee5-afb07871d216",
+    "f1909b2c-b24e-4044-b170-e57b14d2b722",
+    "72bbac35-766a-453b-9fee-37b7877be787",
+    "4d89401b-332c-4ecb-9c2e-37615234ab7d",
+    "3af0aaa2-14cc-4a5e-8504-f066a0f54533",
+    "7a0d2423-3835-49cd-87bf-aa13d0fda0c5",
+    "333be3ce-5bf5-4a5b-984e-98116e03a72e",
+    "c06c2ac2-8a0a-4934-a3e8-9034e4ec8551",
+    "398fa20a-99f7-4200-ac45-f9ca3cd7d4b9",
+    "1691994536cf5133e2"
+  ]
+}

@@ -665,6 +665,7 @@
     }
 
     &--fixed {
+        margin-top: 0 !important;
         .nav-bar__inner {
             @media(--md) {
                 opacity:1 !important;
@@ -691,4 +692,8 @@ body.no-mobile-scroll {
     position: static !important;
     overflow: auto;
  }
+}
+
+.header-margin-scroll{
+    margin-bottom: 0;
 }

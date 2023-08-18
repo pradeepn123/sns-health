@@ -11,7 +11,7 @@
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   customerLocation: () => (/* binding */ customerLocation)
 /* harmony export */ });
-/* unused harmony export getProductData */
+/* unused harmony exports getProductData, getReviewData */
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
@@ -63,6 +63,17 @@ var getProductData = /*#__PURE__*/function () {
   });
   return function getProductData(_x) {
     return _ref2.apply(this, arguments);
+  };
+}();
+var getReviewData = /*#__PURE__*/function () {
+  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* (id) {
+    var url = new URL("https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/reviews?/collections/".concat(id, "&orderBy=rating%20desc"));
+    var data = yield fetch(url);
+    var reviewData = yield data.json();
+    return reviewData;
+  });
+  return function getReviewData(_x2) {
+    return _ref4.apply(this, arguments);
   };
 }();
 

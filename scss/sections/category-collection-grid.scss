@@ -1,0 +1,114 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@import 'breakpoints';
+@import 'Token';
+
+
+@custom-selector :--heading .category-collection-grid__heading.text__heading;
+@custom-selector :--subheading .banner__subheading.text__subheading;
+@custom-selector :--mobile-image .image--mobile.category-collection-grid-content__image;
+@custom-selector :--text-flex .category-collection-grid__text;
+@custom-selector :--image-text_wrapper .category-collection-grid__item__text-wrapper.text-image__text-wrapper;
+@custom-selector :--button .category-collection-grid__cta.button;
+@custom-selector :--transparent .category-collection-grid__cta.button--transparent ;
+
+
+.category-collection-grid {
+
+    margin-top: var(--section-margin);
+        @include mixins.container;
+
+    &__content {
+        @include mixins.grid(var( --column-count), 170px, 196px);
+        grid-row: span var( --row-count);
+        grid-column-gap: 24px;
+        grid-row-gap:24px;
+        @media (--sm){
+            grid-column-gap: 11px;
+            grid-row-gap:12px;
+        }
+    }
+
+    img {
+        object-fit: cover;
+    }
+
+    &__item div:not(.category-collection-grid-content__text-wrapper,.banner__text-wrapper, .content){
+        height: 100%;
+        cursor: pointer;
+    }
+
+    :--heading {     
+        line-height: 1;
+        @include use-text-style('body-alt');
+        font-weight: typography.$heading-weight;
+        @media (--sm){
+            @include use-text-style('heading-3');
+        }
+        @media (--md){
+            @include use-text-style('heading-2');
+        }
+     
+    }
+
+    :--subheading {
+     font-weight: typography.$semi-weight; 
+     display: block; 
+
+     @media (--md) {
+        display: unset;
+     }
+    }
+
+    &--desktop {
+        @media (--sm) {
+            display: block;
+        }
+    }
+
+    &--mobile {
+        display: block;
+
+        @media(--sm) {
+            display: none;
+        }
+    }
+
+    :--mobile-image .responsive-image__image {
+        border-radius: 0;
+    }
+
+    :--text-flex{
+        display: flex;
+        align-items: center;
+    }
+
+    :--image-text_wrapper{
+        top: 23%;
+        padding-left: 25PX;
+        @media (--md){
+            top: 15%;
+        }
+        @media (--md-large){
+            padding-left: 40PX;
+        }
+    }
+
+    :--button{
+        padding-left: 0;
+        margin-top: 7px;
+
+        path{
+            stroke: transparent;
+            @media(--sm){
+                stroke: #FFFFFF;
+            }
+        }
+    }
+
+    :--transparent{
+        &:hover{
+            box-shadow: none;
+        }
+    }
+}

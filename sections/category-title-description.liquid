@@ -1,0 +1,69 @@
+{{
+  'category-title-description.css' | asset_url | stylesheet_tag
+}}
+
+{{ 'title-description.js' | asset_url | script_tag }}
+
+
+<div class="category-title-description" id= "title-description" >
+  <div class="category-title-description__container">
+
+     {% for block in section.blocks %} 
+     {% liquid 
+      assign id = block.id
+      assign heading = collection.title
+      assign description = collection.description
+      assign heading-color = block.settings.heading-color
+      assign description-color = block.settings.description-color
+ 
+    %}  
+
+
+    {% render 'title-description-wrap', 
+      id: id,
+      color: color,
+      heading: heading, 
+      description: description, 
+      wrapper_class: 'category-title-description_wrapper',
+      text_wrapper_class: 'collection-description'
+    %}
+     
+     {% endfor %}
+  </div>
+</div>
+
+
+
+
+
+{% schema %}
+{
+  "name": "Title and Description",
+  "settings": [],
+  "blocks": [
+   {
+    "type": "text",
+    "name": "text",
+    "settings": [
+     
+       {
+        "type": "color",
+        "id": "heading-color",
+        "label": "Heading Color"
+       },
+       {
+        "type": "color",
+        "id": "description-color",
+        "label": "Description Color"
+       }
+    ]
+   }
+  ],
+  "presets": [
+   {
+     "name": "Title and Description" 
+   }
+  ]
+}
+
+{% endschema %}

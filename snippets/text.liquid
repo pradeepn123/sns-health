@@ -16,18 +16,36 @@
       {% if heading  != blank%}
         <p class="text__heading {{wrapper_class}}__heading">{{heading}}</p>
         {% endif %}
-        {% if subheading  != blank %}
+        {% if subheading  != blank and inline_cta != true %}
           <p class="{{wrapper_class}}__subheading text__subheading">{{subheading}}</p>
         {% endif %}
     {% endif %}
 
+    {% if inline_cta %}
+      <p class="{{ wrapper_class }}__subheading text__subheading">{{subheading}}
+      {% if cta_text and cta_url %}
+        <a class="xxx button {{wrapper_class}}__cta text__cta
+          {% if button_type %} button--{{button_type}} {% endif %}
+           {% if button_background_type %} button--{{button_background_type}} {% endif %}
+           {% if secondary_button_type %} button--{{secondary_button_type}} {% endif %}
+          " {%if cta_url %} href="{{cta_url}} {% endif%}"><span class="btn-text"> {{ cta_text }} </span>
+          <span class= "arrow-icon">{% if button_type == "text" or button_type == "outline"%}{% render 'chevron-right-icon'%}{% endif%}</span>
+          <span class= "arrow ">{% if secondary_button_type and  secondary_button_type == "link" %} {% render 'right-arrow'%} {% endif%}</span>
+         </a> 
+        {% endif %}</p>
+    {% endif %}
+
   </div>
+  {% unless inline_cta %}
    {% if cta_text and cta_url %}
    <a class="button {{wrapper_class}}__cta text__cta
      {% if button_type %} button--{{button_type}} {% endif %}
-     {% if button_background_type %} button--{{button_background_type}} {% endif %}
-     " {%if cta_url %} href="{{cta_url}} {% endif%}">{{ cta_text }} 
-     {% if button_type == "text" or button_type == "outline" or cta_arrow == true %}{% render 'chevron-right-icon'%} {% endif%}
-     </a>
+      {% if button_background_type %} button--{{button_background_type}} {% endif %}
+      {% if secondary_button_type %} button--{{secondary_button_type}} {% endif %}
+     " {%if cta_url %} href="{{cta_url}} {% endif%}"><span class="btn-text"> {{ cta_text }} </span>
+     <span class= "arrow-icon">{% if button_type == "text" or button_type == "outline"%}{% render 'chevron-right-icon'%}{% endif%}</span>
+     <span class= "arrow ">{% if secondary_button_type and  secondary_button_type == "link" %} {% render 'right-arrow'%} {% endif%}</span>
+    </a> 
    {% endif %}
+  {% endunless %}
 </div> 

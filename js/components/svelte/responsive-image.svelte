@@ -3,13 +3,14 @@
 <script>  
 export let image_aspect_ratio;
 export let image;
+export let srcTokens; 
 let min = 100 ;
-let max = 10000 ;
+let max = 10000;
 let diff = max - min;
 let generated_image_id = Date.now() / diff + min;
 let image_id = image.id;
 let max_height_image = image.height
-let  max_width_image =  image.width
+let max_width_image =  image.width
 const IMAGE_WIDTHS = [180,360,540,720,900,1080,1296,1512,1728,1944,2160,2376,2592,2808,3024]
 
  const getImageWidths = nativeWidth => {
@@ -28,10 +29,7 @@ const IMAGE_WIDTHS = [180,360,540,720,900,1080,1296,1512,1728,1944,2160,2376,259
 
 const imageWidth = getImageWidths(image.width);
 const max_width_image_float = max_width_image * 1.0;
-let urlTokens = {
- replacementToken: '?width=300&height=300',
-  dataSrcToken: '?{width}&{height}',
-  srcToken: '?width=300&height=300'}
+let urlTokens = srcTokens;
 let uriEncodedSrc = `${encodeURI(image.src)}?width=300&height=300`;
 let dataSrcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.dataSrcToken);
 let srcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.srcToken);
@@ -49,6 +47,8 @@ let srcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.srcToke
 const getWrapperStyles = () => {
     return `
     --padding-top: ${ (max_height_image / max_width_image_float) * 100}%;
+    --max-height: ${ max_height_image }px;
+    --max-width: ${ max_width_image }px;
     `
 }
 
@@ -88,10 +88,11 @@ const getImageStyle = () => {
 }
 
 .responsive-image__wrapper {
-    max-width: 1900px;
+    max-width: var(--max-width);
     height: 100%;
     position: relative;
     max-height: 100%;
+    height: var(----max-height);
 }
 
 .responsive-image__image {

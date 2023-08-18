@@ -34,7 +34,7 @@
 }
 @media (min-width: 1024px) {
   .category-section .category-section__icon-text.icon-text {
-    padding: 39px 20px 39px 20px;
+    padding: 31px 20px 31px 20px;
   }
 }
 .category-section .category-section__icon-text.icon-text:hover {
@@ -46,12 +46,12 @@
 .category-section .icon__container.category-section__icon {
   line-height: 1;
 }
-.category-section .icon__container.category-section__icon svg {
+.category-section .icon__container.category-section__icon img {
   width: 24px;
   height: 31px;
 }
 @media (min-width: 1024px) {
-  .category-section .icon__container.category-section__icon svg {
+  .category-section .icon__container.category-section__icon img {
     width: 31px;
     height: 40px;
   }

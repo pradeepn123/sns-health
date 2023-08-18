@@ -26,3 +26,13 @@ export const getProductData = async (additionalParams) => {
     const productData = await data.json();
     return productData;
 }
+
+export const getReviewData = async (id) => {
+
+    const url =  new URL(`https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/reviews?/collections/${id}&orderBy=rating%20desc`);
+   
+  
+    const data = await fetch(url);
+    const reviewData = await data.json();
+    return reviewData;
+}

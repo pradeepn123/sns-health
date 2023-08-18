@@ -111,12 +111,12 @@
 .health-condition-section .icon__container.health-condition-section__icon {
   line-height: 1;
 }
-.health-condition-section .icon__container.health-condition-section__icon svg {
+.health-condition-section .icon__container.health-condition-section__icon img {
   width: 24px;
   height: 24px;
 }
 @media (min-width: 1024px) {
-  .health-condition-section .icon__container.health-condition-section__icon svg {
+  .health-condition-section .icon__container.health-condition-section__icon img {
     width: 36px;
     height: 36px;
   }

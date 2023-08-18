@@ -1,0 +1,102 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+
+
+@custom-selector :--heading .collection-banner__heading.text__heading;
+@custom-selector :--subheading .collection-banner__subheading.text__subheading;
+@custom-selector :--text-image .collection-banner-content__text-image.text-image;
+@custom-selector :--image-wrapper .collection-banner-content__image-wrapper.text-image__image-wrapper;
+@custom-selector :--button .collection-banner__cta.button;
+
+
+.collection-banner {
+    margin-top: var(--section-content-margin);
+    border-radius: 10px;
+        @include mixins.container;
+
+
+    .collection-banner-content__image{
+        &--mobile {
+            width: 50%;
+            max-width: 100%;
+        }
+        &--desktop {
+            max-width: 532px;
+            width: 100%;
+            height: 100%;
+       }
+
+    }
+
+    img{
+        object-fit: cover;
+        object-position: 74%;
+    }
+
+    &__text-wrapper {
+        max-width: 61%;
+        @media(--xs){
+            max-width: 48%;
+        }
+        @media(--sm){
+            max-width: 40%;
+        }
+        @media(--md){
+            max-width: 51%; 
+        }
+        @media(--md-large){
+            max-width: 60%; 
+        }
+    }
+
+    :--heading {
+        @include use-text-style('body-title');
+        font-weight: typography.$heading-weight;
+        margin-bottom: 8px;
+        
+        @media(--xs){
+            @include use-text-style('heading-3');
+        }
+        @media (--sm){
+            @include use-text-style('heading-2');
+            margin-bottom: 10px;
+        }
+        @media(--md-large){
+            @include use-text-style('heading-1');
+            margin-bottom: 19px;
+        }
+    }
+
+    :--subheading {
+        @include use-text-style('body-regular');
+        font-weight: typography.$regular-weight;
+        @media (--sm){
+            @include use-text-style('body-title');
+        }
+        @media (--md){
+            @include use-text-style('body-alt');
+        }
+
+     @media (--md) {
+        display: unset;
+     }
+    }
+
+    :--text-image{
+        align-items: flex-end;
+    }
+
+    :--image-wrapper{
+        max-width: 50%;
+        width: 100%;
+    }
+
+    :--button{
+        background: none;
+        text-decoration: underline;
+        margin-top: 0;
+        padding: 0;
+    }
+}

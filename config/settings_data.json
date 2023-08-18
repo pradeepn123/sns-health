@@ -407,7 +407,7 @@
           "show_quick_view": "list_grid",
           "quick_links": "main-menu",
           "quick_links_show_products_count": true,
-          "show_filters": true,
+          "show_filters": false,
           "show_filter_color_swatch": false,
           "filter_type": "group",
           "open_group_filters_mode": "all_open",
@@ -2094,6 +2094,8 @@
         "announcement-bar": {
           "type": "announcement-bar",
           "settings": {
+            "background": "#1e2d7d",
+            "text_color": "#ffffff",
             "text": "Announce something here",
             "link": ""
           }
@@ -2361,6 +2363,8 @@
         "announcement-bar": {
           "type": "announcement-bar",
           "settings": {
+            "background": "#3a2a2f",
+            "text_color": "#ffffff",
             "text": "Announce something here",
             "link": ""
           }

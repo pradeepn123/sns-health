@@ -1,0 +1,38 @@
+{{ 'customer-review.css' | asset_url | stylesheet_tag }}
+
+{% assign rating = 3 %}
+{% assign review_image = "https://cdn.shopify.com/s/files/1/0422/2255/1191/files/1015V1_Complete_Collagen_Vanilla_500g.png?v=1692118933" %}
+
+<div class="customer-reviews">
+    {% render 'section-heading', heading: section.settings.section_heading %}
+    <customer-reviews></customer-reviews>
+
+<script id="customer-reviews-data" type="text/json">
+    {
+        "data": {% render 'JSON-output-okendo-reviews', section: section %}
+    }
+</script>
+</div>
+
+{% schema %}
+{
+    "name": "Customer reviews",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_heading",
+            "label": "Section Heading"
+        },
+        {
+          "type": "text",
+          "id": "collection_id",
+          "label": "collection Id"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Customer Reviews"
+        }
+    ]
+}
+{% endschema %}

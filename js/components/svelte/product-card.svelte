@@ -16,6 +16,10 @@
   const discountPercentage = (comparePrice - price * 100) / price;
   const bestseller = tags.includes("bestseller");
   const onsale = tags.includes("onsale");
+  const srcTokens = {
+ replacementToken: '?width=300&height=300',
+  dataSrcToken: '?{width}&{height}',
+  srcToken: '?width=300&height=300'}
 </script>
 
 <div class="product-card swiper-slide">
@@ -25,7 +29,7 @@
       data-redirect-click
       data-url={product.link}
     >
-      <ResponsiveImage {image} image_aspect_ratio={1} />
+      <ResponsiveImage {image} image_aspect_ratio={1} srcTokens={srcTokens}/>
     </div>
     <div class="product-card__header">
       <div class="product-card__header-tags">
@@ -48,7 +52,7 @@
             d="M7.99998 0L9.97732 5.98213L16 6.11138L11.2001 9.93803L12.9441 16L7.99998 12.3825L3.05531 16L4.79988 9.93803L0 6.11138L6.02211 5.98213L7.99998 0Z"
             fill="#FFBD00"
           /></svg
-        ><span class="product-card__star-text">{rating}</span>
+        ><span class="product-card__star-text">{rating ? rating : ''}</span>
       </div>
     </div>
     {#if vendor}

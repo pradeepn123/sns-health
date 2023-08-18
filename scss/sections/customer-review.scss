@@ -1,0 +1,180 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+
+@custom-selector :--wrapper .customer-review__wrapper;
+
+.customer-reviews {
+    margin-top: var(--section-margin);
+    padding: var(--section-padding) 0 0;
+    background: colors.$gray-400;
+
+    @media(--md) {
+     @include mixins.container;
+    }
+
+    .section__heading-wrapper {
+        margin-bottom: 0;
+    }
+}
+
+.customer-review__container {
+    @media (--sm) {
+        background: colors.$gray-400;
+    }
+
+    :--wrapper {
+        padding: 0 var(--base-margin);
+
+        @media(--sm) {
+            padding:0;
+        }
+        .reviews_header {
+            border-bottom: 1px solid colors.$gray-300;
+            padding-right: 90px !important;
+
+            .section_title {
+                font-weight: $heading-weight;
+                font-size: $heading-3-size;
+                margin-bottom: 0;
+            }
+
+            .total_reviews {
+                display: flex;
+                align-items: center;
+                padding: 10px 10px 10px 0;
+
+                &-star {
+                    line-height: 1;
+                    margin-right: 10px;
+                }
+
+                &-text {
+                    line-height: 1;
+                }
+
+                font-size: $body-title-size;
+                color: colors.$gray-500;
+            }
+        }
+
+        .review_carousel {
+            
+            padding: var(--section-padding) 0;
+
+            @media(--md) {
+            padding: var(--section-padding) 0 calc(2*var(--section-padding));
+            }
+
+            .review_container {
+                display: flex;
+
+                .review_image {
+                    width: 30%;
+                }
+
+                .review_content {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 5px;
+                    width: 70%;
+                    margin-left: 14px;
+
+                    .rating {
+                        display: flex;
+                        align-items: center;
+
+                        .date {
+                            font-size: $body-regular-size;
+                            color: colors.$gray-500;
+                            margin-left: 20px;
+                        }
+                    }
+
+                    .title {
+                        @include use-text-style('heading-3');
+                        margin-bottom: 0;
+                        color: rgba(0, 0, 0, 0.6);
+                    }
+
+                    .review {
+                        @include use-text-style('body-title');
+                        color: rgba(0, 0, 0, 0.4);
+                        font-style: italic;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 4;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        @media(--sm) {
+            .reviews_header {
+                display: flex;
+                flex-direction: column;
+                padding: 10px 0;
+
+                .section-title {
+                    font-size: $heading-1-size;
+                }
+
+                .total_reviews {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .swiper-navigation {
+
+       
+        top: -35px;
+
+        @media(--sm) {
+            top: -45px;
+        }
+
+        svg {
+            path {
+                stroke: black !important
+            }
+
+            circle {
+                fill: none !important;
+            }
+        }
+
+        &.swiper-button-disabled {
+
+        svg {
+          opacity: 0.5;
+        }
+        }
+
+
+        &--next{
+            left: unset;
+            right: 0;
+    
+            @media(--sm) {
+                right: 25px;
+            }
+         }
+     &--prev {
+        left: unset;
+        right: 30px;
+
+        @media(--sm) {
+            right: 45px;
+        }
+     }
+
+ 
+    }
+}

@@ -2,6 +2,36 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./js/components/collapsible.js":
+/*!**************************************!*\
+  !*** ./js/components/collapsible.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   collapsible: () => (/* binding */ collapsible)
+/* harmony export */ });
+console.log("----------------------------");
+var collapsible = () => {
+  var _document$querySelect;
+  (_document$querySelect = document.querySelectorAll('[data-test]')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.forEach(triggerel => {
+    triggerel.addEventListener("click", ev => {
+      var container = ev.target.closest('[data-container]');
+      var target_half = container === null || container === void 0 ? void 0 : container.querySelector('[data-content-half]');
+      var target_full = container === null || container === void 0 ? void 0 : container.querySelector('[data-content-full]');
+      if (target_half.classList.contains('text-wrap__description--hidden')) {
+        target_half.style.display = "none";
+        target_full.style.display = "block";
+      } else {
+        target_half.style.display = "block";
+        target_full.style.display = "none";
+      }
+    });
+  });
+};
+
+/***/ }),
+
 /***/ "./js/components/custom-carousel.js":
 /*!******************************************!*\
   !*** ./js/components/custom-carousel.js ***!
@@ -135,7 +165,7 @@ class CustomCarousel extends HTMLElement {
     this.HTMLElement = this.innerHTML;
     this.carouselSettings = JSON.parse(((_this$querySelector = this.querySelector('[data-settings]')) === null || _this$querySelector === void 0 ? void 0 : _this$querySelector.innerHTML) || "{}");
     this.currentWidth = window.innerWidth;
-    this.innerHTML = "<div class=\"carousel__container swiper\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.HTMLElement, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    <div class=\"swiper-navigation swiper-navigation--next ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>");
+    this.innerHTML = "<div class=\"carousel__container swiper hide\" data-swiper-container>\n    <div class=\"swiper-wrapper \">\n    ".concat(this.HTMLElement, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    <div class=\"swiper-navigation swiper-navigation--next ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"carousel-placeholders\">\n      <div class=\"placeholder\"></div>\n      <div class=\"placeholder\"></div>\n      <div class=\"placeholder\"></div>\n      <div class=\"placeholder\"></div>\n      <div class=\"placeholder\"></div>\n    </div>\n    ");
     this.container = this.querySelector('[data-swiper-container]');
     var carouselSettings = this.getCarouselSettings() || {};
     this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
@@ -154,6 +184,15 @@ class CustomCarousel extends HTMLElement {
             this.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
           } else {
             this.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+          }
+        },
+        init: swiper => {
+          setTimeout(() => {
+            this.querySelector('.carousel__container').classList.remove('hide');
+            this.querySelector('.carousel-placeholders').classList.add('hide');
+          }, 1000);
+          if (!!swiper.navigation) {
+            swiper.navigation.destroy();
           }
         }
       },
@@ -229,6 +268,7 @@ class CustomCarousel extends HTMLElement {
   var headerWrapper = document.querySelector('.shopify-section__header');
   var searchBar = document.querySelector('.header__search-bar-wrapper--mobile');
   var navBar = document.querySelector('.nav-bar__inner');
+  var header = document.querySelector('.header');
   var handleScroll = () => {
     var scrollTop = window.scrollY;
     searchBar.style.opacity = 1 - scrollTop / 85;
@@ -236,9 +276,11 @@ class CustomCarousel extends HTMLElement {
     if (scrollTop == 0) {
       if (headerWrapper.classList.contains('shopify-section__header--fixed')) {
         headerWrapper.classList.remove('shopify-section__header--fixed');
+        header.classList.remove('header-margin-scroll');
       }
     } else {
       headerWrapper.classList.add('shopify-section__header--fixed');
+      header.classList.add('header-margin-scroll');
     }
   };
 
@@ -311,9 +353,13 @@ class ProductCard extends HTMLElement {
 /* harmony import */ var lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lazysizes/plugins/respimg/ls.respimg */ "./node_modules/lazysizes/plugins/respimg/ls.respimg.js");
 /* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var JsComponents_header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! JsComponents/header */ "./js/components/header.js");
-/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
-/* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
+/* harmony import */ var JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! JsComponents/collapsible */ "./js/components/collapsible.js");
+/* harmony import */ var swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/element/bundle */ "./node_modules/swiper/swiper-element-bundle.mjs");
+/* harmony import */ var JsComponents_header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! JsComponents/header */ "./js/components/header.js");
+/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
+/* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
+
+
 
 
 
@@ -325,9 +371,11 @@ class ProductCard extends HTMLElement {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  (0,JsComponents_header__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_7__["default"])();
-  (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  (0,JsComponents_header__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_10__.collapsible)();
+  (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__.register)();
 });
 
 /***/ })

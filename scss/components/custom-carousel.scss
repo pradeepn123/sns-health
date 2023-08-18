@@ -118,3 +118,16 @@ custom-carousel {
   }
 }
 
+.carousel-placeholders {
+  display: grid;
+  @include mixins.container;
+  @include mixins.grid(5,3,250px,250px);
+  overflow: hidden;
+  .placeholder {
+    background: colors.$gray-400;
+  }
+}
+
+.hide {
+  display: none !important;
+}

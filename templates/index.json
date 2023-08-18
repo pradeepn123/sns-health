@@ -305,6 +305,13 @@
       "settings": {
       }
     },
+    "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854": {
+      "type": "customer-review",
+      "settings": {
+        "section_heading": "Customer Reviews",
+        "collection_id": "264113651863"
+      }
+    },
     "fb95bcfd-aa24-42a8-92cf-b94fa307f70d": {
       "type": "product-carousel",
       "blocks": {
@@ -314,10 +321,18 @@
             "collection_text": "Default",
             "rule_id": "110176"
           }
+        },
+        "59603513-1042-4937-a420-9e2aedd114d0": {
+          "type": "collection",
+          "settings": {
+            "collection_text": "tab2",
+            "rule_id": "110176"
+          }
         }
       },
       "block_order": [
-        "1bd5fa8b-9f28-4601-83d4-430d5cdb7c42"
+        "1bd5fa8b-9f28-4601-83d4-430d5cdb7c42",
+        "59603513-1042-4937-a420-9e2aedd114d0"
       ],
       "settings": {
         "heading": "New Arrivals"
@@ -358,6 +373,7 @@
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
     "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
+    "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854",
     "fb95bcfd-aa24-42a8-92cf-b94fa307f70d",
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",

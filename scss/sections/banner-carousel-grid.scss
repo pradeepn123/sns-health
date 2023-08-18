@@ -12,7 +12,10 @@
 
 
 .banner-carousel-grid {
-  @include mixins.container;
+    max-width: none;
+  @media(--sm){
+    @include mixins.container;
+  }
     &__content {
         padding: var(--section-padding) 0 0;
         @media(--sm) {
@@ -22,7 +25,9 @@
     }
 
     :--text-image {
+        margin: 0 20px;
         @media(--sm) {
+        margin: 0;
         grid-column: span 2;
         width: 100%;
         }
@@ -30,7 +35,9 @@
 
     :--grid {
       margin-top:var(--grid-row-gap-large);
+        margin-left: 20px;
       @media(--sm) {
+        margin-left: 0;
         max-width: 100%;
         grid-column: span 3;
         margin-top:0;

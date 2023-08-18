@@ -1,0 +1,259 @@
+{{ 'category-grid-banner.css' | asset_url | stylesheet_tag }}
+
+
+{% style %}
+  @use 'StyleComponents/mixins';
+  {% for block in section.blocks %}
+    {% assign id = block.id %}
+      {%- case block.type -%}
+      
+        {%- when 'image_with_text_overlay' -%}
+          .category-grid-banner-content-grid__text-image-{{id}} {
+              grid-column: span {{ block.settings.image_span_mobile }}; 
+              width: 100%; 
+            }
+    
+            @media(min-width:768px){
+            .category-grid-banner-content-grid__text-image-{{id}} {
+              grid-column: span {{ block.settings.image_span_desktop }};
+              width: 100%; 
+            }
+          } 
+
+        {%- when 'Banner' -%}
+          .category-grid-banner-content-fullwidth__text-image-{{id}} {
+            grid-column: span {{ block.settings.image_span_Mobile }};
+            width: 100%; 
+          }
+          @media(min-width:768px){
+            .category-grid-banner-content-fullwidth__text-image-{{id}} {
+              grid-column: span {{ block.settings.image_span_Desktop }} ;
+              width: 100%; 
+            }
+          }
+      {% endcase %}
+  {% endfor %}
+{% endstyle %}
+
+<div class="category-grid-banner">
+    <div class="category-grid-banner__content">
+        {% for block in section.blocks %}
+        {%- case block.type -%}
+    
+        {%- when 'image_with_text_overlay' -%}
+     
+          {% liquid
+            assign id = block.id
+            assign color = block.settings['font-color']
+            assign heading = block.settings.heading
+            assign subheading = block.settings.subheading
+            assign image_desktop = block.settings.image_desktop
+            assign image_mobile = block.settings.image_mobile
+            assign inline_heading = block.settings.inline_heading
+            assign cta_text = block.settings.cta_text
+            assign cta_url = block.settings.cta_url 
+            assign inline_heading = block.settings.inline_heading
+            assign button_background_type = 'transparent'
+           
+            assign button_type = 'outline'
+            assign checkbox = block.settings.checkbox
+          %}
+    
+          {% render 'image-with-text-overlay',
+            id: id,
+            color: color,
+            heading: heading,
+            subheading: subheading,
+            image_desktop: image_desktop,
+            image_mobile: image_mobile,
+            wrapper_class: 'category-grid-banner-content-grid',
+            text_wrapper_class: 'category-grid-banner',
+            inline_heading: inline_heading,
+            desktop_aspect_ratio: 1,
+            mobile_aspect_ratio: 0.8,
+            cta_text: cta_text,
+            cta_url: cta_url,
+            button_type: button_type,
+            button_background_type: button_background_type,
+            secondary_button_type: secondary_button_type,
+            cover: true,
+            checkbox: checkbox
+          %}
+
+
+          {%- when 'Banner' -%}
+
+            {% liquid
+              assign id = block.id
+              assign color = block.settings['font-color']
+              assign heading = block.settings.heading
+              assign subheading = block.settings.subheading
+              assign image_desktop = block.settings.image_desktop
+              assign image_mobile = block.settings.image_mobile
+              assign inline_heading = block.settings.inline_heading
+              assign cta_text = block.settings.cta_text
+              assign cta_url = block.settings.cta_url
+              assign button_type = 'outline'
+        
+              assign button_background_type = 'transparent'
+              assign checkbox = block.settings.checkbox
+
+            %}
+      
+            {% render 'image-with-text-overlay',
+              id: id,
+              color: color,
+              heading: heading,
+              subheading: subheading,
+              image_desktop: image_desktop,
+              image_mobile: image_mobile,
+              wrapper_class: 'category-grid-banner-content-fullwidth',
+              text_wrapper_class: 'category-grid-banner',
+              inline_heading: inline_heading,
+              desktop_aspect_ratio: 3.18,
+              mobile_aspect_ratio: 0.8,
+              cta_text: cta_text,
+              cta_url: cta_url,
+              button_type: button_type,
+              secondary_button_type: secondary_button_type,
+              button_background_type: button_background_type,
+              cover: true
+            %}
+        
+        {%- endcase -%}
+        {% endfor %}
+      </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "category-grid-banner",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image_with_text_overlay",
+      "name": "Image with text overlay",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Block Group"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "image_span_desktop",
+          "label": "Image span Desktop"
+        },
+        {
+          "type": "text",
+          "id": "image_span_mobile",
+          "label": "Image span Mobile"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading"
+        },
+        {
+          "type": "color",
+          "id": "font-color",
+          "label": "Heading Font color"
+        },
+        {
+          "type": "header",
+          "content": "Block Contents"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "CTA Url"
+        }
+      ]
+    },
+    {
+        "type": "Banner",
+        "name": "Banner",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Block Group"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_desktop",
+            "label": "Image Desktop"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Image Mobile"
+          },
+          {
+            "type": "text",
+            "id": "image_span_Desktop",
+            "label": "Image span Desktop"
+          },
+          {
+            "type": "text",
+            "id": "image_span_Mobile",
+            "label": "Image span Mobile" 
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading"
+          },
+          {
+            "type": "color",
+            "id": "font-color",
+            "label": "Heading Font color"
+          },
+          {
+            "type": "header",
+            "content": "Block Contents"
+          },
+          {
+            "type": "text",
+            "id": "cta_text",
+            "label": "CTA Text"
+          },
+          {
+            "type": "url",
+            "id": "cta_url",
+            "label": "CTA Url"
+          }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "category-grid-banner"
+    }
+  ]
+}
+{% endschema %}

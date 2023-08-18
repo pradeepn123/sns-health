@@ -1,0 +1,15 @@
+<div class="text-image__container__text-wrapper-{{id}} content {{ wrapper_class }}__wrapper-container"
+    {% if cta_url %} onclick="location.href='{{cta_url}}';" {% endif %}
+  >
+      {% render 'title-description', 
+          id: id,
+          color: color, 
+          heading: heading , 
+          description: description , 
+          cta_text: cta_text, 
+          wrapper_class: text_wrapper_class,
+          cta_url: cta_url,
+          button_type: button_type
+        %}
+    </div>
+  </div>

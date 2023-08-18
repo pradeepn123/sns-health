@@ -752,6 +752,9 @@
 .shopify-section__header.overlay-active .header__search-bar-wrapper--mobile {
   display: none !important;
 }
+.shopify-section__header--fixed {
+  margin-top: 0 !important;
+}
 @media (min-width: 1024px) {
   .shopify-section__header--fixed .nav-bar__inner {
     opacity: 1 !important;
@@ -780,4 +783,8 @@ body.no-mobile-scroll .uwy {
   body.no-mobile-scroll {
     overflow: auto;
   }
+}
+
+.header-margin-scroll {
+  margin-bottom: 0;
 }

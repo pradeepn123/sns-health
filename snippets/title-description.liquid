@@ -1,0 +1,44 @@
+{{
+    'title-description.css' | asset_url | stylesheet_tag
+  }}
+
+  {{
+    'title-description.js' | asset_url | script_tag
+  }}
+
+
+
+<div class="{{wrapper_class}}__text__wrap__{{ id }} "> 
+<div class="text-wrap {{ wrapper_class }}__wrapper-container">
+      
+    <div>  
+        {% if heading != blank %}
+            <p class="text-wrap__heading {{ wrapper_class }}__heading">{{ heading }}</p>
+        {% endif %} 
+    </div>
+        
+    <div>
+        {% if description != blank %}
+        <div class="text-wrap__content-wrapper " data-container>
+          <p> 
+          <span class="{{ wrapper_class }}__description text-wrap__description text-wrap__description--hidden" data-content-half>
+            {{ description | truncate: 844 }} 
+            {% if description.size > 844 %}   
+              <button data-test class="text-wrap__description--read-button">Read more</button>
+            {% endif %}
+           </span>
+
+          </p>
+          <p> 
+          <span class="{{ wrapper_class }}__description text-wrap__description" data-content-full>
+            {{ description }} </span>
+          </p>
+             
+
+        </div>   
+          
+        {% endif %}      
+    </div>
+    
+  </div>
+</div>

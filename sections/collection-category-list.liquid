@@ -1,0 +1,98 @@
+{{ 'collection-category-list.css' | asset_url | stylesheet_tag }}
+
+<div class="category-list">
+  {% render 'section-heading', heading: section.settings.title %}
+  <div class="category-list__wrapper">
+    <div class="category-list__content">
+      <custom-carousel>
+        {% for block in section.blocks %}
+          <div class="category-list__card swiper-slide">
+            {% liquid
+              assign navigation_handle = block.settings.navigation_title | handleize
+              assign navigationMenu = linklists[navigation_handle]
+              assign links = navigationMenu.links
+              assign image = block.settings.image
+            %}
+            {% if links.size %}
+              <div class="category-list__block-wrap">
+                <div class="category-list__card-content">
+                  <div class="category-list__image">
+                    {% render 'shopify-responsive-image', image: image %}
+                  </div>
+                  <h1 class="category-list__title">{{ navigationMenu.title }}</h1>
+                </div>
+                <span class="category-list__break-line"></span>
+                <div class="category-list__submenu-wrapper">
+                <div class="category-list__submenu">
+                  {% for list in links %}
+                    <a href="{{ list.url }}" class="category-list__menu-item">{{ list.title }}</a>
+                  {% endfor %}
+                </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+        <script type="text/json" data-settings>
+          {
+            "slidesPerView": 1.25,
+            "spaceBetween": 20,
+            "progressPagination": true,
+            "overflowNagivation": true,
+            "pagination": true,
+            "breakpoints": {
+              "768": {
+                "spaceBetween": 20,
+                "pagination": false,
+                "slidesPerView": 2.5
+              },
+              "1024": {
+                "navigation": true,
+                "pagination": false,
+                "slidesPerView": 4,
+                "spaceBetween": 27
+              }
+            }
+          }
+        </script>
+      </custom-carousel>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Category List",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Explore Categories"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_navigation",
+      "name": "Icon Navigation",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "navigation_title",
+          "label": "Enter Navigation Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Category List"
+    }
+  ]
+}
+{% endschema %}

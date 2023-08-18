@@ -11,7 +11,7 @@
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getProductData: () => (/* binding */ getProductData)
 /* harmony export */ });
-/* unused harmony export customerLocation */
+/* unused harmony exports customerLocation, getReviewData */
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
@@ -63,6 +63,17 @@ var getProductData = /*#__PURE__*/function () {
   });
   return function getProductData(_x) {
     return _ref2.apply(this, arguments);
+  };
+}();
+var getReviewData = /*#__PURE__*/function () {
+  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* (id) {
+    var url = new URL("https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/reviews?/collections/".concat(id, "&orderBy=rating%20desc"));
+    var data = yield fetch(url);
+    var reviewData = yield data.json();
+    return reviewData;
+  });
+  return function getReviewData(_x2) {
+    return _ref4.apply(this, arguments);
   };
 }();
 
@@ -164,7 +175,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (36:8) {#if bestseller}
+// (40:8) {#if bestseller}
 function create_if_block_4(ctx) {
 	let div;
 
@@ -185,7 +196,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (38:8) {#if onsale}
+// (42:8) {#if onsale}
 function create_if_block_3(ctx) {
 	let div;
 
@@ -206,7 +217,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (54:4) {#if vendor}
+// (58:4) {#if vendor}
 function create_if_block_2(ctx) {
 	let div;
 
@@ -228,7 +239,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (65:6) {#if discountPercentage > 0}
+// (69:6) {#if discountPercentage > 0}
 function create_if_block_1(ctx) {
 	let div;
 
@@ -250,7 +261,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (89:8) {:else}
+// (93:8) {:else}
 function create_else_block(ctx) {
 	let a;
 	let t;
@@ -280,7 +291,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (81:8) {#if product.variants.size == 1}
+// (85:8) {#if product.variants.size == 1}
 function create_if_block(ctx) {
 	let button;
 
@@ -341,7 +352,8 @@ function create_fragment(ctx) {
 	responsiveimage = new SvelteComponents_responsive_image_svelte__WEBPACK_IMPORTED_MODULE_2__["default"]({
 			props: {
 				image: /*image*/ ctx[1],
-				image_aspect_ratio: 1
+				image_aspect_ratio: 1,
+				srcTokens: /*srcTokens*/ ctx[13]
 			}
 		});
 
@@ -378,7 +390,7 @@ function create_fragment(ctx) {
 			svg = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.svg_element)("svg");
 			path = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.svg_element)("path");
 			span = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("span");
-			span.textContent = `${/*rating*/ ctx[4]}`;
+			span.textContent = `${/*rating*/ ctx[4] ? /*rating*/ ctx[4] : ''}`;
 			t5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			if (if_block3) if_block3.c();
 			t6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
@@ -526,9 +538,15 @@ function instance($$self, $$props, $$invalidate) {
 	const bestseller = tags.includes("bestseller");
 	const onsale = tags.includes("onsale");
 
+	const srcTokens = {
+		replacementToken: '?width=300&height=300',
+		dataSrcToken: '?{width}&{height}',
+		srcToken: '?width=300&height=300'
+	};
+
 	$$self.$$set = $$props => {
 		if ('product' in $$props) $$invalidate(0, product = $$props.product);
-		if ('otherData' in $$props) $$invalidate(13, otherData = $$props.otherData);
+		if ('otherData' in $$props) $$invalidate(14, otherData = $$props.otherData);
 	};
 
 	return [
@@ -545,6 +563,7 @@ function instance($$self, $$props, $$invalidate) {
 		discountPercentage,
 		bestseller,
 		onsale,
+		srcTokens,
 		otherData
 	];
 }
@@ -552,7 +571,7 @@ function instance($$self, $$props, $$invalidate) {
 class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { product: 0, otherData: 13 });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { product: 0, otherData: 14 });
 	}
 
 	get product() {
@@ -565,7 +584,7 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 	}
 
 	get otherData() {
-		return this.$$.ctx[13];
+		return this.$$.ctx[14];
 	}
 
 	set otherData(otherData) {
@@ -603,58 +622,375 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[14] = list[i];
-	child_ctx[16] = i;
+	child_ctx[15] = list[i];
+	child_ctx[17] = i;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[14] = list[i];
-	child_ctx[16] = i;
+	child_ctx[15] = list[i];
+	child_ctx[17] = i;
 	return child_ctx;
 }
 
 function get_each_context_2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[18] = list[i];
+	child_ctx[19] = list[i];
 	return child_ctx;
 }
 
-// (83:0) {:else}
+// (88:0) {:else}
 function create_else_block(ctx) {
-	let div;
+	let div5;
 
 	return {
 		c() {
-			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div5.innerHTML = `<div class="placeholder"></div> <div class="placeholder"></div> <div class="placeholder"></div> <div class="placeholder"></div> <div class="placeholder"></div>`;
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "carousel-placeholders");
 		},
 		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div5, anchor);
 		},
 		p: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
 		i: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
 		o: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
 		d(detaching) {
 			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div5);
 			}
 		}
 	};
 }
 
-// (42:0) {#if productData.length}
+// (43:0) {#if productData.length && !isLoading}
 function create_if_block(ctx) {
+	let div;
+	let t;
+	let previous_key = /*productData*/ ctx[0];
+	let key_block_anchor;
+	let current;
+	let if_block = /*collectionTexts*/ ctx[4].length > 1 && create_if_block_2(ctx);
+	let key_block = create_key_block(ctx);
+
+	return {
+		c() {
+			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			if (if_block) if_block.c();
+			t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			key_block.c();
+			key_block_anchor = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.empty)();
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "featured-products__Category_wrapp");
+		},
+		m(target, anchor) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
+			if (if_block) if_block.m(div, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, t, anchor);
+			key_block.m(target, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, key_block_anchor, anchor);
+			current = true;
+		},
+		p(ctx, dirty) {
+			if (/*collectionTexts*/ ctx[4].length > 1) if_block.p(ctx, dirty);
+
+			if (dirty & /*productData*/ 1 && (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal)(previous_key, previous_key = /*productData*/ ctx[0])) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.group_outros)();
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(key_block, 1, 1, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop);
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.check_outros)();
+				key_block = create_key_block(ctx);
+				key_block.c();
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(key_block, 1);
+				key_block.m(key_block_anchor.parentNode, key_block_anchor);
+			} else {
+				key_block.p(ctx, dirty);
+			}
+		},
+		i(local) {
+			if (current) return;
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(key_block);
+			current = true;
+		},
+		o(local) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(key_block);
+			current = false;
+		},
+		d(detaching) {
+			if (detaching) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(t);
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(key_block_anchor);
+			}
+
+			if (if_block) if_block.d();
+			key_block.d(detaching);
+		}
+	};
+}
+
+// (45:2) {#if collectionTexts.length > 1 }
+function create_if_block_2(ctx) {
+	let each_1_anchor;
+	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[4]);
+	let each_blocks = [];
+
+	for (let i = 0; i < each_value_2.length; i += 1) {
+		each_blocks[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
+	}
+
+	return {
+		c() {
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				each_blocks[i].c();
+			}
+
+			each_1_anchor = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.empty)();
+		},
+		m(target, anchor) {
+			for (let i = 0; i < each_blocks.length; i += 1) {
+				if (each_blocks[i]) {
+					each_blocks[i].m(target, anchor);
+				}
+			}
+
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, each_1_anchor, anchor);
+		},
+		p(ctx, dirty) {
+			if (dirty & /*selectedParams, collectionTexts, updateParams*/ 52) {
+				each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[4]);
+				let i;
+
+				for (i = 0; i < each_value_2.length; i += 1) {
+					const child_ctx = get_each_context_2(ctx, each_value_2, i);
+
+					if (each_blocks[i]) {
+						each_blocks[i].p(child_ctx, dirty);
+					} else {
+						each_blocks[i] = create_each_block_2(child_ctx);
+						each_blocks[i].c();
+						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+					}
+				}
+
+				for (; i < each_blocks.length; i += 1) {
+					each_blocks[i].d(1);
+				}
+
+				each_blocks.length = each_value_2.length;
+			}
+		},
+		d(detaching) {
+			if (detaching) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(each_1_anchor);
+			}
+
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks, detaching);
+		}
+	};
+}
+
+// (46:2) {#each collectionTexts as text }
+function create_each_block_2(ctx) {
+	let div;
+	let button;
+	let t0_value = /*text*/ ctx[19] + "";
 	let t0;
+	let button_class_value;
+	let t1;
+	let mounted;
+	let dispose;
+
+	function click_handler() {
+		return /*click_handler*/ ctx[7](/*text*/ ctx[19]);
+	}
+
+	return {
+		c() {
+			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
+			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t0_value);
+			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[19] && "product-category__button--active"}`);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "featured-products__Category");
+		},
+		m(target, anchor) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, button);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(button, t0);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, t1);
+
+			if (!mounted) {
+				dispose = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button, "click", click_handler);
+				mounted = true;
+			}
+		},
+		p(new_ctx, dirty) {
+			ctx = new_ctx;
+
+			if (dirty & /*selectedParams*/ 4 && button_class_value !== (button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[19] && "product-category__button--active"}`)) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value);
+			}
+		},
+		d(detaching) {
+			if (detaching) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
+			}
+
+			mounted = false;
+			dispose();
+		}
+	};
+}
+
+// (58:8) {#if product.variants[0].price > 0 }
+function create_if_block_1(ctx) {
+	let productcard;
+	let current;
+
+	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
+			props: {
+				product: /*product*/ ctx[15],
+				otherData: /*otherData*/ ctx[3]
+			}
+		});
+
+	return {
+		c() {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_component)(productcard.$$.fragment);
+		},
+		m(target, anchor) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.mount_component)(productcard, target, anchor);
+			current = true;
+		},
+		p(ctx, dirty) {
+			const productcard_changes = {};
+			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[15];
+			productcard.$set(productcard_changes);
+		},
+		i(local) {
+			if (current) return;
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(productcard.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(productcard.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_component)(productcard, detaching);
+		}
+	};
+}
+
+// (57:6) {#each productData as product, index}
+function create_each_block_1(ctx) {
+	let if_block_anchor;
+	let current;
+	let if_block = /*product*/ ctx[15].variants[0].price > 0 && create_if_block_1(ctx);
+
+	return {
+		c() {
+			if (if_block) if_block.c();
+			if_block_anchor = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.empty)();
+		},
+		m(target, anchor) {
+			if (if_block) if_block.m(target, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, if_block_anchor, anchor);
+			current = true;
+		},
+		p(ctx, dirty) {
+			if (/*product*/ ctx[15].variants[0].price > 0) {
+				if (if_block) {
+					if_block.p(ctx, dirty);
+
+					if (dirty & /*productData*/ 1) {
+						(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block, 1);
+					}
+				} else {
+					if_block = create_if_block_1(ctx);
+					if_block.c();
+					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block, 1);
+					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+				}
+			} else if (if_block) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.group_outros)();
+
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(if_block, 1, 1, () => {
+					if_block = null;
+				});
+
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.check_outros)();
+			}
+		},
+		i(local) {
+			if (current) return;
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block);
+			current = true;
+		},
+		o(local) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(if_block);
+			current = false;
+		},
+		d(detaching) {
+			if (detaching) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(if_block_anchor);
+			}
+
+			if (if_block) if_block.d(detaching);
+		}
+	};
+}
+
+// (82:4) {#each productData as product, index}
+function create_each_block(ctx) {
+	let productcard;
+	let current;
+
+	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
+			props: {
+				product: /*product*/ ctx[15],
+				otherData: /*otherData*/ ctx[3]
+			}
+		});
+
+	return {
+		c() {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_component)(productcard.$$.fragment);
+		},
+		m(target, anchor) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.mount_component)(productcard, target, anchor);
+			current = true;
+		},
+		p(ctx, dirty) {
+			const productcard_changes = {};
+			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[15];
+			productcard.$set(productcard_changes);
+		},
+		i(local) {
+			if (current) return;
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(productcard.$$.fragment, local);
+			current = true;
+		},
+		o(local) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(productcard.$$.fragment, local);
+			current = false;
+		},
+		d(detaching) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_component)(productcard, detaching);
+		}
+	};
+}
+
+// (53:0) {#key productData}
+function create_key_block(ctx) {
 	let div2;
 	let div0;
 	let custom_carousel;
-	let t1;
+	let t0;
 	let script;
-	let t3;
+	let t2;
 	let div1;
 	let current;
-	let if_block = /*collectionTexts*/ ctx[3].length > 1 && create_if_block_2(ctx);
 	let each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 	let each_blocks_1 = [];
 
@@ -679,8 +1015,6 @@ function create_if_block(ctx) {
 
 	return {
 		c() {
-			if (if_block) if_block.c();
-			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			custom_carousel = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("custom-carousel");
@@ -689,10 +1023,10 @@ function create_if_block(ctx) {
 				each_blocks_1[i].c();
 			}
 
-			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			script = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("script");
-			script.textContent = "{\n        \"slidesPerView\": 3.01,\n        \"spaceBetween\": 10,\n        \"overflowNagivation\": true,\n        \"progressPagination\": true,\n        \"pagination\": false,\n        \"breakpoints\": {\n         \"1024\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 5,\n            \"spaceBetween\": 27.5\n          }\n        }\n      }";
-			t3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			script.textContent = "{\n        \"slidesPerView\": 3.01,\n        \"spaceBetween\": 10,\n      \"overflowNagivation\": true,\n        \"progressPagination\": true,\n        \"pagination\": false,\n        \"breakpoints\": {\n         \"1024\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 5,\n            \"spaceBetween\": 27.5\n          }\n        }\n      }";
+			t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -706,8 +1040,6 @@ function create_if_block(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "featured-products__wrapper product-card-wrapper");
 		},
 		m(target, anchor) {
-			if (if_block) if_block.m(target, anchor);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, t0, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div2, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div0);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div0, custom_carousel);
@@ -718,9 +1050,9 @@ function create_if_block(ctx) {
 				}
 			}
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t1);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t0);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, script);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t3);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t2);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div1);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -732,9 +1064,7 @@ function create_if_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*collectionTexts*/ ctx[3].length > 1) if_block.p(ctx, dirty);
-
-			if (dirty & /*productData, otherData*/ 5) {
+			if (dirty & /*productData, otherData*/ 9) {
 				each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 				let i;
 
@@ -748,7 +1078,7 @@ function create_if_block(ctx) {
 						each_blocks_1[i] = create_each_block_1(child_ctx);
 						each_blocks_1[i].c();
 						(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(each_blocks_1[i], 1);
-						each_blocks_1[i].m(custom_carousel, t1);
+						each_blocks_1[i].m(custom_carousel, t0);
 					}
 				}
 
@@ -761,7 +1091,7 @@ function create_if_block(ctx) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.check_outros)();
 			}
 
-			if (dirty & /*productData, otherData*/ 5) {
+			if (dirty & /*productData, otherData*/ 9) {
 				each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 				let i;
 
@@ -818,266 +1148,11 @@ function create_if_block(ctx) {
 		},
 		d(detaching) {
 			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(t0);
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div2);
 			}
 
-			if (if_block) if_block.d(detaching);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks_1, detaching);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks, detaching);
-		}
-	};
-}
-
-// (43:2) {#if collectionTexts.length > 1 }
-function create_if_block_2(ctx) {
-	let each_1_anchor;
-	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[3]);
-	let each_blocks = [];
-
-	for (let i = 0; i < each_value_2.length; i += 1) {
-		each_blocks[i] = create_each_block_2(get_each_context_2(ctx, each_value_2, i));
-	}
-
-	return {
-		c() {
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				each_blocks[i].c();
-			}
-
-			each_1_anchor = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.empty)();
-		},
-		m(target, anchor) {
-			for (let i = 0; i < each_blocks.length; i += 1) {
-				if (each_blocks[i]) {
-					each_blocks[i].m(target, anchor);
-				}
-			}
-
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, each_1_anchor, anchor);
-		},
-		p(ctx, dirty) {
-			if (dirty & /*selectedParams, collectionTexts, updateParams*/ 26) {
-				each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[3]);
-				let i;
-
-				for (i = 0; i < each_value_2.length; i += 1) {
-					const child_ctx = get_each_context_2(ctx, each_value_2, i);
-
-					if (each_blocks[i]) {
-						each_blocks[i].p(child_ctx, dirty);
-					} else {
-						each_blocks[i] = create_each_block_2(child_ctx);
-						each_blocks[i].c();
-						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
-					}
-				}
-
-				for (; i < each_blocks.length; i += 1) {
-					each_blocks[i].d(1);
-				}
-
-				each_blocks.length = each_value_2.length;
-			}
-		},
-		d(detaching) {
-			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(each_1_anchor);
-			}
-
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks, detaching);
-		}
-	};
-}
-
-// (44:2) {#each collectionTexts as text }
-function create_each_block_2(ctx) {
-	let div;
-	let button;
-	let t0_value = /*text*/ ctx[18] + "";
-	let t0;
-	let button_class_value;
-	let t1;
-	let mounted;
-	let dispose;
-
-	function click_handler() {
-		return /*click_handler*/ ctx[6](/*text*/ ctx[18]);
-	}
-
-	return {
-		c() {
-			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
-			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t0_value);
-			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[1].text == /*text*/ ctx[18] && "product-category__button--active"}`);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "featured-products__Category");
-		},
-		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, button);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(button, t0);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, t1);
-
-			if (!mounted) {
-				dispose = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button, "click", click_handler);
-				mounted = true;
-			}
-		},
-		p(new_ctx, dirty) {
-			ctx = new_ctx;
-
-			if (dirty & /*selectedParams*/ 2 && button_class_value !== (button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[1].text == /*text*/ ctx[18] && "product-category__button--active"}`)) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value);
-			}
-		},
-		d(detaching) {
-			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
-			}
-
-			mounted = false;
-			dispose();
-		}
-	};
-}
-
-// (54:8) {#if product.variants[0].price > 0 }
-function create_if_block_1(ctx) {
-	let productcard;
-	let current;
-
-	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
-			props: {
-				product: /*product*/ ctx[14],
-				otherData: /*otherData*/ ctx[2]
-			}
-		});
-
-	return {
-		c() {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_component)(productcard.$$.fragment);
-		},
-		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.mount_component)(productcard, target, anchor);
-			current = true;
-		},
-		p(ctx, dirty) {
-			const productcard_changes = {};
-			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[14];
-			productcard.$set(productcard_changes);
-		},
-		i(local) {
-			if (current) return;
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(productcard.$$.fragment, local);
-			current = true;
-		},
-		o(local) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(productcard.$$.fragment, local);
-			current = false;
-		},
-		d(detaching) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_component)(productcard, detaching);
-		}
-	};
-}
-
-// (53:6) {#each productData as product, index}
-function create_each_block_1(ctx) {
-	let if_block_anchor;
-	let current;
-	let if_block = /*product*/ ctx[14].variants[0].price > 0 && create_if_block_1(ctx);
-
-	return {
-		c() {
-			if (if_block) if_block.c();
-			if_block_anchor = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.empty)();
-		},
-		m(target, anchor) {
-			if (if_block) if_block.m(target, anchor);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, if_block_anchor, anchor);
-			current = true;
-		},
-		p(ctx, dirty) {
-			if (/*product*/ ctx[14].variants[0].price > 0) {
-				if (if_block) {
-					if_block.p(ctx, dirty);
-
-					if (dirty & /*productData*/ 1) {
-						(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block, 1);
-					}
-				} else {
-					if_block = create_if_block_1(ctx);
-					if_block.c();
-					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block, 1);
-					if_block.m(if_block_anchor.parentNode, if_block_anchor);
-				}
-			} else if (if_block) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.group_outros)();
-
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(if_block, 1, 1, () => {
-					if_block = null;
-				});
-
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.check_outros)();
-			}
-		},
-		i(local) {
-			if (current) return;
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block);
-			current = true;
-		},
-		o(local) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(if_block);
-			current = false;
-		},
-		d(detaching) {
-			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(if_block_anchor);
-			}
-
-			if (if_block) if_block.d(detaching);
-		}
-	};
-}
-
-// (78:4) {#each productData as product, index}
-function create_each_block(ctx) {
-	let productcard;
-	let current;
-
-	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
-			props: {
-				product: /*product*/ ctx[14],
-				otherData: /*otherData*/ ctx[2]
-			}
-		});
-
-	return {
-		c() {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_component)(productcard.$$.fragment);
-		},
-		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.mount_component)(productcard, target, anchor);
-			current = true;
-		},
-		p(ctx, dirty) {
-			const productcard_changes = {};
-			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[14];
-			productcard.$set(productcard_changes);
-		},
-		i(local) {
-			if (current) return;
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(productcard.$$.fragment, local);
-			current = true;
-		},
-		o(local) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(productcard.$$.fragment, local);
-			current = false;
-		},
-		d(detaching) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_component)(productcard, detaching);
 		}
 	};
 }
@@ -1091,7 +1166,7 @@ function create_fragment(ctx) {
 	const if_blocks = [];
 
 	function select_block_type(ctx, dirty) {
-		if (/*productData*/ ctx[0].length) return 0;
+		if (/*productData*/ ctx[0].length && !/*isLoading*/ ctx[1]) return 0;
 		return 1;
 	}
 
@@ -1157,6 +1232,7 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let { shopifyData } = $$props;
 	let productData = []; //to store api data
+	let isLoading = true;
 	const { currency = "$", soldOutText = "Sold Out", chooseMoreText = "Choose Options", addToCartText = "Add To Cart", blocks = [] } = shopifyData || {};
 
 	const otherData = {
@@ -1183,12 +1259,14 @@ function instance($$self, $$props, $$invalidate) {
 	let selectedParams = { ...paramsHash[collectionTexts[0]] };
 
 	const requestData = async selectedParams => {
+		$$invalidate(1, isLoading = true);
 		const responseData = await (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__.getProductData)(selectedParams);
 		$$invalidate(0, productData = responseData.data);
+		$$invalidate(1, isLoading = false);
 	};
 
 	const updateParams = async text => {
-		$$invalidate(1, selectedParams = paramsHash[text]);
+		$$invalidate(2, selectedParams = paramsHash[text]);
 		await requestData(selectedParams);
 	};
 
@@ -1196,18 +1274,17 @@ function instance($$self, $$props, $$invalidate) {
 		await requestData(selectedParams);
 	});
 
-	console.log(productData, "product Data");
-
 	const click_handler = text => {
 		updateParams(text);
 	};
 
 	$$self.$$set = $$props => {
-		if ('shopifyData' in $$props) $$invalidate(5, shopifyData = $$props.shopifyData);
+		if ('shopifyData' in $$props) $$invalidate(6, shopifyData = $$props.shopifyData);
 	};
 
 	return [
 		productData,
+		isLoading,
 		selectedParams,
 		otherData,
 		collectionTexts,
@@ -1220,11 +1297,11 @@ function instance($$self, $$props, $$invalidate) {
 class Product_carousel extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 5 });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 6 });
 	}
 
 	get shopifyData() {
-		return this.$$.ctx[5];
+		return this.$$.ctx[6];
 	}
 
 	set shopifyData(shopifyData) {
@@ -1255,7 +1332,7 @@ class Product_carousel extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 
 
 function add_css(target) {
-	(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append_styles)(target, "svelte-kd6kh0", ".responsive-image__wrapper.svelte-kd6kh0:before{content:'';width:100%;display:block;padding-top:var(--padding-top)}.responsive-image__wrapper.svelte-kd6kh0{max-width:1900px;height:100%;position:relative;max-height:100%}.responsive-image__image.svelte-kd6kh0{position:absolute;top:0;height:100%;left:0;width:100%}");
+	(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append_styles)(target, "svelte-1ejgzbr", ".responsive-image__wrapper.svelte-1ejgzbr:before{content:'';width:100%;display:block;padding-top:var(--padding-top)}.responsive-image__wrapper.svelte-1ejgzbr{max-width:var(--max-width);height:100%;position:relative;max-height:100%;height:var(----max-height)}.responsive-image__image.svelte-1ejgzbr{position:absolute;top:0;height:100%;left:0;width:100%}");
 }
 
 function create_fragment(ctx) {
@@ -1274,7 +1351,7 @@ function create_fragment(ctx) {
 			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			img = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("img");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "id", img_id_value = "Image-" + /*image_id*/ ctx[2] + "-" + /*generated_image_id*/ ctx[1]);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "class", "responsive-image__image lazyload svelte-kd6kh0");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "class", "responsive-image__image lazyload svelte-1ejgzbr");
 			if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.src_url_equal)(img.src, img_src_value = /*srcUrl*/ ctx[5])) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "src", img_src_value);
 			if (!(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.srcset_url_equal)(img, img_srcset_value = "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/u3zfwAJrQPhbkYXzAAAAABJRU5ErkJggg==")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "srcset", img_srcset_value);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "data-src", /*dataSrcUrl*/ ctx[4]);
@@ -1285,7 +1362,7 @@ function create_fragment(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(img, "style", img_style_value = /*getImageStyle*/ ctx[7]());
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "id", div_id_value = "ImageWrapper-" + /*image_id*/ ctx[2] + "-" + /*generated_image_id*/ ctx[1]);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "data-image-id", /*image_id*/ ctx[2]);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "responsive-image__wrapper svelte-kd6kh0");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "responsive-image__wrapper svelte-1ejgzbr");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "style", div_style_value = /*getWrapperStyles*/ ctx[6]());
 		},
 		m(target, anchor) {
@@ -1313,6 +1390,7 @@ let max = 10000;
 function instance($$self, $$props, $$invalidate) {
 	let { image_aspect_ratio } = $$props;
 	let { image } = $$props;
+	let { srcTokens } = $$props;
 	let diff = max - min;
 	let generated_image_id = Date.now() / diff + min;
 	let image_id = image.id;
@@ -1356,13 +1434,7 @@ function instance($$self, $$props, $$invalidate) {
 
 	const imageWidth = getImageWidths(image.width);
 	const max_width_image_float = max_width_image * 1.0;
-
-	let urlTokens = {
-		replacementToken: '?width=300&height=300',
-		dataSrcToken: '?{width}&{height}',
-		srcToken: '?width=300&height=300'
-	};
-
+	let urlTokens = srcTokens;
 	let uriEncodedSrc = `${encodeURI(image.src)}?width=300&height=300`;
 	let dataSrcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.dataSrcToken);
 	let srcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.srcToken);
@@ -1379,6 +1451,8 @@ function instance($$self, $$props, $$invalidate) {
 	const getWrapperStyles = () => {
 		return `
     --padding-top: ${max_height_image / max_width_image_float * 100}%;
+    --max-height: ${max_height_image}px;
+    --max-width: ${max_width_image}px;
     `;
 	};
 
@@ -1392,6 +1466,7 @@ function instance($$self, $$props, $$invalidate) {
 	$$self.$$set = $$props => {
 		if ('image_aspect_ratio' in $$props) $$invalidate(0, image_aspect_ratio = $$props.image_aspect_ratio);
 		if ('image' in $$props) $$invalidate(8, image = $$props.image);
+		if ('srcTokens' in $$props) $$invalidate(9, srcTokens = $$props.srcTokens);
 	};
 
 	return [
@@ -1403,14 +1478,28 @@ function instance($$self, $$props, $$invalidate) {
 		srcUrl,
 		getWrapperStyles,
 		getImageStyle,
-		image
+		image,
+		srcTokens
 	];
 }
 
 class Responsive_image extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { image_aspect_ratio: 0, image: 8 }, add_css);
+
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(
+			this,
+			options,
+			instance,
+			create_fragment,
+			svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal,
+			{
+				image_aspect_ratio: 0,
+				image: 8,
+				srcTokens: 9
+			},
+			add_css
+		);
 	}
 
 	get image_aspect_ratio() {
@@ -1430,9 +1519,18 @@ class Responsive_image extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 		this.$$set({ image });
 		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
 	}
+
+	get srcTokens() {
+		return this.$$.ctx[9];
+	}
+
+	set srcTokens(srcTokens) {
+		this.$$set({ srcTokens });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
+	}
 }
 
-(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Responsive_image, {"image_aspect_ratio":{},"image":{}}, [], [], true);
+(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Responsive_image, {"image_aspect_ratio":{},"image":{},"srcTokens":{}}, [], [], true);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Responsive_image);
 
 /***/ })
