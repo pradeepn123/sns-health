@@ -195,6 +195,9 @@ class CustomCarousel extends HTMLElement {
           if (window.handleJsClick) {
             window.handleJsClick();
           }
+        },
+        load: () => {
+          console.log("loaded");
         }
         // afterInit: () => {
         //   setTimeout(() => {
