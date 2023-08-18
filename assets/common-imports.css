@@ -1131,7 +1131,7 @@ custom-carousel {
   display: flex;
 }
 
-.swiper:not(.swiper-initialized) .swiper-slide {
+custom-carousel img .swiper-slide {
   max-width: 250px;
 }
 
