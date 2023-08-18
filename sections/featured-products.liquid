@@ -6,6 +6,7 @@
      
             <div class="featured-products__content featured-products__content--desktop"> 
             <custom-carousel>
+              <div class="custom-carousel__content hide" data-carousel-content>
               {% for product in collection.products %} 
               <div class="swiper-slide">
                {% render 'custom-product-card',
@@ -13,6 +14,7 @@
                %}
               </div>
               {% endfor %}
+            </div>
               <script type="text/json" data-settings>
                   {
                     "slidesPerView": 3.01,
