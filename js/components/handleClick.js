@@ -8,6 +8,8 @@ export default () => {
       }
     const clickHandle = document.querySelectorAll('[data-redirect-click]');
     clickHandle.forEach(item => item.addEventListener('click', (ev) => {
-      handleRedirectOnDiv(item)
+      if (!ev.target.closest('.product-card__atc')){ 
+        handleRedirectOnDiv(item)
+    }
     }));
 }

@@ -149,6 +149,7 @@ class CustomCarousel extends HTMLElement {
             if (!!swiper.navigation) {
               swiper.navigation.destroy();
             }
+            window.handlJsClick();
           }
         },
         modules: [Navigation, Pagination],

@@ -5,13 +5,14 @@
 
 <div class="customer-reviews">
     {% render 'section-heading', heading: section.settings.section_heading %}
-    <customer-reviews></customer-reviews>
-
-<script id="customer-reviews-data" type="text/json">
-    {
-        "data": {% render 'JSON-output-okendo-reviews', section: section %}
-    }
-</script>
+    <customer-reviews>
+        <script id="customer-reviews-data" type="text/json">
+            {
+                "data": {% render 'JSON-output-okendo-reviews', section: section %}
+            }
+        </script>
+    </customer-reviews>
+    
 </div>
 
 {% schema %}

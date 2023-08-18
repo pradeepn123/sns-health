@@ -18,5 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   registerCustomElements();
   collapsible();
   register();
+  window.handlJsClick = handleClick;
 })
 

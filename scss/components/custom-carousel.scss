@@ -101,8 +101,8 @@ img{
 .swiper-pagination-progressbar  {
   position: relative !important;
   margin-top: 10px;
-  @include mixins.container;
-  left: 45% !important;
+  left: 50% !important;
+  max-width: 100%;
   z-index: 0;
 }
 
@@ -110,6 +110,10 @@ custom-carousel {
   position: relative;
   display: block;
   height: 100%
+}
+
+.product-card{
+  cursor: pointer;
 }
 
 .product-card-wrapper {

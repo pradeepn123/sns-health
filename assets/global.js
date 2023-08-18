@@ -194,6 +194,7 @@ class CustomCarousel extends HTMLElement {
           if (!!swiper.navigation) {
             swiper.navigation.destroy();
           }
+          window.handlJsClick();
         }
       },
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
@@ -227,7 +228,9 @@ class CustomCarousel extends HTMLElement {
   };
   var clickHandle = document.querySelectorAll('[data-redirect-click]');
   clickHandle.forEach(item => item.addEventListener('click', ev => {
-    handleRedirectOnDiv(item);
+    if (!ev.target.closest('.product-card__atc')) {
+      handleRedirectOnDiv(item);
+    }
   }));
 });
 
@@ -268,19 +271,20 @@ class CustomCarousel extends HTMLElement {
   var headerWrapper = document.querySelector('.shopify-section__header');
   var searchBar = document.querySelector('.header__search-bar-wrapper--mobile');
   var navBar = document.querySelector('.nav-bar__inner');
-  var header = document.querySelector('.header');
+  var searchIcon = document.querySelector('.header__action-item-link--search');
   var handleScroll = () => {
     var scrollTop = window.scrollY;
     searchBar.style.opacity = 1 - scrollTop / 85;
     navBar.style.opacity = 1 - scrollTop / 10;
-    if (scrollTop == 0) {
+    searchIcon.style.opacity = 1 - scrollTop / 10;
+    if (scrollTop < 150) {
       if (headerWrapper.classList.contains('shopify-section__header--fixed')) {
         headerWrapper.classList.remove('shopify-section__header--fixed');
-        header.classList.remove('header-margin-scroll');
+        // header.classList.remove('header-margin-scroll');
       }
     } else {
       headerWrapper.classList.add('shopify-section__header--fixed');
-      header.classList.add('header-margin-scroll');
+      // header.classList.add('header-margin-scroll');
     }
   };
 
@@ -376,6 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_9__["default"])();
   (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_10__.collapsible)();
   (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__.register)();
+  window.handlJsClick = JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_8__["default"];
 });
 
 /***/ })

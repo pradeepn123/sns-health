@@ -23,6 +23,9 @@
     display: block;
   }
 }
+.featured-products__content--show-mobile {
+  display: block;
+}
 .featured-products__content--mobile {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -55,6 +58,9 @@
     display: none;
   }
 }
+.featured-products__content--hide-mobile {
+  display: none !important;
+}
 .featured-products__Category_wrapp {
   max-width: calc(100% - 2 * var(--base-margin));
   margin-left: auto;
@@ -65,7 +71,7 @@
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 }
 @media (min-width: 1440px) {
   .featured-products__Category_wrapp {

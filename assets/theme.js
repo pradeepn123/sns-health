@@ -2719,6 +2719,7 @@
       key: "_onLooseFocus",
       value: function _onLooseFocus(event) {
         if (this.activePopover && event.relatedTarget !== null && !this.activePopover.contains(event.relatedTarget)) {
+          console.log(event.relatedTarget, "event related target")
           this._closeActivePopover();
         }
       }

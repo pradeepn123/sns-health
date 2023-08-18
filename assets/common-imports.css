@@ -275,8 +275,12 @@
   outline: 0;
 }
 
+.needsclick {
+  z-index: 4 !important;
+}
+
 /**
- * Swiper 10.0.4
+ * Swiper 10.1.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -284,7 +288,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 8, 2023
+ * Released on: August 1, 2023
  */
 @font-face {
   font-family: "swiper-icons";
@@ -1031,28 +1035,23 @@ img {
 
 .swiper-pagination-progressbar {
   position: relative !important;
-  left: 45% !important;
+  left: 50% !important;
 }
 
 .swiper-pagination-progressbar {
   margin-top: 10px;
-  max-width: calc(100% - 2 * 20px);
-  max-width: calc(100% - 2 * var(--base-margin));
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
   z-index: 0;
-}
-@media (min-width: 1440px) {
-  .swiper-pagination-progressbar {
-    max-width: calc(1440px - 2 * 20px);
-    max-width: calc(1440px - 2 * var(--base-margin));
-  }
 }
 
 custom-carousel {
   position: relative;
   display: block;
   height: 100%;
+}
+
+.product-card {
+  cursor: pointer;
 }
 
 .product-card-wrapper .swiper-navigation {

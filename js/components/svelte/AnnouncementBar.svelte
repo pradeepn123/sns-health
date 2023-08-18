@@ -12,6 +12,7 @@
         const announcementBar = document.querySelector(
           "[data-announcement-bar]"
         );
+     
         announcementBar.classList.remove("hidden");
         announcementBar
           ?.querySelectorAll("[ data-announcement-text]")
@@ -21,6 +22,13 @@
         break;
       }
     }
+    const announcementBar = document.querySelector(
+          "[data-announcement-bar]"
+        );
+        const overlay = document.querySelector(
+          '.overlay'
+        );
+        overlay.style.setProperty('--announcement-bar-height', `${announcementBar.offsetHeight}px`);
   };
   
   onMount(async () => {

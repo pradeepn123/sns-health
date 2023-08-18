@@ -93,25 +93,27 @@ var getReviewData = /*#__PURE__*/function () {
   //container is where you want to inject component
   //propEl pass prop when injecting
 
-  var appContainer = document.querySelector(container);
-  var props = {};
-  if (appContainer) {
-    var _props;
-    if (propsEl) {
-      var _document$querySelect, _document$querySelect2;
-      console.log((_document$querySelect = document.querySelector(propsEl)) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.innerHTML);
-      props = JSON.parse((_document$querySelect2 = document.querySelector(propsEl)) === null || _document$querySelect2 === void 0 ? void 0 : _document$querySelect2.innerHTML) || {}; //get json from the script id 
-    }
-    //inject component into container
-    var instance = new Component({
-      target: document.querySelector(container),
-      props: {
-        shopifyData: (_props = props) === null || _props === void 0 ? void 0 : _props.data //pass the prop on data prop as default
+  var appContainer = document.querySelectorAll(container);
+  return [...appContainer].map(appTarget => {
+    var props = {};
+    if (appTarget) {
+      var _props;
+      if (propsEl) {
+        var _appTarget$querySelec, _appTarget$querySelec2;
+        console.log((_appTarget$querySelec = appTarget.querySelector(propsEl)) === null || _appTarget$querySelec === void 0 ? void 0 : _appTarget$querySelec.innerHTML);
+        props = JSON.parse((_appTarget$querySelec2 = appTarget.querySelector(propsEl)) === null || _appTarget$querySelec2 === void 0 ? void 0 : _appTarget$querySelec2.innerHTML) || {}; //get json from the script id 
       }
-    });
+      //inject component into container
+      var instance = new Component({
+        target: appTarget,
+        props: {
+          shopifyData: (_props = props) === null || _props === void 0 ? void 0 : _props.data //pass the prop on data prop as default
+        }
+      });
 
-    return instance;
-  }
+      return instance;
+    }
+  });
 });
 
 /***/ }),
@@ -150,7 +152,7 @@ var getReviewData = /*#__PURE__*/function () {
 
 
 
-function create_if_block_5(ctx) {
+function create_if_block_6(ctx) {
 	let div;
 
 	return {
@@ -176,7 +178,7 @@ function create_if_block_5(ctx) {
 }
 
 // (40:8) {#if bestseller}
-function create_if_block_4(ctx) {
+function create_if_block_5(ctx) {
 	let div;
 
 	return {
@@ -197,7 +199,7 @@ function create_if_block_4(ctx) {
 }
 
 // (42:8) {#if onsale}
-function create_if_block_3(ctx) {
+function create_if_block_4(ctx) {
 	let div;
 
 	return {
@@ -217,7 +219,46 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (58:4) {#if vendor}
+// (44:6) {#if rating}
+function create_if_block_3(ctx) {
+	let div;
+	let svg;
+	let path;
+	let span;
+
+	return {
+		c() {
+			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			svg = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.svg_element)("svg");
+			path = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.svg_element)("path");
+			span = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("span");
+			span.textContent = `${/*rating*/ ctx[4] ? /*rating*/ ctx[4] : ''}`;
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(path, "d", "M7.99998 0L9.97732 5.98213L16 6.11138L11.2001 9.93803L12.9441 16L7.99998 12.3825L3.05531 16L4.79988 9.93803L0 6.11138L6.02211 5.98213L7.99998 0Z");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(path, "fill", "#FFBD00");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "xmlns", "http://www.w3.org/2000/svg");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "width", "16");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "height", "16");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "viewBox", "0 0 16 16");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "fill", "none");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(span, "class", "product-card__star-text");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "product-card__star");
+		},
+		m(target, anchor) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, svg);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(svg, path);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, span);
+		},
+		p: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
+		d(detaching) {
+			if (detaching) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
+			}
+		}
+	};
+}
+
+// (60:4) {#if vendor}
 function create_if_block_2(ctx) {
 	let div;
 
@@ -239,7 +280,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (69:6) {#if discountPercentage > 0}
+// (71:6) {#if discountPercentage > 0}
 function create_if_block_1(ctx) {
 	let div;
 
@@ -261,7 +302,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (93:8) {:else}
+// (95:8) {:else}
 function create_else_block(ctx) {
 	let a;
 	let t;
@@ -291,7 +332,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (85:8) {#if product.variants.size == 1}
+// (87:8) {#if product.variants.size == 1}
 function create_if_block(ctx) {
 	let button;
 
@@ -316,37 +357,33 @@ function create_if_block(ctx) {
 }
 
 function create_fragment(ctx) {
-	let div10;
-	let div5;
+	let div9;
+	let div4;
 	let div0;
 	let responsiveimage;
-	let div0_data_url_value;
 	let t0;
-	let div3;
+	let div2;
 	let div1;
 	let t1;
 	let t2;
 	let t3;
-	let div2;
-	let svg;
-	let path;
-	let span;
+	let t4;
 	let t5;
-	let t6;
-	let div4;
-	let t8;
-	let div9;
-	let div7;
-	let t9;
-	let div6;
-	let t11;
+	let div3;
+	let t7;
 	let div8;
+	let div6;
+	let t8;
+	let div5;
+	let t10;
+	let div7;
 	let form;
 	let input0;
-	let t12;
+	let t11;
 	let input1;
 	let input1_value_value;
-	let t13;
+	let t12;
+	let div9_data_url_value;
 	let current;
 
 	responsiveimage = new SvelteComponents_responsive_image_svelte__WEBPACK_IMPORTED_MODULE_2__["default"]({
@@ -357,11 +394,12 @@ function create_fragment(ctx) {
 			}
 		});
 
-	let if_block0 = /*discountPercentage*/ ctx[10] > 0 && create_if_block_5(ctx);
-	let if_block1 = /*bestseller*/ ctx[11] && create_if_block_4(ctx);
-	let if_block2 = /*onsale*/ ctx[12] && create_if_block_3(ctx);
-	let if_block3 = /*vendor*/ ctx[5] && create_if_block_2(ctx);
-	let if_block4 = /*discountPercentage*/ ctx[10] > 0 && create_if_block_1(ctx);
+	let if_block0 = /*discountPercentage*/ ctx[10] > 0 && create_if_block_6(ctx);
+	let if_block1 = /*bestseller*/ ctx[11] && create_if_block_5(ctx);
+	let if_block2 = /*onsale*/ ctx[12] && create_if_block_4(ctx);
+	let if_block3 = /*rating*/ ctx[4] && create_if_block_3(ctx);
+	let if_block4 = /*vendor*/ ctx[5] && create_if_block_2(ctx);
+	let if_block5 = /*discountPercentage*/ ctx[10] > 0 && create_if_block_1(ctx);
 
 	function select_block_type(ctx, dirty) {
 		if (/*product*/ ctx[0].variants.size == 1) return create_if_block;
@@ -369,16 +407,16 @@ function create_fragment(ctx) {
 	}
 
 	let current_block_type = select_block_type(ctx, -1);
-	let if_block5 = current_block_type(ctx);
+	let if_block6 = current_block_type(ctx);
 
 	return {
 		c() {
-			div10 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div9 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_component)(responsiveimage.$$.fragment);
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			if (if_block0) if_block0.c();
 			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
@@ -386,49 +424,34 @@ function create_fragment(ctx) {
 			t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			if (if_block2) if_block2.c();
 			t3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			svg = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.svg_element)("svg");
-			path = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.svg_element)("path");
-			span = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("span");
-			span.textContent = `${/*rating*/ ctx[4] ? /*rating*/ ctx[4] : ''}`;
-			t5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			if (if_block3) if_block3.c();
-			t6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div4.textContent = `${/*title*/ ctx[6]}`;
-			t8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div9 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			t4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			if (if_block4) if_block4.c();
-			t9 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div6.textContent = `${window.formatCurrency(/*price*/ ctx[3], `${/*currency*/ ctx[7]}{{amount}}`)}`;
-			t11 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			t5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			div3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div3.textContent = `${/*title*/ ctx[6]}`;
+			t7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			if (if_block5) if_block5.c();
+			t8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div5.textContent = `${window.formatCurrency(/*price*/ ctx[3], `${/*currency*/ ctx[7]}{{amount}}`)}`;
+			t10 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			div7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			form = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("form");
 			input0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("input");
-			t12 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			t11 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			input1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("input");
-			t13 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			if_block5.c();
+			t12 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			if_block6.c();
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", "product-card__image");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "data-redirect-click", "");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "data-url", div0_data_url_value = /*product*/ ctx[0].link);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", "product-card__header-tags");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(path, "d", "M7.99998 0L9.97732 5.98213L16 6.11138L11.2001 9.93803L12.9441 16L7.99998 12.3825L3.05531 16L4.79988 9.93803L0 6.11138L6.02211 5.98213L7.99998 0Z");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(path, "fill", "#FFBD00");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "xmlns", "http://www.w3.org/2000/svg");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "width", "16");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "height", "16");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "viewBox", "0 0 16 16");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "fill", "none");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(span, "class", "product-card__star-text");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "product-card__star");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", "product-card__header");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", "product-card__title");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "product-card__body");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", "product-card__price");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div7, "class", "product-card__price-container");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "product-card__header");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", "product-card__title");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", "product-card__body");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "product-card__price");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", "product-card__price-container");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "type", "hidden");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "name", "quantity");
 			input0.value = "1";
@@ -437,71 +460,71 @@ function create_fragment(ctx) {
 			input1.value = input1_value_value = /*product*/ ctx[0].variants[0].id;
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(form, "method", "post");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(form, "action", "/cart/add");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "class", "product-card__atc");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "class", "product-card__footer");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div10, "class", "product-card swiper-slide");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div7, "class", "product-card__atc");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "class", "product-card__footer");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "class", "product-card swiper-slide");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-redirect-click", "");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-url", div9_data_url_value = /*product*/ ctx[0].link);
 		},
 		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div10, anchor);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div10, div5);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div0);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div9, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div9, div4);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, div0);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.mount_component)(responsiveimage, div0, null);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t0);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div3);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, div1);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t0);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, div2);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div1);
 			if (if_block0) if_block0.m(div1, null);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, t1);
 			if (if_block1) if_block1.m(div1, null);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, t2);
 			if (if_block2) if_block2.m(div1, null);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t3);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, div2);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, svg);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(svg, path);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, span);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t5);
-			if (if_block3) if_block3.m(div5, null);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t6);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div4);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div10, t8);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div10, div9);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div9, div7);
-			if (if_block4) if_block4.m(div7, null);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, t9);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, div6);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div9, t11);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t3);
+			if (if_block3) if_block3.m(div2, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t4);
+			if (if_block4) if_block4.m(div4, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t5);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, div3);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div9, t7);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div9, div8);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, form);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div6);
+			if (if_block5) if_block5.m(div6, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, t8);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div5);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, t10);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div7);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, form);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, input0);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, t12);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, t11);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, input1);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, t13);
-			if_block5.m(form, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, t12);
+			if_block6.m(form, null);
 			current = true;
 		},
 		p(ctx, [dirty]) {
-			if (!current || dirty & /*product*/ 1 && div0_data_url_value !== (div0_data_url_value = /*product*/ ctx[0].link)) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "data-url", div0_data_url_value);
-			}
-
 			if (/*discountPercentage*/ ctx[10] > 0) if_block0.p(ctx, dirty);
-			if (/*vendor*/ ctx[5]) if_block3.p(ctx, dirty);
-			if (/*discountPercentage*/ ctx[10] > 0) if_block4.p(ctx, dirty);
+			if (/*rating*/ ctx[4]) if_block3.p(ctx, dirty);
+			if (/*vendor*/ ctx[5]) if_block4.p(ctx, dirty);
+			if (/*discountPercentage*/ ctx[10] > 0) if_block5.p(ctx, dirty);
 
 			if (!current || dirty & /*product*/ 1 && input1_value_value !== (input1_value_value = /*product*/ ctx[0].variants[0].id)) {
 				input1.value = input1_value_value;
 			}
 
-			if (current_block_type === (current_block_type = select_block_type(ctx, dirty)) && if_block5) {
-				if_block5.p(ctx, dirty);
+			if (current_block_type === (current_block_type = select_block_type(ctx, dirty)) && if_block6) {
+				if_block6.p(ctx, dirty);
 			} else {
-				if_block5.d(1);
-				if_block5 = current_block_type(ctx);
+				if_block6.d(1);
+				if_block6 = current_block_type(ctx);
 
-				if (if_block5) {
-					if_block5.c();
-					if_block5.m(form, null);
+				if (if_block6) {
+					if_block6.c();
+					if_block6.m(form, null);
 				}
+			}
+
+			if (!current || dirty & /*product*/ 1 && div9_data_url_value !== (div9_data_url_value = /*product*/ ctx[0].link)) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-url", div9_data_url_value);
 			}
 		},
 		i(local) {
@@ -515,7 +538,7 @@ function create_fragment(ctx) {
 		},
 		d(detaching) {
 			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div10);
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div9);
 			}
 
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_component)(responsiveimage);
@@ -524,7 +547,8 @@ function create_fragment(ctx) {
 			if (if_block2) if_block2.d();
 			if (if_block3) if_block3.d();
 			if (if_block4) if_block4.d();
-			if_block5.d();
+			if (if_block5) if_block5.d();
+			if_block6.d();
 		}
 	};
 }
@@ -622,25 +646,25 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[15] = list[i];
-	child_ctx[17] = i;
+	child_ctx[16] = list[i];
+	child_ctx[18] = i;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[15] = list[i];
-	child_ctx[17] = i;
+	child_ctx[16] = list[i];
+	child_ctx[18] = i;
 	return child_ctx;
 }
 
 function get_each_context_2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[19] = list[i];
+	child_ctx[20] = list[i];
 	return child_ctx;
 }
 
-// (88:0) {:else}
+// (122:0) {:else}
 function create_else_block(ctx) {
 	let div5;
 
@@ -664,35 +688,31 @@ function create_else_block(ctx) {
 	};
 }
 
-// (43:0) {#if productData.length && !isLoading}
+// (54:0) {#if productData.length && !isLoading}
 function create_if_block(ctx) {
-	let div;
 	let t;
 	let previous_key = /*productData*/ ctx[0];
 	let key_block_anchor;
 	let current;
-	let if_block = /*collectionTexts*/ ctx[4].length > 1 && create_if_block_2(ctx);
+	let if_block = /*collectionTexts*/ ctx[5].length > 1 && create_if_block_2(ctx);
 	let key_block = create_key_block(ctx);
 
 	return {
 		c() {
-			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			if (if_block) if_block.c();
 			t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			key_block.c();
 			key_block_anchor = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.empty)();
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "featured-products__Category_wrapp");
 		},
 		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
-			if (if_block) if_block.m(div, null);
+			if (if_block) if_block.m(target, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, t, anchor);
 			key_block.m(target, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, key_block_anchor, anchor);
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*collectionTexts*/ ctx[4].length > 1) if_block.p(ctx, dirty);
+			if (/*collectionTexts*/ ctx[5].length > 1) if_block.p(ctx, dirty);
 
 			if (dirty & /*productData*/ 1 && (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal)(previous_key, previous_key = /*productData*/ ctx[0])) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.group_outros)();
@@ -717,21 +737,20 @@ function create_if_block(ctx) {
 		},
 		d(detaching) {
 			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(t);
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(key_block_anchor);
 			}
 
-			if (if_block) if_block.d();
+			if (if_block) if_block.d(detaching);
 			key_block.d(detaching);
 		}
 	};
 }
 
-// (45:2) {#if collectionTexts.length > 1 }
+// (55:2) {#if collectionTexts.length > 1}
 function create_if_block_2(ctx) {
-	let each_1_anchor;
-	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[4]);
+	let div;
+	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[5]);
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_2.length; i += 1) {
@@ -740,24 +759,26 @@ function create_if_block_2(ctx) {
 
 	return {
 		c() {
+			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
-			each_1_anchor = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.empty)();
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "featured-products__Category_wrapp");
 		},
 		m(target, anchor) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
+
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(target, anchor);
+					each_blocks[i].m(div, null);
 				}
 			}
-
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, each_1_anchor, anchor);
 		},
 		p(ctx, dirty) {
-			if (dirty & /*selectedParams, collectionTexts, updateParams*/ 52) {
-				each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[4]);
+			if (dirty & /*selectedParams, collectionTexts, updateParams*/ 100) {
+				each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[5]);
 				let i;
 
 				for (i = 0; i < each_value_2.length; i += 1) {
@@ -768,7 +789,7 @@ function create_if_block_2(ctx) {
 					} else {
 						each_blocks[i] = create_each_block_2(child_ctx);
 						each_blocks[i].c();
-						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+						each_blocks[i].m(div, null);
 					}
 				}
 
@@ -781,7 +802,7 @@ function create_if_block_2(ctx) {
 		},
 		d(detaching) {
 			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(each_1_anchor);
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
 			}
 
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks, detaching);
@@ -789,11 +810,11 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (46:2) {#each collectionTexts as text }
+// (57:6) {#each collectionTexts as text}
 function create_each_block_2(ctx) {
 	let div;
 	let button;
-	let t0_value = /*text*/ ctx[19] + "";
+	let t0_value = /*text*/ ctx[20] + "";
 	let t0;
 	let button_class_value;
 	let t1;
@@ -801,7 +822,7 @@ function create_each_block_2(ctx) {
 	let dispose;
 
 	function click_handler() {
-		return /*click_handler*/ ctx[7](/*text*/ ctx[19]);
+		return /*click_handler*/ ctx[8](/*text*/ ctx[20]);
 	}
 
 	return {
@@ -810,7 +831,7 @@ function create_each_block_2(ctx) {
 			button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t0_value);
 			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[19] && "product-category__button--active"}`);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[20] && "product-category__button--active"}`);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "featured-products__Category");
 		},
 		m(target, anchor) {
@@ -827,7 +848,7 @@ function create_each_block_2(ctx) {
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
 
-			if (dirty & /*selectedParams*/ 4 && button_class_value !== (button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[19] && "product-category__button--active"}`)) {
+			if (dirty & /*selectedParams*/ 4 && button_class_value !== (button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[20] && "product-category__button--active"}`)) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value);
 			}
 		},
@@ -842,15 +863,15 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (58:8) {#if product.variants[0].price > 0 }
+// (81:12) {#if product.variants[0].price > 0}
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
 
 	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
 			props: {
-				product: /*product*/ ctx[15],
-				otherData: /*otherData*/ ctx[3]
+				product: /*product*/ ctx[16],
+				otherData: /*otherData*/ ctx[4]
 			}
 		});
 
@@ -864,7 +885,7 @@ function create_if_block_1(ctx) {
 		},
 		p(ctx, dirty) {
 			const productcard_changes = {};
-			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[15];
+			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[16];
 			productcard.$set(productcard_changes);
 		},
 		i(local) {
@@ -882,11 +903,11 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (57:6) {#each productData as product, index}
+// (80:10) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
-	let if_block = /*product*/ ctx[15].variants[0].price > 0 && create_if_block_1(ctx);
+	let if_block = /*product*/ ctx[16].variants[0].price > 0 && create_if_block_1(ctx);
 
 	return {
 		c() {
@@ -899,7 +920,7 @@ function create_each_block_1(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*product*/ ctx[15].variants[0].price > 0) {
+			if (/*product*/ ctx[16].variants[0].price > 0) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 
@@ -941,15 +962,15 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (82:4) {#each productData as product, index}
+// (116:8) {#each productData as product, index}
 function create_each_block(ctx) {
 	let productcard;
 	let current;
 
 	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
 			props: {
-				product: /*product*/ ctx[15],
-				otherData: /*otherData*/ ctx[3]
+				product: /*product*/ ctx[16],
+				otherData: /*otherData*/ ctx[4]
 			}
 		});
 
@@ -963,7 +984,7 @@ function create_each_block(ctx) {
 		},
 		p(ctx, dirty) {
 			const productcard_changes = {};
-			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[15];
+			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[16];
 			productcard.$set(productcard_changes);
 		},
 		i(local) {
@@ -981,15 +1002,17 @@ function create_each_block(ctx) {
 	};
 }
 
-// (53:0) {#key productData}
+// (72:2) {#key productData}
 function create_key_block(ctx) {
 	let div2;
 	let div0;
 	let custom_carousel;
 	let t0;
 	let script;
+	let div0_class_value;
 	let t2;
 	let div1;
+	let div1_class_value;
 	let current;
 	let each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 	let each_blocks_1 = [];
@@ -1025,7 +1048,7 @@ function create_key_block(ctx) {
 
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			script = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("script");
-			script.textContent = "{\n        \"slidesPerView\": 3.01,\n        \"spaceBetween\": 10,\n      \"overflowNagivation\": true,\n        \"progressPagination\": true,\n        \"pagination\": false,\n        \"breakpoints\": {\n         \"1024\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 5,\n            \"spaceBetween\": 27.5\n          }\n        }\n      }";
+			script.textContent = "{\n        \"slidesPerView\": 2,\n        \"spaceBetween\": 10,\n      \"overflowNagivation\": true,\n        \"progressPagination\": true,\n        \"pagination\": true,\n        \"navigation\": false,\n        \"breakpoints\": {\n          \"768\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 3,\n            \"spaceBetween\": 27.5\n          },\n         \"1024\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 5,\n            \"spaceBetween\": 27.5\n          }\n        }\n      }";
 			t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 
@@ -1035,8 +1058,15 @@ function create_key_block(ctx) {
 
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "type", "text/json");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "data-settings", "");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", "featured-products__content featured-products__content--desktop");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", "featured-products__content featured-products__content--mobile");
+
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", div0_class_value = `featured-products__content featured-products__content--desktop ${/*mobileCarousel*/ ctx[3]
+			? "featured-products__content--show-mobile"
+			: ""}`);
+
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", div1_class_value = `featured-products__content featured-products__content--mobile ${/*mobileCarousel*/ ctx[3]
+			? "featured-products__content--hide-mobile"
+			: ""}`);
+
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "featured-products__wrapper product-card-wrapper");
 		},
 		m(target, anchor) {
@@ -1064,7 +1094,7 @@ function create_key_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (dirty & /*productData, otherData*/ 9) {
+			if (dirty & /*productData, otherData*/ 17) {
 				each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 				let i;
 
@@ -1091,7 +1121,7 @@ function create_key_block(ctx) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.check_outros)();
 			}
 
-			if (dirty & /*productData, otherData*/ 9) {
+			if (dirty & /*productData, otherData*/ 17) {
 				each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 				let i;
 
@@ -1233,7 +1263,7 @@ function instance($$self, $$props, $$invalidate) {
 	let { shopifyData } = $$props;
 	let productData = []; //to store api data
 	let isLoading = true;
-	const { currency = "$", soldOutText = "Sold Out", chooseMoreText = "Choose Options", addToCartText = "Add To Cart", blocks = [] } = shopifyData || {};
+	const { currency = "$", soldOutText = "Sold Out", chooseMoreText = "Choose Options", addToCartText = "Add To Cart", mobileCarousel = false, blocks = [] } = shopifyData || {};
 
 	const otherData = {
 		currency,
@@ -1279,13 +1309,14 @@ function instance($$self, $$props, $$invalidate) {
 	};
 
 	$$self.$$set = $$props => {
-		if ('shopifyData' in $$props) $$invalidate(6, shopifyData = $$props.shopifyData);
+		if ('shopifyData' in $$props) $$invalidate(7, shopifyData = $$props.shopifyData);
 	};
 
 	return [
 		productData,
 		isLoading,
 		selectedParams,
+		mobileCarousel,
 		otherData,
 		collectionTexts,
 		updateParams,
@@ -1297,11 +1328,11 @@ function instance($$self, $$props, $$invalidate) {
 class Product_carousel extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 6 });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 7 });
 	}
 
 	get shopifyData() {
-		return this.$$.ctx[6];
+		return this.$$.ctx[7];
 	}
 
 	set shopifyData(shopifyData) {

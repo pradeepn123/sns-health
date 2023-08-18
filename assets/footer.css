@@ -275,3 +275,23 @@
   display: block;
   margin-bottom: var(--grid-row-gap);
 }
+.footer__location {
+  margin-top: 20px;
+}
+.footer__location-title {
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-weight: 600;
+}
+.footer__location-icon-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 8px;
+     -moz-column-gap: 8px;
+          column-gap: 8px;
+  margin-bottom: 10px;
+  line-height: normal;
+}

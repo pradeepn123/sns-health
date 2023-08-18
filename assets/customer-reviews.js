@@ -93,25 +93,27 @@ var getReviewData = /*#__PURE__*/function () {
   //container is where you want to inject component
   //propEl pass prop when injecting
 
-  var appContainer = document.querySelector(container);
-  var props = {};
-  if (appContainer) {
-    var _props;
-    if (propsEl) {
-      var _document$querySelect, _document$querySelect2;
-      console.log((_document$querySelect = document.querySelector(propsEl)) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.innerHTML);
-      props = JSON.parse((_document$querySelect2 = document.querySelector(propsEl)) === null || _document$querySelect2 === void 0 ? void 0 : _document$querySelect2.innerHTML) || {}; //get json from the script id 
-    }
-    //inject component into container
-    var instance = new Component({
-      target: document.querySelector(container),
-      props: {
-        shopifyData: (_props = props) === null || _props === void 0 ? void 0 : _props.data //pass the prop on data prop as default
+  var appContainer = document.querySelectorAll(container);
+  return [...appContainer].map(appTarget => {
+    var props = {};
+    if (appTarget) {
+      var _props;
+      if (propsEl) {
+        var _appTarget$querySelec, _appTarget$querySelec2;
+        console.log((_appTarget$querySelec = appTarget.querySelector(propsEl)) === null || _appTarget$querySelec === void 0 ? void 0 : _appTarget$querySelec.innerHTML);
+        props = JSON.parse((_appTarget$querySelec2 = appTarget.querySelector(propsEl)) === null || _appTarget$querySelec2 === void 0 ? void 0 : _appTarget$querySelec2.innerHTML) || {}; //get json from the script id 
       }
-    });
+      //inject component into container
+      var instance = new Component({
+        target: appTarget,
+        props: {
+          shopifyData: (_props = props) === null || _props === void 0 ? void 0 : _props.data //pass the prop on data prop as default
+        }
+      });
 
-    return instance;
-  }
+      return instance;
+    }
+  });
 });
 
 /***/ }),

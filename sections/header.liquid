@@ -1,4 +1,5 @@
 {{'header.css' | asset_url | stylesheet_tag}}
+<script src="{{ 'scroll-to.js' | asset_url }}" defer></script>
 
 {%- capture section_settings -%}
 {
@@ -316,7 +317,6 @@
                 </a>
 
                 <div id="account-popover" class="popover {% if customer %}popover--logged{% else %}popover--large popover--unlogged{% endif %}" aria-hidden="true">
-
                   {%- if customer -%}
                     <div class="popover__inner popover__inner--no-padding">
                       <div class="popover__linklist">
@@ -460,7 +460,7 @@
     <nav class="nav-bar">
       <div class="nav-bar__inner">
         <div class="container nav-bar__container">
-          <a  class="nav-bar__link link hide-mobile" data-type="menuitem">{% render 'location-icon'%} Location</a>
+          <a href="#" class="nav-bar__link link hide-mobile navbar-location" data-type="menuitem" data-click>{% render 'location-icon'%} Location</a>
           <ul class="nav-bar__linklist list--unstyled" data-type="menu" role="list">
             {% assign special_nav_item = section.settings.special_nav_item %}
 

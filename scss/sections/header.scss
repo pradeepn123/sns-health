@@ -129,8 +129,8 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            height: 100%;
-            justify-content: space-between;
+            height: 99%;
+            justify-content: flex-start;
   
 
             &.is-nested {
@@ -653,6 +653,7 @@
     .nav-bar__inner {
         @media(--md) {
             display: block !important;
+            opacity: 1 !important;
         }
     }
     &.overlay-active {
@@ -666,14 +667,21 @@
 
     &--fixed {
         margin-top: 0 !important;
+    
+        .nav-bar {
+           display:  none;
+
+           @media(--md) {
+            display: block;
+           }
+        }
         .nav-bar__inner {
             @media(--md) {
                 opacity:1 !important;
             }
            }
-
-        .header__action-item-link--search {
-            opacity: 1;
+        .header__search-bar-wrapper--mobile {
+            display:  none;
         }
     }
 }

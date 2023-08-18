@@ -21,7 +21,13 @@
   }
 </script>
 {% assign show_announcement = true %}
-<announcement-bar> </announcement-bar>
+<announcement-bar>
+  <script id="announcement-bar-data" type="text/json">
+    {
+     "data": {% render 'JSON-announcement-bar' | json %}
+    }
+  </script>
+</announcement-bar>
 {%- if section.settings.show_announcement -%}
 {% if show_announcement %}
   <section data-section-id="{{ section.id }}" data-section-type="announcement-bar" data-settings>
@@ -117,11 +123,7 @@
   </section>
 {% endif %}
 {% endif %}
-<script id="announcement-bar-data" type="text/json">
-  {
-   "data": {% render 'JSON-announcement-bar' | json %}
-  }
-</script>
+
 
 <style>
   .announcement-bar {

@@ -22,6 +22,10 @@
                 display: block;
             }
         }
+
+        &--show-mobile{
+            display: block;
+        }
         
         &--mobile {
             @include mixins.product-grid;
@@ -29,12 +33,18 @@
                 display: none;
             }
         }
+
+        &--hide-mobile {
+            display: none !important;
+        }
+
+
     }
     &__Category_wrapp{
         @include mixins.container;
         display: flex;
         column-gap: 16px;
-        margin-bottom: 35px;
+        margin-bottom: 15px;
     }
 
     :--button{

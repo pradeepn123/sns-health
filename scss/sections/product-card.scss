@@ -4,13 +4,19 @@
 @import 'Token';
 @import 'breakpoints';
 
-
+product-card {
+  display: block;
+  height: 100%;
+  .product-card {
+    height: 100%;
+  }
+}
 .product-card {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   justify-content: space-between;
-  height:100%;
+  height:auto;
   text-align: left;
 
   &__image {

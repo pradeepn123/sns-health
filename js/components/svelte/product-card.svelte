@@ -22,12 +22,12 @@
   srcToken: '?width=300&height=300'}
 </script>
 
-<div class="product-card swiper-slide">
+<div class="product-card swiper-slide" data-redirect-click
+data-url={product.link}>
   <div class="product-card__body">
     <div
       class="product-card__image"
-      data-redirect-click
-      data-url={product.link}
+     
     >
       <ResponsiveImage {image} image_aspect_ratio={1} srcTokens={srcTokens}/>
     </div>
@@ -41,6 +41,7 @@
         {/if}
         {#if onsale}<div class="product-card__discount">On Sale</div> {/if}
       </div>
+      {#if rating}
       <div class="product-card__star">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -54,6 +55,7 @@
           /></svg
         ><span class="product-card__star-text">{rating ? rating : ''}</span>
       </div>
+      {/if}
     </div>
     {#if vendor}
       <div class="product-card__vendor">

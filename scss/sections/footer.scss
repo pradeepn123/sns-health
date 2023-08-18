@@ -215,4 +215,20 @@
     margin-bottom: var(--grid-row-gap);
 }
 
+&__location{
+    margin-top: 20px;
+}
+
+&__location-title{
+    @include use-text-style('body-alt'); 
+    font-weight: typography.$semi-weight;
+}
+
+&__location-icon-text{
+    display: flex;
+    column-gap: 8px;
+    margin-bottom: 10px;
+    line-height: normal;
+}
+
 }

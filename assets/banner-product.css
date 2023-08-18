@@ -130,6 +130,9 @@
     display: block;
   }
 }
+.banner-product__products-content--show-mobile {
+  display: block;
+}
 .banner-product__products-content--mobile {
   display: grid;
   margin-top: var(--grid-row-gap-large);
@@ -163,4 +166,7 @@
   .banner-product__products-content--mobile {
     display: none;
   }
+}
+.banner-product__products-content--hide {
+  display: none !important;
 }

@@ -34,6 +34,10 @@
         }
     }
 
+    &__products-content--show-mobile {
+        display: block;
+    }
+
     &__products-content--mobile {
         display: grid;
         margin-top: var(--grid-row-gap-large);
@@ -41,5 +45,10 @@
         @media(--sm) {
             display: none;
         }
+    }
+
+
+    &__products-content--hide {
+        display: none !important;
     }
 } 

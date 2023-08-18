@@ -29,7 +29,7 @@
 
            .select-button  {
             background: transparent;
-            @include use-text-style('body-small');
+            @include use-text-style('body-regular');
             font-weight:typography.$medium-weight;
             border:0;
             box-shadow: none;
@@ -72,6 +72,8 @@
     &__content {
         @include use-text-style('body-small');
         padding:0;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__inner {

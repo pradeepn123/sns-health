@@ -26,20 +26,22 @@
   const headerWrapper = document.querySelector('.shopify-section__header');
   const searchBar = document.querySelector('.header__search-bar-wrapper--mobile');
   const navBar = document.querySelector('.nav-bar__inner');
-  const header= document.querySelector('.header');
+  const searchIcon = document.querySelector('.header__action-item-link--search');
   const handleScroll = () => {
     const scrollTop = window.scrollY;
     searchBar.style.opacity = 1 - scrollTop / 85
     navBar.style.opacity = 1 - scrollTop / 10;
-      if (scrollTop == 0) {
-        if (headerWrapper.classList.contains('shopify-section__header--fixed')) { 
+    searchIcon.style.opacity = 1 - scrollTop / 10;
+
+      if (scrollTop < 150) {
+        if (headerWrapper.classList.contains('shopify-section__header--fixed')) {
           headerWrapper.classList.remove('shopify-section__header--fixed');
-          header.classList.remove('header-margin-scroll');
+          // header.classList.remove('header-margin-scroll');
         }
       }
       else {
         headerWrapper.classList.add('shopify-section__header--fixed');
-        header.classList.add('header-margin-scroll');
+        // header.classList.add('header-margin-scroll');
       }
   }
 

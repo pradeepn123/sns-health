@@ -2,6 +2,7 @@
 {{'banner-product.css' | asset_url | stylesheet_tag }}
 <div class="banner-product  product-card-wrapper">
     <div class="banner-product__content">
+      {% assign mobile_carousel = section.settings.mobile_carousel%}
             {% for block in section.blocks %}
              {% if block.type == "image_with_text_overlay" %}
               {% liquid 
@@ -45,7 +46,7 @@
                 {% if block.type == "featured_products" %} 
                 <div class="banner-product__products-wrapper">
                     {% assign collection = block.settings.collection %}
-                      <div class="banner-product__products-content banner-product__products-content--desktop"> 
+                      <div class="banner-product__products-content banner-product__products-content--desktop {% if mobile_carousel %}banner-product__products-content--show-mobile{% endif %}"> 
                       <custom-carousel>
                         {% for product in collection.products %} 
                         <div class="swiper-slide">
@@ -56,11 +57,11 @@
                         {% endfor %}
                         <script type="text/json" data-settings>
                             {
-                              "slidesPerView": 3.01,
+                              "slidesPerView": 2,
                               "spaceBetween": 10,
-                              "overflowNagivation": true,
                               "progressPagination": true,
-                              "pagination": false,
+                              "overflowNagivation": true,
+                              "pagination": true,
                               "breakpoints": {
                                "768": {
                                 "pagination": false,
@@ -79,8 +80,8 @@
                           </script>
                     </custom-carousel>
                       </div>
-                      <div class="banner-product__products-content  banner-product__products-content--mobile">
-                        {% for product in collection.products %} 
+                      <div class="banner-product__products-content  banner-product__products-content--mobile {% if mobile_carousel %}banner-product__products-content--hide{% endif %}">
+                        {% for product in collection.products limit: 4 %} 
                           {% render 'custom-product-card', product: product %}
                         {% endfor %}
                       </div>
@@ -97,7 +98,14 @@
 {% schema %}
  {
    "name": "banner-product",
-   "settings": [],
+   "settings": [
+    {
+      "type": "checkbox",
+      "id": "mobile_carousel",
+      "label": "Carousel in mobile ?",
+      "default": true
+    }
+   ],
    "blocks": [
     {
      "type": "image_with_text_overlay",
