@@ -199,7 +199,7 @@ class CustomCarousel extends HTMLElement {
           setTimeout(() => {
             that.classList.add('hide');
             this.querySelector('.carousel-placeholders').classList.add('hide');
-          }, 20000);
+          }, 1000);
         }
       },
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
