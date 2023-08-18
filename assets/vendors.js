@@ -3613,13 +3613,14 @@ if (typeof window !== 'undefined')
 /* harmony export */   insert: () => (/* binding */ insert),
 /* harmony export */   insert_hydration: () => (/* binding */ insert_hydration),
 /* harmony export */   listen: () => (/* binding */ listen),
+/* harmony export */   set_custom_element_data: () => (/* binding */ set_custom_element_data),
 /* harmony export */   set_data: () => (/* binding */ set_data),
 /* harmony export */   space: () => (/* binding */ space),
 /* harmony export */   start_hydrating: () => (/* binding */ start_hydrating),
 /* harmony export */   svg_element: () => (/* binding */ svg_element),
 /* harmony export */   text: () => (/* binding */ text)
 /* harmony export */ });
-/* unused harmony exports element_is, object_without_properties, comment, prevent_default, stop_propagation, stop_immediate_propagation, self, trusted, set_attributes, set_svg_attributes, set_custom_element_data_map, set_custom_element_data, set_dynamic_element_data, xlink_attr, get_svelte_dataset, get_binding_group_value, init_binding_group, init_binding_group_dynamic, to_number, time_ranges_to_array, claim_element, claim_svg_element, claim_text, claim_space, claim_comment, claim_html_tag, set_data_contenteditable, set_data_maybe_contenteditable, set_input_value, set_input_type, set_style, select_option, select_options, select_value, select_multiple_value, is_crossorigin, add_iframe_resize_listener, resize_observer_content_box, resize_observer_border_box, resize_observer_device_pixel_content_box, toggle_class, query_selector_all, head_selector, HtmlTagHydration, attribute_to_object, construct_svelte_component */
+/* unused harmony exports element_is, object_without_properties, comment, prevent_default, stop_propagation, stop_immediate_propagation, self, trusted, set_attributes, set_svg_attributes, set_custom_element_data_map, set_dynamic_element_data, xlink_attr, get_svelte_dataset, get_binding_group_value, init_binding_group, init_binding_group_dynamic, to_number, time_ranges_to_array, claim_element, claim_svg_element, claim_text, claim_space, claim_comment, claim_html_tag, set_data_contenteditable, set_data_maybe_contenteditable, set_input_value, set_input_type, set_style, select_option, select_options, select_value, select_multiple_value, is_crossorigin, add_iframe_resize_listener, resize_observer_content_box, resize_observer_border_box, resize_observer_device_pixel_content_box, toggle_class, query_selector_all, head_selector, HtmlTagHydration, attribute_to_object, construct_svelte_component */
 /* harmony import */ var _ResizeObserverSingleton_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ResizeObserverSingleton.js */ "./node_modules/svelte/src/runtime/internal/ResizeObserverSingleton.js");
 /* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils.js */ "./node_modules/svelte/src/runtime/internal/utils.js");
 
@@ -5091,6 +5092,7 @@ const globals =
 /* harmony export */   noop: () => (/* reexport safe */ _utils_js__WEBPACK_IMPORTED_MODULE_12__.noop),
 /* harmony export */   onMount: () => (/* reexport safe */ _lifecycle_js__WEBPACK_IMPORTED_MODULE_6__.onMount),
 /* harmony export */   safe_not_equal: () => (/* reexport safe */ _utils_js__WEBPACK_IMPORTED_MODULE_12__.safe_not_equal),
+/* harmony export */   set_custom_element_data: () => (/* reexport safe */ _dom_js__WEBPACK_IMPORTED_MODULE_2__.set_custom_element_data),
 /* harmony export */   set_data: () => (/* reexport safe */ _dom_js__WEBPACK_IMPORTED_MODULE_2__.set_data),
 /* harmony export */   space: () => (/* reexport safe */ _dom_js__WEBPACK_IMPORTED_MODULE_2__.space),
 /* harmony export */   src_url_equal: () => (/* reexport safe */ _utils_js__WEBPACK_IMPORTED_MODULE_12__.src_url_equal),

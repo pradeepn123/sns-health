@@ -1642,6 +1642,7 @@ function create_key_block(ctx) {
 
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "type", "text/json");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "data-settings", "");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_custom_element_data)(custom_carousel, "class", "hide");
 
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", div0_class_value = `featured-products__content featured-products__content--desktop ${JSON.parse(/*mobileCarousel*/ ctx[3])
 			? "featured-products__content--show-mobile"
