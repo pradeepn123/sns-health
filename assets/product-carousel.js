@@ -664,7 +664,7 @@ function get_each_context_2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (123:0) {:else}
+// (125:0) {:else}
 function create_else_block(ctx) {
 	let div5;
 
@@ -688,7 +688,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (55:0) {#if productData.length && !isLoading}
+// (57:0) {#if productData.length && !isLoading}
 function create_if_block(ctx) {
 	let t;
 	let previous_key = /*productData*/ ctx[0];
@@ -747,7 +747,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (56:2) {#if collectionTexts.length > 1}
+// (58:2) {#if collectionTexts.length > 1}
 function create_if_block_2(ctx) {
 	let div;
 	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[5]);
@@ -810,7 +810,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (58:6) {#each collectionTexts as text}
+// (60:6) {#each collectionTexts as text}
 function create_each_block_2(ctx) {
 	let div;
 	let button;
@@ -863,7 +863,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (82:12) {#if product.variants[0].price > 0}
+// (84:12) {#if product.variants[0].price > 0}
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
@@ -903,7 +903,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (81:10) {#each productData as product, index}
+// (83:10) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
@@ -962,7 +962,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (117:8) {#each productData as product, index}
+// (119:8) {#each productData as product, index}
 function create_each_block(ctx) {
 	let productcard;
 	let current;
@@ -1002,7 +1002,7 @@ function create_each_block(ctx) {
 	};
 }
 
-// (73:2) {#key productData}
+// (75:2) {#key productData}
 function create_key_block(ctx) {
 	let div2;
 	let div0;
@@ -1263,6 +1263,7 @@ function instance($$self, $$props, $$invalidate) {
 	let { shopifyData } = $$props;
 	let productData = []; //to store api data
 	let isLoading = true;
+	console.log(shopifyData, "shopifyData");
 	const { currency = "$", soldOutText = "Sold Out", chooseMoreText = "Choose Options", addToCartText = "Add To Cart", mobileCarousel = false, blocks = [] } = shopifyData || {};
 
 	const otherData = {
