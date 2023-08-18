@@ -197,7 +197,7 @@ class CustomCarousel extends HTMLElement {
         },
         afterInit: () => {
           setTimeout(() => {
-            that.classList.remove('hide');
+            that.classList.has('hide') ? that.classList.remove('hide') : '';
             this.querySelector('.carousel-placeholders').classList.add('hide');
           }, 1000);
         }
