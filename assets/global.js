@@ -189,9 +189,6 @@ class CustomCarousel extends HTMLElement {
           init: swiper => {
             this.querySelector('.carousel__container').classList.remove('hide');
             this.querySelector('.carousel-placeholders').classList.add('hide');
-            if (!!swiper.navigation) {
-              swiper.navigation.destroy();
-            }
             if (window.handleJsClick) {
               window.handleJsClick();
             }
