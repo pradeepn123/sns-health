@@ -637,7 +637,7 @@
   -webkit-column-gap: 5px;
      -moz-column-gap: 5px;
           column-gap: 5px;
-  padding: 0;
+  padding: 4px;
   border-radius: 10px;
   text-transform: capitalize;
 }
