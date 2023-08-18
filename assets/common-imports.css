@@ -1131,3 +1131,7 @@ custom-carousel {
 .hide {
   display: none !important;
 }
+
+custom-carousel .swiper:not(.swiper-initialized) .swiper-slide {
+  display: none;
+}
