@@ -36,6 +36,7 @@
       </div>
       <div class="text-with-icons__carousel text-with-icons__content--mobile">
         <custom-carousel>
+          <div class="custom-carousel__content hide" data-carousel-content>
         {%- for block in section.blocks -%}
           <div class="swiper-slide">
           <div class="text-with-icons__item text-with-icons__item--footer" data-block-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
@@ -67,6 +68,7 @@
           </div>
         </div>
         {%- endfor -%}
+        <div>
         <script type="text/json" data-settings>
           {
             "slidesPerView": 1.1,
