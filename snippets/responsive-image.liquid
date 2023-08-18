@@ -60,6 +60,14 @@
 
   {%- assign max_width_image_float = max_width_image | times: 1.0  -%}
 
+  #Image-{{ image_id }}-{{ generated_image_id }} {
+    position: absolute;
+    top:0;
+    height:auto;
+    left:0;
+    width: 100%;
+  }
+
   {% if crop == true %}
     #Image-{{ image_id }}-{{ generated_image_id }} {
       object-fit: cover;
