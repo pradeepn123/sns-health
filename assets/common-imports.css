@@ -1131,10 +1131,6 @@ custom-carousel {
   display: flex;
 }
 
-custom-carousel img .swiper-slide {
-  max-width: 250px;
-}
-
 .hide {
   display: none !important;
 }
