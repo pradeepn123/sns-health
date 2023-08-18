@@ -169,48 +169,49 @@ class CustomCarousel extends HTMLElement {
     this.innerHTML = "<div class=\"carousel__container swiper hide\" data-swiper-container>\n    <div class=\"swiper-wrapper \">\n    ".concat(this.HTMLElement, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    <div class=\"swiper-navigation swiper-navigation--next ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"carousel-placeholders\">\n      ").concat(this.carouselSettings.placeholderClass == ".carousel-placeholders--product-grid" ? "\n      <div class=\"placeholder\"></div>\n      <div class=\"placeholder\"></div>\n      <div class=\"placeholder\"></div>\n      <div class=\"placeholder\"></div>\n      <div class=\"placeholder\"></div>" : '', "\n    </div>");
     this.container = this.querySelector('[data-swiper-container]');
     var that = this;
-    this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
-      on: {
-        beforeInit: () => {
-          var {
-            navigation,
-            pagination
-          } = carouselSettings || {};
-          if (!navigation) {
-            this.querySelectorAll('.swiper-navigation').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
-          } else {
-            this.querySelector('.swiper-navigation--hide') && this.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
-          }
-          if (!pagination) {
-            this.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
-          } else {
-            this.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+    setTimeout(() => {
+      this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
+        on: {
+          beforeInit: () => {
+            var {
+              navigation,
+              pagination
+            } = carouselSettings || {};
+            if (!navigation) {
+              this.querySelectorAll('.swiper-navigation').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
+            } else {
+              this.querySelector('.swiper-navigation--hide') && this.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            }
+            if (!pagination) {
+              this.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
+            } else {
+              this.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            }
+          },
+          init: swiper => {
+            if (!!swiper.navigation) {
+              swiper.navigation.destroy();
+            }
+            if (window.handleJsClick) {
+              window.handleJsClick();
+            }
+          },
+          afterInit: () => {
+            setTimeout(() => {
+              this.querySelector('.swiper').classList.remove('hide');
+              this.querySelector('.carousel-placeholders').classList.add('hide');
+            }, 1000);
           }
         },
-        init: swiper => {
-          console.log(swiper, "Swiper");
-          if (!!swiper.navigation) {
-            swiper.navigation.destroy();
-          }
-          if (window.handleJsClick) {
-            window.handleJsClick();
-          }
-        },
-        afterInit: () => {
-          setTimeout(() => {
-            this.querySelector('.swiper').classList.remove('hide');
-            this.querySelector('.carousel-placeholders').classList.add('hide');
-          }, 1000);
-        }
-      },
-      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination],
-      preloadImages: false
-    }, carouselSettings));
-    this.swiper.on('activeIndexChange', current => {
-      var _this$querySelector2, _this$querySelectorAl;
-      (_this$querySelector2 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.classList.remove('swiper-pagination-bullet-active');
-      (_this$querySelectorAl = this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _this$querySelectorAl === void 0 ? void 0 : _this$querySelectorAl.classList.add('swiper-pagination-bullet-active');
-    });
+        modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination],
+        preloadImages: false
+      }, carouselSettings));
+      this.swiper.on('activeIndexChange', current => {
+        var _this$querySelector2, _this$querySelectorAl;
+        (_this$querySelector2 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.classList.remove('swiper-pagination-bullet-active');
+        (_this$querySelectorAl = this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _this$querySelectorAl === void 0 ? void 0 : _this$querySelectorAl.classList.add('swiper-pagination-bullet-active');
+      });
+    }, 1000);
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomCarousel);
