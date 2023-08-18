@@ -1248,7 +1248,7 @@ function get_each_context_2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (125:0) {:else}
+// (127:0) {:else}
 function create_else_block(ctx) {
 	let div5;
 
@@ -1277,9 +1277,12 @@ function create_if_block(ctx) {
 	let t0;
 	let div2;
 	let div0;
+	let custom_carousel;
 	let previous_key = /*productData*/ ctx[0];
-	let div0_class_value;
 	let t1;
+	let script;
+	let div0_class_value;
+	let t3;
 	let div1;
 	let div1_class_value;
 	let current;
@@ -1302,13 +1305,20 @@ function create_if_block(ctx) {
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			custom_carousel = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("custom-carousel");
 			key_block.c();
 			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			script = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("script");
+			script.textContent = "{\n        \"slidesPerView\": 2,\n        \"spaceBetween\": 10,\n      \"overflowNagivation\": true,\n        \"progressPagination\": true,\n        \"pagination\": true,\n        \"navigation\": false,\n        \"breakpoints\": {\n          \"768\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 3,\n            \"spaceBetween\": 27.5\n          },\n         \"1024\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 5,\n            \"spaceBetween\": 27.5\n          }\n        }\n      }";
+			t3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
+
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "type", "text/json");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "data-settings", "");
 
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", div0_class_value = `featured-products__content featured-products__content--desktop ${JSON.parse(/*mobileCarousel*/ ctx[3])
 			? "featured-products__content--show-mobile"
@@ -1325,8 +1335,11 @@ function create_if_block(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, t0, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div2, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div0);
-			key_block.m(div0, null);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t1);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div0, custom_carousel);
+			key_block.m(custom_carousel, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t1);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, script);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t3);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div1);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -1347,7 +1360,7 @@ function create_if_block(ctx) {
 				key_block = create_key_block(ctx);
 				key_block.c();
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(key_block, 1);
-				key_block.m(div0, null);
+				key_block.m(custom_carousel, t1);
 			} else {
 				key_block.p(ctx, dirty);
 			}
@@ -1528,7 +1541,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (83:12) {#if product.variants[0].price > 0}
+// (84:12) {#if product.variants[0].price > 0}
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
@@ -1568,7 +1581,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (82:10) {#each productData as product, index}
+// (83:10) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
@@ -1627,11 +1640,9 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (80:6) {#key productData}
+// (82:10) {#key productData}
 function create_key_block(ctx) {
-	let custom_carousel;
-	let t0;
-	let script;
+	let each_1_anchor;
 	let current;
 	let each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 	let each_blocks = [];
@@ -1646,29 +1657,20 @@ function create_key_block(ctx) {
 
 	return {
 		c() {
-			custom_carousel = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("custom-carousel");
-
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
-			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			script = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("script");
-			script.textContent = "{\n        \"slidesPerView\": 2,\n        \"spaceBetween\": 10,\n      \"overflowNagivation\": true,\n        \"progressPagination\": true,\n        \"pagination\": true,\n        \"navigation\": false,\n        \"breakpoints\": {\n          \"768\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 3,\n            \"spaceBetween\": 27.5\n          },\n         \"1024\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 5,\n            \"spaceBetween\": 27.5\n          }\n        }\n      }";
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "type", "text/json");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "data-settings", "");
+			each_1_anchor = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.empty)();
 		},
 		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, custom_carousel, anchor);
-
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(custom_carousel, null);
+					each_blocks[i].m(target, anchor);
 				}
 			}
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t0);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, script);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, each_1_anchor, anchor);
 			current = true;
 		},
 		p(ctx, dirty) {
@@ -1686,7 +1688,7 @@ function create_key_block(ctx) {
 						each_blocks[i] = create_each_block_1(child_ctx);
 						each_blocks[i].c();
 						(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(each_blocks[i], 1);
-						each_blocks[i].m(custom_carousel, t0);
+						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
 					}
 				}
 
@@ -1719,7 +1721,7 @@ function create_key_block(ctx) {
 		},
 		d(detaching) {
 			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(custom_carousel);
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(each_1_anchor);
 			}
 
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks, detaching);
@@ -1727,7 +1729,7 @@ function create_key_block(ctx) {
 	};
 }
 
-// (119:8) {#each productData as product, index}
+// (121:8) {#each productData as product, index}
 function create_each_block(ctx) {
 	let productcard;
 	let current;
