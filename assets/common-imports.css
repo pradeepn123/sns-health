@@ -1131,6 +1131,10 @@ custom-carousel {
   display: flex;
 }
 
+.swiper:not(.swiper-initialized) .swiper-slide {
+  max-width: 250px;
+}
+
 .hide {
   display: none !important;
 }
