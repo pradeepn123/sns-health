@@ -14,6 +14,7 @@
     mobileCarousel = false,
     blocks = [],
   } = shopifyData || {};
+
   const otherData = {
     currency,
     soldOutText,
@@ -73,7 +74,7 @@
     <div class="featured-products__wrapper product-card-wrapper">
       <div
         class={`featured-products__content featured-products__content--desktop ${
-          mobileCarousel ? "featured-products__content--show-mobile" : ""
+          JSON.parse(mobileCarousel) ? "featured-products__content--show-mobile" : ""
         }`}
       >
         <custom-carousel>
@@ -110,7 +111,7 @@
       </div>
       <div
         class={`featured-products__content featured-products__content--mobile ${
-          mobileCarousel ? "featured-products__content--hide-mobile" : ""
+          JSON.parse(mobileCarousel) ? "featured-products__content--hide-mobile" : ""
         }`}
       >
         {#each productData as product, index}

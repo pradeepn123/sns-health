@@ -560,9 +560,14 @@
         display: flex;
         align-items: center;
         column-gap: 5px;
-        padding: 10px;
+        padding: 4px;
         border-radius: 10px;
         text-transform: capitalize;
+
+        @media(--xs) {
+            padding: 10px;
+        }
+
 
         &:hover {
             color: colors.$red;
