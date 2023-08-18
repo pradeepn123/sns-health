@@ -187,11 +187,13 @@ class CustomCarousel extends HTMLElement {
           }
         },
         init: swiper => {
-          this.querySelector('.carousel__container').classList.remove('hide');
-          this.querySelector('.carousel-placeholders').classList.add('hide');
           if (window.handleJsClick) {
             window.handleJsClick();
           }
+        },
+        afterInit: () => {
+          this.querySelector('.carousel__container').classList.remove('hide');
+          this.querySelector('.carousel-placeholders').classList.add('hide');
         }
       },
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination],
