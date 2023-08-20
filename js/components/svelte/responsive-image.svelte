@@ -91,8 +91,8 @@ const getImageStyle = () => {
     max-width: var(--max-width);
     height: 100%;
     position: relative;
-    max-height: 100%;
-    height: var(----max-height);
+    max-height: var(--max-height);
+    height: auto;
 }
 
 .responsive-image__image {

@@ -4,7 +4,6 @@ import { Navigation, Pagination } from 'swiper/modules';
 class CustomCarousel extends HTMLElement {
   constructor() {
     super();
-    this.HTMLElement;
     this.carouselSettings;
     this.currentWidth;
     this.innerHTML;
@@ -93,12 +92,12 @@ class CustomCarousel extends HTMLElement {
   }
   
   initCarousel() {
-    this.HTMLElement = this.innerHTML;
     this.carouselSettings = JSON.parse(this.querySelector('[data-settings]')?.innerHTML || "{}");
+    this.carouselContent = this.querySelector('[data-carousel-content]').innerHTML;
     this.currentWidth = window.innerWidth;
     this.innerHTML = `<div class="carousel__container swiper hide" data-swiper-container>
-    <div class="swiper-wrapper ">
-    ${this.HTMLElement}
+    <div class="swiper-wrapper">
+    ${this.carouselContent}
     </div> </div>
     <div class="swiper-pagination"></div>
     <div class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
@@ -114,15 +113,10 @@ class CustomCarousel extends HTMLElement {
       </svg>
     </div>
     <div class="carousel-placeholders">
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-    </div>
-    `
+    </div>`
     this.container = this.querySelector('[data-swiper-container]');
-      const carouselSettings = this.getCarouselSettings() || {};
+
+     const carouselSettings = this.getCarouselSettings();
       this.swiper = new Swiper(this.container, {
         on: {
           beforeInit: () => {
@@ -142,16 +136,16 @@ class CustomCarousel extends HTMLElement {
             }
           },
           init: (swiper) => {
-            setTimeout(() => {
-              this.querySelector('.carousel__container').classList.remove('hide');
-              this.querySelector('.carousel-placeholders').classList.add('hide');
-            },1000)
             if (!!swiper.navigation) {
               swiper.navigation.destroy();
             }
             if(window.handleJsClick) {
               window.handleJsClick();
             }
+          },
+          afterInit: () => {
+            this.querySelector('.carousel__container').classList.remove('hide');
+            this.querySelector('.carousel-placeholders').classList.add('hide');
           }
         },
         modules: [Navigation, Pagination],
@@ -162,8 +156,6 @@ class CustomCarousel extends HTMLElement {
         this.querySelector('.swiper-pagination-bullet-active')?.classList.remove('swiper-pagination-bullet-active');
         this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]?.classList.add('swiper-pagination-bullet-active');
       })
-
-
   }
 }
 export default CustomCarousel;

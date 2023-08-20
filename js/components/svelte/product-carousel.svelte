@@ -70,19 +70,22 @@
     </div>
   {/if}
 
-  {#key productData}
+
     <div class="featured-products__wrapper product-card-wrapper">
       <div
         class={`featured-products__content featured-products__content--desktop ${
           JSON.parse(mobileCarousel) ? "featured-products__content--show-mobile" : ""
         }`}
       >
+      {#key productData}
         <custom-carousel>
+          <div class="custom-carousel__content hide" data-carousel-content>
           {#each productData as product, index}
             {#if product.variants[0].price > 0}
               <ProductCard {product} {otherData} />
             {/if}
           {/each}
+          </div>
           <script type="text/json" data-settings>
       {
         "slidesPerView": 2,
@@ -108,6 +111,7 @@
       }
           </script>
         </custom-carousel>
+        {/key}
       </div>
       <div
         class={`featured-products__content featured-products__content--mobile ${
@@ -119,7 +123,7 @@
         {/each}
       </div>
     </div>
-  {/key}
+
 {:else}
   <div class="carousel-placeholders">
     <div class="placeholder" />

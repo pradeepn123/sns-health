@@ -76,9 +76,11 @@
         </div>
         <div class="review_carousel">
           <custom-carousel>
-          {#each curatedReviewData as review}
-          <div class="swiper-slide"><ReviewCard {review} {getStars} /></div>
-          {/each}
+          <div class="custom-carousel__content hide" data-carousel-content>
+            {#each curatedReviewData as review}
+            <div class="swiper-slide"><ReviewCard {review} {getStars} /></div>
+            {/each}
+          </div>
           <script type="text/json" data-settings>
             {
               "navigation": true,
