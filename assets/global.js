@@ -161,7 +161,6 @@ class CustomCarousel extends HTMLElement {
   }
   initCarousel() {
     var _this$querySelector;
-    this.html = this.innerHTML;
     this.carouselSettings = JSON.parse(((_this$querySelector = this.querySelector('[data-settings]')) === null || _this$querySelector === void 0 ? void 0 : _this$querySelector.innerHTML) || "{}");
     this.carouselContent = this.querySelector('[data-carousel-content]').innerHTML;
     this.currentWidth = window.innerWidth;
