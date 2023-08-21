@@ -299,8 +299,9 @@
         "2699f87d-7dd0-4e78-a379-7601420c6c47": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Frame_30.png",
+            "eyebrow": "Liver Health",
+            "url": "shopify:\/\/collections\/liver-health"
           }
         },
         "d7b4a8bb-d5be-4643-8365-8a8da4f207d6": {
