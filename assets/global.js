@@ -275,8 +275,6 @@ class CustomCarousel extends HTMLElement {
   var navBar = document.querySelector('.nav-bar__inner');
   var searchIcon = document.querySelector('.header__action-item-link--search');
   var handleScroll = () => {
-    var headerHeight = headerWrapper.clientHeight;
-    headerHeight.style.height = "".concat(headerHeight, "px");
     var scrollTop = window.scrollY;
     searchBar.style.opacity = 1 - scrollTop / 85;
     navBar.style.opacity = 1 - scrollTop / 10;
