@@ -211,6 +211,7 @@
           "type": "diet",
           "settings": {
             "text_color": "",
+            "icon": "shopify:\/\/shop_images\/Union_14.svg",
             "subheading": "Paleo",
             "cta_text": "Shop Now",
             "cta_url": "shopify:\/\/collections\/paleo"
