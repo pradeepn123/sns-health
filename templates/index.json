@@ -331,8 +331,9 @@
         "cac367ea-120b-4fbd-85a6-4659a70e5cb9": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Vector_4.svg",
+            "eyebrow": "Hormonal Support",
+            "url": "shopify:\/\/collections\/hormonal-support"
           }
         },
         "40f707ae-6784-4ff1-aefb-723af9dc7a1b": {
