@@ -31,7 +31,6 @@ always visible.
 {%- else -%}
   <ul id="{{ index }}" class="nav-dropdown {% if is_mega_menu %} nav-dropdown--megamenu {% endif %} {% if is_floating %}nav-dropdown--floating {% if mega_menus.size > 0 %}nav-dropdown--fixed {% endif %}{% elsif menu.levels == 1 %}nav-dropdown--restrict{% endif %}" data-type="menu" aria-hidden="true" role="list">
     {%- if is_floating -%}
-      {%- render 'icon', icon: 'nav-triangle-borderless' -%}
     {%- endif -%}
 
       {% for link in menu.links %}

@@ -91,9 +91,6 @@ var boostPFSTemplate = {
                         '</svg>' +
                     '</button>' +
                     '<div id="boost-sort-by-selector" class="value-picker">' +
-                        '<svg class="icon icon--nav-triangle-borderless" viewBox="0 0 20 9" role="presentation">' +
-                            '<path d="M.47108938 9c.2694725-.26871321.57077721-.56867841.90388257-.89986354C3.12384116 6.36134886 5.74788116 3.76338565 9.2467995.30653888c.4145057-.4095171 1.0844277-.40860098 1.4977971.00205122L19.4935156 9H.47108938z" fill="#ffffff"/>' +
-                        '</svg>' +
                         '<div class="value-picker__inner">' +
                             '<header class="value-picker__header">' +
                                 '<span class="value-picker__title text--strong">' + boostPFSConfig.label.sorting + '</span>' +
@@ -130,9 +127,6 @@ var boostPFSTemplate = {
                                 '<svg focusable="false" class="icon icon--arrow-bottom" viewBox="0 0 12 8" role="presentation"><path stroke="currentColor" stroke-width="2" d="M10 2L6 6 2 2" fill="none" stroke-linecap="square"></path></svg>' + 
                         '</button>' +
                         '<div id="boost-display-by-selector" class="value-picker" aria-hidden="true">' + 
-                            '<svg focusable="false" class="icon icon--nav-triangle-borderless" viewBox="0 0 20 9" role="presentation">' + 
-                                '<path d="M.47108938 9c.2694725-.26871321.57077721-.56867841.90388257-.89986354C3.12384116 6.36134886 5.74788116 3.76338565 9.2467995.30653888c.4145057-.4095171 1.0844277-.40860098 1.4977971.00205122L19.4935156 9H.47108938z" fill="#ffffff"></path>' + 
-                            '</svg>' + 
                             '<div class="value-picker__inner">' + 
                                 '<header class="value-picker__header">' + 
                                     '<span class="value-picker__title text--strong">' + boostPFSConfig.label.display + '</span>' + 
