@@ -94,6 +94,7 @@ class CustomCarousel extends HTMLElement {
   initCarousel() {
     this.carouselSettings = JSON.parse(this.querySelector('[data-settings]')?.innerHTML || "{}");
     this.carouselContent = this.querySelector('[data-carousel-content]').innerHTML;
+    this.placeholders = this.querySelector('[data-carousel-placeholder]')?.innerHTML;
     this.currentWidth = window.innerWidth;
     this.innerHTML = `<div class="carousel__container swiper hide" data-swiper-container>
     <div class="swiper-wrapper">
@@ -112,10 +113,8 @@ class CustomCarousel extends HTMLElement {
         <path d="M22.7061 26.353L16.9413 20.5883L22.7061 14.8236" stroke="white" stroke-width="2" stroke-linecap="square"/>
       </svg>
     </div>
-    <div class="carousel-placeholders">
-    </div>`
+    ${this.placeholders ? this.placeholders : `<div class="carousel-placeholders"></div>`}`
     this.container = this.querySelector('[data-swiper-container]');
-
      const carouselSettings = this.getCarouselSettings();
       this.swiper = new Swiper(this.container, {
         on: {
@@ -144,8 +143,8 @@ class CustomCarousel extends HTMLElement {
             }
           },
           afterInit: () => {
-            this.querySelector('.carousel__container').classList.remove('hide');
-            this.querySelector('.carousel-placeholders').classList.add('hide');
+              this.querySelector('.carousel__container').classList.remove('hide');
+              this.querySelector('.carousel-placeholders').classList.add('hide');
           }
         },
         modules: [Navigation, Pagination],

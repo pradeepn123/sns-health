@@ -52,39 +52,39 @@
   });
 </script>
 
-{#if productData.length && !isLoading}
-  {#if collectionTexts.length > 1}
-    <div class="featured-products__Category_wrapp">
-      {#each collectionTexts as text}
-        <div class="featured-products__Category">
-          <button
-            class={`button button--primary product-category__button ${
-              selectedParams.text == text && "product-category__button--active"
-            }`}
-            on:click={() => {
-              updateParams(text);
-            }}>{text}</button
-          >
-        </div>
-      {/each}
-    </div>
-  {/if}
-
-
-    <div class="featured-products__wrapper product-card-wrapper">
-      <div
-        class={`featured-products__content featured-products__content--desktop ${
-          JSON.parse(mobileCarousel) ? "featured-products__content--show-mobile" : ""
-        }`}
-      >
-      {#key productData}
+{#if collectionTexts.length > 1}
+  <div class="featured-products__Category_wrapp">
+    {#each collectionTexts as text}
+      <div class="featured-products__Category">
+        <button
+          class={`button button--primary product-category__button ${
+            selectedParams.text == text && "product-category__button--active"
+          }`}
+          on:click={() => {
+            updateParams(text);
+          }}>{text}</button
+        >
+      </div>
+    {/each}
+  </div>
+{/if}
+<div class="featured-products__wrapper product-card-wrapper">
+  <div
+    class={`featured-products__content featured-products__content--desktop ${
+      JSON.parse(mobileCarousel)
+        ? "featured-products__content--show-mobile"
+        : ""
+    }`}
+  >
+    {#key productData}
+      {#if productData.length && !isLoading}
         <custom-carousel>
           <div class="custom-carousel__content hide" data-carousel-content>
-          {#each productData as product, index}
-            {#if product.variants[0].price > 0}
-              <ProductCard {product} {otherData} />
-            {/if}
-          {/each}
+            {#each productData as product, index}
+              {#if product.variants[0].price > 0}
+                <ProductCard {product} {otherData} />
+              {/if}
+            {/each}
           </div>
           <script type="text/json" data-settings>
       {
@@ -111,25 +111,26 @@
       }
           </script>
         </custom-carousel>
-        {/key}
-      </div>
-      <div
-        class={`featured-products__content featured-products__content--mobile ${
-          JSON.parse(mobileCarousel) ? "featured-products__content--hide-mobile" : ""
-        }`}
-      >
-        {#each productData as product, index}
-          <ProductCard {product} {otherData} />
-        {/each}
-      </div>
-    </div>
-
-{:else}
-  <div class="carousel-placeholders">
-    <div class="placeholder" />
-    <div class="placeholder" />
-    <div class="placeholder" />
-    <div class="placeholder" />
-    <div class="placeholder" />
+      {:else}
+        <div class="carousel-placeholders">
+          <div class="placeholder" />
+          <div class="placeholder" />
+          <div class="placeholder" />
+          <div class="placeholder" />
+          <div class="placeholder" />
+        </div>
+      {/if}
+    {/key}
   </div>
-{/if}
+  <div
+    class={`featured-products__content featured-products__content--mobile ${
+      JSON.parse(mobileCarousel)
+        ? "featured-products__content--hide-mobile"
+        : ""
+    }`}
+  >
+    {#each productData as product, index}
+      <ProductCard {product} {otherData} />
+    {/each}
+  </div>
+</div>
