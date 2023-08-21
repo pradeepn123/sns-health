@@ -293,10 +293,9 @@ class CustomCarousel extends HTMLElement {
     searchBar.style.opacity = 1 - scrollTop / 85;
     navBar.style.opacity = 1 - scrollTop / 10;
     searchIcon.style.opacity = 1 - scrollTop / 10;
-    if (scrollTop < 150) {
+    if (scrollTop <= 150) {
       if (headerWrapper.classList.contains('shopify-section__header--fixed')) {
         headerWrapper.classList.remove('shopify-section__header--fixed');
-        // header.classList.remove('header-margin-scroll');
       }
     } else {
       headerWrapper.classList.add('shopify-section__header--fixed');
