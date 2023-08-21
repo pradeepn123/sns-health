@@ -301,6 +301,7 @@ class CustomCarousel extends HTMLElement {
     } else {
       debounce(() => {
         headerWrapper.classList.add('shopify-section__header--fixed');
+        searchIcon.style.opacity = 1;
       }, 1000);
     }
   };
