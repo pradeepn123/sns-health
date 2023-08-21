@@ -38,9 +38,9 @@
 }
 @media (min-width: 1024px) {
   .health-condition-section__content {
-    -webkit-column-gap: 18px;
-       -moz-column-gap: 18px;
-            column-gap: 18px;
+    -webkit-column-gap: 14px;
+       -moz-column-gap: 14px;
+            column-gap: 14px;
   }
 }
 @media (min-width: 1200px) {
