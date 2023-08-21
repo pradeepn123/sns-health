@@ -206,7 +206,8 @@
         "c0727ee1-8a3b-4e27-8cef-099e5520ee0a": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Vector_1.svg",
+            "eyebrow": "Pantry",
             "url": ""
           }
         },
