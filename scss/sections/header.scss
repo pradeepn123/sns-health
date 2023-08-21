@@ -695,6 +695,11 @@
         .header__search-bar-wrapper--mobile {
             display:  none;
         }
+
+
+    .header__action-item-link--search {
+        opacity: 1 !important;
+    }
     }
 }
 
