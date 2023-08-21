@@ -347,11 +347,19 @@
         "5417db1e-8893-43af-b7e1-a6bfbd6a868c": {
           "type": "health_condition",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/Vector_5.svg",
+            "eyebrow": "Glucose Metabolism",
+            "url": "shopify:\/\/collections\/glucose-metabolism"
+          }
+        },
+        "400cc6db-2697-45a8-8e0d-94ff816c798a": {
+          "type": "health_condition",
+          "settings": {
             "eyebrow": "",
             "url": ""
           }
         },
-        "400cc6db-2697-45a8-8e0d-94ff816c798a": {
+        "6af96376-942e-4fb4-a452-a92719e17980": {
           "type": "health_condition",
           "settings": {
             "eyebrow": "",
@@ -369,7 +377,8 @@
         "cac367ea-120b-4fbd-85a6-4659a70e5cb9",
         "40f707ae-6784-4ff1-aefb-723af9dc7a1b",
         "5417db1e-8893-43af-b7e1-a6bfbd6a868c",
-        "400cc6db-2697-45a8-8e0d-94ff816c798a"
+        "400cc6db-2697-45a8-8e0d-94ff816c798a",
+        "6af96376-942e-4fb4-a452-a92719e17980"
       ],
       "settings": {
         "heading": "Shop By Health Condition"
