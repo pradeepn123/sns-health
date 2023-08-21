@@ -199,7 +199,7 @@
           "type": "diet",
           "settings": {
             "text_color": "",
-            "subheading": "",
+            "subheading": "Keto",
             "cta_text": "",
             "cta_url": ""
           }
@@ -241,6 +241,24 @@
       "settings": {
         "heading": "Shop by Diet",
         "url": ""
+      }
+    },
+    "b1ad9959-047f-438b-a92c-519409325971": {
+      "type": "shop-by-health-condition",
+      "blocks": {
+        "143ff868-7559-4146-9bbe-d7e89976eefe": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "143ff868-7559-4146-9bbe-d7e89976eefe"
+      ],
+      "settings": {
+        "heading": "Shop By Health Condition"
       }
     },
     "932e9d3c-0311-4a00-af68-f2426cae7d02": {
@@ -490,6 +508,7 @@
     "65868ffb-1036-425b-a0dc-ebc8bcff334b",
     "9915991f-ed29-484e-9e91-73c66c49a3a1",
     "a35f16cd-bcb2-416a-9935-2b65ec0ddaa2",
+    "b1ad9959-047f-438b-a92c-519409325971",
     "932e9d3c-0311-4a00-af68-f2426cae7d02",
     "0b3ea745-2c54-4e66-a525-b80b7acd1b49",
     "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854",
