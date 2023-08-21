@@ -111,7 +111,7 @@ class CustomCarousel extends HTMLElement {
           } else {
             this.breakpointSettings = breakpoints[this.breakpoints[index - 1]];
           }
-          carouselSettings = _objectSpread({}, this.breakpointSettings);
+          carouselSettings = _objectSpread(_objectSpread({}, otherSettings), this.breakpointSettings);
         }
       });
     }
