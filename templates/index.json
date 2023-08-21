@@ -158,7 +158,8 @@
         "8e77ba5c-46cd-4328-ada9-c77cde931a2f": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Union_5.svg",
+            "eyebrow": "Minerals",
             "url": ""
           }
         },
