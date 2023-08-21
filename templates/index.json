@@ -166,8 +166,9 @@
         "ef15d8b0-30a3-4eb2-ba3f-2a7223eadb5c": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Group_7679.svg",
+            "eyebrow": "Personal Care",
+            "url": "shopify:\/\/collections\/personal-care"
           }
         },
         "372c2e95-4103-4262-9ccb-0ba2ffcd80f9": {
@@ -252,10 +253,50 @@
             "eyebrow": "",
             "url": ""
           }
+        },
+        "e0799fc5-53d3-4cf3-ad64-b39aff43b0ba": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "2699f87d-7dd0-4e78-a379-7601420c6c47": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "d7b4a8bb-d5be-4643-8365-8a8da4f207d6": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "c2651257-a1f1-463f-a9ac-f86001b30630": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "e9d3450e-f6c8-4ba9-83d1-c23f7fd52a60": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
         }
       },
       "block_order": [
-        "143ff868-7559-4146-9bbe-d7e89976eefe"
+        "143ff868-7559-4146-9bbe-d7e89976eefe",
+        "e0799fc5-53d3-4cf3-ad64-b39aff43b0ba",
+        "2699f87d-7dd0-4e78-a379-7601420c6c47",
+        "d7b4a8bb-d5be-4643-8365-8a8da4f207d6",
+        "c2651257-a1f1-463f-a9ac-f86001b30630",
+        "e9d3450e-f6c8-4ba9-83d1-c23f7fd52a60"
       ],
       "settings": {
         "heading": "Shop By Health Condition"
