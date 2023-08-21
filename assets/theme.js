@@ -1220,6 +1220,8 @@
           pops.ariaHidden = true;
         })
 
+        
+
           target.setAttribute('aria-expanded', 'true');
           target.closest('[data-target-parent]')?.classList.add('active');
           target.parentNode.classList.add('is-dropdown-open');
@@ -1247,7 +1249,7 @@
           }
 
           target.closest('[data-type="menu"]').classList.add('nav-dropdown--glued');
-
+          document.querySelector('.overlay').classList.add('overlay--active');
           if (menuToOpen.classList.contains('mega-menu')) {
             _this3._setupMegaMenu(menuToOpen);
           }
@@ -1286,6 +1288,7 @@
       key: "_deactivateDropdown",
       value: function _deactivateDropdown(event, target) {
         var _this4 = this;
+      
 
         // event.relatedTarget is the new target. This allows to make sure to only close the dropdown if we leave the containing div
         if (this.openTrigger === 'hover' && target.contains(event.relatedTarget)) {
@@ -1302,8 +1305,8 @@
           }
           var menuToClose = target.querySelector('[aria-hidden]');
           menuToClose.setAttribute('aria-hidden', 'true');
-          target.closest('[data-type="menu"]').classList.remove('nav-dropdown--glued'); // If on click, we also close all sub-menus that may be open
-
+          target.closest('[data-type="menu"]').classList.remove('nav-dropdown--glued');
+          // If on click, we also close all sub-menus that may be open
           if (_this4.openTrigger === 'click') {
             target.querySelectorAll('.is-dropdown-open').forEach(function (item) {
               _this4._deactivateDropdown(event, item);
@@ -1321,6 +1324,10 @@
               _this4.openItems.splice(index, 1);
             }
           }
+          if(!(document.querySelector('.nav-bar__container')?.querySelector('[data-type="menu"]').classList.contains('nav-dropdown--glued'))) {
+            document.querySelector('.overlay--active').classList.remove('overlay--active');
+          }
+        
         }; // If we are using on click, we can directly close, otherwise we apply a slight delay before closing the menu,
         // so that the deactivation could be cancelled if the mouse is back to the dropdown (which can happen when doing
         // horizontal movement)
@@ -12989,9 +12996,7 @@
           var headerElement = document.querySelector('.shopify-section__header');
           headerElement.style.zIndex = '3';
         }
-
         this.isOpen = true;
-        document.body.classList.add('no-mobile-scroll');
       }
     }, {
       key: "_close",

@@ -88,16 +88,20 @@
             {%- else -%}
               <span class="header__action-item-title hidden-pocket hidden-lap">{{ 'header.general.login' | t }}</span>
             {%- endif -%}
-            {% unless customer %}
+
             <div class="mobile-menu__account">
+              {% if customer %}
+                <a class="mobile-menu__nav-link" href="/account"> My Account</a>
+              {% else %}
               <a class="mobile-menu__nav-link" aria-controls="account-drawer-panel" data-type="menuitem" aria-haspopup="true" data-action="open-panel">              
-               <div class="mobile-menu__icon-wrapper ">
-                  {% render 'icon', icon: 'header-account' %} Sign In
-                </div>
-                {% render 'icon', icon: 'arrow-right'%}
-              </a>
+              <div class="mobile-menu__icon-wrapper ">
+                 {% render 'icon', icon: 'header-account' %} Sign In
+               </div>
+               {% render 'icon', icon: 'arrow-right'%}
+             </a>
+            {% endif %}
           </div>
-          {% endunless %}
+
           </div>
         {%- endif -%}
         {%- if section.settings.navigation_phone_number != blank or section.settings.navigation_email != blank -%}

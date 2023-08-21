@@ -987,7 +987,7 @@ button.swiper-pagination-bullet {
           transform: translateY(-50%);
   position: absolute;
   height: initial;
-  z-index: 4;
+  z-index: 3;
   cursor: pointer;
 }
 .swiper-navigation--next {

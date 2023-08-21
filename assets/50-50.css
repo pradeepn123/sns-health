@@ -87,6 +87,10 @@
 .section-50-50__image--desktop {
   display: none;
 }
+.section-50-50__image--desktop .responsive-image__image {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
 @media (min-width: 1024px) {
   .section-50-50__image--desktop {
     width: 45%;
