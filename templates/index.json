@@ -142,7 +142,8 @@
         "db2647bc-e3e2-4154-9e8b-8a1502ba14e4": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Union_4.svg",
+            "eyebrow": "Weight Management",
             "url": ""
           }
         },
