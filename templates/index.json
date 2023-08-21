@@ -230,8 +230,9 @@
         "75bfdb01-87ed-401f-bc36-2d296d0be3e2": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Union_10.svg",
+            "eyebrow": "Gym Accessories",
+            "url": "shopify:\/\/collections\/gym-accessories"
           }
         },
         "606837d3-489f-4e2e-b41a-2a17dc9f4d4c": {
