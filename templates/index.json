@@ -126,7 +126,8 @@
         "9620f45b-eb03-40ff-ba3c-91f4b182c839": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Union.svg",
+            "eyebrow": "Protein Snacks",
             "url": ""
           }
         },
