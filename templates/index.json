@@ -432,18 +432,18 @@
             "url": ""
           }
         },
+        "7c34e228-2195-4327-bc21-0f1952b3fdf1": {
+          "type": "featured_brand",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-brand.png",
+            "url": "shopify:\/\/collections\/iron-vegan-1"
+          }
+        },
         "defc111d-57ea-4cb6-a760-8974ddb96dcf": {
           "type": "featured_brand",
           "settings": {
             "image": "shopify:\/\/shop_images\/download_b39686d1-e892-4a4f-b203-201926d440b3.png",
             "url": "shopify:\/\/collections\/progressive"
-          }
-        },
-        "7c34e228-2195-4327-bc21-0f1952b3fdf1": {
-          "type": "featured_brand",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/featured-brand.png",
-            "url": ""
           }
         }
       },
@@ -453,8 +453,8 @@
         "c9336f2d-13e6-426d-932d-e2e033d0f054",
         "a8b44776-15af-4139-82d1-bbe6cbccc872",
         "2d381b18-5b7b-4dce-bf3f-2f5c3adfc807",
-        "defc111d-57ea-4cb6-a760-8974ddb96dcf",
-        "7c34e228-2195-4327-bc21-0f1952b3fdf1"
+        "7c34e228-2195-4327-bc21-0f1952b3fdf1",
+        "defc111d-57ea-4cb6-a760-8974ddb96dcf"
       ],
       "settings": {
         "heading": "Featured Brands"
