@@ -174,8 +174,9 @@
         "372c2e95-4103-4262-9ccb-0ba2ffcd80f9": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Union_12.svg",
+            "eyebrow": "Women’s Health",
+            "url": "shopify:\/\/collections\/womens-health"
           }
         }
       },
