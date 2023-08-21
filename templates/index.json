@@ -190,7 +190,8 @@
         "d15f9a58-acad-404d-8505-0ea600180e02": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Union_7.svg",
+            "eyebrow": "Snacks",
             "url": ""
           }
         },
