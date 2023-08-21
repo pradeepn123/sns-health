@@ -291,8 +291,9 @@
         "e0799fc5-53d3-4cf3-ad64-b39aff43b0ba": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/neurology_FILL0_wght400_GRAD0_opsz48_1.png",
+            "eyebrow": "Brain Health",
+            "url": "shopify:\/\/collections\/brain-health"
           }
         },
         "2699f87d-7dd0-4e78-a379-7601420c6c47": {
