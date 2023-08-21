@@ -292,17 +292,15 @@ class CustomCarousel extends HTMLElement {
     var scrollTop = window.scrollY;
     searchBar.style.opacity = 1 - scrollTop / 85;
     navBar.style.opacity = 1 - scrollTop / 10;
+    searchIcon.style.opacity = 1 - scrollTop / 10;
     if (scrollTop < 150) {
       if (headerWrapper.classList.contains('shopify-section__header--fixed')) {
         headerWrapper.classList.remove('shopify-section__header--fixed');
         // header.classList.remove('header-margin-scroll');
       }
-
-      searchIcon.style.opacity = 1 - scrollTop / 10;
     } else {
       setTimeout(() => {
         headerWrapper.classList.add('shopify-section__header--fixed');
-        searchIcon.style.opacity = 1;
       }, 1000);
     }
   };
