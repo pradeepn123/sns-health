@@ -150,7 +150,8 @@
         "89e7d573-a237-400c-8ccb-8e7d3e027f16": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Vitamins.svg",
+            "eyebrow": "Vitamins",
             "url": ""
           }
         },
