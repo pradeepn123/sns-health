@@ -119,8 +119,8 @@ class CustomCarousel extends HTMLElement {
   }
   getNavigationandPagination(breakpointSettings) {
     var {
-        pagination = this.carouselSettings.pagination,
-        navigation = this.carouselSettings.pagination
+        pagination,
+        navigation
       } = breakpointSettings,
       otherResponsiveSettings = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(breakpointSettings, _excluded2);
     return _objectSpread(_objectSpread({}, otherResponsiveSettings), {}, {
