@@ -785,9 +785,6 @@
 .shopify-section__header--fixed .header__search-bar-wrapper--mobile {
   display: none;
 }
-.shopify-section__header--fixed .header__action-item-link--search {
-  opacity: 1 !important;
-}
 
 body.no-mobile-scroll {
   position: fixed !important;
