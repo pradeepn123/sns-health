@@ -198,7 +198,8 @@
         "1c52f1d3-8e9b-4a7c-b834-db0982c36075": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Union_8.svg",
+            "eyebrow": "Drinks",
             "url": ""
           }
         },
