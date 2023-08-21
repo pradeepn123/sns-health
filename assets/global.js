@@ -168,7 +168,7 @@ class CustomCarousel extends HTMLElement {
         }
       },
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
-    }, carouselSettings));
+    }, currentBreakPointSettings));
     this.swiper.on('activeIndexChange', current => {
       var _this$querySelector2, _this$querySelectorAl;
       (_this$querySelector2 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.classList.remove('swiper-pagination-bullet-active');
