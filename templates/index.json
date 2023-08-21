@@ -211,9 +211,9 @@
           "type": "diet",
           "settings": {
             "text_color": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": ""
+            "subheading": "Paleo",
+            "cta_text": "Shop Now",
+            "cta_url": "shopify:\/\/collections\/paleo"
           }
         },
         "e016598b-9632-4bdd-a6d1-293bab799fa1": {
