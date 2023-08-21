@@ -54,12 +54,12 @@
           "type": "image_with_text_overlay",
           "settings": {
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/grid-image.png",
+            "image_desktop": "shopify:\/\/shop_images\/pc-interactive-perfectsports.jpg",
             "eyebrow": "",
             "inline_heading": false,
-            "heading": "Get <br> 20% OFF",
-            "subheading": "on Yoga Accessories",
-            "cta_text": "Shop More",
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
             "cta_url": "shopify:\/\/collections"
           }
         },
