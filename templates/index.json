@@ -214,8 +214,9 @@
         "079daad3-6c14-435f-9868-3958c0087283": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Group_7698.svg",
+            "eyebrow": "Skin Care",
+            "url": "shopify:\/\/collections\/skin-care"
           }
         },
         "d0166bc3-7ce2-45ee-82f8-1e552882eead": {
