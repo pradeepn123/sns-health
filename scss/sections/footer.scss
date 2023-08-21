@@ -234,6 +234,7 @@
 &__location-text {
   @include use-text-style('body-regular');
   font-weight: typography.$medium-weight;
+  line-height: 1.6;
 }
 
 }
