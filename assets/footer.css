@@ -295,3 +295,10 @@
   margin-bottom: 10px;
   line-height: normal;
 }
+.footer__location-text {
+  font-family: "poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-weight: 500;
+}

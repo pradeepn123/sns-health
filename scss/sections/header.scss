@@ -542,32 +542,34 @@
     }
 
     &__link {
+
+        
         @include use-text-style('body-small');
         font-weight: typography.$medium-weight;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        text-transform: capitalize;
         padding-left: 0;
+        column-gap: 5px;
+        padding: 4px;
         padding-right: 0;
+        font-size: 8px;
 
         &--special {
             color: colors.$red !important;
+        }
+
+        @media(--xs) {
+            padding: 10px;
+            @include use-text-style('body-small');
+            font-weight: typography.$medium-weight;
         }
 
         @media(--md) {
             @include use-text-style('body-alt');
             font-weight: typography.$medium-weight;
         }
-
-        font-weight: typography.$medium-weight;
-        display: flex;
-        align-items: center;
-        column-gap: 5px;
-        padding: 4px;
-        border-radius: 10px;
-        text-transform: capitalize;
-
-        @media(--xs) {
-            padding: 10px;
-        }
-
 
         &:hover {
             color: colors.$red;

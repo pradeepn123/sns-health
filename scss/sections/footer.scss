@@ -231,4 +231,9 @@
     line-height: normal;
 }
 
+&__location-text {
+  @include use-text-style('body-regular');
+  font-weight: typography.$medium-weight;
+}
+
 }
