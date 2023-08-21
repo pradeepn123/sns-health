@@ -134,7 +134,8 @@
         "fa7ffc53-4735-4de2-a9c0-2421be908b1c": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Union_3.svg",
+            "eyebrow": "Performance Supplements",
             "url": ""
           }
         },
