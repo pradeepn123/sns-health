@@ -283,8 +283,9 @@
         "143ff868-7559-4146-9bbe-d7e89976eefe": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Frame_31.png",
+            "eyebrow": "Bone Strength",
+            "url": "shopify:\/\/collections\/bone-strength"
           }
         },
         "e0799fc5-53d3-4cf3-ad64-b39aff43b0ba": {
@@ -408,7 +409,7 @@
           "type": "collection",
           "settings": {
             "collection_text": "Rebuy",
-            "rule_id": "110179"
+            "rule_id": "110176"
           }
         }
       },
