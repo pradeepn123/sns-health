@@ -1253,8 +1253,8 @@ function get_each_context_2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (133:0) {:else}
-function create_else_block_1(ctx) {
+// (125:0) {:else}
+function create_else_block(ctx) {
 	let div5;
 
 	return {
@@ -1288,14 +1288,7 @@ function create_if_block(ctx) {
 	let div1;
 	let div1_class_value;
 	let current;
-
-	function select_block_type_1(ctx, dirty) {
-		if (/*collectionTexts*/ ctx[5].length > 1) return create_if_block_2;
-		return create_else_block;
-	}
-
-	let current_block_type = select_block_type_1(ctx, -1);
-	let if_block = current_block_type(ctx);
+	let if_block = /*collectionTexts*/ ctx[5].length > 1 && create_if_block_2(ctx);
 	let key_block = create_key_block(ctx);
 	let each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 	let each_blocks = [];
@@ -1310,7 +1303,7 @@ function create_if_block(ctx) {
 
 	return {
 		c() {
-			if_block.c();
+			if (if_block) if_block.c();
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
@@ -1333,7 +1326,7 @@ function create_if_block(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "featured-products__wrapper product-card-wrapper");
 		},
 		m(target, anchor) {
-			if_block.m(target, anchor);
+			if (if_block) if_block.m(target, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, t0, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div2, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, div0);
@@ -1350,7 +1343,7 @@ function create_if_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if_block.p(ctx, dirty);
+			if (/*collectionTexts*/ ctx[5].length > 1) if_block.p(ctx, dirty);
 
 			if (dirty & /*productData*/ 1 && (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal)(previous_key, previous_key = /*productData*/ ctx[0])) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.group_outros)();
@@ -1417,31 +1410,9 @@ function create_if_block(ctx) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div2);
 			}
 
-			if_block.d(detaching);
+			if (if_block) if_block.d(detaching);
 			key_block.d(detaching);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_each)(each_blocks, detaching);
-		}
-	};
-}
-
-// (71:4) {:else}
-function create_else_block(ctx) {
-	let div5;
-
-	return {
-		c() {
-			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div5.innerHTML = `<div class="placeholder"></div> <div class="placeholder"></div> <div class="placeholder"></div> <div class="placeholder"></div> <div class="placeholder"></div>`;
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "featured-products__placeholder featured-products__placeholder--tab");
-		},
-		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div5, anchor);
-		},
-		p: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
-		d(detaching) {
-			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div5);
-			}
 		}
 	};
 }
@@ -1562,7 +1533,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (90:12) {#if product.variants[0].price > 0}
+// (82:12) {#if product.variants[0].price > 0}
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
@@ -1602,7 +1573,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (89:10) {#each productData as product, index}
+// (81:10) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
@@ -1661,7 +1632,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (86:6) {#key productData}
+// (78:6) {#key productData}
 function create_key_block(ctx) {
 	let custom_carousel;
 	let div;
@@ -1766,7 +1737,7 @@ function create_key_block(ctx) {
 	};
 }
 
-// (127:8) {#each productData as product, index}
+// (119:8) {#each productData as product, index}
 function create_each_block(ctx) {
 	let productcard;
 	let current;
@@ -1811,7 +1782,7 @@ function create_fragment(ctx) {
 	let if_block;
 	let if_block_anchor;
 	let current;
-	const if_block_creators = [create_if_block, create_else_block_1];
+	const if_block_creators = [create_if_block, create_else_block];
 	const if_blocks = [];
 
 	function select_block_type(ctx, dirty) {
