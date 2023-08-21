@@ -58,7 +58,7 @@ class CustomCarousel extends HTMLElement {
     super();
     this.carouselSettings;
     this.currentWidth;
-    this.innerHTML;
+    this.innerHTML = this.innerHTML;
     this.container;
   }
   checkAndInitCarousel() {
