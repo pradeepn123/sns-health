@@ -105,6 +105,23 @@
       "settings": {
         "title": "megamenu-personal-care"
       }
+    },
+    "2fff4504-8a4c-4bf8-9046-276d88ec21b9": {
+      "type": "megamenu",
+      "blocks": {
+        "79c9797a-77ed-4f40-b89a-12d850efc860": {
+          "type": "menu",
+          "settings": {
+            "menu": ""
+          }
+        }
+      },
+      "block_order": [
+        "79c9797a-77ed-4f40-b89a-12d850efc860"
+      ],
+      "settings": {
+        "title": "megamenu-protein-powders"
+      }
     }
   },
   "order": [
@@ -113,6 +130,7 @@
     "8b4fd574-7ef8-48da-a983-71b280d8e161",
     "ffe7636d-671d-48ae-beb8-d5dce7d4b41b",
     "2b6a02d3-f8cc-490d-93b0-65cc5b7a5809",
-    "d9f1743c-ac85-46e4-91b2-616e2478dac7"
+    "d9f1743c-ac85-46e4-91b2-616e2478dac7",
+    "2fff4504-8a4c-4bf8-9046-276d88ec21b9"
   ]
 }
