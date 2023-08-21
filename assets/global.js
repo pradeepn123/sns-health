@@ -81,8 +81,8 @@ class CustomCarousel extends HTMLElement {
     }
   }
   connectedCallback() {
-    checkAndInitCarousel();
-    window.addEventListener('resize', checkAndInitCarousel);
+    this.checkAndInitCarousel();
+    window.addEventListener('resize', this.checkAndInitCarousel);
   }
   getBreakpointSettings() {
     this.currentWidth = window.innerWidth;
