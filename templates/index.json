@@ -201,9 +201,10 @@
           "type": "diet",
           "settings": {
             "text_color": "",
+            "icon": "shopify:\/\/shop_images\/Union_13.svg",
             "subheading": "Keto",
-            "cta_text": "",
-            "cta_url": ""
+            "cta_text": "Shop Now",
+            "cta_url": "shopify:\/\/collections\/keto"
           }
         },
         "257a681d-3fc2-4114-9602-03c9b536359b": {
