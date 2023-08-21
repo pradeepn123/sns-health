@@ -16,7 +16,7 @@
           "type": "image_with_text_overlay",
           "settings": {
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/banner-new.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/mob-banner-augustsale.jpg",
             "image_mobile": "shopify:\/\/shop_images\/Dr-8-54470_5.jpg",
             "cta_url": "shopify:\/\/collections"
           }
