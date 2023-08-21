@@ -307,8 +307,9 @@
         "d7b4a8bb-d5be-4643-8365-8a8da4f207d6": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/visibility_FILL0_wght400_GRAD0_opsz48_1.svg",
+            "eyebrow": "Eye Health",
+            "url": "shopify:\/\/collections\/eye-health"
           }
         },
         "c2651257-a1f1-463f-a9ac-f86001b30630": {
