@@ -534,13 +534,13 @@
             "inline_heading": false,
             "subheading": "",
             "cta_text": "Shop",
-            "cta_url": "#"
+            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
           }
         },
         "93f70bd8-2553-4ff0-a4e5-6de297d8c9fb": {
           "type": "featured_products",
           "settings": {
-            "collection": "49th-parallel-coffee-roasters"
+            "collection": "vitamins-and-supplements"
           }
         }
       },
