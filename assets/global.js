@@ -268,20 +268,6 @@ class CustomCarousel extends HTMLElement {
       }
     }
   });
-  function debounce(func) {
-    var _this = this;
-    var timeout = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 300;
-    var timer;
-    return function () {
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        func.apply(_this, args);
-      }, timeout);
-    };
-  }
 
   //header
   var headerWrapper = document.querySelector('.shopify-section__header');
@@ -293,7 +279,7 @@ class CustomCarousel extends HTMLElement {
     searchBar.style.opacity = 1 - scrollTop / 85;
     navBar.style.opacity = 1 - scrollTop / 10;
     searchIcon.style.opacity = 1 - scrollTop / 10;
-    if (Math.round(scrollTop) <= 150) {
+    if (scrollTop <= 150) {
       if (headerWrapper.classList.contains('shopify-section__header--fixed')) {
         headerWrapper.classList.remove('shopify-section__header--fixed');
       }
