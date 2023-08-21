@@ -268,6 +268,20 @@ class CustomCarousel extends HTMLElement {
       }
     }
   });
+  function debounce(func) {
+    var _this = this;
+    var timeout = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 300;
+    var timer;
+    return function () {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(_this, args);
+      }, timeout);
+    };
+  }
 
   //header
   var headerWrapper = document.querySelector('.shopify-section__header');
@@ -285,9 +299,9 @@ class CustomCarousel extends HTMLElement {
         // header.classList.remove('header-margin-scroll');
       }
     } else {
-      headerWrapper.classList.add('shopify-section__header--fixed');
-      searchIcon.style.opacity = 1;
-      // header.classList.add('header-margin-scroll');
+      debounce(() => {
+        headerWrapper.classList.add('shopify-section__header--fixed');
+      }, 1000);
     }
   };
 
