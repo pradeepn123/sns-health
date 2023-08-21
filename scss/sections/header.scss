@@ -311,7 +311,7 @@
     overflow: hidden;
     z-index: 4;
     display: none;
-    background: colors.$gray-300;
+    background: rgba(0,0,0,0.3);
     top: var(--announcement-bar-height);
 
     &--active {

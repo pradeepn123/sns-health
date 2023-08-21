@@ -9,9 +9,10 @@
 .customer-reviews {
     margin-top: var(--section-margin);
     padding: var(--section-padding) 0 0;
-    background: colors.$gray-400;
+
 
     @media(--md) {
+     background: colors.$gray-400;
      @include mixins.container;
     }
 
@@ -70,17 +71,32 @@
 
             .review_container {
                 display: flex;
+                flex-direction: column-reverse; 
+
+                @media(--md) {
+                    flex-direction: row;
+                }
 
                 .review_image {
-                    width: 30%;
+                   width:100%;
+                    @media(--md) {
+                        width: 30%;
+                    }
                 }
 
                 .review_content {
                     display: flex;
                     flex-direction: column;
                     row-gap: 5px;
-                    width: 70%;
-                    margin-left: 14px;
+                    
+                    margin-bottom: 15px;
+                    width: 100%;
+ 
+                    @media(--md) {
+                        margin-bottom: 0;
+                        margin-left: 14px;
+                        width: 70%;
+                    }
 
                     .rating {
                         display: flex;

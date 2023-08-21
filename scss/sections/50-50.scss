@@ -77,6 +77,11 @@
     &--mobile {
       display: block;
 
+      .responsive-image__image {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
       @media(--md) {
         display: none;
       }

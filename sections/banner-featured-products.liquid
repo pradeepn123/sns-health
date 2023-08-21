@@ -43,12 +43,13 @@
                             button_background_type: button_background_type
                             %}
                         {% for product in collection.products limit: 8 %} 
-                            
+                       {% if product.available %}     
                         <div class="swiper-slide">
                          {% render 'custom-product-card',
                           product:product
                          %}
                         </div>
+                      {% endif %}
                         {% endfor %}
                       </div>
                       <div class="banner-product__products-content  banner-product__products-content--mobile">
@@ -87,7 +88,9 @@
                               button_background_type: button_background_type
                               %}
                         {% for product in collection.products limit: 4 %} 
+                        {% if product.available %}  
                           {% render 'custom-product-card', product: product %}
+                        {% endif %}
                         {% endfor %}
                       </div>
               </div>

@@ -101,6 +101,10 @@
 .section-50-50__image--mobile {
   display: block;
 }
+.section-50-50__image--mobile .responsive-image__image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 @media (min-width: 1024px) {
   .section-50-50__image--mobile {
     display: none;

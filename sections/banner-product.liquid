@@ -50,11 +50,13 @@
                       <custom-carousel>
                         <div class="custom-carousel__content hide" data-carousel-content>
                         {% for product in collection.products %} 
+                        {% if product.available %}  
                         <div class="swiper-slide">
                          {% render 'custom-product-card',
                           product:product
                          %}
                         </div>
+                      {% endif %}
                         {% endfor %}
                       </div>
                         <script type="text/json" data-settings>
@@ -84,7 +86,9 @@
                       </div>
                       <div class="banner-product__products-content  banner-product__products-content--mobile {% if mobile_carousel %}banner-product__products-content--hide{% endif %}">
                         {% for product in collection.products limit: 4 %} 
+                        {% if product.available %}  
                           {% render 'custom-product-card', product: product %}
+                      {% endif %}
                         {% endfor %}
                       </div>
               </div>
