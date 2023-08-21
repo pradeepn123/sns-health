@@ -67,12 +67,13 @@
           "type": "image_with_text_overlay",
           "settings": {
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/grid-image.png",
+            "image_desktop": "shopify:\/\/shop_images\/pc-interactive-buckedup.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/mob-interactive-buckedup_1.jpg",
             "eyebrow": "",
             "inline_heading": false,
-            "heading": "GET <br>  20% OFF",
-            "subheading": "on Gym Accessories",
-            "cta_text": "Read More",
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
             "cta_url": "#"
           }
         },
