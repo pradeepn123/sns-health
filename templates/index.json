@@ -371,8 +371,9 @@
         "d6ade0c7-545f-4179-b534-e3d67a9964cb": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Vector_8.svg",
+            "eyebrow": "Stress Management",
+            "url": "shopify:\/\/collections\/stress-management"
           }
         }
       },
