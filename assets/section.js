@@ -1253,7 +1253,7 @@ function get_each_context_2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (135:0) {:else}
+// (133:0) {:else}
 function create_else_block_1(ctx) {
 	let div5;
 
@@ -1562,7 +1562,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (92:12) {#if product.variants[0].price > 0}
+// (90:12) {#if product.variants[0].price > 0}
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
@@ -1602,7 +1602,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (91:10) {#each productData as product, index}
+// (89:10) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
@@ -1661,7 +1661,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (88:6) {#key productData}
+// (86:6) {#key productData}
 function create_key_block(ctx) {
 	let custom_carousel;
 	let div;
@@ -1766,7 +1766,7 @@ function create_key_block(ctx) {
 	};
 }
 
-// (129:8) {#each productData as product, index}
+// (127:8) {#each productData as product, index}
 function create_each_block(ctx) {
 	let productcard;
 	let current;
