@@ -123,30 +123,6 @@
             "url": "shopify:\/\/collections\/protein-powders"
           }
         },
-        "9620f45b-eb03-40ff-ba3c-91f4b182c839": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Union.svg",
-            "eyebrow": "Protein Snacks",
-            "url": "shopify:\/\/collections\/protein-bars-and-snacks"
-          }
-        },
-        "fa7ffc53-4735-4de2-a9c0-2421be908b1c": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Union_3.svg",
-            "eyebrow": "Performance Supplements",
-            "url": "shopify:\/\/collections\/supplements"
-          }
-        },
-        "db2647bc-e3e2-4154-9e8b-8a1502ba14e4": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Union_4.svg",
-            "eyebrow": "Weight Management",
-            "url": "shopify:\/\/collections\/weight-management"
-          }
-        },
         "89e7d573-a237-400c-8ccb-8e7d3e027f16": {
           "type": "category",
           "settings": {
@@ -155,76 +131,12 @@
             "url": "shopify:\/\/collections\/vitamins"
           }
         },
-        "8e77ba5c-46cd-4328-ada9-c77cde931a2f": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Union_5.svg",
-            "eyebrow": "Minerals",
-            "url": "shopify:\/\/collections\/minerals"
-          }
-        },
-        "29454c94-0565-40d0-b7f2-188ddf5bd7a0": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Group_7696.svg",
-            "eyebrow": "Supplements",
-            "url": "shopify:\/\/collections\/supplements"
-          }
-        },
-        "1c1c781e-334a-4bbc-ae89-3d3888bd5a3f": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Group_7696_1.svg",
-            "eyebrow": "Superfoods",
-            "url": "shopify:\/\/collections\/superfoods"
-          }
-        },
-        "d2706c84-6849-45aa-befc-61aea7c7efce": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Union_6.svg",
-            "eyebrow": "Family Health",
-            "url": "shopify:\/\/collections\/family-health"
-          }
-        },
-        "d15f9a58-acad-404d-8505-0ea600180e02": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Union_7.svg",
-            "eyebrow": "Snacks",
-            "url": "shopify:\/\/collections\/snacks"
-          }
-        },
         "1c52f1d3-8e9b-4a7c-b834-db0982c36075": {
           "type": "category",
           "settings": {
             "icon": "shopify:\/\/shop_images\/Union_8.svg",
             "eyebrow": "Drinks",
             "url": "shopify:\/\/collections\/drinks"
-          }
-        },
-        "c0727ee1-8a3b-4e27-8cef-099e5520ee0a": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Vector_1.svg",
-            "eyebrow": "Pantry",
-            "url": "shopify:\/\/collections\/pantry"
-          }
-        },
-        "079daad3-6c14-435f-9868-3958c0087283": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Group_7698.svg",
-            "eyebrow": "Skin Care",
-            "url": "shopify:\/\/collections\/skin-care"
-          }
-        },
-        "d0166bc3-7ce2-45ee-82f8-1e552882eead": {
-          "type": "category",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Union_9.svg",
-            "eyebrow": "Hair Care",
-            "url": "shopify:\/\/collections\/hair-care"
           }
         },
         "75bfdb01-87ed-401f-bc36-2d296d0be3e2": {
@@ -238,15 +150,17 @@
         "606837d3-489f-4e2e-b41a-2a17dc9f4d4c": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Union_11.svg",
+            "eyebrow": "Mushrooms",
             "url": ""
           }
         },
         "1b4084d2-cf36-41f9-9f63-eefe42be096c": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Union_7.svg",
+            "eyebrow": "Healthy Snacks",
+            "url": "shopify:\/\/collections\/snacks"
           }
         },
         "ef15d8b0-30a3-4eb2-ba3f-2a7223eadb5c": {
@@ -259,19 +173,8 @@
       },
       "block_order": [
         "97b8315b-a781-48e9-b970-88142d35a5d6",
-        "9620f45b-eb03-40ff-ba3c-91f4b182c839",
-        "fa7ffc53-4735-4de2-a9c0-2421be908b1c",
-        "db2647bc-e3e2-4154-9e8b-8a1502ba14e4",
         "89e7d573-a237-400c-8ccb-8e7d3e027f16",
-        "8e77ba5c-46cd-4328-ada9-c77cde931a2f",
-        "29454c94-0565-40d0-b7f2-188ddf5bd7a0",
-        "1c1c781e-334a-4bbc-ae89-3d3888bd5a3f",
-        "d2706c84-6849-45aa-befc-61aea7c7efce",
-        "d15f9a58-acad-404d-8505-0ea600180e02",
         "1c52f1d3-8e9b-4a7c-b834-db0982c36075",
-        "c0727ee1-8a3b-4e27-8cef-099e5520ee0a",
-        "079daad3-6c14-435f-9868-3958c0087283",
-        "d0166bc3-7ce2-45ee-82f8-1e552882eead",
         "75bfdb01-87ed-401f-bc36-2d296d0be3e2",
         "606837d3-489f-4e2e-b41a-2a17dc9f4d4c",
         "1b4084d2-cf36-41f9-9f63-eefe42be096c",
