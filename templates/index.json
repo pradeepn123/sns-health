@@ -202,6 +202,7 @@
           "settings": {
             "text_color": "",
             "icon": "shopify:\/\/shop_images\/Union_13.svg",
+            "icon_hover": "shopify:\/\/shop_images\/Union_18.svg",
             "subheading": "Keto",
             "cta_text": "Shop Now",
             "cta_url": "shopify:\/\/collections\/keto"
