@@ -323,6 +323,35 @@
         "e9d3450e-f6c8-4ba9-83d1-c23f7fd52a60": {
           "type": "health_condition",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/Vector_3.svg",
+            "eyebrow": "Immune Support",
+            "url": "shopify:\/\/collections\/immune-support"
+          }
+        },
+        "cac367ea-120b-4fbd-85a6-4659a70e5cb9": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "40f707ae-6784-4ff1-aefb-723af9dc7a1b": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "5417db1e-8893-43af-b7e1-a6bfbd6a868c": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "400cc6db-2697-45a8-8e0d-94ff816c798a": {
+          "type": "health_condition",
+          "settings": {
             "eyebrow": "",
             "url": ""
           }
@@ -334,7 +363,11 @@
         "2699f87d-7dd0-4e78-a379-7601420c6c47",
         "d7b4a8bb-d5be-4643-8365-8a8da4f207d6",
         "c2651257-a1f1-463f-a9ac-f86001b30630",
-        "e9d3450e-f6c8-4ba9-83d1-c23f7fd52a60"
+        "e9d3450e-f6c8-4ba9-83d1-c23f7fd52a60",
+        "cac367ea-120b-4fbd-85a6-4659a70e5cb9",
+        "40f707ae-6784-4ff1-aefb-723af9dc7a1b",
+        "5417db1e-8893-43af-b7e1-a6bfbd6a868c",
+        "400cc6db-2697-45a8-8e0d-94ff816c798a"
       ],
       "settings": {
         "heading": "Shop By Health Condition"
