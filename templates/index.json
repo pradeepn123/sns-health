@@ -476,7 +476,7 @@
       ],
       "settings": {
         "heading": "Featured Products",
-        "mobile_carousel": false
+        "mobile_carousel": true
       }
     },
     "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854": {
