@@ -408,14 +408,13 @@
         "04f03284-64cf-4a23-9d73-d2a68ceced6a": {
           "type": "featured_brand",
           "settings": {
-            "image": "shopify:\/\/shop_images\/featured-brand.png",
             "url": ""
           }
         },
         "c9336f2d-13e6-426d-932d-e2e033d0f054": {
           "type": "featured_brand",
           "settings": {
-            "image": "shopify:\/\/shop_images\/featured-brand.png",
+            "image": "shopify:\/\/shop_images\/perfect-sports.webp",
             "url": ""
           }
         },
