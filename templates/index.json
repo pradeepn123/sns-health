@@ -315,8 +315,9 @@
         "c2651257-a1f1-463f-a9ac-f86001b30630": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Vector_2.svg",
+            "eyebrow": "Joint Support",
+            "url": "shopify:\/\/collections\/joint-support"
           }
         },
         "e9d3450e-f6c8-4ba9-83d1-c23f7fd52a60": {
