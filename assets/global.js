@@ -286,6 +286,7 @@ class CustomCarousel extends HTMLElement {
       }
     } else {
       headerWrapper.classList.add('shopify-section__header--fixed');
+      searchIcon.style.opacity = 1;
       // header.classList.add('header-margin-scroll');
     }
   };
