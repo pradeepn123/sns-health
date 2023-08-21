@@ -7,7 +7,7 @@
           "type": "image_with_text_overlay",
           "settings": {
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/Frame_8360_1.png",
+            "image_desktop": "shopify:\/\/shop_images\/mob-banner-healnco.jpg",
             "cta_url": "shopify:\/\/collections"
           }
         },
