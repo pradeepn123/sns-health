@@ -339,8 +339,9 @@
         "40f707ae-6784-4ff1-aefb-723af9dc7a1b": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/cardiology_FILL0_wght400_GRAD0_opsz48_1.png",
+            "eyebrow": "Cardiovascular Health",
+            "url": "shopify:\/\/collections\/cardiovascular-health"
           }
         },
         "5417db1e-8893-43af-b7e1-a6bfbd6a868c": {
