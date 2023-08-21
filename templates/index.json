@@ -560,10 +560,10 @@
           "settings": {
             "image_desktop": "shopify:\/\/shop_images\/banner-grid-3.jpg",
             "eyebrow": "",
-            "heading": "Trending Offers",
+            "heading": "Latest Offers",
             "inline_heading": false,
             "subheading": "Discover the Latest Deals on <br> Quality Supplements",
-            "cta_text": "Shop All",
+            "cta_text": "",
             "cta_url": "#"
           }
         },
