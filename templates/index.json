@@ -166,7 +166,8 @@
         "29454c94-0565-40d0-b7f2-188ddf5bd7a0": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Group_7696.svg",
+            "eyebrow": "Supplements",
             "url": ""
           }
         }
