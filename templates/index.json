@@ -170,6 +170,56 @@
             "eyebrow": "Supplements",
             "url": ""
           }
+        },
+        "1c1c781e-334a-4bbc-ae89-3d3888bd5a3f": {
+          "type": "category",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_7696_1.svg",
+            "eyebrow": "Superfoods",
+            "url": ""
+          }
+        },
+        "d2706c84-6849-45aa-befc-61aea7c7efce": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "d15f9a58-acad-404d-8505-0ea600180e02": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "1c52f1d3-8e9b-4a7c-b834-db0982c36075": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "c0727ee1-8a3b-4e27-8cef-099e5520ee0a": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "079daad3-6c14-435f-9868-3958c0087283": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "d0166bc3-7ce2-45ee-82f8-1e552882eead": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
         }
       },
       "block_order": [
@@ -179,7 +229,14 @@
         "db2647bc-e3e2-4154-9e8b-8a1502ba14e4",
         "89e7d573-a237-400c-8ccb-8e7d3e027f16",
         "8e77ba5c-46cd-4328-ada9-c77cde931a2f",
-        "29454c94-0565-40d0-b7f2-188ddf5bd7a0"
+        "29454c94-0565-40d0-b7f2-188ddf5bd7a0",
+        "1c1c781e-334a-4bbc-ae89-3d3888bd5a3f",
+        "d2706c84-6849-45aa-befc-61aea7c7efce",
+        "d15f9a58-acad-404d-8505-0ea600180e02",
+        "1c52f1d3-8e9b-4a7c-b834-db0982c36075",
+        "c0727ee1-8a3b-4e27-8cef-099e5520ee0a",
+        "079daad3-6c14-435f-9868-3958c0087283",
+        "d0166bc3-7ce2-45ee-82f8-1e552882eead"
       ],
       "settings": {
         "heading": ""
