@@ -182,7 +182,8 @@
         "d2706c84-6849-45aa-befc-61aea7c7efce": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Union_6.svg",
+            "eyebrow": "Family Health",
             "url": ""
           }
         },
