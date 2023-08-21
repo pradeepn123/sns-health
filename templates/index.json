@@ -222,6 +222,35 @@
         "d0166bc3-7ce2-45ee-82f8-1e552882eead": {
           "type": "category",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/Union_9.svg",
+            "eyebrow": "Hair Care",
+            "url": "shopify:\/\/collections\/hair-care"
+          }
+        },
+        "75bfdb01-87ed-401f-bc36-2d296d0be3e2": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "606837d3-489f-4e2e-b41a-2a17dc9f4d4c": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "1b4084d2-cf36-41f9-9f63-eefe42be096c": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "ef15d8b0-30a3-4eb2-ba3f-2a7223eadb5c": {
+          "type": "category",
+          "settings": {
             "eyebrow": "",
             "url": ""
           }
@@ -241,7 +270,11 @@
         "1c52f1d3-8e9b-4a7c-b834-db0982c36075",
         "c0727ee1-8a3b-4e27-8cef-099e5520ee0a",
         "079daad3-6c14-435f-9868-3958c0087283",
-        "d0166bc3-7ce2-45ee-82f8-1e552882eead"
+        "d0166bc3-7ce2-45ee-82f8-1e552882eead",
+        "75bfdb01-87ed-401f-bc36-2d296d0be3e2",
+        "606837d3-489f-4e2e-b41a-2a17dc9f4d4c",
+        "1b4084d2-cf36-41f9-9f63-eefe42be096c",
+        "ef15d8b0-30a3-4eb2-ba3f-2a7223eadb5c"
       ],
       "settings": {
         "heading": ""
