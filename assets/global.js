@@ -299,7 +299,7 @@ class CustomCarousel extends HTMLElement {
         // header.classList.remove('header-margin-scroll');
       }
     } else {
-      debounce(() => {
+      setTimeout(() => {
         headerWrapper.classList.add('shopify-section__header--fixed');
         searchIcon.style.opacity = 1;
       }, 1000);
