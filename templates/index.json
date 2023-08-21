@@ -112,6 +112,72 @@
       "settings": {
       }
     },
+    "9915991f-ed29-484e-9e91-73c66c49a3a1": {
+      "type": "section-shop-by-category",
+      "blocks": {
+        "97b8315b-a781-48e9-b970-88142d35a5d6": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "9620f45b-eb03-40ff-ba3c-91f4b182c839": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "fa7ffc53-4735-4de2-a9c0-2421be908b1c": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "db2647bc-e3e2-4154-9e8b-8a1502ba14e4": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "89e7d573-a237-400c-8ccb-8e7d3e027f16": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "8e77ba5c-46cd-4328-ada9-c77cde931a2f": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "29454c94-0565-40d0-b7f2-188ddf5bd7a0": {
+          "type": "category",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "97b8315b-a781-48e9-b970-88142d35a5d6",
+        "9620f45b-eb03-40ff-ba3c-91f4b182c839",
+        "fa7ffc53-4735-4de2-a9c0-2421be908b1c",
+        "db2647bc-e3e2-4154-9e8b-8a1502ba14e4",
+        "89e7d573-a237-400c-8ccb-8e7d3e027f16",
+        "8e77ba5c-46cd-4328-ada9-c77cde931a2f",
+        "29454c94-0565-40d0-b7f2-188ddf5bd7a0"
+      ],
+      "settings": {
+        "heading": ""
+      }
+    },
     "932e9d3c-0311-4a00-af68-f2426cae7d02": {
       "type": "featured-brands",
       "blocks": {
@@ -357,6 +423,7 @@
   "order": [
     "main",
     "65868ffb-1036-425b-a0dc-ebc8bcff334b",
+    "9915991f-ed29-484e-9e91-73c66c49a3a1",
     "932e9d3c-0311-4a00-af68-f2426cae7d02",
     "0b3ea745-2c54-4e66-a525-b80b7acd1b49",
     "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854",
