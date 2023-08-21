@@ -221,6 +221,7 @@
           "type": "diet",
           "settings": {
             "text_color": "",
+            "icon": "shopify:\/\/shop_images\/Union_15.svg",
             "subheading": "Organic",
             "cta_text": "Shop Now",
             "cta_url": "shopify:\/\/collections\/organic"
@@ -230,6 +231,7 @@
           "type": "diet",
           "settings": {
             "text_color": "",
+            "icon": "shopify:\/\/shop_images\/Group_7854.svg",
             "subheading": "Sugar-free",
             "cta_text": "Shop Now",
             "cta_url": ""
@@ -239,6 +241,7 @@
           "type": "diet",
           "settings": {
             "text_color": "",
+            "icon": "shopify:\/\/shop_images\/Union_16.svg",
             "subheading": "Vegan",
             "cta_text": "Shop Now",
             "cta_url": "shopify:\/\/collections\/vegan"
