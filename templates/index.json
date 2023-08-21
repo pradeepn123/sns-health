@@ -533,7 +533,7 @@
             "heading": "Vitamins & <br> Supplements",
             "inline_heading": false,
             "subheading": "",
-            "cta_text": "Shop",
+            "cta_text": "Shop All",
             "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
           }
         },
@@ -549,7 +549,7 @@
         "93f70bd8-2553-4ff0-a4e5-6de297d8c9fb"
       ],
       "settings": {
-        "mobile_carousel": true
+        "mobile_carousel": false
       }
     },
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e": {
