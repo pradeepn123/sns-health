@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./js/components/collapsible.js":
@@ -8,6 +7,7 @@
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   collapsible: () => (/* binding */ collapsible)
 /* harmony export */ });
@@ -36,181 +36,9 @@ var collapsible = () => {
 /*!******************************************!*\
   !*** ./js/components/custom-carousel.js ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
-/* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
-
-
-var _excluded = ["breakpoints"],
-  _excluded2 = ["pagination", "navigation"],
-  _excluded3 = ["navigation", "pagination", "progressPagination"];
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-
-class CustomCarousel extends HTMLElement {
-  constructor() {
-    super();
-    this.carouselSettings;
-    this.currentWidth;
-    this.innerHTML;
-    this.container;
-  }
-  connectedCallback() {
-    if (this.innerHTML.length > 0) {
-      this.initCarousel();
-    } else {
-      var that = this;
-      var checkHtmlLength = window.setInterval(() => {
-        if (this.innerHTML.length > 0) {
-          that.initCarousel();
-          window.clearInterval(checkHtmlLength);
-          checkHtmlLength = false;
-        }
-      }, 500);
-      window.setTimeout(() => {
-        if (checkHtmlLength) {
-          window.clearInterval(checkHtmlLength);
-        }
-      }, 5000);
-    }
-  }
-  getCarouselSettings() {
-    this.currentWidth = window.innerWidth;
-    //default settings
-    var defaultSettings = {
-      slidesPerView: 1,
-      spaceBetween: 15,
-      speed: 1000,
-      navigation: false
-    };
-    var carouselSettings = defaultSettings;
-    //end of default settings 
-
-    //handle breakpoint
-    var _this$carouselSetting = this.carouselSettings,
-      {
-        breakpoints
-      } = _this$carouselSetting,
-      otherSettings = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$carouselSetting, _excluded);
-    if (breakpoints) {
-      this.breakpoints = Object.keys(breakpoints);
-      this.breakpoints.forEach((breakpoint, index) => {
-        if (this.currentWidth >= breakpoint) {
-          if (breakpoints[breakpoint]) {
-            this.breakpointSettings = breakpoints[breakpoint];
-          } else {
-            this.breakpointSettings = breakpoints[this.breakpoints[index - 1]];
-          }
-          var _this$breakpointSetti = this.breakpointSettings,
-            {
-              pagination,
-              navigation
-            } = _this$breakpointSetti,
-            otherResponsiveSettings = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$breakpointSetti, _excluded2);
-          this.carouselSettings = _objectSpread(_objectSpread(_objectSpread({}, otherSettings), otherResponsiveSettings), {}, {
-            pagination,
-            navigation
-          });
-        }
-      });
-    }
-    if (this.carouselSettings && Object.keys(this.carouselSettings).length > 0) {
-      var _this$carouselSetting2 = this.carouselSettings,
-        {
-          navigation,
-          pagination,
-          progressPagination
-        } = _this$carouselSetting2,
-        otherSwiperSettings = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$carouselSetting2, _excluded3);
-      carouselSettings = _objectSpread({}, otherSwiperSettings);
-      if (navigation) {
-        var navigationNext = this.querySelector('.swiper-navigation--next');
-        var navigationPrev = this.querySelector('.swiper-navigation--prev');
-        carouselSettings = _objectSpread(_objectSpread({}, carouselSettings), {}, {
-          navigation: {
-            nextEl: navigationNext,
-            prevEl: navigationPrev
-          }
-        });
-      }
-      if (pagination) {
-        var swiperPagination = this.querySelector('.swiper-pagination');
-        var _pagination = {
-          el: swiperPagination,
-          clickable: true
-        };
-        if (progressPagination) {
-          _pagination = {
-            el: swiperPagination,
-            type: 'progressbar'
-          };
-        }
-        carouselSettings = _objectSpread(_objectSpread({}, carouselSettings), {}, {
-          pagination: _pagination
-        });
-      }
-    }
-    return carouselSettings;
-  }
-  initCarousel() {
-    var _this$querySelector, _this$querySelector2;
-    this.carouselSettings = JSON.parse(((_this$querySelector = this.querySelector('[data-settings]')) === null || _this$querySelector === void 0 ? void 0 : _this$querySelector.innerHTML) || "{}");
-    this.carouselContent = this.querySelector('[data-carousel-content]').innerHTML;
-    this.placeholders = (_this$querySelector2 = this.querySelector('[data-carousel-placeholder]')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.innerHTML;
-    this.currentWidth = window.innerWidth;
-    this.innerHTML = "<div class=\"carousel__container swiper hide\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.carouselContent, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    <div class=\"swiper-navigation swiper-navigation--next ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"carousel-placeholders\">\n     ").concat(this.placeholders ? this.placeholders : '', "\n    </div>");
-    this.container = this.querySelector('[data-swiper-container]');
-    var carouselSettings = this.getCarouselSettings();
-    this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
-      on: {
-        beforeInit: () => {
-          var {
-            navigation,
-            pagination
-          } = carouselSettings || {};
-          if (!navigation) {
-            this.querySelectorAll('.swiper-navigation').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
-          } else {
-            this.querySelector('.swiper-navigation--hide') && this.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
-          }
-          if (!pagination) {
-            this.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
-          } else {
-            this.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
-          }
-        },
-        init: swiper => {
-          if (!!swiper.navigation) {
-            swiper.navigation.destroy();
-          }
-          if (window.handleJsClick) {
-            window.handleJsClick();
-          }
-        },
-        afterInit: () => {
-          setTimeout(() => {
-            this.querySelector('.carousel__container').classList.remove('hide');
-            this.querySelector('.carousel-placeholders').classList.add('hide');
-          }, 1000);
-        }
-      },
-      modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
-    }, carouselSettings));
-    this.swiper.on('activeIndexChange', current => {
-      var _this$querySelector3, _this$querySelectorAl;
-      (_this$querySelector3 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector3 === void 0 ? void 0 : _this$querySelector3.classList.remove('swiper-pagination-bullet-active');
-      (_this$querySelectorAl = this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _this$querySelectorAl === void 0 ? void 0 : _this$querySelectorAl.classList.add('swiper-pagination-bullet-active');
-    });
-  }
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomCarousel);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/shoptrade/Desktop/sns-health/js/components/custom-carousel.js: Unterminated template. (116:50)\n\n\u001b[0m \u001b[90m 114 |\u001b[39m \u001b[32m      </svg>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 115 |\u001b[39m \u001b[32m    </div>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 116 |\u001b[39m \u001b[32m     ${this.placeholders ? this.placeholders : ''}\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 117 |\u001b[39m \u001b[32m    this.container = this.querySelector('[data-swiper-container]');\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 118 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 119 |\u001b[39m \u001b[32m     const carouselSettings = this.getCarouselSettings();\u001b[39m\u001b[0m\n    at instantiate (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:63:32)\n    at constructor (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:358:12)\n    at JSXParserMixin.raise (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:3255:19)\n    at Object.unterminated (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:2266:20)\n    at readStringContents (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:1955:14)\n    at JSXParserMixin.readTemplateToken (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:3162:9)\n    at JSXParserMixin.readTemplateContinuation (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:3152:10)\n    at JSXParserMixin.parseTemplate (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:11639:12)\n    at JSXParserMixin.parseExprAtom (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:11194:21)\n    at JSXParserMixin.parseExprAtom (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:6974:20)\n    at JSXParserMixin.parseExprSubscripts (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10890:23)\n    at JSXParserMixin.parseUpdate (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10873:21)\n    at JSXParserMixin.parseMaybeUnary (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10849:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10687:61)\n    at JSXParserMixin.parseExprOps (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10692:23)\n    at JSXParserMixin.parseMaybeConditional (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10669:23)\n    at JSXParserMixin.parseMaybeAssign (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10630:21)\n    at JSXParserMixin.parseMaybeAssign (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10656:25)\n    at JSXParserMixin.parseExpressionBase (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10584:23)\n    at /Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10580:39\n    at JSXParserMixin.allowInAnd (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:12275:16)\n    at JSXParserMixin.parseExpression (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:10580:17)\n    at JSXParserMixin.parseStatementContent (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:12733:23)\n    at JSXParserMixin.parseStatementLike (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:12584:17)\n    at JSXParserMixin.parseStatementListItem (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:12564:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13185:61)\n    at JSXParserMixin.parseBlockBody (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13178:10)\n    at JSXParserMixin.parseBlock (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13166:10)\n    at JSXParserMixin.parseFunctionBody (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:11947:24)\n    at JSXParserMixin.parseFunctionBodyAndFinish (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:11933:10)\n    at JSXParserMixin.parseMethod (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:11891:31)\n    at JSXParserMixin.pushClassMethod (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13619:30)\n    at JSXParserMixin.parseClassMemberWithIsStatic (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13491:12)\n    at JSXParserMixin.parseClassMember (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13435:10)\n    at /Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13385:14\n    at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:12257:14)\n    at JSXParserMixin.parseClassBody (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13365:10)\n    at JSXParserMixin.parseClass (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13343:22)\n    at JSXParserMixin.parseStatementContent (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:12613:21)\n    at JSXParserMixin.parseStatementLike (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:12584:17)\n    at JSXParserMixin.parseModuleItem (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:12561:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13185:36)\n    at JSXParserMixin.parseBlockBody (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:13178:10)\n    at JSXParserMixin.parseProgram (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:12460:10)\n    at JSXParserMixin.parseTopLevel (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:12450:25)\n    at JSXParserMixin.parse (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:14345:10)\n    at parse (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/parser/lib/index.js:14386:38)\n    at parser (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/core/lib/parser/index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/shoptrade/Desktop/sns-health/node_modules/@babel/core/lib/transformation/normalize-file.js:64:38)");
 
 /***/ }),
 
@@ -220,6 +48,7 @@ class CustomCarousel extends HTMLElement {
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -246,6 +75,7 @@ class CustomCarousel extends HTMLElement {
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -310,6 +140,7 @@ class CustomCarousel extends HTMLElement {
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -329,6 +160,7 @@ class ProductCard extends HTMLElement {
   \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -349,6 +181,7 @@ class ProductCard extends HTMLElement {
   \*******************************/
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lazysizes */ "./node_modules/lazysizes/lazysizes.js");
 /* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var lazysizes_plugins_object_fit_ls_object_fit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lazysizes/plugins/object-fit/ls.object-fit */ "./node_modules/lazysizes/plugins/object-fit/ls.object-fit.js");
