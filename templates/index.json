@@ -118,7 +118,8 @@
         "97b8315b-a781-48e9-b970-88142d35a5d6": {
           "type": "category",
           "settings": {
-            "eyebrow": "",
+            "icon": "shopify:\/\/shop_images\/Union_2.svg",
+            "eyebrow": "Protein Powder",
             "url": ""
           }
         },
