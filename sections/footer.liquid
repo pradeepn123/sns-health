@@ -84,6 +84,26 @@
               <div class="footer__image-text-content">
                 {{ block.settings.content }}
               </div>
+              <div class="footer__location footer__location--mobile">
+                <h2 class="footer__location-title">LOCATION</h2>
+                <div class="footer__location-icon-text">
+                  <div class="footer__location-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12" fill="none">
+                      <path d="M1 1.5V0H13V1.5H1ZM1 12V7.5H0.25V6L1 2.25H13L13.75 6V7.5H13V12H11.5V7.5H8.5V12H1ZM2.5 10.5H7V7.5H2.5V10.5ZM1.7875 6H12.2125L11.7625 3.75H2.2375L1.7875 6Z" fill="#ED1C24"/>
+                    </svg>
+                  </div>               
+                  <div class="footer__location-text">{{block.settings.location}}</div>
+                </div>
+                <div class="footer__location-icon-text">
+                  <div class="footer__location-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                      <path d="M3.84125 12.25L0.5 14.875V1C0.5 0.801088 0.579018 0.610322 0.71967 0.46967C0.860322 0.329018 1.05109 0.25 1.25 0.25H14.75C14.9489 0.25 15.1397 0.329018 15.2803 0.46967C15.421 0.610322 15.5 0.801088 15.5 1V11.5C15.5 11.6989 15.421 11.8897 15.2803 12.0303C15.1397 12.171 14.9489 12.25 14.75 12.25H3.84125ZM3.32225 10.75H14V1.75H2V11.7887L3.32225 10.75ZM7.25 5.5H8.75V7H7.25V5.5ZM4.25 5.5H5.75V7H4.25V5.5ZM10.25 5.5H11.75V7H10.25V5.5Z" fill="#ED1C24"/>
+                    </svg>
+                  </div>
+
+                  <div class="footer__location-text">{{block.settings.contact}}</div>
+                </div>
+              </div>
             </div>
         {% endcase %}
       {% endfor %}
@@ -134,7 +154,7 @@
                         <path d="M9.6525 11.9125L7.7475 10.03L7.77 10.0075C9.075 8.55248 10.005 6.87999 10.5525 5.10999H12.75V3.60999H7.5V2.10999H6V3.60999H0.75V5.10249H9.1275C8.625 6.54998 7.83 7.92249 6.75 9.12249C6.0525 8.34999 5.475 7.50249 5.0175 6.60999H3.5175C4.065 7.83249 4.815 8.98749 5.7525 10.03L1.935 13.795L3 14.86L6.75 11.11L9.0825 13.4425L9.6525 11.9125ZM13.875 8.10999H12.375L9 17.11H10.5L11.34 14.86H14.9025L15.75 17.11H17.25L13.875 8.10999ZM11.91 13.36L13.125 10.1125L14.34 13.36H11.91Z" fill="black"/>
                       </svg>
                       {{- form.current_locale.endonym_name | capitalize -}}
-                      {%- render 'icon', icon: 'arrow-bottom' -%}
+                      <span class="arrow-button">{%- render 'icon', icon: 'arrow-bottom' -%}</span>
                     </button>
 
                     <div
@@ -208,7 +228,7 @@
                       </svg>
                       {{ form.current_currency.iso_code }}
                       {% if form.current_currency.symbol %}{{ form.current_currency.symbol }}{% endif %}
-                      {%- render 'icon', icon: 'arrow-bottom' -%}
+                      <span class="arrow-button">{%- render 'icon', icon: 'arrow-bottom' -%}</span>
                     </button>
 
                     <div

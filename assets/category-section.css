@@ -77,3 +77,6 @@
   margin-top: -10px;
   margin-bottom: -10px;
 }
+.category-section .swiper-navigation {
+  top: 55%;
+}

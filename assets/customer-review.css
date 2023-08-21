@@ -4,22 +4,23 @@
 .customer-reviews {
   margin-top: var(--section-margin);
   padding: var(--section-padding) 0 0;
-}
-@media (min-width: 1024px) {
-  .customer-reviews {
-    background: #f5f5f5;
-    max-width: calc(100% - 2 * var(--base-margin));
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media (min-width: 1024px) and (min-width: 1440px) {
-  .customer-reviews {
-    max-width: calc(1440px - 2 * var(--base-margin));
-  }
+  background: #f5f5f5;
 }
 .customer-reviews .section__heading-wrapper {
   margin-bottom: 0;
+}
+@media (min-width: 1024px) {
+  .customer-reviews customer-reviews {
+    max-width: calc(100% - 2 * var(--base-margin));
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+@media (min-width: 1024px) and (min-width: 1440px) {
+  .customer-reviews customer-reviews {
+    max-width: calc(1440px - 2 * var(--base-margin));
+  }
 }
 
 @media (min-width: 768px) {
@@ -76,26 +77,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-}
-@media (min-width: 1024px) {
-  .customer-review__container .customer-review__wrapper .review_carousel .review_container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
 }
 .customer-review__container .customer-review__wrapper .review_carousel .review_container .review_image {
-  width: 100%;
-}
-@media (min-width: 1024px) {
-  .customer-review__container .customer-review__wrapper .review_carousel .review_container .review_image {
-    width: 30%;
-  }
+  width: 30%;
 }
 .customer-review__container .customer-review__wrapper .review_carousel .review_container .review_content {
   display: -webkit-box;
@@ -106,15 +90,8 @@
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 5px;
-  margin-bottom: 15px;
-  width: 100%;
-}
-@media (min-width: 1024px) {
-  .customer-review__container .customer-review__wrapper .review_carousel .review_container .review_content {
-    margin-bottom: 0;
-    margin-left: 14px;
-    width: 70%;
-  }
+  width: 70%;
+  margin-left: 14px;
 }
 .customer-review__container .customer-review__wrapper .review_carousel .review_container .review_content .rating {
   display: -webkit-box;

@@ -151,3 +151,6 @@
   margin-top: -10px;
   margin-bottom: -10px;
 }
+.blog-post-section .swiper-navigation {
+  top: 55%;
+}
