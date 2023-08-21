@@ -46,7 +46,11 @@
 
         &:hover {
             background: colors.$red !important;
-        }
+        }   
+    }
+
+    .arrow-icon{
+        display: none;
     }
 
     .text-image__text-wrapper {
@@ -67,9 +71,9 @@
     :--content {
         &:hover{
             cursor: pointer;
-            #{$block}__cta.button {
-                background: colors.$red !important;
-            }
+            // #{$block}__cta.button {
+            //     background: colors.$red !important;
+            // }
         }
     }
 

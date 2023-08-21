@@ -15,7 +15,9 @@
     }
 
     &__content {
-        @include mixins.grid(3,90px,196px);
+        @media(--md){
+            @include mixins.grid(3,90px,196px);
+        }
     }
 
     img {
@@ -79,7 +81,7 @@
     &--desktop {
         display: none;
 
-        @media (--sm) {
+        @media (--md) {
             display: block;
         }
     }
@@ -87,7 +89,7 @@
     &--mobile {
         display: block;
 
-        @media(--sm) {
+        @media(--md) {
             display: none;
         }
     }

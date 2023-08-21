@@ -40,6 +40,9 @@
 .banner-grid__cta.button:hover {
   background: #ED1C24 !important;
 }
+.banner-grid .arrow-icon {
+  display: none;
+}
 .banner-grid .text-image__text-wrapper {
   width: 100%;
   height: auto;
@@ -64,9 +67,6 @@
 }
 .banner-grid .banner-grid-content__text-image:hover {
   cursor: pointer;
-}
-.banner-grid .banner-grid-content__text-image:hover .banner-grid__cta.button {
-  background: #ED1C24 !important;
 }
 .banner-grid .swiper-initialized {
   padding-left: var(--base-margin);
