@@ -238,17 +238,17 @@
           "type": "diet",
           "settings": {
             "text_color": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": ""
+            "subheading": "Vegan",
+            "cta_text": "Shop Now",
+            "cta_url": "shopify:\/\/collections\/vegan"
           }
         },
         "4602cba5-e3c3-48c2-a76e-74335b24f3e3": {
           "type": "diet",
           "settings": {
             "text_color": "",
-            "subheading": "",
-            "cta_text": "",
+            "subheading": "Non-GMO",
+            "cta_text": "Shop Now",
             "cta_url": ""
           }
         }
