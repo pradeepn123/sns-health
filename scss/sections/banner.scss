@@ -16,6 +16,9 @@
 
     &__content {
         @media(--md){
+            @include mixins.grid(3,90px,150px);
+        }
+        @media(--md-large){
             @include mixins.grid(3,90px,196px);
         }
     }
