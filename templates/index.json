@@ -355,8 +355,9 @@
         "400cc6db-2697-45a8-8e0d-94ff816c798a": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Vector_6.svg",
+            "eyebrow": "Digestive Health",
+            "url": "shopify:\/\/collections\/digestivehealth"
           }
         },
         "6af96376-942e-4fb4-a452-a92719e17980": {
