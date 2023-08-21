@@ -1369,6 +1369,30 @@ function create_each_block_2(ctx) {
 	};
 }
 
+// (114:6) {:else}
+function create_else_block(ctx) {
+	let div5;
+
+	return {
+		c() {
+			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div5.innerHTML = `<div class="placeholder"></div> <div class="placeholder"></div> <div class="placeholder"></div> <div class="placeholder"></div> <div class="placeholder"></div>`;
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", "carousel-placeholders");
+		},
+		m(target, anchor) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div5, anchor);
+		},
+		p: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
+		i: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
+		o: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
+		d(detaching) {
+			if (detaching) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div5);
+			}
+		}
+	};
+}
+
 // (80:6) {#if productData.length && !isLoading}
 function create_if_block(ctx) {
 	let custom_carousel;
@@ -1575,42 +1599,56 @@ function create_each_block_1(ctx) {
 
 // (79:4) {#key productData}
 function create_key_block(ctx) {
+	let current_block_type_index;
+	let if_block;
 	let if_block_anchor;
 	let current;
-	let if_block = /*productData*/ ctx[0].length && !/*isLoading*/ ctx[1] && create_if_block(ctx);
+	const if_block_creators = [create_if_block, create_else_block];
+	const if_blocks = [];
+
+	function select_block_type(ctx, dirty) {
+		if (/*productData*/ ctx[0].length && !/*isLoading*/ ctx[1]) return 0;
+		return 1;
+	}
+
+	current_block_type_index = select_block_type(ctx, -1);
+	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
 	return {
 		c() {
-			if (if_block) if_block.c();
+			if_block.c();
 			if_block_anchor = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.empty)();
 		},
 		m(target, anchor) {
-			if (if_block) if_block.m(target, anchor);
+			if_blocks[current_block_type_index].m(target, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, if_block_anchor, anchor);
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*productData*/ ctx[0].length && !/*isLoading*/ ctx[1]) {
-				if (if_block) {
-					if_block.p(ctx, dirty);
+			let previous_block_index = current_block_type_index;
+			current_block_type_index = select_block_type(ctx, dirty);
 
-					if (dirty & /*productData, isLoading*/ 3) {
-						(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block, 1);
-					}
-				} else {
-					if_block = create_if_block(ctx);
-					if_block.c();
-					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block, 1);
-					if_block.m(if_block_anchor.parentNode, if_block_anchor);
-				}
-			} else if (if_block) {
+			if (current_block_type_index === previous_block_index) {
+				if_blocks[current_block_type_index].p(ctx, dirty);
+			} else {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.group_outros)();
 
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(if_block, 1, 1, () => {
-					if_block = null;
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_out)(if_blocks[previous_block_index], 1, 1, () => {
+					if_blocks[previous_block_index] = null;
 				});
 
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.check_outros)();
+				if_block = if_blocks[current_block_type_index];
+
+				if (!if_block) {
+					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+					if_block.c();
+				} else {
+					if_block.p(ctx, dirty);
+				}
+
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block, 1);
+				if_block.m(if_block_anchor.parentNode, if_block_anchor);
 			}
 		},
 		i(local) {
@@ -1627,12 +1665,12 @@ function create_key_block(ctx) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(if_block_anchor);
 			}
 
-			if (if_block) if_block.d(detaching);
+			if_blocks[current_block_type_index].d(detaching);
 		}
 	};
 }
 
-// (124:4) {#each productData as product, index}
+// (132:4) {#each productData as product, index}
 function create_each_block(ctx) {
 	let productcard;
 	let current;
