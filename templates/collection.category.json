@@ -96,6 +96,7 @@
         "1c17000b-725e-43a0-9ecd-25ead8a16940"
       ],
       "settings": {
+        "mobile_carousel": true
       }
     },
     "d11d382c-8951-47c2-a6cd-ca238efd7dac": {
@@ -173,7 +174,8 @@
         "c40e2fb9-7998-490b-86ad-3de1deaaecf1"
       ],
       "settings": {
-        "heading": "Featured Products"
+        "heading": "Featured Products",
+        "mobile_carousel": true
       }
     },
     "4d89401b-332c-4ecb-9c2e-37615234ab7d": {
@@ -211,7 +213,8 @@
         "b098653e-eebb-4002-aa1c-780a24395bf4"
       ],
       "settings": {
-        "heading": "Recommended for you"
+        "heading": "Recommended for you",
+        "mobile_carousel": true
       }
     },
     "7a0d2423-3835-49cd-87bf-aa13d0fda0c5": {
@@ -240,8 +243,8 @@
             "image_mobile": "{{ block.repeater.image_mobile.value }}",
             "image_span_desktop": "{{ block.repeater.image_span_desktop.value }}",
             "image_span_mobile": "{{ block.repeater.image_span_mobile.value }}",
-            "heading": "{{ block.repeater.subheading.value }}",
-            "subheading": "{{ block.repeater.heading.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "subheading": "{{ block.repeater.subheading.value }}",
             "font-color": "{{ block.repeater.font_color.value }}",
             "cta_text": "{{ block.repeater.cta_text.value }}",
             "cta_url": "{{ block.repeater.cta_url.value }}"
