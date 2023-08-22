@@ -3,19 +3,19 @@
     "main": {
       "type": "Banner",
       "blocks": {
-        "5984eb08-08b3-47e4-be13-5da21dbca50c": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/mob-banner-healnco.jpg",
-            "cta_url": "shopify:\/\/collections"
-          }
-        },
         "ed3ae549-9da0-4852-a64a-a2b2d379e7d7": {
           "type": "image_with_text_overlay",
           "settings": {
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/mob-banner-augustsale.jpg",
+            "cta_url": "shopify:\/\/collections"
+          }
+        },
+        "5984eb08-08b3-47e4-be13-5da21dbca50c": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "is_carousel_content": false,
+            "image_desktop": "shopify:\/\/shop_images\/mob-banner-healnco.jpg",
             "cta_url": "shopify:\/\/collections"
           }
         },
@@ -38,8 +38,8 @@
         }
       },
       "block_order": [
-        "5984eb08-08b3-47e4-be13-5da21dbca50c",
         "ed3ae549-9da0-4852-a64a-a2b2d379e7d7",
+        "5984eb08-08b3-47e4-be13-5da21dbca50c",
         "eca00394-6765-4bb7-87eb-c0fa056b30ba",
         "56205fb4-b0ed-4e35-baaa-742afc2a67b9"
       ],
