@@ -81,10 +81,7 @@
           "settings": {
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/pc-interactive-buckedup.jpg",
-<<<<<<< HEAD
-=======
             "image_mobile": "shopify:\/\/shop_images\/mob-interactive-buckedup_1.jpg",
->>>>>>> bcf88b1 (homepage minor bug fixes)
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
