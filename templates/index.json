@@ -378,14 +378,6 @@
             "eyebrow": "Stress Management",
             "url": "shopify:\/\/collections\/stress-management"
           }
-        },
-        "7af9c59e-e0b7-4922-9532-e786756df230": {
-          "type": "health_condition",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Personal_Care.svg",
-            "eyebrow": "Personal care",
-            "url": "#"
-          }
         }
       },
       "block_order": [
@@ -400,8 +392,7 @@
         "5417db1e-8893-43af-b7e1-a6bfbd6a868c",
         "400cc6db-2697-45a8-8e0d-94ff816c798a",
         "6af96376-942e-4fb4-a452-a92719e17980",
-        "d6ade0c7-545f-4179-b534-e3d67a9964cb",
-        "7af9c59e-e0b7-4922-9532-e786756df230"
+        "d6ade0c7-545f-4179-b534-e3d67a9964cb"
       ],
       "settings": {
         "heading": "Shop By Health Condition"
