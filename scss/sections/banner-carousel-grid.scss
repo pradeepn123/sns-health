@@ -9,7 +9,7 @@
 @custom-selector :--text-container .text-wrapper.banner-carousel-grid__text-wrapper;
 @custom-selector :--subheading-grid-item  .banner-carousel-grid__subheading.text__subheading;
 @custom-selector :--cta-grid-item  .banner-carousel-grid__cta.text__cta;
-@custom-selector :--text-wrap .banner-carousel-grid-content__text-wrapper;
+@custom-selector :--text-wrap .sidebar-banner__text-wrapper;
 
 
 .banner-carousel-grid {
@@ -53,7 +53,7 @@
       top: unset;
       bottom: 28px;
       transform: none;
-      
+
       @media(--md) {
           bottom: 45px
       }

@@ -7,6 +7,7 @@
 @custom-selector :--heading .banner__heading.text__heading;
 @custom-selector :--subheading .banner__subheading.text__subheading;
 @custom-selector :--mobile-image .image--mobile.banner-content__image;
+@custom-selector :--image .banner__item__image-wrapper;
 
 .banner {
     @media (--sm) {
@@ -19,7 +20,7 @@
             @include mixins.grid(3,90px,150px);
         }
         @media(--md-large){
-            @include mixins.grid(3,90px,196px);
+            @include mixins.grid(3,90px,222px);
         }
     }
 
@@ -99,5 +100,11 @@
 
     :--mobile-image .responsive-image__image {
         border-radius: 0;
+    }
+
+    :--image{
+        img{
+            object-fit: cover;
+        }
     }
 }

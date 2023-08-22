@@ -53,6 +53,7 @@
           "settings": {
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/pc-interactive-perfectsports.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/mob-interactive-perfectsports_1.jpg",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
@@ -72,7 +73,7 @@
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": ""
+            "cta_url": "shopify:\/\/collections"
           }
         },
         "39f323ed-5c6e-44c6-98f3-ad8f74d25b4d": {
@@ -80,6 +81,10 @@
           "settings": {
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/pc-interactive-buckedup.jpg",
+<<<<<<< HEAD
+=======
+            "image_mobile": "shopify:\/\/shop_images\/mob-interactive-buckedup_1.jpg",
+>>>>>>> bcf88b1 (homepage minor bug fixes)
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
@@ -563,7 +568,7 @@
             "heading": "Latest Offers",
             "inline_heading": false,
             "subheading": "Discover the Latest Deals on <br> Quality Supplements",
-            "cta_text": "Shop",
+            "cta_text": "Shop All",
             "cta_url": "#"
           }
         },
@@ -576,8 +581,8 @@
             "image_mobile": "shopify:\/\/shop_images\/MatteMarble1.5-Front.png",
             "eyebrow": "",
             "inline_heading": false,
-            "heading": "Get <br> 20% OFF",
-            "subheading": "Yoga Accessories",
+            "heading": "Get <br> 15% OFF",
+            "subheading": "Sunscreen",
             "cta_text": "Shop",
             "cta_url": "shopify:\/\/collections"
           }
@@ -625,7 +630,7 @@
         "heading": "Your health is not one size fits all",
         "content": "<p>SNS Health exists to redefine personal health. We act as an invitation to play—but let you play by your own rules.<\/p><p>And like all types of play, we aim to have a little fun along the way. <\/p><p>We encourage you to set your own goals based on what’s right for you, and support you on your journey to achieving personal health— whatever that looks like.<\/p>",
         "cta_text": "Check out our mission",
-        "cta_url": "#"
+        "cta_url": "shopify:\/\/pages\/personal-health-is-not-one-size-fits-all"
       }
     },
     "b1b4c397-b6ac-40e6-bddb-72cef284566b": {

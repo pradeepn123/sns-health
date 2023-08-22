@@ -7,12 +7,13 @@
 @custom-selector :--wrapper .customer-review__wrapper;
 
 .customer-reviews {
-    margin-top: var(--section-margin);
+    margin-top: var(--base-margin);
     padding: var(--section-padding) 0 0;
     background: colors.$gray-400;
 
     .section__heading-wrapper {
         margin-bottom: 0;
+        padding-top: 30px;
     }
 
     customer-reviews {
@@ -120,7 +121,7 @@
             .reviews_header {
                 display: flex;
                 flex-direction: column;
-                padding: 10px 0;
+                // padding: 10px 0;
 
                 .section-title {
                     font-size: $heading-1-size;
@@ -140,9 +141,9 @@
        
         top: -35px;
 
-        @media(--sm) {
-            top: -45px;
-        }
+        // @media(--sm) {
+        //     top: -45px;
+        // }
 
         svg {
             path {

@@ -32,9 +32,9 @@
       column-gap: 14px;
     }
 
-    @media(--md-large) {
-      justify-content: space-between;
-    }
+    // @media(--md-large) {
+    //   justify-content: space-between;
+    // }
     
     row-gap: var(--grid-row-gap);
     &--desktop {

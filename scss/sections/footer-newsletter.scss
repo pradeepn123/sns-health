@@ -50,7 +50,7 @@
 
     &__text {
         @include use-text-style('body-regular');
-        font-weight: typography.$semi-weight;
+        font-weight: typography.$medium-weight;
         margin-bottom: 10px;
     }
 

@@ -43,13 +43,6 @@
             column-gap: 14px;
   }
 }
-@media (min-width: 1200px) {
-  .health-condition-section__content {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
 .health-condition-section__content--desktop {
   display: none;
 }

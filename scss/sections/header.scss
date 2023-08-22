@@ -586,6 +586,17 @@
                 color: currentColor;
             }
         }
+
+        .arrow-bottom-top{
+            display: flex;
+            justify-content: center;
+        }
+
+        &[aria-expanded="true"] {
+            .arrow-bottom-top svg{
+                transform: rotate(180deg);
+            }
+        }
     }
 
     &__linklist {
