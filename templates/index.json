@@ -92,6 +92,7 @@
         },
         "63960a00-b789-4d66-b763-da15673e4478": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/grid-image.png",
