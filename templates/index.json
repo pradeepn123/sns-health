@@ -23,7 +23,7 @@
           "type": "image_with_text_overlay",
           "settings": {
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/mob-banner-jamieson.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/mob-banner-jamieson_1.jpg",
             "cta_url": "shopify:\/\/collections"
           }
         },
