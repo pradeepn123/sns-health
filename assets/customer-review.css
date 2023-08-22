@@ -2,13 +2,12 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/customer-review.scss ***!
   \*******************************************************************************************************************************************************************************************************************************/
 .customer-reviews {
-  margin-top: var(--base-margin);
+  margin-top: var(--section-margin);
   padding: var(--section-padding) 0 0;
   background: #f5f5f5;
 }
 .customer-reviews .section__heading-wrapper {
   margin-bottom: 0;
-  padding-top: 30px;
 }
 @media (min-width: 1024px) {
   .customer-reviews customer-reviews {
@@ -136,6 +135,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding: 10px 0;
   }
   .customer-review__container .customer-review__wrapper .reviews_header .section-title {
     font-size: 32px;
@@ -154,6 +154,11 @@
 }
 .customer-review__container .swiper-navigation {
   top: -35px;
+}
+@media (min-width: 768px) {
+  .customer-review__container .swiper-navigation {
+    top: -45px;
+  }
 }
 .customer-review__container .swiper-navigation svg path {
   stroke: black !important;
