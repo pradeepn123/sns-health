@@ -143,6 +143,9 @@
     margin-top: 0;
   }
 }
+.banner-carousel-grid .banner-carousel-grid-content__text-wrapper {
+  cursor: pointer;
+}
 .banner-carousel-grid .text-image__text-wrapper.sidebar-banner-content__text-wrapper {
   top: auto;
   top: initial;
