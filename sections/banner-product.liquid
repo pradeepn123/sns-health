@@ -34,7 +34,7 @@
                     text_wrapper_class: 'sidebar-banner',
                     inline_heading: inline_heading,
                     mobile_aspect_ratio: 1.16
-                    desktop_aspect_ratio: 2
+                    desktop_aspect_ratio: 1.15
                     desktop_crop: true
                     mobile_crop: true,
                     button_type: button_type,
@@ -85,8 +85,12 @@
                     </custom-carousel>
                       </div>
                       <div class="banner-product__products-content  banner-product__products-content--mobile {% if mobile_carousel %}banner-product__products-content--hide{% endif %}">
-                        {% for product in collection.products limit: 4 %} 
+                        {% assign limit  = 4 %}
+                        {% assign count = 0 %}
+                        {% for product in collection.products %} 
+                        {% if count >= limit %} {% break %} {% endif %}
                         {% if product.available %}  
+                        {% assign count = count | plus: 1 %}
                           {% render 'custom-product-card', product: product %}
                       {% endif %}
                         {% endfor %}

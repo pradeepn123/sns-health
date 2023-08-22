@@ -480,7 +480,7 @@
                   <a href="{{ link.url }}" class="nav-bar__link link nav-bar__link--nested {% if is_special_item %} nav-bar__link--special {% endif %}" data-type="menuitem" aria-expanded="false" aria-controls="{{ index }}" aria-haspopup="true">
                     {%- render 'icon', icon: 'desktop-hamburger' -%} 
                     {{- link.title -}}
-                    <span class="arrow-bottom-top">{%- render 'icon', icon: 'arrow-bottom' -%} </span>
+                    {%- render 'icon', icon: 'arrow-bottom' -%}
                   </a>
                   {% assign special_nav_item = section.settings.special_nav_item %}
                   {%- render 'desktop-menu', menu: link, index: index -%}
