@@ -614,6 +614,24 @@
         "mobile_carousel": true
       }
     },
+    "169278817168ac6906": {
+      "type": "apps",
+      "blocks": {
+        "4b356d62-7172-47ca-95fe-7fc78c51448e": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "n38q9rjyb28rr"
+          }
+        }
+      },
+      "block_order": [
+        "4b356d62-7172-47ca-95fe-7fc78c51448e"
+      ],
+      "settings": {
+        "heading": "Follow along @snsnutritionsource",
+        "url": ""
+      }
+    },
     "4aa52242-6a1d-45f5-863a-eb800312ea2c": {
       "type": "blog-post",
       "settings": {
@@ -653,6 +671,7 @@
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
     "fb95bcfd-aa24-42a8-92cf-b94fa307f70d",
+    "169278817168ac6906",
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
     "b1b4c397-b6ac-40e6-bddb-72cef284566b"

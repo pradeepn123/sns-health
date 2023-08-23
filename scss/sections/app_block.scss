@@ -1,0 +1,15 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/colors';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/sidebar-banner';
+
+.app_block{
+    background: colors.$gray-400;
+    .app{
+        @include mixins.container;
+        margin-top: var(--section-margin);
+        padding: var(--section-padding) 0;
+    }
+}

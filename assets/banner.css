@@ -47,7 +47,7 @@
 }
 @media (min-width: 1200px) and (min-width: 1024px) {
   .banner__content {
-    grid-auto-rows: minmax(196px, auto);
+    grid-auto-rows: minmax(222px, auto);
   }
 }
 .banner img {
@@ -131,4 +131,8 @@
 }
 .banner .image--mobile.banner-content__image .responsive-image__image {
   border-radius: 0;
+}
+.banner .banner__item__image-wrapper img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }

@@ -103,7 +103,7 @@
 }
 .category-collection-grid .category-collection-grid__item__text-wrapper.text-image__text-wrapper {
   top: 23%;
-  padding-left: 25PX;
+  padding-left: 18PX;
 }
 @media (min-width: 1024px) {
   .category-collection-grid .category-collection-grid__item__text-wrapper.text-image__text-wrapper {
