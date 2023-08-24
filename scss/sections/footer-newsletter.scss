@@ -130,4 +130,11 @@
             }
         }
     }
+
+    .alert--success {
+        background: colors.$white;
+        color: colors.$red;
+        border-radius: 10px;
+        font-weight: typography.$medium-weight;
+    }
 }

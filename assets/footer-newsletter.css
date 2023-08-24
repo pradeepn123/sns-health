@@ -183,3 +183,9 @@
     min-width: 255px;
   }
 }
+.footer-newsletter .alert--success {
+  background: #fff;
+  color: #ED1C24;
+  border-radius: 10px;
+  font-weight: 500;
+}
