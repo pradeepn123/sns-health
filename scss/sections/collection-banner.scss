@@ -36,7 +36,7 @@
     }
 
     &__text-wrapper {
-        max-width: 61%;
+        max-width: 50%;
         @media(--xs){
             max-width: 48%;
         }
@@ -70,8 +70,12 @@
     }
 
     :--subheading {
-        @include use-text-style('body-regular');
+        @include use-text-style('body-small');
         font-weight: typography.$regular-weight;
+        @media(--xs){
+            @include use-text-style('body-regular');
+            font-weight: typography.$regular-weight;
+        }
         @media (--sm){
             @include use-text-style('body-title');
         }

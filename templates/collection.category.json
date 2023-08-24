@@ -116,7 +116,8 @@
         "d855ab07-54a9-4d7a-98a8-1422e03c9623"
       ],
       "settings": {
-        "heading": "Shop By Family Health"
+        "heading": "Shop By Family Health",
+        "show_carousel": true
       }
     },
     "fa56ec1c-336d-4207-8ee5-afb07871d216": {
@@ -136,7 +137,8 @@
         "42f35daa-78bc-4be2-99dc-8d2f6c4006c8"
       ],
       "settings": {
-        "heading": "Shop By Health Condition"
+        "heading": "Shop By Health Condition",
+        "show_carousel": false
       }
     },
     "f1909b2c-b24e-4044-b170-e57b14d2b722": {
@@ -258,6 +260,13 @@
       "settings": {
       }
     },
+    "9ea728ac-a1cf-477e-8f6b-a9fb319d43ac": {
+      "type": "customer-review",
+      "settings": {
+        "section_heading": "Customer Reviews",
+        "collection_id": ""
+      }
+    },
     "333be3ce-5bf5-4a5b-984e-98116e03a72e": {
       "type": "banner-featured-products",
       "blocks": {
@@ -266,7 +275,7 @@
           "settings": {
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/Group_7791.png",
-            "image_mobile": "shopify:\/\/shop_images\/Frame_8360.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_8360_2.png",
             "eyebrow": "Popular in",
             "heading": "Superfoods",
             "inline_heading": false,
@@ -338,6 +347,13 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "23b87dc9-f589-4450-93db-c6892bbe59ff": {
+      "type": "footer-newsletter",
+      "settings": {
+        "title": "Get 10% Off Your First Order",
+        "subheading": "<p>Subscribe to our newsletter and get 10% off. Plus, be the first to find out about new products and sales from SNS Health.<\/p>"
+      }
     }
   },
   "order": [
@@ -353,9 +369,11 @@
     "4d89401b-332c-4ecb-9c2e-37615234ab7d",
     "3af0aaa2-14cc-4a5e-8504-f066a0f54533",
     "7a0d2423-3835-49cd-87bf-aa13d0fda0c5",
+    "9ea728ac-a1cf-477e-8f6b-a9fb319d43ac",
     "333be3ce-5bf5-4a5b-984e-98116e03a72e",
     "c06c2ac2-8a0a-4934-a3e8-9034e4ec8551",
     "398fa20a-99f7-4200-ac45-f9ca3cd7d4b9",
-    "1691994536cf5133e2"
+    "1691994536cf5133e2",
+    "23b87dc9-f589-4450-93db-c6892bbe59ff"
   ]
 }

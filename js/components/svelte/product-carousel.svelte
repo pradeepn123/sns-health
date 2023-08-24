@@ -86,6 +86,9 @@
               {/if}
             {/each}
           </div>
+          <div class="carousel-placeholders">
+            <div class="lds-ring"></div>
+          </div>
           <script type="text/json" data-settings>
       {
         "slidesPerView": 2,

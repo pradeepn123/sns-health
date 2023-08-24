@@ -29,7 +29,7 @@
      object-position: 74%;
 }
 .collection-banner__text-wrapper {
-  max-width: 61%;
+  max-width: 50%;
 }
 @media (min-width: 390px) {
   .collection-banner__text-wrapper {
@@ -87,10 +87,19 @@
 }
 .collection-banner .collection-banner__subheading.text__subheading {
   font-family: "poppins";
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 10px;
+  font-weight: 600;
   line-height: 1.2;
   font-weight: 400;
+}
+@media (min-width: 390px) {
+  .collection-banner .collection-banner__subheading.text__subheading {
+    font-family: "poppins";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.2;
+    font-weight: 400;
+  }
 }
 @media (min-width: 768px) {
   .collection-banner .collection-banner__subheading.text__subheading {

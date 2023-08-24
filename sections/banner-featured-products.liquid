@@ -1,12 +1,12 @@
 
 {{'banner-product.css' | asset_url | stylesheet_tag }}
 {{ 'banner-featured-products.css' | asset_url | stylesheet_tag }}
+{% if collection.products.size > 0 %}
 <div class="banner-product banner-featured-products product-card-wrapper">
     <div class="banner-product__content">
             {% for block in section.blocks %}
                 {% if block.type == "featured_products" %} 
                 <div class="banner-product__products-wrapper">
-                    {% assign collection = block.settings.collection %}
                       <div class="banner-product__products-content banner-product__products-content--desktop"> 
                       {% liquid 
                         assign id = block.id
@@ -35,21 +35,20 @@
                             image_mobile: image_mobile,
                             text_wrapper_class: 'sidebar-banner',
                             inline_heading: inline_heading,
-                            mobile_aspect_ratio: 1.16
-                            desktop_aspect_ratio: 1.15
-                            desktop_crop: true
+                            mobile_aspect_ratio: 1.16,
+                            desktop_aspect_ratio: 1.15,
+                            desktop_crop: true,
                             mobile_crop: true,
                             button_type: button_type,
                             button_background_type: button_background_type
                             %}
-                        {% for product in collection.products limit: 8 %} 
-                       {% if product.available %}     
-                        <div class="swiper-slide">
-                         {% render 'custom-product-card',
-                          product:product
-                         %}
-                        </div>
-                      {% endif %}
+                            
+                        {% for product in collection.products limit: 8 %}
+                              <div class="swiper-slide product_card">
+                                {% render 'custom-product-card',
+                                  product: product
+                                %}
+                              </div>
                         {% endfor %}
                       </div>
                       <div class="banner-product__products-content  banner-product__products-content--mobile">
@@ -98,8 +97,10 @@
               {% endfor %} 
     </div>
   </div>
+{% endif %}
 
-{% schema %}
+
+  {% schema %}
  {
    "name": "banner-featured-products",
    "settings": [],
@@ -108,11 +109,6 @@
       "type": "featured_products",
       "name": "Products",
       "settings": [
-        {
-          "type": "collection",
-          "id": "collection",
-          "label": "Collection"
-        },
         {
             "type": "header",
             "content": "Featured collection banner"

@@ -10,6 +10,7 @@
     max-width: calc(100% - 2 * var(--base-margin));
     margin-left: auto;
     margin-right: auto;
+    margin-top: 49px;
   }
 }
 @media (min-width: 1024px) and (min-width: 1440px) {

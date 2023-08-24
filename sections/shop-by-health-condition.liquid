@@ -2,73 +2,126 @@
 <div class="health-condition-section">
     {% render 'section-heading', heading: section.settings.heading %}
     <div class="health-condition-section__wrapper">
-         <div class="health-condition-section__content health-condition-section__content--desktop "> 
-               {% for block in section.blocks %} 
-               {% liquid 
-                 assign id = block.id
-                 assign eyebrow = block.settings.eyebrow
-                 assign icon = block.settings.icon
-                 assign url = block.settings.url
-               %}
-               {% render 'icon-text', 
-                     wrapper_class: 'health-condition-section',
-                     id: id,
-                     eyebrow: eyebrow,
-                     icon: icon,
-                     cta_url: url
+      {% if section.blocks.size <= 5 or section.settings.show_carousel == false %}
+            <div class="health-condition-section__content health-condition-section__content--desktop "> 
+                  {% for block in section.blocks %} 
+                  {% liquid 
+                    assign id = block.id
+                    assign eyebrow = block.settings.eyebrow
+                    assign icon = block.settings.icon
+                    assign url = block.settings.url
                   %}
-               {% endfor %}
-         </div>
-         <div class="health-condition-section__content health-condition-section__content--mobile "> 
-         <custom-carousel>
-          <div class="custom-carousel__content hide" data-carousel-content>
-         {% for block in section.blocks %} 
-         {% liquid 
-           assign id = block.id
-           assign eyebrow = block.settings.eyebrow
-           assign icon = block.settings.icon
-           assign icon_hover = block.settings.icon_hover
-           assign url = block.settings.url
-         %}
-  
-         {% render 'icon-text', 
-               wrapper_class: 'health-condition-section',
-               id: id,
-               eyebrow: eyebrow,
-               icon: icon,
-               icon_hover: icon_hover,
-               is_slider: true,
-               cta_url: url
-            %}
-         {% endfor %}
-        </div>
-         <script type="text/json" data-settings>
-             {
-               "slidesPerView": 3.01,
-               "spaceBetween": 10,
-               "overflowNagivation": true,
-               "progressPagination": true,
-               "pagination": true,
-               "breakpoints": {
-                "320": {
-                  "pagination": true,
-                  "slidesPerView": 2.5,
-                  "spaceBetween": 10
-                },
-                "390": {
-                  "pagination": true,
-                  "slidesPerView": 3,
-                  "spaceBetween": 10
-                },
-                "1024": {
-                   "pagination": true,
-                   "slidesPerView": 3.5,
-                   "spaceBetween": 20
-                 }
-               }
-             }
-           </script>
-     </custom-carousel>
+                  {% render 'icon-text', 
+                        wrapper_class: 'health-condition-section',
+                        id: id,
+                        eyebrow: eyebrow,
+                        icon: icon,
+                        cta_url: url
+                      %}
+                  {% endfor %}
+            </div>
+      {% else %}
+              <custom-carousel>
+                <div class="custom-carousel__content hide" data-carousel-content>
+                    {% for block in section.blocks %} 
+                      {% liquid 
+                        assign id = block.id
+                        assign eyebrow = block.settings.eyebrow
+                        assign icon = block.settings.icon
+                        assign icon_hover = block.settings.icon_hover
+                        assign url = block.settings.url
+                      %}
+              
+                      {% render 'icon-text', 
+                        wrapper_class: 'health-condition-section',
+                        id: id,
+                        eyebrow: eyebrow,
+                        icon: icon,
+                        icon_hover: icon_hover,
+                        is_slider: true,
+                        cta_url: url
+                      %}
+                    {% endfor %}
+                </div>
+                    <script type="text/json" data-settings>
+                        {
+                          "slidesPerView": 3.01,
+                          "spaceBetween": 10,
+                          "overflowNagivation": true,
+                          "progressPagination": true,
+                          "pagination": true,
+                          "breakpoints": {
+                            "320": {
+                              "pagination": true,
+                              "slidesPerView": 2.5,
+                              "spaceBetween": 10
+                            },
+                            "390": {
+                              "pagination": true,
+                              "slidesPerView": 3,
+                              "spaceBetween": 10
+                            },
+                            "1024": {
+                              "pagination": true,
+                              "slidesPerView": 5.5,
+                              "spaceBetween": 20,
+                              "mousewheel": true
+                            }
+                          }
+                        }
+                    </script>
+              </custom-carousel>
+        {% endif %}
+        <div class="health-condition-section__content health-condition-section__content--mobile "> 
+        <custom-carousel>
+            <div class="custom-carousel__content hide" data-carousel-content>
+                {% for block in section.blocks %} 
+                  {% liquid 
+                    assign id = block.id
+                    assign eyebrow = block.settings.eyebrow
+                    assign icon = block.settings.icon
+                    assign icon_hover = block.settings.icon_hover
+                    assign url = block.settings.url
+                  %}
+          
+                  {% render 'icon-text', 
+                      wrapper_class: 'health-condition-section',
+                      id: id,
+                      eyebrow: eyebrow,
+                      icon: icon,
+                      icon_hover: icon_hover,
+                      is_slider: true,
+                      cta_url: url
+                    %}
+                {% endfor %}
+            </div>
+            <script type="text/json" data-settings>
+                  {
+                    "slidesPerView": 3.01,
+                    "spaceBetween": 10,
+                    "overflowNagivation": true,
+                    "progressPagination": true,
+                    "pagination": true,
+                    "breakpoints": {
+                      "320": {
+                        "pagination": true,
+                        "slidesPerView": 2.5,
+                        "spaceBetween": 10
+                      },
+                      "390": {
+                        "pagination": true,
+                        "slidesPerView": 3,
+                        "spaceBetween": 10
+                      },
+                      "1024": {
+                        "pagination": true,
+                        "slidesPerView": 3.5,
+                        "spaceBetween": 20
+                      }
+                    }
+                  }
+                </script>
+        </custom-carousel>
    </div>
  </div>
 </div>
@@ -83,6 +136,12 @@
        "type": "text",
        "id": "heading",
        "label": "Section Heading"
+     },
+     {
+      "type": "checkbox",
+      "id": "show_carousel",
+      "label": "Show as carousel",
+      "default": false 
      }
    ],
    "blocks": [

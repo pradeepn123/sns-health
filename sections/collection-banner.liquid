@@ -1,4 +1,5 @@
 {{ 'collection-banner.css' | asset_url | stylesheet_tag }}
+
 <script src="{{ 'common.js' | asset_url }}" defer></script>
 
 {% style %}
@@ -16,7 +17,7 @@
         assign id = block.id
         assign color = block.settings['font-color']
         assign heading = collection.title
-        assign subheading = collection.description | truncate: 106
+        assign subheading = collection.description | truncate: 106 
         assign image_desktop = collection.featured_image
         assign background = block.settings['background-color']
         assign inline_heading = block.settings.inline_heading

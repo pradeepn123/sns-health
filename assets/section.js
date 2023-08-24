@@ -1369,7 +1369,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (114:6) {:else}
+// (117:6) {:else}
 function create_else_block(ctx) {
 	let div5;
 
@@ -1396,8 +1396,10 @@ function create_else_block(ctx) {
 // (80:6) {#if productData.length && !isLoading}
 function create_if_block(ctx) {
 	let custom_carousel;
-	let div;
+	let div0;
 	let t0;
+	let div2;
+	let t1;
 	let script;
 	let current;
 	let each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
@@ -1414,31 +1416,37 @@ function create_if_block(ctx) {
 	return {
 		c() {
 			custom_carousel = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("custom-carousel");
-			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div2.innerHTML = `<div class="lds-ring"></div>`;
+			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			script = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("script");
 			script.textContent = "{\n        \"slidesPerView\": 2,\n        \"spaceBetween\": 10,\n      \"overflowNagivation\": true,\n        \"progressPagination\": true,\n        \"pagination\": true,\n        \"navigation\": false,\n        \"breakpoints\": {\n          \"768\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 3,\n            \"spaceBetween\": 27.5\n          },\n         \"1024\": {\n            \"pagination\": false,\n            \"navigation\": true,\n            \"slidesPerView\": 5,\n            \"spaceBetween\": 27.5\n          }\n        }\n      }";
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "custom-carousel__content hide");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "data-carousel-content", "");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", "custom-carousel__content hide");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "data-carousel-content", "");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "carousel-placeholders");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "type", "text/json");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(script, "data-settings", "");
 		},
 		m(target, anchor) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, custom_carousel, anchor);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div0);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
-					each_blocks[i].m(div, null);
+					each_blocks[i].m(div0, null);
 				}
 			}
 
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t0);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div2);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t1);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, script);
 			current = true;
 		},
@@ -1457,7 +1465,7 @@ function create_if_block(ctx) {
 						each_blocks[i] = create_each_block_1(child_ctx);
 						each_blocks[i].c();
 						(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(each_blocks[i], 1);
-						each_blocks[i].m(div, null);
+						each_blocks[i].m(div0, null);
 					}
 				}
 
@@ -1670,7 +1678,7 @@ function create_key_block(ctx) {
 	};
 }
 
-// (132:4) {#each productData as product, index}
+// (135:4) {#each productData as product, index}
 function create_each_block(ctx) {
 	let productcard;
 	let current;

@@ -21,7 +21,7 @@
         grid-column: span 2;
         product-card{
             .product-card{
-                justify-content: unset !important;
+                justify-content: space-around !important;
                 .product-card__header-tags .product-card__discount{
                     background: colors.$black;
                     font-size: $body-regular-size;
@@ -50,6 +50,20 @@
             @include mixins.grid(5,250, 250, 250,250);
             grid-auto-rows: minmax(460px, auto);
         }
+        :--text-wrapper{
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-25%);
+            .sidebar-banner__eyebrow{
+                font-size: $body-regular-size;
+            }
+            .sidebar-banner__heading{
+                font-size: $heading-3-size;
+            }
+            .sidebar-banner__cta{
+                font-size: $body-alt-size;
+            }
+        }
     }
 
     &__products-content--mobile {
@@ -60,10 +74,10 @@
         .sidebar-banner-content__text-image{
             display: grid;
             grid-column: span 2;
-
             :--text-wrapper{
-                top: 20px !important;
+                top: 50%;
                 bottom: 0;
+                transform: translateY(-25%);
                 .sidebar-banner__eyebrow{
                     font-size: $body-regular-size;
                 }

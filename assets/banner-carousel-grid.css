@@ -98,7 +98,7 @@
   }
 }
 .banner-carousel-grid__content {
-  padding: var(--section-padding) 0 0;
+  padding: 50px 0 0;
 }
 @media (min-width: 768px) {
   .banner-carousel-grid__content {
