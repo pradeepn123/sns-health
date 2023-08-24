@@ -2,7 +2,7 @@
 
 <div class="app_block">
   <div class="app">
-    {% render 'section-heading', heading: section.settings.heading , url: section.settings.url %}
+    {% render 'section-heading', heading: section.settings.heading %}
     {% for block in section.blocks %}
       {% render block %}
     {% endfor %}
@@ -13,14 +13,9 @@
       "name": "App wrapper",
       "settings": [
         {
-          "type": "text",
+          "type": "richtext",
           "id": "heading",
           "label": "Heading"
-        },
-        {
-          "type": "url",
-          "id": "url",
-          "label": "URL"
         }
       ],
       "blocks": [
