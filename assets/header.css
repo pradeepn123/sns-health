@@ -840,3 +840,7 @@ body.no-mobile-scroll .uwy {
 .header-margin-scroll {
   margin-bottom: 0;
 }
+
+.container .button {
+  color: #fff;
+}

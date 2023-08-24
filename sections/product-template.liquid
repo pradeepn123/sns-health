@@ -288,14 +288,7 @@
                 </div>
                 <div class="card__section">
                   <ul class="reviews">
-                      {% if product.metafields.yotpo.reviews_count and product.metafields.yotpo.reviews_count != "0" %}
-                        <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-                        <span itemprop="itemReviewed">{{ product.title }}</span>
-                        has a rating of <span itemprop="ratingValue">{{ product.metafields.yotpo.reviews_average }}</span> stars
-                        based on <span itemprop="ratingCount">{{ product.metafields.yotpo.reviews_count }}</span> reviews.
-                        </div>
-                      {% endif %} 
-                <div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>                  
+                    {% render 'okendo-reviews-widget', product: product %}                
                   </ul>
                 </div>
               </div>
