@@ -12,6 +12,7 @@
 
     &__heading {
       @include use-text-style('heading-3');
+      line-height: 1.4;
       @media(--md) {
         @include use-text-style('heading-1');
       }
