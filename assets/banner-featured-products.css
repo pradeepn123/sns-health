@@ -142,6 +142,7 @@
 @media (min-width: 768px) {
   .banner-product__products-content--desktop {
     display: block;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     grid-auto-rows: minmax(250, auto);

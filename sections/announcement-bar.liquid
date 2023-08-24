@@ -53,7 +53,7 @@
                           </svg>
                         <span class="hide-desktop">En</span>
                         <span class="hide-mobile">{{- form.current_locale.endonym_name | capitalize -}}</span>
-                        {%- render 'icon', icon: 'arrow-bottom' -%}
+                        {%- render 'icon', icon: 'arrow-bottom', class: 'arrow-rotate' -%}
                       </button>
   
                       <div id="announcement-bar-locale-picker" class="value-picker value-picker--small" data-picker-position="top" aria-hidden="true">
@@ -90,7 +90,7 @@
                           </svg>
                           <span class="hide-desktop">$</span>
                           <span class="hide-mobile">{{ form.current_currency.iso_code }} {% if form.current_currency.symbol %}{{ form.current_currency.symbol }}{% endif %}</span>
-                        {%- render 'icon', icon: 'arrow-bottom' -%}
+                        {%- render 'icon', icon: 'arrow-bottom', class: 'arrow-rotate' -%}
                       </button>
   
                       <div id="announcement-bar-currency-picker" class="value-picker value-picker--auto value-picker--small" data-picker-position="top" aria-hidden="true">

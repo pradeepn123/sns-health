@@ -1,9 +1,10 @@
 <script>
   import ReviewCard from "SvelteComponents/review-card.svelte";
-  import { getReviewData } from "JsComponents/get-data";
+  import { getReviewData, getReviewDataAggregate } from "JsComponents/get-data";
   import { onMount } from "svelte";
   export let shopifyData;
   let avarageReviewCount = 0;
+  let reviewCountAgg = 0;
   let curatedReviewData = [];
   let reviews = [];
   const { id = "" } = shopifyData || {}; //return if id doesnt exist 
@@ -52,8 +53,8 @@
 
   onMount(async () => {
     reviews = await getReviewData(id);
+    reviewCountAgg = await getReviewDataAggregate();
     curatedReviewData = curateReviewData(reviews.reviews);
-    console.log("curatedReviewData", curatedReviewData); //remove all consoles
     averageReviews(curatedReviewData);
   });
 </script>
@@ -70,7 +71,7 @@
             {/each}
             </div>
             <div class="total_reviews-text">
-            {curatedReviewData.length} Reviews
+            {reviewCountAgg} Reviews
             </div>
           </div>
         </div>

@@ -47,7 +47,7 @@
                 display: flex;
            }
            &[aria-expanded="true"] {
-            .arrow-rotate svg , .arrow--rotate svg{
+            .arrow-rotate, .arrow--rotate{
                 transform: rotate(180deg);
             }
         }

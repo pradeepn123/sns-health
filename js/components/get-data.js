@@ -36,3 +36,14 @@ export const getReviewData = async (id) => {
     const reviewData = await data.json();
     return reviewData;
 }
+
+export const getReviewDataAggregate = async () => {
+
+    const url =  new URL(`https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/review_aggregate`);
+   
+  
+    const data = await fetch(url);
+    const reviewDataAgg = await data.json();
+    const reviewAggCount = reviewDataAgg.reviewAggregate;
+    return reviewAggCount.reviewCount;
+}

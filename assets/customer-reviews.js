@@ -9,7 +9,8 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getReviewData: () => (/* binding */ getReviewData)
+/* harmony export */   getReviewData: () => (/* binding */ getReviewData),
+/* harmony export */   getReviewDataAggregate: () => (/* binding */ getReviewDataAggregate)
 /* harmony export */ });
 /* unused harmony exports customerLocation, getProductData */
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
@@ -74,6 +75,18 @@ var getReviewData = /*#__PURE__*/function () {
   });
   return function getReviewData(_x2) {
     return _ref4.apply(this, arguments);
+  };
+}();
+var getReviewDataAggregate = /*#__PURE__*/function () {
+  var _ref5 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* () {
+    var url = new URL("https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/review_aggregate");
+    var data = yield fetch(url);
+    var reviewDataAgg = yield data.json();
+    var reviewAggCount = reviewDataAgg.reviewAggregate;
+    return reviewAggCount.reviewCount;
+  });
+  return function getReviewDataAggregate() {
+    return _ref5.apply(this, arguments);
   };
 }();
 
@@ -158,18 +171,18 @@ var getReviewData = /*#__PURE__*/function () {
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[8] = list[i];
+	child_ctx[9] = list[i];
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[11] = list[i];
-	child_ctx[13] = i;
+	child_ctx[12] = list[i];
+	child_ctx[14] = i;
 	return child_ctx;
 }
 
-// (61:0) {#if curatedReviewData.length}
+// (62:0) {#if curatedReviewData.length}
 function create_if_block(ctx) {
 	let div8;
 	let div7;
@@ -181,7 +194,6 @@ function create_if_block(ctx) {
 	let each0_lookup = new Map();
 	let t0;
 	let div1;
-	let t1_value = /*curatedReviewData*/ ctx[1].length + "";
 	let t1;
 	let t2;
 	let t3;
@@ -191,8 +203,8 @@ function create_if_block(ctx) {
 	let t4;
 	let script;
 	let current;
-	let each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*getStars*/ ctx[2](/*avarageReviewCount*/ ctx[0]));
-	const get_key = ctx => /*index*/ ctx[13];
+	let each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*getStars*/ ctx[3](/*avarageReviewCount*/ ctx[0]));
+	const get_key = ctx => /*index*/ ctx[14];
 
 	for (let i = 0; i < each_value_1.length; i += 1) {
 		let child_ctx = get_each_context_1(ctx, each_value_1, i);
@@ -200,7 +212,7 @@ function create_if_block(ctx) {
 		each0_lookup.set(key, each_blocks_1[i] = create_each_block_1(key, child_ctx));
 	}
 
-	let each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*curatedReviewData*/ ctx[1]);
+	let each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*curatedReviewData*/ ctx[2]);
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
@@ -226,7 +238,7 @@ function create_if_block(ctx) {
 
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t1_value);
+			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*reviewCountAgg*/ ctx[1]);
 			t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(" Reviews");
 			t3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
@@ -287,15 +299,15 @@ function create_if_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (dirty & /*getStars, avarageReviewCount*/ 5) {
-				each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*getStars*/ ctx[2](/*avarageReviewCount*/ ctx[0]));
+			if (dirty & /*getStars, avarageReviewCount*/ 9) {
+				each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*getStars*/ ctx[3](/*avarageReviewCount*/ ctx[0]));
 				each_blocks_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.update_keyed_each)(each_blocks_1, dirty, get_key, 1, ctx, each_value_1, each0_lookup, div0, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_block, create_each_block_1, null, get_each_context_1);
 			}
 
-			if ((!current || dirty & /*curatedReviewData*/ 2) && t1_value !== (t1_value = /*curatedReviewData*/ ctx[1].length + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, t1_value);
+			if (!current || dirty & /*reviewCountAgg*/ 2) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, /*reviewCountAgg*/ ctx[1]);
 
-			if (dirty & /*curatedReviewData, getStars*/ 6) {
-				each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*curatedReviewData*/ ctx[1]);
+			if (dirty & /*curatedReviewData, getStars*/ 12) {
+				each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*curatedReviewData*/ ctx[2]);
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
@@ -353,11 +365,11 @@ function create_if_block(ctx) {
 	};
 }
 
-// (68:12) {#each getStars(avarageReviewCount) as star, index (index)}
+// (69:12) {#each getStars(avarageReviewCount) as star, index (index)}
 function create_each_block_1(key_1, ctx) {
 	let first;
 	let html_tag;
-	let raw_value = /*star*/ ctx[11] + "";
+	let raw_value = /*star*/ ctx[12] + "";
 	let html_anchor;
 
 	return {
@@ -377,7 +389,7 @@ function create_each_block_1(key_1, ctx) {
 		},
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
-			if (dirty & /*avarageReviewCount*/ 1 && raw_value !== (raw_value = /*star*/ ctx[11] + "")) html_tag.p(raw_value);
+			if (dirty & /*avarageReviewCount*/ 1 && raw_value !== (raw_value = /*star*/ ctx[12] + "")) html_tag.p(raw_value);
 		},
 		d(detaching) {
 			if (detaching) {
@@ -389,7 +401,7 @@ function create_each_block_1(key_1, ctx) {
 	};
 }
 
-// (80:12) {#each curatedReviewData as review}
+// (81:12) {#each curatedReviewData as review}
 function create_each_block(ctx) {
 	let div;
 	let reviewcard;
@@ -397,8 +409,8 @@ function create_each_block(ctx) {
 
 	reviewcard = new SvelteComponents_review_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
 			props: {
-				review: /*review*/ ctx[8],
-				getStars: /*getStars*/ ctx[2]
+				review: /*review*/ ctx[9],
+				getStars: /*getStars*/ ctx[3]
 			}
 		});
 
@@ -415,7 +427,7 @@ function create_each_block(ctx) {
 		},
 		p(ctx, dirty) {
 			const reviewcard_changes = {};
-			if (dirty & /*curatedReviewData*/ 2) reviewcard_changes.review = /*review*/ ctx[8];
+			if (dirty & /*curatedReviewData*/ 4) reviewcard_changes.review = /*review*/ ctx[9];
 			reviewcard.$set(reviewcard_changes);
 		},
 		i(local) {
@@ -440,7 +452,7 @@ function create_each_block(ctx) {
 function create_fragment(ctx) {
 	let if_block_anchor;
 	let current;
-	let if_block = /*curatedReviewData*/ ctx[1].length && create_if_block(ctx);
+	let if_block = /*curatedReviewData*/ ctx[2].length && create_if_block(ctx);
 
 	return {
 		c() {
@@ -453,11 +465,11 @@ function create_fragment(ctx) {
 			current = true;
 		},
 		p(ctx, [dirty]) {
-			if (/*curatedReviewData*/ ctx[1].length) {
+			if (/*curatedReviewData*/ ctx[2].length) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 
-					if (dirty & /*curatedReviewData*/ 2) {
+					if (dirty & /*curatedReviewData*/ 4) {
 						(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block, 1);
 					}
 				} else {
@@ -500,6 +512,7 @@ const totalRatings = 5;
 function instance($$self, $$props, $$invalidate) {
 	let { shopifyData } = $$props;
 	let avarageReviewCount = 0;
+	let reviewCountAgg = 0;
 	let curatedReviewData = [];
 	let reviews = [];
 	const { id = "" } = shopifyData || {}; //return if id doesnt exist 
@@ -550,26 +563,26 @@ function instance($$self, $$props, $$invalidate) {
 
 	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(async () => {
 		reviews = await (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__.getReviewData)(id);
-		$$invalidate(1, curatedReviewData = curateReviewData(reviews.reviews));
-		console.log("curatedReviewData", curatedReviewData); //remove all consoles
+		$$invalidate(1, reviewCountAgg = await (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__.getReviewDataAggregate)());
+		$$invalidate(2, curatedReviewData = curateReviewData(reviews.reviews));
 		averageReviews(curatedReviewData);
 	});
 
 	$$self.$$set = $$props => {
-		if ('shopifyData' in $$props) $$invalidate(3, shopifyData = $$props.shopifyData);
+		if ('shopifyData' in $$props) $$invalidate(4, shopifyData = $$props.shopifyData);
 	};
 
-	return [avarageReviewCount, curatedReviewData, getStars, shopifyData];
+	return [avarageReviewCount, reviewCountAgg, curatedReviewData, getStars, shopifyData];
 }
 
 class Customer_reviews extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 3 });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 4 });
 	}
 
 	get shopifyData() {
-		return this.$$.ctx[3];
+		return this.$$.ctx[4];
 	}
 
 	set shopifyData(shopifyData) {

@@ -42,6 +42,7 @@
         display: none;
         @media(--sm) {
             display: block;
+            height: 100%;
             @include mixins.grid(5,250, 250, 250,250);
             grid-auto-rows: minmax(300px, auto);
         }
