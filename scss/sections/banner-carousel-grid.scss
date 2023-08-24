@@ -12,6 +12,7 @@
 @custom-selector :--text-wrap .sidebar-banner__text-wrapper;
 
 
+
 .banner-carousel-grid {
     max-width: none;
   @media(--sm){
@@ -91,5 +92,16 @@
           display: block;
         }
       }
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    &__cta {
+      max-width: max-content;
     }
 } 
