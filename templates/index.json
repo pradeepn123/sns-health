@@ -74,7 +74,7 @@
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": ""
+            "cta_url": "shopify:\/\/collections\/bucked-up"
           }
         },
         "39f323ed-5c6e-44c6-98f3-ad8f74d25b4d": {
@@ -395,7 +395,8 @@
         "d6ade0c7-545f-4179-b534-e3d67a9964cb"
       ],
       "settings": {
-        "heading": "Shop By Health Condition"
+        "heading": "Shop By Health Condition",
+        "show_carousel": false
       }
     },
     "932e9d3c-0311-4a00-af68-f2426cae7d02": {
