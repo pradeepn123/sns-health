@@ -585,11 +585,27 @@
             "cta_text": "Shop",
             "cta_url": "https:\/\/snshealth.com\/collections\/sunscreen"
           }
+        },
+        "9066e929-3a9c-404b-835a-797166835a14": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "",
+            "background_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/grid-image.png",
+            "image_mobile": "shopify:\/\/shop_images\/MatteMarble1.5-Front.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Up to 60% OFF",
+            "subheading": "Himalaya Collection",
+            "cta_text": "Shop",
+            "cta_url": "https:\/\/snshealth.com\/collections\/himalaya"
+          }
         }
       },
       "block_order": [
         "b100cd87-92eb-4868-b580-3b584ac8f527",
-        "9f264aba-de45-4d65-b645-670ea4d270f6"
+        "9f264aba-de45-4d65-b645-670ea4d270f6",
+        "9066e929-3a9c-404b-835a-797166835a14"
       ],
       "settings": {
         "mobile_carousel": true
