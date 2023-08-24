@@ -51,7 +51,7 @@
     }
 
     :--text-wrapper {
-      top: unset;
+      top: unset; 
       bottom: 28px;
       transform: none;
 
@@ -99,6 +99,11 @@
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
+      padding-bottom: 10px;
+
+      @media(--sm) {
+        padding-bottom: 20px;
+      } 
     }
 
     &__cta {
