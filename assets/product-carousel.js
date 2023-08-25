@@ -1445,9 +1445,20 @@ function instance($$self, $$props, $$invalidate) {
 	let { srcTokens } = $$props;
 	let diff = max - min;
 	let generated_image_id = Date.now() / diff + min;
-	let image_id = image.id;
-	let max_height_image = image.height;
-	let max_width_image = image.width;
+	let displayImage = image;
+
+	if (!displayImage) {
+		displayImage = {
+			width: 1920,
+			height: 1080,
+			id: Date.now(),
+			src: 'https://cdn.shopify.com/s/files/1/0422/2255/1191/files/placeholderImage.webp?v=1692958737'
+		};
+	}
+
+	let image_id = displayImage.id;
+	let max_height_image = displayImage.height;
+	let max_width_image = displayImage.width;
 
 	const IMAGE_WIDTHS = [
 		180,
@@ -1484,10 +1495,10 @@ function instance($$self, $$props, $$invalidate) {
 		return imageWidths.join(',');
 	};
 
-	const imageWidth = getImageWidths(image.width);
+	const imageWidth = getImageWidths(displayImage.width);
 	const max_width_image_float = max_width_image * 1.0;
 	let urlTokens = srcTokens;
-	let uriEncodedSrc = `${encodeURI(image.src)}?width=300&height=300`;
+	let uriEncodedSrc = `${encodeURI(displayImage.src)}?width=300&height=300`;
 	let dataSrcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.dataSrcToken);
 	let srcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.srcToken);
 
