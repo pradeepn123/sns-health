@@ -81,8 +81,8 @@
           "type": "image_with_text_overlay",
           "settings": {
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/pc-interactive-buckedup.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/mob-interactive-buckedup_1.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/Owyn.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Owyn_-_mobile.webp",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
