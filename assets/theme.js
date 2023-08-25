@@ -2447,6 +2447,11 @@
           document.documentElement.classList.add('is-locked');
           this.domDelegate.on('click', this._clickOutsideListener);
           this.domDelegate.on('keyup', this._onKeyPressedListener);
+          setTimeout(() => {
+            const openModalEvent = document.createEvent("Event");
+            openModalEvent.initEvent("modal:open", true, true);
+            window.dispatchEvent(openModalEvent);
+          },1000);
           return false; // Prevent the event to be propagated to the clickOutsideListener immediately
         }
       }
@@ -13999,6 +14004,7 @@
               linkSearchResults.innerHTML = content;
               linkSearchResults.style.display = 'block';
             }
+
           });
         });
       }
@@ -14579,6 +14585,7 @@
           if (window.theme.searchMode !== 'product') {
             queries.push(fetch("".concat(window.routes.searchUrl, "?view=ajax&q=").concat(encodeURIComponent(this.lastInputValue), "&options[prefix]=last&type=").concat(window.theme.searchMode.replace('product,', '')), queryOptions));
           }
+          
 
           Promise.all(queries).then(function (responses) {
             // If we receive the result for a query that is not the last one, we simply do not process the result
@@ -14599,7 +14606,7 @@
               if (viewAll) {
                 searchContent.insertAdjacentElement('beforeend', viewAll);
               }
-
+  
               _this.searchBarElement.querySelector('.search-bar__results-inner').innerHTML = searchContent.innerHTML;
             });
           });

@@ -7,6 +7,7 @@ import 'lazysizes/plugins/respimg/ls.respimg';
 import Delegate from 'ftdomdelegate';
 import { collapsible } from "JsComponents/collapsible";
 import { register } from 'swiper/element/bundle';
+import checkRebuy from 'JsComponents/check-rebuy';
 lazysizes.cfg.loadMode = 1;
 
 import headerEvents from 'JsComponents/header';
@@ -20,21 +21,47 @@ document.addEventListener('DOMContentLoaded', () => {
   collapsible();
   register();
   window.handleJsClick = handleClick;
-  const btns =  document.querySelectorAll('[data-action="add-to-cart"]');
+})
 
-  const addDelegate = () => {
+document.addEventListener('DOMContentLoaded', () => {
+  const addFormDelegate = () => {
     const forms = document.querySelectorAll('[action="/cart/add"]');
-    Rebuy?.SmartCart?.unregisterEventListener();
     forms.forEach(form => {
       const formDelegate = new Delegate(form);
       formDelegate.on('submit', (ev) => {
         ev.preventDefault();
-        const productForm = Rebuy.util.serializeForm(form);
-         Rebuy.Cart.addItem(productForm);
       })
     })
   }
-  addDelegate();
-  window.addDelegate = addDelegate;
+
+  const addBtnDelegate = () => {
+    const forms = document.querySelectorAll('[action="/cart/add"]');
+    forms.forEach(form => {
+      const btn = form.querySelector('[type="submit"]');
+      const btnDelegate = new Delegate(btn);
+      btnDelegate.off();
+      btnDelegate.on('click', (ev) => {
+        ev.preventDefault();
+        const formEl = ev.target.closest('[action="/cart/add"]');
+        const productForm = Rebuy.util.serializeForm(formEl);
+        return Rebuy.Cart.addItem(productForm);
+      })
+    })
+  }
+  checkRebuy(addFormDelegate);
+  window.addFormDelegate = addFormDelegate;
+  window.addBtnDelegate = addBtnDelegate;
+})
+
+window.addEventListener('variant:changed', () => {
+  document.querySelectorAll('[data-action="add-to-cart"]').forEach(btn => {
+    btn.removeAttribute('data-action');
+  })
+  window.addFormDelegate();
+})
+
+window.addEventListener('modal:open', () => {
+  window.addFormDelegate();
+  window.addBtnDelegate();
 })
 
