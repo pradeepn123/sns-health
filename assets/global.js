@@ -357,11 +357,13 @@ class ProductCard extends HTMLElement {
 /* harmony import */ var lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lazysizes/plugins/respimg/ls.respimg */ "./node_modules/lazysizes/plugins/respimg/ls.respimg.js");
 /* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! JsComponents/collapsible */ "./js/components/collapsible.js");
-/* harmony import */ var swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/element/bundle */ "./node_modules/swiper/swiper-element-bundle.mjs");
-/* harmony import */ var JsComponents_header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! JsComponents/header */ "./js/components/header.js");
-/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
-/* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
+/* harmony import */ var ftdomdelegate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ftdomdelegate */ "./node_modules/ftdomdelegate/main.js");
+/* harmony import */ var JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! JsComponents/collapsible */ "./js/components/collapsible.js");
+/* harmony import */ var swiper_element_bundle__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper/element/bundle */ "./node_modules/swiper/swiper-element-bundle.mjs");
+/* harmony import */ var JsComponents_header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/header */ "./js/components/header.js");
+/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
+/* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
+
 
 
 
@@ -375,12 +377,28 @@ class ProductCard extends HTMLElement {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  (0,JsComponents_header__WEBPACK_IMPORTED_MODULE_7__["default"])();
-  (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_8__["default"])();
-  (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_9__["default"])();
-  (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_10__.collapsible)();
-  (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__.register)();
-  window.handleJsClick = JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_8__["default"];
+  (0,JsComponents_header__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_11__.collapsible)();
+  (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_7__.register)();
+  window.handleJsClick = JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_9__["default"];
+  var btns = document.querySelectorAll('[data-action="add-to-cart"]');
+  var addDelegate = () => {
+    var _Rebuy;
+    var forms = document.querySelectorAll('[action="/cart/add"]');
+    (_Rebuy = Rebuy) === null || _Rebuy === void 0 || (_Rebuy = _Rebuy.SmartCart) === null || _Rebuy === void 0 ? void 0 : _Rebuy.unregisterEventListener();
+    forms.forEach(form => {
+      var formDelegate = new ftdomdelegate__WEBPACK_IMPORTED_MODULE_6__["default"](form);
+      formDelegate.on('submit', ev => {
+        ev.preventDefault();
+        var productForm = Rebuy.util.serializeForm(form);
+        Rebuy.Cart.addItem(productForm);
+      });
+    });
+  };
+  addDelegate();
+  window.addDelegate = addDelegate;
 });
 
 /***/ })
