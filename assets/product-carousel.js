@@ -80,9 +80,9 @@ var getReviewDataAggregate = /*#__PURE__*/function () {
   var _ref5 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* () {
     var url = new URL("https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/review_aggregate");
     var data = yield fetch(url);
-    var reviewDataAgg = yield data.json();
-    var reviewAggCount = reviewDataAgg.reviewAggregate;
-    return reviewAggCount.reviewCount;
+    var aggregiateReviewData = yield data.json();
+    var reviewAggCount = aggregiateReviewData.reviewAggregate;
+    return reviewAggCount === null || reviewAggCount === void 0 ? void 0 : reviewAggCount.reviewCount;
   });
   return function getReviewDataAggregate() {
     return _ref5.apply(this, arguments);
