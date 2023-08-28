@@ -1,4 +1,4 @@
-console.log("----------------------------")
+
 export const collapsible = ()=> {
     document.querySelectorAll('[data-test]')?.forEach(triggerel  =>{
           triggerel.addEventListener("click", (ev)=>{

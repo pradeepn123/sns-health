@@ -4780,9 +4780,8 @@
 
         if (!queryElement) {
           if (console) {
-            console.error('Bad element for Flickity: ' + (queryElement || element));
+            console.log('Bad element for Flickity: ' + (queryElement || element));
           }
-
           return;
         }
 

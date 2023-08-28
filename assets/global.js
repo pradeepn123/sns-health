@@ -38,7 +38,6 @@
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   collapsible: () => (/* binding */ collapsible)
 /* harmony export */ });
-console.log("----------------------------");
 var collapsible = () => {
   var _document$querySelect;
   (_document$querySelect = document.querySelectorAll('[data-test]')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.forEach(triggerel => {

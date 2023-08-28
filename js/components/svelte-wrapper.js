@@ -8,7 +8,6 @@ export default (Component, container, propsEl) => {
 		let props = {};
 		if (appTarget) {
 			if (propsEl) {
-				console.log(appTarget.querySelector(propsEl)?.innerHTML);
 				props = JSON.parse(appTarget.querySelector(propsEl)?.innerHTML) || {}; //get json from the script id 
 			}
 			//inject component into container
