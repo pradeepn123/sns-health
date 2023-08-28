@@ -717,6 +717,7 @@
       "block_order": [
         "e7a85023-7c05-4d13-90a1-082ecdf9bce7"
       ],
+      "disabled": true,
       "settings": {
         "heading": ""
       }
