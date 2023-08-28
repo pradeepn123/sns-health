@@ -627,27 +627,8 @@
         "9066e929-3a9c-404b-835a-797166835a14",
         "7bab0a26-8d2b-497d-ab26-0e0e9c996828"
       ],
-      "settings": {
-        "mobile_carousel": true
-      }
-    },
-    "fb95bcfd-aa24-42a8-92cf-b94fa307f70d": {
-      "type": "product-carousel",
-      "blocks": {
-        "1bd5fa8b-9f28-4601-83d4-430d5cdb7c42": {
-          "type": "collection",
-          "settings": {
-            "collection_text": "Default",
-            "rule_id": "110176"
-          }
-        }
-      },
-      "block_order": [
-        "1bd5fa8b-9f28-4601-83d4-430d5cdb7c42"
-      ],
       "disabled": true,
       "settings": {
-        "heading": "New Arrivals",
         "mobile_carousel": true
       }
     },
@@ -735,7 +716,6 @@
     "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
-    "fb95bcfd-aa24-42a8-92cf-b94fa307f70d",
     "ed3c4144-6707-4fda-9a49-2f5e23ebeb69",
     "169278817168ac6906",
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
