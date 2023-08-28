@@ -1,6 +1,7 @@
 {{
   'banner.css' | asset_url | stylesheet_tag
 }}
+{% include 'liquid-variables' %}
 
 {% assign carousel_exist = false %}
 {% for block in section.blocks %} 
@@ -47,8 +48,8 @@
                   image_mobile: image_mobile,
                   text_wrapper_class: 'banner',
                   inline_heading: inline_heading,
-                  desktop_aspect_ratio: 2.18,
-                  mobile_aspect_ratio: 1.95,
+                  desktop_aspect_ratio: banner_desktop_aspect_ratio,
+                  mobile_aspect_ratio: banner_desktop_aspect_ratio,
                   fill: true
                   %}
                 </div>
@@ -108,8 +109,8 @@
             wrapper_class: 'banner__item',
             text_wrapper_class: 'banner',
             inline_heading: inline_heading,
-            desktop_aspect_ratio: 2.27,
-            mobile_aspect_ratio: 1.95,
+            desktop_aspect_ratio: 1.9,
+            mobile_aspect_ratio: 1.9,
             fill: true
             %}
         {% endunless %}
@@ -150,8 +151,8 @@
                   image_mobile: image_mobile,
                   text_wrapper_class: 'banner',
                   inline_heading: inline_heading,
-                  desktop_aspect_ratio: 2.27,
-                  mobile_aspect_ratio: 1.95,
+                  desktop_aspect_ratio: 1.9,
+                  mobile_aspect_ratio: 1.9,
                   fill: true
                   %}
                 </div>

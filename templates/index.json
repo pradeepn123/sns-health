@@ -7,7 +7,7 @@
           "type": "image_with_text_overlay",
           "settings": {
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/mob-banner-augustsale.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/august_sale.webp",
             "cta_url": "shopify:\/\/collections"
           }
         },
@@ -15,7 +15,7 @@
           "type": "image_with_text_overlay",
           "settings": {
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/mob-banner-healnco.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/heal_and_co.webp",
             "cta_url": "shopify:\/\/collections\/heal-co"
           }
         },
@@ -23,7 +23,7 @@
           "type": "image_with_text_overlay",
           "settings": {
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/banner-new_4338dc3f-c7b3-4801-8797-6cb8dd568ebc.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/jamieson.webp",
             "cta_url": "shopify:\/\/collections\/jamieson"
           }
         },
@@ -53,8 +53,8 @@
           "type": "image_with_text_overlay",
           "settings": {
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/pc-interactive-perfectsports.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/mob-interactive-perfectsports_1.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/perfect_sport.webp",
+            "image_mobile": "shopify:\/\/shop_images\/perfect_sport_-_mobile.webp",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
@@ -67,8 +67,8 @@
           "type": "image_with_text_overlay",
           "settings": {
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/pc-interactive-buckedup.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/mob-interactive-buckedup_1.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/bucked_up.webp",
+            "image_mobile": "shopify:\/\/shop_images\/bucked_up_-_mobile.webp",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
@@ -81,8 +81,8 @@
           "type": "image_with_text_overlay",
           "settings": {
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/pc-interactive-buckedup.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/mob-interactive-buckedup_1.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/Owyn_67f9335a-e8cb-4e7b-a834-36a0f30aae46.webp",
+            "image_mobile": "shopify:\/\/shop_images\/Owyn_-_mobile_841f4170-bad1-403f-b276-e7ea40658ab9.webp",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
