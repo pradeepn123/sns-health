@@ -82,9 +82,9 @@ var getReviewDataAggregate = /*#__PURE__*/function () {
   var _ref5 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* () {
     var url = new URL("https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/review_aggregate");
     var data = yield fetch(url);
-    var reviewDataAgg = yield data.json();
-    var reviewAggCount = reviewDataAgg.reviewAggregate;
-    return reviewAggCount.reviewCount;
+    var aggregiateReviewData = yield data.json();
+    var reviewAggCount = aggregiateReviewData.reviewAggregate;
+    return reviewAggCount === null || reviewAggCount === void 0 ? void 0 : reviewAggCount.reviewCount;
   });
   return function getReviewDataAggregate() {
     return _ref5.apply(this, arguments);
@@ -310,18 +310,18 @@ class AnnouncementBar extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svelt
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[9] = list[i];
+	child_ctx[10] = list[i];
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[12] = list[i];
-	child_ctx[14] = i;
+	child_ctx[13] = list[i];
+	child_ctx[15] = i;
 	return child_ctx;
 }
 
-// (62:0) {#if curatedReviewData.length}
+// (66:0) {#if curatedReviewData.length}
 function create_if_block(ctx) {
 	let div8;
 	let div7;
@@ -343,7 +343,7 @@ function create_if_block(ctx) {
 	let script;
 	let current;
 	let each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*getStars*/ ctx[3](/*avarageReviewCount*/ ctx[0]));
-	const get_key = ctx => /*index*/ ctx[14];
+	const get_key = ctx => /*index*/ ctx[15];
 
 	for (let i = 0; i < each_value_1.length; i += 1) {
 		let child_ctx = get_each_context_1(ctx, each_value_1, i);
@@ -377,7 +377,7 @@ function create_if_block(ctx) {
 
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*reviewCountAgg*/ ctx[1]);
+			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*totalReviewCount*/ ctx[1]);
 			t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(" Reviews");
 			t3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
@@ -443,7 +443,7 @@ function create_if_block(ctx) {
 				each_blocks_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.update_keyed_each)(each_blocks_1, dirty, get_key, 1, ctx, each_value_1, each0_lookup, div0, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_block, create_each_block_1, null, get_each_context_1);
 			}
 
-			if (!current || dirty & /*reviewCountAgg*/ 2) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, /*reviewCountAgg*/ ctx[1]);
+			if (!current || dirty & /*totalReviewCount*/ 2) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, /*totalReviewCount*/ ctx[1]);
 
 			if (dirty & /*curatedReviewData, getStars*/ 12) {
 				each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*curatedReviewData*/ ctx[2]);
@@ -504,11 +504,11 @@ function create_if_block(ctx) {
 	};
 }
 
-// (69:12) {#each getStars(avarageReviewCount) as star, index (index)}
+// (73:12) {#each getStars(avarageReviewCount) as star, index (index)}
 function create_each_block_1(key_1, ctx) {
 	let first;
 	let html_tag;
-	let raw_value = /*star*/ ctx[12] + "";
+	let raw_value = /*star*/ ctx[13] + "";
 	let html_anchor;
 
 	return {
@@ -528,7 +528,7 @@ function create_each_block_1(key_1, ctx) {
 		},
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
-			if (dirty & /*avarageReviewCount*/ 1 && raw_value !== (raw_value = /*star*/ ctx[12] + "")) html_tag.p(raw_value);
+			if (dirty & /*avarageReviewCount*/ 1 && raw_value !== (raw_value = /*star*/ ctx[13] + "")) html_tag.p(raw_value);
 		},
 		d(detaching) {
 			if (detaching) {
@@ -540,7 +540,7 @@ function create_each_block_1(key_1, ctx) {
 	};
 }
 
-// (81:12) {#each curatedReviewData as review}
+// (85:12) {#each curatedReviewData as review}
 function create_each_block(ctx) {
 	let div;
 	let reviewcard;
@@ -548,7 +548,7 @@ function create_each_block(ctx) {
 
 	reviewcard = new SvelteComponents_review_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
 			props: {
-				review: /*review*/ ctx[9],
+				review: /*review*/ ctx[10],
 				getStars: /*getStars*/ ctx[3]
 			}
 		});
@@ -566,7 +566,7 @@ function create_each_block(ctx) {
 		},
 		p(ctx, dirty) {
 			const reviewcard_changes = {};
-			if (dirty & /*curatedReviewData*/ 4) reviewcard_changes.review = /*review*/ ctx[9];
+			if (dirty & /*curatedReviewData*/ 4) reviewcard_changes.review = /*review*/ ctx[10];
 			reviewcard.$set(reviewcard_changes);
 		},
 		i(local) {
@@ -651,7 +651,7 @@ const totalRatings = 5;
 function instance($$self, $$props, $$invalidate) {
 	let { shopifyData } = $$props;
 	let avarageReviewCount = 0;
-	let reviewCountAgg = 0;
+	let totalReviewCount = 0;
 	let curatedReviewData = [];
 	let reviews = [];
 	const { id = "" } = shopifyData || {}; //return if id doesnt exist 
@@ -685,6 +685,10 @@ function instance($$self, $$props, $$invalidate) {
 		});
 	};
 
+	const curateReviewAggData = reviewCountAgg => {
+		return reviewCountAgg.reviewCount;
+	};
+
 	const averageReviews = reviews => {
 		const reviewsLength = reviews.length;
 
@@ -702,7 +706,8 @@ function instance($$self, $$props, $$invalidate) {
 
 	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(async () => {
 		reviews = await (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__.getReviewData)(id);
-		$$invalidate(1, reviewCountAgg = await (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__.getReviewDataAggregate)());
+		$$invalidate(1, totalReviewCount = await (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__.getReviewDataAggregate)());
+		console.log('.....', totalReviewCount);
 		$$invalidate(2, curatedReviewData = curateReviewData(reviews.reviews));
 		averageReviews(curatedReviewData);
 	});
@@ -711,7 +716,7 @@ function instance($$self, $$props, $$invalidate) {
 		if ('shopifyData' in $$props) $$invalidate(4, shopifyData = $$props.shopifyData);
 	};
 
-	return [avarageReviewCount, reviewCountAgg, curatedReviewData, getStars, shopifyData];
+	return [avarageReviewCount, totalReviewCount, curatedReviewData, getStars, shopifyData];
 }
 
 class Customer_reviews extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {

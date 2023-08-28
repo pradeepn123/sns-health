@@ -43,7 +43,7 @@ export const getReviewDataAggregate = async () => {
    
   
     const data = await fetch(url);
-    const reviewDataAgg = await data.json();
-    const reviewAggCount = reviewDataAgg.reviewAggregate;
-    return reviewAggCount.reviewCount;
+    const aggregiateReviewData = await data.json();
+    const reviewAggCount = aggregiateReviewData.reviewAggregate;
+    return reviewAggCount?.reviewCount;
 }

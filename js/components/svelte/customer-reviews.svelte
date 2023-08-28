@@ -4,7 +4,7 @@
   import { onMount } from "svelte";
   export let shopifyData;
   let avarageReviewCount = 0;
-  let reviewCountAgg = 0;
+  let totalReviewCount = 0;
   let curatedReviewData = [];
   let reviews = [];
   const { id = "" } = shopifyData || {}; //return if id doesnt exist 
@@ -40,6 +40,7 @@
     });
   };
 
+  
   const averageReviews = (reviews) => {
     const reviewsLength = reviews.length;
     const totalReviewsCount = reviews.reduce((currentCount, nextReview) => {
@@ -53,7 +54,7 @@
 
   onMount(async () => {
     reviews = await getReviewData(id);
-    reviewCountAgg = await getReviewDataAggregate();
+    totalReviewCount = await getReviewDataAggregate();
     curatedReviewData = curateReviewData(reviews.reviews);
     averageReviews(curatedReviewData);
   });
@@ -71,7 +72,7 @@
             {/each}
             </div>
             <div class="total_reviews-text">
-            {reviewCountAgg} Reviews
+            {totalReviewCount} Reviews
             </div>
           </div>
         </div>
