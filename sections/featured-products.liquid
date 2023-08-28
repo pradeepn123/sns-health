@@ -2,29 +2,36 @@
 <div class="featured-products">
   {% assign collection = section.settings.collection %}
     {% render 'section-heading', heading: section.settings.heading, url: collection.url %}
+  
     <div class="featured-products__wrapper product-card-wrapper">
-     
-            <div class="featured-products__content featured-products__content--desktop"> 
+         {% assign mobile_carousel = section.settings.mobile_carousel %} 
+            <div class="featured-products__content featured-products__content--desktop {% if mobile_carousel %}featured-products__content--show-mobile{% endif %}"> 
             <custom-carousel>
               <div class="custom-carousel__content hide" data-carousel-content>
               {% for product in collection.products %} 
               {% if product.available %}  
               <div class="swiper-slide">
                {% render 'custom-product-card',
-                product:product
+                product: product
                %}
               </div>
             {% endif %}
               {% endfor %}
             </div>
               <script type="text/json" data-settings>
-                  {
-                    "slidesPerView": 3.01,
-                    "spaceBetween": 10,
-                    "overflowNagivation": true,
-                    "progressPagination": true,
+                {
+                  "slidesPerView": 2,
+                  "spaceBetween": 10,
+                  "progressPagination": true,
+                  "overflowNagivation": true,
+                  "pagination": true,
+                  "breakpoints": {
+                   "768": {
                     "pagination": false,
-                    "breakpoints": {
+                    "navigation": true,
+                    "slidesPerView": 2.1,
+                    "spaceBetween": 20
+                   },
                      "1024": {
                         "pagination": false,
                         "navigation": true,
@@ -36,11 +43,15 @@
                 </script>
           </custom-carousel>
             </div>
-            <div class="featured-products__content featured-products__content--mobile">
-              {% for product in collection.products limit:6 %} 
+            <div class="featured-products__content featured-products__content--mobile {% if mobile_carousel %}featured-products__content--hide-mobile{% endif %}">
+              {% assign limit  = 4 %}
+              {% assign count = 0 %}
+              {% for product in collection.products %} 
+              {% if count >= limit %} {% break %} {% endif %}
               {% if product.available %}  
+              {% assign count = count | plus: 1 %}
                 {% render 'custom-product-card', product: product %}
-              {% endif %}
+            {% endif %}
               {% endfor %}
             </div>
     </div>
@@ -59,7 +70,13 @@
        "type": "collection",
        "id": "collection",
        "label": "Collection"
-     }
+     },
+     {
+      "type": "checkbox",
+      "id": "mobile_carousel",
+      "label": "Carousel on mobile ?",
+      "default": true
+    }
    ],
    "presets": [
     {

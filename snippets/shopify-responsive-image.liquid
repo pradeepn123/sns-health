@@ -23,7 +23,6 @@
 {%- assign default_image_url =  '300x' -%}
 {%- assign lazy_image_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 {%- assign noscript_image_url = image | img_url: '2048x2048' -%}
-
  {% assign image_aspect_ratio = aspect_ratio | default: image.aspect_ratio %}
 
 {% render 'responsive-image',
