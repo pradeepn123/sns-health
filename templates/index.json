@@ -569,7 +569,10 @@
             "inline_heading": false,
             "subheading": "Discover the Latest Deals on <br> Quality Supplements",
             "cta_text": "Shop All",
-            "cta_url": "#"
+            "cta_url": "#",
+            "max_height_desktop": "",
+            "max_height_mobile": "",
+            "text_position": "center center"
           }
         },
         "9f264aba-de45-4d65-b645-670ea4d270f6": {
@@ -688,6 +691,13 @@
         "title": "How's 10% off your first order sound?",
         "subheading": "<p>Sign up for our newsletter and get 10% off, plus info on our latest sales and promos. We promise: our emails are short, sweet, and totally unsubscribeable.<\/p>"
       }
+    },
+    "bceebb2f-0940-4ab1-b2f7-ef374cdaed87": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Featured Collection",
+        "collection": "all-products"
+      }
     }
   },
   "order": [
@@ -706,6 +716,7 @@
     "169278817168ac6906",
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
-    "b1b4c397-b6ac-40e6-bddb-72cef284566b"
+    "b1b4c397-b6ac-40e6-bddb-72cef284566b",
+    "bceebb2f-0940-4ab1-b2f7-ef374cdaed87"
   ]
 }
