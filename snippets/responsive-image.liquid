@@ -55,7 +55,7 @@
     {%- else -%}
       {%- assign max_width_image = image_width | at_most: max_width -%}
     {%- endif -%}
-    {%- assign max_height_image = max_width_image | divided_by: image_aspect_ratio | at_most: max_height -%}
+    {%- assign max_height_image = max_width_image | divided_by: image_aspect_ratio  -%}
   {%- endif -%}
 
   {%- assign max_width_image_float = max_width_image | times: 1.0  -%}
@@ -97,7 +97,7 @@
   #ImageWrapper-{{ image_id }}-{{ generated_image_id }} {
     position: relative;
     max-width: {{ max_width_image }}px;
-    max-height: {{ max_height_image }}px;
+    max-height: {{ max_height_image  | at_most: max_height }}px;
     height: 100%;
   }
 
@@ -125,6 +125,7 @@
   {{ image_width }}
 {%- endcapture -%}
 {%- assign image_widths = image_widths | strip_newlines -%}
+
 
 <div id="ImageWrapper-{{ image_id }}-{{ generated_image_id }}" data-image-id="{{ image_id }}" class="responsive-image__wrapper {{ wrapper_class }}" {{ wrapper_attributes }}>
   <img id="Image-{{ image_id }}-{{ generated_image_id }}"

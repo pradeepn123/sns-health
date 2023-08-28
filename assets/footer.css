@@ -144,6 +144,7 @@
 .footer__image-text-content p {
   max-width: 90%;
   margin-top: 10px;
+  line-height: 1.6;
 }
 @media (min-width: 768px) {
   .footer__image-text-content p {

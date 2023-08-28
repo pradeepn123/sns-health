@@ -31,6 +31,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 10px;
 }
 @media (min-width: 1024px) {
   .category-section .category-section__icon-text.icon-text {

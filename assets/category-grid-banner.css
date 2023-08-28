@@ -55,7 +55,7 @@
 }
 @media (min-width: 768px) {
   .category-grid-banner .text-image__text-wrapper {
-    top: 25%;
+    top: 100px;
   }
 }
 @media (min-width: 1024px) {
@@ -66,11 +66,11 @@
 }
 .category-grid-banner .category-grid-banner__heading.text__heading {
   font-family: "poppins";
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 1.2;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.4;
 }
 @media (min-width: 768px) {
   .category-grid-banner .category-grid-banner__heading.text__heading {

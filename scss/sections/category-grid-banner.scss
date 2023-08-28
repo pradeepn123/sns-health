@@ -42,7 +42,7 @@
         top: 22%;
         left: 0;
         @media (--sm){
-            top: 25%;
+            top: 100px;
         }
         @media (--md){
             left: 25px;
@@ -51,10 +51,9 @@
     }
 
     :--heading {
-       
-        @include use-text-style('body-alt');
+        @include use-text-style('body-title');
         font-weight: typography.$heading-weight;
-        line-height: 1;
+        line-height: 1.4;
         @media (--sm){
             @include use-text-style('heading-3');
         }

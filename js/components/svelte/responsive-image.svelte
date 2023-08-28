@@ -73,7 +73,6 @@ const getImageStyle = () => {
 
 
 
-
 <div id="ImageWrapper-{image_id}-{generated_image_id}" data-image-id="{ image_id }" class="responsive-image__wrapper" style={getWrapperStyles()}>
   <img id="Image-{image_id }-{generated_image_id}" 
     class="responsive-image__image lazyload"

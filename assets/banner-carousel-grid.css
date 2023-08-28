@@ -171,6 +171,23 @@
       -ms-flex-align: start;
           align-items: flex-start;
 }
+.banner-carousel-grid .text-wrapper.banner-carousel-grid__text-wrapper .text__heading {
+  font-family: "poppins";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .banner-carousel-grid .text-wrapper.banner-carousel-grid__text-wrapper .text__heading {
+    font-family: "poppins";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+.banner-carousel-grid .button--outline {
+  padding: 7px 12px;
+}
 .banner-carousel-grid .banner-carousel-grid__subheading.text__subheading {
   font-family: "poppins";
   font-size: 10px;

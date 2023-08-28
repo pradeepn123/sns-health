@@ -4,7 +4,7 @@
 
     &__heading-wrapper {
         @include mixins.container;
-        margin-bottom: var(--section-heading-margin);
+        margin-bottom: var(--section-margin);
         display: flex;
         align-items: center;
         justify-content: space-between;

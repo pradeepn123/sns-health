@@ -99,6 +99,7 @@
  &__image-text-content p {
     max-width: 90%;
     margin-top: 10px;
+    line-height: 1.6;
     @media(--sm) {
         margin-top: 20px;
         font-weight: typography.$medium-weight;

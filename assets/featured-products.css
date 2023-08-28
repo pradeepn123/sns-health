@@ -72,6 +72,7 @@
      -moz-column-gap: 16px;
           column-gap: 16px;
   margin-bottom: 15px;
+  overflow: auto;
 }
 @media (min-width: 1440px) {
   .featured-products__Category_wrapp {

@@ -566,7 +566,7 @@
         }
 
         @media(--xs) {
-            padding: 10px;
+            padding: 10px 0;
             @include use-text-style('body-small');
             font-weight: typography.$medium-weight;
         }

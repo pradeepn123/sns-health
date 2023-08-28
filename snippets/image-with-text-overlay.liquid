@@ -7,8 +7,8 @@
 
 {% if text_background %} 
 <style>
-.text-image__text-wrapper-{{id}} {
-  background: {{text_background}}
+.text-image__text-wrapper-{{ id }} {
+  background: {{ text_background }}
 }
 </style>
 {% endif %}
@@ -18,20 +18,20 @@
     {% render 'shopify-responsive-image',
         image: desktop_image,
         aspect_ratio: desktop_aspect_ratio,
-        crop: desktop_crop
-        contain: desktop_contain
+        crop: desktop_crop,
+        contain: desktop_contain,
         fill: fill,
-        max_height: max_height
+        max_height: max_height_desktop
       %}
   </div>
   <div class="image image--mobile {{wrapper_class}}__image">
     {% render 'shopify-responsive-image',
         image: mobile_image,
         aspect_ratio: mobile_aspect_ratio,
-        crop: mobile_crop
-        contain: mobile_contain
+        crop: mobile_crop,
+        contain: mobile_contain,
         fill: fill,
-        max_height: max_height
+        max_height: max_height_mobile
       %}
     </div>
 </div>

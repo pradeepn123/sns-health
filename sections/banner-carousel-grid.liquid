@@ -17,6 +17,8 @@
                 assign inline_heading = block.settings.inline_heading
                 assign button_type = 'outline'
                 assign button_background_type = 'transparent'
+                assign max_height_desktop = block.settings.max_height_desktop
+                assign max_height_mobile = block.settings.max_height_mobile
               %}  
                   {% render 'image-with-text-overlay', 
                     wrapper_class: "sidebar-banner-content"
@@ -31,12 +33,14 @@
                     image_mobile: image_mobile,
                     text_wrapper_class: 'sidebar-banner',
                     inline_heading: inline_heading,
-                    mobile_aspect_ratio: 1.16
-                    desktop_aspect_ratio: 1.15
-                    desktop_crop: true
+                    mobile_aspect_ratio: 1.16,
+                    desktop_aspect_ratio: 1.15,
+                    desktop_crop: true,
                     mobile_crop: true,
                     button_type: button_type,
-                    button_background_type: button_background_type
+                    button_background_type: button_background_type,
+                    max_height_desktop: max_height_desktop,
+                    max_height_mobile: max_height_mobile
                     %}
 
                 {% endif %}
@@ -84,7 +88,7 @@
                               button_type: button_type,
                               button_background_type: button_background_type,
                               overlay:false,
-                              text_background: background_color 
+                              text_background: background_color,
                               %}
                          </div>
                             {% endif %}
@@ -96,7 +100,7 @@
                           "spaceBetween": 10,
                           "overflowNagivation": true,
                           "breakpoints": {
-                            "1200": {
+                            "768": {
                                 "navigation": true,
                                 "slidesPerView": 3,
                                 "spaceBetween": 27
@@ -173,6 +177,22 @@
           "type": "url",
           "id":  "cta_url",
           "label": "CTA Text"
+        },
+        {
+          "type": "text",
+          "id": "max_height_desktop",
+          "label": "Max-height desktop"
+        },
+        {
+          "type": "text",
+          "id": "max_height_mobile",
+          "label": "Max-height Mobile"
+        },
+        {
+          "type": "text",
+          "id": "text_position",
+          "label": "Text position",
+          "default": "center center"
         }
      ]
     },

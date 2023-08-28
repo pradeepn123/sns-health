@@ -19,11 +19,12 @@
         @include mixins.container;
 
     &__content {
-        @include mixins.grid(var( --column-count), 170px, 196px);
+        @include mixins.grid(var( --column-count), 139px, 196px);
         grid-row: span var( --row-count);
         grid-column-gap: 24px;
         grid-row-gap:24px;
-        @media (--sm){
+        @media (--xs){
+            @include mixins.grid(var( --column-count), 170px, 196px);
             grid-column-gap: 11px;
             grid-row-gap:12px;
         }
