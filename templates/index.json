@@ -700,6 +700,26 @@
         "title": "How's 10% off your first order sound?",
         "subheading": "<p>Sign up for our newsletter and get 10% off, plus info on our latest sales and promos. We promise: our emails are short, sweet, and totally unsubscribeable.<\/p>"
       }
+    },
+    "1693210994f31194c1": {
+      "type": "apps",
+      "blocks": {
+        "e7a85023-7c05-4d13-90a1-082ecdf9bce7": {
+          "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/reviews-carousel\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "settings": {
+            "show_heading": false,
+            "heading": "Customer Reviews",
+            "badge_link": "shopify:\/\/collections",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "e7a85023-7c05-4d13-90a1-082ecdf9bce7"
+      ],
+      "settings": {
+        "heading": ""
+      }
     }
   },
   "order": [
@@ -719,6 +739,7 @@
     "169278817168ac6906",
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
-    "b1b4c397-b6ac-40e6-bddb-72cef284566b"
+    "b1b4c397-b6ac-40e6-bddb-72cef284566b",
+    "1693210994f31194c1"
   ]
 }
