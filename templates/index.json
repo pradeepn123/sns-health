@@ -645,8 +645,17 @@
       "block_order": [
         "1bd5fa8b-9f28-4601-83d4-430d5cdb7c42"
       ],
+      "disabled": true,
       "settings": {
         "heading": "New Arrivals",
+        "mobile_carousel": true
+      }
+    },
+    "ed3c4144-6707-4fda-9a49-2f5e23ebeb69": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "New Arrivals",
+        "collection": "new-arrivals",
         "mobile_carousel": true
       }
     },
@@ -691,14 +700,6 @@
         "title": "How's 10% off your first order sound?",
         "subheading": "<p>Sign up for our newsletter and get 10% off, plus info on our latest sales and promos. We promise: our emails are short, sweet, and totally unsubscribeable.<\/p>"
       }
-    },
-    "ed3c4144-6707-4fda-9a49-2f5e23ebeb69": {
-      "type": "featured-products",
-      "settings": {
-        "heading": "New Arrivals",
-        "collection": "new-arrivals",
-        "mobile_carousel": true
-      }
     }
   },
   "order": [
@@ -714,10 +715,10 @@
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
     "fb95bcfd-aa24-42a8-92cf-b94fa307f70d",
+    "ed3c4144-6707-4fda-9a49-2f5e23ebeb69",
     "169278817168ac6906",
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
-    "b1b4c397-b6ac-40e6-bddb-72cef284566b",
-    "ed3c4144-6707-4fda-9a49-2f5e23ebeb69"
+    "b1b4c397-b6ac-40e6-bddb-72cef284566b"
   ]
 }
