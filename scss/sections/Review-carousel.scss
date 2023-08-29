@@ -6,12 +6,19 @@
 
 .Review-carousel{
     .oke-reviewCarousel{
-       margin: 40px 20px 0 !important;
-        max-width: 1400px !important;
+       margin-top: calc(2*var(--section-margin)) !important;
+       margin-bottom: 0 !important;
+        max-width: calc(1440px - 2 * var(--base-margin)) !important;
     }
 
     .oke-reviewCarousel-header{
-        padding: 0 20px;
+        padding: 0 var(--section-padding) !important;
+        @media(--sm){
+            padding: 0 calc(2*var(--section-padding)) !important;
+        }
+        @media(--lg){
+            padding: 0 !important;
+        }
     }
 
     .oke-reviewCarousel-header-title{
