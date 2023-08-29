@@ -80,8 +80,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- This code is automatically managed by StarApps Studio -->
     <!-- Please contact support@starapps.studio for any help -->
     {% comment %} <script type="sT_lazyLoad__init" data-src="https://code.jquery.com/jquery-3.3.1.min.js"  async></script>
-    {% render "starapps-product-json", product: product, starapps_app: "VIA", starapps_attribute: "sa-product-json" %}<script type="sT_lazyLoad__init" data-src="https://bcdn.starapps.studio/apps/via/sports-nutrition-source-canada/script-1674239768.js?shop={{shop.permanent_domain}}" async></script> {% endcomment %}
-    <!-- starapps_scripts_end -->
+    {% render "starapps-product-json", product: product, starapps_app: "VIA", starapps_attribute: "sa-product-json" %} {% endcomment %}
+    <script type="text/javascript" src="https://bcdn.starapps.studio/apps/via/sports-nutrition-source-canada/script-1674239768.js?shop={{shop.permanent_domain}}" async></script>
+<!-- starapps_scripts_end -->
 
     <!-- Shopify app scripts =========================================================== -->
     {%- if request.design_mode or template contains 'cart' or template contains 'checkout' -%}
