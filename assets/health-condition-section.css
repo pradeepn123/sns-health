@@ -36,6 +36,12 @@
           justify-content: flex-start;
   row-gap: var(--grid-row-gap);
 }
+.health-condition-section__content--hide {
+  display: none !important;
+}
+.health-condition-section__content--show {
+  display: block !important;
+}
 @media (min-width: 1024px) {
   .health-condition-section__content {
     -webkit-column-gap: 14px;

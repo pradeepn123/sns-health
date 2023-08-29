@@ -28,6 +28,15 @@
     column-gap: var(--grid-column-gap);
     justify-content: flex-start;
 
+
+    &--hide {
+      display: none !important;
+    }
+
+    &--show {
+      display: block !important;
+    }
+
     @media(--md) {
       column-gap: 14px;
     }
