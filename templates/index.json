@@ -398,8 +398,9 @@
         "1d44d7d8-3d80-412e-b834-b2e5283db895": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/Kidney_health.svg",
+            "eyebrow": "Kidney Health",
+            "url": "shopify:\/\/collections\/kidney-health"
           }
         }
       },
