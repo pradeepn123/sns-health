@@ -263,7 +263,7 @@
             "icon_hover": "shopify:\/\/shop_images\/Non_GMO_1.svg",
             "subheading": "Non-GMO",
             "cta_text": "Shop Now",
-            "cta_url": "#"
+            "cta_url": "shopify:\/\/collections\/non-gmo"
           }
         }
       },
