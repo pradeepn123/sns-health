@@ -1,0 +1,29 @@
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/Review-carousel.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+.Review-carousel .oke-reviewCarousel {
+  margin: 40px 20px 0 !important;
+  max-width: 1400px !important;
+}
+.Review-carousel .oke-reviewCarousel-header {
+  padding: 0 20px;
+}
+.Review-carousel .oke-reviewCarousel-header-title {
+  font-size: 20px !important;
+}
+.Review-carousel .oke-reviewCarousel-header-title {
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .Review-carousel .oke-reviewCarousel-header-title {
+    font-size: 32px !important;
+  }
+}
+.Review-carousel .okeReviews {
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .Review-carousel .oke-product, .Review-carousel .oke-reviewContent-title {
+    font-size: 16px !important;
+  }
+}

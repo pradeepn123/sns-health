@@ -1,0 +1,34 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+
+.Review-carousel{
+    .oke-reviewCarousel{
+       margin: 40px 20px 0 !important;
+        max-width: 1400px !important;
+    }
+
+    .oke-reviewCarousel-header{
+        padding: 0 20px;
+    }
+
+    .oke-reviewCarousel-header-title{
+        font-size: 20px !important;
+        text-align: left;
+        @media(--sm){
+            font-size: 32px !important;
+        }
+    }
+
+    .okeReviews{
+        text-align: left;
+    }
+
+    .oke-product , .oke-reviewContent-title{
+        @media(--sm){
+            font-size: 16px !important;
+        }
+    }
+}
