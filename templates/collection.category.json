@@ -73,7 +73,8 @@
             "cta_text": "{{ collection.metafields.custom.banner_carousel_grid.value.cta_text.value }}",
             "cta_url": "{{ collection.metafields.custom.banner_carousel_grid.value.cta_url.value }}",
             "max_height_desktop": "{{ collection.metafields.custom.banner_carousel_grid.value.max_height_desktop.value }}",
-            "max_height_mobile": "{{ collection.metafields.custom.banner_carousel_grid.value.max_height_mobile.value }}"
+            "max_height_mobile": "{{ collection.metafields.custom.banner_carousel_grid.value.max_height_mobile.value }}",
+            "text_position": "center center"
           }
         },
         "1c17000b-725e-43a0-9ecd-25ead8a16940": {
@@ -119,7 +120,7 @@
       ],
       "settings": {
         "heading": "Shop By Family Health",
-        "show_carousel": true
+        "show_carousel": false
       }
     },
     "fa56ec1c-336d-4207-8ee5-afb07871d216": {
