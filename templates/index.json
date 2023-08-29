@@ -378,6 +378,28 @@
             "eyebrow": "Stress Management",
             "url": "shopify:\/\/collections\/stress-management"
           }
+        },
+        "ce300270-32d2-438e-803a-f56176a8c7fe": {
+          "type": "health_condition",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Respiratory_health.svg",
+            "eyebrow": "Respiratory Health",
+            "url": "https:\/\/snshealth.com\/collections\/respiratory-health"
+          }
+        },
+        "70d867ff-b3c2-4190-ad43-de04cbe96468": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
+        },
+        "1d44d7d8-3d80-412e-b834-b2e5283db895": {
+          "type": "health_condition",
+          "settings": {
+            "eyebrow": "",
+            "url": ""
+          }
         }
       },
       "block_order": [
@@ -392,7 +414,10 @@
         "5417db1e-8893-43af-b7e1-a6bfbd6a868c",
         "400cc6db-2697-45a8-8e0d-94ff816c798a",
         "6af96376-942e-4fb4-a452-a92719e17980",
-        "d6ade0c7-545f-4179-b534-e3d67a9964cb"
+        "d6ade0c7-545f-4179-b534-e3d67a9964cb",
+        "ce300270-32d2-438e-803a-f56176a8c7fe",
+        "70d867ff-b3c2-4190-ad43-de04cbe96468",
+        "1d44d7d8-3d80-412e-b834-b2e5283db895"
       ],
       "settings": {
         "heading": "Shop By Health Condition",
