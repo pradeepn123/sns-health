@@ -390,8 +390,9 @@
         "70d867ff-b3c2-4190-ad43-de04cbe96468": {
           "type": "health_condition",
           "settings": {
-            "eyebrow": "",
-            "url": ""
+            "icon": "shopify:\/\/shop_images\/prostate_health.svg",
+            "eyebrow": "Prostate Health",
+            "url": "shopify:\/\/collections\/prostate-health"
           }
         },
         "1d44d7d8-3d80-412e-b834-b2e5283db895": {
