@@ -280,20 +280,7 @@
           REVIEWS
           --------------------------------------------------------------------------------------
           {%- endcomment -%}
-          {%- if section.settings.enable_reviews -%}
-            <div id="product-reviews" class="product-block-list__item product-block-list__item--description">
-              <div class="card">
-                <div class="card__header">
-                  <h2 class="card__title heading h3">Reviews</h2>
-                </div>
-                <div class="card__section">
-                  <ul class="reviews">
-                    {% render 'okendo-reviews-widget', product: product %}                
-                  </ul>
-                </div>
-              </div>
-            </div>
-          {%- endif -%}
+
           
           {%- comment -%}
           --------------------------------------------------------------------------------------
@@ -439,6 +426,21 @@
     </div>
   {%- endif -%}
 </section>
+
+{%- if section.settings.enable_reviews -%}
+  <div id="product-reviews" class="product-block-list__item product-block-list__item--description">
+    <div class="card">
+      <div class="card__header">
+        <h2 class="card__title heading h3">Customer Reviews</h2>
+      </div>
+      <div class="card__section">
+        <ul class="reviews">
+          {% render 'okendo-reviews-widget', product: product %}                
+        </ul>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
 
 {% schema %}
 {

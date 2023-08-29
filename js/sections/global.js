@@ -65,3 +65,7 @@ window.addEventListener('modal:open', () => {
   window.addBtnDelegate();
 })
 
+document.addEventListener('rebuyReadyToRock' , () => {
+  document.querySelector('.header__cart-icon--disabled')?.classList.remove('header__cart-icon--disabled');
+})
+

@@ -277,7 +277,6 @@
 }
 
 .needsclick {
-  z-index: 4 !important;
   min-height: 0 !important;
 }
 

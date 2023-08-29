@@ -3099,7 +3099,7 @@
       key: "_attachListeners",
       value: function _attachListeners() {
         this.delegateElement.on('change', '.product-form__single-selector', this._onOptionChanged.bind(this));
-        this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
+        // this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
       }
       /**
        * ---------------------------------------------------------------------------------------------------
@@ -3391,7 +3391,7 @@
             addToCartButtonElement.removeAttribute('disabled');
             addToCartButtonElement.classList.remove('button--disabled');
             addToCartButtonElement.classList.add('button--primary');
-            addToCartButtonElement.setAttribute('data-action', 'add-to-cart');
+            // addToCartButtonElement.setAttribute('data-action', 'add-to-cart');
             addToCartButtonElement.innerHTML = window.languages.productFormAddToCart;
           } else {
             addToCartButtonElement.setAttribute('disabled', 'disabled');
@@ -13384,7 +13384,7 @@
     }, {
       key: "_attachListeners",
       value: function _attachListeners() {
-        this.domDelegate.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
+        // this.domDelegate.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
         this.domDelegate.on('click', '[data-action="save-note"]', this._saveNote.bind(this));
         this.domDelegate.on('click', '[data-secondary-action="open-quick-view"]', this._openQuickView.bind(this));
         this.delegateRoot.on('cart:rerendered', this._onCartRerendered.bind(this));
@@ -13671,7 +13671,7 @@
         this.delegateElement.on('click', '[data-action="toggle-tag"]', this._tagToggled.bind(this));
         this.delegateElement.on('click', '[data-action="clear-tags"]', this._clearTags.bind(this));
         this.delegateElement.on('click', '[data-secondary-action="open-quick-view"]', this._openQuickView.bind(this));
-        this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
+        // this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
         window.addEventListener('popstate', function (event) {
           if (event.state.path) {
             _this.currentUrl = new URL(event.state.path);
@@ -14117,7 +14117,7 @@
 
         this._fixSafariListener = this._fixSafari.bind(this);
         window.addEventListener('resize', this._fixSafariListener);
-        this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
+        // this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
         this.delegateElement.on('click', '[data-secondary-action="open-quick-view"]', this._openQuickView.bind(this)); // If the browser supports ResizeObserver we use it to detect when the size of the items in the carousel change,
         // and if that's the case we force Flickity to resize
 
@@ -15147,7 +15147,7 @@
       value: function _attachListeners() {
         this._fixSafariListener = this._fixSafari.bind(this);
         window.addEventListener('resize', this._fixSafariListener);
-        this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
+        // this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
         this.delegateElement.on('click', '[data-secondary-action="open-quick-view"]', this._openQuickView.bind(this));
       }
       /**
@@ -15351,7 +15351,7 @@
     }, {
       key: "_attachListeners",
       value: function _attachListeners() {
-        this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
+        // this.delegateElement.on('click', '[data-action="add-to-cart"]', this._addToCart.bind(this));
         this.delegateElement.on('click', '[data-secondary-action="open-quick-view"]', this._openQuickView.bind(this));
       }
       /**
