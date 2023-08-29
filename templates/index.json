@@ -396,7 +396,7 @@
       ],
       "settings": {
         "heading": "Shop By Health Condition",
-        "show_carousel": false
+        "show_carousel": true
       }
     },
     "932e9d3c-0311-4a00-af68-f2426cae7d02": {
