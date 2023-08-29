@@ -11,28 +11,36 @@
     "19c018de-3523-40ac-a377-435eed53aaa0": {
       "type": "collection-brand-heading",
       "blocks": {
-        "36f76d82-7020-4820-a94a-7812cc2a64f0": {
+        "46e22694-0075-46c5-9eba-15213810d762": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "star_rating": 5,
             "rating-size": 10,
             "review-Message": "<p>\"I only buy Sproos because they have integrity around the quality and safety of their collagen. This product foams well in my morning coffee - I just blend it or use a frother.\"<\/p><p>- <strong>Laurie K.<\/strong><\/p>"
           }
         },
-        "9fc5fa5b-df1e-4e55-8ffe-281b49a49165": {
+        "34241124-cbfc-4240-a37a-a1da46f28a59": {
           "type": "slide",
-          "disabled": true,
           "settings": {
             "star_rating": 5,
             "rating-size": 10,
             "review-Message": "<p>\"Sproos beauty collagen is refreshing to drink any time of the day. I enjoy a teaspoon at a time in water or tea. Delicious! It helps to keep me hydrated.\"<\/p><p>- <strong>Karen L.<\/strong><\/p>"
           }
+        },
+        "76aa51b6-a9ce-41d6-af2e-61312d7f49ba": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "star_rating": 5,
+            "rating-size": 10,
+            "review-Message": ""
+          }
         }
       },
       "block_order": [
-        "36f76d82-7020-4820-a94a-7812cc2a64f0",
-        "9fc5fa5b-df1e-4e55-8ffe-281b49a49165"
+        "46e22694-0075-46c5-9eba-15213810d762",
+        "34241124-cbfc-4240-a37a-a1da46f28a59",
+        "76aa51b6-a9ce-41d6-af2e-61312d7f49ba"
       ],
       "settings": {
         "show_collection_image": true

@@ -1,85 +1,98 @@
-<style>
-  [id*='ticker-'] {
-    display: block;
-    text-decoration: none;
-    color: black;
-  }
-  .ticker {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-  }
-  .ticker--animation {
-    animation: ticker var(--ticker-delay, 15s) infinite linear;
-  }
-  .ticker--animation.ticker-to-right {
-    animation-direction: reverse;
-  }
-  [id*='ticker']:hover .ticker__container {
-    animation-play-state: paused;
-  }
-  .ticker__container .ticker-element {
-    display: flex;
-    align-items: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 70px;
-    white-space: nowrap;
-  }
-  .ticker__container .ticker-element svg {
-    margin-right: 15px;
-  }
-  .ticker__container .ticker-element p {
-    font-size: 18px;
-  }
-  .section-background {
-    padding: 20px 0;
-    margin-bottom: 10px;
-    background: #f4e6db;
-  }
+{% if section.settings.ticker_text != blank %}
+  <style>
+    [id*='ticker-'] {
+      display: block;
+      text-decoration: none;
+      color: black;
+    }
 
-  @media (max-width: 576px) {
-    .ticker__icon,
+    .shopify-section [id*='ticker-'] {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .ticker {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+    }
+    .ticker--animation {
+      animation: ticker var(--ticker-delay, 15s) infinite linear;
+    }
+
+    .ticker--animation.ticker-to-right {
+      animation-direction: reverse;
+    }
+
+    [id*='ticker']:hover .ticker__container {
+      animation-play-state: paused;
+    }
+
     .ticker__container .ticker-element {
-      margin-left: 50px;
+      display: flex;
+      align-items: center;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 70px;
+      white-space: nowrap;
     }
-  }
-  @-moz-keyframes ticker {
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  @-webkit-keyframes ticker {
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  @-o-keyframes ticker {
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  @keyframes ticker {
-    100% {
-      transform: translateX(-100%);
-    }
-  }
 
-  .width {
-    width: 100%
-  }
-</style>
+    .ticker__container .ticker-element svg {
+      margin-right: 15px;
+    }
 
-<div
-  id="ticker-template"
-  class="top-spacing-medium section-background section-background--small"
-  data-section-name="ticker"
->
-  <ticker-section class="ticker ticker-text-5" style="--ticker-delay:10s">
-    {% for i in (1..9) %}
-      <div class="ticker__container {{ section.settings.direction }} ticker--animation">
-          <div class="ticker-element">{%- render 'star-icon' -%}  {{ section.settings.ticker_text }}</div> 
-      </div>
-    {% endfor %}
-  </ticker-section>
-</div>
+    .ticker__container .ticker-element p {
+      font-size: 18px;
+    }
+
+    .section-background {
+      padding: 20px 0;
+      margin-bottom: 10px;
+      background: #f4e6db;
+    }
+
+    @media (max-width: 576px) {
+      .ticker__icon,
+      .ticker__container .ticker-element {
+        margin-left: 50px;
+      }
+    }
+    @-moz-keyframes ticker {
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @-webkit-keyframes ticker {
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @-o-keyframes ticker {
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @keyframes ticker {
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .width {
+      width: 100%
+    }
+  </style>
+  <div
+    id="ticker-template"
+    class="top-spacing-medium section-background section-background--small"
+    data-section-name="ticker"
+  >
+    <ticker-section class="ticker ticker-text-5" style="--ticker-delay:10s">
+      {% for i in (1..20) %}
+        <div class="ticker__container {{ section.settings.direction }} ticker--animation">
+            <div class="ticker-element">{%- render 'star-icon' -%}  {{ section.settings.ticker_text }}</div> 
+        </div>
+      {% endfor %}
+    </ticker-section>
+  </div>
+{% endif %}
