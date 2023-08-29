@@ -13,6 +13,7 @@
       "blocks": {
         "36f76d82-7020-4820-a94a-7812cc2a64f0": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "star_rating": 5,
             "rating-size": 10,
@@ -21,6 +22,7 @@
         },
         "9fc5fa5b-df1e-4e55-8ffe-281b49a49165": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "star_rating": 5,
             "rating-size": 10,
