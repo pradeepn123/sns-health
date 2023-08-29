@@ -452,7 +452,7 @@ window.addEventListener('modal:open', () => {
 });
 document.addEventListener('rebuyReadyToRock', () => {
   var _document$querySelect;
-  (_document$querySelect = document.querySelector('.header__cart-icon--disabled')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.classList.remove('header__cart-icon--disabled');
+  (_document$querySelect = document.querySelector('.header__cart-toggle--disabled')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.classList.remove('header__cart-toggle--disabled');
 });
 
 /***/ })

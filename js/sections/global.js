@@ -66,6 +66,6 @@ window.addEventListener('modal:open', () => {
 })
 
 document.addEventListener('rebuyReadyToRock' , () => {
-  document.querySelector('.header__cart-icon--disabled')?.classList.remove('header__cart-icon--disabled');
+  document.querySelector('.header__cart-toggle--disabled')?.classList.remove('header__cart-toggle--disabled');
 })
 
