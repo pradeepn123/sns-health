@@ -379,14 +379,6 @@
             "url": "shopify:\/\/collections\/stress-management"
           }
         },
-        "ce300270-32d2-438e-803a-f56176a8c7fe": {
-          "type": "health_condition",
-          "settings": {
-            "icon": "shopify:\/\/shop_images\/Respiratory_health.svg",
-            "eyebrow": "Respiratory Health",
-            "url": "https:\/\/snshealth.com\/collections\/respiratory-health"
-          }
-        },
         "70d867ff-b3c2-4190-ad43-de04cbe96468": {
           "type": "health_condition",
           "settings": {
@@ -401,6 +393,14 @@
             "icon": "shopify:\/\/shop_images\/Kidney_health.svg",
             "eyebrow": "Kidney Health",
             "url": "shopify:\/\/collections\/kidney-health"
+          }
+        },
+        "ce300270-32d2-438e-803a-f56176a8c7fe": {
+          "type": "health_condition",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Respiratory_health.svg",
+            "eyebrow": "Respiratory Health",
+            "url": "https:\/\/snshealth.com\/collections\/respiratory-health"
           }
         }
       },
@@ -417,9 +417,9 @@
         "400cc6db-2697-45a8-8e0d-94ff816c798a",
         "6af96376-942e-4fb4-a452-a92719e17980",
         "d6ade0c7-545f-4179-b534-e3d67a9964cb",
-        "ce300270-32d2-438e-803a-f56176a8c7fe",
         "70d867ff-b3c2-4190-ad43-de04cbe96468",
-        "1d44d7d8-3d80-412e-b834-b2e5283db895"
+        "1d44d7d8-3d80-412e-b834-b2e5283db895",
+        "ce300270-32d2-438e-803a-f56176a8c7fe"
       ],
       "settings": {
         "heading": "Shop By Health Condition",
