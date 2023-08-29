@@ -255,14 +255,22 @@
 }
 .testimonial .flickity-prev-next-button {
     opacity: 1 !important;
+    bottom: 5px;
+    top: 10% !important;
 }
+
+.testimonial.flickity-enabled:hover .flickity-prev-next-button:not([disabled]) {
+    transform: scale(0.7);
+}
+
 .testimonial .previous{
-    top: 280px !important;
-    left: 35px !important;
+    left: auto !important;
+    right: 80px !important;
 }
+
 .testimonial .next{
-    top: 280px !important;
-    left: 95px !important;
+    left: auto !important;
+    right: 30px !important;
 }
 .play-btn{
     padding: 10px;
