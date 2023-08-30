@@ -53,7 +53,9 @@ var getProductData = /*#__PURE__*/function () {
       limit: 10,
       filter_oos: "yes",
       context: "default",
-      key: "7af510977e690f362f5dae7f36a736bbeefdfc25"
+      key: "7af510977e690f362f5dae7f36a736bbeefdfc25",
+      //rebuy key
+      metafields: "yes"
     }, otherparams);
     Object.keys(params).forEach(param => {
       url.searchParams.append(param, params[param]);
@@ -778,7 +780,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (40:8) {#if bestseller}
+// (50:8) {#if bestseller}
 function create_if_block_5(ctx) {
 	let div;
 
@@ -799,7 +801,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (42:8) {#if onsale}
+// (52:8) {#if onsale}
 function create_if_block_4(ctx) {
 	let div;
 
@@ -820,37 +822,44 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (44:6) {#if rating}
+// (54:6) {#if rating}
 function create_if_block_3(ctx) {
 	let div;
 	let svg;
-	let path;
+	let use;
+	let t0;
 	let span;
+	let t1_value = (/*rating*/ ctx[1] ? /*rating*/ ctx[1] : "") + "";
+	let t1;
 
 	return {
 		c() {
 			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			svg = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.svg_element)("svg");
-			path = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.svg_element)("path");
+			use = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.svg_element)("use");
+			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			span = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("span");
-			span.textContent = `${/*rating*/ ctx[4] ? /*rating*/ ctx[4] : ''}`;
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(path, "d", "M7.99998 0L9.97732 5.98213L16 6.11138L11.2001 9.93803L12.9441 16L7.99998 12.3825L3.05531 16L4.79988 9.93803L0 6.11138L6.02211 5.98213L7.99998 0Z");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(path, "fill", "#FFBD00");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "xmlns", "http://www.w3.org/2000/svg");
+			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t1_value);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(use, "x", "0");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(use, "href", "#oke-star-filled");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "width", "16");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "height", "16");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "viewBox", "0 0 16 16");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "fill", "none");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(svg, "aria-hidden", "true");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(span, "class", "product-card__star-text");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "product-card__star");
 		},
 		m(target, anchor) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, svg);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(svg, path);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(svg, use);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, t0);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, span);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(span, t1);
 		},
-		p: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
+		p(ctx, dirty) {
+			if (dirty & /*rating*/ 2 && t1_value !== (t1_value = (/*rating*/ ctx[1] ? /*rating*/ ctx[1] : "") + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, t1_value);
+		},
 		d(detaching) {
 			if (detaching) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
@@ -859,7 +868,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (60:4) {#if vendor}
+// (63:4) {#if vendor}
 function create_if_block_2(ctx) {
 	let div;
 
@@ -881,14 +890,14 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (71:6) {#if discountPercentage > 0}
+// (74:6) {#if discountPercentage > 0}
 function create_if_block_1(ctx) {
 	let div;
 
 	return {
 		c() {
 			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div.textContent = `${window.formatCurrency(window.formatCurrency(/*comparePrice*/ ctx[2], `${/*currency*/ ctx[7]}{{amount}}`))}`;
+			div.textContent = `${window.formatCurrency(window.formatCurrency(/*comparePrice*/ ctx[3], `${/*currency*/ ctx[7]}{{amount}}`))}`;
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "product-card__price product-card__price--compare");
 		},
 		m(target, anchor) {
@@ -903,7 +912,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (95:8) {:else}
+// (98:8) {:else}
 function create_else_block(ctx) {
 	let a;
 	let t;
@@ -933,7 +942,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (87:8) {#if product.variants.size == 1}
+// (90:8) {#if product.variants.size == 1}
 function create_if_block(ctx) {
 	let button;
 
@@ -989,7 +998,7 @@ function create_fragment(ctx) {
 
 	responsiveimage = new SvelteComponents_responsive_image_svelte__WEBPACK_IMPORTED_MODULE_2__["default"]({
 			props: {
-				image: /*image*/ ctx[1],
+				image: /*image*/ ctx[2],
 				image_aspect_ratio: 1,
 				srcTokens: /*srcTokens*/ ctx[13]
 			}
@@ -998,7 +1007,7 @@ function create_fragment(ctx) {
 	let if_block0 = /*discountPercentage*/ ctx[10] > 0 && create_if_block_6(ctx);
 	let if_block1 = /*bestseller*/ ctx[11] && create_if_block_5(ctx);
 	let if_block2 = /*onsale*/ ctx[12] && create_if_block_4(ctx);
-	let if_block3 = /*rating*/ ctx[4] && create_if_block_3(ctx);
+	let if_block3 = /*rating*/ ctx[1] && create_if_block_3(ctx);
 	let if_block4 = /*vendor*/ ctx[5] && create_if_block_2(ctx);
 	let if_block5 = /*discountPercentage*/ ctx[10] > 0 && create_if_block_1(ctx);
 
@@ -1037,7 +1046,7 @@ function create_fragment(ctx) {
 			if (if_block5) if_block5.c();
 			t8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div5.textContent = `${window.formatCurrency(/*price*/ ctx[3], `${/*currency*/ ctx[7]}{{amount}}`)}`;
+			div5.textContent = `${window.formatCurrency(/*price*/ ctx[4], `${/*currency*/ ctx[7]}{{amount}}`)}`;
 			t10 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			form = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("form");
@@ -1104,7 +1113,20 @@ function create_fragment(ctx) {
 		},
 		p(ctx, [dirty]) {
 			if (/*discountPercentage*/ ctx[10] > 0) if_block0.p(ctx, dirty);
-			if (/*rating*/ ctx[4]) if_block3.p(ctx, dirty);
+
+			if (/*rating*/ ctx[1]) {
+				if (if_block3) {
+					if_block3.p(ctx, dirty);
+				} else {
+					if_block3 = create_if_block_3(ctx);
+					if_block3.c();
+					if_block3.m(div2, null);
+				}
+			} else if (if_block3) {
+				if_block3.d(1);
+				if_block3 = null;
+			}
+
 			if (/*vendor*/ ctx[5]) if_block4.p(ctx, dirty);
 			if (/*discountPercentage*/ ctx[10] > 0) if_block5.p(ctx, dirty);
 
@@ -1157,16 +1179,27 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let { product } = $$props;
 	let { otherData } = $$props;
-	const { image, variants: [{ compare_at_price: comparePrice, price }], ratings: { yotpo_average_star_rating: rating } = {}, vendor, title, tags } = product;
+	const { image, variants: [{ compare_at_price: comparePrice, price }], vendor, title, tags, metafields } = product;
+	let rating = false;
+
+	metafields.forEach(metafield => {
+		const { namespace, key, value } = metafield;
+
+		if (namespace == "okendo" && key == "summaryData") {
+			const parsedValue = JSON.parse(value) || {};
+			$$invalidate(1, rating = parsedValue?.reviewAverageValue);
+		}
+	});
+
 	const { currency, soldOutText, chooseMoreText, addToCartText } = otherData || {};
 	const discountPercentage = (comparePrice - price * 100) / price;
 	const bestseller = tags.includes("bestseller");
 	const onsale = tags.includes("onsale");
 
 	const srcTokens = {
-		replacementToken: '?width=300&height=300',
-		dataSrcToken: '?{width}&{height}',
-		srcToken: '?width=300&height=300'
+		replacementToken: "?width=300&height=300",
+		dataSrcToken: "?{width}&{height}",
+		srcToken: "?width=300&height=300"
 	};
 
 	$$self.$$set = $$props => {
@@ -1176,10 +1209,10 @@ function instance($$self, $$props, $$invalidate) {
 
 	return [
 		product,
+		rating,
 		image,
 		comparePrice,
 		price,
-		rating,
 		vendor,
 		title,
 		currency,

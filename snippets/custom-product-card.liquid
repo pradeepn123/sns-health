@@ -5,7 +5,7 @@
   assign compare_price = product.compare_at_price | default: 0
   assign price = product.price
   assign discount_percentage = compare_price | minus: price | times: 100.0 |  divided_by: compare_price | round
-  assign rating = 5
+  assign rating = product.metafields.okendo.summaryData
   assign vendor = product.vendor
   assign title = product.title
   assign tags = product.tags | join: ','
@@ -31,7 +31,9 @@
           {% if bestseller %}<div class="product-card__discount"> Best Seller </div> {% endif %}
           {% if onsale %}<div class="product-card__discount"> On Sale </div> {% endif %}
         </div>
-        <div class="product-card__star">{% render 'icon-star' %}<span class="product-card__star-text">{{rating}}</span></div>
+        {% if rating.reviewAverageValue %}
+          <div class="product-card__star">{% render 'icon-star' %}<span class="product-card__star-text">{{ rating.reviewAverageValue }}</span></div> 
+        {% endif %}
       </div>
       {% if vendor %}
         <div class="product-card__vendor">

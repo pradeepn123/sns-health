@@ -5,11 +5,20 @@
   const {
     image,
     variants: [{ compare_at_price: comparePrice, price }],
-    ratings: { yotpo_average_star_rating: rating } = {},
     vendor,
     title,
     tags,
+    metafields,
   } = product;
+
+  let rating = false;
+  metafields.forEach((metafield) => {
+    const { namespace, key, value } = metafield;
+    if (namespace == "okendo" && key == "summaryData") {
+      const parsedValue = JSON.parse(value) || {};
+      rating = parsedValue?.reviewAverageValue;
+    }
+  });
   const { currency, soldOutText, chooseMoreText, addToCartText } =
     otherData || {};
 
@@ -17,19 +26,20 @@
   const bestseller = tags.includes("bestseller");
   const onsale = tags.includes("onsale");
   const srcTokens = {
- replacementToken: '?width=300&height=300',
-  dataSrcToken: '?{width}&{height}',
-  srcToken: '?width=300&height=300'}
+    replacementToken: "?width=300&height=300",
+    dataSrcToken: "?{width}&{height}",
+    srcToken: "?width=300&height=300",
+  };
 </script>
 
-<div class="product-card swiper-slide" data-redirect-click
-data-url={product.link}>
+<div
+  class="product-card swiper-slide"
+  data-redirect-click
+  data-url={product.link}
+>
   <div class="product-card__body">
-    <div
-      class="product-card__image"
-     
-    >
-      <ResponsiveImage {image} image_aspect_ratio={1} srcTokens={srcTokens}/>
+    <div class="product-card__image">
+      <ResponsiveImage {image} image_aspect_ratio={1} {srcTokens} />
     </div>
     <div class="product-card__header">
       <div class="product-card__header-tags">
@@ -42,19 +52,12 @@ data-url={product.link}>
         {#if onsale}<div class="product-card__discount">On Sale</div> {/if}
       </div>
       {#if rating}
-      <div class="product-card__star">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          ><path
-            d="M7.99998 0L9.97732 5.98213L16 6.11138L11.2001 9.93803L12.9441 16L7.99998 12.3825L3.05531 16L4.79988 9.93803L0 6.11138L6.02211 5.98213L7.99998 0Z"
-            fill="#FFBD00"
-          /></svg
-        ><span class="product-card__star-text">{rating ? rating : ''}</span>
-      </div>
+        <div class="product-card__star">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+            <use x="0" href="#oke-star-filled" />
+          </svg>
+          <span class="product-card__star-text">{rating ? rating : ""}</span>
+        </div>
       {/if}
     </div>
     {#if vendor}

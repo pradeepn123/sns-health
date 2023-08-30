@@ -51,7 +51,9 @@ var getProductData = /*#__PURE__*/function () {
       limit: 10,
       filter_oos: "yes",
       context: "default",
-      key: "7af510977e690f362f5dae7f36a736bbeefdfc25"
+      key: "7af510977e690f362f5dae7f36a736bbeefdfc25",
+      //rebuy key
+      metafields: "yes"
     }, otherparams);
     Object.keys(params).forEach(param => {
       url.searchParams.append(param, params[param]);

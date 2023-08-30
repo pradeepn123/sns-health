@@ -15,6 +15,7 @@ export const getProductData = async (additionalParams) => {
         filter_oos: "yes",
         context: "default",
         key: "7af510977e690f362f5dae7f36a736bbeefdfc25", //rebuy key
+        metafields: "yes",
         ...otherparams
     }
 
