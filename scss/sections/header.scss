@@ -743,3 +743,11 @@ body.no-mobile-scroll {
         color: #fff;
     }
 }
+
+.product-form__payment-container .quick-add-to-cart{
+    color: colors.$white;
+}
+
+.card .card__header{
+@include mixins.container;
+}

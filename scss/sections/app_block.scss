@@ -6,7 +6,6 @@
 @import 'StyleComponents/sidebar-banner';
 
 .app_block{
-    background: colors.$gray-400;
     .app{
         @include mixins.container;
         margin-top: var(--section-margin);

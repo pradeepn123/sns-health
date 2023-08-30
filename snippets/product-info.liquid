@@ -467,7 +467,6 @@
                           </div>
                     </div>
                   </div>
-
             </div>
           </div>
         {% endif %}
@@ -477,7 +476,7 @@
             {%- if product.template_suffix == 'pre-order' -%}
               <button type="submit" class="product-form__add-button button button--primary"{% comment %} data-action="add-to-cart"{% endcomment %}>{{ 'product.form.pre_order' | t }}</button>
             {%- else -%}
-              <button type="submit" class="product-form__add-button button button--primary"{% comment %} data-action="add-to-cart"{% endcomment %}>{{ 'product.form.add_to_cart' | t }}</button>
+              <button type="submit" class="product-form__add-button button button--primary quick-add-to-cart"{% comment %} data-action="add-to-cart"{% endcomment %}>{{ 'product.form.add_to_cart' | t }}</button>
             {%- endif -%}
           {%- else -%}
             <button type="submit" class="product-form__add-button button button--disabled" disabled>{{ 'product.form.sold_out' | t }}</button>
@@ -490,7 +489,10 @@
           <a href="mailto:{{ shop.email }}" class="button button--primary">{{ 'product.form.contact_us' | t }}</a>
         {%- endif -%}
       </div>
+      {% render 'rebuy-frequently_bought_together' %}
     {%- endform -%}
+
+
 
     {%- comment -%}The availability container will be added automatically if there is store pickup available{%- endcomment -%}
     {%- if section.settings.show_pickup_availability -%}

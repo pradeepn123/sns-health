@@ -1701,12 +1701,9 @@
           "collection": "antioxidants"
         }
       },
-      "4aa52242-6a1d-45f5-863a-eb800312ea2c": {
-        "type": "blog-post",
+      "rebuy-most-popular-blog": {
+        "type": "rebuy-most-popular-blog",
         "settings": {
-          "heading": "Blog Post",
-          "url": "#",
-          "blog": "beauty-and-wellness"
         }
       },
       "b1b4c397-b6ac-40e6-bddb-72cef284566b": {
@@ -1736,7 +1733,6 @@
       "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
       "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
       "477d4363-8c6d-473a-a8d7-911093ed1f81",
-      "4aa52242-6a1d-45f5-863a-eb800312ea2c",
       "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
       "8ae5b5de-3e36-46fc-9368-b65dda64985a",
       "161472149580382340",
