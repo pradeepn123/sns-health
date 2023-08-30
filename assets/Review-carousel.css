@@ -19,6 +19,16 @@
     padding: 0 !important;
   }
 }
+@media (min-width: 768px) {
+  .Review-carousel .oke-reviewCarousel-header {
+    padding: 0 calc(2 * var(--section-padding)) !important;
+  }
+}
+@media (min-width: 1440px) {
+  .Review-carousel .oke-reviewCarousel-header {
+    padding: 0 !important;
+  }
+}
 .Review-carousel .oke-reviewCarousel-header-title {
   font-size: 20px !important;
 }

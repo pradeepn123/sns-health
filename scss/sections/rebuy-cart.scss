@@ -1,0 +1,62 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints'; 
+
+.rebuy-cart__flyout-item {
+    padding: 4px !important;  
+}   
+
+.rebuy-cart__flyout-header {
+    padding: 0 var(--base-margin) !important;
+    @media(--sm){
+        padding: 5px var(--base-margin) !important;
+    }
+}
+
+.rebuy-cart__progress-step-label{
+    font-size: $body-small-size !important;
+    @media(--sm){
+        font-size: $body-regular-size !important;
+    }
+}
+
+.rebuy-cart__flyout-body{
+    display: block !important;
+    overflow-y: auto !important;
+}
+
+.rebuy-cart__flyout-discount-form {
+    height: 38px !important;
+    @media(--sm){
+        height: 48px !important;
+    }
+}
+
+.rebuy-cart__flyout-discount-form .rebuy-input {
+    padding: 7px 15px !important;
+    @media(--sm){
+        padding: 10px 15px !important;
+    }
+}
+
+.rebuy-cart__progress-bar-container{
+    padding: 7px !important;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background: colors.$white ;
+    @media(--sm){
+        padding: 10 !important;
+    }
+}
+
+.rebuy-cart__progress-bar-prompt{
+    margin-top: 4px !important;
+    font-size: $body-regular-size !important;
+    @media(--sm){
+        margin-top: 10px !important;
+        font-size: $body-title-size !important;
+    }
+}
