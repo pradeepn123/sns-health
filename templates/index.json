@@ -519,15 +519,6 @@
         "collection_id": "264113651863"
       }
     },
-    "141ec0c0-f9a7-4483-8784-4b246321fcba": {
-      "type": "Review-carousel",
-      "settings": {
-        "show_heading": true,
-        "heading": "Customer Reviews",
-        "badge_link": "",
-        "product": ""
-      }
-    },
     "56ecedde-e3f2-4a8c-8643-e00c72e3c291": {
       "type": "banner-product",
       "blocks": {
@@ -712,6 +703,15 @@
         "cta_url": "shopify:\/\/pages\/personal-health-is-not-one-size-fits-all"
       }
     },
+    "141ec0c0-f9a7-4483-8784-4b246321fcba": {
+      "type": "Review-carousel",
+      "settings": {
+        "show_heading": true,
+        "heading": "Customer Reviews",
+        "badge_link": "",
+        "product": ""
+      }
+    },
     "b1b4c397-b6ac-40e6-bddb-72cef284566b": {
       "type": "footer-newsletter",
       "settings": {
@@ -750,7 +750,6 @@
     "932e9d3c-0311-4a00-af68-f2426cae7d02",
     "0b3ea745-2c54-4e66-a525-b80b7acd1b49",
     "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854",
-    "141ec0c0-f9a7-4483-8784-4b246321fcba",
     "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
@@ -758,6 +757,7 @@
     "169278817168ac6906",
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
+    "141ec0c0-f9a7-4483-8784-4b246321fcba",
     "b1b4c397-b6ac-40e6-bddb-72cef284566b",
     "1693210994f31194c1"
   ]
