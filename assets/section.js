@@ -14,6 +14,7 @@
 /* harmony export */   getReviewData: () => (/* binding */ getReviewData),
 /* harmony export */   getReviewDataAggregate: () => (/* binding */ getReviewDataAggregate)
 /* harmony export */ });
+/* unused harmony exports getCollectionProductData, getSingleProductData */
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
@@ -60,7 +61,6 @@ var getProductData = /*#__PURE__*/function () {
     Object.keys(params).forEach(param => {
       url.searchParams.append(param, params[param]);
     }); //set params
-
     var data = yield fetch(url);
     var productData = yield data.json();
     return productData;
@@ -90,6 +90,28 @@ var getReviewDataAggregate = /*#__PURE__*/function () {
   });
   return function getReviewDataAggregate() {
     return _ref5.apply(this, arguments);
+  };
+}();
+var getCollectionProductData = /*#__PURE__*/function () {
+  var _ref6 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* (collectionHandle) {
+    var url = "/collections/".concat(collectionHandle, "?view=data-json");
+    var data = yield fetch(url);
+    var collectionProducts = yield data.json();
+    return collectionProducts;
+  });
+  return function getCollectionProductData(_x3) {
+    return _ref6.apply(this, arguments);
+  };
+}();
+var getSingleProductData = /*#__PURE__*/function () {
+  var _ref7 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* (productHandle) {
+    var url = "/products/".concat(productHandle, ".js");
+    var data = yield fetch(url);
+    var product = yield data.json();
+    return product;
+  });
+  return function getSingleProductData(_x4) {
+    return _ref7.apply(this, arguments);
   };
 }();
 
@@ -1074,6 +1096,7 @@ function create_fragment(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "class", "product-card__footer");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "class", "product-card swiper-slide");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-redirect-click", "");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-js-click", "");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-url", div9_data_url_value = /*product*/ ctx[0].link);
 		},
 		m(target, anchor) {

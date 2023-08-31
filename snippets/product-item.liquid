@@ -54,7 +54,10 @@
 
     {%- assign primary_media = product.featured_media -%}
 
-    {%- if request.page_type == 'collection' and section.settings.show_filters and section.settings.filter_type == 'group' -%}
+    {%- if request.page_type == 'collection'
+      and section.settings.show_filters
+      and section.settings.filter_type == 'group'
+    -%}
       {%- assign matched_color_option = '' -%}
 
       {%- for tag in current_tags -%}
@@ -91,18 +94,37 @@
       {%- endfor -%}
     {%- endif -%}
 
-    <a href="{{ filtered_variant.url | default: product.url }}" class="product-item__image-wrapper {% if show_secondary_media %}product-item__image-wrapper--with-secondary{% endif %}">
+    <a
+      href="{{ filtered_variant.url | default: product.url }}" data-promotion-product-url data-js-click
+      class="product-item__image-wrapper {% if show_secondary_media %}product-item__image-wrapper--with-secondary{% endif %}"
+    >
       {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,500,600,700,800', image: primary_media.preview_image -%}{%- endcapture -%}
       {%- assign image_url = primary_media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
-      <div class="aspect-ratio {% if settings.product_image_size != 'natural' %}aspect-ratio--{{ settings.product_image_size }}{% endif %}" style="padding-bottom: {{ 100.0 | divided_by: primary_media.preview_image.aspect_ratio }}%">
-        <img class="product-item__primary-image lazyload image--fade-in" data-media-id="{{ primary_media.id }}" data-src="{{ image_url }}" data-sizes="auto" data-widths="[{{ supported_sizes }}]" alt="{{ primary_media.alt | escape }}">
+      <div
+        class="aspect-ratio {% if settings.product_image_size != 'natural' %}aspect-ratio--{{ settings.product_image_size }}{% endif %}"
+        style="padding-bottom: {{ 100.0 | divided_by: primary_media.preview_image.aspect_ratio }}%"
+      >
+        <img
+          class="product-item__primary-image lazyload image--fade-in"
+          data-media-id="{{ primary_media.id }}"
+          data-src="{{ image_url }}"
+          data-sizes="auto"
+          data-widths="[{{ supported_sizes }}]"
+          alt="{{ primary_media.alt | escape }}"
+        >
 
         {%- if show_secondary_media -%}
           {%- capture supported_sizes -%}{%- render 'image-size', sizes: '200,300,400,500,600,700,800', image: product.media[1].preview_image -%}{%- endcapture -%}
           {%- assign image_url = product.media[1] | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
-          <img class="product-item__secondary-image lazyload image--fade-in" data-src="{{ image_url }}" data-sizes="auto" data-widths="[{{ supported_sizes }}]" alt="{{ product.media[1].alt | escape }}">
+          <img
+            class="product-item__secondary-image lazyload image--fade-in"
+            data-src="{{ image_url }}"
+            data-sizes="auto"
+            data-widths="[{{ supported_sizes }}]"
+            alt="{{ product.media[1].alt | escape }}"
+          >
         {%- endif -%}
 
         <noscript>
@@ -194,7 +216,13 @@
         {{ vendor }}
       {%- endif -%}
 
-      <a href="{{ filtered_variant.url | default: product.url }}" class="product-item__title text--strong link">{{ product.title }}</a>
+      <a
+        data-promotion-product-url data-js-click
+        href="{{ filtered_variant.url | default: product.url }}"
+        class="product-item__title text--strong link"
+      >
+        {{- product.title -}}
+      </a>
 
       {%- if settings.product_price_position == 'before_title' -%}
         {{ vendor }}
@@ -256,12 +284,13 @@
       {%- endif -%}
 
       {%- if settings.show_reviews_badge -%}
-      <div class="yotpo bottomLine"
-            data-appkey="AlaG2GzHOSeeH1BpRHu56aGvz9s0BudbIHVVuFIp"
-            data-domain="{{shop.permanent_domain | escape }}"
-            data-product-id="{{ product.id }}"
-            style="margin-top: 10px;">
-      </div>
+        <div
+          class="yotpo bottomLine"
+          data-appkey="AlaG2GzHOSeeH1BpRHu56aGvz9s0BudbIHVVuFIp"
+          data-domain="{{shop.permanent_domain | escape }}"
+          data-product-id="{{ product.id }}"
+          style="margin-top: 10px;"
+        ></div>
       {%- endif -%}
 
       {%- if settings.show_inventory_quantity and product.template_suffix != 'pre-order' -%}
@@ -290,15 +319,26 @@
             {%- endfor -%}
 
             {%- if all_inventory <= settings.low_inventory_threshold -%}
-              <span class="product-item__inventory inventory inventory--low">{{ 'collection.product.low_stock_with_quantity_count' | t: count: all_inventory }}</span>
+              <span class="product-item__inventory inventory inventory--low">
+                {{- 'collection.product.low_stock_with_quantity_count' | t: count: all_inventory -}}
+              </span>
             {%- else -%}
-              <span class="product-item__inventory inventory inventory--high">{{ 'collection.product.in_stock_with_quantity_count' | t: count: all_inventory }}</span>
+              <span class="product-item__inventory inventory inventory--high">
+                {{- 'collection.product.in_stock_with_quantity_count' | t: count: all_inventory -}}
+              </span>
             {%- endif -%}
           {%- else -%}
-            {%- if product.variants.first.inventory_policy == 'continue' and product.variants.first.inventory_quantity <= 0 and product.variants.first.requires_shipping -%}
-              <span class="product-item__inventory inventory inventory--high">{{ 'collection.product.oversell_stock' | t }}</span>
+            {%- if product.variants.first.inventory_policy == 'continue'
+              and product.variants.first.inventory_quantity <= 0
+              and product.variants.first.requires_shipping
+            -%}
+              <span class="product-item__inventory inventory inventory--high">
+                {{- 'collection.product.oversell_stock' | t -}}
+              </span>
             {%- else -%}
-              <span class="product-item__inventory inventory inventory--high">{{ 'collection.product.in_stock' | t }}</span>
+              <span class="product-item__inventory inventory inventory--high">
+                {{- 'collection.product.in_stock' | t -}}
+              </span>
             {%- endif -%}
           {%- endif -%}
         {%- else -%}
@@ -308,7 +348,10 @@
     </div>
 
     {%- if request.page_type == 'collection' or request.page_type == 'search' or show_add_to_cart or showQV -%}
-      {%- if section.settings.show_quick_view == 'list_grid' or section.settings.show_quick_buy == 'list_grid' or show_add_to_cart -%}
+      {%- if section.settings.show_quick_view == 'list_grid'
+        or section.settings.show_quick_buy == 'list_grid'
+        or show_add_to_cart
+      -%}
         {%- assign product_form_classes = 'product-item__action-list button-stack' -%}
       {%- else -%}
         {%- assign product_form_classes = 'product-item__action-list product-item__action-list--list-view-only button-stack' -%}
@@ -326,7 +369,6 @@
         {%- form 'product', product, id: form_id, class: product_form_classes -%}
           <input type="hidden" name="quantity" value="1">
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-
           {%- if section.settings.show_quick_buy == 'list_grid' or show_add_to_cart == false -%}
             {%- assign quick_buy_classes = 'product-item__action-button button button--small button--primary' -%}
           {%- else -%}
@@ -343,17 +385,32 @@
                 {%- endif -%}
               </button>
             {%- else -%}
-              <a href="{{ product.url }}" class="{{ quick_buy_classes }}">{{ 'collection.product.choose_options' | t }}</a>
+              <a href="{{ product.url }}" class="{{ quick_buy_classes }}">
+                {{- 'collection.product.choose_options' | t -}}
+              </a>
             {%- endif -%}
           {%- else -%}
-            <button class="{{ quick_buy_classes | replace: 'button--primary', 'button--disabled' }}" disabled>{{ 'collection.product.sold_out' | t }}</button>
+            <button class="{{ quick_buy_classes | replace: 'button--primary', 'button--disabled' }}" disabled>
+              {{ 'collection.product.sold_out' | t }}
+            </button>
           {%- endif -%}
 
           {%- assign quick_view_classes = 'product-item__action-button button button--small button--ternary hidden-phone' -%}
 
-          <button type="button" class="{{ quick_view_classes }}" data-action="open-modal" data-secondary-action="open-quick-view" aria-controls="modal-quick-view-{{ section.id }}" data-product-url="{{ product.url }}">{{ 'collection.product.quick_view' | t }}</button>
+          <button
+            type="button"
+            class="{{ quick_view_classes }}"
+            data-action="open-modal"
+            data-secondary-action="open-quick-view"
+            aria-controls="modal-quick-view-{{ section.id }}"
+            data-product-url="{{ product.url }}"
+          >
+            {{ 'collection.product.quick_view' | t }}
+          </button>
         {%- endform -%}
       {%- endif -%}
     {%- endif -%}
   </div>
 </div>
+
+

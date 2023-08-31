@@ -18,6 +18,8 @@
                 assign inline_heading = block.settings.inline_heading
                 assign button_type = 'text'
                 assign button_background_type = 'transparent'
+                assign promotion = block.settings.promotion
+                assign promotion_name = block.settings.promotion_name
               %}  
                <div class="swiper-slide">
                   {% render 'image-with-text-overlay', 
@@ -38,11 +40,14 @@
                     desktop_crop: true,
                     mobile_crop: true,
                     button_type: button_type,
-                    button_background_type: button_background_type
+                    button_background_type: button_background_type,
+                    promotion: promotion,
+                    promotion_name: promotion_name
                     %}
                 </div>
               {% endfor %}
             </div>
+            <div class="carousel-placeholders"></div>
               <script type="text/json" data-settings>
                 {
                   "slidesPerView": 2.1,
@@ -71,6 +76,21 @@
         "type": "image_with_text_overlay",
         "name": "Image with text overlay",
         "settings": [
+          {
+            "type": "header",
+            "content": "Promotion Config"
+          },
+          {
+            "type": "checkbox",
+            "id": "promotion",
+            "label": "Is Promotion ?",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "promotion_name",
+            "label": "Promotion Name"
+          },
          {
            "type": "header",
            "content": "Block Group"

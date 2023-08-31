@@ -12,7 +12,13 @@
 }
 </style>
 {% endif %}
-<div class="text-image {{wrapper_class}}__text-image {{wrapper_class}} {{wrapper_class}}__text-image-{{id}}" {% if cta_url %} data-redirect-click data-url="{{cta_url}}"{% endif %}>
+<div class="text-image {{wrapper_class}}__text-image {{wrapper_class}} {{wrapper_class}}__text-image-{{id}}" 
+  {% if cta_url %} data-redirect-click data-js-click data-url="{{cta_url}}"{% endif %}
+  {% if promotion and promotion_name != blank %}
+    data-promotion data-promotion-name="{{- promotion_name -}}" data-promotion-id="{{- promotion_name | handleize -}}"
+  {% endif %}
+
+>
  <div class="text-image__image-wrapper image {{wrapper_class}}__image-wrapper {% if overlay == false %} image--no-radius {% endif%}">
   <div class="image image--desktop {{wrapper_class}}__image"> 
     {% render 'shopify-responsive-image',

@@ -19,7 +19,7 @@
  endif
 %}
 <product-card>
-  <div class="product-card" data-redirect-click data-url="{{product.url}}">
+  <div class="product-card" data-redirect-click data-js-click data-url="{{product.url}}">
     <div class="product-card__body">
       <div class="product-card__image">
         {% assign image = image | default: images['placeholderImage.webp'] %}

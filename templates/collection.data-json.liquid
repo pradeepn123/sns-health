@@ -1,8 +1,6 @@
 {% layout none %}
-
-
 [
-  {% for product in collection.products limit:10 %} 
+  {% for product in collection.products limit:18 %} 
     {{product | json}} {% unless forloop.last %}, {% endunless %}
   {% endfor %}
 ]

@@ -1747,24 +1747,6 @@
       "b1b4c397-b6ac-40e6-bddb-72cef284566b"
     ],
     "blocks": {
-      "6810535121229352664": {
-        "type": "shopify:\/\/apps\/monster-cart-upsell-free-gifts\/blocks\/app-embed\/a1b8e58a-bf1d-4e0f-8768-a387c3f643c0",
-        "disabled": true,
-        "settings": {
-          "markets_rounding": false,
-          "send_gtag_atc": false,
-          "disable_tiktok_tracking": false,
-          "disable_klaviyo_tracking": false,
-          "stop_cart_page": false,
-          "apply_discount_before_checkout": false,
-          "bag_selector": "",
-          "hide_when_opened": "",
-          "show_item_properties": false,
-          "dev_mode": false,
-          "beta_version": false,
-          "custom_code": "<script>\n    \/\/ custom code here\n<\/script>"
-        }
-      },
       "855628211100114053": {
         "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
@@ -1782,6 +1764,24 @@
         "disabled": false,
         "settings": {
           "show_preview_data": true
+        }
+      },
+      "6810535121229352664": {
+        "type": "shopify:\/\/apps\/monster-cart-upsell-free-gifts\/blocks\/app-embed\/a1b8e58a-bf1d-4e0f-8768-a387c3f643c0",
+        "disabled": true,
+        "settings": {
+          "markets_rounding": false,
+          "send_gtag_atc": false,
+          "disable_tiktok_tracking": false,
+          "disable_klaviyo_tracking": false,
+          "stop_cart_page": false,
+          "apply_discount_before_checkout": false,
+          "bag_selector": "",
+          "hide_when_opened": "",
+          "show_item_properties": false,
+          "dev_mode": false,
+          "beta_version": false,
+          "custom_code": "<script>\n    \/\/ custom code here\n<\/script>"
         }
       }
     }

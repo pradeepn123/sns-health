@@ -27,7 +27,7 @@ var boostPFSTemplate = {
     // Grid Template
     'productGridItemHtml':  '<div class="product-item product-item--vertical 1/3--tablet-and-up {{gridWidthClass}} ">' +
                                 '<div class="product-item__image-wrapper {{imageWrapperClass}}">' +
-                                    '<a href="{{itemUrl}}">' +
+                                    '<a href="{{itemUrl}}" data-promotion-product-url data-js-click>' +
                                         '<div class="aspect-ratio {{imageAspectRatioClass}}" style="padding-bottom: {{imagePadding}}%">' +
                                             '{{itemImages}}' +
                                         '</div>' +
@@ -218,7 +218,7 @@ var boostPFSTemplate = {
         itemHtml = itemHtml.replace(/{{itemVendor}}/g, itemVendorHtml);
 
         // Add Title
-        var itemTitleWrapperHtml = '<a href="{{itemUrl}}" class="product-item__title text--strong link">{{itemTitle}}</a>';
+        var itemTitleWrapperHtml = '<a href="{{itemUrl}}" class="product-item__title text--strong link" data-promotion-product-url data-js-click>{{itemTitle}}</a>';
         itemHtml = itemHtml.replace(/{{itemTitleWrapper}}/g, itemTitleWrapperHtml);
 
         // Add price
@@ -352,7 +352,7 @@ var boostPFSTemplate = {
         itemHtml = itemHtml.replace(/{{itemVendor}}/g, itemVendorHtml);
 
         // Add Title
-        var itemTitleWrapperHtml = '<a href="{{itemUrl}}" class="product-item__title text--strong link">{{itemTitle}}</a>';
+        var itemTitleWrapperHtml = '<a href="{{itemUrl}}" class="product-item__title text--strong link" data-promotion-product-url data-js-click>{{itemTitle}}</a>';
         itemHtml = itemHtml.replace(/{{itemTitleWrapper}}/g, itemTitleWrapperHtml);
 
         // Add price

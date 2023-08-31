@@ -32,6 +32,8 @@
               assign image_desktop = block.settings.image_desktop
               assign image_mobile = block.settings.image_mobile
               assign inline_heading = block.settings.inline_heading
+              assign promotion = block.settings.promotion
+              assign promotion_name = block.settings.promotion_name
             %}  
               {% if is_slider %}
                 <div class="swiper-slide">
@@ -50,12 +52,15 @@
                   inline_heading: inline_heading,
                   desktop_aspect_ratio: banner_desktop_aspect_ratio,
                   mobile_aspect_ratio: banner_desktop_aspect_ratio,
-                  fill: true
+                  fill: true,
+                  promotion: promotion,
+                  promotion_name: promotion_name
                   %}
                 </div>
                 {% endif %}
             {% endfor %}
           </div>
+          <div class="carousel-placeholders"></div>
             <script type="text/json" data-settings>
               {
                 "slidesPerView": 1,
@@ -92,7 +97,8 @@
         assign image_desktop = block.settings.image_desktop
         assign image_mobile = block.settings.image_mobile
         assign inline_heading = block.settings.inline_heading
-       
+        assign promotion = block.settings.promotion
+        assign promotion_name = block.settings.promotion_name
 
       %}     
         {% unless is_slider %}
@@ -111,7 +117,9 @@
             inline_heading: inline_heading,
             desktop_aspect_ratio: 1.9,
             mobile_aspect_ratio: 1.9,
-            fill: true
+            fill: true,
+            promotion: promotion,
+            promotion_name: promotion_name
             %}
         {% endunless %}
      {% endfor %}
@@ -136,6 +144,8 @@
               assign image_desktop = block.settings.image_desktop
               assign image_mobile = block.settings.image_mobile
               assign inline_heading = block.settings.inline_heading
+              assign promotion = block.settings.promotion
+              assign promotion_name = block.settings.promotion_name
             %}  
               <div class="swiper-slide">
                 {% render 'image-with-text-overlay', 
@@ -153,11 +163,14 @@
                   inline_heading: inline_heading,
                   desktop_aspect_ratio: 1.9,
                   mobile_aspect_ratio: 1.9,
-                  fill: true
+                  fill: true,
+                  promotion: promotion,
+                  promotion_name: promotion_name
                   %}
                 </div>
             {% endfor %}
           </div>
+          <div class="carousel-placeholders"></div>
             <script type="text/json" data-settings>
               {
                 "slidesPerView": 1,
@@ -188,6 +201,21 @@
      "type": "image_with_text_overlay",
      "name": "Image with text overlay",
      "settings": [
+      {
+        "type": "header",
+        "content": "Promotion Config"
+      },
+      {
+        "type": "checkbox",
+        "id": "promotion",
+        "label": "Is Promotion ?",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "promotion_name",
+        "label": "Promotion Name"
+      },
       {
         "type": "header",
         "content": "Block Group"

@@ -6,6 +6,8 @@
         "ed3ae549-9da0-4852-a64a-a2b2d379e7d7": {
           "type": "image_with_text_overlay",
           "settings": {
+            "promotion": true,
+            "promotion_name": "August Sale",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/august_sale.webp",
             "cta_url": "https:\/\/snshealth.com\/collections\/summer-sizzlers"
@@ -14,6 +16,8 @@
         "5984eb08-08b3-47e4-be13-5da21dbca50c": {
           "type": "image_with_text_overlay",
           "settings": {
+            "promotion": true,
+            "promotion_name": "Heal and Co",
             "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/heal_and_co.webp",
             "cta_url": "shopify:\/\/collections\/heal-co"
@@ -22,6 +26,8 @@
         "eca00394-6765-4bb7-87eb-c0fa056b30ba": {
           "type": "image_with_text_overlay",
           "settings": {
+            "promotion": false,
+            "promotion_name": "",
             "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/jamieson.webp",
             "cta_url": "shopify:\/\/collections\/jamieson"
@@ -31,6 +37,8 @@
           "type": "image_with_text_overlay",
           "disabled": true,
           "settings": {
+            "promotion": false,
+            "promotion_name": "",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/banner-new.png",
             "cta_url": "shopify:\/\/collections"
@@ -52,6 +60,8 @@
         "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2": {
           "type": "image_with_text_overlay",
           "settings": {
+            "promotion": false,
+            "promotion_name": "",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/perfect_sport.webp",
             "image_mobile": "shopify:\/\/shop_images\/perfect_sport_-_mobile.webp",
@@ -66,6 +76,8 @@
         "5379485b-f9f2-400b-8e8b-fb05de6685ec": {
           "type": "image_with_text_overlay",
           "settings": {
+            "promotion": false,
+            "promotion_name": "",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/bucked_up.webp",
             "image_mobile": "shopify:\/\/shop_images\/bucked_up_-_mobile.webp",
@@ -80,6 +92,8 @@
         "39f323ed-5c6e-44c6-98f3-ad8f74d25b4d": {
           "type": "image_with_text_overlay",
           "settings": {
+            "promotion": false,
+            "promotion_name": "",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/Owyn_67f9335a-e8cb-4e7b-a834-36a0f30aae46.webp",
             "image_mobile": "shopify:\/\/shop_images\/Owyn_-_mobile_841f4170-bad1-403f-b276-e7ea40658ab9.webp",
@@ -95,6 +109,8 @@
           "type": "image_with_text_overlay",
           "disabled": true,
           "settings": {
+            "promotion": false,
+            "promotion_name": "",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/grid-image.png",
             "eyebrow": "",
@@ -718,27 +734,6 @@
         "title": "How's 10% off your first order sound?",
         "subheading": "<p>Sign up for our newsletter and get 10% off, plus info on our latest sales and promos. We promise: our emails are short, sweet, and totally unsubscribeable.<\/p>"
       }
-    },
-    "1693210994f31194c1": {
-      "type": "apps",
-      "blocks": {
-        "e7a85023-7c05-4d13-90a1-082ecdf9bce7": {
-          "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/reviews-carousel\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-            "show_heading": true,
-            "heading": "Customer Reviews",
-            "badge_link": "shopify:\/\/collections\/3d-energy",
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "e7a85023-7c05-4d13-90a1-082ecdf9bce7"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": ""
-      }
     }
   },
   "order": [
@@ -758,7 +753,6 @@
     "4aa52242-6a1d-45f5-863a-eb800312ea2c",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
     "141ec0c0-f9a7-4483-8784-4b246321fcba",
-    "b1b4c397-b6ac-40e6-bddb-72cef284566b",
-    "1693210994f31194c1"
+    "b1b4c397-b6ac-40e6-bddb-72cef284566b"
   ]
 }

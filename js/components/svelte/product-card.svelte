@@ -34,7 +34,7 @@
 
 <div
   class="product-card swiper-slide"
-  data-redirect-click
+  data-redirect-click data-js-click
   data-url={product.link}
 >
   <div class="product-card__body">

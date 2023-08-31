@@ -1,5 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import handleClick from 'JsComponents/handleClick';
 
 class CustomCarousel extends HTMLElement {
   constructor() {
@@ -137,9 +138,10 @@ class CustomCarousel extends HTMLElement {
           init: (swiper) => {
             if (!!swiper.navigation) {
               swiper.navigation.destroy();
-            }
-            if(window.handleJsClick) {
-              window.handleJsClick();
+              if(window.handleJsClick) {
+                const el = this.querySelector('.carousel__container')
+                handleClick(el);
+              }
             }
           },
           afterInit: () => {

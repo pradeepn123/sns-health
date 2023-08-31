@@ -1,0 +1,28 @@
+<script>
+     document.addEventListener('rebuyReadyToRock' , () => {
+     document.querySelector('.rebuy-cart__checkout-button').addEventListener('click', () => {
+      var pass= true;
+      {% for item in cart.items %}
+        {% if item.properties._promotionId and item.properties._promotionId != null %} 
+        {% assign item_json = item | json %}
+        if(pass) {
+         const item = {{item_json}}
+         const currency = "{{cart.currency.iso_code}}"
+        window.dataLayer.push({
+            event: 'custom_begin_checkout',
+            currency: currency,
+            value: item.final_price * 0.01,
+            items: [
+              {
+                 item_id: `${item.product_id}`,
+                 item_name: `${item.title}`,
+                 price: item.final_price * 0.01,
+                 quantity: `${item.quantity}`
+               }]
+        });
+      }
+        {% endif %}
+      {% endfor %}
+  })
+  })
+</script>

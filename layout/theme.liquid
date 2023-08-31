@@ -46,6 +46,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {%- if settings.favicon -%}
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '96x96' }}" type="image/png">
     {%- endif -%}
+
+    {% render 'data-tracking' %}
+    {% render 'checkout-tracking' %}
  
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async data-src="https://www.googletagmanager.com/gtag/js?id=G-VHN3KVKJKN" type="sT_lazyLoad__init" async></script>
@@ -277,12 +280,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     });
   </script>
-  {% include 'monster-mo-script' %}
+  <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
   <script src="{{'vendors.js' | asset_url }}" defer></script>  
   <script src="{{'global.js' | asset_url }}" defer></script>  
   <script src="{{'section.js' | asset_url }}" defer></script>  
   {% render 'rebuy-product-card' %}
-
-<script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
 </body>
 </html>
