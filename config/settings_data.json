@@ -1293,8 +1293,8 @@
             "settings": {
               "featured_collection_item": "perfect-sports",
               "featured_collection_image": "shopify:\/\/shop_images\/brand_page_perfect_sports_thumbnail.webp",
-              "show_overlay": false,
-              "overlay_opacity": 20
+              "show_overlay": true,
+              "overlay_opacity": 0
             }
           }
         },
