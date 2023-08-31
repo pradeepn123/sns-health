@@ -1287,11 +1287,22 @@
               "show_overlay": false,
               "overlay_opacity": 20
             }
+          },
+          "6924a140-8ece-4ff6-98e4-66afc8b96dff": {
+            "type": "selected_collection",
+            "disabled": true,
+            "settings": {
+              "featured_collection_item": "perfect-sports",
+              "featured_collection_image": "shopify:\/\/shop_images\/brand_page_perfect_sports_thumbnail.webp",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
           }
         },
         "block_order": [
           "bb400c8f-8d0c-4edc-bbad-75dc68729659",
-          "b15a96f0-9ac6-4347-8753-3da06590ee86"
+          "b15a96f0-9ac6-4347-8753-3da06590ee86",
+          "6924a140-8ece-4ff6-98e4-66afc8b96dff"
         ],
         "settings": {
           "title": "Shop By Brand",
