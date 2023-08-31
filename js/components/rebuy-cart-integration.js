@@ -31,3 +31,7 @@ export const removeAttributesForCartBinding = () => {
         btn.removeAttribute('data-action');
     })
 }
+
+export const removeCartToggleBinding = () => {
+    document.querySelector('[data-action="toggle-mini-cart"]')?.removeAttribute('data-action');
+}

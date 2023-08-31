@@ -759,7 +759,8 @@ class ProductCard extends HTMLElement {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   addBtnDelegate: () => (/* binding */ addBtnDelegate),
 /* harmony export */   addFormDelegate: () => (/* binding */ addFormDelegate),
-/* harmony export */   removeAttributesForCartBinding: () => (/* binding */ removeAttributesForCartBinding)
+/* harmony export */   removeAttributesForCartBinding: () => (/* binding */ removeAttributesForCartBinding),
+/* harmony export */   removeCartToggleBinding: () => (/* binding */ removeCartToggleBinding)
 /* harmony export */ });
 /* harmony import */ var ftdomdelegate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ftdomdelegate */ "./node_modules/ftdomdelegate/main.js");
 
@@ -791,6 +792,10 @@ var removeAttributesForCartBinding = () => {
   document.querySelectorAll('[data-action="add-to-cart"]').forEach(btn => {
     btn.removeAttribute('data-action');
   });
+};
+var removeCartToggleBinding = () => {
+  var _document$querySelect;
+  (_document$querySelect = document.querySelector('[data-action="toggle-mini-cart"]')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.removeAttribute('data-action');
 };
 
 /***/ }),
@@ -869,6 +874,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_11__.pageLoadEvent)(); //tracking
   (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_12__.addFormDelegate)(); //rebuy integration 
   (0,JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_13__["default"])(); //tracking + rebuy integration + boost
+  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_12__.removeCartToggleBinding)(); //remove toggle click
 });
 
 /***/ })

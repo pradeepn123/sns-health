@@ -13,7 +13,7 @@ import eventListeners from 'JsComponents/event-listeners'; //3rd party event lis
 import headerEvents from 'JsComponents/header'; //header
 import handleClick from 'JsComponents/handleClick'; //js based handle click
 import registerCustomElements from 'JsComponents/registerCustomElements'; //register custom elements
-import {addFormDelegate} from 'JsComponents/rebuy-cart-integration'; //disable add to cart form submit
+import {addFormDelegate,removeCartToggleBinding} from 'JsComponents/rebuy-cart-integration'; //disable add to cart form submit
 
 //config lazyload to default settings
 lazysizes.cfg.loadMode = 1;
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   pageLoadEvent();//tracking
   addFormDelegate(); //rebuy integration 
   eventListeners(); //tracking + rebuy integration + boost
+  removeCartToggleBinding() //remove toggle click
 })
 
 
