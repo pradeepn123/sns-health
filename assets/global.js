@@ -794,8 +794,18 @@ var removeAttributesForCartBinding = () => {
   });
 };
 var removeCartToggleBinding = () => {
-  var _document$querySelect;
-  (_document$querySelect = document.querySelector('[data-action="toggle-mini-cart"]')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.removeAttribute('data-action');
+  var cartToggle = document.querySelector('[data-action="toggle-mini-cart"]');
+  if (cartToggle) {
+    cartToggle.removeAttribute('data-action');
+    cartToggle.removeAttribute('href');
+  }
+  cartToggle.addEventListener('click', () => {
+    var _window$Rebuy;
+    if ((_window$Rebuy = window.Rebuy) !== null && _window$Rebuy !== void 0 && (_window$Rebuy = _window$Rebuy.SmartCart) !== null && _window$Rebuy !== void 0 && _window$Rebuy.show) {
+      var _window$Rebuy2;
+      (_window$Rebuy2 = window.Rebuy) === null || _window$Rebuy2 === void 0 || (_window$Rebuy2 = _window$Rebuy2.SmartCart) === null || _window$Rebuy2 === void 0 ? void 0 : _window$Rebuy2.show();
+    }
+  });
 };
 
 /***/ }),

@@ -34,6 +34,13 @@ export const removeAttributesForCartBinding = () => {
 
 export const removeCartToggleBinding = () => {
    const cartToggle =  document.querySelector('[data-action="toggle-mini-cart"]');
-   cartToggle?.removeAttribute('data-action');
-   cartToggle?.removeAttribute('href');
+   if(cartToggle) {
+    cartToggle.removeAttribute('data-action');
+    cartToggle.removeAttribute('href');
+   }
+   cartToggle.addEventListener('click', () => {
+    if(window.Rebuy?.SmartCart?.show) {
+        window.Rebuy?.SmartCart?.show();
+    } 
+   })
 }
