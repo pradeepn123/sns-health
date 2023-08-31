@@ -18,17 +18,20 @@ export default GtmEvent;
 
 //utilities and events 
 export const getPromotionParams = () => {
+	const promotionData = {};
 	const params = new Proxy(new URLSearchParams(window.location.search), {
 		get: (searchParams, prop) => searchParams.get(prop),
 });
 const promotionName = params.promotion_name;
 const promotionId = params.promotion_id;
 	if(promotionName) {
-		return {
+		promotionData =  {
 			promotionName,
 			promotionId
 		}
 	}
+	return promotionData;
+
 }
 
 export const curateEcommerceData = (data) => {
