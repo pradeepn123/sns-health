@@ -12,7 +12,7 @@
   "scripts": {
     "build": "webpack",
     "deploy": "webpack && shopify theme push",
-    "start": "NODE_ENV=development webpack --watch",
+    "start": "NODE_ENV=production webpack --watch",
     "eslint": "eslint 'src/js/**'",
     "stylelint": "stylelint '**/*.scss'",
     "migrate": "sass-migrator division ~**/*.scss"
