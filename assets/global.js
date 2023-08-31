@@ -190,10 +190,8 @@ class CustomCarousel extends HTMLElement {
         init: swiper => {
           if (!!swiper.navigation) {
             swiper.navigation.destroy();
-            if (window.handleJsClick) {
-              var el = this.querySelector('.carousel__container');
-              (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_4__["default"])(el);
-            }
+            var el = this.querySelector('.carousel__container');
+            (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_4__["default"])(el);
           }
         },
         afterInit: () => {

@@ -2,7 +2,6 @@ import { itemClickEvents } from "JsComponents/gtm-event-trigger";
 
 export default (dynamicElements) => {
   const handleRedirectOnDiv = (item) => {
-    debugger;
     const url = item.dataset.url || item.href;
     if (item.closest('[data-promotion]') || item.closest('[data-promotion-product-url]')) {
       itemClickEvents(item, url);
