@@ -1275,8 +1275,8 @@
             "settings": {
               "featured_collection_item": "sproos",
               "featured_collection_image": "shopify:\/\/shop_images\/1_d2bb86f1-7a77-4dea-a43a-87b8dd79b6af.jpg",
-              "show_overlay": false,
-              "overlay_opacity": 20
+              "show_overlay": true,
+              "overlay_opacity": 0
             }
           },
           "b15a96f0-9ac6-4347-8753-3da06590ee86": {
