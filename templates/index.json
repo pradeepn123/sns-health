@@ -35,7 +35,6 @@
         },
         "56205fb4-b0ed-4e35-baaa-742afc2a67b9": {
           "type": "image_with_text_overlay",
-          "disabled": true,
           "settings": {
             "promotion": false,
             "promotion_name": "",
@@ -49,8 +48,9 @@
           "settings": {
             "promotion": false,
             "promotion_name": "",
-            "is_carousel_content": false,
-            "cta_url": ""
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/vitamins_banner.webp",
+            "cta_url": "https:\/\/snshealth.com\/collections\/childrens-health"
           }
         }
       },
