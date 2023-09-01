@@ -751,3 +751,12 @@ body.no-mobile-scroll {
 .card .card__header{
 @include mixins.container;
 }
+
+
+.rebuy-cart__flyout-item-price{
+    display: flex;
+    flex-direction: column;
+    @media(--xs){
+        flex-direction: column-reverse;
+    }
+}

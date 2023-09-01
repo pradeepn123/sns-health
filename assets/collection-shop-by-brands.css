@@ -234,13 +234,16 @@
     flex-basis: 50%;
 }
 .text-below-image{
-    padding: 25px 25px 48px;
+    padding: 20px 25px;
     font-size: 15px;
     line-height: 22px;
 }
 .imagetext{
-    padding: 35px 25px 48px;
+    padding:20px 25px;
 }
+.testimonial  .flickity-viewport{
+    height: 100% !important;
+  }
 .video-control:not(.playing) .video-control-pause,
 .video-control.playing .video-control-play {
 	display: none;
@@ -393,9 +396,6 @@
     }
     .collection__brand-logo-wrapper {
         margin-bottom: 15px;
-    }
-    .imagetext{
-        padding: 35px 25px 68px;
     }
     .testimonial .flickity-page-dots{
         display: block;

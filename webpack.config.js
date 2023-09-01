@@ -106,7 +106,7 @@ module.exports = {
 };
 
 //treeshake and watch on development
-
+if (mode === 'development') {
   module.exports.devtool = false;
   module.exports.plugins.push(
     new WebpackShellPluginNext({
@@ -135,23 +135,23 @@ module.exports = {
       },
     }
   }
+}
 
-
-// if(mode == "production") {
-//   module.exports.optimization = {
-//     usedExports: true, //check for ununsed exports for treeshaking within file
-//     splitChunks: {
-//       usedExports: true, //check for ununsed exports for treeshaking within chunk
-//       cacheGroups: {
-//         default: false, //override default
-//         Vendors: {  //create a seperate chunk for vendor
-//           test: /[\\/]node_modules[\\/]/, //required both / & \ to support cross platform between unix and windows
-//           name: 'vendors',//only create chunk for dependencies
-//           chunks :'all', //create chunk for all sync , async and cjs modules
-//           type: /javascript/,
-//           enforce: true // ignores minSize: 2000, minChunks: 1,priority: 0,
-//         }
-//       },
-//     }
-//   }
-// }
+if(mode == "production") {
+  module.exports.optimization = {
+    usedExports: true, //check for ununsed exports for treeshaking within file
+    splitChunks: {
+      usedExports: true, //check for ununsed exports for treeshaking within chunk
+      cacheGroups: {
+        default: false, //override default
+        Vendors: {  //create a seperate chunk for vendor
+          test: /[\\/]node_modules[\\/]/, //required both / & \ to support cross platform between unix and windows
+          name: 'vendors',//only create chunk for dependencies
+          chunks :'all', //create chunk for all sync , async and cjs modules
+          type: /javascript/,
+          enforce: true // ignores minSize: 2000, minChunks: 1,priority: 0,
+        }
+      },
+    }
+  }
+}

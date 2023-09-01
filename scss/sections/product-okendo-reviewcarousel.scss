@@ -1,0 +1,49 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+
+
+.oke-reviewCarousel {
+    margin-bottom: 0 !important;
+    max-width: calc(1440px - 2 * var(--base-margin)) !important;
+}
+
+.oke-reviewCarousel-header{
+    text-align: left !important;
+    margin-bottom: 0 !important;
+}
+
+.oke-reviewCarousel-header-title{
+    font-size: $heading-3-size !important;
+    text-align: left;
+    @media(--sm){
+        font-size: $heading-1-size !important;
+    }
+}
+
+.oke-reviewCard{
+    padding: 16px 0 !important;
+    @media(--sm){
+        padding: 16px !important;
+    }
+} 
+
+.app{
+    margin: 0 auto !important;
+    margin-top: calc(2*var(--section-margin)) !important;
+    margin-bottom: 0 !important;
+    max-width: calc(1440px - 2 * var(--base-margin)) !important;
+    padding: 0 !important;
+}
+
+.oke-reviewCarousel-header{
+    padding: 0 var(--section-padding) !important;
+    @media(--sm){
+        padding: 0 calc(2*var(--section-padding)) !important;
+    }
+    @media(--lg){
+        padding: 0 !important;
+    }
+} 

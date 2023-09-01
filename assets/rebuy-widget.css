@@ -9,7 +9,7 @@
 
 @media screen and (min-width: 641px){
   .rebuy-widget .primary-title{
-      font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 31px));
+      font-size: 32px !important;
       line-height: 1.5;
       font-weight: 700;
   }

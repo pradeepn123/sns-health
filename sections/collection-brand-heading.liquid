@@ -153,11 +153,13 @@
                                     {{ block.title }}
                                 </p>
                             </div>
-                            <div class="image-flex-two">
-                                <p class="text-below-image imagetext">
-                                    {{ block.description | metafield_tag }}
-                                </p>
-                            </div>
+                            {% if block.description %}
+                                <div class="image-flex-two">
+                                    <p class="text-below-image imagetext">
+                                        {{ block.description | metafield_tag }}
+                                    </p>
+                                </div>
+                            {% endif %}
                         </div>
                     {% else %}
                         <div class="items video-item">
