@@ -54,3 +54,7 @@
     padding: 0 !important;
   }
 }
+
+.oke-product-details-title {
+  display: none !important;
+}
