@@ -909,11 +909,11 @@ class IntersectObserver {
 /* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! JsComponents/collapsible */ "./js/components/collapsible.js");
 /* harmony import */ var swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/element/bundle */ "./node_modules/swiper/swiper-element-bundle.mjs");
-/* harmony import */ var JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! JsComponents/gtm-event-trigger */ "./js/components/gtm-event-trigger.js");
+/* harmony import */ var JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! JsComponents/gtm-event-trigger */ "./js/components/gtm-event-trigger.js");
 /* harmony import */ var JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! JsComponents/event-listeners */ "./js/components/event-listeners.js");
 /* harmony import */ var JsComponents_header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! JsComponents/header */ "./js/components/header.js");
 /* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
-/* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
+/* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
 /* harmony import */ var JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/rebuy-cart-integration */ "./js/components/rebuy-cart-integration.js");
 
 
@@ -939,12 +939,12 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.addFormDelegate)(); //rebuy integration 
   (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.removeCartToggleBinding)(); //remove toggle click
   (0,JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.viewPromotionTrigger)();
+  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.pageLoadEvent)();
 });
 window.addEventListener("load", event => {
   (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__.register)(); //swiper
-  (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_10__["default"])(); //carousel and product cards
-  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_11__.viewPromotionTrigger)();
-  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_11__.pageLoadEvent)();
+  (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_11__["default"])(); //carousel and product cards
   (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_12__["default"])();
   (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_13__.collapsible)(); //collapsable
 });
