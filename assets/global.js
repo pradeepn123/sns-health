@@ -939,12 +939,12 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.addFormDelegate)(); //rebuy integration 
   (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.removeCartToggleBinding)(); //remove toggle click
   (0,JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_9__["default"])();
-  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.viewPromotionTrigger)();
   (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.pageLoadEvent)();
 });
 window.addEventListener("load", event => {
   (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__.register)(); //swiper
   (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_11__["default"])(); //carousel and product cards
+  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.viewPromotionTrigger)();
   (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_12__["default"])();
   (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_13__.collapsible)(); //collapsable
 });

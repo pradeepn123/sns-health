@@ -23,13 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
   addFormDelegate(); //rebuy integration 
   removeCartToggleBinding() //remove toggle click
   eventListeners();
-  viewPromotionTrigger();
   pageLoadEvent();
 })
 
 window.addEventListener("load", (event) => {
   register(); //swiper
   registerCustomElements(); //carousel and product cards
+  viewPromotionTrigger();
   handleClick();
   collapsible(); //collapsable
 });
