@@ -36,8 +36,8 @@
         "56205fb4-b0ed-4e35-baaa-742afc2a67b9": {
           "type": "image_with_text_overlay",
           "settings": {
-            "promotion": false,
-            "promotion_name": "",
+            "promotion": true,
+            "promotion_name": "Healthy Snacks: a Back-to-School specials",
             "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/healthy_snacks.webp",
             "cta_url": "https:\/\/snshealth.com\/collections\/healthy-snacks-a-back-to-school-specials"
