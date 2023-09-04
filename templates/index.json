@@ -86,8 +86,8 @@
         "5379485b-f9f2-400b-8e8b-fb05de6685ec": {
           "type": "image_with_text_overlay",
           "settings": {
-            "promotion": false,
-            "promotion_name": "",
+            "promotion": true,
+            "promotion_name": "Bucked Up",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/bucked_up.webp",
             "image_mobile": "shopify:\/\/shop_images\/bucked_up_-_mobile.webp",
@@ -102,8 +102,8 @@
         "39f323ed-5c6e-44c6-98f3-ad8f74d25b4d": {
           "type": "image_with_text_overlay",
           "settings": {
-            "promotion": false,
-            "promotion_name": "",
+            "promotion": true,
+            "promotion_name": "Owyn",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/Owyn_67f9335a-e8cb-4e7b-a834-36a0f30aae46.webp",
             "image_mobile": "shopify:\/\/shop_images\/Owyn_-_mobile_841f4170-bad1-403f-b276-e7ea40658ab9.webp",
