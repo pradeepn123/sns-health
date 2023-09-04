@@ -15,6 +15,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </script>
     <!-- End Google Tag Manager -->
 
+    <!-- Google Tag Manager Promotion Tracking-->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PPMJ6JL');</script>
+  <!-- End Google Tag Manager -->
+
     <!-- Google tag (gtag.js) -->
     <script async data-src="https://www.googletagmanager.com/gtag/js?id=AW-10854352442" type="sT_lazyLoad__init"></script>
     <script type="sT_lazyLoad__init">
@@ -47,8 +55,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '96x96' }}" type="image/png">
     {%- endif -%}
 
-    {% render 'data-tracking' %}
-    {% render 'checkout-tracking' %}
+
  
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async data-src="https://www.googletagmanager.com/gtag/js?id=G-VHN3KVKJKN" type="sT_lazyLoad__init" async></script>
@@ -58,6 +65,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       gtag('js', new Date());
       gtag('config', 'G-VHN3KVKJKN');
     </script>
+
+     
+    
+    <!-- Promotion site tag (gtag.js) - Google Analytics -->
+    <script async data-src="https://www.googletagmanager.com/gtag/js?id=G-77Z4N0TTSN" async></script>
+    <script type="sT_lazyLoad__init">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-77Z4N0TTSN');
+    </script>
+
+    {% render 'checkout-tracking' %}
 
     {% comment %} {% include 'limespot' %}   {% endcomment %}
     {%- comment -%}Few prefech to increase performance on commonly used third-parties{%- endcomment -%}
@@ -206,6 +226,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </head>
 
   <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPMJ6JL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     <a href="#main" class="visually-hidden skip-to-content">{{ 'general.accessibility.skip_to_content' | t }}</a>
     <span class="loading-bar"></span>
 
@@ -285,6 +309,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script src="{{'vendors.js' | asset_url }}" defer></script>  
   <script src="{{'global.js' | asset_url }}" defer></script>  
   <script src="{{'section.js' | asset_url }}" defer></script>  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const shopifyVariables = {
+        activeCurrency: "{{cart.currency.iso_code}}"
+      } 
+      window.shopifyVariables = shopifyVariables;
+      
+    });
+  </script>
   {% render 'rebuy-product-card' %}
 </body>
 </html>

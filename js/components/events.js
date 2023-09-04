@@ -6,7 +6,6 @@ class GtmEvent {
 		this.data = data;
 	}
 	send = () => {
-		window.dataLayer = window.dataLayer || [];
 		window.datalayer = [];
 		window.dataLayer.push({
 			'event': this.eventName,
@@ -58,6 +57,7 @@ export const curateEcommerceData = (data) => {
 	})
 }
 export const updateProductUrlWithPromotion = () => {
+	debugger;
 	const links = document.querySelectorAll('[data-promotion-product-url]');
 	const {promotionId, promotionName} = getPromotionParams();
 	if (promotionName) {
@@ -100,7 +100,7 @@ export const selectItemList = async (handle, promotionName, promotionId) => {
 		item_list_name: promotionName
 	}
 	const viewItemListEventData = {
-		...curatedData, items: curateEcommerceData(data)
+		...curatedData, selectedItem: curateEcommerceData(data)
 	}
 	const customViewItemListEvent = new GtmEvent('custom_select_item', viewItemListEventData);
 	customViewItemListEvent.send();
@@ -113,18 +113,19 @@ export const ViewItemList = async (handle, promotionName, promotionId) => {
 		item_list_name: promotionName
 	}
 	const viewItemListEventData = {
-		...curatedData, items: curateEcommerceData(data)
+		...curatedData, viewedItems: curateEcommerceData(data)
 	}
 	const customViewItemListEvent = new GtmEvent('custom_view_item_list', viewItemListEventData);
 	customViewItemListEvent.send();
 }
 export const viewItem = async (handle, promotionId) => {
+	const currency = window.shopifyVariables?.activeCurrency || 'CAD';
 	const data = [await getSingleProductData(handle)];
 	const viewItemEventData = {
-		currency: window.Shopify?.currency?.active,
-		value: data[0]?.price,
+		currency: `${currency}`,
+		value: data[0]?.price*0.01,
 		promotion_id: promotionId,
-		items: curateEcommerceData(data)
+		viewedItem: curateEcommerceData(data)
 	}
 	const customViewItemListEvent = new GtmEvent('custom_view_item', viewItemEventData);
 	customViewItemListEvent.send();
@@ -134,11 +135,20 @@ export const addToCartEvent = (cartItem, promotionId) => {
 	const [{ price }] = curatedData;
 	const addTocartData = {
 		promotion_id: promotionId,
-		currency: `${window.Shopify.currency.active}`,
+		currency: window.shopifyVariables?.activeCurrency || 'CAD',
 		value: `${price}`,
-		items: curatedData
+		addedItems: curatedData
 	}
 	const addTocartEvent = new GtmEvent('custom_add_to_cart', addTocartData);
 	addTocartEvent.send();
+}
+
+export const viewPromotion = (promotionId, promotionName) => {
+const promotionData = {
+	promotion_id: promotionId,
+	promotion_name: promotionName
+} 
+	const viewPromotionEvent = new GtmEvent('custom_view_promotion', promotionData);
+	viewPromotionEvent.send();
 }
 

@@ -17,9 +17,20 @@
   if tags contains 'onsale' 
     assign onsale = false
  endif
+ assign is_promotion = product.metafields.promotion.is_promotion
+ if is_promotion 
+  assign promotion_id = product.metafields.promotion.name | handleize
+  assign promotion_name = product.metafields.promotion.name
+ endif
 %}
 <product-card>
-  <div class="product-card" data-redirect-click data-js-click data-url="{{product.url}}">
+  <div class="product-card" data-redirect-click data-js-click data-redirect-click data-url="{{product.url}}" 
+    {% if is_promotion and promotion_name %}
+       data-promotion 
+       data-promotion-name = "{{ promotion_name }}"
+       data-promotion-id = "{{ promotion_id }}"
+    {% endif %}
+    >
     <div class="product-card__body">
       <div class="product-card__image">
         {% assign image = image | default: images['placeholderImage.webp'] %}
@@ -53,7 +64,9 @@
         {%- form 'product', product, id: form_id, class: product_form_classes -%}
           <input type="hidden" name="quantity" value="1">
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-
+          {% if is_promotion and promotion_id %}
+            <input type="hidden" name=properties[_promotionId] value="{{promotion_id}}" />
+          {% endif %}
           {%- if section.settings.show_quick_buy == 'list_grid' or show_add_to_cart == false -%}
             {%- assign quick_buy_classes = 'product-item__action-button button button--small button--primary' -%}
           {%- else -%}

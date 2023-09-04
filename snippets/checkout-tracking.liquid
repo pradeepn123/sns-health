@@ -1,16 +1,20 @@
 <script>
-     document.addEventListener('rebuyReadyToRock' , () => {
-     document.querySelector('.rebuy-cart__checkout-button').addEventListener('click', () => {
-      var pass= true;
-      {% for item in cart.items %}
-        {% if item.properties._promotionId and item.properties._promotionId != null %} 
-        {% assign item_json = item | json %}
-        if(pass) {
-         const item = {{item_json}}
-         const currency = "{{cart.currency.iso_code}}"
-        window.dataLayer.push({
+const items =   [
+  {% for item in cart.items %}
+    {% if item.properties._promotionId and item.properties._promotionId != null %} 
+       {{ item | json }} {% unless forloop.last%} , {% endunless %}
+    {% endif %}
+  {% endfor %}
+  ]
+  const currency = "{{cart.currency.iso_code}}" 
+    const bindCheckoutButton = () => {
+     document.querySelector('.rebuy-cart__checkout-button').addEventListener('click', (ev) => {
+     items.forEach ( item => {
+         const promotionId = item.properties._promotionId
+          window.dataLayer.push({
             event: 'custom_begin_checkout',
             currency: currency,
+            promotion_id: promotionId,
             value: item.final_price * 0.01,
             items: [
               {
@@ -20,9 +24,21 @@
                  quantity: `${item.quantity}`
                }]
         });
-      }
-        {% endif %}
-      {% endfor %}
-  })
-  })
+    });
+  })}
+
+  document.addEventListener('DOMContentLoaded' , () => {
+    let checkRebuy = setInterval (() => {
+     if(window.Rebuy?.SmartCart?.cart) {
+      clearInterval(checkRebuy);
+      checkRebuy = false;
+      bindCheckoutButton();
+    }
+    },500);
+    setTimeout(() => {
+      if(checkRebuy) {
+      clearInterval(checkRebuy)}
+    },8000)
+  });
 </script>
+

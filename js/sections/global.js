@@ -8,7 +8,7 @@ import 'lazysizes/plugins/respimg/ls.respimg';
 
 import { collapsible } from "JsComponents/collapsible";
 import { register } from 'swiper/element/bundle'; //needed for swiper
-import {pageLoadEvent} from 'JsComponents/gtm-event-trigger'; //gtm trigger event
+import {pageLoadEvent,viewPromotionTrigger} from 'JsComponents/gtm-event-trigger'; //gtm trigger event
 import eventListeners from 'JsComponents/event-listeners'; //3rd party event listeners
 import headerEvents from 'JsComponents/header'; //header
 import handleClick from 'JsComponents/handleClick'; //js based handle click
@@ -19,17 +19,19 @@ import {addFormDelegate,removeCartToggleBinding} from 'JsComponents/rebuy-cart-i
 lazysizes.cfg.loadMode = 1;
 
 document.addEventListener('DOMContentLoaded', () => {
-  register(); //swiper
   headerEvents(); //header and megamenu
-  registerCustomElements(); //carousel and product cards
-  handleClick(); //js click handling
-  collapsible(); //collapsable
-  pageLoadEvent();//tracking
   addFormDelegate(); //rebuy integration 
-  eventListeners(); //tracking + rebuy integration + boost
   removeCartToggleBinding() //remove toggle click
+  eventListeners();
 })
 
-
+window.addEventListener("load", (event) => {
+  register(); //swiper
+  registerCustomElements(); //carousel and product cards
+  viewPromotionTrigger();
+  pageLoadEvent();
+  handleClick();
+  collapsible(); //collapsable
+});
 
 

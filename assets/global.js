@@ -242,12 +242,6 @@ class CustomCarousel extends HTMLElement {
     (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_1__.AddPromotionAsItemProperty)(); //add promotion id as a item property 
   });
 
-  //Rebuy init 
-  //Todo remove this dependancy, !also remove the event from app once removed
-  // document.addEventListener('rebuyReadyToRock', () => {
-  // 	document.querySelector('.header__cart-toggle--disabled')?.classList.remove('header__cart-toggle--disabled'); //disable cart till rebuy init
-  // })
-
   //rebuy add To cart tracking
   document.addEventListener('rebuy:cart.add', event => {
     var _item$properties;
@@ -262,6 +256,7 @@ class CustomCarousel extends HTMLElement {
   //boost tile loaded on collection pages
   if (window.ProductList) {
     window.ProductList.prototype.afterRender = function () {
+      debugger;
       (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_1__.updateProductUrlWithPromotion)(); //update all urls with promotion
       (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_1__.AddPromotionAsItemProperty)(); //add promotion id as a item property
       var collectionEl = document.querySelector('[data-section-type="collection"]');
@@ -286,7 +281,8 @@ class CustomCarousel extends HTMLElement {
 /* harmony export */   getPromotionParams: () => (/* binding */ getPromotionParams),
 /* harmony export */   selectItemList: () => (/* binding */ selectItemList),
 /* harmony export */   updateProductUrlWithPromotion: () => (/* binding */ updateProductUrlWithPromotion),
-/* harmony export */   viewItem: () => (/* binding */ viewItem)
+/* harmony export */   viewItem: () => (/* binding */ viewItem),
+/* harmony export */   viewPromotion: () => (/* binding */ viewPromotion)
 /* harmony export */ });
 /* unused harmony exports curateEcommerceData, redirectWithPromotion */
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
@@ -300,7 +296,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 class GtmEvent {
   constructor(eventName, data) {
     (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "send", () => {
-      window.dataLayer = window.dataLayer || [];
       window.datalayer = [];
       window.dataLayer.push(_objectSpread({
         'event': this.eventName
@@ -351,6 +346,7 @@ var curateEcommerceData = data => {
   });
 };
 var updateProductUrlWithPromotion = () => {
+  debugger;
   var links = document.querySelectorAll('[data-promotion-product-url]');
   var {
     promotionId,
@@ -404,7 +400,7 @@ var selectItemList = /*#__PURE__*/function () {
       item_list_name: promotionName
     };
     var viewItemListEventData = _objectSpread(_objectSpread({}, curatedData), {}, {
-      items: curateEcommerceData(data)
+      selectedItem: curateEcommerceData(data)
     });
     var customViewItemListEvent = new GtmEvent('custom_select_item', viewItemListEventData);
     customViewItemListEvent.send();
@@ -422,7 +418,7 @@ var ViewItemList = /*#__PURE__*/function () {
       item_list_name: promotionName
     };
     var viewItemListEventData = _objectSpread(_objectSpread({}, curatedData), {}, {
-      items: curateEcommerceData(data)
+      viewedItems: curateEcommerceData(data)
     });
     var customViewItemListEvent = new GtmEvent('custom_view_item_list', viewItemListEventData);
     customViewItemListEvent.send();
@@ -433,13 +429,14 @@ var ViewItemList = /*#__PURE__*/function () {
 }();
 var viewItem = /*#__PURE__*/function () {
   var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionId) {
-    var _window$Shopify, _data$;
+    var _window$shopifyVariab, _data$;
+    var currency = ((_window$shopifyVariab = window.shopifyVariables) === null || _window$shopifyVariab === void 0 ? void 0 : _window$shopifyVariab.activeCurrency) || 'CAD';
     var data = [yield (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__.getSingleProductData)(handle)];
     var viewItemEventData = {
-      currency: (_window$Shopify = window.Shopify) === null || _window$Shopify === void 0 || (_window$Shopify = _window$Shopify.currency) === null || _window$Shopify === void 0 ? void 0 : _window$Shopify.active,
-      value: (_data$ = data[0]) === null || _data$ === void 0 ? void 0 : _data$.price,
+      currency: "".concat(currency),
+      value: ((_data$ = data[0]) === null || _data$ === void 0 ? void 0 : _data$.price) * 0.01,
       promotion_id: promotionId,
-      items: curateEcommerceData(data)
+      viewedItem: curateEcommerceData(data)
     };
     var customViewItemListEvent = new GtmEvent('custom_view_item', viewItemEventData);
     customViewItemListEvent.send();
@@ -449,18 +446,27 @@ var viewItem = /*#__PURE__*/function () {
   };
 }();
 var addToCartEvent = (cartItem, promotionId) => {
+  var _window$shopifyVariab2;
   var curatedData = curateEcommerceData([cartItem]);
   var [{
     price
   }] = curatedData;
   var addTocartData = {
     promotion_id: promotionId,
-    currency: "".concat(window.Shopify.currency.active),
+    currency: ((_window$shopifyVariab2 = window.shopifyVariables) === null || _window$shopifyVariab2 === void 0 ? void 0 : _window$shopifyVariab2.activeCurrency) || 'CAD',
     value: "".concat(price),
-    items: curatedData
+    addedItems: curatedData
   };
   var addTocartEvent = new GtmEvent('custom_add_to_cart', addTocartData);
   addTocartEvent.send();
+};
+var viewPromotion = (promotionId, promotionName) => {
+  var promotionData = {
+    promotion_id: promotionId,
+    promotion_name: promotionName
+  };
+  var viewPromotionEvent = new GtmEvent('custom_view_promotion', promotionData);
+  viewPromotionEvent.send();
 };
 
 /***/ }),
@@ -586,9 +592,12 @@ var getSingleProductData = /*#__PURE__*/function () {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   itemClickEvents: () => (/* binding */ itemClickEvents),
-/* harmony export */   pageLoadEvent: () => (/* binding */ pageLoadEvent)
+/* harmony export */   pageLoadEvent: () => (/* binding */ pageLoadEvent),
+/* harmony export */   viewPromotionTrigger: () => (/* binding */ viewPromotionTrigger)
 /* harmony export */ });
 /* harmony import */ var JsComponents_events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/events */ "./js/components/events.js");
+/* harmony import */ var JsComponents_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! JsComponents/utils */ "./js/components/utils.js");
+
 
 var pageLoadEvent = () => {
   //This handles the view_item_list (plp) and view_item(pdp)
@@ -620,20 +629,42 @@ var pageLoadEvent = () => {
 var itemClickEvents = (item, url) => {
   //This events handles the promotion_select (anywhere) and select_item (plp)
   if (item.closest('[data-promotion]')) {
-    var promotionName = item.dataset.promotionName;
-    var promotionId = item.dataset.promotionId;
-    (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.clickPromotion)(url, promotionName, promotionId);
+    if (!item.closest('[data-promotion = "false"]')) {
+      var promotionName = item.dataset.promotionName;
+      var promotionId = item.dataset.promotionId;
+      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.clickPromotion)(url, promotionName, promotionId);
+    } else {
+      window.location.href = url;
+    }
   }
   if (item.closest('[data-section-type="collection"]')) {
     var {
-      promotionId: _promotionId2
+      promotionId: _promotionId2,
+      promotionName: _promotionName
     } = (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.getPromotionParams)() || {};
     if (_promotionId2) {
       var productHandle = item.href.split("?")[0];
       productHandle = productHandle.split('/products/')[1];
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.selectItemList)(productHandle, _promotionId2);
+      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.selectItemList)(productHandle, _promotionName, _promotionId2);
     }
   }
+};
+var viewPromotionTrigger = () => {
+  var promotionItems = document.querySelectorAll('[data-promotion]');
+  var callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.target.closest('[data-promotion = "false"]')) {
+        if (entry.isIntersecting) {
+          var promotionId = entry.target.dataset.promotionId;
+          var promotionName = entry.target.dataset.promotionName;
+          (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewPromotion)(promotionId, promotionName);
+          observer.unobserve(entry.target);
+        }
+      }
+    });
+  };
+  var promotionObserver = new JsComponents_utils__WEBPACK_IMPORTED_MODULE_1__.IntersectObserver(callback, promotionItems);
+  promotionObserver.init();
 };
 
 /***/ }),
@@ -829,6 +860,35 @@ var removeCartToggleBinding = () => {
 
 /***/ }),
 
+/***/ "./js/components/utils.js":
+/*!********************************!*\
+  !*** ./js/components/utils.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   IntersectObserver: () => (/* binding */ IntersectObserver)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+
+class IntersectObserver {
+  constructor(callback) {
+    var targets = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "init", () => {
+      var observer = new IntersectionObserver(this.callback, this.options);
+      this.targets.forEach(target => {
+        observer.observe(target);
+      });
+    });
+    this.callback = callback;
+    this.options = options;
+    this.targets = targets;
+  }
+}
+
+/***/ }),
+
 /***/ "./js/sections/global.js":
 /*!*******************************!*\
   !*** ./js/sections/global.js ***!
@@ -847,14 +907,14 @@ var removeCartToggleBinding = () => {
 /* harmony import */ var lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lazysizes/plugins/respimg/ls.respimg */ "./node_modules/lazysizes/plugins/respimg/ls.respimg.js");
 /* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! JsComponents/collapsible */ "./js/components/collapsible.js");
+/* harmony import */ var JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! JsComponents/collapsible */ "./js/components/collapsible.js");
 /* harmony import */ var swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/element/bundle */ "./node_modules/swiper/swiper-element-bundle.mjs");
 /* harmony import */ var JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! JsComponents/gtm-event-trigger */ "./js/components/gtm-event-trigger.js");
-/* harmony import */ var JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! JsComponents/event-listeners */ "./js/components/event-listeners.js");
+/* harmony import */ var JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! JsComponents/event-listeners */ "./js/components/event-listeners.js");
 /* harmony import */ var JsComponents_header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! JsComponents/header */ "./js/components/header.js");
-/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
-/* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
-/* harmony import */ var JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! JsComponents/rebuy-cart-integration */ "./js/components/rebuy-cart-integration.js");
+/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
+/* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
+/* harmony import */ var JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/rebuy-cart-integration */ "./js/components/rebuy-cart-integration.js");
 
 
 
@@ -875,15 +935,18 @@ var removeCartToggleBinding = () => {
 //config lazyload to default settings
 (lazysizes__WEBPACK_IMPORTED_MODULE_0___default().cfg).loadMode = 1;
 document.addEventListener('DOMContentLoaded', () => {
-  (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__.register)(); //swiper
   (0,JsComponents_header__WEBPACK_IMPORTED_MODULE_7__["default"])(); //header and megamenu
-  (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_8__["default"])(); //carousel and product cards
-  (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_9__["default"])(); //js click handling
-  (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_10__.collapsible)(); //collapsable
-  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_11__.pageLoadEvent)(); //tracking
-  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_12__.addFormDelegate)(); //rebuy integration 
-  (0,JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_13__["default"])(); //tracking + rebuy integration + boost
-  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_12__.removeCartToggleBinding)(); //remove toggle click
+  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.addFormDelegate)(); //rebuy integration 
+  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.removeCartToggleBinding)(); //remove toggle click
+  (0,JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_9__["default"])();
+});
+window.addEventListener("load", event => {
+  (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__.register)(); //swiper
+  (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_10__["default"])(); //carousel and product cards
+  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_11__.viewPromotionTrigger)();
+  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_11__.pageLoadEvent)();
+  (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_12__["default"])();
+  (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_13__.collapsible)(); //collapsable
 });
 
 /***/ })

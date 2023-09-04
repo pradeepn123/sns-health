@@ -17,12 +17,6 @@ export default () => {
 		AddPromotionAsItemProperty(); //add promotion id as a item property 
 	})
 
-	//Rebuy init 
-	//Todo remove this dependancy, !also remove the event from app once removed
-	// document.addEventListener('rebuyReadyToRock', () => {
-	// 	document.querySelector('.header__cart-toggle--disabled')?.classList.remove('header__cart-toggle--disabled'); //disable cart till rebuy init
-	// })
-
 	//rebuy add To cart tracking
 	document.addEventListener('rebuy:cart.add', (event) => {
 		const { item } = event?.detail;
@@ -34,6 +28,7 @@ export default () => {
 	//boost tile loaded on collection pages
 	if(window.ProductList) {
 		window.ProductList.prototype.afterRender = function () {
+			debugger;
 			updateProductUrlWithPromotion(); //update all urls with promotion
 			AddPromotionAsItemProperty(); //add promotion id as a item property
 			const collectionEl = document.querySelector('[data-section-type="collection"]');
