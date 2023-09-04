@@ -70,8 +70,8 @@
         "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2": {
           "type": "image_with_text_overlay",
           "settings": {
-            "promotion": false,
-            "promotion_name": "",
+            "promotion": true,
+            "promotion_name": "Perfect Sports",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/perfect_sport.webp",
             "image_mobile": "shopify:\/\/shop_images\/perfect_sport_-_mobile.webp",
