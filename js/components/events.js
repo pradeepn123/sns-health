@@ -143,10 +143,11 @@ export const addToCartEvent = (cartItem, promotionId) => {
 	addTocartEvent.send();
 }
 
-export const viewPromotion = (promotionId, promotionName) => {
+export const viewPromotion = (promotionId, promotionName, creativeName) => {
 const promotionData = {
 	promotion_id: promotionId,
-	promotion_name: promotionName
+	promotion_name: promotionName,
+	creative_name: creativeName
 } 
 	const viewPromotionEvent = new GtmEvent('custom_view_promotion', promotionData);
 	viewPromotionEvent.send();

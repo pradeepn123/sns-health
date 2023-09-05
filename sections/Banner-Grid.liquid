@@ -20,6 +20,7 @@
                 assign button_background_type = 'transparent'
                 assign promotion = block.settings.promotion
                 assign promotion_name = block.settings.promotion_name
+                assign promotion_creative_name = block.settings.promotion_creative_name
               %}  
                <div class="swiper-slide">
                   {% render 'image-with-text-overlay', 
@@ -42,7 +43,8 @@
                     button_type: button_type,
                     button_background_type: button_background_type,
                     promotion: promotion,
-                    promotion_name: promotion_name
+                    promotion_name: promotion_name,
+                    promotion_creative_name: promotion_creative_name
                     %}
                 </div>
               {% endfor %}
@@ -90,6 +92,11 @@
             "type": "text",
             "id": "promotion_name",
             "label": "Promotion Name"
+          },
+          {
+            "type": "text",
+            "id": "promotion_creative_name",
+            "label": "Creative Name"
           },
          {
            "type": "header",

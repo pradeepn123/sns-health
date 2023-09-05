@@ -54,7 +54,8 @@ export const viewPromotionTrigger = () => {
 				if (entry.isIntersecting) {
 					const promotionId = entry.target.dataset.promotionId;
 					const promotionName = entry.target.dataset.promotionName;
-					viewPromotion(promotionId, promotionName);
+					const creativeName = entry.target.dataset.creativeName;
+					viewPromotion(promotionId, promotionName, creativeName);
 					observer.unobserve(entry.target);
 				}
 			}

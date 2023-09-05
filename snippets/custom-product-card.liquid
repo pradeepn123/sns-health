@@ -21,6 +21,7 @@
  if is_promotion 
   assign promotion_id = product.metafields.promotion.name | handleize
   assign promotion_name = product.metafields.promotion.name
+  assign creative_name = product.metafields.promotion.creative_name
  endif
 %}
 <product-card>
@@ -29,6 +30,7 @@
        data-promotion 
        data-promotion-name = "{{ promotion_name }}"
        data-promotion-id = "{{ promotion_id }}"
+       data-creative-name = "{{ creative_name }}"
     {% endif %}
     >
     <div class="product-card__body">

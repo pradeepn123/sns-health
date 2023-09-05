@@ -256,7 +256,6 @@ class CustomCarousel extends HTMLElement {
   //boost tile loaded on collection pages
   if (window.ProductList) {
     window.ProductList.prototype.afterRender = function () {
-      debugger;
       (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_1__.updateProductUrlWithPromotion)(); //update all urls with promotion
       (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_1__.AddPromotionAsItemProperty)(); //add promotion id as a item property
       var collectionEl = document.querySelector('[data-section-type="collection"]');
@@ -460,10 +459,11 @@ var addToCartEvent = (cartItem, promotionId) => {
   var addTocartEvent = new GtmEvent('custom_add_to_cart', addTocartData);
   addTocartEvent.send();
 };
-var viewPromotion = (promotionId, promotionName) => {
+var viewPromotion = (promotionId, promotionName, creativeName) => {
   var promotionData = {
     promotion_id: promotionId,
-    promotion_name: promotionName
+    promotion_name: promotionName,
+    creative_name: creativeName
   };
   var viewPromotionEvent = new GtmEvent('custom_view_promotion', promotionData);
   viewPromotionEvent.send();
@@ -657,7 +657,8 @@ var viewPromotionTrigger = () => {
         if (entry.isIntersecting) {
           var promotionId = entry.target.dataset.promotionId;
           var promotionName = entry.target.dataset.promotionName;
-          (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewPromotion)(promotionId, promotionName);
+          var creativeName = entry.target.dataset.creativeName;
+          (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewPromotion)(promotionId, promotionName, creativeName);
           observer.unobserve(entry.target);
         }
       }

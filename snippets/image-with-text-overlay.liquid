@@ -16,8 +16,8 @@
   {% if cta_url %} data-redirect-click data-js-click data-url="{{cta_url}}"{% endif %}
   {% if promotion and promotion_name != blank %}
     data-promotion data-promotion-name="{{- promotion_name -}}" data-promotion-id="{{- promotion_name | handleize -}}"
+    data-creative-name = "{{ promotion_creative_name }}"
   {% endif %}
-
 >
  <div class="text-image__image-wrapper image {{wrapper_class}}__image-wrapper {% if overlay == false %} image--no-radius {% endif%}">
   <div class="image image--desktop {{wrapper_class}}__image"> 

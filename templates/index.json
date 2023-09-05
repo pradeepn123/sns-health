@@ -8,6 +8,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "August Sale",
+            "promotion_creative_name": "Top Banner Section",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/august_sale_1.webp",
             "cta_url": "https:\/\/snshealth.com\/collections\/september-deals"
@@ -18,6 +19,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Jemieson",
+            "promotion_creative_name": "Top Banner Section",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/jamieson.png",
             "cta_url": "shopify:\/\/collections\/jamieson"
@@ -28,6 +30,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Heal and Co",
+            "promotion_creative_name": "Top Banner Section",
             "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/heal_and_co.webp",
             "cta_url": "shopify:\/\/collections\/heal-co"
@@ -38,6 +41,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Healthy Snacks: a Back-to-School specials",
+            "promotion_creative_name": "Top Banner Section",
             "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/healthy_snacks.webp",
             "cta_url": "https:\/\/snshealth.com\/collections\/healthy-snacks-a-back-to-school-specials"
@@ -48,6 +52,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Children's Health",
+            "promotion_creative_name": "Top Banner Section",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/vitamins_banner.webp",
             "cta_url": "https:\/\/snshealth.com\/collections\/childrens-health"
@@ -72,6 +77,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Perfect Sports",
+            "promotion_creative_name": "",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/perfect_sport.webp",
             "image_mobile": "shopify:\/\/shop_images\/perfect_sport_-_mobile.webp",
@@ -88,6 +94,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Bucked Up",
+            "promotion_creative_name": "",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/bucked_up.webp",
             "image_mobile": "shopify:\/\/shop_images\/bucked_up_-_mobile.webp",
@@ -104,6 +111,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Owyn",
+            "promotion_creative_name": "",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/Owyn_67f9335a-e8cb-4e7b-a834-36a0f30aae46.webp",
             "image_mobile": "shopify:\/\/shop_images\/Owyn_-_mobile_841f4170-bad1-403f-b276-e7ea40658ab9.webp",
@@ -121,6 +129,7 @@
           "settings": {
             "promotion": false,
             "promotion_name": "",
+            "promotion_creative_name": "",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/grid-image.png",
             "eyebrow": "",
