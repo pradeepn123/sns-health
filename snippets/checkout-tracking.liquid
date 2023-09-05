@@ -1,16 +1,12 @@
 <script>
-const items =   [
-  {% for item in cart.items %}
-    {% if item.properties._promotionId and item.properties._promotionId != null %} 
-       {{ item | json }} {% unless forloop.last%} , {% endunless %}
-    {% endif %}
-  {% endfor %}
-  ]
   const currency = "{{cart.currency.iso_code}}" 
     const bindCheckoutButton = () => {
      document.querySelector('.rebuy-cart__checkout-button').addEventListener('click', (ev) => {
+      debugger;
+      const items = window.Rebuy?.Cart?.cart?.items || [];
      items.forEach ( item => {
-         const promotionId = item.properties._promotionId
+         const promotionId = item.properties?._promotionId
+         if(promotionId) {
           window.dataLayer.push({
             event: 'custom_begin_checkout',
             currency: currency,
@@ -24,7 +20,8 @@ const items =   [
                  quantity: `${item.quantity}`
                }]
         });
-    });
+        }
+      });
   })}
 
   document.addEventListener('DOMContentLoaded' , () => {
