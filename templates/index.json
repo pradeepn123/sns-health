@@ -40,8 +40,8 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Healthy Snacks: a Back-to-School specials",
-            "promotion_creative_name": "Top Banner Section",
+            "promotion_name": "Immunity",
+            "promotion_creative_name": "Main Banner 3",
             "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/healthy_snacks.webp",
             "cta_url": "https:\/\/snshealth.com\/collections\/healthy-snacks-a-back-to-school-specials"
