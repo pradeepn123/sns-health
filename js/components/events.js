@@ -57,13 +57,12 @@ export const curateEcommerceData = (data) => {
 	})
 }
 export const updateProductUrlWithPromotion = () => {
-	debugger;
 	const links = document.querySelectorAll('[data-promotion-product-url]');
 	const {promotionId, promotionName} = getPromotionParams();
 	if (promotionName) {
 		links.forEach((link) => {
 			const url = redirectWithPromotion(link, promotionId, promotionName);
-			link.href = url;
+			link.href = url; 
 		})
 	}
 }

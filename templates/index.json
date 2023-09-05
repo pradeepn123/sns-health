@@ -467,6 +467,9 @@
         "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4": {
           "type": "featured_brand",
           "settings": {
+            "promotion": true,
+            "promotion_name": "Spross",
+            "promotion_creative_name": "Featured Brands",
             "image": "shopify:\/\/shop_images\/Brand_Banner.jpg",
             "url": "shopify:\/\/collections\/sproos"
           }
@@ -474,6 +477,9 @@
         "04f03284-64cf-4a23-9d73-d2a68ceced6a": {
           "type": "featured_brand",
           "settings": {
+            "promotion": true,
+            "promotion_name": "Heal + Co",
+            "promotion_creative_name": "Featured Brands",
             "image": "shopify:\/\/shop_images\/image_117_1.png",
             "url": "shopify:\/\/collections\/heal-co"
           }
@@ -481,6 +487,9 @@
         "c9336f2d-13e6-426d-932d-e2e033d0f054": {
           "type": "featured_brand",
           "settings": {
+            "promotion": true,
+            "promotion_name": "Perfect Sport",
+            "promotion_creative_name": "Featured Brands",
             "image": "shopify:\/\/shop_images\/perfect-sports.webp",
             "url": "shopify:\/\/collections\/perfect-sports"
           }
@@ -488,6 +497,9 @@
         "a8b44776-15af-4139-82d1-bbe6cbccc872": {
           "type": "featured_brand",
           "settings": {
+            "promotion": true,
+            "promotion_name": "Jamieson",
+            "promotion_creative_name": "Featured Brands",
             "image": "shopify:\/\/shop_images\/logo_tagline_date_small_3x_00342bb4-74a1-4afc-911e-139f9bd82c8d.webp",
             "url": "shopify:\/\/collections\/jamieson"
           }
@@ -495,6 +507,9 @@
         "defc111d-57ea-4cb6-a760-8974ddb96dcf": {
           "type": "featured_brand",
           "settings": {
+            "promotion": true,
+            "promotion_name": "Progressive",
+            "promotion_creative_name": "Featured Brands",
             "image": "shopify:\/\/shop_images\/download_b39686d1-e892-4a4f-b203-201926d440b3.png",
             "url": "shopify:\/\/collections\/progressive"
           }
@@ -502,6 +517,9 @@
         "2d381b18-5b7b-4dce-bf3f-2f5c3adfc807": {
           "type": "featured_brand",
           "settings": {
+            "promotion": true,
+            "promotion_name": "Smart Solution",
+            "promotion_creative_name": "Featured Brands",
             "image": "shopify:\/\/shop_images\/Smart_Solutions.png",
             "url": "shopify:\/\/collections\/smart-solutions"
           }
@@ -509,6 +527,9 @@
         "7c34e228-2195-4327-bc21-0f1952b3fdf1": {
           "type": "featured_brand",
           "settings": {
+            "promotion": true,
+            "promotion_name": "Iron Vegan",
+            "promotion_creative_name": "Featured Brands",
             "image": "shopify:\/\/shop_images\/image_118.png",
             "url": "shopify:\/\/collections\/iron-vegan-1"
           }

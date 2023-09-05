@@ -345,7 +345,6 @@ var curateEcommerceData = data => {
   });
 };
 var updateProductUrlWithPromotion = () => {
-  debugger;
   var links = document.querySelectorAll('[data-promotion-product-url]');
   var {
     promotionId,
