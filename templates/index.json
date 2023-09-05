@@ -7,8 +7,8 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "August Sale",
-            "promotion_creative_name": "Top Banner Section",
+            "promotion_name": "Monthly Sale",
+            "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/august_sale_1.webp",
             "cta_url": "https:\/\/snshealth.com\/collections\/september-deals"
