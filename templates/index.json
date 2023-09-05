@@ -562,8 +562,17 @@
       "block_order": [
         "800a2157-2753-4def-9998-c8aa3e0e8622"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Featured Products",
+        "mobile_carousel": true
+      }
+    },
+    "488a505f-7706-4eec-b196-bc79800c622a": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Featured Products",
+        "collection": "featured-products",
         "mobile_carousel": true
       }
     },
@@ -804,6 +813,7 @@
     "b1ad9959-047f-438b-a92c-519409325971",
     "932e9d3c-0311-4a00-af68-f2426cae7d02",
     "0b3ea745-2c54-4e66-a525-b80b7acd1b49",
+    "488a505f-7706-4eec-b196-bc79800c622a",
     "1693494264a39a783a",
     "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854",
     "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
