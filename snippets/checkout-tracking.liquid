@@ -2,7 +2,6 @@
   const currency = "{{cart.currency.iso_code}}" 
     const bindCheckoutButton = () => {
      document.querySelector('.rebuy-cart__checkout-button').addEventListener('click', (ev) => {
-      debugger;
       const items = window.Rebuy?.Cart?.cart?.items || [];
      items.forEach ( item => {
          const promotionId = item.properties?._promotionId

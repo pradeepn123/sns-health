@@ -28,7 +28,6 @@ export default () => {
 	//boost tile loaded on collection pages
 	if(window.ProductList) {
 		window.ProductList.prototype.afterRender = function () {
-			debugger;
 			updateProductUrlWithPromotion(); //update all urls with promotion
 			AddPromotionAsItemProperty(); //add promotion id as a item property
 			const collectionEl = document.querySelector('[data-section-type="collection"]');
