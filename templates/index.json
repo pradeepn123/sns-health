@@ -29,8 +29,8 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Heal and Co",
-            "promotion_creative_name": "Main Banner 3",
+            "promotion_name": "Heal + Co",
+            "promotion_creative_name": "Right Banner 1",
             "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/heal_and_co.webp",
             "cta_url": "shopify:\/\/collections\/heal-co"
