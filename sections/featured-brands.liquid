@@ -11,8 +11,20 @@
            assign id = block.id
            assign image = block.settings.image
            assign url = block.settings.url
+           assign promotion = block.settings.promotion
+           assign promotion_name = block.settings.promotion_name
+           assign promotion_creative_name = block.settings.promotion_creative_name
          %}
-         <a class="swiper-slide featured-brand-section__item" {% if url%} href="{{url}}" {% endif%}>
+         <a class="swiper-slide featured-brand-section__item" 
+          {% if promotion and promotion_name != blank %}
+            data-promotion 
+            data-promotion-name="{{- promotion_name -}}" 
+            data-promotion-id="{{- promotion_name | handleize -}}"
+            data-creative-name = "{{ promotion_creative_name }}"
+            data-redirect-click
+            data-url = "{{url}}"
+          {% endif %}
+        >
           {% render 'shopify-responsive-image',
             image: image,
             aspect_ratio: 3.5,
@@ -49,6 +61,9 @@
             assign id = block.id
             assign image = block.settings.image
             assign url = block.settings.url
+            assign promotion = block.settings.promotion
+            assign promotion_name = block.settings.promotion_name
+            assign promotion_creative_name = block.settings.promotion_creative_name
           %}
           <a class="swiper-slide featured-brand-section__item" {% if url%} href="{{url}}" {% endif%}>
            {% render 'shopify-responsive-image',
@@ -109,6 +124,22 @@
           {
             "type": "header",
             "content": "Block Group"
+          },
+          {
+            "type": "checkbox",
+            "id": "promotion",
+            "label": "Is Promotion ?",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "promotion_name",
+            "label": "Promotion Name"
+          },
+          {
+            "type": "text",
+            "id": "promotion_creative_name",
+            "label": "Creative Name"
           },
           {
               "type": "image_picker",
