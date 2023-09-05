@@ -377,6 +377,7 @@ var redirectWithPromotion = (url, promotionId, promotionName) => {
 };
 var clickPromotion = /*#__PURE__*/function () {
   var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, promotionName, promotionId) {
+    debugger;
     var gtmData = {
       promotion_id: promotionId,
       promotion_name: promotionName
@@ -626,7 +627,7 @@ var pageLoadEvent = () => {
   }
 };
 var itemClickEvents = (item, url) => {
-  //This events handles the promotion_select (anywhere) and select_item (plp)
+  debugger; //This events handles the promotion_select (anywhere) and select_item (plp)
   if (item.closest('[data-promotion]')) {
     if (!item.closest('[data-promotion = "false"]')) {
       var promotionName = item.dataset.promotionName;
@@ -940,8 +941,6 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.removeCartToggleBinding)(); //remove toggle click
   (0,JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_9__["default"])();
   (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.pageLoadEvent)();
-});
-window.addEventListener("load", event => {
   (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__.register)(); //swiper
   (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_11__["default"])(); //carousel and product cards
   (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.viewPromotionTrigger)();

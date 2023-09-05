@@ -24,7 +24,8 @@ export const pageLoadEvent = () => { 	//This handles the view_item_list (plp) an
 	}
 }
 
-export const itemClickEvents = (item, url) => { 	//This events handles the promotion_select (anywhere) and select_item (plp)
+export const itemClickEvents = (item, url) => { 
+	//This events handles the promotion_select (anywhere) and select_item (plp)
 	if (item.closest('[data-promotion]')) {
 		if (!(item.closest('[data-promotion = "false"]'))) {
 			const promotionName = item.dataset.promotionName;

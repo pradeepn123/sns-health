@@ -24,14 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
   removeCartToggleBinding() //remove toggle click
   eventListeners();
   pageLoadEvent();
-})
-
-window.addEventListener("load", (event) => {
   register(); //swiper
   registerCustomElements(); //carousel and product cards
   viewPromotionTrigger();
   handleClick();
   collapsible(); //collapsable
-});
+})
+
 
 
