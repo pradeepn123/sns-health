@@ -693,7 +693,7 @@
           "settings": {
             "text_color": "",
             "background_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/grid-image.png",
+            "image_desktop": "shopify:\/\/shop_images\/Vector-3.png",
             "image_mobile": "shopify:\/\/shop_images\/MatteMarble1.5-Front.png",
             "eyebrow": "",
             "inline_heading": false,
@@ -708,7 +708,7 @@
           "settings": {
             "text_color": "",
             "background_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/grid-image.png",
+            "image_desktop": "shopify:\/\/shop_images\/Vector-1.png",
             "image_mobile": "shopify:\/\/shop_images\/MatteMarble1.5-Front.png",
             "eyebrow": "",
             "inline_heading": false,
@@ -723,7 +723,7 @@
           "settings": {
             "text_color": "",
             "background_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/grid-image.png",
+            "image_desktop": "shopify:\/\/shop_images\/Vector_dcb6d0f6-2d45-4897-8182-99e72271db48.png",
             "image_mobile": "shopify:\/\/shop_images\/MatteMarble1.5-Front.png",
             "eyebrow": "",
             "inline_heading": false,
@@ -740,7 +740,6 @@
         "9066e929-3a9c-404b-835a-797166835a14",
         "7bab0a26-8d2b-497d-ab26-0e0e9c996828"
       ],
-      "disabled": true,
       "settings": {
         "mobile_carousel": true
       }
