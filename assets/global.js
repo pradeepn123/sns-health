@@ -44,7 +44,6 @@ var collapsible = () => {
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
-/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
 
 
 var _excluded = ["breakpoints"],
@@ -190,10 +189,11 @@ class CustomCarousel extends HTMLElement {
         init: swiper => {
           if (!!swiper.navigation) {
             swiper.navigation.destroy();
-            var el = this.querySelector('.carousel__container');
-            (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_4__["default"])(el);
+            // const el = this.querySelector('.carousel__container')
+            // handleClick(el);
           }
         },
+
         afterInit: () => {
           this.querySelector('.carousel__container').classList.remove('hide');
           this.querySelector('.carousel-placeholders').classList.add('hide');
@@ -377,7 +377,6 @@ var redirectWithPromotion = (url, promotionId, promotionName) => {
 };
 var clickPromotion = /*#__PURE__*/function () {
   var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, promotionName, promotionId) {
-    debugger;
     var gtmData = {
       promotion_id: promotionId,
       promotion_name: promotionName
@@ -627,7 +626,7 @@ var pageLoadEvent = () => {
   }
 };
 var itemClickEvents = (item, url) => {
-  debugger; //This events handles the promotion_select (anywhere) and select_item (plp)
+  //This events handles the promotion_select (anywhere) and select_item (plp)
   if (item.closest('[data-promotion]')) {
     if (!item.closest('[data-promotion = "false"]')) {
       var promotionName = item.dataset.promotionName;
