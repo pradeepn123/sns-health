@@ -649,7 +649,7 @@ var itemClickEvents = (item, url) => {
       var promotionName = item.dataset.promotionName;
       var promotionId = item.dataset.promotionId;
       var creativeName = item.dataset.creativeName;
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.clickPromotion)(url, promotionName, promotionId, promotionName, creativeName);
+      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.clickPromotion)(url, promotionName, promotionId, creativeName);
     } else {
       window.location.href = url;
     }

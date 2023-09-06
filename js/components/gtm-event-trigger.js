@@ -31,7 +31,7 @@ export const itemClickEvents = (item, url) => {
 			const promotionName = item.dataset.promotionName;
 			const promotionId = item.dataset.promotionId;
 			const creativeName = item.dataset.creativeName;
-			clickPromotion(url, promotionName, promotionId, promotionName , creativeName);
+			clickPromotion(url, promotionName, promotionId,creativeName); 
 		}
 		else {
 			window.location.href = url;
