@@ -4,12 +4,16 @@
      document.querySelector('.rebuy-cart__checkout-button').addEventListener('click', (ev) => {
       const items = window.Rebuy?.Cart?.cart?.items || [];
      items.forEach ( item => {
-         const promotionId = item.properties?._promotionId
+         const promotionId = item.properties?._promotionId;
+         const promotionName = item.properties?._promotionName;
+         const creativeName = item.properties?._creativeName;
          if(promotionId) {
           window.dataLayer.push({
             event: 'custom_begin_checkout',
             currency: currency,
             promotion_id: promotionId,
+            promotion_name: promotionName,
+            creative_name: creativeName,
             value: item.final_price * 0.01,
             items: [
               {

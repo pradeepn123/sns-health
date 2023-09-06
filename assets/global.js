@@ -249,7 +249,7 @@ class CustomCarousel extends HTMLElement {
       item
     } = event === null || event === void 0 ? void 0 : event.detail;
     if ((_item$properties = item.properties) !== null && _item$properties !== void 0 && _item$properties._promotionId) {
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_1__.addToCartEvent)(item, item.properties._promotionId); //if it came from promotion, trigger events
+      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_1__.addToCartEvent)(item, item.properties._promotionName, item.properties._promotionId, item.properties._creativeName); //if it came from promotion, trigger events
     }
   });
 
@@ -314,10 +314,12 @@ var getPromotionParams = () => {
   });
   var promotionName = params.promotion_name;
   var promotionId = params.promotion_id;
+  var creativeName = params.creative_name;
   if (promotionName) {
     promotionData = {
       promotionName,
-      promotionId
+      promotionId,
+      creativeName
     };
   }
   return promotionData;
@@ -348,11 +350,12 @@ var updateProductUrlWithPromotion = () => {
   var links = document.querySelectorAll('[data-promotion-product-url]');
   var {
     promotionId,
-    promotionName
+    promotionName,
+    creativeName
   } = getPromotionParams();
   if (promotionName) {
     links.forEach(link => {
-      var url = redirectWithPromotion(link, promotionId, promotionName);
+      var url = redirectWithPromotion(link, promotionId, promotionName, creativeName);
       link.href = url;
     });
   }
@@ -360,9 +363,11 @@ var updateProductUrlWithPromotion = () => {
 var AddPromotionAsItemProperty = () => {
   var forms = document.querySelectorAll('[action = "/cart/add"]');
   var {
-    promotionId
+    promotionId,
+    promotionName,
+    creativeName
   } = getPromotionParams();
-  var inputHtml = "<input type=\"hidden\" name=properties[_promotionId] value='".concat(promotionId, "' />");
+  var inputHtml = "<input type=\"hidden\" name=properties[_promotionId] value='".concat(promotionId, "' />\n\t<input type=\"hidden\" name=properties[_promotionName] value='").concat(promotionName, "' />\n\t<input type=\"hidden\" name=properties[_creativeName] value='").concat(creativeName, "' />\n\t");
   if (promotionId) {
     forms.forEach(form => {
       //do not add if it already exist
@@ -372,30 +377,33 @@ var AddPromotionAsItemProperty = () => {
     });
   }
 };
-var redirectWithPromotion = (url, promotionId, promotionName) => {
-  return "".concat(url, "?promotion_id=").concat(promotionId, "&promotion_name=").concat(promotionName);
+var redirectWithPromotion = (url, promotionId, promotionName, creativeName) => {
+  return "".concat(url, "?promotion_id=").concat(promotionId, "&promotion_name=").concat(promotionName, "&creative_name=").concat(creativeName);
 };
 var clickPromotion = /*#__PURE__*/function () {
-  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, promotionName, promotionId) {
+  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, promotionName, promotionId, creativeName) {
     var gtmData = {
       promotion_id: promotionId,
-      promotion_name: promotionName
+      promotion_name: promotionName,
+      creative_name: creativeName
     };
     var selectPromotion = new GtmEvent('custom_promotion_click', gtmData);
     selectPromotion.send();
-    window.location.href = redirectWithPromotion(url, promotionId, promotionName);
+    window.location.href = redirectWithPromotion(url, promotionId, promotionName, creativeName);
   });
-  return function clickPromotion(_x, _x2, _x3) {
+  return function clickPromotion(_x, _x2, _x3, _x4) {
     return _ref.apply(this, arguments);
   };
 }();
 var selectItemList = /*#__PURE__*/function () {
-  var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId) {
+  var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId, creativeName) {
     var data = [yield (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__.getSingleProductData)(handle)];
     var curatedData = {
       promotion_id: promotionId,
       item_list_id: promotionId,
-      item_list_name: promotionName
+      item_list_name: promotionName,
+      promotion_name: promotionName,
+      creativeName: creativeName
     };
     var viewItemListEventData = _objectSpread(_objectSpread({}, curatedData), {}, {
       selectedItem: curateEcommerceData(data)
@@ -403,17 +411,19 @@ var selectItemList = /*#__PURE__*/function () {
     var customViewItemListEvent = new GtmEvent('custom_select_item', viewItemListEventData);
     customViewItemListEvent.send();
   });
-  return function selectItemList(_x4, _x5, _x6) {
+  return function selectItemList(_x5, _x6, _x7, _x8) {
     return _ref2.apply(this, arguments);
   };
 }();
 var ViewItemList = /*#__PURE__*/function () {
-  var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId) {
+  var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId, creativeName) {
     var data = yield (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__.getCollectionProductData)(handle);
     var curatedData = {
       promotion_id: promotionId,
       item_list_id: promotionId,
-      item_list_name: promotionName
+      item_list_name: promotionName,
+      promotion_name: promotionName,
+      creative_name: creativeName
     };
     var viewItemListEventData = _objectSpread(_objectSpread({}, curatedData), {}, {
       viewedItems: curateEcommerceData(data)
@@ -421,12 +431,12 @@ var ViewItemList = /*#__PURE__*/function () {
     var customViewItemListEvent = new GtmEvent('custom_view_item_list', viewItemListEventData);
     customViewItemListEvent.send();
   });
-  return function ViewItemList(_x7, _x8, _x9) {
+  return function ViewItemList(_x9, _x10, _x11, _x12) {
     return _ref3.apply(this, arguments);
   };
 }();
 var viewItem = /*#__PURE__*/function () {
-  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionId) {
+  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId, creativeName) {
     var _window$shopifyVariab, _data$;
     var currency = ((_window$shopifyVariab = window.shopifyVariables) === null || _window$shopifyVariab === void 0 ? void 0 : _window$shopifyVariab.activeCurrency) || 'CAD';
     var data = [yield (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__.getSingleProductData)(handle)];
@@ -434,16 +444,18 @@ var viewItem = /*#__PURE__*/function () {
       currency: "".concat(currency),
       value: ((_data$ = data[0]) === null || _data$ === void 0 ? void 0 : _data$.price) * 0.01,
       promotion_id: promotionId,
+      promotion_name: promotionName,
+      creative_name: creativeName,
       viewedItem: curateEcommerceData(data)
     };
     var customViewItemListEvent = new GtmEvent('custom_view_item', viewItemEventData);
     customViewItemListEvent.send();
   });
-  return function viewItem(_x10, _x11) {
+  return function viewItem(_x13, _x14, _x15, _x16) {
     return _ref4.apply(this, arguments);
   };
 }();
-var addToCartEvent = (cartItem, promotionId) => {
+var addToCartEvent = (cartItem, promotionName, promotionId, creativeName) => {
   var _window$shopifyVariab2;
   var curatedData = curateEcommerceData([cartItem]);
   var [{
@@ -451,6 +463,8 @@ var addToCartEvent = (cartItem, promotionId) => {
   }] = curatedData;
   var addTocartData = {
     promotion_id: promotionId,
+    promotion_name: promotionName,
+    creative_name: creativeName,
     currency: ((_window$shopifyVariab2 = window.shopifyVariables) === null || _window$shopifyVariab2 === void 0 ? void 0 : _window$shopifyVariab2.activeCurrency) || 'CAD',
     value: "".concat(price),
     addedItems: curatedData
@@ -458,7 +472,7 @@ var addToCartEvent = (cartItem, promotionId) => {
   var addTocartEvent = new GtmEvent('custom_add_to_cart', addTocartData);
   addTocartEvent.send();
 };
-var viewPromotion = (promotionId, promotionName, creativeName) => {
+var viewPromotion = (promotionName, promotionId, creativeName) => {
   var promotionData = {
     promotion_id: promotionId,
     promotion_name: promotionName,
@@ -606,10 +620,11 @@ var pageLoadEvent = () => {
     var collectionHandle = urlPArams.split('?')[0];
     var {
       promotionName,
-      promotionId
+      promotionId,
+      creativeName
     } = (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.getPromotionParams)() || {};
     if (promotionName) {
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.ViewItemList)(collectionHandle, promotionName, promotionId);
+      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.ViewItemList)(collectionHandle, promotionName, promotionId, creativeName);
       (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.AddPromotionAsItemProperty)();
     }
   }
@@ -617,10 +632,12 @@ var pageLoadEvent = () => {
     var _urlPArams = url.split('/products/')[1];
     var productHandle = _urlPArams.split('?')[0];
     var {
-      promotionId: _promotionId
+      promotionId: _promotionId,
+      promotionName: _promotionName,
+      creativeName: _creativeName
     } = (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.getPromotionParams)() || {};
     if (_promotionId) {
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewItem)(productHandle, _promotionId);
+      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewItem)(productHandle, _promotionName, _promotionId, _creativeName);
       (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.AddPromotionAsItemProperty)();
     }
   }
@@ -631,7 +648,8 @@ var itemClickEvents = (item, url) => {
     if (!item.closest('[data-promotion = "false"]')) {
       var promotionName = item.dataset.promotionName;
       var promotionId = item.dataset.promotionId;
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.clickPromotion)(url, promotionName, promotionId);
+      var creativeName = item.dataset.creativeName;
+      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.clickPromotion)(url, promotionName, promotionId, promotionName, creativeName);
     } else {
       window.location.href = url;
     }
@@ -639,12 +657,13 @@ var itemClickEvents = (item, url) => {
   if (item.closest('[data-section-type="collection"]')) {
     var {
       promotionId: _promotionId2,
-      promotionName: _promotionName
+      promotionName: _promotionName2,
+      creativeName: _creativeName2
     } = (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.getPromotionParams)() || {};
     if (_promotionId2) {
       var productHandle = item.href.split("?")[0];
       productHandle = productHandle.split('/products/')[1];
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.selectItemList)(productHandle, _promotionName, _promotionId2);
+      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.selectItemList)(productHandle, _promotionName2, _promotionId2, _creativeName2);
     }
   }
 };
@@ -657,7 +676,7 @@ var viewPromotionTrigger = () => {
           var promotionId = entry.target.dataset.promotionId;
           var promotionName = entry.target.dataset.promotionName;
           var creativeName = entry.target.dataset.creativeName;
-          (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewPromotion)(promotionId, promotionName, creativeName);
+          (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewPromotion)(promotionName, promotionId, creativeName);
           observer.unobserve(entry.target);
         }
       }

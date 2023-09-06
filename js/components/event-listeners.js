@@ -21,7 +21,7 @@ export default () => {
 	document.addEventListener('rebuy:cart.add', (event) => {
 		const { item } = event?.detail;
 		if (item.properties?._promotionId) {
-			addToCartEvent(item, item.properties._promotionId) //if it came from promotion, trigger events
+			addToCartEvent(item, item.properties._promotionName,item.properties._promotionId, item.properties._creativeName) //if it came from promotion, trigger events
 		}
 	});
 

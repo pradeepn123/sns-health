@@ -7,18 +7,18 @@ export const pageLoadEvent = () => { 	//This handles the view_item_list (plp) an
 	if (url.includes('/collections/')) {
 		const urlPArams = url.split('/collections/')[1];
 		const collectionHandle = urlPArams.split('?')[0];
-		const { promotionName, promotionId } = getPromotionParams() || {};
+		const { promotionName, promotionId, creativeName } = getPromotionParams() || {};
 		if (promotionName) {
-			ViewItemList(collectionHandle, promotionName, promotionId)
+			ViewItemList(collectionHandle, promotionName, promotionId, creativeName)
 			AddPromotionAsItemProperty();
 		}
 	}
 	if (url.includes('/products/')) {
 		const urlPArams = url.split('/products/')[1];
 		const productHandle = urlPArams.split('?')[0];
-		const { promotionId } = getPromotionParams() || {};
+		const { promotionId, promotionName, creativeName } = getPromotionParams() || {};
 		if (promotionId) {
-			viewItem(productHandle, promotionId)
+			viewItem(productHandle, promotionName, promotionId, creativeName )
 			AddPromotionAsItemProperty();
 		}
 	}
@@ -30,7 +30,8 @@ export const itemClickEvents = (item, url) => {
 		if (!(item.closest('[data-promotion = "false"]'))) {
 			const promotionName = item.dataset.promotionName;
 			const promotionId = item.dataset.promotionId;
-			clickPromotion(url, promotionName, promotionId);
+			const creativeName = item.dataset.creativeName;
+			clickPromotion(url, promotionName, promotionId, promotionName , creativeName);
 		}
 		else {
 			window.location.href = url;
@@ -38,11 +39,11 @@ export const itemClickEvents = (item, url) => {
 	}
 
 	if (item.closest('[data-section-type="collection"]')) {
-		const { promotionId, promotionName } = getPromotionParams() || {};
+		const { promotionId, promotionName, creativeName } = getPromotionParams() || {};
 		if (promotionId) {
 			let productHandle = (item.href).split("?")[0];
 			productHandle = productHandle.split('/products/')[1];
-			selectItemList(productHandle, promotionName, promotionId)
+			selectItemList(productHandle, promotionName, promotionId, creativeName)
 		}
 	}
 }
@@ -56,7 +57,7 @@ export const viewPromotionTrigger = () => {
 					const promotionId = entry.target.dataset.promotionId;
 					const promotionName = entry.target.dataset.promotionName;
 					const creativeName = entry.target.dataset.creativeName;
-					viewPromotion(promotionId, promotionName, creativeName);
+					viewPromotion(promotionName,promotionId,creativeName);
 					observer.unobserve(entry.target);
 				}
 			}

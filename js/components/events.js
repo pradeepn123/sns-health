@@ -23,10 +23,12 @@ export const getPromotionParams = () => {
 });
 const promotionName = params.promotion_name;
 const promotionId = params.promotion_id;
+const creativeName = params.creative_name;
 	if(promotionName) {
 		promotionData =  {
 			promotionName,
-			promotionId
+			promotionId,
+			creativeName
 		}
 	}
 	return promotionData;
@@ -58,18 +60,21 @@ export const curateEcommerceData = (data) => {
 }
 export const updateProductUrlWithPromotion = () => {
 	const links = document.querySelectorAll('[data-promotion-product-url]');
-	const {promotionId, promotionName} = getPromotionParams();
+	const {promotionId, promotionName, creativeName} = getPromotionParams();
 	if (promotionName) {
 		links.forEach((link) => {
-			const url = redirectWithPromotion(link, promotionId, promotionName);
+			const url = redirectWithPromotion(link, promotionId, promotionName, creativeName);
 			link.href = url; 
 		})
 	}
 }
 export const AddPromotionAsItemProperty = () => {
 	const forms = document.querySelectorAll('[action = "/cart/add"]');
-	const {promotionId} = getPromotionParams();
-	const inputHtml = `<input type="hidden" name=properties[_promotionId] value='${promotionId}' />`
+	const {promotionId,promotionName,creativeName} = getPromotionParams();
+	const inputHtml = `<input type="hidden" name=properties[_promotionId] value='${promotionId}' />
+	<input type="hidden" name=properties[_promotionName] value='${promotionName}' />
+	<input type="hidden" name=properties[_creativeName] value='${creativeName}' />
+	`
 	if (promotionId) {
 		forms.forEach((form) => {
 			//do not add if it already exist
@@ -79,24 +84,30 @@ export const AddPromotionAsItemProperty = () => {
 		})
 	}
 }
-export const redirectWithPromotion = (url, promotionId, promotionName) => {
-	return `${url}?promotion_id=${promotionId}&promotion_name=${promotionName}`;
+
+export const redirectWithPromotion = (url, promotionId, promotionName,creativeName) => {
+	return `${url}?promotion_id=${promotionId}&promotion_name=${promotionName}&creative_name=${creativeName}`;
 }
-export const clickPromotion = async (url, promotionName, promotionId) => {
+
+
+export const clickPromotion = async (url, promotionName, promotionId, creativeName) => {
 	const gtmData = {
 		promotion_id: promotionId,
-		promotion_name: promotionName
+		promotion_name: promotionName,
+		creative_name: creativeName
 	}
 	const selectPromotion = new GtmEvent('custom_promotion_click', gtmData);
 	selectPromotion.send();
-	window.location.href = redirectWithPromotion(url, promotionId, promotionName);
+	window.location.href = redirectWithPromotion(url, promotionId, promotionName, creativeName);
 }
-export const selectItemList = async (handle, promotionName, promotionId) => {
+export const selectItemList = async (handle, promotionName, promotionId, creativeName) => {
 	const data = [await getSingleProductData(handle)];
 	const curatedData = {
 		promotion_id: promotionId,
 		item_list_id: promotionId,
-		item_list_name: promotionName
+		item_list_name: promotionName,
+		promotion_name: promotionName,
+		creativeName: creativeName
 	}
 	const viewItemListEventData = {
 		...curatedData, selectedItem: curateEcommerceData(data)
@@ -104,12 +115,14 @@ export const selectItemList = async (handle, promotionName, promotionId) => {
 	const customViewItemListEvent = new GtmEvent('custom_select_item', viewItemListEventData);
 	customViewItemListEvent.send();
 }
-export const ViewItemList = async (handle, promotionName, promotionId) => {
+export const ViewItemList = async (handle, promotionName, promotionId, creativeName) => {
 	const data = await getCollectionProductData(handle);
 	const curatedData = {
 		promotion_id: promotionId,
 		item_list_id: promotionId,
-		item_list_name: promotionName
+		item_list_name: promotionName,
+		promotion_name: promotionName, 
+		creative_name: creativeName
 	}
 	const viewItemListEventData = {
 		...curatedData, viewedItems: curateEcommerceData(data)
@@ -117,23 +130,27 @@ export const ViewItemList = async (handle, promotionName, promotionId) => {
 	const customViewItemListEvent = new GtmEvent('custom_view_item_list', viewItemListEventData);
 	customViewItemListEvent.send();
 }
-export const viewItem = async (handle, promotionId) => {
+export const viewItem = async (handle, promotionName, promotionId,creativeName) => {
 	const currency = window.shopifyVariables?.activeCurrency || 'CAD';
 	const data = [await getSingleProductData(handle)];
 	const viewItemEventData = {
 		currency: `${currency}`,
 		value: data[0]?.price*0.01,
 		promotion_id: promotionId,
+		promotion_name: promotionName,
+		creative_name: creativeName,
 		viewedItem: curateEcommerceData(data)
 	}
 	const customViewItemListEvent = new GtmEvent('custom_view_item', viewItemEventData);
 	customViewItemListEvent.send();
 }
-export const addToCartEvent = (cartItem, promotionId) => {
+export const addToCartEvent = (cartItem,promotionName, promotionId,creativeName) => {
 	const curatedData = curateEcommerceData([cartItem]);
 	const [{ price }] = curatedData;
 	const addTocartData = {
 		promotion_id: promotionId,
+		promotion_name:promotionName,
+		creative_name: creativeName,
 		currency: window.shopifyVariables?.activeCurrency || 'CAD',
 		value: `${price}`,
 		addedItems: curatedData
@@ -142,7 +159,7 @@ export const addToCartEvent = (cartItem, promotionId) => {
 	addTocartEvent.send();
 }
 
-export const viewPromotion = (promotionId, promotionName, creativeName) => {
+export const viewPromotion = (promotionName, promotionId,creativeName) => {
 const promotionData = {
 	promotion_id: promotionId,
 	promotion_name: promotionName,
