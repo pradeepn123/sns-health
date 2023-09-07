@@ -692,7 +692,7 @@
           "type": "banner_grid",
           "settings": {
             "text_color": "",
-            "background_color": "",
+            "background_color": "#ff0000",
             "image_desktop": "shopify:\/\/shop_images\/Vector-3.png",
             "image_mobile": "shopify:\/\/shop_images\/Vector-3.png",
             "eyebrow": "",
