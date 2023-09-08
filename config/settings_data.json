@@ -433,7 +433,7 @@
           "color_mode": "color",
           "show_quantity_selector": true,
           "show_payment_button": true,
-          "show_pickup_availability": true,
+          "show_pickup_availability": false,
           "image_size": "small",
           "enable_video_looping": false,
           "enable_image_zoom": true,
