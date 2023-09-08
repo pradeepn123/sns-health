@@ -1414,7 +1414,7 @@
       "ticker": {
         "type": "ticker",
         "settings": {
-          "ticker_text": "<p><strong>Flat 20% OFF<\/strong> on Cork yoga Mats<\/p>",
+          "ticker_text": "",
           "direction": "ticker-to-left"
         }
       },
