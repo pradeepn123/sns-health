@@ -727,7 +727,7 @@
           "40dfd9f7-9755-4310-9e3d-4775d85d7aa6": {
             "type": "collection",
             "settings": {
-              "collection": "protein-bars-and-snacks"
+              "collection": "protein-snacks"
             }
           }
         },
@@ -990,7 +990,7 @@
         "type": "collection-with-image",
         "disabled": true,
         "settings": {
-          "collection": "protein-bars-and-snacks",
+          "collection": "protein-snacks",
           "products_count": 8,
           "image": "shopify:\/\/shop_images\/weight-loss.jpg",
           "background": "#d1e6ff",
