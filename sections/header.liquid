@@ -316,121 +316,121 @@
                 {% render 'icon', icon: 'arrow-right'%}
                 </a>
               </div>
-              <div id="account-popover" class="popover {% if customer %}popover--logged{% else %}popover--large popover--unlogged{% endif %}" aria-hidden="true">
-                {%- if customer -%}
-                  <div class="popover__inner popover__inner--no-padding">
-                    <div class="popover__linklist">
-                      <a class="popover__link-item" href="{{ routes.account_url }}">{{ 'customer.general.orders' | t }}</a>
-                      <a class="popover__link-item" href="{{ routes.account_addresses_url }}">{{ 'customer.general.addresses' | t }}</a>
-                      <a class="popover__link-item" href="{{ routes.account_logout_url }}" data-no-instant>{{ 'customer.general.logout' | t }}</a>
-                    </div>
+            </div>
+            <div id="account-popover" class="popover {% if customer %}popover--logged{% else %}popover--large popover--unlogged{% endif %}" aria-hidden="true">
+              {%- if customer -%}
+                <div class="popover__inner popover__inner--no-padding">
+                  <div class="popover__linklist">
+                    <a class="popover__link-item" href="{{ routes.account_url }}">{{ 'customer.general.orders' | t }}</a>
+                    <a class="popover__link-item" href="{{ routes.account_addresses_url }}">{{ 'customer.general.addresses' | t }}</a>
+                    <a class="popover__link-item" href="{{ routes.account_logout_url }}" data-no-instant>{{ 'customer.general.logout' | t }}</a>
                   </div>
-                {%- else -%}
-                  <div class="popover__panel-list">
-                    {%- comment -%}LOGIN{%- endcomment -%}
-                    <div id="header-login-panel" class="popover__panel popover__panel--default is-selected">
-                      <div class="popover__inner">
-                        {%- form 'customer_login', name: 'login', class: 'form', id: 'header_customer_login' -%}
-                          <header class="popover__header">
-                            <h2 class="popover__title heading">{{ 'customer.login.login' | t }}</h2>
-                            <p class="popover__legend">{{ 'customer.login.description' | t }}</p>
-                          </header>
+                </div>
+              {%- else -%}
+                <div class="popover__panel-list">
+                  {%- comment -%}LOGIN{%- endcomment -%}
+                  <div id="header-login-panel" class="popover__panel popover__panel--default is-selected">
+                    <div class="popover__inner">
+                      {%- form 'customer_login', name: 'login', class: 'form', id: 'header_customer_login' -%}
+                        <header class="popover__header">
+                          <h2 class="popover__title heading">{{ 'customer.login.login' | t }}</h2>
+                          <p class="popover__legend">{{ 'customer.login.description' | t }}</p>
+                        </header>
 
-                          <div class="form__input-wrapper form__input-wrapper--labelled">
-                            <input type="email" id="login-customer[email]" class="form__field form__field--text" name="customer[email]" required="required">
-                            <label for="login-customer[email]" class="form__floating-label">{{ 'customer.login.email' | t }}</label>
-                          </div>
-
-                          <div class="form__input-wrapper form__input-wrapper--labelled">
-                            <input type="password" id="login-customer[password]" class="form__field form__field--text" name="customer[password]" required="required" autocomplete="current-password">
-                            <label for="login-customer[password]" class="form__floating-label">{{ 'customer.login.password' | t }}</label>
-                          </div>
-
-                          <button type="submit" class="form__submit button button--primary button--full">{{ 'customer.login.submit' | t }}</button>
-                        {%- endform -%}
-
-                        <div class="popover__secondary-action">
-                          <p>{{ 'customer.login.new_customer' | t }} <button data-action="show-popover-panel" aria-controls="header-register-panel" class="link link--accented">{{ 'customer.login.create_your_account' | t }}</button></p>
-                          <p>{{ 'customer.login.lost_password' | t }} <a href="{{ routes.account_url }}#recover-password" aria-controls="header-recover-panel" class="link link--accented">{{ 'customer.login.recover_password' | t }}</a></p>
+                        <div class="form__input-wrapper form__input-wrapper--labelled">
+                          <input type="email" id="login-customer[email]" class="form__field form__field--text" name="customer[email]" required="required">
+                          <label for="login-customer[email]" class="form__floating-label">{{ 'customer.login.email' | t }}</label>
                         </div>
-                      </div>
-                    </div>
 
-                    {%- comment -%}RECOVER{%- endcomment -%}
-                    <div id="header-recover-panel" class="popover__panel popover__panel--sliding">
-                      <div class="popover__inner">
-                        {%- form 'recover_customer_password', name: 'recover', class: 'form' -%}
-                          <header class="popover__header">
-                            <h2 class="popover__title heading">{{ 'customer.recover_password.recover_password' | t }}</h2>
-                            <p class="popover__legend">{{ 'customer.recover_password.description' | t }}</p>
-                          </header>
-
-                          <div class="form__input-wrapper form__input-wrapper--labelled">
-                            <input type="email" id="recover-customer[recover_email]" class="form__field form__field--text" name="email" required="required">
-                            <label for="recover-customer[recover_email]" class="form__floating-label">{{ 'customer.recover_password.email' | t }}</label>
-                          </div>
-
-                          <button type="submit" class="form__submit button button--primary button--full">{{ 'customer.recover_password.submit' | t }}</button>
-                        {%- endform -%}
-
-                        <div class="popover__secondary-action">
-                          <p>{{ 'customer.recover_password.remembered_your_password' | t }} <button data-action="show-popover-panel" aria-controls="header-login-panel" class="link link--accented">{{ 'customer.recover_password.back_to_login' | t }}</button></p>
+                        <div class="form__input-wrapper form__input-wrapper--labelled">
+                          <input type="password" id="login-customer[password]" class="form__field form__field--text" name="customer[password]" required="required" autocomplete="current-password">
+                          <label for="login-customer[password]" class="form__floating-label">{{ 'customer.login.password' | t }}</label>
                         </div>
-                      </div>
-                    </div>
 
-                    {%- comment -%}REGISTER{%- endcomment -%}
-                    <div id="header-register-panel" class="popover__panel popover__panel--sliding">
-                      <div class="popover__inner">
-                        {%- form 'create_customer', name: 'create', class: 'form' -%}
-                          <header class="popover__header">
-                            <h2 class="popover__title heading">{{ 'customer.register.create_account' | t }}</h2>
-                            <p class="popover__legend">{{ 'customer.register.description' | t }}</p>
-                          </header>
+                        <button type="submit" class="form__submit button button--primary button--full">{{ 'customer.login.submit' | t }}</button>
+                      {%- endform -%}
 
-                          {%- if request.locale.iso_code == 'ja' -%}
-                            <div class="form__input-wrapper form__input-wrapper--labelled">
-                              <input type="text" id="customer[last_name]" class="form__field form__field--text" name="customer[last_name]" autocomplete="family-name" required="required">
-                              <label for="customer[last_name]" class="form__floating-label">{{ 'customer.register.last_name' | t }}</label>
-                            </div>
-
-                            <div class="form__input-wrapper form__input-wrapper--labelled">
-                              <input type="text" id="customer[first_name]" class="form__field form__field--text" name="customer[first_name]" autocomplete="given-name" required="required">
-                              <label for="customer[first_name]" class="form__floating-label">{{ 'customer.register.first_name' | t }}</label>
-                            </div>
-                          {%- else -%}
-                            <div class="form__input-wrapper form__input-wrapper--labelled">
-                              <input type="text" id="customer[first_name]" class="form__field form__field--text" name="customer[first_name]" autocomplete="given-name" required="required">
-                              <label for="customer[first_name]" class="form__floating-label">{{ 'customer.register.first_name' | t }}</label>
-                            </div>
-
-                            <div class="form__input-wrapper form__input-wrapper--labelled">
-                              <input type="text" id="customer[last_name]" class="form__field form__field--text" name="customer[last_name]" autocomplete="family-name" required="required">
-                              <label for="customer[last_name]" class="form__floating-label">{{ 'customer.register.last_name' | t }}</label>
-                            </div>
-                          {%- endif -%}
-
-                          <div class="form__input-wrapper form__input-wrapper--labelled">
-                            <input type="email" id="register-customer[email]" class="form__field form__field--text" name="customer[email]" required="required">
-                            <label for="register-customer[email]" class="form__floating-label">{{ 'customer.register.email' | t }}</label>
-                          </div>
-
-                          <div class="form__input-wrapper form__input-wrapper--labelled">
-                            <input type="password" id="register-customer[password]" class="form__field form__field--text" name="customer[password]" required="required" autocomplete="new-password">
-                            <label for="register-customer[password]" class="form__floating-label">{{ 'customer.register.password' | t }}</label>
-                          </div>
-
-                          <button type="submit" class="form__submit button button--primary button--full">{{ 'customer.register.submit' | t }}</button>
-                        {%- endform -%}
-
-                        <div class="popover__secondary-action">
-                          <p>{{ 'customer.register.already_have_account' | t }} <button data-action="show-popover-panel" aria-controls="header-login-panel" class="link link--accented">{{ 'customer.register.login' | t }}</button></p>
-                        </div>
+                      <div class="popover__secondary-action">
+                        <p>{{ 'customer.login.new_customer' | t }} <button data-action="show-popover-panel" aria-controls="header-register-panel" class="link link--accented">{{ 'customer.login.create_your_account' | t }}</button></p>
+                        <p>{{ 'customer.login.lost_password' | t }} <a href="{{ routes.account_url }}#recover-password" aria-controls="header-recover-panel" class="link link--accented">{{ 'customer.login.recover_password' | t }}</a></p>
                       </div>
                     </div>
                   </div>
-                {% endif %}
-              </div>
+
+                  {%- comment -%}RECOVER{%- endcomment -%}
+                  <div id="header-recover-panel" class="popover__panel popover__panel--sliding">
+                    <div class="popover__inner">
+                      {%- form 'recover_customer_password', name: 'recover', class: 'form' -%}
+                        <header class="popover__header">
+                          <h2 class="popover__title heading">{{ 'customer.recover_password.recover_password' | t }}</h2>
+                          <p class="popover__legend">{{ 'customer.recover_password.description' | t }}</p>
+                        </header>
+
+                        <div class="form__input-wrapper form__input-wrapper--labelled">
+                          <input type="email" id="recover-customer[recover_email]" class="form__field form__field--text" name="email" required="required">
+                          <label for="recover-customer[recover_email]" class="form__floating-label">{{ 'customer.recover_password.email' | t }}</label>
+                        </div>
+
+                        <button type="submit" class="form__submit button button--primary button--full">{{ 'customer.recover_password.submit' | t }}</button>
+                      {%- endform -%}
+
+                      <div class="popover__secondary-action">
+                        <p>{{ 'customer.recover_password.remembered_your_password' | t }} <button data-action="show-popover-panel" aria-controls="header-login-panel" class="link link--accented">{{ 'customer.recover_password.back_to_login' | t }}</button></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {%- comment -%}REGISTER{%- endcomment -%}
+                  <div id="header-register-panel" class="popover__panel popover__panel--sliding">
+                    <div class="popover__inner">
+                      {%- form 'create_customer', name: 'create', class: 'form' -%}
+                        <header class="popover__header">
+                          <h2 class="popover__title heading">{{ 'customer.register.create_account' | t }}</h2>
+                          <p class="popover__legend">{{ 'customer.register.description' | t }}</p>
+                        </header>
+
+                        {%- if request.locale.iso_code == 'ja' -%}
+                          <div class="form__input-wrapper form__input-wrapper--labelled">
+                            <input type="text" id="customer[last_name]" class="form__field form__field--text" name="customer[last_name]" autocomplete="family-name" required="required">
+                            <label for="customer[last_name]" class="form__floating-label">{{ 'customer.register.last_name' | t }}</label>
+                          </div>
+
+                          <div class="form__input-wrapper form__input-wrapper--labelled">
+                            <input type="text" id="customer[first_name]" class="form__field form__field--text" name="customer[first_name]" autocomplete="given-name" required="required">
+                            <label for="customer[first_name]" class="form__floating-label">{{ 'customer.register.first_name' | t }}</label>
+                          </div>
+                        {%- else -%}
+                          <div class="form__input-wrapper form__input-wrapper--labelled">
+                            <input type="text" id="customer[first_name]" class="form__field form__field--text" name="customer[first_name]" autocomplete="given-name" required="required">
+                            <label for="customer[first_name]" class="form__floating-label">{{ 'customer.register.first_name' | t }}</label>
+                          </div>
+
+                          <div class="form__input-wrapper form__input-wrapper--labelled">
+                            <input type="text" id="customer[last_name]" class="form__field form__field--text" name="customer[last_name]" autocomplete="family-name" required="required">
+                            <label for="customer[last_name]" class="form__floating-label">{{ 'customer.register.last_name' | t }}</label>
+                          </div>
+                        {%- endif -%}
+
+                        <div class="form__input-wrapper form__input-wrapper--labelled">
+                          <input type="email" id="register-customer[email]" class="form__field form__field--text" name="customer[email]" required="required">
+                          <label for="register-customer[email]" class="form__floating-label">{{ 'customer.register.email' | t }}</label>
+                        </div>
+
+                        <div class="form__input-wrapper form__input-wrapper--labelled">
+                          <input type="password" id="register-customer[password]" class="form__field form__field--text" name="customer[password]" required="required" autocomplete="new-password">
+                          <label for="register-customer[password]" class="form__floating-label">{{ 'customer.register.password' | t }}</label>
+                        </div>
+
+                        <button type="submit" class="form__submit button button--primary button--full">{{ 'customer.register.submit' | t }}</button>
+                      {%- endform -%}
+
+                      <div class="popover__secondary-action">
+                        <p>{{ 'customer.register.already_have_account' | t }} <button data-action="show-popover-panel" aria-controls="header-login-panel" class="link link--accented">{{ 'customer.register.login' | t }}</button></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
             </div>
           {%- endif -%} 
 

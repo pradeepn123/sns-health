@@ -504,10 +504,7 @@
             &--full-width {
                 width: 100%;
                 max-width: 100%;
-                @include mixins.grid(5, 20px, 20px, 200px, 200px);
-                @media(--md-large) {
-                    @include mixins.grid(5, 20px, 20px, 200px, 200px);
-                }
+                @include mixins.grid(5, 20px, 20px, 195px, 180px);
             }
         }
 
@@ -647,12 +644,11 @@
 
 @media(--md-large) {
     .popover--unlogged {
-        right: -50px;
-        top: 50px;
-        transform: scale(0.9) translateX(calc(50% - 7px));
+        right: 0;
+        top: 80px;
+        transform: none !important;
     }
 }
-
 .form__submit.button {
     color: colors.$white;
 }
