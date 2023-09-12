@@ -1737,6 +1737,62 @@
         "type": "rebuy-related-items",
         "settings": {
         }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "show_category": true,
+          "show_author": true,
+          "show_date": true,
+          "show_share_buttons": true,
+          "show_tags": true,
+          "show_gravatar": true
+        }
+      },
+      "blog-sidebar": {
+        "type": "blog-sidebar",
+        "blocks": {
+          "blog-sidebar-0": {
+            "type": "newsletter",
+            "disabled": true,
+            "settings": {
+              "title": "Join Us",
+              "content": "<p>A short sentence describing what someone will receive by subscribing<\/p>",
+              "subtext": "100% free, Unsubscribe any time!",
+              "background": "#1e2d7d",
+              "text": "#ffffff"
+            }
+          },
+          "blog-sidebar-1": {
+            "type": "social_media",
+            "settings": {
+              "title": "Follow us",
+              "show_rss": true
+            }
+          }
+        },
+        "block_order": [
+          "blog-sidebar-0",
+          "blog-sidebar-1"
+        ],
+        "settings": {
+          "show_on_mobile": true
+        }
+      },
+      "rebuy-recently-view": {
+        "type": "rebuy-recently-view",
+        "settings": {
+        }
+      },
+      "rebuy-trending-items": {
+        "type": "rebuy-trending-items",
+        "settings": {
+        }
+      },
+      "rebuy-new-arrivals": {
+        "type": "rebuy-new-arrivals",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
