@@ -867,7 +867,7 @@
             "type": "question",
             "settings": {
               "title": "When will my order ship?",
-              "answer": "<p>Our fulfillment center is open from 9 am to 5 pm, Monday through Friday. <\/p><p>Your order will be dispatched within 24-48 hours. We are proud of our current average fulfillment time of 14 hours. Please note that orders placed after 5 pm on Friday will be processed the following Monday.<\/p><p>However, during Christmas and New Year Holidays, our delivery times might be extended due to shipping disruptions expected from our carrier:<\/p><ul><li><em>December 26th & 27th: Closed.<\/em><\/li><li><em>December 28th to 30th: Working.<\/em><\/li><li><em>December 31st to January 2nd: Closed.<\/em><\/li><li><em>January 3rd: Back to normal.<\/em><\/li><\/ul>"
+              "answer": "<p>Our fulfillment center is open from 9 am to 5 pm, Monday through Friday. <\/p><p>Your order will be dispatched within 48-72 hours. We are proud of our current average fulfillment time of 14 hours. Please note that orders placed after 5 pm on Friday will be processed the following Monday.<\/p><p>However, during Christmas and New Year Holidays, our delivery times might be extended due to shipping disruptions expected from our carrier:<\/p><ul><li><em>December 26th & 27th: Closed.<\/em><\/li><li><em>December 28th to 30th: Working.<\/em><\/li><li><em>December 31st to January 2nd: Closed.<\/em><\/li><li><em>January 3rd: Back to normal.<\/em><\/li><\/ul>"
             }
           },
           "page-faq-template-8": {
