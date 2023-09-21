@@ -173,9 +173,9 @@
                               {%- endif -%}
 
                               <div class="line-item__quantity hidden-tablet-and-up">
-                                {%- comment -%}If the product has the tag "__gift", we remove the price{%- endcomment -%}
+                                {%- comment -%}If the product has the tag "free_gift", we remove the price{%- endcomment -%}
 
-                                {%- unless line_item.product.tags contains '__gift' -%}
+                                {%- unless line_item.product.tags contains 'free_gift' -%}
                                   <div class="quantity-selector">
                                     {%- assign allow_to_add_more = true -%}
 
@@ -198,9 +198,9 @@
                         </td>
 
                         <td class="line-item__quantity table__cell--center hidden-phone">
-                          {%- comment -%}If the product has the tag "__gift", we remove the price{%- endcomment -%}
+                          {%- comment -%}If the product has the tag "free_gift", we remove the price{%- endcomment -%}
 
-                          {%- unless line_item.product.tags contains '__gift' -%}
+                          {%- unless line_item.product.tags contains 'free_gift' -%}
                             <div class="quantity-selector">
                               {%- assign allow_to_add_more = true -%}
 
