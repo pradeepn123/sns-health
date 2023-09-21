@@ -275,6 +275,8 @@
                     >
                       <span class="sr-only">Original price</span>
                       <span v-html="formatMoney(itemPrice(item) + (5.28/100)* itemPrice(item))" v-if="(lineItemDiscountMessage(item))?.toLowerCase() == 'bundle discount'"></span>
+                      <span v-html="formatMoney(itemPrice(item) + (10.28/100)* itemPrice(item))" v-else-if="(lineItemDiscountMessage(item))?.toLowerCase() == '10% discount'"></span>
+                      <span v-html="formatMoney(itemPrice(item) + (5.28/100)* itemPrice(item))" v-else-if="(lineItemDiscountMessage(item))?.toLowerCase() == '5% discount'"></span>
                       <span v-html="formatMoney(compareAtPrice(item))" v-else></span>
                     </span>
                   </div>

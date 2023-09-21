@@ -72,3 +72,8 @@
     font-size: 14px !important;
   }
 }
+
+.rebuy-cart__flyout-item-buy-more-save-more-button-container .rebuy-button {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
