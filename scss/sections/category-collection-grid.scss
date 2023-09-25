@@ -87,14 +87,22 @@
     :--image-text_wrapper{
         top: 40px;
         padding-left: 18PX;
+        padding-right: 0;
         @media (--md-large){
             padding-left: 40PX;
         }
     }
 
     :--button{
-        padding-left: 0;
         margin-top: 7px;
+        line-height: 1;
+        padding: 0px 8px 13px 0;
+        @include use-text-style('body-alt');
+        font-weight: typography.$heading-weight;
+      
+        @media (--md){
+            @include use-text-style('heading-2');
+        }
 
         path{
             stroke: transparent;
@@ -108,5 +116,10 @@
         &:hover{
             box-shadow: none;
         }
+    }
+
+    .responsive-image__wrapper {
+        min-height: 100%;
+        min-width: 100%;
     }
 }

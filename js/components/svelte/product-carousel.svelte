@@ -2,12 +2,14 @@
   import { getProductData } from "JsComponents/get-data";
   import { onMount } from "svelte";
   import ProductCard from "SvelteComponents/product-card.svelte";
+
   export let shopifyData; //for parent level props
   let productData = []; //to store api data
   let isLoading = true;
+  let component;
 
   const {
-    currency = "$",
+    currencySymbol = "$",
     soldOutText = "Sold Out",
     chooseMoreText = "Choose Options",
     addToCartText = "Add To Cart",
@@ -16,18 +18,19 @@
   } = shopifyData || {};
 
   const otherData = {
-    currency,
+    currencySymbol,
     soldOutText,
     chooseMoreText,
     addToCartText,
+    parent: component
   };
-
   const paramsHash = blocks.reduce((accumulator, block) => {
     return (accumulator = {
       ...accumulator,
       [block.text]: {
         ruleId: `${block?.ruleId}`,
         text: block?.text,
+        collectionData: block?.collectionData || []
       },
     });
   }, {});
@@ -37,21 +40,43 @@
 
   const requestData = async (selectedParams) => {
     isLoading = true;
-    const responseData = await getProductData(selectedParams);
-    productData = responseData.data;
+    if((selectedParams.collectionData).length > 0) {
+      productData = selectedParams.collectionData
+    }
+    else {
+      const responseData = await getProductData(selectedParams);
+      productData = responseData.data;
+    }
     isLoading = false;
   };
 
-  const updateParams = async (text) => {
+  const updateParams = async (ev,text) => {
     selectedParams = paramsHash[text];
     await requestData(selectedParams);
+    if(!checkIfVisisble(ev)){
+      const element = ev?.target.closest('.product-category__button--active');
+      element?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
+    }
   };
 
+  const checkIfVisisble = (ev) =>{
+    const element = ev?.target.closest('.product-category__button--active');
+  const elementRect = element?.getBoundingClientRect();
+  const isVisible = (
+    elementRect?.top >= 0 &&
+    elementRect?.left >= 0 &&
+    elementRect?.bottom <= (window.innerHeight ||
+    document.documentElement.clientHeight) &&
+    elementRect?.right <= (window.innerWidth || 
+    document.documentElement.clientWidth)
+  );
+  return isVisible || false;
+  }
   onMount(async () => {
     await requestData(selectedParams);
   });
 </script>
-
+<div class="rebuy-container-wrap" bind:this={component}>
 {#if collectionTexts.length > 1}
   <div class="featured-products__Category_wrapp">
     {#each collectionTexts as text}
@@ -60,24 +85,35 @@
           class={`button button--primary product-category__button ${
             selectedParams.text == text && "product-category__button--active"
           }`}
-          on:click={() => {
-            updateParams(text);
+          on:click={(ev) => {
+            updateParams(ev,text);
           }}>{text}</button
         >
       </div>
     {/each}
   </div>
 {/if}
-<div class="featured-products__wrapper product-card-wrapper">
-  <div
-    class={`featured-products__content featured-products__content--desktop ${
-      JSON.parse(mobileCarousel)
-        ? "featured-products__content--show-mobile"
-        : ""
-    }`}
-  >
-    {#key productData}
-      {#if productData.length && !isLoading}
+{#if isLoading}
+<div class="carousel-placeholders">
+  <div class="product-placeholders">
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+  </div>
+</div>
+{:else}
+{#key productData}
+  <div class="featured-products__wrapper product-card-wrapper">
+    <div
+      class={`featured-products__content featured-products__content--desktop ${
+        JSON.parse(mobileCarousel)
+          ? "featured-products__content--show-mobile"
+          : ""
+      }`}
+    >
+      {#if productData.length }
         <custom-carousel>
           <div class="custom-carousel__content hide" data-carousel-content>
             {#each productData as product, index}
@@ -87,7 +123,14 @@
             {/each}
           </div>
           <div class="carousel-placeholders">
-            <div class="lds-ring"></div>
+            <div class="product-placeholders">
+              <div />
+              <div />
+              <div />
+              <div />
+              <div />
+            </div>
+            <div class="lds-ring" />
           </div>
           <script type="text/json" data-settings>
       {
@@ -114,26 +157,22 @@
       }
           </script>
         </custom-carousel>
-      {:else}
-        <div class="carousel-placeholders">
-          <div class="placeholder" />
-          <div class="placeholder" />
-          <div class="placeholder" />
-          <div class="placeholder" />
-          <div class="placeholder" />
-        </div>
       {/if}
-    {/key}
+    </div>
+    <div
+      class={`featured-products__content featured-products__content--mobile ${
+        JSON.parse(mobileCarousel)
+          ? "featured-products__content--hide-mobile"
+          : ""
+      }`}
+    >
+      {#each productData as product, index}
+        {#if index < 4}
+          <ProductCard {product} {otherData} />
+        {/if}
+      {/each}
+    </div>
   </div>
-  <div
-    class={`featured-products__content featured-products__content--mobile ${
-      JSON.parse(mobileCarousel)
-        ? "featured-products__content--hide-mobile"
-        : ""
-    }`}
-  >
-    {#each productData as product, index}
-      <ProductCard {product} {otherData} />
-    {/each}
-  </div>
+{/key}
+{/if}
 </div>

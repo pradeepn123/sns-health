@@ -1,17 +1,18 @@
-
-<div class="icon-text {% if wrapper_class %}{{ wrapper_class }}__icon-text {% endif %}{% if is_slider %} swiper-slide {% endif %}" {% if cta_url %} data-redirect-click data-js-click data-url="{{cta_url}}"{% endif %}>
-  <div class="icon__container {% if wrapper_class %}{{ wrapper_class }}__icon {% endif %} 
-    {% if icon_hover %} icon__container--toggle-icon {% endif %}"><img src="{{icon | img_url}}"/>
+{% assign primary_class = wrapper_class | split: ',' | first %}
+{% assign secondary_class = wrapper_class | split: ',' | last %}
+<div class="icon-text {% if primary_class %}{{ primary_class }}__icon-text {{ secondary_class }} {% endif %}{% if is_slider %} swiper-slide {% endif %}" blog-list  {% if cta_url %} data-redirect-click data-js-click data-url="{{cta_url}}"{% endif %} {{other_attributes}}>
+  <div class="icon__container {% if primary_class %}{{ primary_class }}__icon {% endif %} 
+    {% if icon_hover %} icon__container--toggle-icon {% endif %}"> {% if icon %}<img src="{{icon | img_url}}"/>{% endif %}
 </div>
-  {% if icon_hover %}<div class="icon__container icon__container__icon--hover {% if wrapper_class %}{{ wrapper_class }}__icon" {% endif %} style="display: none"><img src="{{icon_hover | img_url}}"/></div>{% endif %}
-  <div class="text__container {% if wrapper_class %}{{ wrapper_class }}__text {% endif %}" {% if cta_url %} data-redirect-click data-js-click data-url="{{cta_url}}"{% endif %}>
+  {% if icon_hover %}<div class="icon__container icon__container__icon--hover {% if primary_class %}{{ primary_class }}__icon" {% endif %} style="display: none"><img src="{{icon_hover | img_url}}"/></div>{% endif %}
+  <div class="text__container {% if primary_class %}{{ primary_class }}__text {% endif %}" {% if cta_url %} data-redirect-click data-js-click data-url="{{cta_url}}"{% endif %}>
     {% render 'text', 
         id: id,
         color: color, 
         eyebrow: eyebrow, 
         subheading: subheading, 
         cta_text: cta_text, 
-        wrapper_class: wrapper_class,
+        wrapper_class: primary_class,
         inline_heading: inline_heading
         cta_url: cta_url,
         button_type: 'text',

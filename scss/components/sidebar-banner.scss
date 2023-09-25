@@ -9,15 +9,21 @@
     @media(--sm) {
     grid-column: span 2;
     width: 100%;
+    @media(--md-large) {
+        grid-column: span 1;
+    }
     }
 }
 :--text-wrapper {
     top: unset;
     bottom: 28px;
     transform: none;
-    
     @media(--md) {
         bottom: 45px;
+    }
+
+    @media(--md-large) {
+        padding: var(--section-content-margin);
     }
 }
 

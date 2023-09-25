@@ -1,9 +1,10 @@
 .layout{
     margin-top: 23px;
 }
-#main{
+/* if something breaks uncomment overflow hidden */
+/* #main{
     overflow-x: hidden;
-}
+} */
 /* .logo-container {
     background: #F4E6DB;
 } */

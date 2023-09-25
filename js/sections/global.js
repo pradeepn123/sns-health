@@ -14,6 +14,7 @@ import headerEvents from 'JsComponents/header'; //header
 import handleClick from 'JsComponents/handleClick'; //js based handle click
 import registerCustomElements from 'JsComponents/registerCustomElements'; //register custom elements
 import {addFormDelegate,removeCartToggleBinding} from 'JsComponents/rebuy-cart-integration'; //disable add to cart form submit
+import { rebuyAutoAdd } from 'JsComponents/klaiyo-auto-add';
 
 //config lazyload to default settings
 lazysizes.cfg.loadMode = 1;
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   viewPromotionTrigger();
   handleClick();
   collapsible(); //collapsable
+  rebuyAutoAdd();
 })
 
 

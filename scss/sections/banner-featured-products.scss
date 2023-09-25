@@ -7,13 +7,14 @@
  
 @custom-selector :--product .banner-product__products-wrapper;
 @custom-selector :--text-wrapper .text-image__text-wrapper.sidebar-banner-content__text-wrapper;
+@custom-selector :--image .responsive-image__wrapper ;
 
 .banner-product {
     @include mixins.container;
     &__content {
         padding: var(--section-padding) 0 0;
         @media(--sm) {
-          @include mixins.grid(5,250,250);
+          @include mixins.grid(5,250px,250px);
           column-gap: 27px;
         }
     }
@@ -21,7 +22,7 @@
         grid-column: span 2;
         product-card{
             .product-card{
-                justify-content: space-around !important;
+                justify-content: space-between !important;
                 .product-card__header-tags .product-card__discount{
                     background: colors.$black;
                     font-size: $body-regular-size;
@@ -43,12 +44,17 @@
         @media(--sm) {
             display: block;
             height: 100%;
-            @include mixins.grid(5,250, 250, 250,250);
+            @include mixins.grid(5,150px, 150px, 150px,150px);
             grid-auto-rows: minmax(300px, auto);
         }
         @media(--md) {
             display: block;
-            @include mixins.grid(5,250, 250, 250,250);
+            @include mixins.grid(5,171px, 171px, 171px, 171px);
+            grid-auto-rows: minmax(460px, auto);
+        }
+        @media(--md-large) {
+            display: block;
+            @include mixins.grid(5,216px, 216px, 216px, 216px);
             grid-auto-rows: minmax(460px, auto);
         }
         :--text-wrapper{
@@ -56,10 +62,10 @@
             bottom: 0;
             transform: translateY(-25%);
             .sidebar-banner__eyebrow{
-                font-size: $body-regular-size;
+                font-size: $body-alt-size;
             }
             .sidebar-banner__heading{
-                font-size: $heading-3-size;
+                font-size: $heading-1-size;
             }
             .sidebar-banner__cta{
                 font-size: $body-alt-size;
@@ -70,7 +76,7 @@
     &__products-content--mobile {
         display: grid;
         margin-top: var(--grid-row-gap-large);
-        @include mixins.grid(2, 250, 250);
+        @include mixins.grid(2, 250px, 250px);
         grid-auto-rows: minmax(206px, auto);
         .sidebar-banner-content__text-image{
             display: grid;
@@ -94,5 +100,9 @@
         @media(--sm) {
             display: none;
         }
+    }
+
+    :--image{
+        max-height: 100% !important;
     }
 } 

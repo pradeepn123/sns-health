@@ -10,7 +10,7 @@ export default (dynamicElements) => {
       window.location.href = url;
     }
   }
-  const clickHandle = dynamicElements ? dynamicElements.querySelectorAll('[data-js-click]') : document.querySelectorAll('[data-redirect-click]');
+  const clickHandle = dynamicElements ? dynamicElements.querySelectorAll('[data-js-click]') : document.querySelectorAll('[data-js-click]');
   clickHandle.forEach(item => item.addEventListener('click', (ev) => {
     if (!ev.target.closest('.product-card__atc')) {
       handleRedirectOnDiv(item)

@@ -250,7 +250,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {%- if request.page_type == 'blog' or request.page_type == 'article' or request.page_type == 'page' -%}
       {% section 'static-newsletter' %}
     {%- endif -%}
-
     {% section 'text-with-icons' %}
     {% section 'footer' %}
 
@@ -265,7 +264,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- End Google Tag Manager (noscript) -->
 
     <!--begin-boost-pfs-js-->
-    {% render 'boost-pfs' %}
+    {% comment %} {% render 'boost-pfs' %} {% endcomment %}
     {% render 'product-card-template' %}
     <!--end-boost-pfs-js-->
     <script type="sT_lazyLoad__init" data-src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
@@ -318,6 +317,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
     });
   </script>
+
+  {% if template == 'page.blog-landing'%} 
+    <script src="{{'blog-post.js' | asset_url }}" defer></script> 
+   {% endif %}
   {% render 'rebuy-dynamic-bundle' %}
   {% render 'rebuy-smart-cart-template' %}
 </body>

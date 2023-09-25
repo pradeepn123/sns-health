@@ -44,6 +44,7 @@ var collapsible = () => {
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
 /* harmony import */ var swiper_modules__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/modules */ "./node_modules/swiper/modules/index.mjs");
+/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
 
 
 var _excluded = ["breakpoints"],
@@ -70,6 +71,7 @@ class CustomCarousel extends HTMLElement {
       var checkHtmlLength = window.setInterval(() => {
         if (this.innerHTML.length > 0) {
           that.initCarousel();
+          (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_4__["default"])(this);
           window.clearInterval(checkHtmlLength);
           checkHtmlLength = false;
         }
@@ -165,7 +167,8 @@ class CustomCarousel extends HTMLElement {
     this.carouselContent = this.querySelector('[data-carousel-content]').innerHTML;
     this.placeholders = (_this$querySelector2 = this.querySelector('[data-carousel-placeholder]')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.innerHTML;
     this.currentWidth = window.innerWidth;
-    this.innerHTML = "<div class=\"carousel__container swiper hide\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.carouselContent, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    <div class=\"swiper-navigation swiper-navigation--next ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    ").concat(this.placeholders ? this.placeholders : "<div class=\"carousel-placeholders\"></div>");
+    var swiperNavigationElements = "\n      <div class=\"swiper-navigation swiper-navigation--next ".concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    ");
+    this.innerHTML = "<div class=\"carousel__container swiper hide\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.carouselContent, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    ").concat(this.carouselSettings['customNavigation'] ? '' : swiperNavigationElements, "\n    ").concat(this.placeholders ? this.placeholders : "<div class=\"carousel-placeholders\"></div>");
     this.container = this.querySelector('[data-swiper-container]');
     var carouselSettings = this.getCarouselSettings();
     this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
@@ -708,7 +711,7 @@ var viewPromotionTrigger = () => {
       window.location.href = url;
     }
   };
-  var clickHandle = dynamicElements ? dynamicElements.querySelectorAll('[data-js-click]') : document.querySelectorAll('[data-redirect-click]');
+  var clickHandle = dynamicElements ? dynamicElements.querySelectorAll('[data-js-click]') : document.querySelectorAll('[data-js-click]');
   clickHandle.forEach(item => item.addEventListener('click', ev => {
     if (!ev.target.closest('.product-card__atc')) {
       handleRedirectOnDiv(item);
@@ -777,6 +780,53 @@ var viewPromotionTrigger = () => {
     handleScroll();
   });
 });
+
+/***/ }),
+
+/***/ "./js/components/klaiyo-auto-add.js":
+/*!******************************************!*\
+  !*** ./js/components/klaiyo-auto-add.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   rebuyAutoAdd: () => (/* binding */ rebuyAutoAdd)
+/* harmony export */ });
+var rebuyAutoAdd = () => {
+  var addProductsToRebuy = productIds => {
+    var items = productIds.filter(item => [...item].length > 0).map(item => {
+      return {
+        id: parseInt(item),
+        quantity: 1
+      };
+    });
+    if (items.length) {
+      Rebuy.Cart.addItem({
+        items
+      });
+    }
+  };
+  var params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop)
+  });
+  var variantIds = params.variant_id;
+  if (variantIds) {
+    var variantIdArray = variantIds.split(',');
+    var checkRebuy = setInterval(() => {
+      var _window$Rebuy;
+      if ((_window$Rebuy = window.Rebuy) !== null && _window$Rebuy !== void 0 && (_window$Rebuy = _window$Rebuy.SmartCart) !== null && _window$Rebuy !== void 0 && _window$Rebuy.cart) {
+        clearInterval(checkRebuy);
+        checkRebuy = false;
+        addProductsToRebuy(variantIdArray);
+      }
+    }, 500);
+    setTimeout(() => {
+      if (checkRebuy) {
+        clearInterval(checkRebuy);
+      }
+    }, 8000);
+  }
+};
 
 /***/ }),
 
@@ -934,6 +984,7 @@ class IntersectObserver {
 /* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
 /* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
 /* harmony import */ var JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/rebuy-cart-integration */ "./js/components/rebuy-cart-integration.js");
+/* harmony import */ var JsComponents_klaiyo_auto_add__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! JsComponents/klaiyo-auto-add */ "./js/components/klaiyo-auto-add.js");
 
 
 
@@ -951,6 +1002,7 @@ class IntersectObserver {
  //register custom elements
  //disable add to cart form submit
 
+
 //config lazyload to default settings
 (lazysizes__WEBPACK_IMPORTED_MODULE_0___default().cfg).loadMode = 1;
 document.addEventListener('DOMContentLoaded', () => {
@@ -964,6 +1016,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.viewPromotionTrigger)();
   (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_12__["default"])();
   (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_13__.collapsible)(); //collapsable
+  (0,JsComponents_klaiyo_auto_add__WEBPACK_IMPORTED_MODULE_14__.rebuyAutoAdd)();
 });
 
 /***/ })

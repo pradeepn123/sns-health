@@ -1,0 +1,52 @@
+
+
+
+<div class = "blog-post-list-wrapp">
+  {% if section.blocks.size > 1 %}
+    {% render 'blog-post-list', blocks: section.blocks %}
+  {% endif %}
+  {% render 'blog-landing-page', blocks: section.blocks %}
+ </div>
+
+
+{% schema %}
+{
+  "name": "Blog List",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "blogpost",
+      "name": "Blog Post",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Section Heading"
+        },
+        {
+         "type": "checkbox",
+         "id": "show_blogpost",
+         "label": "Show Total BlogPost",
+         "default": false
+        },
+        {
+           "type": "url",
+           "id": "url",
+           "label": "View all url"
+         },
+         {
+           "type": "blog",
+           "id": "blog",
+           "label": "Select Blog Post"
+         }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog List"
+    }
+  ]
+}
+{% endschema %}

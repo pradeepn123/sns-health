@@ -65,3 +65,30 @@
     font-size: $body-regular-size !important;
     font-weight:  typography.$semi-weight !important;
 }
+.rebuy-bundle__actions-price-bundle-percentage {
+    @include use-text-style('body-alt'); 
+    margin-bottom: 8px;
+    font-weight: typography.$semi-weight !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media(--sm) {
+        @include use-text-style('heading-3');
+      }
+    @media(--md) {
+      @include use-text-style('heading-2');
+    }
+    &--value {
+      @include use-text-style('body-alt');
+      padding: 7px 10px;
+      color: colors.$white;
+      background: colors.$red;
+      margin-left: 16px;;
+      border-radius: 100px;
+      @media(--md) {
+          @include use-text-style('heading-3');
+      }
+    }
+  }
+  
+  

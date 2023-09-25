@@ -1,0 +1,46 @@
+<div class="blog-banner">
+  <div class="blog-banner__wrapper">
+<custom-carousel>
+    <div class="custom-carousel__content hide" data-carousel-content>
+
+{% for block in blocks %}
+    {% assign article = block.settings.article %}
+    {% capture eyebrow %} 
+       blogs <span class="breadcrumb__seperator"></span> {{article.author}} <span class="breadcrumb__seperator"></span> {{article.published_at | date: "%b %d, %y" }}
+    {% endcapture %}
+    {% assign heading = article.title %}
+    {% assign cta_text = "learn more" %}
+    {% assign cta_url = article.url %}
+    {% assign text_wrapper_class = 'featured-articles' %}
+
+  <div class="blog-banner__content swiper-slide">
+    <div class="blog-banner__image">
+        {% render 'shopify-responsive-image',
+            image: {{article.image}},
+            aspect_ratio: 1.88
+          %}
+     </div>
+     <div class="blog-banner__text">
+        {% render 'text', 
+            id: {{article.id}},
+            eyebrow: eyebrow, 
+            heading: heading , 
+            cta_text: cta_text, 
+            wrapper_class: text_wrapper_class,
+            cta_url: cta_url
+          %}
+     </div>
+ </div>
+{% endfor %}
+</div>
+<div class="carousel-placeholders"></div>
+<script type="text/json" data-settings>
+ {
+   "slidesPerView": 1,
+   "spaceBetween": 0,
+   "navigation": true
+ }
+</script>
+</custom-carousel>
+ </div>  
+</div>

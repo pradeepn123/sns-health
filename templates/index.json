@@ -555,7 +555,8 @@
           "type": "collection",
           "settings": {
             "collection_text": "Rebuy",
-            "rule_id": "110179"
+            "rule_id": "110179",
+            "collection": ""
           }
         }
       },
@@ -613,7 +614,8 @@
             "is_carousel_content": false,
             "show_logo": false,
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/banner-image-2.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/image_100_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame-8346.jpg",
             "eyebrow": "Trending in",
             "heading": "Sports Nutrition",
             "inline_heading": false,
@@ -646,7 +648,8 @@
             "is_carousel_content": false,
             "show_logo": false,
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/baner-product.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/image_100_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_100_3.png",
             "eyebrow": "Trending in",
             "heading": "Vitamins & <br> Supplements",
             "inline_heading": false,
@@ -676,7 +679,8 @@
         "b100cd87-92eb-4868-b580-3b584ac8f527": {
           "type": "banner",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/banner-grid-3.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/hero-2_1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Frame-8348.jpg",
             "eyebrow": "",
             "heading": "Latest Offers",
             "inline_heading": false,
@@ -769,12 +773,23 @@
         "heading": "<p>Follow along <a href=\"https:\/\/www.instagram.com\/sportsnutritionsource\/\" target=\"_blank\" title=\"SNS Nutrition Source\">@sportsnutritionsource<\/a><\/p>"
       }
     },
-    "4aa52242-6a1d-45f5-863a-eb800312ea2c": {
-      "type": "blog-post",
+    "df161b5a-ead8-4c47-b060-be7aa2165e83": {
+      "type": "blog-page-list",
+      "blocks": {
+        "14b34294-d906-4ea3-a56c-3d22739a8062": {
+          "type": "blogpost",
+          "settings": {
+            "heading": "Expert Advice",
+            "show_blogpost": false,
+            "url": "shopify:\/\/blogs\/fitness-and-nutrition",
+            "blog": "fitness-and-nutrition"
+          }
+        }
+      },
+      "block_order": [
+        "14b34294-d906-4ea3-a56c-3d22739a8062"
+      ],
       "settings": {
-        "heading": "Expert Advice",
-        "url": "shopify:\/\/blogs\/fitness-and-nutrition",
-        "blog": "fitness-and-nutrition"
       }
     },
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7": {
@@ -820,7 +835,7 @@
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
     "ed3c4144-6707-4fda-9a49-2f5e23ebeb69",
     "169278817168ac6906",
-    "4aa52242-6a1d-45f5-863a-eb800312ea2c",
+    "df161b5a-ead8-4c47-b060-be7aa2165e83",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
     "141ec0c0-f9a7-4483-8784-4b246321fcba",
     "b1b4c397-b6ac-40e6-bddb-72cef284566b"

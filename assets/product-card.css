@@ -148,12 +148,15 @@ product-card .product-card {
   font-weight: 600;
   margin-top: 10px;
 }
+@media (min-width: 768px) {
+  .product-card .product-card__atc button, .product-card a {
+    font-size: 10px;
+    font-weight: 600;
+  }
+}
 @media (min-width: 1024px) {
   .product-card .product-card__atc button, .product-card a {
-    font-family: "poppins";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.2;
+    font-size: 12px;
     font-weight: 600;
   }
 }

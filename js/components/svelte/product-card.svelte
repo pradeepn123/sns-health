@@ -1,6 +1,8 @@
 <script>
   import ResponsiveImage from "SvelteComponents/responsive-image.svelte";
+    import { onMount } from "svelte";
   export let product;
+  import handleClick from 'JsComponents/handleClick'; 
   export let otherData;
   const {
     image,
@@ -9,20 +11,27 @@
     title,
     tags,
     metafields,
+    skipFormatMoney = false,
+    discountPercentage: shopifyDiscountPercentage = 0,
   } = product;
 
   let rating = false;
+  
   metafields.forEach((metafield) => {
     const { namespace, key, value } = metafield;
     if (namespace == "okendo" && key == "summaryData") {
-      const parsedValue = JSON.parse(value) || {};
+      let parsedValue = {};
+      if (typeof value == "object") {
+        parsedValue = value;
+      } else {
+        parsedValue = JSON.parse(value) || {};
+      }
       rating = parsedValue?.reviewAverageValue;
     }
   });
-  const { currency, soldOutText, chooseMoreText, addToCartText } =
+  const { currencySymbol, soldOutText, chooseMoreText, addToCartText ,parent } =
     otherData || {};
 
-  const discountPercentage = (comparePrice - price * 100) / price;
   const bestseller = tags.includes("bestseller");
   const onsale = tags.includes("onsale");
   const srcTokens = {
@@ -30,11 +39,25 @@
     dataSrcToken: "?{width}&{height}",
     srcToken: "?width=300&height=300",
   };
+
+  //conflicting data between shopify and rebuy
+  let discountPercentage = 0;
+  if (skipFormatMoney) {
+    discountPercentage = shopifyDiscountPercentage;
+  }
+  else {
+    discountPercentage = (comparePrice - price * 100) / price
+  }
+
+  onMount(() => {
+    handleClick(parent);
+  })
 </script>
 
 <div
   class="product-card swiper-slide"
-  data-redirect-click data-js-click
+  data-redirect-click
+  data-js-click
   data-url={product.link}
 >
   <div class="product-card__body">
@@ -44,7 +67,7 @@
     <div class="product-card__header">
       <div class="product-card__header-tags">
         {#if discountPercentage > 0}<div class="product-card__discount">
-            {{ discountPercentage }}% off
+            {discountPercentage }% off
           </div>
         {/if}
         {#if bestseller}<div class="product-card__discount">Best Seller</div>
@@ -74,13 +97,35 @@
       {#if discountPercentage > 0}<div
           class=" product-card__price product-card__price--compare"
         >
+          {#if skipFormatMoney}
           {window.formatCurrency(
-            window.formatCurrency(comparePrice, `${currency}{{amount}}`)
+            comparePrice,
+            `${currencySymbol}{{amount}}`
           )}
+          {window.Shopify?.currency?.active}
+          {:else}
+            {window.formatCurrency(
+              comparePrice * (window.Shopify?.currency?.rate * 100),
+              `${currencySymbol}{{amount}}`
+            )}
+            {window.Shopify?.currency?.active}
+          {/if}
         </div>
       {/if}
       <div class="product-card__price">
-        {window.formatCurrency(price, `${currency}{{amount}}`)}
+        {#if skipFormatMoney}
+        {window.formatCurrency(
+          price,
+          `${currencySymbol}{{amount}}`
+        )}
+        {window.Shopify?.currency?.active}
+        {:else}
+          {window.formatCurrency(
+            price * (window.Shopify?.currency?.rate * 100),
+            `${currencySymbol}{{amount}}`
+          )}
+          {window.Shopify?.currency?.active}
+        {/if}
       </div>
     </div>
     <div class="product-card__atc">

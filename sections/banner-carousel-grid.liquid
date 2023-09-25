@@ -3,6 +3,10 @@
 <div class="banner-carousel-grid">
     <div class="banner-carousel-grid__content">
             {% for block in section.blocks %}
+              {% liquid 
+                assign desktop_image = block.settings.image_desktop | default: block.settings.image_mobile
+                assign mobile_image = block.settings.image_mobile | default: block.settings.image_desktop
+                %}
              {% if block.type == "banner" %}
               {% liquid 
                 assign id = block.id
@@ -12,8 +16,8 @@
                 assign subheading = block.settings.subheading
                 assign cta_text = block.settings.cta_text
                 assign cta_url = block.settings.cta_url
-                assign image_desktop = block.settings.image_desktop
-                assign image_mobile = block.settings.image_mobile
+                assign image_desktop = desktop_image
+                assign image_mobile = mobile_image
                 assign inline_heading = block.settings.inline_heading
                 assign button_type = 'outline'
                 assign button_background_type = 'transparent'
@@ -33,7 +37,7 @@
                     image_mobile: image_mobile,
                     text_wrapper_class: 'sidebar-banner',
                     inline_heading: inline_heading,
-                    mobile_aspect_ratio: 1.16,
+                    mobile_aspect_ratio: 1.94,
                     desktop_aspect_ratio: 1.15,
                     desktop_crop: true,
                     mobile_crop: true,
@@ -50,6 +54,10 @@
                     <custom-carousel>
                     <div class="custom-carousel__content hide" data-carousel-content>
                     {% for block in section.blocks %}
+                      {% liquid 
+                        assign desktop_image = block.settings.image_desktop | default: block.settings.image_mobile
+                        assign mobile_image = block.settings.image_mobile | default: block.settings.image_desktop
+                        %}
                         {% if block.type == "banner_grid" %} 
                         {% liquid 
                           assign id = block.id
@@ -59,8 +67,8 @@
                           assign subheading = block.settings.subheading
                           assign cta_text = block.settings.cta_text
                           assign cta_url = block.settings.cta_url
-                          assign image_desktop = block.settings.image_desktop
-                          assign image_mobile = block.settings.image_mobile
+                          assign image_desktop = desktop_image
+                          assign image_mobile = mobile_image
                           assign inline_heading = block.settings.inline_heading
                           assign button_type = 'outline'
                           assign button_background_type = 'transparent'
@@ -102,7 +110,12 @@
                           "breakpoints": {
                             "768": {
                                 "navigation": true,
-                                "slidesPerView": 3,
+                                "slidesPerView": 2,
+                                "spaceBetween": 27
+                              },
+                              "1200": {
+                                "navigation": true,
+                                "slidesPerView": 4,
                                 "spaceBetween": 27
                               }
                           }

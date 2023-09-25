@@ -1,0 +1,61 @@
+{{ 'blog-post-list.css' | asset_url | stylesheet_tag }}
+<div class="blog-page-list-section">
+  {% render 'section-heading', heading: section.settings.heading %}
+  <div class="blog-page-list-section__wrapper">
+    <div class="blog-page-list-section__content blog-page-list-section__content--mobile blog-page-list-section__content--show ">
+      <custom-carousel>
+        <div class="custom-carousel__content hide" data-carousel-content>
+          {% for block in section.blocks %}
+            {% capture other_attributes %} 
+            data-slide-index = "{{ forloop.index }}"
+          {% endcapture %}
+            {% capture cta_url %} 
+              #blog-post-{{forloop.index}}
+            {% endcapture %}
+            {% liquid
+              assign id = block.id
+              assign eyebrow = block.settings.heading
+            %}
+            {% capture wrapper_class %}
+            blog-page-list-section{%- if forloop.first -%},active{%- endif -%}
+            {% endcapture%}
+            {% render 'icon-text',
+              wrapper_class: {{wrapper_class}},
+              id: id,
+              eyebrow: eyebrow,
+              is_slider: true,
+              other_attributes: other_attributes
+            %}
+          {% endfor %}
+        </div>
+        <div class="carousel-placeholders">
+          <div class="carousel-place">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <script type="text/json" data-settings>
+          {
+            "slidesPerView": "auto",
+            "spaceBetween": 8,
+            "overflowNagivation": true,
+            "pagination": true,
+            "progressPagination": true,
+            "breakpoints": {
+              "1024": {
+                "slidesPerView": "auto",
+                "overflowNagivation": true,
+                "navigation": true,
+                "spaceBetween": 20,
+                "pagination": false
+              }
+            }
+          }
+        </script>
+      </custom-carousel>
+    </div>
+  </div>
+</div>

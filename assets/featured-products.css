@@ -37,6 +37,7 @@
   grid-row-gap: var(--grid-row-gap);
   row-gap: var(--grid-row-gap);
   row-gap: var(--grid-row-gap-large);
+  grid-auto-rows: minmax(300px, auto);
 }
 @media (min-width: 1024px) {
   .featured-products__content--mobile {
@@ -56,6 +57,7 @@
 @media (min-width: 1024px) {
   .featured-products__content--mobile {
     display: none;
+    grid-auto-rows: minmax(327px, auto);
   }
 }
 .featured-products__content--hide-mobile {
@@ -73,10 +75,22 @@
           column-gap: 16px;
   margin-bottom: 15px;
   overflow: auto;
+  max-width: 100%;
+  padding-left: var(--section-padding);
 }
 @media (min-width: 1440px) {
   .featured-products__Category_wrapp {
     max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}
+@media (min-width: 768px) {
+  .featured-products__Category_wrapp {
+    padding-left: calc(2 * var(--section-padding));
+  }
+}
+@media (min-width: 1440px) {
+  .featured-products__Category_wrapp {
+    padding: 0;
   }
 }
 .featured-products .product-category__button.button {
@@ -84,8 +98,49 @@
   border: 1px solid #ED1C24;
   background: transparent;
 }
+.featured-products .section__heading-wrapper {
+  margin-bottom: var(--section-margin);
+}
+@media (min-width: 768px) {
+  .featured-products .section__heading-wrapper {
+    margin-bottom: calc(2 * var(--section-margin));
+  }
+}
 .featured-products .product-category__button--active {
   color: #fff !important;
   border: 1px solid #ED1C24 !important;
   background: #ED1C24 !important;
+}
+.featured-products .carousel-placeholders {
+  max-width: calc(100% - 2 * var(--base-margin));
+  margin-left: auto;
+  margin-right: auto;
+  height: 350px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+}
+@media (min-width: 1440px) {
+  .featured-products .carousel-placeholders {
+    max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}
+@media (min-width: 1024px) {
+  .featured-products .carousel-placeholders {
+    grid-template-columns: repeat(5, 1fr);
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
+  }
+}
+.featured-products .carousel-place {
+  display: contents;
+}
+.featured-products .carousel-place div {
+  background: #f5f5f5;
+  height: 350px;
+  width: 100%;
 }

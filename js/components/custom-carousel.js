@@ -20,6 +20,7 @@ class CustomCarousel extends HTMLElement {
       let checkHtmlLength = window.setInterval(() => {
            if(this.innerHTML.length > 0) {
             that.initCarousel();
+            handleClick(this)
               window.clearInterval(checkHtmlLength);
               checkHtmlLength = false
            }
@@ -97,12 +98,8 @@ class CustomCarousel extends HTMLElement {
     this.carouselContent = this.querySelector('[data-carousel-content]').innerHTML;
     this.placeholders = this.querySelector('[data-carousel-placeholder]')?.innerHTML;
     this.currentWidth = window.innerWidth;
-    this.innerHTML = `<div class="carousel__container swiper hide" data-swiper-container>
-    <div class="swiper-wrapper">
-    ${this.carouselContent}
-    </div> </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
+    const swiperNavigationElements = `
+      <div class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
       <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
       <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
       <path d="M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531" stroke="white" stroke-width="2" stroke-linecap="square"/>
@@ -114,6 +111,13 @@ class CustomCarousel extends HTMLElement {
         <path d="M22.7061 26.353L16.9413 20.5883L22.7061 14.8236" stroke="white" stroke-width="2" stroke-linecap="square"/>
       </svg>
     </div>
+    `
+    this.innerHTML = `<div class="carousel__container swiper hide" data-swiper-container>
+    <div class="swiper-wrapper">
+    ${this.carouselContent}
+    </div> </div>
+    <div class="swiper-pagination"></div>
+    ${this.carouselSettings['customNavigation'] ? '' : swiperNavigationElements}
     ${this.placeholders ? this.placeholders : `<div class="carousel-placeholders"></div>`}`
     this.container = this.querySelector('[data-swiper-container]');
      const carouselSettings = this.getCarouselSettings();

@@ -5,7 +5,7 @@
 @import 'breakpoints'; 
 
 @custom-selector :--button .product-category__button.button;
-
+@custom-selector :--heading-wrap .section__heading-wrapper;
 
 .featured-products {
     margin-top: var(--section-margin);
@@ -29,8 +29,10 @@
         
         &--mobile {
             @include mixins.product-grid;
+            grid-auto-rows: minmax(300px,auto);
             @media(--md) {
                 display: none;
+                grid-auto-rows: minmax(327px,auto);
             }
         }
 
@@ -45,6 +47,14 @@
         column-gap: 16px;
         margin-bottom: 15px;
         overflow: auto;
+        max-width: 100%;
+        padding-left: var(--section-padding);
+        @media(--sm){
+            padding-left: calc(2*var(--section-padding));
+        }
+        @media(--lg){
+            padding: 0;
+        }
     }
 
     :--button{
@@ -53,11 +63,38 @@
         background: transparent;
     }
 
+    :--heading-wrap{
+        margin-bottom: var(--section-margin);
+        @media(--sm){
+        margin-bottom: calc(2*var(--section-margin));
+        }
+    }
+    
     .product-category__button--active{
         color: colors.$white !important;
         border: 1px solid colors.$red !important;
         background: colors.$red !important;
     }
+
+  .carousel-placeholders {
+    @include mixins.container; 
+    height: 350px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 10px;
+    @media(--md){
+      grid-template-columns: repeat(5,1fr);
+      column-gap: 20px;
+    }
+  }
+  .carousel-place{
+    display: contents;
+  }
+  .carousel-place div{
+    background: colors.$gray-400;
+    height: 350px;
+    width: 100%;
+  }
 
 }
 

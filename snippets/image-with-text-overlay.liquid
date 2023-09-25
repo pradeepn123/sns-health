@@ -1,7 +1,5 @@
 {% if image_desktop or image_mobile %}
 {% liquid 
- assign desktop_image = image_desktop | default: image_mobile
- assign mobile_image = image_mobile | default: image_desktop
  assign fill = fill | default: false
 %}
 
@@ -20,9 +18,10 @@
   {% endif %}
 >
  <div class="text-image__image-wrapper image {{wrapper_class}}__image-wrapper {% if overlay == false %} image--no-radius {% endif%}">
+  {% if image_desktop %}
   <div class="image image--desktop {{wrapper_class}}__image"> 
     {% render 'shopify-responsive-image',
-        image: desktop_image,
+        image: image_desktop,
         aspect_ratio: desktop_aspect_ratio,
         crop: desktop_crop,
         contain: desktop_contain,
@@ -30,9 +29,11 @@
         max_height: max_height_desktop
       %}
   </div>
+{% endif %}
+{% if image_mobile %}
   <div class="image image--mobile {{wrapper_class}}__image">
     {% render 'shopify-responsive-image',
-        image: mobile_image,
+        image: image_mobile,
         aspect_ratio: mobile_aspect_ratio,
         crop: mobile_crop,
         contain: mobile_contain,
@@ -40,6 +41,7 @@
         max_height: max_height_mobile
       %}
     </div>
+  {% endif %}
 </div>
 <div class="text-image__text-wrapper text-image__text-wrapper-{{id}} content {{wrapper_class}}__text-wrapper {% if overlay == false %} text-image__text-wrapper--no-overlay {% endif%}"
   {% if cta_url %} onclick="location.href='{{cta_url}}';" {% endif %}

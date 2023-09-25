@@ -6,3 +6,4 @@ click.addEventListener("click", ()=>{
          scrollTop: $(".footer__wrapper").offset().top},
          'slow');
 });
+

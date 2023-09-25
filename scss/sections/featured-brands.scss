@@ -4,6 +4,7 @@
 @import 'Token';
 @import 'breakpoints';
 
+@custom-selector :--heading-wrap .section__heading-wrapper;
 
 .featured-brand-section {
   margin-top: var(--section-margin);
@@ -52,6 +53,37 @@
       }
     }
   }
+
+  :--heading-wrap{
+    margin-bottom: var(--section-margin);
+    @media(--sm){
+      margin-bottom: calc(2*var(--section-margin));
+    }
+  }
+
+  .carousel-placeholders {
+    height: 75px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 10px;
+    @media(--sm){
+      grid-template-columns: repeat(5,1fr);
+      column-gap: 20px;
+    }
+    @media(--md){
+      grid-template-columns: repeat(6,1fr);
+      column-gap: 20px;
+    }
+  }
+  .carousel-place{
+    display: contents;
+  }
+  .carousel-place div{
+    background: colors.$gray-400;
+    height: 75px;
+    width: 100%;
+  }
+
   @include mixins.overflowCarousel;
   @include mixins.shadow_margins;
 

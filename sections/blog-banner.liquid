@@ -1,0 +1,31 @@
+
+
+{{ 'blog-banner.css' | asset_url | stylesheet_tag }}
+<div class = "blog-post__banner">
+    {% render 'blog-banner', blocks: section.blocks %}
+   </div>
+  
+  {% schema %}
+  {
+    "name": "Articles",
+    "blocks": [
+      {
+        "type": "articles",
+        "name": "article",
+        "settings": [
+           {
+             "type": "article",
+             "id": "article",
+             "label": "Select article Post"
+           }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Articles"
+      }
+    ]
+  }
+  {% endschema %}
+  

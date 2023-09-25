@@ -116,6 +116,7 @@
 .category-collection-grid .category-collection-grid__item__text-wrapper.text-image__text-wrapper {
   top: 40px;
   padding-left: 18PX;
+  padding-right: 0;
 }
 @media (min-width: 1200px) {
   .category-collection-grid .category-collection-grid__item__text-wrapper.text-image__text-wrapper {
@@ -123,8 +124,22 @@
   }
 }
 .category-collection-grid .category-collection-grid__cta.button {
-  padding-left: 0;
   margin-top: 7px;
+  line-height: 1;
+  padding: 0px 8px 13px 0;
+  font-family: "poppins";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  font-weight: 700;
+}
+@media (min-width: 1024px) {
+  .category-collection-grid .category-collection-grid__cta.button {
+    font-family: "poppins";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
 }
 .category-collection-grid .category-collection-grid__cta.button path {
   stroke: transparent;
@@ -137,4 +152,8 @@
 .category-collection-grid .category-collection-grid__cta.button--transparent:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+.category-collection-grid .responsive-image__wrapper {
+  min-height: 100%;
+  min-width: 100%;
 }

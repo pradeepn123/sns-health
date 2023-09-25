@@ -1,108 +1,108 @@
-{{
-    'category-collection-grid.css' | asset_url | stylesheet_tag
-  }}
-  
-  {% assign column = section.settings.column %}
-  {% assign rows = section.settings.rows %}
-  
-  {% for block in section.blocks %} 
-  {% assign id = block.id %}
-  {% style %}
-      .category-collection-grid__item__text-image-{{id}}{
-        grid-row: span {{ block.settings.no_of_rows_mobile }};
-        grid-column: span {{ block.settings.no_of_column_mobile }};
-      }
-    @media (min-width:768px) {
-      .category-collection-grid__item__text-image-{{id}}{
-        grid-row: span {{ block.settings.no_of_rows_desktop }};
-        grid-column: span {{ block.settings.no_of_column_desktop}};
-      }
-    }
-  {% endstyle %}
-  {% endfor %}
+{{ 'category-collection-grid.css' | asset_url | stylesheet_tag }}
 
-  {% style %}
-    :root {
-      --column-count: {{ column }};
-      --row-count: {{ rows }};
-    }
+{% assign column = section.settings.column %}
+{% assign rows = section.settings.rows %}
+{% assign desktop_aspect_ratio = 1.6 %}
 
-  {% endstyle %}
+{% style %}
+  :root {
+    --column-count: {{ column }};
+    --row-count: {{ rows }};
+  }
+{% endstyle %}
 
-  
-  <div class="category-collection-grid category-collection-grid--desktop">
-    <div class="category-collection-grid__content">
+<div class="category-collection-grid category-collection-grid--desktop">
+  <div class="category-collection-grid__content">
+    {% for block in section.blocks %}
+      {% assign id = block.id %}
+      {% style %}
+          .category-collection-grid__item__text-image-{{id}}{
+            grid-row: span {{ block.settings.no_of_rows_mobile }};
+            grid-column: span {{ block.settings.no_of_column_mobile }};
+          }
+        @media (min-width:768px) {
+          .category-collection-grid__item__text-image-{{id}}{
+            grid-row: span {{ block.settings.no_of_rows_desktop }};
+            grid-column: span {{ block.settings.no_of_column_desktop}};
+          }
+        }
+        {% if  block.settings.no_of_rows_desktop == '2' and block.settings.no_of_column_desktop == '1' %}
+              {% assign desktop_aspect_ratio = 0.7 %}
+        {% endif %}
+    
+      {% endstyle %}
 
-  
-       {% for block in section.blocks %} 
-        {% liquid 
-          assign id = block.id
-          assign color = block.settings.color
-          assign eyebrow = block.settings.eyebrow
-          assign heading = block.settings.heading
-          assign subheading = block.settings.subheading
-          assign cta_text = block.settings.cta_text
-          assign cta_url = block.settings.cta_url
-          assign image_desktop = block.settings.image_desktop
-          assign image_mobile = block.settings.image_mobile
-          assign inline_heading = block.settings.inline_heading
-          assign secondary_button_type = 'link'
-          assign button_background_type = 'transparent'
-        %}     
-         
-            {% render 'image-with-text-overlay', 
-              id: id,
-              color: color,
-              eyebrow: eyebrow,
-              heading: heading, 
-              subheading: subheading, 
-              cta_text: cta_text, 
-              cta_url: cta_url, 
-              image_desktop: image_desktop,
-              image_mobile: image_mobile,
-              wrapper_class: 'category-collection-grid__item',
-              text_wrapper_class: 'category-collection-grid',
-              inline_heading: inline_heading,
-              secondary_button_type: secondary_button_type,
-              button_background_type: button_background_type,
-              desktop_aspect_ratio: 1.67,
-              mobile_aspect_ratio: 3,
-              cover: true
-              %}
-       
-       {% endfor %}
-    </div>
+      {% liquid 
+        assign desktop_image = block.settings.image_desktop | default: block.settings.image_mobile
+        assign mobile_image = block.settings.image_mobile | default: block.settings.image_desktop
+        %}
+      {% liquid
+        assign id = block.id
+        assign color = block.settings.color
+        assign eyebrow = block.settings.eyebrow
+        assign heading = block.settings.heading
+        assign subheading = block.settings.subheading
+        assign cta_text = block.settings.cta_text
+        assign cta_url = block.settings.cta_url
+        assign image_desktop = desktop_image
+        assign image_mobile = mobile_image
+        assign inline_heading = block.settings.inline_heading
+        assign secondary_button_type = 'link'
+        assign button_background_type = 'transparent'
+      %}
+
+      {% render 'image-with-text-overlay',
+        id: id,
+        color: color,
+        eyebrow: eyebrow,
+        heading: heading,
+        subheading: subheading,
+        cta_text: cta_text,
+        cta_url: cta_url,
+        image_desktop: image_desktop,
+        image_mobile: image_mobile,
+        wrapper_class: 'category-collection-grid__item',
+        text_wrapper_class: 'category-collection-grid',
+        inline_heading: inline_heading,
+        secondary_button_type: secondary_button_type,
+        button_background_type: button_background_type,
+        desktop_aspect_ratio: desktop_aspect_ratio,
+        mobile_aspect_ratio: 1.2,
+        cover: true
+        
+      %}
+    {% endfor %}
   </div>
- 
-  
-  {% schema %}
-   {
-     "name": "category-collection-grid",
-     "settings": [
-      {
-        "type": "range",
-        "id": "column",
-        "label": "number of column",
-        "min": 1,
-        "max": 4,
-        "step": 1,
-        "default": 4
-      },
-      {
-        "type": "range",
-        "id": "rows",
-        "label": "number of row",
-        "min": 1,
-        "max": 9,
-        "step": 1,
-        "default": 2
-      }
-     ],
-     "blocks": [
-      {
-       "type": "image_with_text_overlay",
-       "name": "Image with text overlay",
-       "settings": [
+</div>
+
+{% schema %}
+{
+  "name": "category-collection-grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "column",
+      "label": "number of column",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": "number of row",
+      "min": 1,
+      "max": 9,
+      "step": 1,
+      "default": 2
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_with_text_overlay",
+      "name": "Image with text overlay",
+      "settings": [
         {
           "type": "header",
           "content": "Block Group"
@@ -111,64 +111,58 @@
           "type": "text",
           "id": "no_of_column_desktop",
           "label": "number of column Desktop"
-     
         },
         {
           "type": "text",
           "id": "no_of_rows_desktop",
           "label": "number of row Desktop"
-     
         },
         {
           "type": "text",
           "id": "no_of_column_mobile",
           "label": "number of column Mobile"
-     
         },
         {
           "type": "text",
           "id": "no_of_rows_mobile",
           "label": "number of row Mobile"
-        
         },
         {
           "type": "header",
           "content": "Block Contents"
         },
-          {
-            "type": "image_picker",
-            "id": "image_desktop",
-            "label": "Image Desktop"
-          },
-          {
-            "type": "image_picker",
-            "id": "image_mobile",
-            "label": "Image Mobile"
-          },
-          {
-            "type": "text",
-            "id": "heading",
-            "label": "Heading"
-          },
-          {
-            "type": "text",
-            "id": "cta_text",
-            "label": "CTA Text"
-          },
-          {
-            "type": "url",
-            "id": "cta_url",
-            "label": "Url"
-          }
-       ]
-      }
-     ],
-     "presets": [
-      {
-        "name": "category-collection-grid"
-      }
-     ]
-   }
-  
-  {% endschema %}
-  
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "Url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "category-collection-grid"
+    }
+  ]
+}
+{% endschema %}

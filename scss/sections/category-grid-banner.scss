@@ -42,11 +42,17 @@
         top: 22%;
         left: 0;
         @media (--sm){
-            top: 100px;
+            top: 73px;
         }
         @media (--md){
-            left: 25px;
-            top: 35%;
+            left: 11px;
+            top: 28%;
+        }
+        @media (--md-large){
+            top: 32%;
+        }
+        @media (--lg){
+            top: 28%;
         }
     }
 
@@ -55,9 +61,16 @@
         font-weight: typography.$heading-weight;
         line-height: 1.4;
         @media (--sm){
+            font-size: 15px;
+        }
+        @media(--md){
             @include use-text-style('heading-3');
         }
         @media (--md-large){
+            @include use-text-style('heading-1-alt');
+            font-weight: typography.$heading-weight;
+        }
+        @media (--lg){
             @include use-text-style('heading-1');
             font-weight: typography.$heading-weight;
         }
@@ -83,6 +96,7 @@
         @media(--sm){
             border: 1px solid #FFFFFF;
             display: flex;
+            margin-top:  var(--section-margin);
         }
     }
    

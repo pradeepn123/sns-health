@@ -120,7 +120,7 @@
       ],
       "settings": {
         "heading": "Shop By Family Health",
-        "show_carousel": false
+        "show_carousel": true
       }
     },
     "fa56ec1c-336d-4207-8ee5-afb07871d216": {
@@ -171,7 +171,8 @@
           "repeater": "{{ collection.metafields.custom.product_carousel.value }}",
           "settings": {
             "collection_text": "{{ block.repeater.tab_text.value }}",
-            "rule_id": "{{ block.repeater.rebuy_rule_id.value }}"
+            "rule_id": "{{ block.repeater.rebuy_rule_id.value }}",
+            "collection": "{{ block.repeater.collection.value }}"
           }
         }
       },
@@ -180,7 +181,7 @@
       ],
       "settings": {
         "heading": "Featured Products",
-        "mobile_carousel": true
+        "mobile_carousel": false
       }
     },
     "4d89401b-332c-4ecb-9c2e-37615234ab7d": {
@@ -190,6 +191,9 @@
           "type": "featured_brand",
           "repeater": "{{ collection.metafields.custom.featured_brand.value }}",
           "settings": {
+            "promotion": false,
+            "promotion_name": "",
+            "promotion_creative_name": "",
             "image": "{{ block.repeater.image.value }}",
             "url": "{{ block.repeater.url.value }}"
           }
@@ -210,7 +214,8 @@
           "repeater": "{{ collection.metafields.custom.product_carousel.value }}",
           "settings": {
             "collection_text": "{{ block.repeater.tab_text.value }}",
-            "rule_id": "{{ block.repeater.rebuy_rule_id.value }}"
+            "rule_id": "{{ block.repeater.rebuy_rule_id.value }}",
+            "collection": ""
           }
         }
       },
@@ -284,7 +289,7 @@
             "inline_heading": false,
             "subheading": "",
             "cta_text": "Shop",
-            "cta_url": "shopify:\/\/pages\/reviews"
+            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
           }
         }
       },

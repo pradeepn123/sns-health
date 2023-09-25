@@ -1,12 +1,97 @@
 {
   "sections": {
-    "main": {
-      "type": "Banner",
+    "249743d0-f771-4be5-9404-cb9b358af298": {
+      "type": "blog-banner",
+      "blocks": {
+        "9eaf9850-a955-4dc3-a266-e53a9ac1f229": {
+          "type": "articles",
+          "settings": {
+            "article": "fitness-and-nutrition\/high-protein-diet-benefits-and-weight-loss-supplements"
+          }
+        },
+        "471ed145-4036-4457-b09a-b149e12f3ea6": {
+          "type": "articles",
+          "settings": {
+            "article": "health\/unveiling-the-secrets-of-fish-oil-a-comprehensive-guide"
+          }
+        },
+        "3898df59-2d60-49a2-98c6-8c3363981197": {
+          "type": "articles",
+          "settings": {
+            "article": "fitness-and-nutrition\/how-glutamine-and-creatine-supplements-enhance-muscle-growth-and-recovery"
+          }
+        }
+      },
+      "block_order": [
+        "9eaf9850-a955-4dc3-a266-e53a9ac1f229",
+        "471ed145-4036-4457-b09a-b149e12f3ea6",
+        "3898df59-2d60-49a2-98c6-8c3363981197"
+      ],
+      "settings": {
+      }
+    },
+    "97d135b2-2c73-40bd-99ec-24c0644eaa3e": {
+      "type": "blog-page-list",
+      "blocks": {
+        "a7977068-69a9-466a-9321-9365a6e4c9f1": {
+          "type": "blogpost",
+          "settings": {
+            "heading": "Fitness and Nutrition",
+            "show_blogpost": true,
+            "url": "shopify:\/\/blogs\/fitness-and-nutrition",
+            "blog": "fitness-and-nutrition"
+          }
+        },
+        "b3141c03-c9ce-47ee-bb66-92a66d6bbb9d": {
+          "type": "blogpost",
+          "settings": {
+            "heading": "Health",
+            "show_blogpost": true,
+            "url": "shopify:\/\/blogs\/health",
+            "blog": "health"
+          }
+        },
+        "963add7f-ffb3-43c4-84bc-07ea81696884": {
+          "type": "blogpost",
+          "settings": {
+            "heading": "mental Health",
+            "show_blogpost": true,
+            "url": "shopify:\/\/blogs\/mental-health",
+            "blog": "mental-health"
+          }
+        },
+        "98813c2b-bc1e-42f4-aa32-33d130389fd9": {
+          "type": "blogpost",
+          "settings": {
+            "heading": "Beauty and Wellness",
+            "show_blogpost": true,
+            "url": "shopify:\/\/blogs\/beauty-and-wellness",
+            "blog": "beauty-and-wellness"
+          }
+        },
+        "c38b7d28-dd8e-498e-8fa9-ffa1af255c21": {
+          "type": "blogpost",
+          "settings": {
+            "heading": "Stress And Anxiety",
+            "show_blogpost": true,
+            "url": "shopify:\/\/blogs\/stress-and-anxiety",
+            "blog": "stress-and-anxiety"
+          }
+        }
+      },
+      "block_order": [
+        "a7977068-69a9-466a-9321-9365a6e4c9f1",
+        "b3141c03-c9ce-47ee-bb66-92a66d6bbb9d",
+        "963add7f-ffb3-43c4-84bc-07ea81696884",
+        "98813c2b-bc1e-42f4-aa32-33d130389fd9",
+        "c38b7d28-dd8e-498e-8fa9-ffa1af255c21"
+      ],
       "settings": {
       }
     }
   },
   "order": [
-    "main"
+    "249743d0-f771-4be5-9404-cb9b358af298",
+    "97d135b2-2c73-40bd-99ec-24c0644eaa3e"
   ]
 }

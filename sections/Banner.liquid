@@ -21,6 +21,9 @@
           <div class="custom-carousel__content hide" data-carousel-content>
             {% for block in section.blocks %} 
             {% liquid 
+            assign desktop_image = block.settings.image_desktop | default: block.settings.image_mobile
+            %}
+            {% liquid 
               assign id = block.id
               assign color = block.settings.color
               assign eyebrow = block.settings.eyebrow
@@ -29,8 +32,7 @@
               assign cta_text = block.settings.cta_text
               assign cta_url = block.settings.cta_url
               assign is_slider = block.settings.is_carousel_content
-              assign image_desktop = block.settings.image_desktop
-              assign image_mobile = block.settings.image_mobile
+              assign image_desktop = desktop_image
               assign inline_heading = block.settings.inline_heading
               assign promotion = block.settings.promotion
               assign promotion_name = block.settings.promotion_name
@@ -48,11 +50,9 @@
                   cta_text: cta_text, 
                   cta_url: cta_url, 
                   image_desktop: image_desktop,
-                  image_mobile: image_mobile,
                   text_wrapper_class: 'banner',
                   inline_heading: inline_heading,
                   desktop_aspect_ratio: banner_desktop_aspect_ratio,
-                  mobile_aspect_ratio: banner_desktop_aspect_ratio,
                   fill: true,
                   promotion: promotion,
                   promotion_name: promotion_name,
@@ -67,6 +67,9 @@
               {
                 "slidesPerView": 1,
                 "spaceBetween": 15,
+                "autoplay": {
+                  "delay": 3000
+                },
                 "breakpoints": {
                   "320": {
                     "pagination": true
@@ -136,6 +139,9 @@
           <div class="custom-carousel__content hide" data-carousel-content>
             {% for block in section.blocks %} 
             {% liquid 
+              assign mobile_image = block.settings.image_mobile | default: block.settings.image_desktop
+              %}
+            {% liquid 
               assign id = block.id
               assign color = block.settings.color
               assign eyebrow = block.settings.eyebrow
@@ -144,8 +150,7 @@
               assign cta_text = block.settings.cta_text
               assign cta_url = block.settings.cta_url
               assign is_slider = block.settings.is_carousel_content
-              assign image_desktop = block.settings.image_desktop
-              assign image_mobile = block.settings.image_mobile
+              assign image_mobile = mobile_image
               assign inline_heading = block.settings.inline_heading
               assign promotion = block.settings.promotion
               assign promotion_name = block.settings.promotion_name
@@ -161,11 +166,9 @@
                   subheading: subheading, 
                   cta_text: cta_text, 
                   cta_url: cta_url, 
-                  image_desktop: image_desktop,
-                  image_mobile: image_mobile,
+                  image_mobile: mobile_image,
                   text_wrapper_class: 'banner',
                   inline_heading: inline_heading,
-                  desktop_aspect_ratio: 1.9,
                   mobile_aspect_ratio: 1.9,
                   fill: true,
                   promotion: promotion,
@@ -180,6 +183,9 @@
               {
                 "slidesPerView": 1,
                 "spaceBetween": 15,
+                "autoplay": {
+                  "delay": 3000
+                },
                 "breakpoints": {
                   "320": {
                     "pagination": true

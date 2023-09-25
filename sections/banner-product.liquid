@@ -4,6 +4,10 @@
     <div class="banner-product__content">
       {% assign mobile_carousel = section.settings.mobile_carousel%}
             {% for block in section.blocks %}
+              {% liquid 
+                assign desktop_image = block.settings.image_desktop | default: block.settings.image_mobile
+                assign mobile_image = block.settings.image_mobile | default: block.settings.image_desktop
+                %}
              {% if block.type == "image_with_text_overlay" %}
               {% liquid 
                 assign id = block.id
@@ -14,8 +18,8 @@
                 assign cta_text = block.settings.cta_text
                 assign cta_url = block.settings.cta_url
                 assign is_slider = block.settings.is_carousel_content
-                assign image_desktop = block.settings.image_desktop
-                assign image_mobile = block.settings.image_mobile
+                assign image_desktop = desktop_image
+                assign image_mobile = mobile_image
                 assign inline_heading = block.settings.inline_heading
                 assign button_type = 'outline'
                 assign button_background_type = 'transparent'
@@ -33,7 +37,7 @@
                     image_mobile: image_mobile,
                     text_wrapper_class: 'sidebar-banner',
                     inline_heading: inline_heading,
-                    mobile_aspect_ratio: 1.16,
+                    mobile_aspect_ratio: 1.94,
                     desktop_aspect_ratio: 1.15,
                     desktop_crop: true,
                     mobile_crop: true,
@@ -59,7 +63,13 @@
                       {% endif %}
                         {% endfor %}
                       </div>
-                      <div class="carousel-placeholders"></div>
+                      <div class="carousel-placeholders" >
+                        <div class="carousel-place" >
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                      </div>
                         <script type="text/json" data-settings>
                             {
                               "slidesPerView": 2,
@@ -77,7 +87,7 @@
                                "1200": {
                                   "pagination": false,
                                   "navigation": true,
-                                  "slidesPerView": 3,
+                                  "slidesPerView": 4,
                                   "spaceBetween": 27
                                 }
                               }
@@ -85,6 +95,7 @@
                           </script>
                     </custom-carousel>
                       </div>
+                      {% unless mobile_carousel %}
                       <div class="banner-product__products-content  banner-product__products-content--mobile {% if mobile_carousel %}banner-product__products-content--hide{% endif %}">
                         {% assign limit  = 4 %}
                         {% assign count = 0 %}
@@ -96,6 +107,7 @@
                       {% endif %}
                         {% endfor %}
                       </div>
+                    {% endunless %}
               </div>
                 {% endif %}
               {% endfor %}

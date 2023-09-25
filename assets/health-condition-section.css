@@ -85,13 +85,13 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 100%;
 }
 @media (min-width: 1024px) {
   .health-condition-section .health-condition-section__icon-text.icon-text {
     padding: 20px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -148,6 +148,39 @@
 }
 .health-condition-section .health-condition-section__text.text__container {
   max-width: 100%;
+}
+.health-condition-section .section__heading-wrapper {
+  margin-bottom: var(--section-margin);
+}
+@media (min-width: 768px) {
+  .health-condition-section .section__heading-wrapper {
+    margin-bottom: calc(2 * var(--section-margin));
+  }
+}
+.health-condition-section .carousel-placeholders {
+  height: 75px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+}
+@media (min-width: 1200px) {
+  .health-condition-section .carousel-placeholders {
+    grid-template-columns: repeat(5, 1fr);
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
+  }
+}
+.health-condition-section .carousel-place {
+  display: contents;
+}
+.health-condition-section .carousel-place div {
+  background: #f5f5f5;
+  height: 75px;
+  width: 100%;
 }
 .health-condition-section .swiper-initialized {
   padding-left: var(--base-margin);

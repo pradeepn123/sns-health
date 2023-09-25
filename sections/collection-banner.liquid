@@ -13,12 +13,17 @@
 <div class="collection-banner">
   <div class="colection-collection-banner__content">
     {% for block in section.blocks %}
+      {% liquid 
+        assign desktop_image = collection.featured_image | default: collection.featured_image
+        assign mobile_image = collection.featured_image | default: collection.featured_image
+        %}
       {% liquid
         assign id = block.id
         assign color = block.settings['font-color']
         assign heading = collection.title
         assign subheading = collection.description | truncate: 106 
-        assign image_desktop = collection.featured_image
+        assign image_desktop = desktop_image
+        assign image_mobile = mobile_image
         assign background = block.settings['background-color']
         assign inline_heading = block.settings.inline_heading
         assign cta_text = block.settings.cta_text
@@ -32,6 +37,7 @@
         heading: heading,
         subheading: subheading,
         image_desktop: image_desktop,
+        image_mobile: image_mobile,
         wrapper_class: 'collection-banner-content',
         text_wrapper_class: 'collection-banner',
         inline_heading: inline_heading,

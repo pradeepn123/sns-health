@@ -2,7 +2,7 @@
 @use 'StyleComponents/typography';
 @import 'Token';
 @import 'breakpoints';
-@import 'StyleComponents/title-description';
+
 
 
 @custom-selector :--heading .collection-description__heading.text-wrap__heading;
@@ -32,3 +32,17 @@
         }
     } 
 }
+
+.text-wrap__description--read-button {
+    color: #ED1C24;
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+.text-wrap [data-content-half] {
+    display: block;
+  }
+  .text-wrap [data-content-full] {
+    display: none;
+  }

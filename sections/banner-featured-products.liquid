@@ -35,20 +35,26 @@
                             image_mobile: image_mobile,
                             text_wrapper_class: 'sidebar-banner',
                             inline_heading: inline_heading,
-                            mobile_aspect_ratio: 1.16,
+                            mobile_aspect_ratio: 1.94,
                             desktop_aspect_ratio: 1.15,
                             desktop_crop: true,
                             mobile_crop: true,
                             button_type: button_type,
                             button_background_type: button_background_type
                             %}
-                            
-                        {% for product in collection.products limit: 8 %}
+
+                        {% assign limit  = 8 %}
+                        {% assign count = 0 %}
+                        {% for product in collection.products %}
+                          {% if count >= limit %} {% break %} {% endif %}
+                            {% if product.available %}  
+                            {% assign count = count | plus: 1 %}
                               <div class="swiper-slide product_card">
                                 {% render 'custom-product-card',
                                   product: product
                                 %}
                               </div>
+                            {% endif %}
                         {% endfor %}
                       </div>
                       <div class="banner-product__products-content  banner-product__products-content--mobile">
@@ -79,15 +85,19 @@
                               image_mobile: image_mobile,
                               text_wrapper_class: 'sidebar-banner',
                               inline_heading: inline_heading,
-                              mobile_aspect_ratio: 1.69,
+                              mobile_aspect_ratio: 1.94,
                               desktop_aspect_ratio: 1.15,
                               desktop_crop: true,
                               mobile_crop: true,
                               button_type: button_type,
                               button_background_type: button_background_type
                               %}
-                        {% for product in collection.products limit: 4 %} 
+                        {% assign limit  = 4 %}
+                        {% assign count = 0 %}
+                        {% for product in collection.products %} 
+                        {% if count >= limit %} {% break %} {% endif %}
                         {% if product.available %}  
+                        {% assign count = count | plus: 1 %}
                           {% render 'custom-product-card', product: product %}
                         {% endif %}
                         {% endfor %}

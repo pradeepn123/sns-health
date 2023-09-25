@@ -7,7 +7,7 @@
 @custom-selector :--text .category-section__eyebrow.text__eyebrow;
 @custom-selector :--icon-text .category-section__icon-text.icon-text;
 @custom-selector :--icon .icon__container.category-section__icon;
-
+@custom-selector :--heading-wrap .section__heading-wrapper;
 
 .category-section {
   margin-top: var(--section-margin);
@@ -52,6 +52,36 @@
     @media (--md) {
       margin-top: 8px;
     }
+  }
+
+  :--heading-wrap{
+    margin-bottom: var(--section-margin);
+    @media(--sm){
+      margin-bottom: calc(2*var(--section-margin));
+    }
+  }
+
+  .carousel-placeholders {
+    height: 120px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 10px;
+    @media(--sm){
+      grid-template-columns: repeat(4,1fr);
+      column-gap: 30px;
+    }
+    @media(--md-large){
+      grid-template-columns: repeat(6,1fr);
+      column-gap: 30px;
+    }
+  }
+  .carousel-place{
+    display: contents;
+  }
+  .carousel-place div{
+    background: colors.$gray-400;
+    height: 125px;
+    width: 100%;
   }
 
   @include mixins.overflowCarousel;

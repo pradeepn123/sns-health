@@ -1,12 +1,12 @@
 @use 'StyleComponents/mixins';
 @use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
 @import 'Token';
 @import 'breakpoints';
 @import 'StyleComponents/sidebar-banner';
 
 
 @custom-selector :--product .banner-product__products-wrapper;
-
 
 .banner-product {
     @include mixins.container;
@@ -23,6 +23,10 @@
           max-width: 100%;
           grid-column: span 3;
         }
+        @media(--md-large) {
+            max-width: 100%;
+            grid-column: span 4;
+          }
         
       }
 
@@ -48,8 +52,27 @@
         }
     }
 
-
     &__products-content--hide {
         display: none !important;
     }
+
+.carousel-placeholders {
+    height: 350px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 10px;
+    @media(--md){
+      grid-template-columns: repeat(3,1fr);
+      column-gap: 20px;
+    }
+  }
+  .carousel-place{
+    display: contents;
+  }
+  .carousel-place div{
+    background: colors.$gray-400;
+    height: 350px;
+    width: 100%;
+  }
 } 

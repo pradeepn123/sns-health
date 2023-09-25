@@ -1,22 +1,32 @@
 {{'blog-post.css' | asset_url | stylesheet_tag }}
-
+{% style %}
+ {% for block in blocks %}
+  {% if block.settings.show_blogpost == true %}
+    .section__heading-wrapper{
+      margin-bottom: 0;
+    }
+  {% endif %}
+ {% endfor %}
+{% endstyle %}
 <div class="blog-post-section">
-    {% render 'section-heading', heading: section.settings.heading , url: section.settings.url %}
-    {% assign blog = section.settings.blog %}
+    {% for block in blocks %}
+    {% if block.settings.blog != blank %}
+   <div class="blog-post-container" id="blog-post-{{forloop.index}}" data-section-index="{{forloop.index}}" data-blog-post-container>
+    {% render 'section-heading', heading: block.settings.heading , url: block.settings.url %}
+    {% assign blog = block.settings.blog %}
     <div class="blog-post-section__wrapper">
-
          <div class="blog-post-section__content"> 
+         <div class="blog-post-section__blog-totalcount">{% if block.settings.show_blogpost == true %}Total {{ blog.articles.size }} blogs{% endif %}</div>
          <custom-carousel>
-          <div class="custom-carousel__content hide" data-carousel-content>
-         {% for article in blog.articles limit: 4 %} 
-   
+          <div class="custom-carousel__content hide" data-carousel-content> 
+         {% for article in blog.articles limit: 9 %} 
           <div class="blog-post-section__article swiper-slide" onclick="location.href='{{article.url}}';">
            <div class="blog-post-section__article-image">
             <div class="blog-post-section__article-image--desktop">
               {% render 'shopify-responsive-image', image: article.image , aspect_ratio:1.7, crop:true %}
             </div>
             <div class="blog-post-section__article-image--mobile">
-                {% render 'shopify-responsive-image', image: article.image , aspect_ratio:1.7, crop: true %}
+                {% render 'shopify-responsive-image', image: article.image , aspect_ratio:1.75, crop: true %}
               </div>
            </div>
      
@@ -31,16 +41,20 @@
               <a href="{{article.url}}" class="article-content__url"> Read post {% render 'chevron-right-icon'%} </a>
             </div>
          </div>
-
          {% endfor %}
         </div>
         <div class="carousel-placeholders"></div>
          <script type="text/json" data-settings>
           {
-            "slidesPerView": 2,
+            "slidesPerView": 1.47,
             "spaceBetween": 10,
             "overflowNagivation": true,
             "breakpoints": {
+              "768": {
+                "navigation": true,
+                "slidesPerView": 2,
+                "spaceBetween": 20
+              },
               "1024": {
                   "navigation": true,
                   "slidesPerView": 3,
@@ -49,38 +63,13 @@
             }
           }
         </script>
+      <div>
       </custom-carousel>
-   </div>
- </div>
+    </div>
+  </div>
+  </div>
+</div>
+{% endif %}
+    {% endfor %}
 </div>
 
-
-
-{% schema %}
- {
-   "name": "Blog Post",
-   "settings": [
-     {
-       "type": "text",
-       "id": "heading",
-       "label": "Section Heading"
-     },
-     {
-        "type": "url",
-        "id": "url",
-        "label": "View all url"
-      },
-      {
-        "type": "blog",
-        "id": "blog",
-        "label": "Select Blog Post"
-      }
-   ],
-   "presets": [
-    {
-      "name": "Blog Post"
-    }
-   ]
- }
-
-{% endschema %}

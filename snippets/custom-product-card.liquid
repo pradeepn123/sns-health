@@ -76,7 +76,13 @@
           {%- endif -%}
 
           {%- if product.available -%}
-            {%- if product.variants.size == 1 -%}
+            {% assign count = 0 %}
+            {% for variant in product.variants %}
+              {% if variant.available %}  
+              {% assign count = count | plus: 1 %}
+            {% endif %}
+            {% endfor %}
+            {%- if count == 1 -%}
               <button type="submit" class="{{ quick_buy_classes }}" data-action="add-to-cart">
                 {%- if product.template_suffix == 'pre-order' -%}
                   {{- 'collection.product.pre_order' | t -}}
