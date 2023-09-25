@@ -822,7 +822,7 @@ body.no-mobile-scroll .uwy {
 
 body .uwy {
   z-index: 4 !important;
-  left: 18% !important;
+  left: 4% !important;
 }
 @media (min-width: 768px) {
   body .uwy {
