@@ -103,7 +103,6 @@ product-card .product-card {
   font-size: 10px;
   font-weight: 600;
   line-height: 1.2;
-  font-weight: 500;
 }
 .product-card__price-container {
   -webkit-box-pack: justify;
