@@ -171,7 +171,8 @@
           "repeater": "{{ collection.metafields.custom.product_carousel.value }}",
           "settings": {
             "collection_text": "{{ block.repeater.tab_text.value }}",
-            "rule_id": "{{ block.repeater.rebuy_rule_id.value }}"
+            "rule_id": "{{ block.repeater.rebuy_rule_id.value }}",
+            "collection": "{{ block.repeater.collection.value }}"
           }
         }
       },
@@ -213,7 +214,8 @@
           "repeater": "{{ collection.metafields.custom.product_carousel.value }}",
           "settings": {
             "collection_text": "{{ block.repeater.tab_text.value }}",
-            "rule_id": "{{ block.repeater.rebuy_rule_id.value }}"
+            "rule_id": "{{ block.repeater.rebuy_rule_id.value }}",
+            "collection": ""
           }
         }
       },

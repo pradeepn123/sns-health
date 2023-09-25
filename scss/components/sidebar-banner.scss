@@ -22,8 +22,9 @@
         bottom: 45px;
     }
 
-    @media(--md-large) {
-        padding: var(--section-content-margin);
+    @media(--sm) {
+        padding: var(--section-content-margin) var(--nav-vertical-padding);
+        bottom:0; 
     }
 }
 
@@ -48,6 +49,8 @@
 
     @media(--md) {
         margin-top: 28px;
+        padding: 9px 13px;
+        width: 100%;
     }
 }
 

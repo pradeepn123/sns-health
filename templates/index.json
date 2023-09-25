@@ -686,7 +686,7 @@
             "inline_heading": false,
             "subheading": "Discover the Latest Deals on <br> Quality Supplements",
             "cta_text": "Shop All",
-            "cta_url": "shopify:\/\/collections\/sale",
+            "cta_url": "#",
             "max_height_desktop": "",
             "max_height_mobile": "",
             "text_position": "center center"

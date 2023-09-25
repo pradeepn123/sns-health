@@ -731,8 +731,21 @@ body.no-mobile-scroll {
  }
 }
 
+
 body .uwy {
     z-index: 4 !important;
+    left: 18% !important;
+    @media(--sm) {
+    left: 6% !important
+    }
+    @media(--md-large) {
+        left: 5% !important
+    }
+}
+
+body .uwy .uai {
+    right: unset !important;
+    left: unset !important;
 }
 
 .header-margin-scroll{
@@ -764,4 +777,19 @@ body .uwy {
 
 .blog-post-section__wrapper .swiper-navigation{
     z-index: 2;
+}
+
+
+.gorgias-chat-key-1spa6uy {
+    bottom: 9px !important;
+    right:0 !important;
+}
+
+body .uwy .uai, body .uwy .uai img {
+    min-height: 45px !important;
+    min-width: 45px !important;
+    max-height: 45px !important;
+    max-width: 45px !important;
+    width: 45px !important;
+    height: 45px !important;
 }

@@ -9,23 +9,30 @@
             "article": "fitness-and-nutrition\/high-protein-diet-benefits-and-weight-loss-supplements"
           }
         },
-        "471ed145-4036-4457-b09a-b149e12f3ea6": {
-          "type": "articles",
-          "settings": {
-            "article": "mental-health\/unraveling-stress-and-anxiety-top-supplements-for-a-balanced-mind"
-          }
-        },
         "3898df59-2d60-49a2-98c6-8c3363981197": {
           "type": "articles",
           "settings": {
-            "article": "fitness-and-nutrition\/how-glutamine-and-creatine-supplements-enhance-muscle-growth-and-recovery"
+            "article": "mental-health\/b-vitamins-and-nootropics-to-unlock-optimal-brain-health"
+          }
+        },
+        "471ed145-4036-4457-b09a-b149e12f3ea6": {
+          "type": "articles",
+          "settings": {
+            "article": "health\/unveiling-the-secrets-of-fish-oil-a-comprehensive-guide"
+          }
+        },
+        "e3f71efb-604d-4ffb-bd8e-2462594d599c": {
+          "type": "articles",
+          "settings": {
+            "article": "fitness-and-nutrition\/what-supplements-should-not-be-taken-together"
           }
         }
       },
       "block_order": [
         "9eaf9850-a955-4dc3-a266-e53a9ac1f229",
+        "3898df59-2d60-49a2-98c6-8c3363981197",
         "471ed145-4036-4457-b09a-b149e12f3ea6",
-        "3898df59-2d60-49a2-98c6-8c3363981197"
+        "e3f71efb-604d-4ffb-bd8e-2462594d599c"
       ],
       "settings": {
       }
@@ -64,7 +71,25 @@
           "type": "blogpost",
           "settings": {
             "heading": "Beauty and Wellness",
-            "show_blogpost": true,
+            "show_blogpost": false,
+            "url": "shopify:\/\/blogs\/beauty-and-wellness",
+            "blog": "beauty-and-wellness"
+          }
+        },
+        "d9fe1f06-d8d9-4f1d-b596-cd7f477efbe3": {
+          "type": "blogpost",
+          "settings": {
+            "heading": "Beauty and Wellness",
+            "show_blogpost": false,
+            "url": "shopify:\/\/blogs\/beauty-and-wellness",
+            "blog": "beauty-and-wellness"
+          }
+        },
+        "3bae2f2d-c90f-4cbb-ace8-9a4f68864241": {
+          "type": "blogpost",
+          "settings": {
+            "heading": "Beauty and Wellness",
+            "show_blogpost": false,
             "url": "shopify:\/\/blogs\/beauty-and-wellness",
             "blog": "beauty-and-wellness"
           }
@@ -72,10 +97,10 @@
         "c38b7d28-dd8e-498e-8fa9-ffa1af255c21": {
           "type": "blogpost",
           "settings": {
-            "heading": "Stress And Anxiety",
-            "show_blogpost": true,
-            "url": "shopify:\/\/blogs\/stress-and-anxiety",
-            "blog": "stress-and-anxiety"
+            "heading": "Beauty and Wellness",
+            "show_blogpost": false,
+            "url": "shopify:\/\/blogs\/beauty-and-wellness",
+            "blog": "beauty-and-wellness"
           }
         }
       },
@@ -84,9 +109,12 @@
         "b3141c03-c9ce-47ee-bb66-92a66d6bbb9d",
         "963add7f-ffb3-43c4-84bc-07ea81696884",
         "98813c2b-bc1e-42f4-aa32-33d130389fd9",
+        "d9fe1f06-d8d9-4f1d-b596-cd7f477efbe3",
+        "3bae2f2d-c90f-4cbb-ace8-9a4f68864241",
         "c38b7d28-dd8e-498e-8fa9-ffa1af255c21"
       ],
       "settings": {
+        "heading": ""
       }
     }
   },

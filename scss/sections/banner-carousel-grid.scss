@@ -67,15 +67,6 @@
       cursor: pointer;
     }
 
-    :--text-wrapper {
-      top: unset; 
-      bottom: 28px;
-      transform: none;
-
-      @media(--md) {
-          bottom: 45px
-      }
-  }
 
     :--text-container {
       display: flex;
@@ -86,7 +77,7 @@
         row-gap: 10px;
       }
     }
-    .button--outline{
+    .button--outline:not(.sidebar-banner__cta){
       padding: 7px 12px;
     }
 
