@@ -40,7 +40,7 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Immunity",
+            "promotion_name": "Snacks",
             "promotion_creative_name": "Main Banner 3",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/healthy_snacks.webp",
