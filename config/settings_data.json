@@ -946,9 +946,9 @@
           "contact_1_icon": "bi-phone",
           "contact_1_heading": "",
           "contact_1_text": "",
-          "contact_2_icon": "bi-comment",
-          "contact_2_heading": "Any questions? Send us a message!",
-          "contact_2_text": "<p>If we still haven't answered your question, you can fill out our <a href=\"\/pages\/contact-us\" title=\"Contact Us\">contact form<\/a>.<\/p><p>Our support team will respond within 24 hours and is always happy to help!﻿<\/p>"
+          "contact_2_icon": "bi-customer-support",
+          "contact_2_heading": "Any questions? Send us a message on the chat box!",
+          "contact_2_text": "<p>Our support team will respond within 24 hours and is always happy to help!﻿<\/p>"
         }
       },
       "static-promotion-list": {
