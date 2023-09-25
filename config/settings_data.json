@@ -537,9 +537,9 @@
           "text-with-icons-2": {
             "type": "item",
             "settings": {
-              "icon": "bi-email",
-              "title": "Send Us An Email",
-              "content": "<p>info@snshealth.com<\/p>"
+              "icon": "bi-chat",
+              "title": "Chat with us",
+              "content": "<p>If you have any questions<\/p>"
             }
           },
           "text-with-icons-3": {
