@@ -291,8 +291,7 @@
             "inline_heading": false,
             "subheading": "{{ block.repeater.subheading.value }}",
             "cta_text": "{{ block.repeater.cta_text.value }}",
-            "cta_url": "{{ block.repeater.cta_url.value }}",
-            "collection": "{{ block.repeater.collection.value }}"
+            "cta_url": "{{ block.repeater.cta_url.value }}"
           }
         }
       },

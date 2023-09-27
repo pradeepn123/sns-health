@@ -1,0 +1,13 @@
+{
+  "wrapper": "div",
+  "sections": {
+    "main": {
+      "type": "collection-banner",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
