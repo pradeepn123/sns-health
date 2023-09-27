@@ -11936,7 +11936,6 @@ const globals =
 /* harmony export */   append: () => (/* reexport safe */ _dom_js__WEBPACK_IMPORTED_MODULE_2__.append),
 /* harmony export */   append_styles: () => (/* reexport safe */ _dom_js__WEBPACK_IMPORTED_MODULE_2__.append_styles),
 /* harmony export */   attr: () => (/* reexport safe */ _dom_js__WEBPACK_IMPORTED_MODULE_2__.attr),
-/* harmony export */   binding_callbacks: () => (/* reexport safe */ _scheduler_js__WEBPACK_IMPORTED_MODULE_8__.binding_callbacks),
 /* harmony export */   check_outros: () => (/* reexport safe */ _transitions_js__WEBPACK_IMPORTED_MODULE_11__.check_outros),
 /* harmony export */   create_component: () => (/* reexport safe */ _Component_js__WEBPACK_IMPORTED_MODULE_13__.create_component),
 /* harmony export */   create_custom_element: () => (/* reexport safe */ _Component_js__WEBPACK_IMPORTED_MODULE_13__.create_custom_element),
@@ -12272,13 +12271,12 @@ function loop(callback) {
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   add_render_callback: () => (/* binding */ add_render_callback),
-/* harmony export */   binding_callbacks: () => (/* binding */ binding_callbacks),
 /* harmony export */   dirty_components: () => (/* binding */ dirty_components),
 /* harmony export */   flush: () => (/* binding */ flush),
 /* harmony export */   flush_render_callbacks: () => (/* binding */ flush_render_callbacks),
 /* harmony export */   schedule_update: () => (/* binding */ schedule_update)
 /* harmony export */ });
-/* unused harmony exports intros, tick, add_flush_callback */
+/* unused harmony exports intros, binding_callbacks, tick, add_flush_callback */
 /* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils.js */ "./node_modules/svelte/src/runtime/internal/utils.js");
 /* harmony import */ var _lifecycle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lifecycle.js */ "./node_modules/svelte/src/runtime/internal/lifecycle.js");
 

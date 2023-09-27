@@ -2,222 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/components/events.js":
-/*!*********************************!*\
-  !*** ./js/components/events.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AddPromotionAsItemProperty: () => (/* binding */ AddPromotionAsItemProperty),
-/* harmony export */   ViewItemList: () => (/* binding */ ViewItemList),
-/* harmony export */   clickPromotion: () => (/* binding */ clickPromotion),
-/* harmony export */   getPromotionParams: () => (/* binding */ getPromotionParams),
-/* harmony export */   selectItemList: () => (/* binding */ selectItemList),
-/* harmony export */   viewItem: () => (/* binding */ viewItem),
-/* harmony export */   viewPromotion: () => (/* binding */ viewPromotion)
-/* harmony export */ });
-/* unused harmony exports curateEcommerceData, updateProductUrlWithPromotion, redirectWithPromotion, addToCartEvent */
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! JsComponents/get-data */ "./js/components/get-data.js");
-
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-class GtmEvent {
-  constructor(eventName, data) {
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "send", () => {
-      window.datalayer = [];
-      window.dataLayer.push(_objectSpread({
-        'event': this.eventName
-      }, this.data));
-    });
-    this.eventName = eventName;
-    this.data = data;
-  }
-}
-/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (GtmEvent);
-
-//utilities and events 
-var getPromotionParams = () => {
-  var promotionData = {};
-  var params = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop)
-  });
-  var promotionName = params.promotion_name;
-  var promotionId = params.promotion_id;
-  var creativeName = params.creative_name;
-  if (promotionName) {
-    promotionData = {
-      promotionName,
-      promotionId,
-      creativeName
-    };
-  }
-  return promotionData;
-};
-var curateEcommerceData = data => {
-  return data.map((item, index) => {
-    var item_variant = item === null || item === void 0 ? void 0 : item.variant_title;
-    if (!item_variant) {
-      if (item.variants) {
-        item_variant = item.variants[0].title;
-      } else {
-        item_variant = item.product_title;
-      }
-    }
-    var item_price = (item === null || item === void 0 ? void 0 : item.price) || item.variants[0].price;
-    return {
-      item_id: "".concat(item.id),
-      item_name: "".concat(item.title),
-      index: "".concat(index),
-      item_brand: "".concat(item.vendor),
-      item_variant: "".concat(item_variant),
-      price: item_price * 0.01,
-      quantity: 1
-    };
-  });
-};
-var updateProductUrlWithPromotion = () => {
-  var links = document.querySelectorAll('[data-promotion-product-url]');
-  var {
-    promotionId,
-    promotionName,
-    creativeName
-  } = getPromotionParams();
-  if (promotionName) {
-    links.forEach(link => {
-      var url = redirectWithPromotion(link, promotionId, promotionName, creativeName);
-      link.href = url;
-    });
-  }
-};
-var AddPromotionAsItemProperty = () => {
-  var forms = document.querySelectorAll('[action = "/cart/add"]');
-  var {
-    promotionId,
-    promotionName,
-    creativeName
-  } = getPromotionParams();
-  var inputHtml = "<input type=\"hidden\" name=properties[_promotionId] value='".concat(promotionId, "' />\n\t<input type=\"hidden\" name=properties[_promotionName] value='").concat(promotionName, "' />\n\t<input type=\"hidden\" name=properties[_creativeName] value='").concat(creativeName, "' />\n\t");
-  if (promotionId) {
-    forms.forEach(form => {
-      //do not add if it already exist
-      if (!form.querySelector('[name="properties[_promotionId]"]')) {
-        form.insertAdjacentHTML('beforeend', inputHtml);
-      }
-    });
-  }
-};
-var redirectWithPromotion = (url, promotionId, promotionName, creativeName) => {
-  return "".concat(url, "?promotion_id=").concat(promotionId, "&promotion_name=").concat(promotionName, "&creative_name=").concat(creativeName);
-};
-var clickPromotion = /*#__PURE__*/function () {
-  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, promotionName, promotionId, creativeName) {
-    var gtmData = {
-      promotion_id: promotionId,
-      promotion_name: promotionName,
-      creative_name: creativeName
-    };
-    var selectPromotion = new GtmEvent('custom_promotion_click', gtmData);
-    selectPromotion.send();
-    window.location.href = redirectWithPromotion(url, promotionId, promotionName, creativeName);
-  });
-  return function clickPromotion(_x, _x2, _x3, _x4) {
-    return _ref.apply(this, arguments);
-  };
-}();
-var selectItemList = /*#__PURE__*/function () {
-  var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId, creativeName) {
-    var data = [yield (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__.getSingleProductData)(handle)];
-    var curatedData = {
-      promotion_id: promotionId,
-      item_list_id: promotionId,
-      item_list_name: promotionName,
-      promotion_name: promotionName,
-      creativeName: creativeName
-    };
-    var viewItemListEventData = _objectSpread(_objectSpread({}, curatedData), {}, {
-      selectedItem: curateEcommerceData(data)
-    });
-    var customViewItemListEvent = new GtmEvent('custom_select_item', viewItemListEventData);
-    customViewItemListEvent.send();
-  });
-  return function selectItemList(_x5, _x6, _x7, _x8) {
-    return _ref2.apply(this, arguments);
-  };
-}();
-var ViewItemList = /*#__PURE__*/function () {
-  var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId, creativeName) {
-    var data = yield (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__.getCollectionProductData)(handle);
-    var curatedData = {
-      promotion_id: promotionId,
-      item_list_id: promotionId,
-      item_list_name: promotionName,
-      promotion_name: promotionName,
-      creative_name: creativeName
-    };
-    var viewItemListEventData = _objectSpread(_objectSpread({}, curatedData), {}, {
-      viewedItems: curateEcommerceData(data)
-    });
-    var customViewItemListEvent = new GtmEvent('custom_view_item_list', viewItemListEventData);
-    customViewItemListEvent.send();
-  });
-  return function ViewItemList(_x9, _x10, _x11, _x12) {
-    return _ref3.apply(this, arguments);
-  };
-}();
-var viewItem = /*#__PURE__*/function () {
-  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId, creativeName) {
-    var _window$shopifyVariab, _data$;
-    var currency = ((_window$shopifyVariab = window.shopifyVariables) === null || _window$shopifyVariab === void 0 ? void 0 : _window$shopifyVariab.activeCurrency) || 'CAD';
-    var data = [yield (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__.getSingleProductData)(handle)];
-    var viewItemEventData = {
-      currency: "".concat(currency),
-      value: ((_data$ = data[0]) === null || _data$ === void 0 ? void 0 : _data$.price) * 0.01,
-      promotion_id: promotionId,
-      promotion_name: promotionName,
-      creative_name: creativeName,
-      viewedItem: curateEcommerceData(data)
-    };
-    var customViewItemListEvent = new GtmEvent('custom_view_item', viewItemEventData);
-    customViewItemListEvent.send();
-  });
-  return function viewItem(_x13, _x14, _x15, _x16) {
-    return _ref4.apply(this, arguments);
-  };
-}();
-var addToCartEvent = (cartItem, promotionName, promotionId, creativeName) => {
-  var _window$shopifyVariab2;
-  var curatedData = curateEcommerceData([cartItem]);
-  var [{
-    price
-  }] = curatedData;
-  var addTocartData = {
-    promotion_id: promotionId,
-    promotion_name: promotionName,
-    creative_name: creativeName,
-    currency: ((_window$shopifyVariab2 = window.shopifyVariables) === null || _window$shopifyVariab2 === void 0 ? void 0 : _window$shopifyVariab2.activeCurrency) || 'CAD',
-    value: "".concat(price),
-    addedItems: curatedData
-  };
-  var addTocartEvent = new GtmEvent('custom_add_to_cart', addTocartData);
-  addTocartEvent.send();
-};
-var viewPromotion = (promotionName, promotionId, creativeName) => {
-  var promotionData = {
-    promotion_id: promotionId,
-    promotion_name: promotionName,
-    creative_name: creativeName
-  };
-  var viewPromotionEvent = new GtmEvent('custom_view_promotion', promotionData);
-  viewPromotionEvent.send();
-};
-
-/***/ }),
-
 /***/ "./js/components/get-data.js":
 /*!***********************************!*\
   !*** ./js/components/get-data.js ***!
@@ -225,11 +9,9 @@ var viewPromotion = (promotionName, promotionId, creativeName) => {
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getCollectionProductData: () => (/* binding */ getCollectionProductData),
-/* harmony export */   getProductData: () => (/* binding */ getProductData),
-/* harmony export */   getSingleProductData: () => (/* binding */ getSingleProductData)
+/* harmony export */   getProductData: () => (/* binding */ getProductData)
 /* harmony export */ });
-/* unused harmony exports customerLocation, getReviewData, getReviewDataAggregate */
+/* unused harmony exports customerLocation, getReviewData, getReviewDataAggregate, getCollectionProductData, getSingleProductData */
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
 /* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
@@ -332,126 +114,6 @@ var getSingleProductData = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./js/components/gtm-event-trigger.js":
-/*!********************************************!*\
-  !*** ./js/components/gtm-event-trigger.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   itemClickEvents: () => (/* binding */ itemClickEvents)
-/* harmony export */ });
-/* unused harmony exports pageLoadEvent, viewPromotionTrigger */
-/* harmony import */ var JsComponents_events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/events */ "./js/components/events.js");
-/* harmony import */ var JsComponents_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! JsComponents/utils */ "./js/components/utils.js");
-
-
-var pageLoadEvent = () => {
-  //This handles the view_item_list (plp) and view_item(pdp)
-  var url = window.location.href;
-  if (url.includes('/collections/')) {
-    var urlPArams = url.split('/collections/')[1];
-    var collectionHandle = urlPArams.split('?')[0];
-    var {
-      promotionName,
-      promotionId,
-      creativeName
-    } = (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.getPromotionParams)() || {};
-    if (promotionName) {
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.ViewItemList)(collectionHandle, promotionName, promotionId, creativeName);
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.AddPromotionAsItemProperty)();
-    }
-  }
-  if (url.includes('/products/')) {
-    var _urlPArams = url.split('/products/')[1];
-    var productHandle = _urlPArams.split('?')[0];
-    var {
-      promotionId: _promotionId,
-      promotionName: _promotionName,
-      creativeName: _creativeName
-    } = (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.getPromotionParams)() || {};
-    if (_promotionId) {
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewItem)(productHandle, _promotionName, _promotionId, _creativeName);
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.AddPromotionAsItemProperty)();
-    }
-  }
-};
-var itemClickEvents = (item, url) => {
-  //This events handles the promotion_select (anywhere) and select_item (plp)
-  if (item.closest('[data-promotion]')) {
-    if (!item.closest('[data-promotion = "false"]')) {
-      var promotionName = item.dataset.promotionName;
-      var promotionId = item.dataset.promotionId;
-      var creativeName = item.dataset.creativeName;
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.clickPromotion)(url, promotionName, promotionId, creativeName);
-    } else {
-      window.location.href = url;
-    }
-  }
-  if (item.closest('[data-section-type="collection"]')) {
-    var {
-      promotionId: _promotionId2,
-      promotionName: _promotionName2,
-      creativeName: _creativeName2
-    } = (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.getPromotionParams)() || {};
-    if (_promotionId2) {
-      var productHandle = item.href.split("?")[0];
-      productHandle = productHandle.split('/products/')[1];
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.selectItemList)(productHandle, _promotionName2, _promotionId2, _creativeName2);
-    }
-  }
-};
-var viewPromotionTrigger = () => {
-  var promotionItems = document.querySelectorAll('[data-promotion]');
-  var callback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.target.closest('[data-promotion = "false"]')) {
-        if (entry.isIntersecting) {
-          var promotionId = entry.target.dataset.promotionId;
-          var promotionName = entry.target.dataset.promotionName;
-          var creativeName = entry.target.dataset.creativeName;
-          (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewPromotion)(promotionName, promotionId, creativeName);
-          observer.unobserve(entry.target);
-        }
-      }
-    });
-  };
-  var promotionObserver = new JsComponents_utils__WEBPACK_IMPORTED_MODULE_1__.IntersectObserver(callback, promotionItems);
-  promotionObserver.init();
-};
-
-/***/ }),
-
-/***/ "./js/components/handleClick.js":
-/*!**************************************!*\
-  !*** ./js/components/handleClick.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/gtm-event-trigger */ "./js/components/gtm-event-trigger.js");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dynamicElements => {
-  var handleRedirectOnDiv = item => {
-    var url = item.dataset.url || item.href;
-    if (item.closest('[data-promotion]') || item.closest('[data-promotion-product-url]')) {
-      (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_0__.itemClickEvents)(item, url);
-    } else if (url) {
-      window.location.href = url;
-    }
-  };
-  var clickHandle = dynamicElements ? dynamicElements.querySelectorAll('[data-js-click]') : document.querySelectorAll('[data-js-click]');
-  clickHandle.forEach(item => item.addEventListener('click', ev => {
-    if (!ev.target.closest('.product-card__atc')) {
-      handleRedirectOnDiv(item);
-    }
-  }));
-});
-
-/***/ }),
-
 /***/ "./js/components/svelte-wrapper.js":
 /*!*****************************************!*\
   !*** ./js/components/svelte-wrapper.js ***!
@@ -490,35 +152,6 @@ var viewPromotionTrigger = () => {
 
 /***/ }),
 
-/***/ "./js/components/utils.js":
-/*!********************************!*\
-  !*** ./js/components/utils.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   IntersectObserver: () => (/* binding */ IntersectObserver)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-
-class IntersectObserver {
-  constructor(callback) {
-    var targets = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "init", () => {
-      var observer = new IntersectionObserver(this.callback, this.options);
-      this.targets.forEach(target => {
-        observer.observe(target);
-      });
-    });
-    this.callback = callback;
-    this.options = options;
-    this.targets = targets;
-  }
-}
-
-/***/ }),
-
 /***/ "./js/sections/product-carousel.js":
 /*!*****************************************!*\
   !*** ./js/sections/product-carousel.js ***!
@@ -546,12 +179,8 @@ class IntersectObserver {
 /* harmony export */ });
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
-/* harmony import */ var SvelteComponents_responsive_image_svelte__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! SvelteComponents/responsive-image.svelte */ "./js/components/svelte/responsive-image.svelte");
-/* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
-/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
+/* harmony import */ var SvelteComponents_responsive_image_svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! SvelteComponents/responsive-image.svelte */ "./js/components/svelte/responsive-image.svelte");
 /* js/components/svelte/product-card.svelte generated by Svelte v4.2.0 */
-
-
 
 
 
@@ -585,7 +214,7 @@ function create_if_block_8(ctx) {
 	};
 }
 
-// (73:8) {#if bestseller}
+// (70:8) {#if bestseller}
 function create_if_block_7(ctx) {
 	let div;
 
@@ -606,7 +235,7 @@ function create_if_block_7(ctx) {
 	};
 }
 
-// (75:8) {#if onsale}
+// (72:8) {#if onsale}
 function create_if_block_6(ctx) {
 	let div;
 
@@ -627,7 +256,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (77:6) {#if rating}
+// (74:6) {#if rating}
 function create_if_block_5(ctx) {
 	let div;
 	let svg;
@@ -673,7 +302,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (86:4) {#if vendor}
+// (83:4) {#if vendor}
 function create_if_block_4(ctx) {
 	let div;
 
@@ -695,12 +324,12 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (97:6) {#if discountPercentage > 0}
+// (94:6) {#if discountPercentage > 0}
 function create_if_block_2(ctx) {
 	let div;
 
 	function select_block_type(ctx, dirty) {
-		if (/*skipFormatMoney*/ ctx[8]) return create_if_block_3;
+		if (/*skipFormatMoney*/ ctx[9]) return create_if_block_3;
 		return create_else_block_2;
 	}
 
@@ -730,9 +359,9 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (106:10) {:else}
+// (103:10) {:else}
 function create_else_block_2(ctx) {
-	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[4] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[9]}{{amount}}`) + "";
+	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[4] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[10]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";
@@ -760,9 +389,9 @@ function create_else_block_2(ctx) {
 	};
 }
 
-// (100:10) {#if skipFormatMoney}
+// (97:10) {#if skipFormatMoney}
 function create_if_block_3(ctx) {
-	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[4], `${/*currencySymbol*/ ctx[9]}{{amount}}`) + "";
+	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[4], `${/*currencySymbol*/ ctx[10]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";
@@ -790,9 +419,9 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (122:8) {:else}
+// (119:8) {:else}
 function create_else_block_1(ctx) {
-	let t0_value = window.formatCurrency(/*price*/ ctx[5] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[9]}{{amount}}`) + "";
+	let t0_value = window.formatCurrency(/*price*/ ctx[5] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[10]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";
@@ -820,9 +449,9 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (116:8) {#if skipFormatMoney}
+// (113:8) {#if skipFormatMoney}
 function create_if_block_1(ctx) {
-	let t0_value = window.formatCurrency(/*price*/ ctx[5], `${/*currencySymbol*/ ctx[9]}{{amount}}`) + "";
+	let t0_value = window.formatCurrency(/*price*/ ctx[5], `${/*currencySymbol*/ ctx[10]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";
@@ -850,7 +479,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (143:8) {:else}
+// (140:8) {:else}
 function create_else_block(ctx) {
 	let a;
 	let t;
@@ -859,7 +488,7 @@ function create_else_block(ctx) {
 	return {
 		c() {
 			a = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
-			t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*chooseMoreText*/ ctx[10]);
+			t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*chooseMoreText*/ ctx[11]);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", a_href_value = /*product*/ ctx[0].link);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "class", "product-card__cta product-item__action-button product-item__action-button--list-view-only button button--small button--primary");
 		},
@@ -880,14 +509,14 @@ function create_else_block(ctx) {
 	};
 }
 
-// (135:8) {#if product.variants.size == 1}
+// (132:8) {#if product.variants.size == 1}
 function create_if_block(ctx) {
 	let button;
 
 	return {
 		c() {
 			button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
-			button.textContent = `${/*addToCartText*/ ctx[11]}`;
+			button.textContent = `${/*addToCartText*/ ctx[12]}`;
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "type", "submit");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", "product-item__action-button product-item__action-button--list-view-only button button--small button--primary");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "data-action", "add-to-cart");
@@ -931,26 +560,25 @@ function create_fragment(ctx) {
 	let input1;
 	let input1_value_value;
 	let t11;
-	let div9_data_url_value;
 	let current;
 
-	responsiveimage = new SvelteComponents_responsive_image_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
+	responsiveimage = new SvelteComponents_responsive_image_svelte__WEBPACK_IMPORTED_MODULE_2__["default"]({
 			props: {
 				image: /*image*/ ctx[3],
 				image_aspect_ratio: 1,
-				srcTokens: /*srcTokens*/ ctx[14]
+				srcTokens: /*srcTokens*/ ctx[15]
 			}
 		});
 
 	let if_block0 = /*discountPercentage*/ ctx[2] > 0 && create_if_block_8(ctx);
-	let if_block1 = /*bestseller*/ ctx[12] && create_if_block_7(ctx);
-	let if_block2 = /*onsale*/ ctx[13] && create_if_block_6(ctx);
+	let if_block1 = /*bestseller*/ ctx[13] && create_if_block_7(ctx);
+	let if_block2 = /*onsale*/ ctx[14] && create_if_block_6(ctx);
 	let if_block3 = /*rating*/ ctx[1] && create_if_block_5(ctx);
 	let if_block4 = /*vendor*/ ctx[6] && create_if_block_4(ctx);
 	let if_block5 = /*discountPercentage*/ ctx[2] > 0 && create_if_block_2(ctx);
 
 	function select_block_type_1(ctx, dirty) {
-		if (/*skipFormatMoney*/ ctx[8]) return create_if_block_1;
+		if (/*skipFormatMoney*/ ctx[9]) return create_if_block_1;
 		return create_else_block_1;
 	}
 
@@ -1021,7 +649,7 @@ function create_fragment(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "class", "product-card swiper-slide");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-redirect-click", "");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-js-click", "");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-url", div9_data_url_value = /*product*/ ctx[0].link);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-url", /*link*/ ctx[8]);
 		},
 		m(target, anchor) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div9, anchor);
@@ -1118,10 +746,6 @@ function create_fragment(ctx) {
 					if_block7.m(form, null);
 				}
 			}
-
-			if (!current || dirty & /*product*/ 1 && div9_data_url_value !== (div9_data_url_value = /*product*/ ctx[0].link)) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-url", div9_data_url_value);
-			}
 		},
 		i(local) {
 			if (current) return;
@@ -1153,7 +777,7 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	let { product } = $$props;
 	let { otherData } = $$props;
-	const { image, variants: [{ compare_at_price: comparePrice, price }], vendor, title, tags, metafields, skipFormatMoney = false, discountPercentage: shopifyDiscountPercentage = 0 } = product;
+	const { image, variants: [{ compare_at_price: comparePrice, price }], vendor, title, tags, metafields, link, skipFormatMoney = false, discountPercentage: shopifyDiscountPercentage = 0 } = product;
 	let rating = false;
 
 	metafields.forEach(metafield => {
@@ -1172,7 +796,7 @@ function instance($$self, $$props, $$invalidate) {
 		}
 	});
 
-	const { currencySymbol, soldOutText, chooseMoreText, addToCartText, parent } = otherData || {};
+	const { currencySymbol, soldOutText, chooseMoreText, addToCartText } = otherData || {};
 	const bestseller = tags.includes("bestseller");
 	const onsale = tags.includes("onsale");
 
@@ -1191,13 +815,9 @@ function instance($$self, $$props, $$invalidate) {
 		discountPercentage = (comparePrice - price * 100) / price;
 	}
 
-	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(() => {
-		(0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_4__["default"])(parent);
-	});
-
 	$$self.$$set = $$props => {
 		if ('product' in $$props) $$invalidate(0, product = $$props.product);
-		if ('otherData' in $$props) $$invalidate(15, otherData = $$props.otherData);
+		if ('otherData' in $$props) $$invalidate(16, otherData = $$props.otherData);
 	};
 
 	return [
@@ -1209,6 +829,7 @@ function instance($$self, $$props, $$invalidate) {
 		price,
 		vendor,
 		title,
+		link,
 		skipFormatMoney,
 		currencySymbol,
 		chooseMoreText,
@@ -1223,7 +844,7 @@ function instance($$self, $$props, $$invalidate) {
 class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { product: 0, otherData: 15 });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { product: 0, otherData: 16 });
 	}
 
 	get product() {
@@ -1236,7 +857,7 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 	}
 
 	get otherData() {
-		return this.$$.ctx[15];
+		return this.$$.ctx[16];
 	}
 
 	set otherData(otherData) {
@@ -1274,28 +895,28 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[19] = list[i];
-	child_ctx[21] = i;
+	child_ctx[17] = list[i];
+	child_ctx[19] = i;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[19] = list[i];
-	child_ctx[21] = i;
+	child_ctx[17] = list[i];
+	child_ctx[19] = i;
 	return child_ctx;
 }
 
 function get_each_context_2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[23] = list[i];
+	child_ctx[21] = list[i];
 	return child_ctx;
 }
 
-// (80:0) {#if collectionTexts.length > 1}
+// (78:0) {#if collectionTexts.length > 1}
 function create_if_block_4(ctx) {
 	let div;
-	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[6]);
+	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[5]);
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_2.length; i += 1) {
@@ -1322,8 +943,8 @@ function create_if_block_4(ctx) {
 			}
 		},
 		p(ctx, dirty) {
-			if (dirty & /*selectedParams, collectionTexts, updateParams*/ 200) {
-				each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[6]);
+			if (dirty & /*selectedParams, collectionTexts, updateParams*/ 100) {
+				each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[5]);
 				let i;
 
 				for (i = 0; i < each_value_2.length; i += 1) {
@@ -1355,11 +976,11 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (82:4) {#each collectionTexts as text}
+// (80:4) {#each collectionTexts as text}
 function create_each_block_2(ctx) {
 	let div;
 	let button;
-	let t0_value = /*text*/ ctx[23] + "";
+	let t0_value = /*text*/ ctx[21] + "";
 	let t0;
 	let button_class_value;
 	let t1;
@@ -1367,7 +988,7 @@ function create_each_block_2(ctx) {
 	let dispose;
 
 	function click_handler(...args) {
-		return /*click_handler*/ ctx[9](/*text*/ ctx[23], ...args);
+		return /*click_handler*/ ctx[8](/*text*/ ctx[21], ...args);
 	}
 
 	return {
@@ -1376,7 +997,7 @@ function create_each_block_2(ctx) {
 			button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t0_value);
 			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[3].text == /*text*/ ctx[23] && "product-category__button--active"}`);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[21] && "product-category__button--active"}`);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "featured-products__Category");
 		},
 		m(target, anchor) {
@@ -1393,7 +1014,7 @@ function create_each_block_2(ctx) {
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
 
-			if (dirty & /*selectedParams*/ 8 && button_class_value !== (button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[3].text == /*text*/ ctx[23] && "product-category__button--active"}`)) {
+			if (dirty & /*selectedParams*/ 4 && button_class_value !== (button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[21] && "product-category__button--active"}`)) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value);
 			}
 		},
@@ -1408,7 +1029,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (106:0) {:else}
+// (104:0) {:else}
 function create_else_block(ctx) {
 	let previous_key = /*productData*/ ctx[0];
 	let key_block_anchor;
@@ -1457,7 +1078,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (96:0) {#if isLoading}
+// (94:0) {#if isLoading}
 function create_if_block(ctx) {
 	let div6;
 
@@ -1481,7 +1102,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (116:6) {#if productData.length }
+// (114:6) {#if productData.length }
 function create_if_block_2(ctx) {
 	let custom_carousel;
 	let div0;
@@ -1539,7 +1160,7 @@ function create_if_block_2(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (dirty & /*productData, otherData*/ 33) {
+			if (dirty & /*productData, otherData*/ 17) {
 				each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 				let i;
 
@@ -1594,15 +1215,15 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (120:14) {#if product.variants[0].price > 0}
+// (118:14) {#if product.variants[0].price > 0}
 function create_if_block_3(ctx) {
 	let productcard;
 	let current;
 
 	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
 			props: {
-				product: /*product*/ ctx[19],
-				otherData: /*otherData*/ ctx[5]
+				product: /*product*/ ctx[17],
+				otherData: /*otherData*/ ctx[4]
 			}
 		});
 
@@ -1616,7 +1237,7 @@ function create_if_block_3(ctx) {
 		},
 		p(ctx, dirty) {
 			const productcard_changes = {};
-			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[19];
+			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[17];
 			productcard.$set(productcard_changes);
 		},
 		i(local) {
@@ -1634,11 +1255,11 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (119:12) {#each productData as product, index}
+// (117:12) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
-	let if_block = /*product*/ ctx[19].variants[0].price > 0 && create_if_block_3(ctx);
+	let if_block = /*product*/ ctx[17].variants[0].price > 0 && create_if_block_3(ctx);
 
 	return {
 		c() {
@@ -1651,7 +1272,7 @@ function create_each_block_1(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*product*/ ctx[19].variants[0].price > 0) {
+			if (/*product*/ ctx[17].variants[0].price > 0) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 
@@ -1693,15 +1314,15 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (170:8) {#if index < 4}
+// (168:8) {#if index < 4}
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
 
 	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
 			props: {
-				product: /*product*/ ctx[19],
-				otherData: /*otherData*/ ctx[5]
+				product: /*product*/ ctx[17],
+				otherData: /*otherData*/ ctx[4]
 			}
 		});
 
@@ -1715,7 +1336,7 @@ function create_if_block_1(ctx) {
 		},
 		p(ctx, dirty) {
 			const productcard_changes = {};
-			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[19];
+			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[17];
 			productcard.$set(productcard_changes);
 		},
 		i(local) {
@@ -1733,11 +1354,11 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (169:6) {#each productData as product, index}
+// (167:6) {#each productData as product, index}
 function create_each_block(ctx) {
 	let if_block_anchor;
 	let current;
-	let if_block = /*index*/ ctx[21] < 4 && create_if_block_1(ctx);
+	let if_block = /*index*/ ctx[19] < 4 && create_if_block_1(ctx);
 
 	return {
 		c() {
@@ -1750,7 +1371,7 @@ function create_each_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*index*/ ctx[21] < 4) if_block.p(ctx, dirty);
+			if (/*index*/ ctx[19] < 4) if_block.p(ctx, dirty);
 		},
 		i(local) {
 			if (current) return;
@@ -1771,7 +1392,7 @@ function create_each_block(ctx) {
 	};
 }
 
-// (107:0) {#key productData}
+// (105:0) {#key productData}
 function create_key_block(ctx) {
 	let div2;
 	let div0;
@@ -1804,11 +1425,11 @@ function create_key_block(ctx) {
 				each_blocks[i].c();
 			}
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", div0_class_value = `featured-products__content featured-products__content--desktop ${JSON.parse(/*mobileCarousel*/ ctx[4])
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", div0_class_value = `featured-products__content featured-products__content--desktop ${JSON.parse(/*mobileCarousel*/ ctx[3])
 			? "featured-products__content--show-mobile"
 			: ""}`);
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", div1_class_value = `featured-products__content featured-products__content--mobile ${JSON.parse(/*mobileCarousel*/ ctx[4])
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", div1_class_value = `featured-products__content featured-products__content--mobile ${JSON.parse(/*mobileCarousel*/ ctx[3])
 			? "featured-products__content--hide-mobile"
 			: ""}`);
 
@@ -1853,7 +1474,7 @@ function create_key_block(ctx) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.check_outros)();
 			}
 
-			if (dirty & /*productData, otherData*/ 33) {
+			if (dirty & /*productData, otherData*/ 17) {
 				each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 				let i;
 
@@ -1917,7 +1538,7 @@ function create_fragment(ctx) {
 	let current_block_type_index;
 	let if_block1;
 	let current;
-	let if_block0 = /*collectionTexts*/ ctx[6].length > 1 && create_if_block_4(ctx);
+	let if_block0 = /*collectionTexts*/ ctx[5].length > 1 && create_if_block_4(ctx);
 	const if_block_creators = [create_if_block, create_else_block];
 	const if_blocks = [];
 
@@ -1942,11 +1563,10 @@ function create_fragment(ctx) {
 			if (if_block0) if_block0.m(div, null);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, t);
 			if_blocks[current_block_type_index].m(div, null);
-			/*div_binding*/ ctx[10](div);
 			current = true;
 		},
 		p(ctx, [dirty]) {
-			if (/*collectionTexts*/ ctx[6].length > 1) if_block0.p(ctx, dirty);
+			if (/*collectionTexts*/ ctx[5].length > 1) if_block0.p(ctx, dirty);
 			let previous_block_index = current_block_type_index;
 			current_block_type_index = select_block_type(ctx, dirty);
 
@@ -1989,7 +1609,6 @@ function create_fragment(ctx) {
 
 			if (if_block0) if_block0.d();
 			if_blocks[current_block_type_index].d();
-			/*div_binding*/ ctx[10](null);
 		}
 	};
 }
@@ -1998,15 +1617,13 @@ function instance($$self, $$props, $$invalidate) {
 	let { shopifyData } = $$props;
 	let productData = []; //to store api data
 	let isLoading = true;
-	let component;
 	const { currencySymbol = "$", soldOutText = "Sold Out", chooseMoreText = "Choose Options", addToCartText = "Add To Cart", mobileCarousel = false, blocks = [] } = shopifyData || {};
 
 	const otherData = {
 		currencySymbol,
 		soldOutText,
 		chooseMoreText,
-		addToCartText,
-		parent: component
+		addToCartText
 	};
 
 	const paramsHash = blocks.reduce(
@@ -2040,7 +1657,7 @@ function instance($$self, $$props, $$invalidate) {
 	};
 
 	const updateParams = async (ev, text) => {
-		$$invalidate(3, selectedParams = paramsHash[text]);
+		$$invalidate(2, selectedParams = paramsHash[text]);
 		await requestData(selectedParams);
 
 		if (!checkIfVisisble(ev)) {
@@ -2069,40 +1686,31 @@ function instance($$self, $$props, $$invalidate) {
 		updateParams(ev, text);
 	};
 
-	function div_binding($$value) {
-		svelte_internal__WEBPACK_IMPORTED_MODULE_0__.binding_callbacks[$$value ? 'unshift' : 'push'](() => {
-			component = $$value;
-			$$invalidate(2, component);
-		});
-	}
-
 	$$self.$$set = $$props => {
-		if ('shopifyData' in $$props) $$invalidate(8, shopifyData = $$props.shopifyData);
+		if ('shopifyData' in $$props) $$invalidate(7, shopifyData = $$props.shopifyData);
 	};
 
 	return [
 		productData,
 		isLoading,
-		component,
 		selectedParams,
 		mobileCarousel,
 		otherData,
 		collectionTexts,
 		updateParams,
 		shopifyData,
-		click_handler,
-		div_binding
+		click_handler
 	];
 }
 
 class Product_carousel extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 8 });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 7 });
 	}
 
 	get shopifyData() {
-		return this.$$.ctx[8];
+		return this.$$.ctx[7];
 	}
 
 	set shopifyData(shopifyData) {

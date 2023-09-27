@@ -1,7 +1,6 @@
 
 {{'banner-product.css' | asset_url | stylesheet_tag }}
 {{ 'banner-featured-products.css' | asset_url | stylesheet_tag }}
-{% if collection.products.size > 0 %}
 <div class="banner-product banner-featured-products product-card-wrapper">
     <div class="banner-product__content">
             {% for block in section.blocks %}
@@ -42,10 +41,11 @@
                             button_type: button_type,
                             button_background_type: button_background_type
                             %}
-
+                   
                         {% assign limit  = 8 %}
                         {% assign count = 0 %}
-                        {% for product in collection.products %}
+                        {% assign collection_products = block.settings.collection.products | default: collection.products %} 
+                        {% for product in collection_products %}
                           {% if count >= limit %} {% break %} {% endif %}
                             {% if product.available %}  
                             {% assign count = count | plus: 1 %}
@@ -94,7 +94,8 @@
                               %}
                         {% assign limit  = 4 %}
                         {% assign count = 0 %}
-                        {% for product in collection.products %} 
+                        {% assign collection_products = block.settings.collection.products | default: collection.products %} 
+                        {% for product in collection_products %} 
                         {% if count >= limit %} {% break %} {% endif %}
                         {% if product.available %}  
                         {% assign count = count | plus: 1 %}
@@ -107,7 +108,7 @@
               {% endfor %} 
     </div>
   </div>
-{% endif %}
+
 
 
   {% schema %}
@@ -168,6 +169,11 @@
           "type": "url",
           "id":  "cta_url",
           "label": "CTA url"
+        },
+        {
+          "type": "collection",
+          "id":  "collection",
+          "label": "product Collection"
         }
        ]
     }

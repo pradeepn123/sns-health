@@ -38,7 +38,7 @@
   
                     <div class="rebuy-bundle__actions" v-if="subtotal() > 0">
                         <div class="rebuy-bundle__actions-price">
-                            <p class="rebuy-bundle__actions-price-bundle-percentage">Bundle & Get Extra <span class="rebuy-bundle__actions-price-bundle-percentage--value">5% Off</span></p> 
+                            {% comment %} <p class="rebuy-bundle__actions-price-bundle-percentage">Bundle & Get Extra <span class="rebuy-bundle__actions-price-bundle-percentage--value">5% Off</span></p>  {% endcomment %}
                             <strong class="rebuy-bundle__actions-price-label" v-html="config.language.total_price_label"></strong>
                             <p class="rebuy-bundle__actions-price-value" v-if="bundleOnSale()">
                                 <span class="rebuy-money sale">

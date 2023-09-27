@@ -1,8 +1,7 @@
 <script>
   import ResponsiveImage from "SvelteComponents/responsive-image.svelte";
-    import { onMount } from "svelte";
   export let product;
-  import handleClick from 'JsComponents/handleClick'; 
+
   export let otherData;
   const {
     image,
@@ -11,6 +10,7 @@
     title,
     tags,
     metafields,
+    link,
     skipFormatMoney = false,
     discountPercentage: shopifyDiscountPercentage = 0,
   } = product;
@@ -29,7 +29,7 @@
       rating = parsedValue?.reviewAverageValue;
     }
   });
-  const { currencySymbol, soldOutText, chooseMoreText, addToCartText ,parent } =
+  const { currencySymbol, soldOutText, chooseMoreText, addToCartText } =
     otherData || {};
 
   const bestseller = tags.includes("bestseller");
@@ -49,16 +49,13 @@
     discountPercentage = (comparePrice - price * 100) / price
   }
 
-  onMount(() => {
-    handleClick(parent);
-  })
 </script>
 
 <div
   class="product-card swiper-slide"
   data-redirect-click
   data-js-click
-  data-url={product.link}
+  data-url={link}
 >
   <div class="product-card__body">
     <div class="product-card__image">

@@ -12,11 +12,31 @@
     width: 100% !important;
 }
 .primary-title{
-    text-align: left;
+    text-align: center !important;
     font-size: 21px !important;
     color: #000 !important;
     font-weight: 600 !important;
     margin-bottom: 5px;
+}
+
+.primary-title span {
+    font-family: "poppins";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    padding: 4px 10px;
+    color: #fff;
+    background: #ED1C24;
+    margin-left: 10px;
+    border-radius: 100px;
+}
+@media (min-width: 1024px) {
+.primary-title span {
+    font-family: "poppins";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+ }
 }
 
 /* Product images */

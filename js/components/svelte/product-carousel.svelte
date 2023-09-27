@@ -6,7 +6,6 @@
   export let shopifyData; //for parent level props
   let productData = []; //to store api data
   let isLoading = true;
-  let component;
 
   const {
     currencySymbol = "$",
@@ -21,8 +20,7 @@
     currencySymbol,
     soldOutText,
     chooseMoreText,
-    addToCartText,
-    parent: component
+    addToCartText
   };
   const paramsHash = blocks.reduce((accumulator, block) => {
     return (accumulator = {
@@ -76,7 +74,7 @@
     await requestData(selectedParams);
   });
 </script>
-<div class="rebuy-container-wrap" bind:this={component}>
+<div class="rebuy-container-wrap">
 {#if collectionTexts.length > 1}
   <div class="featured-products__Category_wrapp">
     {#each collectionTexts as text}
