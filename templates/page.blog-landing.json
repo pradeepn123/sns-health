@@ -12,27 +12,20 @@
         "3898df59-2d60-49a2-98c6-8c3363981197": {
           "type": "articles",
           "settings": {
-            "article": "mental-health\/b-vitamins-and-nootropics-to-unlock-optimal-brain-health"
+            "article": "mental-health\/unraveling-stress-and-anxiety-top-supplements-for-a-balanced-mind"
           }
         },
         "471ed145-4036-4457-b09a-b149e12f3ea6": {
           "type": "articles",
           "settings": {
-            "article": "health\/unveiling-the-secrets-of-fish-oil-a-comprehensive-guide"
-          }
-        },
-        "e3f71efb-604d-4ffb-bd8e-2462594d599c": {
-          "type": "articles",
-          "settings": {
-            "article": "fitness-and-nutrition\/what-supplements-should-not-be-taken-together"
+            "article": "fitness-and-nutrition\/how-glutamine-and-creatine-supplements-enhance-muscle-growth-and-recovery"
           }
         }
       },
       "block_order": [
         "9eaf9850-a955-4dc3-a266-e53a9ac1f229",
         "3898df59-2d60-49a2-98c6-8c3363981197",
-        "471ed145-4036-4457-b09a-b149e12f3ea6",
-        "e3f71efb-604d-4ffb-bd8e-2462594d599c"
+        "471ed145-4036-4457-b09a-b149e12f3ea6"
       ],
       "settings": {
       }
