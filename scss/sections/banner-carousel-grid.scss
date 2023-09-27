@@ -19,7 +19,7 @@
     @include mixins.container;
   }
     &__content {
-        padding: 50px 0 0;
+      padding: var(--section-padding) 0 0;
         @media(--sm) {
           @include mixins.grid(5,250,250);
           column-gap: 12px;

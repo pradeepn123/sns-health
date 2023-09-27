@@ -639,6 +639,11 @@
         "mobile_carousel": false
       }
     },
+    "22c01918-3750-4804-952d-ffa0b068b2b4": {
+      "type": "line-breaker",
+      "settings": {
+      }
+    },
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7": {
       "type": "banner-product",
       "blocks": {
@@ -671,6 +676,11 @@
       ],
       "settings": {
         "mobile_carousel": false
+      }
+    },
+    "2cc259d5-2ab8-4dbe-82ec-dc779bd2e01b": {
+      "type": "line-breaker",
+      "settings": {
       }
     },
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e": {
@@ -831,7 +841,9 @@
     "1693494264a39a783a",
     "9aa8cc9b-36b5-4a2f-a9b3-d76441de4854",
     "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
+    "22c01918-3750-4804-952d-ffa0b068b2b4",
     "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
+    "2cc259d5-2ab8-4dbe-82ec-dc779bd2e01b",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
     "ed3c4144-6707-4fda-9a49-2f5e23ebeb69",
     "169278817168ac6906",
