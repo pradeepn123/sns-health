@@ -76,31 +76,13 @@
             "blog": "fitness-and-nutrition"
           }
         },
-        "d9fe1f06-d8d9-4f1d-b596-cd7f477efbe3": {
-          "type": "blogpost",
-          "settings": {
-            "heading": "Beauty and Wellness",
-            "show_blogpost": false,
-            "url": "shopify:\/\/blogs\/beauty-and-wellness",
-            "blog": "beauty-and-wellness"
-          }
-        },
-        "3bae2f2d-c90f-4cbb-ace8-9a4f68864241": {
-          "type": "blogpost",
-          "settings": {
-            "heading": "Beauty and Wellness",
-            "show_blogpost": false,
-            "url": "shopify:\/\/blogs\/beauty-and-wellness",
-            "blog": "beauty-and-wellness"
-          }
-        },
         "c38b7d28-dd8e-498e-8fa9-ffa1af255c21": {
           "type": "blogpost",
           "settings": {
-            "heading": "Beauty and Wellness",
+            "heading": "Stress and Anxiety",
             "show_blogpost": false,
-            "url": "shopify:\/\/blogs\/beauty-and-wellness",
-            "blog": "beauty-and-wellness"
+            "url": "shopify:\/\/blogs\/stress-and-anxiety",
+            "blog": "stress-and-anxiety"
           }
         }
       },
@@ -109,8 +91,6 @@
         "b3141c03-c9ce-47ee-bb66-92a66d6bbb9d",
         "963add7f-ffb3-43c4-84bc-07ea81696884",
         "98813c2b-bc1e-42f4-aa32-33d130389fd9",
-        "d9fe1f06-d8d9-4f1d-b596-cd7f477efbe3",
-        "3bae2f2d-c90f-4cbb-ace8-9a4f68864241",
         "c38b7d28-dd8e-498e-8fa9-ffa1af255c21"
       ],
       "settings": {
