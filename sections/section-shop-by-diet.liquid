@@ -1,4 +1,5 @@
 {{'diet-section.css' | asset_url | stylesheet_tag }}
+{% if section.blocks.size > 0 %}
 <div class="diet-section">
     {% render 'section-heading', heading: section.settings.heading, url: section.settings.url %}
     <div class="diet-section__wrapper">
@@ -29,7 +30,7 @@
             </div>
     </div>
 </div>
-
+{% endif %}
 
 {% schema %}
  {

@@ -1,4 +1,5 @@
 {{ 'health-condition-section.css' | asset_url | stylesheet_tag }}
+{% if section.blocks.size > 0 %}
 <div class="health-condition-section">
   {% render 'section-heading', heading: section.settings.heading %}
   <div class="health-condition-section__wrapper">
@@ -83,6 +84,7 @@
     </div>
   </div>
 </div>
+{% endif %}
 
 {% schema %}
 {

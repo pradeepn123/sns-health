@@ -1,4 +1,5 @@
 {{'category-section.css' | asset_url | stylesheet_tag }}
+{% if section.blocks.size > 0 %}
 <div class="category-section">
     {% render 'section-heading', heading: section.settings.heading %}
 <div class="category-section__wrapper">
@@ -82,7 +83,7 @@
         </div>
 </div>
 </div>
-
+{% endif %}
 
 {% schema %}
  {
