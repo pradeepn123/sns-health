@@ -366,6 +366,13 @@
         "title": "Get 10% Off Your First Order",
         "subheading": "<p>Subscribe to our newsletter and get 10% off. Plus, be the first to find out about new products and sales from SNS Health.<\/p>"
       }
+    },
+    "9adaf69c-4b15-413a-aa04-28d544a595dd": {
+      "type": "section-shop-by-diet",
+      "settings": {
+        "heading": "",
+        "url": ""
+      }
     }
   },
   "order": [
@@ -386,6 +393,7 @@
     "30ffe3c1-cb69-47ad-80ca-ba8f0d77b60d",
     "c06c2ac2-8a0a-4934-a3e8-9034e4ec8551",
     "398fa20a-99f7-4200-ac45-f9ca3cd7d4b9",
-    "23b87dc9-f589-4450-93db-c6892bbe59ff"
+    "23b87dc9-f589-4450-93db-c6892bbe59ff",
+    "9adaf69c-4b15-413a-aa04-28d544a595dd"
   ]
 }
