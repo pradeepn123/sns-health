@@ -1,0 +1,81 @@
+{{'Review-carousel.css' | asset_url | stylesheet_tag }}
+{% if shop.metafields.okendo.settings.isWidgetPlusEnabled == true or
+shop.metafields.okendo.settings.isWidgetPlusAdminEnabled == true %}
+{% assign renderWidgetPlusScript = true %}
+{% endif %}
+{% if section.settings.product != blank %}
+{% capture product_data_attribute %}data-oke-reviews-product-id="shopify-{{
+section.settings.product.id }}"{% endcapture %}
+{% endif %}
+{% if section.settings.show_heading %}
+    {% if section.settings.heading != blank %}
+    {% capture heading_data_attribute %}data-oke-header-text="{{
+    section.settings.heading }}"{% endcapture %}
+    {% endif %}
+    {% if section.settings.badge_link != blank %}
+    {% capture carousel_link_data_attribute %}data-oke-header-badge-url="{{
+    section.settings.badge_link }}"{% endcapture %}
+    {% endif %}
+    {% else %}
+    {% capture hide_header_attribute %}data-oke-hide-header="true"{% endcapture %}
+    {% endif %}
+    <div data-oke-reviews-group-id="{{ section.settings.group_id }}"
+    class="Review-carousel review-customer"
+    data-oke-carousel
+    {{ product_data_attribute }}
+    {{ heading_data_attribute }}
+    {{ carousel_link_data_attribute }}
+    {{ hide_header_attribute }}
+    ></div>
+    {% schema %}
+    {
+    	"name": "Okendo Collections",
+    	"settings": [{
+    			"type": "header",
+    			"content": "Carousel Settings"
+    		},
+    		{
+    			"type": "checkbox",
+    			"id": "show_heading",
+    			"label": "Show heading",
+    			"default": false
+    		},
+    		{
+    			"type": "text",
+    			"id": "heading",
+    			"label": "Heading Text"
+    		},
+    		{
+    			"type": "header",
+    			"content": "Review Count Link"
+    		},
+    		{
+    			"type": "paragraph",
+    			"content": "If the heading is visible above the carousel, a review countwill also be visible."
+    		},
+    		{
+    			"type": "url",
+    			"id": "badge_link",
+    			"label": "Review Count Link"
+    		},
+    		{
+    			"type": "header",
+    			"content": "Filter Reviews"
+    		},
+            {
+    			"type": "text",
+    			"id": "group_id",
+    			"label": "Okendo Group Id"
+    		},
+    		{
+    			"type": "product",
+    			"id": "product",
+    			"label": "By Product"
+    		}
+    	],
+    	"presets": [{
+    		"name": "Okendo Collections",
+    		"category": "Product"
+    	}]
+    }
+{% endschema %}
