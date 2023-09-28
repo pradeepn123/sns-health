@@ -369,8 +369,25 @@
     },
     "9adaf69c-4b15-413a-aa04-28d544a595dd": {
       "type": "section-shop-by-diet",
+      "blocks": {
+        "7017f94e-3959-4fea-ae78-b30a9feacbe2": {
+          "type": "diet",
+          "repeater": "{{ collection.metafields.custom.shop_by_diet.value }}",
+          "settings": {
+            "text_color": "{{ block.repeater.text_color.value }}",
+            "icon": "{{ block.repeater.icon.value }}",
+            "icon_hover": "{{ block.repeater.icon_hover.value }}",
+            "subheading": "{{ block.repeater.subheading.value }}",
+            "cta_text": "{{ block.repeater.cta_text.value }}",
+            "cta_url": "{{ block.repeater.cta_url.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "7017f94e-3959-4fea-ae78-b30a9feacbe2"
+      ],
       "settings": {
-        "heading": "",
+        "heading": "Shop by Diet",
         "url": ""
       }
     }
