@@ -118,6 +118,7 @@
       "block_order": [
         "d855ab07-54a9-4d7a-98a8-1422e03c9623"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Shop By Family Health",
         "show_carousel": true
@@ -139,6 +140,7 @@
       "block_order": [
         "42f35daa-78bc-4be2-99dc-8d2f6c4006c8"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Shop By Health Condition",
         "show_carousel": false
