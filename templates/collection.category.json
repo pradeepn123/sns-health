@@ -271,6 +271,7 @@
     },
     "9ea728ac-a1cf-477e-8f6b-a9fb319d43ac": {
       "type": "customer-review",
+      "disabled": true,
       "settings": {
         "section_heading": "Customer Reviews",
         "collection_id": ""
