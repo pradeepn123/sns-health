@@ -144,6 +144,30 @@
         "show_carousel": false
       }
     },
+    "9adaf69c-4b15-413a-aa04-28d544a595dd": {
+      "type": "section-shop-by-diet",
+      "blocks": {
+        "7017f94e-3959-4fea-ae78-b30a9feacbe2": {
+          "type": "diet",
+          "repeater": "{{ collection.metafields.custom.shop_by_diet.value }}",
+          "settings": {
+            "text_color": "{{ block.repeater.text_color.value }}",
+            "icon": "{{ block.repeater.icon.value }}",
+            "icon_hover": "{{ block.repeater.icon_hover.value }}",
+            "subheading": "{{ block.repeater.subheading.value }}",
+            "cta_text": "{{ block.repeater.cta_text.value }}",
+            "cta_url": "{{ block.repeater.cta_url.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "7017f94e-3959-4fea-ae78-b30a9feacbe2"
+      ],
+      "settings": {
+        "heading": "Shop by Diet",
+        "url": ""
+      }
+    },
     "f1909b2c-b24e-4044-b170-e57b14d2b722": {
       "type": "collection-category-list",
       "blocks": {
@@ -366,30 +390,6 @@
         "title": "Get 10% Off Your First Order",
         "subheading": "<p>Subscribe to our newsletter and get 10% off. Plus, be the first to find out about new products and sales from SNS Health.<\/p>"
       }
-    },
-    "9adaf69c-4b15-413a-aa04-28d544a595dd": {
-      "type": "section-shop-by-diet",
-      "blocks": {
-        "7017f94e-3959-4fea-ae78-b30a9feacbe2": {
-          "type": "diet",
-          "repeater": "{{ collection.metafields.custom.shop_by_diet.value }}",
-          "settings": {
-            "text_color": "{{ block.repeater.text_color.value }}",
-            "icon": "{{ block.repeater.icon.value }}",
-            "icon_hover": "{{ block.repeater.icon_hover.value }}",
-            "subheading": "{{ block.repeater.subheading.value }}",
-            "cta_text": "{{ block.repeater.cta_text.value }}",
-            "cta_url": "{{ block.repeater.cta_url.value }}"
-          }
-        }
-      },
-      "block_order": [
-        "7017f94e-3959-4fea-ae78-b30a9feacbe2"
-      ],
-      "settings": {
-        "heading": "Shop by Diet",
-        "url": ""
-      }
     }
   },
   "order": [
@@ -400,6 +400,7 @@
     "5a453bc2-2bd2-4824-bc65-9b855821ca28",
     "d11d382c-8951-47c2-a6cd-ca238efd7dac",
     "fa56ec1c-336d-4207-8ee5-afb07871d216",
+    "9adaf69c-4b15-413a-aa04-28d544a595dd",
     "f1909b2c-b24e-4044-b170-e57b14d2b722",
     "72bbac35-766a-453b-9fee-37b7877be787",
     "4d89401b-332c-4ecb-9c2e-37615234ab7d",
@@ -410,7 +411,6 @@
     "30ffe3c1-cb69-47ad-80ca-ba8f0d77b60d",
     "c06c2ac2-8a0a-4934-a3e8-9034e4ec8551",
     "398fa20a-99f7-4200-ac45-f9ca3cd7d4b9",
-    "23b87dc9-f589-4450-93db-c6892bbe59ff",
-    "9adaf69c-4b15-413a-aa04-28d544a595dd"
+    "23b87dc9-f589-4450-93db-c6892bbe59ff"
   ]
 }
