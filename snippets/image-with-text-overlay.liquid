@@ -10,16 +10,21 @@
 }
 </style>
 {% endif %}
-<div class="text-image {{wrapper_class}}__text-image {{wrapper_class}} {{wrapper_class}}__text-image-{{id}}" 
+{%assign split_classes = wrapper_class | split: ',' %}
+{% assign primary_class = split_classes.first %}
+{% assign secondary_class = split_classes.last %}
+<div class="text-image {{primary_class}}__text-image {{primary_class}} {{primary_class}}__text-image-{{id}} {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %}" 
   {% if cta_url %} data-redirect-click data-js-click data-url="{{cta_url}}"{% endif %}
   {% if promotion and promotion_name != blank %}
     data-promotion data-promotion-name="{{- promotion_name -}}" data-promotion-id="{{- promotion_name | handleize -}}"
     data-creative-name = "{{ promotion_creative_name }}"
   {% endif %}
 >
- <div class="text-image__image-wrapper image {{wrapper_class}}__image-wrapper {% if overlay == false %} image--no-radius {% endif%}">
+
+
+ <div class="text-image__image-wrapper image {{primary_class}}__image-wrapper {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %} {% if overlay == false %} image--no-radius {% endif%}">
   {% if image_desktop %}
-  <div class="image image--desktop {{wrapper_class}}__image"> 
+  <div class="image image--desktop {{primary_class}}__image"> 
     {% render 'shopify-responsive-image',
         image: image_desktop,
         aspect_ratio: desktop_aspect_ratio,
@@ -31,7 +36,7 @@
   </div>
 {% endif %}
 {% if image_mobile %}
-  <div class="image image--mobile {{wrapper_class}}__image">
+  <div class="image image--mobile {{primary_class}}__image">
     {% render 'shopify-responsive-image',
         image: image_mobile,
         aspect_ratio: mobile_aspect_ratio,
@@ -43,7 +48,7 @@
     </div>
   {% endif %}
 </div>
-<div class="text-image__text-wrapper text-image__text-wrapper-{{id}} content {{wrapper_class}}__text-wrapper {% if overlay == false %} text-image__text-wrapper--no-overlay {% endif%}"
+<div class="text-image__text-wrapper text-image__text-wrapper-{{id}} content {{primary_class}}__text-wrapper {% if split_classes.size > 1 %} {{ secondary_class }} {% endif %}  {% if overlay == false %} text-image__text-wrapper--no-overlay {% endif%}"
   {% if cta_url %} onclick="location.href='{{cta_url}}';" {% endif %}
 >
     {% render 'text', 

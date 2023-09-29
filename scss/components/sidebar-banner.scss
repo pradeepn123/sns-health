@@ -9,10 +9,12 @@
     @media(--sm) {
     grid-column: span 2;
     width: 100%;
+    &:not(.sidebar-banner--two-column ) {
     @media(--md-large) {
         grid-column: span 1;
     }
     }
+}
 }
 :--text-wrapper {
     top: unset;
