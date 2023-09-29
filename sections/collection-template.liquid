@@ -1,3 +1,4 @@
+{{'default-collection.css' | asset_url | stylesheet_tag }}
 {%- assign items_per_page = cart.attributes.collection_products_per_page | default: section.settings.default_products_per_page -%}
 
 {%- capture grid_classes -%}1/3--tablet 1/{{ section.settings.products_per_row }}--lap-and-up{%- endcapture -%}
