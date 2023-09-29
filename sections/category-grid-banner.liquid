@@ -1,8 +1,5 @@
 {{ 'category-grid-banner.css' | asset_url | stylesheet_tag }}
-
-
 {% style %}
-  @use 'StyleComponents/mixins';
   {% for block in section.blocks %}
     {% assign id = block.id %}
       {%- case block.type -%}

@@ -224,12 +224,6 @@
     grid-template-columns: repeat(auto-fill, minmax(216px, 1fr));
   }
 }
-.banner-product__products-content--desktop .text-image__text-wrapper.sidebar-banner-content__text-wrapper {
-  top: 50%;
-  bottom: 0;
-  -webkit-transform: translateY(-25%);
-          transform: translateY(-25%);
-}
 .banner-product__products-content--desktop .text-image__text-wrapper.sidebar-banner-content__text-wrapper .sidebar-banner__eyebrow {
   font-size: 16px;
 }

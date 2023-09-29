@@ -58,9 +58,6 @@
             grid-auto-rows: minmax(460px, auto);
         }
         :--text-wrapper{
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-25%);
             .sidebar-banner__eyebrow{
                 font-size: $body-alt-size;
             }
