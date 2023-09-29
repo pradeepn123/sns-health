@@ -29,6 +29,7 @@
   .text-image__text-wrapper.sidebar-banner-content__text-wrapper {
     padding: var(--section-content-margin) var(--nav-vertical-padding);
     bottom: 0;
+    width: 100%;
   }
 }
 

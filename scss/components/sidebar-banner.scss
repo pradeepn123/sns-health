@@ -20,6 +20,7 @@
     top: unset;
     bottom: 28px;
     transform: none;
+
     @media(--md) {
         bottom: 45px;
     }
@@ -27,6 +28,7 @@
     @media(--sm) {
         padding: var(--section-content-margin) var(--nav-vertical-padding);
         bottom:0; 
+        width: 100%;
     }
 }
 
