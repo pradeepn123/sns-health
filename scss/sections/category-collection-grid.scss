@@ -85,11 +85,19 @@
     }
 
     :--image-text_wrapper{
-        top: 40px;
-        padding-left: 18PX;
+        top: 20px;
         padding-right: 0;
-        @media (--md-large){
-            padding-left: 40PX;
+        padding-left: 16px;
+
+        @media(--md) {
+          top: 36px;
+          padding-left: 24PX;
+        }
+        .button {
+            outline: 0;
+            border:0;
+            padding:0;
+            margin:0;
         }
     }
 
