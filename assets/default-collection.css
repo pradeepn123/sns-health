@@ -11,3 +11,8 @@
     top: calc(55px * var(--header-is-sticky, 0));
   }
 }
+@media (min-width: 1024px) {
+  .collection__toolbar {
+    top: 0;
+  }
+}

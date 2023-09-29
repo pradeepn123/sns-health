@@ -7,6 +7,9 @@
 .collection__toolbar {
     top: calc(50px * var(--header-is-sticky, 0));
     @media (--sm){
-    top: calc(55px * var(--header-is-sticky, 0));
+        top: calc(55px * var(--header-is-sticky, 0));
+    }
+    @media(--md){
+        top:0;
     }
 }
