@@ -17,13 +17,12 @@
            assign promotion_creative_name = block.settings.promotion_creative_name
          %}
          <a class="swiper-slide featured-brand-section__item" 
+          data-js-click data-redirect-click data-url = "{{url}}"
           {% if promotion and promotion_name != blank %}
             data-promotion
             data-promotion-name="{{- promotion_name -}}" 
             data-promotion-id="{{- promotion_name | handleize -}}"
             data-creative-name = "{{ promotion_creative_name }}"
-            data-redirect-click
-            data-url = "{{url}}"
           {% endif %}
         >
           {% render 'shopify-responsive-image',

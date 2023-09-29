@@ -2,7 +2,7 @@
 
 {% assign column = section.settings.column %}
 {% assign rows = section.settings.rows %}
-
+{% assign desktop_aspect_ratio = 1.6 %}
 
 {% style %}
   :root {
@@ -14,7 +14,6 @@
 <div class="category-collection-grid category-collection-grid--desktop">
   <div class="category-collection-grid__content">
     {% for block in section.blocks %}
-      {% assign desktop_aspect_ratio = 1.6 %}
       {% assign id = block.id %}
       {% style %}
           .category-collection-grid__item__text-image-{{id}}{
@@ -27,7 +26,7 @@
             grid-column: span {{ block.settings.no_of_column_desktop}};
           }
         }
-        {% if block.settings.no_of_column_desktop == '1' %}
+        {% if block.settings.no_of_column_desktop == '1' and block.settings.no_of_column_desktop == '2' %}
               {% assign desktop_aspect_ratio = 0.7 %}
         {% endif %}
     
