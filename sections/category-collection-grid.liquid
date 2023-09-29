@@ -11,6 +11,21 @@
   }
 {% endstyle %}
 
+{% liquid
+  for block in section.blocks
+  if block.settings.no_of_column_desktop == '2' 
+  assign block_large_content_count = block_large_content_count | plus: 1
+endif 
+endfor
+
+if block_large_content_count == 1
+ assign has_two_grid_layout = true
+endif 
+
+%}
+
+
+
 <div class="category-collection-grid category-collection-grid--desktop">
   <div class="category-collection-grid__content">
     {% for block in section.blocks %}
@@ -20,22 +35,77 @@
             grid-row: span {{ block.settings.no_of_rows_mobile }};
             grid-column: span {{ block.settings.no_of_column_mobile }};
           }
+
+
+
+          {% if has_two_grid_layout %}
+            {% if  block.settings.no_of_column_desktop == '2' %} 
+              .category-collection-grid__item__text-image-{{id}}{
+               grid-column: span 4 !important; 
+               order: 2;
+            }
+            {% else %}
+            .category-collection-grid__item__text-image-{{id}}{
+               grid-column: span 2;
+               order:0
+            }
+            {% endif %}
+            {% endif %}
+        @media (min-width:768px) {
+          .category-collection-grid__item__text-image-{{id}}{
+            grid-row: span {{ block.settings.no_of_rows_desktop }};
+            grid-column: span {{ block.settings.no_of_column_desktop}} !important;
+            order:0
+          }
+        }
+        {% if block.settings.no_of_column_desktop == '1' and block.settings.no_of_column_desktop == '2' %}
+              {% assign desktop_aspect_ratio = 0.7 %}
+        {% endif %}
+
+        {% if has_two_grid_layout %}
+            {% if  block.settings.no_of_column_desktop == '2' %} 
+            {% assign mobile_aspect_ratio = 1.9 %}
+            {% endif %} 
+        {% endif %}
+
+        
+
+        {% if has_two_grid_layout %} 
+          {% if  block.settings.no_of_column_desktop == '2' %}
+            .category-collection-grid__item__text-image-{{id}}{
+            grid-row: span {{ block.settings.no_of_rows_mobile }};
+            grid-column: span {{ block.settings.no_of_column_mobile }};
+          }
         @media (min-width:768px) {
           .category-collection-grid__item__text-image-{{id}}{
             grid-row: span {{ block.settings.no_of_rows_desktop }};
             grid-column: span {{ block.settings.no_of_column_desktop}};
           }
         }
-        {% if block.settings.no_of_column_desktop == '1' and block.settings.no_of_column_desktop == '2' %}
-              {% assign desktop_aspect_ratio = 0.7 %}
+        {% else %}
+
+         
+          {% endif %}
         {% endif %}
+
+        
     
       {% endstyle %}
 
       {% liquid 
         assign desktop_image = block.settings.image_desktop | default: block.settings.image_mobile
         assign mobile_image = block.settings.image_mobile | default: block.settings.image_desktop
+        assign block_large_content_count = 0 
+        if block.settings.no_of_column_desktop == '2' 
+          assign block_large_content_count = block_large_content_count | plus: 1
+        endif 
+
+        if block_large_content_count == 1
+         assign has_two_grid_layout = true
+        endif 
+
         %}
+
       {% liquid
         assign id = block.id
         assign color = block.settings.color
@@ -46,11 +116,18 @@
         assign cta_url = block.settings.cta_url
         assign image_desktop = desktop_image
         assign image_mobile = mobile_image
+        assign wrapper_class = 'category-collection-grid__item'
+        assign mobile_aspect_ratio = 1.2
         assign inline_heading = block.settings.inline_heading
         assign secondary_button_type = 'link'
         assign button_background_type = 'transparent'
+        if has_two_grid_layout 
+          if block.settings.no_of_column_desktop == '2'
+          assign wrapper_class = "category-collection-grid__item" | append: ',two-grid-item' 
+          assign mobile_aspect_ratio = 1.9
+          endif
+         endif 
       %}
-
       {% render 'image-with-text-overlay',
         id: id,
         color: color,
@@ -61,13 +138,13 @@
         cta_url: cta_url,
         image_desktop: image_desktop,
         image_mobile: image_mobile,
-        wrapper_class: 'category-collection-grid__item',
-        text_wrapper_class: 'category-collection-grid',
+        wrapper_class: wrapper_class,
+        text_wrapper_class: wrapper_class,
         inline_heading: inline_heading,
         secondary_button_type: secondary_button_type,
         button_background_type: button_background_type,
         desktop_aspect_ratio: desktop_aspect_ratio,
-        mobile_aspect_ratio: 1.2,
+        mobile_aspect_ratio: mobile_aspect_ratio,
         cover: true
         
       %}
