@@ -1296,12 +1296,22 @@
               "show_overlay": true,
               "overlay_opacity": 0
             }
+          },
+          "e7be110f-aad6-4910-92f2-710cff6db42b": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "jamieson",
+              "featured_collection_image": "shopify:\/\/shop_images\/thumbnail.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
           }
         },
         "block_order": [
           "bb400c8f-8d0c-4edc-bbad-75dc68729659",
           "b15a96f0-9ac6-4347-8753-3da06590ee86",
-          "6924a140-8ece-4ff6-98e4-66afc8b96dff"
+          "6924a140-8ece-4ff6-98e4-66afc8b96dff",
+          "e7be110f-aad6-4910-92f2-710cff6db42b"
         ],
         "settings": {
           "title": "Shop By Brand",
