@@ -11,7 +11,7 @@
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/october_sale.webp",
-            "cta_url": "https:\/\/snshealth.com\/collections\/october-deals"
+            "cta_url": "shopify:\/\/collections\/october-deals"
           }
         },
         "ef49abc3-5256-4cf1-8510-acdd51d49689": {
