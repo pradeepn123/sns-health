@@ -40,11 +40,11 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Heal + Co",
+            "promotion_name": "Sproos",
             "promotion_creative_name": "Right Banner 1",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/heal_and_co.webp",
-            "cta_url": "shopify:\/\/collections\/heal-co"
+            "image_desktop": "shopify:\/\/shop_images\/sproos.webp",
+            "cta_url": "shopify:\/\/collections\/sproos"
           }
         },
         "eca00394-6765-4bb7-87eb-c0fa056b30ba": {
