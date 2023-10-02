@@ -3,6 +3,17 @@
     "main": {
       "type": "Banner",
       "blocks": {
+        "ed3ae549-9da0-4852-a64a-a2b2d379e7d7": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Monthly Sale",
+            "promotion_creative_name": "Main Banner 1",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/october_sale.webp",
+            "cta_url": "https:\/\/snshealth.com\/collections\/october-deals"
+          }
+        },
         "ef49abc3-5256-4cf1-8510-acdd51d49689": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -14,15 +25,15 @@
             "cta_url": "https:\/\/snshealth.com\/collections\/sale"
           }
         },
-        "ed3ae549-9da0-4852-a64a-a2b2d379e7d7": {
+        "56205fb4-b0ed-4e35-baaa-742afc2a67b9": {
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Monthly Sale",
-            "promotion_creative_name": "Main Banner 1",
+            "promotion_name": "Progressive",
+            "promotion_creative_name": "Main Banner 3",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/august_sale_1.webp",
-            "cta_url": "https:\/\/snshealth.com\/collections\/september-deals"
+            "image_desktop": "shopify:\/\/shop_images\/progressive.webp",
+            "cta_url": "shopify:\/\/collections\/progressive"
           }
         },
         "5984eb08-08b3-47e4-be13-5da21dbca50c": {
@@ -34,17 +45,6 @@
             "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/heal_and_co.webp",
             "cta_url": "shopify:\/\/collections\/heal-co"
-          }
-        },
-        "56205fb4-b0ed-4e35-baaa-742afc2a67b9": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Snacks",
-            "promotion_creative_name": "Main Banner 3",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/healthy_snacks.webp",
-            "cta_url": "https:\/\/snshealth.com\/collections\/healthy-snacks-a-back-to-school-specials"
           }
         },
         "eca00394-6765-4bb7-87eb-c0fa056b30ba": {
@@ -60,10 +60,10 @@
         }
       },
       "block_order": [
-        "ef49abc3-5256-4cf1-8510-acdd51d49689",
         "ed3ae549-9da0-4852-a64a-a2b2d379e7d7",
-        "5984eb08-08b3-47e4-be13-5da21dbca50c",
+        "ef49abc3-5256-4cf1-8510-acdd51d49689",
         "56205fb4-b0ed-4e35-baaa-742afc2a67b9",
+        "5984eb08-08b3-47e4-be13-5da21dbca50c",
         "eca00394-6765-4bb7-87eb-c0fa056b30ba"
       ],
       "settings": {
