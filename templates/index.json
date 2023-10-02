@@ -72,6 +72,23 @@
     "65868ffb-1036-425b-a0dc-ebc8bcff334b": {
       "type": "Banner-Grid",
       "blocks": {
+        "39f323ed-5c6e-44c6-98f3-ad8f74d25b4d": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Guayaki",
+            "promotion_creative_name": "Sub banner 1",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/guayaki.webp",
+            "image_mobile": "shopify:\/\/shop_images\/guayaki_mobile.webp",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/owyn"
+          }
+        },
         "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -106,23 +123,6 @@
             "cta_url": "shopify:\/\/collections\/bucked-up"
           }
         },
-        "39f323ed-5c6e-44c6-98f3-ad8f74d25b4d": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Owyn",
-            "promotion_creative_name": "Sub banner 3",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Owyn_67f9335a-e8cb-4e7b-a834-36a0f30aae46.webp",
-            "image_mobile": "shopify:\/\/shop_images\/Owyn_-_mobile_841f4170-bad1-403f-b276-e7ea40658ab9.webp",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/owyn"
-          }
-        },
         "63960a00-b789-4d66-b763-da15673e4478": {
           "type": "image_with_text_overlay",
           "disabled": true,
@@ -142,9 +142,9 @@
         }
       },
       "block_order": [
+        "39f323ed-5c6e-44c6-98f3-ad8f74d25b4d",
         "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2",
         "5379485b-f9f2-400b-8e8b-fb05de6685ec",
-        "39f323ed-5c6e-44c6-98f3-ad8f74d25b4d",
         "63960a00-b789-4d66-b763-da15673e4478"
       ],
       "settings": {
