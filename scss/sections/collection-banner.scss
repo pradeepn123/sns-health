@@ -17,19 +17,6 @@
         @include mixins.container;
 
 
-    .collection-banner-content__image{
-        &--mobile {
-            width: 50%;
-            max-width: 100%;
-        }
-        &--desktop {
-            max-width: 532px;
-            width: 100%;
-            height: 100%;
-       }
-
-    }
-
     img{
         object-fit: cover;
         object-position: 74%;
@@ -37,9 +24,6 @@
 
     &__text-wrapper {
         max-width: 50%;
-        @media(--xs){
-            max-width: 48%;
-        }
         @media(--sm){
             max-width: 40%;
         }
@@ -93,7 +77,7 @@
     }
 
     :--image-wrapper{
-        max-width: 50%;
+        max-width: 100%;
         width: 100%;
     }
 

@@ -13,15 +13,6 @@
     max-width: calc(1440px - 2 * var(--base-margin));
   }
 }
-.collection-banner .collection-banner-content__image--mobile {
-  width: 50%;
-  max-width: 100%;
-}
-.collection-banner .collection-banner-content__image--desktop {
-  max-width: 532px;
-  width: 100%;
-  height: 100%;
-}
 .collection-banner img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -30,11 +21,6 @@
 }
 .collection-banner__text-wrapper {
   max-width: 50%;
-}
-@media (min-width: 390px) {
-  .collection-banner__text-wrapper {
-    max-width: 48%;
-  }
 }
 @media (min-width: 768px) {
   .collection-banner__text-wrapper {
@@ -129,7 +115,7 @@
           align-items: flex-end;
 }
 .collection-banner .collection-banner-content__image-wrapper.text-image__image-wrapper {
-  max-width: 50%;
+  max-width: 100%;
   width: 100%;
 }
 .collection-banner .collection-banner__cta.button {

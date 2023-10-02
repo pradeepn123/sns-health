@@ -135,6 +135,9 @@
   height: 100%;
   cursor: pointer;
 }
+.text-image__image-wrapper--half-width {
+  max-width: 50%;
+}
 .text-image .image .responsive-image__image {
   border-radius: 10px;
 }

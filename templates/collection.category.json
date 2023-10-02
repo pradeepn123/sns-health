@@ -15,7 +15,10 @@
       "blocks": {
         "de35a0e1-bb6f-44aa-a468-8ceac0e05f2c": {
           "type": "image_with_text_overlay",
+          "source": "{{ collection.metafields.custom.collection_banner.value }}",
           "settings": {
+            "featured_image_desktop": "{{ collection.metafields.custom.collection_banner.value.desktop_image.value }}",
+            "featured_image_mobile": "{{ collection.metafields.custom.collection_banner.value.mobile_image.value }}",
             "font-color": "#000000",
             "background-color": "#ecf0fa",
             "inline_cta": true,
@@ -319,7 +322,7 @@
             "subheading": "{{ block.repeater.subheading.value }}",
             "cta_text": "{{ block.repeater.cta_text.value }}",
             "cta_url": "{{ block.repeater.cta_url.value }}",
-            "collection": "{{ block.repeater.collection.value }}"
+            "collection": ""
           }
         }
       },
