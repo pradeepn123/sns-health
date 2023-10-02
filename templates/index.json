@@ -52,10 +52,10 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Jamieson & Progressive",
-            "promotion_creative_name": "Main Banner 2",
+            "promotion_creative_name": "Right Banner 2",
             "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/jamieson-2_1.jpg",
-            "cta_url": "https:\/\/snshealth.com\/collections\/jamieson-progressive-special"
+            "cta_url": "shopify:\/\/collections\/jamieson-progressive-special"
           }
         }
       },
