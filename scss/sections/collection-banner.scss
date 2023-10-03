@@ -35,19 +35,7 @@
         }
     }
 
-    .image--desktop {
-        @media (--sm) {
-            display: block;
-        }
-    }
 
-    .image--mobile {
-        display: block;
-
-        @media(--sm) {
-            display: none;
-        }
-    }
 
     :--heading {
         @include use-text-style('body-title');

@@ -130,18 +130,6 @@
       max-width: max-content;
     }
 
-    .image--desktop {
-      @media (--sm) {
-          display: block;
-      }
-  }
 
-  .image--mobile {
-      display: block;
-
-      @media(--sm) {
-          display: none;
-      }
-  }
 
 } 

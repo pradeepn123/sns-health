@@ -265,16 +265,3 @@
   max-width: -moz-max-content;
   max-width: max-content;
 }
-@media (min-width: 768px) {
-  .banner-carousel-grid .image--desktop {
-    display: block;
-  }
-}
-.banner-carousel-grid .image--mobile {
-  display: block;
-}
-@media (min-width: 768px) {
-  .banner-carousel-grid .image--mobile {
-    display: none;
-  }
-}

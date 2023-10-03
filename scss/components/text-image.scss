@@ -54,14 +54,14 @@
         &--desktop {
            display: none;
     
-           @media (--md) { 
+           @media (--sm) { 
             display: block;
            }
         }
         &--mobile {
             display: block;
      
-            @media (--md) { 
+            @media (--sm) { 
              display: none;
             }
          }

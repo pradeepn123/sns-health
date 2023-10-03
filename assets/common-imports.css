@@ -151,7 +151,7 @@
 .text-image .image--desktop {
   display: none;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .text-image .image--desktop {
     display: block;
   }
@@ -159,7 +159,7 @@
 .text-image .image--mobile {
   display: block;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .text-image .image--mobile {
     display: none;
   }
