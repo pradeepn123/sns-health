@@ -37,6 +37,19 @@
     max-width: 60%;
   }
 }
+@media (min-width: 768px) {
+  .collection-banner .image--desktop {
+    display: block;
+  }
+}
+.collection-banner .image--mobile {
+  display: block;
+}
+@media (min-width: 768px) {
+  .collection-banner .image--mobile {
+    display: none;
+  }
+}
 .collection-banner .collection-banner__heading.text__heading {
   font-family: "poppins";
   font-size: 14px;
@@ -124,4 +137,7 @@
   text-decoration: underline;
   margin-top: 0;
   padding: 0;
+}
+.collection-banner .responsive-image__wrapper {
+  min-height: 145px;
 }

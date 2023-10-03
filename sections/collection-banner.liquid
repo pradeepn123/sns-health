@@ -7,6 +7,11 @@
       .collection-banner{
           background: {{ block.settings.background-color }};
       }
+      {% if collection.description == blank %}
+        .collection-banner__cta .btn-text{
+          display: none;
+        }
+      {% endif %}
   {% endfor %}
 {% endstyle %}
 
@@ -21,7 +26,7 @@
         assign id = block.id
         assign color = block.settings['font-color']
         assign heading = collection.title
-        assign subheading = collection.description | truncate: 106 
+        assign subheading = collection.description | truncate: 100
         assign image_desktop = desktop_image
         assign image_mobile = mobile_image
         assign background = block.settings['background-color']
