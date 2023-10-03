@@ -125,6 +125,6 @@
   margin-top: 0;
   padding: 0;
 }
-.collection-banner .responsive-image__wrapper {
+.collection-banner :--responsive-img {
   min-height: 145px;
 }
