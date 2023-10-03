@@ -9,6 +9,7 @@
 @custom-selector :--text-image .collection-banner-content__text-image.text-image;
 @custom-selector :--image-wrapper .collection-banner-content__image-wrapper.text-image__image-wrapper;
 @custom-selector :--button .collection-banner__cta.button; 
+@custom-selector :--responsive-img .responsive-image__wrapper; 
 
 .collection-banner {
     margin-top: var(--section-content-margin);
