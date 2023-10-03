@@ -322,7 +322,7 @@
             "subheading": "{{ block.repeater.subheading.value }}",
             "cta_text": "{{ block.repeater.cta_text.value }}",
             "cta_url": "{{ block.repeater.cta_url.value }}",
-            "collection": ""
+            "collection": "{{ block.repeater.collection.value }}"
           }
         }
       },
