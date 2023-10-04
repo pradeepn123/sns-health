@@ -16,6 +16,7 @@
         },
         "ef49abc3-5256-4cf1-8510-acdd51d49689": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Corepower Promo",
