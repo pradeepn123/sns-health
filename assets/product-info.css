@@ -46,7 +46,7 @@
 }
 @media (max-width: 450px) {
   .product-form .complimentary__wrapper .complimentary__wrapper--content .cp__title {
-    font-size: 19px;
+    font-size: 18px;
   }
 }
 @media (min-width: 1000px) and (max-width: 1199px) {
