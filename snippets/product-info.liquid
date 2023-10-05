@@ -1,3 +1,4 @@
+{{ 'product-info.css' | asset_url | stylesheet_tag }}
 {%- assign selected_variant = product.selected_or_first_available_variant -%}
 
 <div class="card {% if product.media.size > 0 %}card--collapsed{% endif %} {% if template.name == 'product' %}card--sticky{% endif %} no-border">
@@ -439,6 +440,58 @@
             <input type="hidden" name="quantity" value="1">
           {%- endif -%}
         {%- endif -%}
+      </div>
+
+      {%- assign collection_handle = product.vendor | handle -%}      
+      {% assign complimentary_product = all_products[section.settings.complimentary__product] %}
+      
+      {% if collection_handle == 'bucked-up' and product.handle != complimentary_product.handle %}
+        {% if section.settings.complimentary__product != blank  %}
+          <div class="complimentary__wrapper">
+              {% for image in complimentary_product.images limit: 1 %}
+                <img class="complimentary__wrapper_image" src="{{ image.src | img_url: '85x' }}">
+              {% endfor %}
+            <div class="complimentary__wrapper--content">
+              {% if section.settings.complimentary_title != blank %}
+                <h2 class="cp__title">{% render 'complimentary-check-icon' %}  {{ section.settings.complimentary_title }}</h2>
+              {% endif %}
+              {% if section.settings.complimentary_description != blank %}
+                <div class="complimentary__wrapper--description">{{ section.settings.complimentary_description }} </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+
+      <div class="product-form__payment-container">
+
+        {% if product.tags contains 'free-VitaminD3'  %}
+          <div class="bundle-container-wrapper">
+            <div class="bundle-container">
+
+              <div class="bundle-button-wrapper">
+                <img class="deal-img" src="https://cdn.shopify.com/s/files/1/0422/2255/1191/products/NATWAYVITD3_1_500x.jpg?v=1662589655" />
+                <div class="deal-msg">Buy any NutraSea Omega 3 and get Nature's Way Vitamin D3 Gummies for FREE</div>
+                <button class="deal-btn product-form__add-button button button--primary" id="add-bundle">Add Deal to Cart </button>
+              </div>
+              
+                  <div class="bundle__wrapper" style="display:none;">
+                    <div class="bundle-panel__bundle">
+                          <div class="bundle-panel__item">
+                            <input type="checkbox"
+                                  name="bundle[]"
+                                  id="bundle-42501456691351"
+                                  type="checkbox"
+                                  value="42501456691351"
+                                  data-product="42501456691351"
+                                  checked
+                                  />
+                          </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        {% endif %}
       </div>
 
       <div class="product-form__payment-container">
