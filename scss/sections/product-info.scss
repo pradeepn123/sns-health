@@ -1,3 +1,7 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
 
 .product-form{
     .complimentary__wrapper{
@@ -7,7 +11,7 @@
         padding: 1rem;
         gap: 2rem;
         align-items: center;
-        margin-bottom: 1.8rem;
+        margin-bottom: 1.2rem;
         @media (max-width: 450px){
             gap: 0.8rem;
         }
@@ -19,6 +23,7 @@
             vertical-align: top;
             @media (max-width: 450px){
                 width: 70px;
+                height: 97px;
             }
         }
         .complimentary__wrapper--content{
@@ -42,7 +47,7 @@
             .complimentary__wrapper--description{
                 font-size: 15px;
                 line-height: 1.4;
-                font-weight: 600;
+                font-weight: 500;
                 @media (max-width: 450px){
                     font-size: 12px;
                 }

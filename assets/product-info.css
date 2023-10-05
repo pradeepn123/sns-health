@@ -12,7 +12,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.2rem;
 }
 @media (max-width: 450px) {
   .product-form .complimentary__wrapper {
@@ -29,6 +29,7 @@
 @media (max-width: 450px) {
   .product-form .complimentary__wrapper .complimentary__wrapper_image {
     width: 70px;
+    height: 97px;
   }
 }
 .product-form .complimentary__wrapper .complimentary__wrapper--content .cp__title {
@@ -59,7 +60,7 @@
 .product-form .complimentary__wrapper .complimentary__wrapper--content .complimentary__wrapper--description {
   font-size: 15px;
   line-height: 1.4;
-  font-weight: 600;
+  font-weight: 500;
 }
 @media (max-width: 450px) {
   .product-form .complimentary__wrapper .complimentary__wrapper--content .complimentary__wrapper--description {
