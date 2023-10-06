@@ -59,7 +59,7 @@
                   <thead class="hidden-phone">
                     <tr>
                       <th>{{ 'customer.order.product' | t }}</th>
-                      <th class="table__cell--center">{{ 'customer.order.quantity' | t }}</th>
+                      {% comment %} <th class="table__cell--center">{{ 'customer.order.quantity' | t }}</th> {% endcomment %}
                       <th class="table__cell--right">{{ 'customer.order.total' | t }}</th>
                     </tr>
                   </thead>
@@ -171,8 +171,8 @@
                                   {%- endfor -%}
                                 </ul>
                               {%- endif -%}
-
-                              <div class="line-item__quantity hidden-tablet-and-up">
+                              {% comment %} Removed quantity selector to handle the free product issue, do not uncomment {% endcomment %}
+                              {% comment %} <div class="line-item__quantity hidden-tablet-and-up">
                                 {%- comment -%}If the product has the tag "free_gift", we remove the price{%- endcomment -%}
 
                                 {%- unless line_item.product.tags contains 'free_gift' -%}
@@ -192,12 +192,12 @@
                                 {% endunless -%}
 
                                 <a href="{{ routes.cart_change_url }}?quantity=0&line={{ forloop.index }}" data-action="decrease-quantity" data-quantity="0" data-line="{{ forloop.index }}" class="line-item__quantity-remove link">{{ 'cart.items.remove' | t }}</a>
-                              </div>
+                              </div> {% endcomment %} 
                             </div>
                           </div>
                         </td>
-
-                        <td class="line-item__quantity table__cell--center hidden-phone">
+                        {% comment %} Removed quantity selector to handle the free product issue, do not uncomment {% endcomment %}
+                        {% comment %} <td class="line-item__quantity table__cell--center hidden-phone">
                           {%- comment -%}If the product has the tag "free_gift", we remove the price{%- endcomment -%}
 
                           {%- unless line_item.product.tags contains 'free_gift' -%}
@@ -217,7 +217,7 @@
                           {%- endunless -%}
 
                           <a href="{{ routes.cart_change_url }}?quantity=0&line={{ forloop.index }}" data-action="decrease-quantity" data-quantity="0" data-line="{{ forloop.index }}" class="line-item__quantity-remove link">{{ 'cart.items.remove' | t }}</a>
-                        </td>
+                        </td> {% endcomment %}
 
                         <td class="line-item__line-price table__cell--right hidden-phone">
                           {%- if line_item.final_line_price == 0 -%}
