@@ -167,8 +167,9 @@ var scrollOnClick = function scrollOnClick(selector, target) {
     if (appTarget) {
       var _props;
       if (propsEl) {
-        var _appTarget$querySelec;
-        props = JSON.parse((_appTarget$querySelec = appTarget.querySelector(propsEl)) === null || _appTarget$querySelec === void 0 ? void 0 : _appTarget$querySelec.innerHTML) || {}; //get json from the script id 
+        var _appTarget$querySelec, _appTarget$querySelec2;
+        console.log((_appTarget$querySelec = appTarget.querySelector(propsEl)) === null || _appTarget$querySelec === void 0 ? void 0 : _appTarget$querySelec.innerHTML);
+        props = JSON.parse((_appTarget$querySelec2 = appTarget.querySelector(propsEl)) === null || _appTarget$querySelec2 === void 0 ? void 0 : _appTarget$querySelec2.innerHTML) || {}; //get json from the script id 
       }
       //inject component into container
       var instance = new Component({

@@ -13,8 +13,8 @@
       {% for product in block.settings.collection.products %} 
         {% if count >= limit %} {% break %} {% endif %}
         {% if product.available %} 
+          {% unless count == 0 %},{% endunless %}
           {% assign count = count | plus: 1 %}
-          {% unless forloop.first %},{% endunless %}
            {
             "image" : {
               "src": "{{product.featured_image | image_url }}",
