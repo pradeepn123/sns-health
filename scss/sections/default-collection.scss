@@ -25,6 +25,6 @@
 :--container {
     padding: 0;
     @media(--md){
-        padding: 0 var(--desktop-container-gutter);
+        @include mixins.container;
     }
 }

@@ -28,6 +28,13 @@
 }
 @media (min-width: 1024px) {
   .layout.container {
-    padding: 0 var(--desktop-container-gutter);
+    max-width: calc(100% - 2 * var(--base-margin));
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 1024px) and (min-width: 1440px) {
+  .layout.container {
+    max-width: calc(1440px - 2 * var(--base-margin));
   }
 }

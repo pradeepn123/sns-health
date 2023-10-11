@@ -197,7 +197,7 @@ var boostPFSTemplate = {
             vendor,
             title,
             tags,
-            metafields: [reviewMetafields || {}],
+            metafields: reviewMetafields,
             link,
             handle
         }
