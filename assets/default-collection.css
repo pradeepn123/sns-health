@@ -18,3 +18,16 @@
     top: 0;
   }
 }
+
+.pagination {
+  border-top: none !important;
+}
+
+.layout.container {
+  padding: 0;
+}
+@media (min-width: 1024px) {
+  .layout.container {
+    padding: 0 var(--desktop-container-gutter);
+  }
+}

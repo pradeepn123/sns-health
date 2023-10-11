@@ -162,13 +162,14 @@ class CustomCarousel extends HTMLElement {
     return carouselSettings;
   }
   initCarousel() {
-    var _this$querySelector, _this$querySelector2;
+    var _this$querySelector, _this$querySelector2, _this$querySelector3;
     this.carouselSettings = JSON.parse(((_this$querySelector = this.querySelector('[data-settings]')) === null || _this$querySelector === void 0 ? void 0 : _this$querySelector.innerHTML) || "{}");
-    this.carouselContent = this.querySelector('[data-carousel-content]').innerHTML;
-    this.placeholders = (_this$querySelector2 = this.querySelector('[data-carousel-placeholder]')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.innerHTML;
+    this.carouselContent = (_this$querySelector2 = this.querySelector('[data-carousel-content]')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.innerHTML;
+    this.placeholders = (_this$querySelector3 = this.querySelector('[data-carousel-placeholder]')) === null || _this$querySelector3 === void 0 ? void 0 : _this$querySelector3.innerHTML;
+    this.navigations = this.querySelector('[data-swiper-navigations]');
     this.currentWidth = window.innerWidth;
     var swiperNavigationElements = "\n      <div class=\"swiper-navigation swiper-navigation--next ".concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    ");
-    this.innerHTML = "<div class=\"carousel__container swiper hide\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.carouselContent, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    ").concat(this.carouselSettings['customNavigation'] ? '' : swiperNavigationElements, "\n    ").concat(this.placeholders ? this.placeholders : "<div class=\"carousel-placeholders\"></div>");
+    this.carouselContent ? this.innerHTML = "<div class=\"carousel__container swiper hide\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.carouselContent, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    ").concat(this.carouselSettings['customNavigation'] ? '' : swiperNavigationElements, "\n    ").concat(this.placeholders ? this.placeholders : "<div class=\"carousel-placeholders\"></div>") : this.carouselSettings['customNavigation'] ? '' : this.navigations.innerHTML = swiperNavigationElements;
     this.container = this.querySelector('[data-swiper-container]');
     var carouselSettings = this.getCarouselSettings();
     this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
@@ -198,15 +199,16 @@ class CustomCarousel extends HTMLElement {
         },
 
         afterInit: () => {
+          var _this$querySelector4;
           this.querySelector('.carousel__container').classList.remove('hide');
-          this.querySelector('.carousel-placeholders').classList.add('hide');
+          (_this$querySelector4 = this.querySelector('.carousel-placeholders')) === null || _this$querySelector4 === void 0 ? void 0 : _this$querySelector4.classList.add('hide');
         }
       },
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
     }, carouselSettings));
     this.swiper.on('activeIndexChange', current => {
-      var _this$querySelector3, _this$querySelectorAl;
-      (_this$querySelector3 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector3 === void 0 ? void 0 : _this$querySelector3.classList.remove('swiper-pagination-bullet-active');
+      var _this$querySelector5, _this$querySelectorAl;
+      (_this$querySelector5 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector5 === void 0 ? void 0 : _this$querySelector5.classList.remove('swiper-pagination-bullet-active');
       (_this$querySelectorAl = this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _this$querySelectorAl === void 0 ? void 0 : _this$querySelectorAl.classList.add('swiper-pagination-bullet-active');
     });
   }
@@ -263,460 +265,11 @@ class CustomCarousel extends HTMLElement {
       (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_1__.AddPromotionAsItemProperty)(); //add promotion id as a item property
       var collectionEl = document.querySelector('[data-section-type="collection"]');
       (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_2__["default"])(collectionEl);
+      window.customProductCard();
+      (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_0__.addFormDelegate)(); //disable default form behaviour and add dynamic quick view events
+      (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_0__.addBtnDelegate)();
     };
   }
-});
-
-/***/ }),
-
-/***/ "./js/components/events.js":
-/*!*********************************!*\
-  !*** ./js/components/events.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AddPromotionAsItemProperty: () => (/* binding */ AddPromotionAsItemProperty),
-/* harmony export */   ViewItemList: () => (/* binding */ ViewItemList),
-/* harmony export */   addToCartEvent: () => (/* binding */ addToCartEvent),
-/* harmony export */   clickPromotion: () => (/* binding */ clickPromotion),
-/* harmony export */   getPromotionParams: () => (/* binding */ getPromotionParams),
-/* harmony export */   selectItemList: () => (/* binding */ selectItemList),
-/* harmony export */   updateProductUrlWithPromotion: () => (/* binding */ updateProductUrlWithPromotion),
-/* harmony export */   viewItem: () => (/* binding */ viewItem),
-/* harmony export */   viewPromotion: () => (/* binding */ viewPromotion)
-/* harmony export */ });
-/* unused harmony exports curateEcommerceData, redirectWithPromotion */
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! JsComponents/get-data */ "./js/components/get-data.js");
-
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-class GtmEvent {
-  constructor(eventName, data) {
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(this, "send", () => {
-      window.datalayer = [];
-      window.dataLayer.push(_objectSpread({
-        'event': this.eventName
-      }, this.data));
-    });
-    this.eventName = eventName;
-    this.data = data;
-  }
-}
-/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (GtmEvent);
-
-//utilities and events 
-var getPromotionParams = () => {
-  var promotionData = {};
-  var params = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop)
-  });
-  var promotionName = params.promotion_name;
-  var promotionId = params.promotion_id;
-  var creativeName = params.creative_name;
-  if (promotionName) {
-    promotionData = {
-      promotionName,
-      promotionId,
-      creativeName
-    };
-  }
-  return promotionData;
-};
-var curateEcommerceData = data => {
-  return data.map((item, index) => {
-    var item_variant = item === null || item === void 0 ? void 0 : item.variant_title;
-    if (!item_variant) {
-      if (item.variants) {
-        item_variant = item.variants[0].title;
-      } else {
-        item_variant = item.product_title;
-      }
-    }
-    var item_price = (item === null || item === void 0 ? void 0 : item.price) || item.variants[0].price;
-    return {
-      item_id: "".concat(item.id),
-      item_name: "".concat(item.title),
-      index: "".concat(index),
-      item_brand: "".concat(item.vendor),
-      item_variant: "".concat(item_variant),
-      price: item_price * 0.01,
-      quantity: 1
-    };
-  });
-};
-var updateProductUrlWithPromotion = () => {
-  var links = document.querySelectorAll('[data-promotion-product-url]');
-  var {
-    promotionId,
-    promotionName,
-    creativeName
-  } = getPromotionParams();
-  if (promotionName) {
-    links.forEach(link => {
-      var url = redirectWithPromotion(link, promotionId, promotionName, creativeName);
-      link.href = url;
-    });
-  }
-};
-var AddPromotionAsItemProperty = () => {
-  var forms = document.querySelectorAll('[action = "/cart/add"]');
-  var {
-    promotionId,
-    promotionName,
-    creativeName
-  } = getPromotionParams();
-  var inputHtml = "<input type=\"hidden\" name=properties[_promotionId] value='".concat(promotionId, "' />\n\t<input type=\"hidden\" name=properties[_promotionName] value='").concat(promotionName, "' />\n\t<input type=\"hidden\" name=properties[_creativeName] value='").concat(creativeName, "' />\n\t");
-  if (promotionId) {
-    forms.forEach(form => {
-      //do not add if it already exist
-      if (!form.querySelector('[name="properties[_promotionId]"]')) {
-        form.insertAdjacentHTML('beforeend', inputHtml);
-      }
-    });
-  }
-};
-var redirectWithPromotion = (url, promotionId, promotionName, creativeName) => {
-  return "".concat(url, "?promotion_id=").concat(promotionId, "&promotion_name=").concat(promotionName, "&creative_name=").concat(creativeName);
-};
-var clickPromotion = /*#__PURE__*/function () {
-  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (url, promotionName, promotionId, creativeName) {
-    var gtmData = {
-      promotion_id: promotionId,
-      promotion_name: promotionName,
-      creative_name: creativeName
-    };
-    var selectPromotion = new GtmEvent('custom_promotion_click', gtmData);
-    selectPromotion.send();
-    window.location.href = redirectWithPromotion(url, promotionId, promotionName, creativeName);
-  });
-  return function clickPromotion(_x, _x2, _x3, _x4) {
-    return _ref.apply(this, arguments);
-  };
-}();
-var selectItemList = /*#__PURE__*/function () {
-  var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId, creativeName) {
-    var data = [yield (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__.getSingleProductData)(handle)];
-    var curatedData = {
-      promotion_id: promotionId,
-      item_list_id: promotionId,
-      item_list_name: promotionName,
-      promotion_name: promotionName,
-      creativeName: creativeName
-    };
-    var viewItemListEventData = _objectSpread(_objectSpread({}, curatedData), {}, {
-      selectedItem: curateEcommerceData(data)
-    });
-    var customViewItemListEvent = new GtmEvent('custom_select_item', viewItemListEventData);
-    customViewItemListEvent.send();
-  });
-  return function selectItemList(_x5, _x6, _x7, _x8) {
-    return _ref2.apply(this, arguments);
-  };
-}();
-var ViewItemList = /*#__PURE__*/function () {
-  var _ref3 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId, creativeName) {
-    var data = yield (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__.getCollectionProductData)(handle);
-    var curatedData = {
-      promotion_id: promotionId,
-      item_list_id: promotionId,
-      item_list_name: promotionName,
-      promotion_name: promotionName,
-      creative_name: creativeName
-    };
-    var viewItemListEventData = _objectSpread(_objectSpread({}, curatedData), {}, {
-      viewedItems: curateEcommerceData(data)
-    });
-    var customViewItemListEvent = new GtmEvent('custom_view_item_list', viewItemListEventData);
-    customViewItemListEvent.send();
-  });
-  return function ViewItemList(_x9, _x10, _x11, _x12) {
-    return _ref3.apply(this, arguments);
-  };
-}();
-var viewItem = /*#__PURE__*/function () {
-  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (handle, promotionName, promotionId, creativeName) {
-    var _window$shopifyVariab, _data$;
-    var currency = ((_window$shopifyVariab = window.shopifyVariables) === null || _window$shopifyVariab === void 0 ? void 0 : _window$shopifyVariab.activeCurrency) || 'CAD';
-    var data = [yield (0,JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__.getSingleProductData)(handle)];
-    var viewItemEventData = {
-      currency: "".concat(currency),
-      value: ((_data$ = data[0]) === null || _data$ === void 0 ? void 0 : _data$.price) * 0.01,
-      promotion_id: promotionId,
-      promotion_name: promotionName,
-      creative_name: creativeName,
-      viewedItem: curateEcommerceData(data)
-    };
-    var customViewItemListEvent = new GtmEvent('custom_view_item', viewItemEventData);
-    customViewItemListEvent.send();
-  });
-  return function viewItem(_x13, _x14, _x15, _x16) {
-    return _ref4.apply(this, arguments);
-  };
-}();
-var addToCartEvent = (cartItem, promotionName, promotionId, creativeName) => {
-  var _window$shopifyVariab2;
-  var curatedData = curateEcommerceData([cartItem]);
-  var [{
-    price
-  }] = curatedData;
-  var addTocartData = {
-    promotion_id: promotionId,
-    promotion_name: promotionName,
-    creative_name: creativeName,
-    currency: ((_window$shopifyVariab2 = window.shopifyVariables) === null || _window$shopifyVariab2 === void 0 ? void 0 : _window$shopifyVariab2.activeCurrency) || 'CAD',
-    value: "".concat(price),
-    addedItems: curatedData
-  };
-  var addTocartEvent = new GtmEvent('custom_add_to_cart', addTocartData);
-  addTocartEvent.send();
-};
-var viewPromotion = (promotionName, promotionId, creativeName) => {
-  var promotionData = {
-    promotion_id: promotionId,
-    promotion_name: promotionName,
-    creative_name: creativeName
-  };
-  var viewPromotionEvent = new GtmEvent('custom_view_promotion', promotionData);
-  viewPromotionEvent.send();
-};
-
-/***/ }),
-
-/***/ "./js/components/get-data.js":
-/*!***********************************!*\
-  !*** ./js/components/get-data.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getCollectionProductData: () => (/* binding */ getCollectionProductData),
-/* harmony export */   getSingleProductData: () => (/* binding */ getSingleProductData)
-/* harmony export */ });
-/* unused harmony exports customerLocation, getProductData, getReviewData, getReviewDataAggregate */
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
-/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ "./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js");
-
-
-
-var _excluded = ["ruleId", "text"];
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-var customerLocation = /*#__PURE__*/function () {
-  var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* () {
-    var data = yield fetch('/browsing_context_suggestions.json');
-    var {
-      detected_values: {
-        country: {
-          handle
-        } = {}
-      } = {}
-    } = yield data.json();
-    return handle;
-  });
-  return function customerLocation() {
-    return _ref.apply(this, arguments);
-  };
-}();
-var getProductData = /*#__PURE__*/function () {
-  var _ref2 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* (additionalParams) {
-    var _ref3 = additionalParams || {},
-      {
-        ruleId = '',
-        text = ''
-      } = _ref3,
-      otherparams = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref3, _excluded);
-    var url = '';
-    url = new URL("https://rebuyengine.com/api/v1/custom/id/".concat(ruleId));
-    var params = _objectSpread({
-      limit: 10,
-      filter_oos: "yes",
-      context: "default",
-      key: "7af510977e690f362f5dae7f36a736bbeefdfc25",
-      //rebuy key
-      metafields: "yes"
-    }, otherparams);
-    Object.keys(params).forEach(param => {
-      url.searchParams.append(param, params[param]);
-    }); //set params
-    var data = yield fetch(url);
-    var productData = yield data.json();
-    return productData;
-  });
-  return function getProductData(_x) {
-    return _ref2.apply(this, arguments);
-  };
-}();
-var getReviewData = /*#__PURE__*/function () {
-  var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* (id) {
-    var url = new URL("https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/reviews?/collections/".concat(id, "&orderBy=rating%20desc"));
-    var data = yield fetch(url);
-    var reviewData = yield data.json();
-    return reviewData;
-  });
-  return function getReviewData(_x2) {
-    return _ref4.apply(this, arguments);
-  };
-}();
-var getReviewDataAggregate = /*#__PURE__*/function () {
-  var _ref5 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* () {
-    var url = new URL("https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/review_aggregate");
-    var data = yield fetch(url);
-    var aggregiateReviewData = yield data.json();
-    var reviewAggCount = aggregiateReviewData.reviewAggregate;
-    return reviewAggCount === null || reviewAggCount === void 0 ? void 0 : reviewAggCount.reviewCount;
-  });
-  return function getReviewDataAggregate() {
-    return _ref5.apply(this, arguments);
-  };
-}();
-var getCollectionProductData = /*#__PURE__*/function () {
-  var _ref6 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* (collectionHandle) {
-    var url = "/collections/".concat(collectionHandle, "?view=data-json");
-    var data = yield fetch(url);
-    var collectionProducts = yield data.json();
-    return collectionProducts;
-  });
-  return function getCollectionProductData(_x3) {
-    return _ref6.apply(this, arguments);
-  };
-}();
-var getSingleProductData = /*#__PURE__*/function () {
-  var _ref7 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* (productHandle) {
-    var url = "/products/".concat(productHandle, ".js");
-    var data = yield fetch(url);
-    var product = yield data.json();
-    return product;
-  });
-  return function getSingleProductData(_x4) {
-    return _ref7.apply(this, arguments);
-  };
-}();
-
-/***/ }),
-
-/***/ "./js/components/gtm-event-trigger.js":
-/*!********************************************!*\
-  !*** ./js/components/gtm-event-trigger.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   itemClickEvents: () => (/* binding */ itemClickEvents),
-/* harmony export */   pageLoadEvent: () => (/* binding */ pageLoadEvent),
-/* harmony export */   viewPromotionTrigger: () => (/* binding */ viewPromotionTrigger)
-/* harmony export */ });
-/* harmony import */ var JsComponents_events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/events */ "./js/components/events.js");
-/* harmony import */ var JsComponents_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! JsComponents/utils */ "./js/components/utils.js");
-
-
-var pageLoadEvent = () => {
-  //This handles the view_item_list (plp) and view_item(pdp)
-  var url = window.location.href;
-  if (url.includes('/collections/')) {
-    var urlPArams = url.split('/collections/')[1];
-    var collectionHandle = urlPArams.split('?')[0];
-    var {
-      promotionName,
-      promotionId,
-      creativeName
-    } = (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.getPromotionParams)() || {};
-    if (promotionName) {
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.ViewItemList)(collectionHandle, promotionName, promotionId, creativeName);
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.AddPromotionAsItemProperty)();
-    }
-  }
-  if (url.includes('/products/')) {
-    var _urlPArams = url.split('/products/')[1];
-    var productHandle = _urlPArams.split('?')[0];
-    var {
-      promotionId: _promotionId,
-      promotionName: _promotionName,
-      creativeName: _creativeName
-    } = (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.getPromotionParams)() || {};
-    if (_promotionId) {
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewItem)(productHandle, _promotionName, _promotionId, _creativeName);
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.AddPromotionAsItemProperty)();
-    }
-  }
-};
-var itemClickEvents = (item, url) => {
-  //This events handles the promotion_select (anywhere) and select_item (plp)
-  if (item.closest('[data-promotion]')) {
-    if (!item.closest('[data-promotion = "false"]')) {
-      var promotionName = item.dataset.promotionName;
-      var promotionId = item.dataset.promotionId;
-      var creativeName = item.dataset.creativeName;
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.clickPromotion)(url, promotionName, promotionId, creativeName);
-    } else {
-      window.location.href = url;
-    }
-  }
-  if (item.closest('[data-section-type="collection"]')) {
-    var {
-      promotionId: _promotionId2,
-      promotionName: _promotionName2,
-      creativeName: _creativeName2
-    } = (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.getPromotionParams)() || {};
-    if (_promotionId2) {
-      var productHandle = item.href.split("?")[0];
-      productHandle = productHandle.split('/products/')[1];
-      (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.selectItemList)(productHandle, _promotionName2, _promotionId2, _creativeName2);
-    }
-  }
-};
-var viewPromotionTrigger = () => {
-  var promotionItems = document.querySelectorAll('[data-promotion]');
-  var callback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.target.closest('[data-promotion = "false"]')) {
-        if (entry.isIntersecting) {
-          var promotionId = entry.target.dataset.promotionId;
-          var promotionName = entry.target.dataset.promotionName;
-          var creativeName = entry.target.dataset.creativeName;
-          (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.viewPromotion)(promotionName, promotionId, creativeName);
-          observer.unobserve(entry.target);
-        }
-      }
-    });
-  };
-  var promotionObserver = new JsComponents_utils__WEBPACK_IMPORTED_MODULE_1__.IntersectObserver(callback, promotionItems);
-  promotionObserver.init();
-};
-
-/***/ }),
-
-/***/ "./js/components/handleClick.js":
-/*!**************************************!*\
-  !*** ./js/components/handleClick.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/gtm-event-trigger */ "./js/components/gtm-event-trigger.js");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dynamicElements => {
-  var handleRedirectOnDiv = item => {
-    var url = item.dataset.url || item.href;
-    if (item.closest('[data-promotion]') || item.closest('[data-promotion-product-url]')) {
-      (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_0__.itemClickEvents)(item, url);
-    } else if (url) {
-      window.location.href = url;
-    }
-  };
-  var clickHandle = dynamicElements ? dynamicElements.querySelectorAll('[data-js-click]') : document.querySelectorAll('[data-js-click]');
-  clickHandle.forEach(item => item.addEventListener('click', ev => {
-    if (!ev.target.closest('.product-card__atc')) {
-      handleRedirectOnDiv(item);
-    }
-  }));
 });
 
 /***/ }),
@@ -849,66 +402,6 @@ class ProductCard extends HTMLElement {
 
 /***/ }),
 
-/***/ "./js/components/rebuy-cart-integration.js":
-/*!*************************************************!*\
-  !*** ./js/components/rebuy-cart-integration.js ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   addBtnDelegate: () => (/* binding */ addBtnDelegate),
-/* harmony export */   addFormDelegate: () => (/* binding */ addFormDelegate),
-/* harmony export */   removeAttributesForCartBinding: () => (/* binding */ removeAttributesForCartBinding),
-/* harmony export */   removeCartToggleBinding: () => (/* binding */ removeCartToggleBinding)
-/* harmony export */ });
-/* harmony import */ var ftdomdelegate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ftdomdelegate */ "./node_modules/ftdomdelegate/main.js");
-
-var addFormDelegate = () => {
-  var forms = document.querySelectorAll('[action="/cart/add"]');
-  forms.forEach(form => {
-    var formDelegate = new ftdomdelegate__WEBPACK_IMPORTED_MODULE_0__["default"](form);
-    formDelegate.on('submit', ev => {
-      ev.preventDefault();
-      return false;
-    });
-  });
-};
-var addBtnDelegate = () => {
-  var forms = document.querySelectorAll('[action="/cart/add"]');
-  forms.forEach(form => {
-    var btn = form.querySelector('[type="submit"]');
-    var btnDelegate = new ftdomdelegate__WEBPACK_IMPORTED_MODULE_0__["default"](btn);
-    btnDelegate.off();
-    btnDelegate.on('click', ev => {
-      ev.preventDefault();
-      var formEl = ev.target.closest('[action="/cart/add"]');
-      var productForm = Rebuy.util.serializeForm(formEl);
-      return Rebuy.Cart.addItem(productForm);
-    });
-  });
-};
-var removeAttributesForCartBinding = () => {
-  document.querySelectorAll('[data-action="add-to-cart"]').forEach(btn => {
-    btn.removeAttribute('data-action');
-  });
-};
-var removeCartToggleBinding = () => {
-  var cartToggle = document.querySelector('[data-action="toggle-mini-cart"]');
-  if (cartToggle) {
-    cartToggle.removeAttribute('data-action');
-    cartToggle.removeAttribute('href');
-  }
-  cartToggle.addEventListener('click', () => {
-    var _window$Rebuy;
-    if ((_window$Rebuy = window.Rebuy) !== null && _window$Rebuy !== void 0 && (_window$Rebuy = _window$Rebuy.SmartCart) !== null && _window$Rebuy !== void 0 && _window$Rebuy.show) {
-      var _window$Rebuy2;
-      (_window$Rebuy2 = window.Rebuy) === null || _window$Rebuy2 === void 0 || (_window$Rebuy2 = _window$Rebuy2.SmartCart) === null || _window$Rebuy2 === void 0 ? void 0 : _window$Rebuy2.show();
-    }
-  });
-};
-
-/***/ }),
-
 /***/ "./js/components/registerCustomElements.js":
 /*!*************************************************!*\
   !*** ./js/components/registerCustomElements.js ***!
@@ -926,35 +419,6 @@ var removeCartToggleBinding = () => {
   customElements.define('custom-carousel', JsComponents_custom_carousel__WEBPACK_IMPORTED_MODULE_0__["default"]);
   customElements.define('product-card', JsComponents_product_card__WEBPACK_IMPORTED_MODULE_1__["default"]);
 });
-
-/***/ }),
-
-/***/ "./js/components/utils.js":
-/*!********************************!*\
-  !*** ./js/components/utils.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   IntersectObserver: () => (/* binding */ IntersectObserver)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-
-class IntersectObserver {
-  constructor(callback) {
-    var targets = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "init", () => {
-      var observer = new IntersectionObserver(this.callback, this.options);
-      this.targets.forEach(target => {
-        observer.observe(target);
-      });
-    });
-    this.callback = callback;
-    this.options = options;
-    this.targets = targets;
-  }
-}
 
 /***/ }),
 
@@ -1170,7 +634,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./js/sections/global.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/global.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

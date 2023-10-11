@@ -1,24 +1,32 @@
 <script>
+    import { onMount } from "svelte";
   import ResponsiveImage from "SvelteComponents/responsive-image.svelte";
+  import handleClick from 'JsComponents/handleClick'; //js based handle click
+  import {removeAttributesForCartBinding} from 'JsComponents/rebuy-cart-integration';
+  export let shopifyData;
   export let product;
-
   export let otherData;
+  let ref ;
   const {
     image,
-    variants: [{ compare_at_price: comparePrice, price }],
+    variants = [],
     vendor,
     title,
-    tags,
-    metafields,
-    link,
+    tags = [],
+    metafields = [],
+    handle,
     skipFormatMoney = false,
     discountPercentage: shopifyDiscountPercentage = 0,
-  } = product;
+    enableAddToCart = true
+  } = product || shopifyData || {};
 
+
+
+  const [{ compare_at_price: comparePrice, price , id:variantId} = {}] =  variants || [];
+  const link = `/products/${handle}?variant=${variantId}`;
   let rating = false;
-  
   metafields.forEach((metafield) => {
-    const { namespace, key, value } = metafield;
+    const { namespace, key, value } = metafield || {};
     if (namespace == "okendo" && key == "summaryData") {
       let parsedValue = {};
       if (typeof value == "object") {
@@ -29,7 +37,10 @@
       rating = parsedValue?.reviewAverageValue;
     }
   });
-  const { currencySymbol, soldOutText, chooseMoreText, addToCartText } =
+  const { currencySymbol = "$",
+    soldOutText = "Sold Out",
+    chooseMoreText = "Choose Options",
+    addToCartText = "Add To Cart"} =
     otherData || {};
 
   const bestseller = tags.includes("bestseller");
@@ -46,8 +57,13 @@
     discountPercentage = shopifyDiscountPercentage;
   }
   else {
-    discountPercentage = (comparePrice - price * 100) / price
+    discountPercentage = Math.round(((comparePrice - price) * 100) / price)
   }
+
+  onMount(() => {
+    handleClick(ref);
+    removeAttributesForCartBinding(ref)
+  })
 
 </script>
 
@@ -56,6 +72,7 @@
   data-redirect-click
   data-js-click
   data-url={link}
+  bind:this={ref}
 >
   <div class="product-card__body">
     <div class="product-card__image">
@@ -126,10 +143,10 @@
       </div>
     </div>
     <div class="product-card__atc">
-      <form method="post" action="/cart/add">
+      <form method="post" action="/cart/add" accept-charset="UTF-8" enctype="multipart/form-data">
         <input type="hidden" name="quantity" value="1" />
-        <input type="hidden" name="id" value={product.variants[0].id} />
-        {#if product.variants.size == 1}
+        <input type="hidden" name="id" value={variantId} />
+        {#if variants.length == 1 && enableAddToCart == true}
           <button
             type="submit"
             class="product-item__action-button product-item__action-button--list-view-only button button--small button--primary"
@@ -139,7 +156,7 @@
           </button>
         {:else}
           <a
-            href={product.link}
+            href={link}
             class="product-card__cta product-item__action-button product-item__action-button--list-view-only button button--small button--primary"
             >{chooseMoreText}</a
           >

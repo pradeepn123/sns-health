@@ -19,12 +19,14 @@
     In your liquid template file, copy the following line
     - {% include 'responsive-image' with image: featured_image, image_class: "css-class", wrapper_class: "wrapper-css-class", max_width: 700, max_height: 800 %}
 {%- endcomment -%}
-
-{%- assign default_image_url =  '300x' -%}
+{% if no_lazyload %}
+{%- assign default_image_url =  image | img_url: '1200x'-%}
+{% else %}
+{%- assign default_image_url =  image | img_url: '1x'-%}
+{%endif %}
 {%- assign lazy_image_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 {%- assign noscript_image_url = image | img_url: '2048x2048' -%}
  {% assign image_aspect_ratio = aspect_ratio | default: image.aspect_ratio %}
-
 {% render 'responsive-image',
     max_width: max_width,
     max_height: max_height,
@@ -43,4 +45,5 @@
     fill: fill | default: false,
     background: background | default: false,
     contain: contain | default: false,
+    lazyload: lazyload,
     wrapper_attributes: wrapper_attributes %}

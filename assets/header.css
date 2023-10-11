@@ -903,3 +903,17 @@ body .uwy .uai, body .uwy .uai img {
   width: 45px !important;
   height: 45px !important;
 }
+
+.boost-pfs-search-suggestion-wrapper {
+  width: 260px !important;
+}
+@media (min-width: 375px) {
+  .boost-pfs-search-suggestion-wrapper {
+    width: 300px !important;
+  }
+}
+@media (min-width: 375px) {
+  .boost-pfs-search-suggestion-wrapper {
+    width: 325px !important;
+  }
+}

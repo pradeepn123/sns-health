@@ -1,0 +1,21 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints'; 
+
+.rebuy-widget-content{
+    .primary-title{
+        text-align: left !important;
+        font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 20px));
+        font-weight: var(--heading-font-weight);
+        font-style: var(--heading-font-style);
+        line-height: 1.6;
+        color: #000;
+        @media(--sm){
+            font-size: 32px !important;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+    }
+}

@@ -5,11 +5,15 @@
     background: colors.$red;
     color: currentColor;
     border-radius: 4px;
-    padding: 13px 28px;
+    padding: 13px 14px;
     line-height: 1;
     font-family: 'poppins';
     box-shadow: none;
     outline: 0;
+
+    @media(--xxs) {
+        padding: 13px 28px;
+    }
 
     @include use-text-style('body-regular');
     font-weight: typography.$semi-weight;

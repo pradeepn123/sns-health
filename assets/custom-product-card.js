@@ -2,18 +2,18 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/sections/customer-reviews.js":
-/*!*****************************************!*\
-  !*** ./js/sections/customer-reviews.js ***!
-  \*****************************************/
+/***/ "./js/sections/custom-product-card.js":
+/*!********************************************!*\
+  !*** ./js/sections/custom-product-card.js ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 /* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
-/* harmony import */ var SvelteComponents_customer_reviews_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/customer-reviews.svelte */ "./js/components/svelte/customer-reviews.svelte");
+/* harmony import */ var SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/product-card.svelte */ "./js/components/svelte/product-card.svelte");
 
 
 /* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_customer_reviews_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'customer-reviews', '#customer-reviews-data');
+  return (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'custom-product-card', '#product-json');
 });
 
 /***/ })
@@ -105,7 +105,7 @@
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"customer-reviews": 0
+/******/ 			"custom-product-card": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -155,7 +155,7 @@
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/customer-reviews.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/custom-product-card.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

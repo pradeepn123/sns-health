@@ -1,3 +1,4 @@
+
 {%- if section.settings.show_section -%}
   {%- capture section_settings -%}
   {
@@ -16,25 +17,36 @@
         {%- if template.name == 'search' -%}
           <div class="scroller">
             <div class="scroller__inner">
-              <div class="product-list product-list--vertical product-list--scrollable">
+              <div>
                 {%- comment -%}
                   NOTE: we are doing an inner for loop to preserve the order (from most recently seen to oldest one), as search.results, out of the box,
                   will order by title, which is not really desirable. As the number of recently viewed products is kept small, I think the inner loop
                   should not cause too much performance issue (and is likely faster than fetching using all_products)
                 {%- endcomment -%}
-
+                
                 {%- assign parsed_terms = search.terms | split: ' OR ' -%}
-
+                {% assign product_items = '' %}
                 {%- for parsed_term in parsed_terms -%}
                   {%- assign id = parsed_term | split: 'id:' | last | times: 1 -%}
-
                   {%- for product in search.results -%}
                     {%- if product.id == id -%}
-                      {%- render 'product-card', product: product, grid_classes: '1/4--lap 1/5--desk 1/6--wide', show_add_to_cart: section.settings.show_quick_buy, section: section -%}
+                      {% capture product_data %}
+                      {% if product_items.size > 1 %},{% endif %}
+                      {%- render 'JSON-product-card-data', product: product -%}
+                      {% endcapture %}
+                      {% assign product_items = product_items | append: product_data %}
                       {%- break -%}
                     {%- endif -%}
                   {%- endfor -%}
                 {%- endfor -%}
+
+           <product-carousel data-type="product-carousel">
+                  <script id="product-data" type="text/json">
+                    {
+                      "data": {% render 'JSON-output-product-list-carousel' , product_list: product_items | strip_newlines %}
+                    }
+                  </script>
+                </product-carousel>
               </div>
             </div>
           </div>

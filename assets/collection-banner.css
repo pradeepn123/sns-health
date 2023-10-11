@@ -128,3 +128,6 @@
 .collection-banner .responsive-image__wrapper {
   min-height: 145px;
 }
+.collection-banner .collection-banner__text-wrapper {
+  display: none;
+}

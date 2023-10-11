@@ -2,35 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/components/utils.js":
-/*!********************************!*\
-  !*** ./js/components/utils.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   IntersectObserver: () => (/* binding */ IntersectObserver)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-
-class IntersectObserver {
-  constructor(callback) {
-    var targets = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(this, "init", () => {
-      var observer = new IntersectionObserver(this.callback, this.options);
-      this.targets.forEach(target => {
-        observer.observe(target);
-      });
-    });
-    this.callback = callback;
-    this.options = options;
-    this.targets = targets;
-  }
-}
-
-/***/ }),
-
 /***/ "./js/sections/blog-post.js":
 /*!**********************************!*\
   !*** ./js/sections/blog-post.js ***!
@@ -274,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./js/sections/blog-post.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/blog-post.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

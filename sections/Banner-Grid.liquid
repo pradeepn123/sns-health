@@ -1,5 +1,5 @@
 {{'banner-grid.css' | asset_url | stylesheet_tag }}
-{% include 'liquid-variables' %}
+{% include 'layout-liquid-variables' %}
 <div class="banner-grid banner-grid__wrapper">
         <div class="banner__carousel"> 
           <custom-carousel>
@@ -37,7 +37,7 @@
                     text_wrapper_class: 'banner-grid',
                     inline_heading: inline_heading,
                     desktop_aspect_ratio: banner_desktop_aspect_ratio,
-                    mobile_aspect_ratio: banner_mobile_aspect_ratio,
+                    mobile_aspect_ratio: 1.06,
                     desktop_crop: true,
                     mobile_crop: true,
                     button_type: button_type,

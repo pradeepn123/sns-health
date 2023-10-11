@@ -90,22 +90,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {%- endcomment -%}
     <link rel="preconnect" href="https://cdn.shopify.com">
     <link rel="preconnect" href="https://fonts.shopifycdn.com">
-    <link rel="dns-prefetch" href="https://maps.googleapis.com">
-    <link rel="dns-prefetch" href="https://maps.gstatic.com">
 
     {% render 'social-meta-tags' %}
     {% render 'css-variables' %}
-
-    {{ 'collection-shop-by-brands.css' | asset_url | stylesheet_tag }}
+ {% unless template == 'index' %}
+ {{ 'collection-shop-by-brands.css' | asset_url | stylesheet_tag }} 
+    {{ 'featured-products.css' | asset_url | stylesheet_tag }}
+    {{ 'most-popular-collection.css' | asset_url | stylesheet_tag }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" async></script>      
-
+    <script type="text/javascript" src="https://bcdn.starapps.studio/apps/via/sports-nutrition-source-canada/script-1674239768.js?shop={{shop.permanent_domain}}" async></script>
     <!-- starapps_scripts_start -->
+  {% endunless %}
     <!-- This code is automatically managed by StarApps Studio -->
     <!-- Please contact support@starapps.studio for any help -->
-    {% comment %} <script type="sT_lazyLoad__init" data-src="https://code.jquery.com/jquery-3.3.1.min.js"  async></script>
-    {% render "starapps-product-json", product: product, starapps_app: "VIA", starapps_attribute: "sa-product-json" %} {% endcomment %}
-    <script type="text/javascript" src="https://bcdn.starapps.studio/apps/via/sports-nutrition-source-canada/script-1674239768.js?shop={{shop.permanent_domain}}" async></script>
-<!-- starapps_scripts_end -->
+ <script type="sT_lazyLoad__init" data-src="https://code.jquery.com/jquery-3.3.1.min.js"  async></script>
+    {% render "starapps-product-json", product: product, starapps_app: "VIA", starapps_attribute: "sa-product-json" %}
+
 
     <!-- Shopify app scripts =========================================================== -->
     {%- if request.design_mode or template contains 'cart' or template contains 'checkout' -%}
@@ -200,7 +200,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script type="sT_lazyLoad__init" async>
       (function(d){var s = d.createElement("script");s.setAttribute("data-account", "zP5oVTsQPt");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)
     </script><noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
-  
     <!--begin-boost-pfs-filter-css-->
     {% render 'boost-pfs-style' %}
     <!--end-boost-pfs-filter-css-->
@@ -246,9 +245,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <main id="main" role="main">
       <div class="overlay"> </div>
-     
       {{ content_for_layout }}
-      <limespot></limespot>
     </main>
     {%- if request.page_type == 'blog' or request.page_type == 'article' or request.page_type == 'page' -%}
       {% section 'static-newsletter' %}
@@ -263,12 +260,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </ul>
     
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHPTZZ3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {% comment %} <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHPTZZ3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> {% endcomment %}
     <!-- End Google Tag Manager (noscript) -->
 
     <!--begin-boost-pfs-js-->
+
     {% render 'boost-pfs' %}
     {% render 'product-card-template' %}
+    {{'product-card.css' | asset_url | stylesheet_tag }}
     <!--end-boost-pfs-js-->
     <script type="sT_lazyLoad__init" data-src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
 
@@ -310,6 +309,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
   <script src="{{'vendors.js' | asset_url }}" defer></script>  
   <script src="{{'global.js' | asset_url }}" defer></script>  
+  <script src="{{'shared.js' | asset_url }}" defer></script> 
   <script src="{{'section.js' | asset_url }}" defer></script>  
   <script>
     document.addEventListener('DOMContentLoaded', () => {

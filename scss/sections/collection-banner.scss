@@ -10,6 +10,7 @@
 @custom-selector :--image-wrapper .collection-banner-content__image-wrapper.text-image__image-wrapper;
 @custom-selector :--button .collection-banner__cta.button; 
 @custom-selector :--responsive-img .responsive-image__wrapper; 
+@custom-selector :--show-description .collection-banner__text-wrapper;
 
 .collection-banner {
     margin-top: var(--section-content-margin);
@@ -92,5 +93,9 @@
 
     :--responsive-img{
         min-height: 145px;
+    }
+
+    :--show-description{
+        display: none;
     }
 }

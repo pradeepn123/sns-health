@@ -95,8 +95,9 @@ class CustomCarousel extends HTMLElement {
   
   initCarousel() {
     this.carouselSettings = JSON.parse(this.querySelector('[data-settings]')?.innerHTML || "{}");
-    this.carouselContent = this.querySelector('[data-carousel-content]').innerHTML;
+    this.carouselContent = this.querySelector('[data-carousel-content]')?.innerHTML;
     this.placeholders = this.querySelector('[data-carousel-placeholder]')?.innerHTML;
+    this.navigations = this.querySelector('[data-swiper-navigations]');
     this.currentWidth = window.innerWidth;
     const swiperNavigationElements = `
       <div class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
@@ -112,6 +113,7 @@ class CustomCarousel extends HTMLElement {
       </svg>
     </div>
     `
+    this.carouselContent ?
     this.innerHTML = `<div class="carousel__container swiper hide" data-swiper-container>
     <div class="swiper-wrapper">
     ${this.carouselContent}
@@ -119,6 +121,7 @@ class CustomCarousel extends HTMLElement {
     <div class="swiper-pagination"></div>
     ${this.carouselSettings['customNavigation'] ? '' : swiperNavigationElements}
     ${this.placeholders ? this.placeholders : `<div class="carousel-placeholders"></div>`}`
+    : this.carouselSettings['customNavigation'] ? '' : this.navigations.innerHTML = swiperNavigationElements;
     this.container = this.querySelector('[data-swiper-container]');
      const carouselSettings = this.getCarouselSettings();
       this.swiper = new Swiper(this.container, {
@@ -148,7 +151,7 @@ class CustomCarousel extends HTMLElement {
           },
           afterInit: () => {
               this.querySelector('.carousel__container').classList.remove('hide');
-              this.querySelector('.carousel-placeholders').classList.add('hide');
+              this.querySelector('.carousel-placeholders')?.classList.add('hide');
           }
         },
         modules: [Navigation, Pagination],

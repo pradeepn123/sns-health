@@ -84,3 +84,17 @@
     grid-template-columns: repeat(auto-fill, minmax(0, calc(20% - 4*(var(--grid-column-gap)/5))));
   }
 }
+
+
+@mixin product-grid-collection {
+  @include grid(2, 327px, 327px);
+  row-gap: var(--grid-row-gap-large);
+
+  @media (--sm) {
+    grid-template-columns: repeat(auto-fill, minmax(0, calc(33% - 3*(var(--grid-column-gap)/4))));
+  }
+
+  @media (--md) {
+    grid-template-columns: repeat(auto-fill, minmax(0, calc(25% - 4*(var(--grid-column-gap)/5))));
+  }
+}

@@ -32,6 +32,9 @@ export default () => {
 			AddPromotionAsItemProperty(); //add promotion id as a item property
 			const collectionEl = document.querySelector('[data-section-type="collection"]');
 			handleClick(collectionEl);
+			window.customProductCard();
+			addFormDelegate(); //disable default form behaviour and add dynamic quick view events
+		    addBtnDelegate();
 		}
   }
 }

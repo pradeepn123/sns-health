@@ -12,6 +12,11 @@
           display: none;
         }
       {% endif %}
+      {% if block.settings.checkbox_description == true %}
+        .collection-banner .collection-banner__text-wrapper{
+          display: block;
+        }
+      {% endif %}
   {% endfor %}
 {% endstyle %}
 
@@ -73,6 +78,12 @@
         {
           "type": "header",
           "content": "Block Group"
+        },
+        {
+          "type": "checkbox",
+          "id":  "checkbox_description",
+          "label": "show collection Title and Description ",
+          "default": false
         },
         {
           "type": "image_picker",

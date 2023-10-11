@@ -5,6 +5,9 @@
     {%- assign boost_pfs_is_initfilter = true -%}
   {%- endunless -%}
 {%- endif -%}
+{% if template == "collection.category" %}
+  {%- assign boost_pfs_is_initfilter = false -%}
+{% endif %}
 
 <script >
   /* Declare bcSfFilterConfig variable */
@@ -90,7 +93,11 @@ swatch_settings: {
 {%- if boost_pfs_is_initfilter == true -%}
   <script defer type="text/javascript" src="{{ 'boost-pfs-vendor.js' | asset_url }}"></script>
   <script defer type="text/javascript" src="{{ 'boost-pfs-core.js' | asset_url }}"></script>
+  {% if template == 'collection.json-template' %} 
   <script defer type="text/javascript" src="{{ 'boost-pfs-filter.js' | asset_url }}"></script>
+  {% else %}
+  <script defer type="text/javascript" src="{{ 'boost-pfs-filter-original.js' | asset_url }}"></script>
+{% endif %}
   <script defer type="text/javascript" src="{{ 'boost-pfs-instant-search.js' | asset_url }}"></script>
 {%- else -%}
   <script defer type="text/javascript" src="{{ 'boost-pfs-core-instant-search.js' | asset_url }}"></script>

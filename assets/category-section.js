@@ -2,36 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/components/scroll-on-click.js":
-/*!******************************************!*\
-  !*** ./js/components/scroll-on-click.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   scrollOnClick: () => (/* binding */ scrollOnClick)
-/* harmony export */ });
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollToPlugin */ "./node_modules/gsap/ScrollToPlugin.js");
-
-
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin);
-var scrollOnClick = function scrollOnClick(selector, target) {
-  var _document$querySelect;
-  var offset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  (_document$querySelect = document.querySelectorAll(selector)) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.forEach(item => item.addEventListener('click', ev => {
-    ev.preventDefault();
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(window, 1, {
-      scrollTo: {
-        y: target,
-        offsetY: offset
-      }
-    });
-  }));
-};
-
-/***/ }),
-
 /***/ "./js/sections/category-section.js":
 /*!*****************************************!*\
   !*** ./js/sections/category-section.js ***!
@@ -181,7 +151,7 @@ var scrollOnClick = function scrollOnClick(selector, target) {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors"], () => (__webpack_require__("./js/sections/category-section.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/category-section.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

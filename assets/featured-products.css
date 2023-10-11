@@ -15,6 +15,11 @@
     max-width: calc(1440px - 2 * var(--base-margin));
   }
 }
+.featured-products__content .swiper-wrapper {
+  -webkit-box-align: self-end;
+      -ms-flex-align: self-end;
+          align-items: self-end;
+}
 .featured-products__content--desktop {
   display: none;
 }
@@ -100,7 +105,7 @@
   background: transparent;
 }
 .featured-products .section__heading-wrapper {
-  margin-bottom: var(--section-margin);
+  margin-bottom: 0;
 }
 @media (min-width: 768px) {
   .featured-products .section__heading-wrapper {

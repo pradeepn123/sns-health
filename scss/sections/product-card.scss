@@ -10,13 +10,16 @@ product-card {
   .product-card {
     height: 100%;
   }
+
 }
+
 .product-card {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   justify-content: space-between;
   height:auto;
+  height: 100%;
   text-align: left;
 
   &__image {
@@ -98,6 +101,7 @@ product-card {
     text-align: left;
     font-weight: typography.$semi-weight;
     min-height: 28px;
+    white-space: normal;
     @media(--md) {
       font-size: typography.$body-alt-size;
       min-height: 44px;
@@ -125,4 +129,17 @@ product-card {
     color: colors.$red;
     border: 1px solid colors.$red;
   }
+
+  .scroller__inner{
+    white-space: normal;
+  }
 }
+
+.product-list--custom {
+  @include mixins.product-grid-collection;
+  @include mixins.container;
+  @media(--md) {
+    max-width: 100%;
+  }
+}
+

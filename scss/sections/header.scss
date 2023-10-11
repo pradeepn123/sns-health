@@ -793,3 +793,14 @@ body .uwy .uai, body .uwy .uai img {
     width: 45px !important;
     height: 45px !important;
 }
+
+// search image
+.boost-pfs-search-suggestion-wrapper{
+    width: 260px !important;
+    @media(--xxs){
+        width: 300px !important;
+    }
+    @media(--xxs){
+        width: 325px !important;
+    }
+}

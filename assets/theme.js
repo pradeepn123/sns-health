@@ -15329,9 +15329,7 @@
       }
 
       this.productItemColorSwatch = new ProductItemColorSwatch(this.element);
-
       this._fetchProducts();
-
       this._attachListeners();
     }
 
@@ -15401,35 +15399,13 @@
             _this.element.querySelector('.recently-viewed-products-placeholder').innerHTML = tempElement.querySelector('[data-section-type="recently-viewed-products"] .recently-viewed-products-placeholder').innerHTML; // By default the section hide the products, so we force the section to be visible
 
             _this.element.parentNode.style.display = 'block';
-
             _this.productItemColorSwatch.recalculateSwatches();
 
             if (window.SPR) {
               window.SPR.initDomEls();
               window.SPR.loadBadges();
-            } // Create the slideshow
-
-
-            _this.flickityInstance = new js(_this.element.querySelector('.product-list'), {
-              watchCSS: true,
-              pageDots: false,
-              prevNextButtons: true,
-              contain: true,
-              groupCells: true,
-              cellAlign: 'left',
-              draggable: !window.matchMedia('(-moz-touch-enabled: 0), (hover: hover)').matches
-            }); // If the browser supports ResizeObserver we use it to detect when the size of the items in the carousel change,
-            // and if that's the case we force Flickity to resize
-
-            if (window.ResizeObserver && _this.flickityInstance) {
-              _this.resizeObserver = new ResizeObserver(function () {
-                _this.flickityInstance.resize();
-              });
-
-              _this.element.querySelectorAll('.product-item').forEach(function (item) {
-                _this.resizeObserver.observe(item);
-              });
-            }
+            } 
+            window.productCarousel();
           });
         });
       }
@@ -15562,7 +15538,6 @@
       key: "register",
       value: function register(type, constructor) {
         var _this = this;
-
         this.constructors[type] = constructor;
         document.querySelectorAll("[data-section-type=".concat(type, "]")).forEach(function (container) {
           _this._createInstance(container, constructor);
@@ -18320,8 +18295,8 @@
       sections.register('gift-card', GiftCardSection);
       sections.register('header', HeaderSection);
       sections.register('login', LoginSection);
-      sections.register('map', MapSection);
-      sections.register('minimal-header', MinimalHeaderSection);
+      // sections.register('map', MapSection);
+      // sections.register('minimal-header', MinimalHeaderSection);
       sections.register('popups', PopupsSection);
       sections.register('product-recommendations', ProductRecommendationsSection);
       sections.register('product', ProductSection);

@@ -1,7 +1,7 @@
 import Delegate from 'ftdomdelegate';
 
-export const addFormDelegate = () => {
-    const forms = document.querySelectorAll('[action="/cart/add"]');
+export const addFormDelegate = (dynamicData) => {
+    const forms = dynamicData ? document.querySelectorAll('[action="/cart/add"]') : document.querySelectorAll('[action="/cart/add"]') ;
     forms.forEach(form => {
       const formDelegate = new Delegate(form);
       formDelegate.on('submit', (ev) => {
@@ -11,8 +11,8 @@ export const addFormDelegate = () => {
     })
   }
 
-export const addBtnDelegate = () => {
-    const forms = document.querySelectorAll('[action="/cart/add"]');
+export const addBtnDelegate = (dynamicData) => {
+    const forms = dynamicData ? dynamicData.querySelectorAll('[action="/cart/add"]') : document.querySelectorAll('[action="/cart/add"]') ;
     forms.forEach(form => {
       const btn = form.querySelector('[type="submit"]');
       const btnDelegate = new Delegate(btn);
@@ -26,8 +26,9 @@ export const addBtnDelegate = () => {
     })
   }
 
-export const removeAttributesForCartBinding = () => {
-    document.querySelectorAll('[data-action="add-to-cart"]').forEach(btn => {
+export const removeAttributesForCartBinding = (dynamicData) => {
+  const dataAttributes = dynamicData ? dynamicData.querySelectorAll('[data-action="add-to-cart"]') : document.querySelectorAll('[data-action="add-to-cart"]');
+  dataAttributes.forEach(btn => {
         btn.removeAttribute('data-action');
     })
 }

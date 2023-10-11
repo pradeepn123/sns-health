@@ -10,7 +10,7 @@
   const {
     currencySymbol = "$",
     soldOutText = "Sold Out",
-    chooseMoreText = "Choose Options",
+    chooseMoreText = "See Options",
     addToCartText = "Add To Cart",
     mobileCarousel = false,
     blocks = [],
@@ -111,11 +111,12 @@
           : ""
       }`}
     >
-      {#if productData.length }
+      {#if productData.length > 0  }
         <custom-carousel>
           <div class="custom-carousel__content hide" data-carousel-content>
             {#each productData as product, index}
               {#if product.variants[0].price > 0}
+                <p style="display: none !important">{product.enableAddToCart = false}</p> 
                 <ProductCard {product} {otherData} />
               {/if}
             {/each}

@@ -1,252 +1,185 @@
 {{
   'banner.css' | asset_url | stylesheet_tag
 }}
-{% include 'liquid-variables' %}
+{% assign grid_items = '' %}
+{% assign banner_carousel = '' %}
+{% assign carousel_data = '' %}
+{% include 'layout-liquid-variables' %}
 
-{% assign carousel_exist = false %}
-{% for block in section.blocks %} 
-{% liquid 
- assign is_slider = block.settings.is_carousel_content
-  if is_slider 
-    assign carousel_exist = true
-  endif
-%}  
+{% for block in section.blocks %}
+  {% liquid
+    assign desktop_image = block.settings.image_desktop | default: block.settings.image_mobile
+    assign mobile_image = block.settings.image_mobile | default: block.settings.image_desktop
+  %}
+  {% liquid
+    assign id = block.id
+    assign color = block.settings.color
+    assign eyebrow = block.settings.eyebrow
+    assign heading = block.settings.heading
+    assign subheading = block.settings.subheading
+    assign cta_text = block.settings.cta_text
+    assign cta_url = block.settings.cta_url
+    assign is_slider = block.settings.is_carousel_content | default: false
+    assign image_desktop = desktop_image
+    assign image_mobile = mobile_image
+    assign inline_heading = block.settings.inline_heading
+    assign promotion = block.settings.promotion
+    assign promotion_name = block.settings.promotion_name
+    assign promotion_creative_name = block.settings.promotion_creative_name
+  %}
+  {% capture content_div %}
+    {% render 'image-with-text-overlay', 
+      wrapper_class: "banner-content"
+      id: id,
+      color: color,
+      eyebrow: eyebrow,
+      heading: heading, 
+      subheading: subheading, 
+      cta_text: cta_text, 
+      cta_url: cta_url, 
+      image_desktop: image_desktop,
+      image_mobile: image_mobile,
+      text_wrapper_class: 'banner',
+      inline_heading: inline_heading,
+      desktop_aspect_ratio: banner_desktop_aspect_ratio,
+      mobile_aspect_ratio: banner_mobile_aspect_ratio,
+      fill: true,
+      promotion: promotion,
+      lazyload: "false",
+      promotion_name: promotion_name,
+      promotion_creative_name: promotion_creative_name,
+      no_lazyload: true
+    %} 
+  {% endcapture %}
+
+  {% capture slide_data %}
+  {% unless carousel_data.size > 0 %}::carousel_item{% endunless %}
+      <div class="swiper-slide">
+        {{ content_div }}
+      </div>
+  {% endcapture %}
+  {% assign carousel_data = carousel_data | append: slide_data %}
+  {% if is_slider %}
+    {% assign banner_carousel = banner_carousel | append: slide_data %}
+  {% else %}
+    {% assign grid_items = grid_items | append: content_div %}
+  {% endif %}
 {% endfor %}
 
+{% comment %} carousel_data is array of items that has carousel selected  {% endcomment %}
+{% comment %} grid_items is array of items except for carousel_data elements {% endcomment %}
 <div class="banner banner--desktop">
   <div class="banner__content">
-    {% if carousel_exist %}
-      <div class="banner__carousel banner__item"> 
-        <custom-carousel>
-          <div class="custom-carousel__content hide" data-carousel-content>
-            {% for block in section.blocks %} 
-            {% liquid 
-            assign desktop_image = block.settings.image_desktop | default: block.settings.image_mobile
-            %}
-            {% liquid 
-              assign id = block.id
-              assign color = block.settings.color
-              assign eyebrow = block.settings.eyebrow
-              assign heading = block.settings.heading
-              assign subheading = block.settings.subheading
-              assign cta_text = block.settings.cta_text
-              assign cta_url = block.settings.cta_url
-              assign is_slider = block.settings.is_carousel_content
-              assign image_desktop = desktop_image
-              assign inline_heading = block.settings.inline_heading
-              assign promotion = block.settings.promotion
-              assign promotion_name = block.settings.promotion_name
-              assign promotion_creative_name = block.settings.promotion_creative_name
-            %}  
-              {% if is_slider %}
-                <div class="swiper-slide">
-                {% render 'image-with-text-overlay', 
-                  wrapper_class: "banner-content"
-                  id: id,
-                  color: color,
-                  eyebrow: eyebrow,
-                  heading: heading, 
-                  subheading: subheading, 
-                  cta_text: cta_text, 
-                  cta_url: cta_url, 
-                  image_desktop: image_desktop,
-                  text_wrapper_class: 'banner',
-                  inline_heading: inline_heading,
-                  desktop_aspect_ratio: banner_desktop_aspect_ratio,
-                  fill: true,
-                  promotion: promotion,
-                  promotion_name: promotion_name,
-                  promotion_creative_name: promotion_creative_name
-                  %}
-                </div>
-                {% endif %}
-            {% endfor %}
-          </div>
-          <div class="carousel-placeholders"></div>
-            <script type="text/json" data-settings>
-              {
-                "slidesPerView": 1,
-                "spaceBetween": 15,
-                "autoplay": {
-                  "delay": 3000
-                },
-                "breakpoints": {
-                  "320": {
-                    "pagination": true
-                  },
-                  "768": {
-                    "spaceBetween": 20,
-                    "pagination": true
-                  },
-                  "1024": {
-                    "navigation": true,
-                    "pagination": true
-                  }
-                }
+    <div class="banner__carousel banner__item">
+      <custom-carousel>
+        {% render 'custom-carousel', slider_content: banner_carousel %}
+        <script type="text/json" data-settings>
+          {
+            "slidesPerView": 1,
+            "spaceBetween": 15,
+            "autoplay": {
+              "delay": 3000
+            },
+            "breakpoints": {
+              "320": {
+                "pagination": true
+              },
+              "768": {
+                "spaceBetween": 20,
+                "pagination": true
+              },
+              "1024": {
+                "navigation": true,
+                "pagination": true
               }
-            </script>
-          </custom-carousel>
-      </div>
-    {% endif%}
-
-     {% for block in section.blocks %} 
-      {% liquid 
-        assign id = block.id
-        assign color = block.settings.color
-        assign eyebrow = block.settings.eyebrow
-        assign heading = block.settings.heading
-        assign subheading = block.settings.subheading
-        assign cta_text = block.settings.cta_text
-        assign cta_url = block.settings.cta_url
-        assign is_slider = block.settings.is_carousel_content
-        assign image_desktop = block.settings.image_desktop
-        assign image_mobile = block.settings.image_mobile
-        assign inline_heading = block.settings.inline_heading
-        assign promotion = block.settings.promotion
-        assign promotion_name = block.settings.promotion_name
-        assign promotion_creative_name = block.settings.promotion_creative_name
-      %}     
-        {% unless is_slider %}
-          {% render 'image-with-text-overlay', 
-            id: id,
-            color: color,
-            eyebrow: eyebrow,
-            heading: heading, 
-            subheading: subheading, 
-            cta_text: cta_text, 
-            cta_url: cta_url, 
-            image_desktop: image_desktop,
-            image_mobile: image_mobile,
-            wrapper_class: 'banner__item',
-            text_wrapper_class: 'banner',
-            inline_heading: inline_heading,
-            desktop_aspect_ratio: 1.9,
-            mobile_aspect_ratio: 1.9,
-            fill: true,
-            promotion: promotion,
-            promotion_name: promotion_name,
-            promotion_creative_name: promotion_creative_name
-            %}
-        {% endunless %}
-     {% endfor %}
+            }
+          }
+        </script>
+      </custom-carousel>
+    </div>
+    {% for grid_item in grid_items %}
+      {{ grid_item }}
+    {% endfor %}
   </div>
 </div>
-
 <div class="banner banner--mobile">
   <div class="banner__content">
-    <div class="banner__carousel banner__item"> 
-        <custom-carousel>
-          <div class="custom-carousel__content hide" data-carousel-content>
-            {% for block in section.blocks %} 
-            {% liquid 
-              assign mobile_image = block.settings.image_mobile | default: block.settings.image_desktop
-              %}
-            {% liquid 
-              assign id = block.id
-              assign color = block.settings.color
-              assign eyebrow = block.settings.eyebrow
-              assign heading = block.settings.heading
-              assign subheading = block.settings.subheading
-              assign cta_text = block.settings.cta_text
-              assign cta_url = block.settings.cta_url
-              assign is_slider = block.settings.is_carousel_content
-              assign image_mobile = mobile_image
-              assign inline_heading = block.settings.inline_heading
-              assign promotion = block.settings.promotion
-              assign promotion_name = block.settings.promotion_name
-              assign promotion_creative_name = block.settings.promotion_creative_name
-            %}  
-              <div class="swiper-slide">
-                {% render 'image-with-text-overlay', 
-                  wrapper_class: "banner-content"
-                  id: id,
-                  color: color,
-                  eyebrow: eyebrow,
-                  heading: heading, 
-                  subheading: subheading, 
-                  cta_text: cta_text, 
-                  cta_url: cta_url, 
-                  image_mobile: mobile_image,
-                  text_wrapper_class: 'banner',
-                  inline_heading: inline_heading,
-                  mobile_aspect_ratio: 1.9,
-                  fill: true,
-                  promotion: promotion,
-                  promotion_name: promotion_name,
-                  promotion_creative_name: promotion_creative_name
-                  %}
-                </div>
-            {% endfor %}
-          </div>
-          <div class="carousel-placeholders"></div>
-            <script type="text/json" data-settings>
-              {
-                "slidesPerView": 1,
-                "spaceBetween": 15,
-                "autoplay": {
-                  "delay": 3000
-                },
-                "breakpoints": {
-                  "320": {
-                    "pagination": true
-                  },
-                  "768": {
-                    "spaceBetween": 20,
-                    "navigation": true,
-                    "pagination": true
-                  }
-                }
+    <div class="banner__carousel banner__item">
+      <custom-carousel>
+        {% render 'custom-carousel', slider_content: carousel_data %}
+        <script type="text/json" data-settings>
+          {
+            "slidesPerView": 1,
+            "spaceBetween": 15,
+            "autoplay": {
+              "delay": 3000
+            },
+            "breakpoints": {
+              "320": {
+                "pagination": true
+              },
+              "768": {
+                "spaceBetween": 20,
+                "pagination": true
+              },
+              "1024": {
+                "navigation": true,
+                "pagination": true
               }
-            </script>
-          </custom-carousel>
-      </div>
+            }
+          }
+        </script>
+      </custom-carousel>
+    </div>
   </div>
 </div>
 
-{% schema %}
- {
-   "name": "Banner",
-   "settings": [],
-   "blocks": [
-    {
-     "type": "image_with_text_overlay",
-     "name": "Image with text overlay",
-     "settings": [
-      {
-        "type": "header",
-        "content": "Promotion Config"
-      },
-      {
-        "type": "checkbox",
-        "id": "promotion",
-        "label": "Is Promotion ?",
-        "default": false
-      },
-      {
-        "type": "text",
-        "id": "promotion_name",
-        "label": "Promotion Name"
-      },
-      {
-        "type": "text",
-        "id": "promotion_creative_name",
-        "label": "Creative Name"
-      },
-      {
-        "type": "header",
-        "content": "Block Group"
-      },
-      {
-        "type": "checkbox",
-        "id": "is_carousel_content",
-        "label": "Is Carousel Content ?",
-        "default": false
-      },
+{% comment %} we need everything on mobile as a single slider {% endcomment %}
 
-      {
-        "type": "header",
-        "content": "Block Contents"
-      },
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image_with_text_overlay",
+      "name": "Image with text overlay",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Promotion Config"
+        },
+        {
+          "type": "checkbox",
+          "id": "promotion",
+          "label": "Is Promotion ?",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "promotion_name",
+          "label": "Promotion Name"
+        },
+        {
+          "type": "text",
+          "id": "promotion_creative_name",
+          "label": "Creative Name"
+        },
+        {
+          "type": "header",
+          "content": "Block Group"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_carousel_content",
+          "label": "Is Carousel Content ?",
+          "default": false
+        },
+
+        {
+          "type": "header",
+          "content": "Block Contents"
+        },
         {
           "type": "image_picker",
           "id": "image_desktop",
@@ -262,16 +195,13 @@
           "id": "cta_url",
           "label": "Url"
         }
-     ]
+      ]
     }
-   ],
-   "presets": [
+  ],
+  "presets": [
     {
       "name": "Banner"
     }
-   ]
- }
-
+  ]
+}
 {% endschema %}
-
-

@@ -109,6 +109,7 @@
     content: '';
     width: 100%;
     object-fit: cover;
+    {% comment %} background: transparent; {% endcomment %}
     display: block;
     padding-top:{{ max_height_image | divided_by: max_width_image_float | times: 100}}%;
   }
@@ -131,7 +132,7 @@
   <img id="Image-{{ image_id }}-{{ generated_image_id }}"
     class="responsive-image__image lazyload {{ image_class }}"
     src="{{ default_image_url }}"
-    srcset="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/u3zfwAJrQPhbkYXzAAAAABJRU5ErkJggg=="
+    srcset="{{default_image_url}}"
     data-src="{{ lazy_image_url }}"
     data-widths="[{{ image_widths }}]"
     data-aspectratio="{{ image_aspect_ratio }}"
