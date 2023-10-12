@@ -35,7 +35,8 @@
                                     src="{{ collection.metafields.custom.collection_hero_section.value.hero_logo | img_url : 'master' }}"
                                     style="{% unless collection.metafields.custom.collection_hero_section.value.description %}margin-bottom: 0{% endunless %}"
                                 >
-                            </div>
+                           </div>
+                           <h1 class="title-hide">{{collection.title}}</h1> 
                             {% endif %}
                             <div class="collection__header-inner">
                                 <div class="collection__meta">
@@ -43,8 +44,8 @@
                                         {{collection.title}}
                                     </h3>
                                     <div class="collection__meta-inner">
-                                        <h1 class="boost-pfs-filter-collection-header brand_collection_title collection__title heading h1">
-                                            {{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}
+                                        <h1 class="boost-pfs-filter-collection-header brand_collection_title collection__title heading h1 ssss">
+                                            <p>{{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}<p>
                                         </h1>
                                     </div>
                                 </div>

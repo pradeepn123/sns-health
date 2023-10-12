@@ -4,7 +4,7 @@
 <div class="text-wrap {{ wrapper_class }}__wrapper-container">
       
     <div>  
-        {% if heading != blank %}
+        {% if heading != blank and description != blank%}
             <p class="text-wrap__heading {{ wrapper_class }}__heading">{{ heading }}</p>
         {% endif %} 
     </div>
