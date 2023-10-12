@@ -149,14 +149,6 @@
 .health-condition-section .health-condition-section__text.text__container {
   max-width: 100%;
 }
-.health-condition-section .section__heading-wrapper {
-  margin-bottom: var(--section-margin);
-}
-@media (min-width: 768px) {
-  .health-condition-section .section__heading-wrapper {
-    margin-bottom: calc(2 * var(--section-margin));
-  }
-}
 .health-condition-section .carousel-placeholders {
   height: 75px;
   display: grid;

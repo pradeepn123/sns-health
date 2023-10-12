@@ -140,14 +140,6 @@
 .blog-page-list-section .blog-page-list-section__text.text__container {
   max-width: 100%;
 }
-.blog-page-list-section .section__heading-wrapper {
-  margin-bottom: var(--section-margin);
-}
-@media (min-width: 768px) {
-  .blog-page-list-section .section__heading-wrapper {
-    margin-bottom: calc(2 * var(--section-margin));
-  }
-}
 .blog-page-list-section .blog-page-list-section__icon-text.icon-text {
   border-radius: 4px;
   color: #ED1C24;

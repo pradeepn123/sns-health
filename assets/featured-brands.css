@@ -54,14 +54,6 @@
     display: none;
   }
 }
-.featured-brand-section .section__heading-wrapper {
-  margin-bottom: var(--section-margin);
-}
-@media (min-width: 768px) {
-  .featured-brand-section .section__heading-wrapper {
-    margin-bottom: calc(2 * var(--section-margin));
-  }
-}
 .featured-brand-section .carousel-placeholders {
   height: 75px;
   display: grid;

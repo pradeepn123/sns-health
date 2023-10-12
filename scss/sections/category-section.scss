@@ -7,7 +7,6 @@
 @custom-selector :--text .category-section__eyebrow.text__eyebrow;
 @custom-selector :--icon-text .category-section__icon-text.icon-text;
 @custom-selector :--icon .icon__container.category-section__icon;
-@custom-selector :--heading-wrap .section__heading-wrapper;
 
 .category-section {
   margin-top: var(--section-margin);
@@ -51,13 +50,6 @@
   :--text {
     @media (--md) {
       margin-top: 8px;
-    }
-  }
-
-  :--heading-wrap{
-    margin-bottom: var(--section-margin);
-    @media(--sm){
-      margin-bottom: calc(2*var(--section-margin));
     }
   }
 

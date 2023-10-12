@@ -55,6 +55,12 @@
     max-width: calc(1440px - 2 * var(--base-margin));
   }
 }
+@media (min-width: 768px) {
+  .section__heading-wrapper {
+    margin-bottom: calc(2 * 20px);
+    margin-bottom: calc(2 * var(--section-margin));
+  }
+}
 .section__heading {
   font-family: "poppins";
   font-size: 20px;

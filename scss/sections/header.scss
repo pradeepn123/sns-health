@@ -775,6 +775,11 @@ body .uwy .uai {
     }
 }
 
+.wrapper-amount{
+    display: flex;
+    flex-direction: column;
+}
+
 .blog-post-section__wrapper .swiper-navigation{
     z-index: 2;
 }

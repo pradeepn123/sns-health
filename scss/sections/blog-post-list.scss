@@ -8,7 +8,6 @@
 
 @custom-selector :--text .blog-page-list-section__eyebrow.text__eyebrow;
 @custom-selector :--text-wrapper .blog-page-list-section__text.text__container;
-@custom-selector :--heading-wrap .section__heading-wrapper;
 @custom-selector :--icon-text .blog-page-list-section__icon-text.icon-text;
 @custom-selector :--icon .icon__container.blog-page-list-section__icon;
 @custom-selector :--cta .button.blog-page-list-section__cta;
@@ -111,13 +110,6 @@
   }
   :--text-wrapper  {
     max-width: 100%;
-  }
-
-  :--heading-wrap{
-    margin-bottom: var(--section-margin);
-    @media(--sm){
-      margin-bottom: calc(2*var(--section-margin));
-    }
   }
 
   :--icon-text{
