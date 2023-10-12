@@ -1,174 +1,140 @@
-
-{{'banner-product.css' | asset_url | stylesheet_tag }}
+{{ 'banner-product.css' | asset_url | stylesheet_tag }}
 <div class="banner-product  product-card-wrapper">
+  {% for block in section.blocks %}
     <div class="banner-product__content">
-      {% assign mobile_carousel = section.settings.mobile_carousel%}
-            {% for block in section.blocks %}
-              {% liquid 
-                assign desktop_image = block.settings.image_desktop | default: block.settings.image_mobile
-                assign mobile_image = block.settings.image_mobile | default: block.settings.image_desktop
-                %}
-             {% if block.type == "image_with_text_overlay" %}
-              {% liquid 
-                assign id = block.id
-                assign color = block.settings.color
-                assign eyebrow = block.settings.eyebrow
-                assign heading = block.settings.heading
-                assign subheading = block.settings.subheading
-                assign cta_text = block.settings.cta_text
-                assign cta_url = block.settings.cta_url
-                assign is_slider = block.settings.is_carousel_content
-                assign image_desktop = desktop_image
-                assign image_mobile = mobile_image
-                assign inline_heading = block.settings.inline_heading
-                assign button_type = 'outline'
-                assign button_background_type = 'transparent'
-              %}  
-                  {% render 'image-with-text-overlay', 
-                    wrapper_class: "sidebar-banner-content",
-                    id: id,
-                    color: color,
-                    eyebrow: eyebrow,
-                    heading: heading, 
-                    subheading: subheading, 
-                    cta_text: cta_text, 
-                    cta_url: cta_url, 
-                    image_desktop: image_desktop,
-                    image_mobile: image_mobile,
-                    text_wrapper_class: 'sidebar-banner',
-                    inline_heading: inline_heading,
-                    mobile_aspect_ratio: 1.94,
-                    desktop_aspect_ratio: 1.15,
-                    desktop_crop: true,
-                    mobile_crop: true,
-                    button_type: button_type,
-                    button_background_type: button_background_type
-                    %}
+      {% assign mobile_carousel = block.settings.mobile_carousel %}
+      {% liquid
+        assign desktop_image = block.settings.image_desktop | default: block.settings.image_mobile
+        assign mobile_image = block.settings.image_mobile | default: block.settings.image_desktop
+        assign id = block.id
+        assign color = block.settings.color
+        assign eyebrow = block.settings.eyebrow
+        assign heading = block.settings.heading
+        assign subheading = block.settings.subheading
+        assign cta_text = block.settings.cta_text
+        assign cta_url = block.settings.cta_url
+        assign image_desktop = desktop_image
+        assign image_mobile = mobile_image
+        assign button_type = 'outline'
+        assign button_background_type = 'transparent'
+        assign collection = block.settings.collection
+      %}
 
-                {% endif %}
-
-                {% if block.type == "featured_products" %} 
-                <div class="banner-product__products-wrapper">
-                    {% assign collection = block.settings.collection %}
-                      <div class="banner-product__products-content banner-product__products-content--desktop {% if mobile_carousel %}banner-product__products-content--show-mobile{% endif %}"> 
-                      <custom-carousel>
-                        <div class="custom-carousel__content hide" data-carousel-content>
-                        {% for product in collection.products %} 
-                        {% if product.available %}  
-                        <div class="swiper-slide">
-                         {% render 'custom-product-card',
-                          product:product
-                         %}
-                        </div>
-                      {% endif %}
-                        {% endfor %}
-                      </div>
-                      <div class="carousel-placeholders" >
-                        <div class="carousel-place" >
-                          <div></div>
-                          <div></div>
-                          <div></div>
-                        </div>
-                      </div>
-                        <script type="text/json" data-settings>
-                            {
-                              "slidesPerView": 2,
-                              "spaceBetween": 10,
-                              "progressPagination": true,
-                              "overflowNagivation": true,
-                              "pagination": true,
-                              "breakpoints": {
-                               "768": {
-                                "pagination": false,
-                                "navigation": true,
-                                "slidesPerView": 2.1,
-                                "spaceBetween": 20
-                               },
-                               "1200": {
-                                  "pagination": false,
-                                  "navigation": true,
-                                  "slidesPerView": 4,
-                                  "spaceBetween": 27
-                                }
-                              }
-                            }
-                          </script>
-                    </custom-carousel>
-                      </div>
-                      {% unless mobile_carousel %}
-                      <div class="banner-product__products-content  banner-product__products-content--mobile {% if mobile_carousel %}banner-product__products-content--hide{% endif %}">
-                        {% assign limit  = 4 %}
-                        {% assign count = 0 %}
-                        {% for product in collection.products %} 
-                        {% if count >= limit %} {% break %} {% endif %}
-                        {% if product.available %}  
-                        {% assign count = count | plus: 1 %}
-                          {% render 'custom-product-card', product: product %}
-                      {% endif %}
-                        {% endfor %}
-                      </div>
-                    {% endunless %}
-              </div>
+      {% render 'image-with-text-overlay',
+        wrapper_class: 'sidebar-banner-content',
+        id: id,
+        color: color,
+        eyebrow: eyebrow,
+        heading: heading,
+        subheading: subheading,
+        cta_text: cta_text,
+        cta_url: cta_url,
+        image_desktop: image_desktop,
+        image_mobile: image_mobile,
+        text_wrapper_class: 'sidebar-banner',
+        inline_heading: inline_heading,
+        mobile_aspect_ratio: 1.94,
+        desktop_aspect_ratio: 1.15,
+        desktop_crop: true,
+        mobile_crop: true,
+        button_type: button_type,
+        button_background_type: button_background_type
+      %}
+      <div class="banner-product__products-wrapper">
+        <div class="banner-product__products-content banner-product__products-content--desktop {% if mobile_carousel %}banner-product__products-content--show-mobile{% endif %}">
+          <custom-carousel>
+            <div class="custom-carousel__content hide" data-carousel-content>
+              {% for product in collection.products %}
+                {% if product.available %}
+                  <div class="swiper-slide">
+                    {% render 'custom-product-card', product: product %}
+                  </div>
                 {% endif %}
               {% endfor %}
-    
-
-
-  
+            </div>
+            <div class="carousel-placeholders">
+              <div class="carousel-place">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+            <script type="text/json" data-settings>
+              {
+                "slidesPerView": 2,
+                "spaceBetween": 10,
+                "progressPagination": true,
+                "overflowNagivation": true,
+                "pagination": true,
+                "breakpoints": {
+                  "768": {
+                    "pagination": false,
+                    "navigation": true,
+                    "slidesPerView": 2.1,
+                    "spaceBetween": 20
+                  },
+                  "1200": {
+                    "pagination": false,
+                    "navigation": true,
+                    "slidesPerView": 4,
+                    "spaceBetween": 27
+                  }
+                }
+              }
+            </script>
+          </custom-carousel>
+        </div>
+        {% unless mobile_carousel %}
+          <div class="banner-product__products-content  banner-product__products-content--mobile {% if mobile_carousel %}banner-product__products-content--hide{% endif %}">
+            {% assign limit = 4 %}
+            {% assign count = 0 %}
+            {% for product in collection.products %}
+              {% if count >= limit %} {% break %} {% endif %}
+              {% if product.available %}
+                {% assign count = count | plus: 1 %}
+                {% render 'custom-product-card', product: product %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endunless %}
+      </div>
     </div>
-  </div>
+  {% endfor %}
+</div>
 
 {% schema %}
- {
-   "name": "banner-product",
-   "settings": [
+{
+  "name": "banner-product",
+  "settings": [],
+  "blocks": [
     {
-      "type": "checkbox",
-      "id": "mobile_carousel",
-      "label": "Carousel in mobile ?",
-      "default": true
-    }
-   ],
-   "blocks": [
-    {
-     "type": "image_with_text_overlay",
-     "name": "Image with text overlay",
-     "settings": [
-      {
-        "type": "header",
-        "content": "Block Group"
-      },
-      {
-        "type": "checkbox",
-        "id": "is_carousel_content",
-        "label": "Is Carousel Content ?",
-        "default": false
-      },
-
-      {
-        "type": "header",
-        "content": "Block Contents"
-      },
+      "type": "content",
+      "name": "Block Content",
+      "settings": [
         {
           "type": "checkbox",
-          "id": "show_logo",
-          "label": "Show Logo ?",
-          "default": false
+          "id": "mobile_carousel",
+          "label": "Carousel in mobile ?",
+          "default": true
         },
         {
-            "type": "color",
-            "id": "text_color",
-            "label": "Text color"
+          "type": "header",
+          "content": "Text Content"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color"
         },
         {
           "type": "image_picker",
           "id": "image_desktop",
-          "label": "Image"
+          "label": "Image Desktop"
         },
         {
           "type": "image_picker",
           "id": "image_mobile",
-          "label": "Image"
+          "label": "Image Mobile"
         },
         {
           "type": "text",
@@ -177,49 +143,40 @@
         },
         {
           "type": "text",
-          "id":  "heading",
+          "id": "heading",
           "label": "Heading"
         },
         {
-          "type": "checkbox",
-          "id":  "inline_heading",
-          "label": "Inline Heading ?",
-          "default": false
-        },
-        {
           "type": "text",
-          "id":  "subheading",
+          "id": "subheading",
           "label": "Subheading"
         },
         {
           "type": "text",
-          "id":  "cta_text",
+          "id": "cta_text",
           "label": "CTA Text"
         },
         {
           "type": "url",
-          "id":  "cta_url",
+          "id": "cta_url",
           "label": "CTA url"
-        }
-     ]
-    },
-    {
-      "type": "featured_products",
-      "name": "Products",
-      "settings": [
+        },
+        {
+          "type": "header",
+          "content": "Collection"
+        },
         {
           "type": "collection",
           "id": "collection",
           "label": "Collection"
         }
-       ]
+      ]
     }
-   ],
-   "presets": [
+  ],
+  "presets": [
     {
       "name": "banner-product"
     }
-   ]
- }
-
+  ]
+}
 {% endschema %}

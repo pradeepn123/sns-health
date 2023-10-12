@@ -307,20 +307,20 @@
         "product": ""
       }
     },
-    "30ffe3c1-cb69-47ad-80ca-ba8f0d77b60d": {
-      "type": "banner-featured-products",
+    "582430d3-1ee9-4b85-803f-3cbc7739f17b": {
+      "type": "banner-product",
       "blocks": {
-        "9a3a2e0c-ee44-4a1b-8ad1-350291729d0a": {
-          "type": "featured_products",
+        "796853a6-a412-4e08-9eab-c1e4b97572d4": {
+          "type": "content",
           "repeater": "{{ collection.metafields.custom.featured_collection_banner.value }}",
           "settings": {
+            "mobile_carousel": true,
             "text_color": "{{ block.repeater.text_color.value }}",
             "image_desktop": "{{ block.repeater.image_desktop.value }}",
             "image_mobile": "{{ block.repeater.image_mobile.value }}",
             "eyebrow": "{{ block.repeater.eyebrow.value }}",
-            "heading": "{{ block.repeater.heading.value }}",
-            "inline_heading": false,
-            "subheading": "{{ block.repeater.subheading.value }}",
+            "heading": "{{ block.repeater.subheading.value }}",
+            "subheading": "{{ block.repeater.heading.value }}",
             "cta_text": "{{ block.repeater.cta_text.value }}",
             "cta_url": "{{ block.repeater.cta_url.value }}",
             "collection": "{{ block.repeater.collection.value }}"
@@ -328,7 +328,7 @@
         }
       },
       "block_order": [
-        "9a3a2e0c-ee44-4a1b-8ad1-350291729d0a"
+        "796853a6-a412-4e08-9eab-c1e4b97572d4"
       ],
       "settings": {
       }
@@ -393,7 +393,7 @@
     "3af0aaa2-14cc-4a5e-8504-f066a0f54533",
     "7a0d2423-3835-49cd-87bf-aa13d0fda0c5",
     "f3d74430-460e-4688-b34a-3a14c78bfaaa",
-    "30ffe3c1-cb69-47ad-80ca-ba8f0d77b60d",
+    "582430d3-1ee9-4b85-803f-3cbc7739f17b",
     "c06c2ac2-8a0a-4934-a3e8-9034e4ec8551",
     "398fa20a-99f7-4200-ac45-f9ca3cd7d4b9",
     "23b87dc9-f589-4450-93db-c6892bbe59ff"

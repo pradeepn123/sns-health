@@ -1626,70 +1626,6 @@
           "collection": "all-products"
         }
       },
-      "740c29e7-a4b5-462e-97a4-67700b6fd2e7": {
-        "type": "banner-product",
-        "blocks": {
-          "a09499ba-b8eb-4925-910b-9a78787dc18e": {
-            "type": "image_with_text_overlay",
-            "settings": {
-              "is_carousel_content": false,
-              "show_logo": false,
-              "text_color": "",
-              "image_desktop": "shopify:\/\/shop_images\/baner-product.jpg",
-              "eyebrow": "Popular in",
-              "heading": "Vitamins & <br> Supplements",
-              "inline_heading": false,
-              "subheading": "",
-              "cta_text": "Shop",
-              "cta_url": "#"
-            }
-          },
-          "93f70bd8-2553-4ff0-a4e5-6de297d8c9fb": {
-            "type": "featured_products",
-            "settings": {
-              "collection": "49th-parallel-coffee-roasters"
-            }
-          }
-        },
-        "block_order": [
-          "a09499ba-b8eb-4925-910b-9a78787dc18e",
-          "93f70bd8-2553-4ff0-a4e5-6de297d8c9fb"
-        ],
-        "settings": {
-        }
-      },
-      "56ecedde-e3f2-4a8c-8643-e00c72e3c291": {
-        "type": "banner-product",
-        "blocks": {
-          "95f284ed-96e6-416d-894c-d70493b3bf25": {
-            "type": "image_with_text_overlay",
-            "settings": {
-              "is_carousel_content": false,
-              "show_logo": false,
-              "text_color": "",
-              "image_desktop": "shopify:\/\/shop_images\/banner-image-2.jpg",
-              "eyebrow": "Popular in",
-              "heading": "Sports Nutrition",
-              "inline_heading": false,
-              "subheading": "",
-              "cta_text": "Shop",
-              "cta_url": "#"
-            }
-          },
-          "1b4caa03-125f-44da-8296-256d97a34fe6": {
-            "type": "featured_products",
-            "settings": {
-              "collection": "all-in-one-shakes"
-            }
-          }
-        },
-        "block_order": [
-          "95f284ed-96e6-416d-894c-d70493b3bf25",
-          "1b4caa03-125f-44da-8296-256d97a34fe6"
-        ],
-        "settings": {
-        }
-      },
       "33b84d2a-cb32-4ec5-83b4-b10a81471d7e": {
         "type": "banner-carousel-grid",
         "blocks": {
@@ -1823,8 +1759,6 @@
       "65868ffb-1036-425b-a0dc-ebc8bcff334b",
       "932e9d3c-0311-4a00-af68-f2426cae7d02",
       "bdf697cd-fd45-40c5-b148-1b64a6b26e13",
-      "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
-      "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
       "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
       "477d4363-8c6d-473a-a8d7-911093ed1f81",
       "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",

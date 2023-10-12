@@ -611,38 +611,28 @@
         "heading": ""
       }
     },
-    "56ecedde-e3f2-4a8c-8643-e00c72e3c291": {
+    "502f21dc-a665-422e-8800-406228075385": {
       "type": "banner-product",
       "blocks": {
-        "95f284ed-96e6-416d-894c-d70493b3bf25": {
-          "type": "image_with_text_overlay",
+        "fa509466-9d60-4bd2-93ed-e0cabcf9d28d": {
+          "type": "content",
           "settings": {
-            "is_carousel_content": false,
-            "show_logo": false,
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/image_100_2.png",
             "image_mobile": "shopify:\/\/shop_images\/Frame-8346.jpg",
             "eyebrow": "Trending in",
             "heading": "Sports Nutrition",
-            "inline_heading": false,
             "subheading": "",
             "cta_text": "Shop All",
-            "cta_url": "shopify:\/\/collections\/sports-nutrition"
-          }
-        },
-        "1b4caa03-125f-44da-8296-256d97a34fe6": {
-          "type": "featured_products",
-          "settings": {
+            "cta_url": "shopify:\/\/collections\/sports-nutrition",
             "collection": "sports-nutrition"
           }
         }
       },
       "block_order": [
-        "95f284ed-96e6-416d-894c-d70493b3bf25",
-        "1b4caa03-125f-44da-8296-256d97a34fe6"
+        "fa509466-9d60-4bd2-93ed-e0cabcf9d28d"
       ],
       "settings": {
-        "mobile_carousel": false
       }
     },
     "22c01918-3750-4804-952d-ffa0b068b2b4": {
@@ -650,38 +640,28 @@
       "settings": {
       }
     },
-    "740c29e7-a4b5-462e-97a4-67700b6fd2e7": {
+    "5043144c-a30c-45ba-b572-67c71a78f3d5": {
       "type": "banner-product",
       "blocks": {
-        "a09499ba-b8eb-4925-910b-9a78787dc18e": {
-          "type": "image_with_text_overlay",
+        "0e0a1794-1825-4247-99ca-4a84de15d6c9": {
+          "type": "content",
           "settings": {
-            "is_carousel_content": false,
-            "show_logo": false,
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/image_100_1.png",
             "image_mobile": "shopify:\/\/shop_images\/image_100_3.png",
             "eyebrow": "Trending in",
             "heading": "Vitamins & <br> Supplements",
-            "inline_heading": false,
             "subheading": "",
             "cta_text": "Shop All",
-            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
-          }
-        },
-        "93f70bd8-2553-4ff0-a4e5-6de297d8c9fb": {
-          "type": "featured_products",
-          "settings": {
+            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements",
             "collection": "vitamins-and-supplements"
           }
         }
       },
       "block_order": [
-        "a09499ba-b8eb-4925-910b-9a78787dc18e",
-        "93f70bd8-2553-4ff0-a4e5-6de297d8c9fb"
+        "0e0a1794-1825-4247-99ca-4a84de15d6c9"
       ],
       "settings": {
-        "mobile_carousel": false
       }
     },
     "2cc259d5-2ab8-4dbe-82ec-dc779bd2e01b": {
@@ -844,9 +824,9 @@
     "932e9d3c-0311-4a00-af68-f2426cae7d02",
     "7a81767f-f165-4cfe-9b54-3672c6ef1e61",
     "1693494264a39a783a",
-    "56ecedde-e3f2-4a8c-8643-e00c72e3c291",
+    "502f21dc-a665-422e-8800-406228075385",
     "22c01918-3750-4804-952d-ffa0b068b2b4",
-    "740c29e7-a4b5-462e-97a4-67700b6fd2e7",
+    "5043144c-a30c-45ba-b572-67c71a78f3d5",
     "2cc259d5-2ab8-4dbe-82ec-dc779bd2e01b",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
     "ed3c4144-6707-4fda-9a49-2f5e23ebeb69",

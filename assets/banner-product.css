@@ -219,3 +219,6 @@
   height: 350px;
   width: 100%;
 }
+.banner-product .responsive-image__wrapper {
+  max-height: 100% !important;
+}

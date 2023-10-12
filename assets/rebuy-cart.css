@@ -133,3 +133,7 @@
     line-height: 1.2;
   }
 }
+
+.rebuy-cart__flyout-subtotal-compare-amount {
+  display: none !important;
+}
