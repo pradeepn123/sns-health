@@ -15,12 +15,7 @@
       @include mixins.container; 
     }
 
-    &__content {
-
-        .swiper-wrapper {
-            align-items: self-end;
-        }
-        
+    &__content {        
         &--desktop {
             display: none;
             @media(--md) {
@@ -50,15 +45,11 @@
         @include mixins.container;
         display: flex;
         column-gap: 16px;
-        margin-bottom: 15px;
         overflow: auto;
         max-width: 100%;
-        padding-left: var(--section-padding);
+        padding:var(--section-padding);
         @media(--sm){
-            padding-left: calc(2*var(--section-padding));
-        }
-        @media(--lg){
-            padding: 0;
+            padding: 0  0 var(--section-margin) 0;
         }
     }
 
@@ -68,12 +59,13 @@
         background: transparent;
     }
 
-    :--heading-wrap{
-        margin-bottom: 0;
-        @media(--sm){
-        margin-bottom: calc(2*var(--section-margin));
-        }
+    :--heading-wrap {
+      margin-bottom: 0;
+      @media(--sm) {
+        margin-bottom: var(--section-margin);
+      }
     }
+
     
     .product-category__button--active{
         color: colors.$white !important;
