@@ -319,8 +319,8 @@
             "image_desktop": "{{ block.repeater.image_desktop.value }}",
             "image_mobile": "{{ block.repeater.image_mobile.value }}",
             "eyebrow": "{{ block.repeater.eyebrow.value }}",
-            "heading": "{{ block.repeater.subheading.value }}",
-            "subheading": "{{ block.repeater.heading.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "subheading": "{{ block.repeater.subheading.value }}",
             "cta_text": "{{ block.repeater.cta_text.value }}",
             "cta_url": "{{ block.repeater.cta_url.value }}",
             "collection": "{{ block.repeater.collection.value }}"
