@@ -618,7 +618,7 @@
           "type": "content",
           "settings": {
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/image_100_2.png",
+            "image_desktop": "shopify:\/\/shop_images\/image_100_2.png", 
             "image_mobile": "shopify:\/\/shop_images\/Frame-8346.jpg",
             "eyebrow": "Trending in",
             "heading": "Sports Nutrition",
