@@ -44,7 +44,7 @@
             "promotion_name": "Progressive",
             "promotion_creative_name": "Main Banner 3",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/progressive.webp",
+            "image_desktop": "shopify:\/\/shop_images\/progressive_922721b0-c8b6-4d85-9628-02c85a53eaca.png",
             "cta_url": "shopify:\/\/collections\/progressive"
           }
         },
@@ -617,8 +617,9 @@
         "fa509466-9d60-4bd2-93ed-e0cabcf9d28d": {
           "type": "content",
           "settings": {
+            "mobile_carousel": true,
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/image_100_2.png", 
+            "image_desktop": "shopify:\/\/shop_images\/image_100_2.png",
             "image_mobile": "shopify:\/\/shop_images\/Frame-8346.jpg",
             "eyebrow": "Trending in",
             "heading": "Sports Nutrition",
@@ -646,6 +647,7 @@
         "0e0a1794-1825-4247-99ca-4a84de15d6c9": {
           "type": "content",
           "settings": {
+            "mobile_carousel": true,
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/image_100_1.png",
             "image_mobile": "shopify:\/\/shop_images\/image_100_3.png",
