@@ -146,7 +146,232 @@
       "fulfillment_with_url_html": "Alle Produkte wurden verschickt. Verfolgen Sie die Sendung, indem Sie <a href=\"&lt;span%20class='notranslate'&gt;{{tracking_url}}&lt;\/span&gt;\" target=\"_blank\">hier klicken<\/a> .",
       "fulfillment_with_number_html": "Alle Produkte wurden verschickt. Verfolgen Sie die Sendung mit der Nummer {{tracking_number}} .",
       "fulfillment_html": "Alle Produkte wurden verschickt.",
-      "line_fulfillment_with_url_and_number_html": "Dieses Produkt wurde versendet. Verfolgen Sie die Sendung mit der Nummer {{tracking_number}} oder indem Sie <a href=\"&lt;span%20class='notranslate'&gt;{{tracking_url}}&lt;\/span&gt;\" target=\"_blank\">hier klicken<\/a> ."
+      "line_fulfillment_with_url_and_number_html": "Dieses Produkt wurde versendet. Verfolgen Sie die Sendung mit der Nummer {{tracking_number}} oder indem Sie <a href=\"&lt;span%20class='notranslate'&gt;{{tracking_url}}&lt;\/span&gt;\" target=\"_blank\">hier klicken<\/a> .",
+      "line_fulfillment_with_url_html": "Dieses Produkt wurde versendet. Verfolgen Sie die Sendung, indem Sie <a href=\"&lt;span%20class='notranslate'&gt;{{tracking_url}}&lt;\/span&gt;\" target=\"_blank\">hier klicken<\/a> .",
+      "line_fulfillment_with_number_html": "Dieses Produkt wurde versendet. Verfolgen Sie die Sendung mit der Nummer {{tracking_number}} .",
+      "line_fulfillment_html": "Dieses Produkt wurde versendet.",
+      "product": "Produkt",
+      "quantity": "Menge",
+      "total": "Gesamt",
+      "subtotal": "Zwischensumme",
+      "discount": "Rabatt",
+      "shipping": "Versand",
+      "tax_included": "Steuern inklusive",
+      "tax_excluded": "Ohne Steuern",
+      "shipping_address": "Lieferanschrift",
+      "billing_address": "Rechnungsadresse",
+      "no_billing_address": "Für diese Bestellung war keine Rechnungsadresse erforderlich.",
+      "no_shipping_address": "Für diese Bestellung war keine Lieferadresse erforderlich."
+    },
+    "activate_account": {
+      "activate_account": "Konto aktivieren",
+      "description": "Geben Sie ein Passwort ein, um Ihr Konto zu erstellen:",
+      "password": "Passwort",
+      "password_confirmation": "Bestätige das Passwort",
+      "submit": "aktivieren Sie",
+      "decline": "Abfall"
+    },
+    "recover_password": {
+      "recover_password": "Passwort wiederherstellen",
+      "description": "Geben sie ihre E-Mail Adresse ein:",
+      "submit": "Genesen",
+      "success": "Wir haben Ihnen eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts gesendet.",
+      "remembered_your_password": "Haben Sie Ihr Passwort vergessen?",
+      "back_to_login": "Zurück zur Anmeldung"
+    },
+    "reset_password": {
+      "reset_password": "Passwort zurücksetzen",
+      "description": "Geben Sie ein neues Kennwort ein:",
+      "password": "Passwort",
+      "password_confirmation": "Bestätige das Passwort",
+      "submit": "Passwort zurücksetzen"
+    },
+    "addresses": {
+      "no_addresses": "Noch keine Adressen",
+      "no_addresses_button": "Fügen Sie Ihre erste Adresse hinzu",
+      "default_address": "Standardadresse",
+      "address_number": "Adresse {{number}}",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "add_address": "Füge eine neue Adresse hinzu",
+      "edit_address": "Adresse bearbeiten",
+      "form_subtitle": "Bitte füllen Sie die folgenden Informationen aus:",
+      "first_name": "Vorname",
+      "last_name": "Familienname, Nachname",
+      "company": "Unternehmen",
+      "address1": "Adresse 1",
+      "address2": "Adresse 2",
+      "city": "Stadt",
+      "country": "Land",
+      "province": "Provinz",
+      "zip": "PLZ",
+      "phone": "Telefon",
+      "set_default": "Als Standardadresse festlegen"
+    },
+    "register": {
+      "create_account": "Erstelle meinen Account",
+      "description": "Bitte füllen Sie die folgenden Informationen aus:",
+      "first_name": "Vorname",
+      "last_name": "Familienname, Nachname",
+      "password": "Passwort",
+      "submit": "Erstelle meinen Account",
+      "already_have_account": "Sie haben bereits ein Konto?",
+      "login": "Hier anmelden"
     }
+  },
+  "cart": {
+    "general": {
+      "title": "Mein Warenkorb",
+      "empty": "Ihr Warenkorb ist leer",
+      "empty_button": "Kaufen Sie unsere Produkte",
+      "search": "Suchen...",
+      "view_cart": "Warenkorb ansehen",
+      "note_title": "Bestellanweisungen",
+      "edit_note": "Bearbeiten",
+      "save_note": "Speichern",
+      "secure_payments": "100 % sichere Zahlungen",
+      "free_shipping": "Sie haben Anspruch auf kostenlosen Versand!",
+      "free_shipping_remaining_html": "Geben Sie {{remaining_amount}} mehr aus und erhalten Sie kostenlosen Versand!",
+      "amount_saved_html": "Sie haben {{amount_saved}} gespart!",
+      "free": "Frei!",
+      "taxes_and_shipping_at_checkout": "Steuern und Versand werden an der Kasse berechnet",
+      "taxes_and_shipping_policy_at_checkout_html": "Steuern und <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">Versand<\/a> werden an der Kasse berechnet",
+      "taxes_included_but_shipping_at_checkout": "Steuern inklusive. Der Versand wird an der Kasse berechnet",
+      "taxes_included_and_shipping_policy_html": "Steuern inklusive. <a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\">Der Versand<\/a> wird an der Kasse berechnet",
+      "total": "Gesamt",
+      "checkout": "Kasse"
+    },
+    "items": {
+      "decrease_quantity": "Menge um 1 verringern",
+      "increase_quantity": "Menge um 1 erhöhen",
+      "no_more_stock": "Kein Vorrat mehr",
+      "remove": "Entfernen"
+    },
+    "gift_wrap": {
+      "price_html": "Nur {{price}}"
+    },
+    "shipping_estimator": {
+      "title": "Kostenvoranschlag für den Versand",
+      "country": "Land",
+      "province": "Provinz",
+      "zip_code": "PLZ",
+      "estimate": "Schätzen",
+      "no_results_title": "Für Ihre Adresse konnte kein Versand gefunden werden.",
+      "one_result_title": "Für Ihre Adresse gibt es einen Versandtarif:",
+      "multiple_results_title": "Für Ihre Adresse gelten {{count}} Versandkosten:",
+      "errors": "Es gibt einige Fehler:"
+    }
+  },
+  "product": {
+    "general": {
+      "previous_product": "Vorher",
+      "next_product": "Nächste",
+      "description": "Beschreibung",
+      "sku": "Artikelnummer: ",
+      "share": "Teilen Sie dieses Produkt",
+      "reviews": "Rezensionen",
+      "regular_price": "Regulärer Preis",
+      "sale_price": "Verkaufspreis",
+      "zoom": "Bewegen Sie den Mauszeiger über das Bild, um es zu vergrößern",
+      "zoom_mobile": "Klicken Sie auf das Bild, um es zu vergrößern",
+      "view_in_space": "Sehen Sie in Ihrem Raum",
+      "view_more": "Mehr sehen",
+      "view_less": "Weniger anzeigen",
+      "payment": "Zahlungsarten",
+      "security": "Sicherheit",
+      "payment_notice": "Ihre Zahlungsinformationen werden sicher verarbeitet. Wir speichern keine Kreditkartendaten und haben auch keinen Zugriff auf Ihre Kreditkarteninformationen.",
+      "estimate_shipping": "Kostenvoranschlag für den Versand",
+      "refund_policy": "Rückgaberecht",
+      "include_taxes": "Steuern inklusive",
+      "shipping_policy_html": "<a href=\"&lt;span%20class='notranslate'&gt;{{%20link%20}}&lt;\/span&gt;\" class=\"link link--accented\">Der Versand wird an der Kasse berechnet<\/a>"
+    },
+    "labels": {
+      "sold_out": "Ausverkauft"
+    },
+    "form": {
+      "variant": "Variante",
+      "price": "Preis",
+      "inventory": "Aktie",
+      "quantity": "Menge",
+      "in_stock": "Auf Lager",
+      "oversell_stock": "Bald wieder auf Lager",
+      "low_stock_with_quantity_count": {
+        "one": "Nur noch {{count}} Einheit übrig",
+        "other": "Nur noch {{count}} Einheiten übrig"
+      },
+      "in_stock_with_quantity_count": {
+        "one": "Auf Lager ( {{count}} Stück), versandbereit",
+        "other": "Auf Lager ( {{count}} Einheiten), versandbereit"
+      },
+      "add_to_cart": "In den Warenkorb legen",
+      "sold_out": "Ausverkauft",
+      "pre_order": "Vorbestellen",
+      "unavailable": "Nicht verfügbar",
+      "contact_us": "Kontaktiere uns",
+      "added": "Das Produkt wurde Ihrem Warenkorb hinzugefügt",
+      "added_short": "Hinzugefügt!"
+    }
+  },
+  "store_availability": {
+    "general": {
+      "view_store_info": "Shop-Informationen anzeigen",
+      "check_other_stores": "Überprüfen Sie die Verfügbarkeit in anderen Geschäften",
+      "pick_up_available": "Abholung möglich",
+      "pick_up_currently_unavailable": "Abholung derzeit nicht möglich",
+      "pick_up_available_at": "Abholung möglich bei {{ location_name }}",
+      "pick_up_unavailable_at": "Abholung derzeit nicht möglich bei {{ location_name }}"
+    }
+  },
+  "gift_card": {
+    "issued": {
+      "subtext": "Hier ist Ihre Geschenkkarte!",
+      "disabled": "Ihre Geschenkkarte ist deaktiviert.",
+      "expired": "Ihre Geschenkkarte ist am {{expiry}} abgelaufen.",
+      "expires_on": "Läuft ab: {{expiry}}",
+      "redeem": "Verwenden Sie diesen Code an der Kasse, um Ihre Geschenkkarte einzulösen:",
+      "remaining_amount": "{{amount}} übrig",
+      "shop_link": "Beginn mit dem Einkauf",
+      "print": "Drucken",
+      "add_to_apple_wallet": "Zum Apple Wallet hinzufügen"
+    }
+  },
+  "blog": {
+    "general": {
+      "empty": "Dieser Blog enthält keine Artikel",
+      "empty_button": "Gehen Sie zur Startseite",
+      "categories": "Kategorien",
+      "all_tag": "Alle"
+    },
+    "article": {
+      "tags": "Stichworte:",
+      "share": "Aktie",
+      "previous_article": "Vorheriger Artikel",
+      "next_article": "Nächster Artikel",
+      "comments_count": {
+        "zero": "{{count}} Kommentare",
+        "one": "{{count}} Kommentar",
+        "other": "{{count}} Kommentare"
+      }
+    },
+    "comments": {
+      "leave_comment": "Hinterlasse einen Kommentar",
+      "content": "Inhalt",
+      "approval_notice": "Alle Kommentare werden vor der Veröffentlichung moderiert",
+      "submit": "Kommentar hinzufügen",
+      "success": "Ihr Kommentar wurde veröffentlicht.",
+      "success_moderated": "Ihr Kommentar wurde gesendet. Es wird sichtbar, sobald der Shop-Inhaber es akzeptiert hat!"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Ihr Name",
+      "email": "Deine E-Mail",
+      "message": "Ihre Nachricht",
+      "submit": "Nachricht senden",
+      "successfully_sent": "Ihre Nachricht wurde erfolgreich gesendet."
+    }
+  },
+  "date_formats": {
+    "month_day_year_time": "%B %d, %Y bei %H:%M%P"
   }
 }
