@@ -1,0 +1,152 @@
+{
+  "header": {
+    "search": {
+      "submit": "Suchen"
+    }
+  },
+  "search": {
+    "general": {
+      "title": "Suchen",
+      "content": "Verwenden Sie die Suchleiste unten, um Produkte zu finden:",
+      "input_placeholder": "Suchen...",
+      "no_results_with_terms": "Für „ {{terms}} “ konnten keine Ergebnisse gefunden werden.",
+      "go_back_home": "oder klicken Sie hier, um nach Hause zurückzukehren",
+      "results_count": {
+        "zero": "0 Ergebnis",
+        "one": "1 Ergebnis",
+        "other": "{{count}} Ergebnisse"
+      },
+      "showing_count": {
+        "zero": "Keine Ergebnisse",
+        "one": "Angezeigt werden {{offset}} – {{page_size}} von {{count}} Ergebnissen",
+        "other": "Es werden {{offset}} – {{page_size}} von {{count}} Ergebnissen angezeigt"
+      }
+    }
+  },
+  "404": {
+    "general": {
+      "title": "Seite nicht gefunden",
+      "content": "Die gesuchte Seite konnte nicht gefunden werden.",
+      "search": "Im Shop suchen...",
+      "continue_shopping": "Klicken Sie hier, um mit dem Einkauf fortzufahren"
+    }
+  },
+  "home_page": {
+    "onboarding": {
+      "vendor_title": "Markenname",
+      "product_title": "Name des Produkts",
+      "product_description": "Mithilfe einer Produktbeschreibung können Sie die Eigenschaften und Vorteile Ihres Produkts hervorheben. Im E-Commerce-Blog von Shopify finden Sie Inspiration und Ratschläge für die richtige Vermarktung Ihrer Produkte.",
+      "collection_title": "Name der Sammlung",
+      "article_title": "Name des Beitrags",
+      "article_author": "Von Ihnen geschrieben",
+      "article_category": "Kategorie",
+      "article_excerpt": "Ihr Shop hat noch keine Blogbeiträge veröffentlicht. In einem Blog können Sie über neue Produkteinführungen, Tipps oder andere Neuigkeiten sprechen, die Sie Ihren Kunden mitteilen möchten. Im E-Commerce-Blog von Shopify finden Sie Inspiration und Ratschläge für Ihren eigenen Shop und Blog.",
+      "instagram_caption": "Dies ist ein Beispiel für eine Bildunterschrift."
+    },
+    "newsletter": {
+      "success": "Sie sind für unseren Newsletter registriert!",
+      "input": "Deine E-Mail",
+      "submit": "Abonnieren"
+    }
+  },
+  "collection": {
+    "general": {
+      "all_collections": "Alle Sammlungen",
+      "all_products": "Alle Produkte",
+      "view_more": "Mehr sehen",
+      "view_less": "Weniger anzeigen",
+      "brands": "Marken",
+      "empty": "Diese Sammlung ist leer",
+      "empty_button": "Gehen Sie zur Startseite",
+      "no_results": "Ihre Kriterien stimmten mit keinem Produkt überein.",
+      "view_products": "Produkte ansehen",
+      "display": "Anzeige",
+      "products_count": {
+        "zero": "{{count}} Produkte",
+        "one": "{{count}} Produkt",
+        "other": "{{count}} Produkte"
+      },
+      "results_count": {
+        "zero": "{{count}} Ergebnisse",
+        "one": "{{count}} Ergebnis",
+        "other": "{{count}} Ergebnisse"
+      },
+      "showing_count": {
+        "zero": "keine Produkte",
+        "one": "Angezeigt werden {{offset}} – {{page_size}} von {{count}} Produkten",
+        "other": "Angezeigt werden {{offset}} – {{page_size}} von {{count}} Produkten"
+      },
+      "page_size": "{{page_size}} pro Seite"
+    },
+    "filter": {
+      "show_filter": "Filter anzeigen",
+      "select_category": "Wählen Sie eine Kategorie",
+      "all": "Filter",
+      "clear_all": "Alles löschen",
+      "clear": "Klar",
+      "view_results": "Ergebnisse anzeigen"
+    },
+    "sorting": {
+      "title": "Sortiere nach"
+    },
+    "layout": {
+      "title": "Sicht",
+      "grid": "Produkte als Raster anzeigen",
+      "list": "Produkte als Liste anzeigen"
+    },
+    "product": {
+      "from_price_html": "Ab {{price_min}}",
+      "add_to_cart": "In den Warenkorb legen",
+      "pre_order": "Vorbestellen",
+      "quick_view": "Schnellansicht",
+      "choose_options": "Siehe Optionen",
+      "sold_out": "Ausverkauft",
+      "in_stock": "Auf Lager",
+      "oversell_stock": "Bald wieder auf Lager",
+      "discount_html": "{{savings}} Aus",
+      "low_stock_with_quantity_count": {
+        "one": "Nur noch {{count}} Einheit übrig",
+        "other": "Nur noch {{count}} Einheiten übrig"
+      },
+      "in_stock_with_quantity_count": {
+        "one": "Auf Lager, {{count}} Einheit",
+        "other": "Auf Lager, {{count}} Einheiten"
+      }
+    }
+  },
+  "customer": {
+    "general": {
+      "my_account": "Mein Konto",
+      "orders": "Meine Bestellungen",
+      "addresses": "Meine Adressen",
+      "logout": "Ausloggen",
+      "no_orders": "Noch keine Bestellungen",
+      "no_orders_button": "Machen Sie Ihre erste Bestellung"
+    },
+    "login": {
+      "login": "Melden Sie sich bei meinem Konto an",
+      "description": "Geben Sie Ihre E-Mail-Adresse und Ihr Passwort ein:",
+      "password": "Passwort",
+      "submit": "Anmeldung",
+      "new_customer": "Neukunde?",
+      "create_your_account": "Erstelle deinen Account",
+      "lost_password": "Passwort vergessen?",
+      "recover_password": "Passwort wiederherstellen"
+    },
+    "order": {
+      "order": "Befehl",
+      "order_number": "Bestellen Sie {{order_number}}",
+      "back_to_orders": "Zurück zu Bestellungen",
+      "date": "Datum",
+      "payment_status": "Zahlungsstatus",
+      "fulfillment_status": "Erfüllungsstatus",
+      "back_to_account": "Zurück zum Konto",
+      "cancelled_at": "Bestellung am {{date}} storniert. Grund: {{reason}} .",
+      "fulfillment_with_url_and_number_html": "Alle Produkte wurden verschickt. Verfolgen Sie die Sendung mit der Nummer {{tracking_number}} oder indem Sie <a href=\"&lt;span%20class='notranslate'&gt;{{tracking_url}}&lt;\/span&gt;\" target=\"_blank\">hier klicken<\/a> .",
+      "fulfillment_with_url_html": "Alle Produkte wurden verschickt. Verfolgen Sie die Sendung, indem Sie <a href=\"&lt;span%20class='notranslate'&gt;{{tracking_url}}&lt;\/span&gt;\" target=\"_blank\">hier klicken<\/a> .",
+      "fulfillment_with_number_html": "Alle Produkte wurden verschickt. Verfolgen Sie die Sendung mit der Nummer {{tracking_number}} .",
+      "fulfillment_html": "Alle Produkte wurden verschickt.",
+      "line_fulfillment_with_url_and_number_html": "Dieses Produkt wurde versendet. Verfolgen Sie die Sendung mit der Nummer {{tracking_number}} oder indem Sie <a href=\"&lt;span%20class='notranslate'&gt;{{tracking_url}}&lt;\/span&gt;\" target=\"_blank\">hier klicken<\/a> ."
+    }
+  }
+}
