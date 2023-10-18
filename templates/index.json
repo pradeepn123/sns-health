@@ -7,10 +7,10 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Thanksgiving Sale",
+            "promotion_name": "MuscleTech Promotion",
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/october_sale.webp",
+            "image_desktop": "shopify:\/\/shop_images\/Muscle_Tech_copy.webp",
             "cta_url": "shopify:\/\/collections\/october-deals"
           }
         },
