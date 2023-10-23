@@ -708,9 +708,8 @@
           "type": "banner_grid",
           "settings": {
             "text_color": "",
-            "background_color": "#fd8b4d",
-            "image_desktop": "shopify:\/\/shop_images\/Vector-1.png",
-            "image_mobile": "shopify:\/\/shop_images\/Vector-1.png",
+            "background_color": "#417258",
+            "image_desktop": "shopify:\/\/shop_images\/Screenshot_2023-10-23_124851.png",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "Up to <br>50% OFF",
@@ -723,8 +722,8 @@
           "type": "banner_grid",
           "settings": {
             "text_color": "",
-            "background_color": "#666f02",
-            "image_desktop": "shopify:\/\/shop_images\/Vector_dcb6d0f6-2d45-4897-8182-99e72271db48.png",
+            "background_color": "#901712",
+            "image_desktop": "shopify:\/\/shop_images\/Screenshot_2023-10-23_183350.png",
             "image_mobile": "shopify:\/\/shop_images\/Vector_dcb6d0f6-2d45-4897-8182-99e72271db48.png",
             "eyebrow": "",
             "inline_heading": false,
@@ -738,7 +737,7 @@
           "type": "banner_grid",
           "settings": {
             "text_color": "#ffffff",
-            "background_color": "#008a00",
+            "background_color": "#046d04",
             "image_desktop": "shopify:\/\/shop_images\/Untitled_design_23a08ab5-9cc5-41c7-9271-e49492bc87cb.png",
             "eyebrow": "",
             "inline_heading": false,
