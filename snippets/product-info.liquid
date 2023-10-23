@@ -514,6 +514,7 @@
         {%- endif -%}
       </div>
       {% render 'rebuy-frequently_bought_together' %}
+      <input type="hidden" name="properties[_expiry-date]" value="" id="expiry-date-input" />
     {%- endform -%}
 
 
@@ -670,12 +671,25 @@
 
 
 <script>
+
+  const updateExpiryDate = (varId) => {
+    let id = '#expiry-' + varId;
+    const date = document.querySelector(id)?.dataset.date;
+    document.querySelector('#expiry-date-input').value = date;
+  }
+
   document.addEventListener('variant:changed', function(event) {
     $('.variant-expiry-date').hide()
     let variant = event.detail.variant
     let id = '#expiry-'+variant.id
     $(id).show();
+    updateExpiryDate(variant.id)
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateExpiryDate({{selected_variant.id}});
+  })
+
 
   (function () {
 
