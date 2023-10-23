@@ -734,13 +734,28 @@
             "cta_text": "Shop",
             "cta_url": "https:\/\/snshealth.com\/collections\/pasta-noodles"
           }
+        },
+        "a76ad1c6-b62d-4c66-82fc-d188f57570fe": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "#ffffff",
+            "background_color": "#008a00",
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_23a08ab5-9cc5-41c7-9271-e49492bc87cb.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Get <br> 50% OFF",
+            "subheading": "Vega Real Food Smoothie",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/products\/vega-real-food-smoothie"
+          }
         }
       },
       "block_order": [
         "b100cd87-92eb-4868-b580-3b584ac8f527",
         "9f264aba-de45-4d65-b645-670ea4d270f6",
         "9066e929-3a9c-404b-835a-797166835a14",
-        "7bab0a26-8d2b-497d-ab26-0e0e9c996828"
+        "7bab0a26-8d2b-497d-ab26-0e0e9c996828",
+        "a76ad1c6-b62d-4c66-82fc-d188f57570fe"
       ],
       "settings": {
         "mobile_carousel": true
