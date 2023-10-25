@@ -12,14 +12,14 @@
           "type": "image_with_text_overlay",
           "source": "{{ collection.metafields.custom.collection_banner.value }}",
           "settings": {
-            "checkbox_description": true,
+            "checkbox_description": false,
             "featured_image_desktop": "{{ collection.metafields.custom.collection_banner.value.desktop_image.value }}",
             "featured_image_mobile": "{{ collection.metafields.custom.collection_banner.value.mobile_image.value }}",
             "font-color": "#000000",
             "background-color": "rgba(0,0,0,0)",
             "inline_cta": false,
-            "cta_text": "read",
-            "cta_url": "shopify:\/\/blogs\/mental-health"
+            "cta_text": "",
+            "cta_url": ""
           }
         }
       },
