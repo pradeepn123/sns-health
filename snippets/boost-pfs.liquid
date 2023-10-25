@@ -58,6 +58,7 @@
         {%- endfor -%}
       },
       current_locale: {{- request.locale.iso_code | json -}},
+      current_locale: {% if routes.root_url == '/' %}'en'{% else %}{{ routes.root_url | json }}.replace("/", ""){% endif %},
       isInitFilter: {{- boost_pfs_is_initfilter | json -}}
     },
     {% if shop.metafields.bc-sf-filter.settings != blank %}
