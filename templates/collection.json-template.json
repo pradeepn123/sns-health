@@ -12,7 +12,7 @@
           "type": "image_with_text_overlay",
           "source": "{{ collection.metafields.custom.collection_banner.value }}",
           "settings": {
-            "checkbox_description": true,
+            "checkbox_description": false,
             "featured_image_desktop": "{{ collection.metafields.custom.collection_banner.value.desktop_image.value }}",
             "featured_image_mobile": "{{ collection.metafields.custom.collection_banner.value.mobile_image.value }}",
             "font-color": "#000000",
