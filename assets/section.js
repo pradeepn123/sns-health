@@ -94,6 +94,23 @@
 
 /***/ }),
 
+/***/ "./js/sections/product.js":
+/*!********************************!*\
+  !*** ./js/sections/product.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_tab_section_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/tab-section.js */ "./js/components/tab-section.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_tab_section_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+});
+
+/***/ }),
+
 /***/ "./js/sections/section.js":
 /*!********************************!*\
   !*** ./js/sections/section.js ***!
@@ -105,6 +122,8 @@
 /* harmony import */ var _customer_reviews__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./customer-reviews */ "./js/sections/customer-reviews.js");
 /* harmony import */ var _category_section__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./category-section */ "./js/sections/category-section.js");
 /* harmony import */ var _custom_product_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./custom-product-card */ "./js/sections/custom-product-card.js");
+/* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./product */ "./js/sections/product.js");
+
 
 
 
@@ -116,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_category_section__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_product_carousel__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_custom_product_card__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_product__WEBPACK_IMPORTED_MODULE_5__["default"])();
   window.customProductCard = _custom_product_card__WEBPACK_IMPORTED_MODULE_4__["default"];
   window.productCarousel = _product_carousel__WEBPACK_IMPORTED_MODULE_3__["default"];
 });
@@ -142,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -184,6 +204,18 @@ document.addEventListener('DOMContentLoaded', () => {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -194,6 +226,18 @@ document.addEventListener('DOMContentLoaded', () => {
 /******/ 				}
 /******/ 			}
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */

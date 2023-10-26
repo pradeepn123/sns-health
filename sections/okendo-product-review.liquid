@@ -1,0 +1,20 @@
+  {{'product-reviews.css' | asset_url | stylesheet_tag }}
+
+    <div id="product-reviews" class="product-reviews">
+      {% render 'section-heading', heading: "Customer Reviews" %}
+        <div class="product-reviews__container">
+          {% render 'okendo-reviews-widget', product: product %}                
+        </div>
+    </div>
+
+  {% schema %}
+  {
+    "name": "Product Review",
+    "settings": [],
+    "presets": [
+    {
+      "name": "Product Review"
+    }
+    ]
+  }
+  {% endschema %}

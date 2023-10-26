@@ -1,3 +1,4 @@
+import JSON6 from 'json-6'
 export default (Component, container, propsEl) => {
 	//component is a pre-compiled class
 	//container is where you want to inject component
@@ -8,7 +9,7 @@ export default (Component, container, propsEl) => {
 		let props = {};
 		if (appTarget && !initialized) {
 			if (propsEl) {
-				props = JSON.parse(appTarget.querySelector(propsEl)?.innerHTML) || {}; //get json from the script id 
+				props = JSON6.parse(appTarget.querySelector(propsEl)?.innerHTML) || {}; //get json from the script id 
 			}
 			//inject component into container
 			const instance = new Component({
@@ -22,3 +23,4 @@ export default (Component, container, propsEl) => {
 		}
 	})
 }
+

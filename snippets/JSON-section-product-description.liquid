@@ -1,0 +1,25 @@
+{ "description": `{{ product.description | remove: 'data-section-type="product"' }}`,
+"Additional_Information": `
+{% for field in product.metafields.global %}
+  {% assign field_name = field | first %}
+  {% unless field_name == 'title_tag'
+    or field_name == 'description_tag'
+    or field_name == 'ingredients'
+    or field_name == 'suggested_use'
+  %}
+    <strong>{{ field | first | capitalize | replace: '_', ' '}} :</strong>  <p>{{ field | last }}</p>
+  {% endunless %}
+{% endfor %}
+`,
+{% for field in product.metafields.global %}
+  {% assign field_name = field | first %}
+  {% if field_name == 'ingredients' or field_name == 'suggested_use' %}
+    "{{ field | first | capitalize }}" : `{{ field | last }}`,
+  {% endif %}
+{% endfor %}
+
+{% for block in section.blocks %}
+  {% unless forloop.first %},{% endunless %}
+  "{{ block.settings.heading }}" : `{{ block.settings.content}}`
+{% endfor %}
+}

@@ -81,6 +81,12 @@ product-card {
     &-container {
       justify-content: space-between;
       display: flex;
+      @media(--md){
+        min-height: 38px;
+      }
+      @media(--md-large){
+        min-height: 0;
+      }
     }
 
     @include use-text-style('body-small');
@@ -102,9 +108,13 @@ product-card {
     font-weight: typography.$semi-weight;
     min-height: 28px;
     white-space: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
     @media(--md) {
       font-size: typography.$body-alt-size;
-      min-height: 44px;
+      min-height: 38px;
     }
   }
 
@@ -141,5 +151,9 @@ product-card {
   @media(--md) {
     max-width: 100%;
   }
+}
+
+body {
+  background: #fff;
 }
 

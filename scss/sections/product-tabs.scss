@@ -1,0 +1,93 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/tabs';
+
+.product-block {
+    margin-top: var(--section-padding);
+    border-radius: 10px;
+    @include mixins.container;
+    @media(--md){
+        margin-top: calc(2*var(--section-padding));
+        border: 1px solid #E1E3E4;
+        border-radius: unset;
+    }
+
+    &__tab-wrapp{
+        display: flex;
+        column-gap: 10px;
+    }
+
+    * {
+        margin-bottom: 0;
+        padding-top:0;
+    }
+
+    p,h1,h2,h3,h4,h5,h6 {
+        margin-bottom: 12px !important;
+    }
+    
+}
+
+.social-media__item{
+    svg{
+        opacity: 1 !important;
+    }
+}
+
+.tab-section{
+    .tab-section__tabs{
+        .tab-section__tabs{
+            padding: 16px 0;
+            white-space: nowrap;
+            scroll-snap-type: x mandatory;
+            overflow: auto;
+        }
+        .tab-section__tab-description{
+            strong{
+                font-size: 15px;
+                font-weight: $semi-weight;
+            }
+        }
+        .tab-section__tab-title{
+            cursor: pointer;
+            padding: 0 var(--section-padding);
+            @include use-text-style('body-alt');
+                font-weight: typography.$heading-weight;
+                text-transform: capitalize;
+        }
+        .tab-section__tab-title.product-atb__button--active{
+            color: colors.$red;
+            border-bottom: 1px solid colors.$red;
+            padding-bottom:var(--section-padding) ;
+        }
+    }
+    .tab-section__tab-description{
+        padding: 40px 24px;
+        border-top: 1px solid #E1E3E4;
+    }
+    &--mobile{
+    }
+    .accordion{
+        padding: 28px 0;
+        margin: 0 !important;
+        border-top: 1px solid #E1E3E4;
+        cursor: pointer;
+        .header{
+            margin-bottom: 0;
+            .text{
+                @include use-text-style('body-alt');
+                font-weight: typography.$heading-weight;
+                text-transform: capitalize;
+            }
+        }
+        .details{
+            @include use-text-style('body-alt');
+            line-height: 29.92px;
+            background: none !important;
+            padding: var(--section-padding) 0 0 !important;
+        }
+    }
+}

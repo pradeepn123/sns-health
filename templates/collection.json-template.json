@@ -73,10 +73,7 @@
     "55eea1c7-d33f-4ba0-9122-60d589c905c8": {
       "type": "static-recently-viewed-products",
       "settings": {
-        "show_section": true,
-        "title": "Recently viewed",
-        "show_quick_buy": false,
-        "custom_classes": ""
+        "title": "Recently viewed"
       }
     },
     "d0182ec5-3361-4ef2-892f-c87049bf4454": {

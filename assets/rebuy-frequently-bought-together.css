@@ -16,7 +16,7 @@
     font-size: 21px !important;
     color: #000 !important;
     font-weight: 600 !important;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .primary-title span {
@@ -157,6 +157,9 @@
     margin-right: 0.25em;
     margin-left: 0.25em;
 }
+.rebuy-select{
+    cursor: pointer;
+}
 @media (max-width: 480px){
     .frequently-bought-together .rebuy-widget .rebuy-product-block .rebuy-product-options{
         margin: 0 0 0 23px !important;
@@ -174,5 +177,25 @@
     }
     .frequently-bought-together .primary-title{
         margin: 0 !important;
+        margin-bottom: 30px !important;
+    }
+    .rebuy-widget.widget-type-dynamic-bundle .rebuy-bundle .rebuy-product-block {
+        padding-top: 12px !important;
+    }
+    .frequently-bought-together {
+        border: none;
+    }
+    .product-meta__share-buttons {
+        display: none;
+    }
+    .frequently-bought-together {
+        margin-top: 0px;
+    }
+    .section {
+        margin-top: 20px;
+    }
+    .rebuy-bundle__image-divider{
+        display: none !important;
     }
 }
+

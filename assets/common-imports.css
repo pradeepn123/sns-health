@@ -295,7 +295,7 @@
 }
 
 /**
- * Swiper 10.1.0
+ * Swiper 10.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -303,7 +303,7 @@
  *
  * Released under the MIT License
  *
- * Released on: August 1, 2023
+ * Released on: August 17, 2023
  */
 @font-face {
   font-family: "swiper-icons";
@@ -1000,6 +1000,10 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-navigation {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);

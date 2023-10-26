@@ -73,214 +73,7 @@
             {% render 'product-info' %}
           </div>
 
-          {%- if product.description != blank -%}
-            <div class="product-block-list__item product-block-list__item--description">
-              <div class="card">
-                {%- if section.settings.content_display_mode == 'collapse_all' -%}
-                  <button class="card__collapsible-button" data-action="toggle-collapsible" aria-expanded="false" aria-controls="product-description">
-                    <span class="card__title heading h3">{{ 'product.general.description' | t }}</span>
-                    <span class="plus-button plus-button--large"></span>
-                  </button>
-
-                  <div id="product-description" class="card__collapsible">
-                    <div class="card__collapsible-content">
-                      <div class="rte text--pull">
-                        {{ product.description | remove: 'data-section-type="product"' }}
-                      </div>
-                    </div>
-                  </div>
-                {%- else -%}
-                  <div class="card__header">
-                    <h2 class="card__title heading h3">{{ 'product.general.description' | t }}</h2>
-                  </div>
-
-                  {%- if section.settings.content_display_mode == 'show_all_and_expand_description' -%}
-                    <div class="card__section">
-                      <div class="rte text--pull">
-                        {{ product.description | remove: 'data-section-type="product"' }}
-                      </div>
-                    </div>
-                  {%- else -%}
-                    <div class="card__section expandable-content" aria-expanded="false">
-                      <div class="rte text--pull">
-                        {{ product.description | remove: 'data-section-type="product"' }}
-                      </div>
-
-                      <button class="expandable-content__toggle">
-                        <span class="expandable-content__toggle-icon"></span>
-                        <span class="expandable-content__toggle-text" data-view-more="{{ 'product.general.view_more' | t | escape }}" data-view-less="{{ 'product.general.view_less' | t | escape }}">{{- 'product.general.view_more' | t -}}</span>
-                      </button>
-                    </div>
-                  {%- endif -%}
-                {%- endif -%}
-              </div>
-            </div>
-          {%- endif -%}
-          
-          <div class="product-block-list__item product-block-list__item--description">
-            <div class="card">
-              {%- if section.settings.expand_additional_information -%}
-                      <div class="product-block-list__item product-block-list__item--description">
-                        <div class="card">
-                          <div class="card__header">
-                            <h2 class="card__title heading h3">Additional Information</h2>
-                          </div>
-                          <div class="card__section">
-                            <ul class="additional_information">
-                              {% for field in product.metafields.global %}
-                                {% assign field_name = field | first %}
-                                {% unless field_name == 'title_tag' or field_name == 'description_tag' %}
-                                  <li><strong>{{ field | first | replace: '_', ' ' | capitalize }}</strong>: {{ field | last }}</li>
-                                {% endunless %}
-                              {% endfor %}
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                  {%- else -%}
-                      <button class="card__collapsible-button" data-action="toggle-collapsible" aria-expanded="false" aria-controls="unique-tab-additional-information">
-                        <span class="card__title heading h3">Additional Information</span>
-                        <span class="plus-button plus-button--large"></span>
-                      </button>
-
-                      <div id="unique-tab-additional-information" class="card__collapsible">
-                        <div class="card__collapsible-content">
-                          <div class="rte text--pull">
-                            <ul class="additional_information">
-                              {% for field in product.metafields.global %}
-                                {% assign field_name = field | first %}
-                                {% unless field_name == 'title_tag' or field_name == 'description_tag' %}
-                                  <li><strong>{{ field | first | replace: '_', ' ' | capitalize }}</strong>: {{ field | last }}</li>
-                                {% endunless %}
-                              {% endfor %}
-                              
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                  {%- endif -%}
-            </div>
-          </div>
-
-          {%- comment -%}
-          --------------------------------------------------------------------------------------
-          TABS
-          --------------------------------------------------------------------------------------
-          {%- endcomment -%}
-
-          {%- for i in (1..5) -%}
-            {%- assign unique_tab_title = '' -%}
-            {%- assign unique_tab_content = '' -%}
-
-            {%- comment -%}First check for metafields{%- endcomment -%}
-
-            {%- assign metafield_tab_title_option = 'tab_' | append: i | append: '_title' -%}
-            {%- assign metafield_tab_content_option = 'tab_' | append: i | append: '_content' -%}
-
-            {%- if product.metafields.sf_product_tabs[metafield_tab_title_option] != blank and product.metafields.sf_product_tabs[metafield_tab_content_option] != blank -%}
-              {%- assign unique_tab_title = product.metafields.sf_product_tabs[metafield_tab_title_option] -%}
-              {%- assign unique_tab_content = product.metafields.sf_product_tabs[metafield_tab_content_option] -%}
-            {%- else -%}
-              {%- assign tab_to_look = '__tab' | append: i | append: ':' -%}
-
-              {%- for tag in product.tags -%}
-                {%- if tag contains tab_to_look -%}
-                  {%- assign unique_tab_handle = tag | split: tab_to_look | last -%}
-                  {%- assign unique_tab_page = pages[unique_tab_handle] -%}
-
-                  {%- unless unique_tab_page.empty? -%}
-                    {%- assign unique_tab_title = unique_tab_page.title -%}
-                    {%- assign unique_tab_content = unique_tab_page.content -%}
-                    {%- break -%}
-                  {%- endunless -%}
-                {%- endif -%}
-              {%- endfor -%}
-            {%- endif -%}
-
-            {%- if unique_tab_title != blank and unique_tab_content != blank -%}
-              <div class="product-block-list__item product-block-list__item--content">
-                <div class="card">
-                  {%- if section.settings.content_display_mode == 'collapse_all_except_description' or section.settings.content_display_mode == 'collapse_all' -%}
-                    <button class="card__collapsible-button" data-action="toggle-collapsible" aria-expanded="false" aria-controls="unique-tab-{{ i }}">
-                      <span class="card__title heading h3">{{ unique_tab_title }}</span>
-                      <span class="plus-button plus-button--large"></span>
-                    </button>
-
-                    <div id="unique-tab-{{ i }}" class="card__collapsible">
-                      <div class="card__collapsible-content">
-                        <div class="rte text--pull">
-                          {{ unique_tab_content }}
-                        </div>
-                      </div>
-                    </div>
-                  {%- else -%}
-                    <div class="card__header">
-                      <h2 class="card__title heading h3">{{ unique_tab_title }}</h2>
-                    </div>
-
-                    <div class="card__section expandable-content" aria-expanded="false">
-                      <div class="rte text--pull">
-                        {{ unique_tab_content }}
-                      </div>
-
-                      <button class="expandable-content__toggle">
-                        <span class="expandable-content__toggle-icon"></span>
-                        <span class="expandable-content__toggle-text" data-view-more="{{ 'product.general.view_more' | t | escape }}" data-view-less="{{ 'product.general.view_less' | t | escape }}">{{- 'product.general.view_more' | t -}}</span>
-                      </button>
-                    </div>
-                  {%- endif -%}
-                </div>
-              </div>
-            {%- endif -%}
-          {%- endfor -%}
-
-          {%- for i in (1..3) -%}
-            {%- assign global_tab_option = 'tab_page_' | append: i | append: '_handle' -%}
-            {%- assign global_tab_page = pages[section.settings[global_tab_option]] -%}
-
-            {%- unless global_tab_page.empty? -%}
-              <div class="product-block-list__item product-block-list__item--content">
-                <div class="card">
-                  {%- if section.settings.content_display_mode == 'collapse_all_except_description' or section.settings.content_display_mode == 'collapse_all' -%}
-                    <button class="card__collapsible-button" data-action="toggle-collapsible" aria-expanded="false" aria-controls="global-tab-{{ i }}">
-                      <span class="card__title heading h3">{{ global_tab_page.title }}</span>
-                      <span class="plus-button plus-button--large"></span>
-                    </button>
-
-                    <div id="global-tab-{{ i }}" class="card__collapsible">
-                      <div class="card__collapsible-content">
-                        <div class="rte text--pull">
-                          {{ global_tab_page.content }}
-                        </div>
-                      </div>
-                    </div>
-                  {%- else -%}
-                    <div class="card__header">
-                      <h2 class="card__title heading h3">{{ global_tab_page.title }}</h2>
-                    </div>
-
-                    <div class="card__section expandable-content" aria-expanded="false">
-                      <div class="rte text--pull">
-                        {{ global_tab_page.content }}
-                      </div>
-
-                      <button class="expandable-content__toggle">
-                        <span class="expandable-content__toggle-icon"></span>
-                        <span class="expandable-content__toggle-text" data-view-more="{{ 'product.general.view_more' | t | escape }}" data-view-less="{{ 'product.general.view_less' | t | escape }}">{{- 'product.general.view_more' | t -}}</span>
-                      </button>
-                    </div>
-                  {%- endif -%}
-                </div>
-              </div>
-            {%- endunless -%}
-          {%- endfor -%}
-
-          {%- comment -%}
-          --------------------------------------------------------------------------------------
-          REVIEWS
-          --------------------------------------------------------------------------------------
-          {%- endcomment -%}
-
+          {% render 'rebuy-frequently_bought_together' %}
           
           {%- comment -%}
           --------------------------------------------------------------------------------------
@@ -427,21 +220,6 @@
   {%- endif -%}
 </section>
 
-{%- if section.settings.enable_reviews -%}
-  <div id="product-reviews" class="product-block-list__item product-block-list__item--description">
-    <div class="card">
-      <div class="card__header">
-        <h2 class="card__title heading h3">Customer Reviews</h2>
-      </div>
-      <div class="card__section">
-        <ul class="reviews">
-          {% render 'okendo-reviews-widget', product: product %}                
-        </ul>
-      </div>
-    </div>
-  </div>
-{%- endif -%}
-
 {% schema %}
 {
   "name": "Product page",
@@ -484,7 +262,7 @@
           "label": "Dropdown"
         }
       ],
-      "default": "block"
+      "default": "dropdown"
     },
     {
       "type": "select",
@@ -690,12 +468,6 @@
     },
     {
       "type": "checkbox",
-      "id": "enable_reviews",
-      "label": "Enable",
-      "default": true
-    },
-    {
-      "type": "checkbox",
       "id": "show_reviews_badge",
       "label": "Show Review Stars",
       "default": true
@@ -773,6 +545,11 @@
       "id": "complimentary_description",
       "label": "Text",
       "default": "<p>Add a title<p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product info"
     }
   ]
 }

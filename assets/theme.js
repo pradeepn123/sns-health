@@ -2618,7 +2618,7 @@
           _this.lastKnownY = window.scrollY;
         });
         fastdom.mutate(function () {
-          _this.element.style.top = "".concat(_this.currentTop, "px");
+          _this.element.style.top = "".concat(_this.currentTop + 70, "px");
         });
       }
     }]);
@@ -3325,16 +3325,21 @@
 
           switch (selectorType) {
             case 'color':
-              selector.querySelector(".color-swatch:nth-child(".concat(valueIndex + 1, ")")).classList.toggle('color-swatch--disabled', !available);
+              selector.querySelector(".color-swatch:nth-child(".concat(valueIndex + 1, ")")).classList.toggle('disabled', !available);
               break;
 
             case 'variant':
-              selector.querySelector(".variant-swatch:nth-child(".concat(valueIndex + 1, ")")).classList.toggle('variant-swatch--disabled', !available);
+              selector.querySelector(".variant-swatch:nth-child(".concat(valueIndex + 1, ")")).classList.toggle('disabled', !available);
               break;
 
             case 'block':
-              selector.querySelector(".block-swatch:nth-child(".concat(valueIndex + 1, ")")).classList.toggle('block-swatch--disabled', !available);
+              selector.querySelector(".block-swatch:nth-child(".concat(valueIndex + 1, ")")).classList.toggle('disabled', !available);
               break;
+
+
+              case 'select':
+                selector.querySelector(".select-option:nth-child(".concat(valueIndex + 1, ")")).classList.toggle('disabled', !available);
+                break;
           }
         };
 
@@ -3383,10 +3388,9 @@
           addToCartButtonElement.classList.remove('button--primary');
           addToCartButtonElement.removeAttribute('data-action');
           addToCartButtonElement.innerHTML = window.languages.productFormUnavailable;
-          infoListElement.style.display = 'none';
+          // infoListElement.style.display = 'none';
         } else {
           infoListElement.style.display = 'block';
-
           if (newVariant['available']) {
             addToCartButtonElement.removeAttribute('disabled');
             addToCartButtonElement.classList.remove('button--disabled');
@@ -3430,6 +3434,7 @@
     }, {
       key: "_onOptionChanged",
       value: function _onOptionChanged(event, target) {
+        debugger;
         this['option' + target.getAttribute('data-option-position')] = target.value; // We update the selected value
 
         var selectedValueElement = target.closest('.product-form__option').querySelector('.product-form__selected-value');

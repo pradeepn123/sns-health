@@ -43,6 +43,7 @@
 }
 
 .swiper-navigation {
+  user-select: none;
   height: unset !important;
   top: 50%;
   transform: translateY(-50%);

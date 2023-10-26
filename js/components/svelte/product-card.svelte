@@ -23,7 +23,7 @@
 
 
   const [{ compare_at_price: comparePrice, price , id:variantId} = {}] =  variants || [];
-  const link = `/products/${handle}?variant=${variantId}`;
+  const link = `${window.Shopify.routes.root}products/${handle}?variant=${variantId}`;
   let rating = false;
   metafields.forEach((metafield) => {
     const { namespace, key, value } = metafield || {};

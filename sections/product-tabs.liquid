@@ -1,0 +1,47 @@
+{{ 'product-tabs.css' | asset_url | stylesheet_tag }}
+<div class="product-block">
+        <tab-section>
+          <script id="tab-section-data" type="text/json">
+            {
+              "data": {% render 'JSON-section-product-description' , section: section %}
+            }
+          </script>
+        </tab-section>
+    </div>
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Product Description Info",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "description",
+      "name": "description",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Description Info"
+    }
+  ]
+}
+{% endschema %}

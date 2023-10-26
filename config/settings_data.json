@@ -434,7 +434,7 @@
           "show_quantity_selector": true,
           "show_payment_button": true,
           "show_pickup_availability": false,
-          "image_size": "small",
+          "image_size": "medium",
           "enable_video_looping": false,
           "enable_image_zoom": true,
           "zoom_effect": "inside",
@@ -446,7 +446,6 @@
           "tab_page_1_handle": "shipping-returns",
           "tab_page_2_handle": "",
           "tab_page_3_handle": "",
-          "enable_reviews": true,
           "show_reviews_badge": true,
           "trust_title": "Payment & Security",
           "show_payment_icons": false,
@@ -965,10 +964,8 @@
       "static-recently-viewed-products": {
         "type": "static-recently-viewed-products",
         "settings": {
-          "show_section": true,
           "title": "Recently viewed",
-          "show_quick_buy": true,
-          "custom_classes": ""
+          "mobile_carousel": true
         }
       },
       "minimal-header": {
