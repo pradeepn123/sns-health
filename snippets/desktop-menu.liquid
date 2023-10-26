@@ -39,7 +39,7 @@ always visible.
           {% assign is_mega_menu = true %}
           {% assign megamenu_tag = url %}
           {% assign megamenu_url =  url | split: 'megamenu-' | last %}
-          {% assign megamenu_url = routes.collections_url | append: megamenu_url %}
+          {% assign megamenu_url = routes.collections_url | append: '/' | append: megamenu_url %}
           {% else %}
           {% assign is_mega_menu = false %}
         {% endif %}
