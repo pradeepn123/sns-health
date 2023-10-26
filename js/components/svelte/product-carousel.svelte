@@ -8,20 +8,10 @@
   let isLoading = true;
 
   const {
-    currencySymbol = "$",
-    soldOutText = "Sold Out",
-    chooseMoreText = "See Options",
-    addToCartText = "Add To Cart",
     mobileCarousel = false,
     blocks = [],
   } = shopifyData || {};
 
-  const otherData = {
-    currencySymbol,
-    soldOutText,
-    chooseMoreText,
-    addToCartText
-  };
   const paramsHash = blocks.reduce((accumulator, block) => {
     return (accumulator = {
       ...accumulator,
@@ -117,7 +107,7 @@
             {#each productData as product, index}
               {#if product.variants[0].price > 0}
                 <p style="display: none !important">{product.enableAddToCart = false}</p> 
-                <ProductCard {product} {otherData} />
+                <ProductCard {product} />
               {/if}
             {/each}
           </div>
@@ -167,7 +157,7 @@
     >
       {#each productData as product, index}
         {#if index < 4}
-          <ProductCard {product} {otherData} />
+          <ProductCard {product} />
         {/if}
       {/each}
     </div>

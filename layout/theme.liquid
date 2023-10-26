@@ -311,7 +311,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const shopifyVariables = {
-        activeCurrency: "{{cart.currency.iso_code}}"
+        activeCurrency: "{{cart.currency.iso_code}}",
+        "currencySymbol": "{{ cart.currency.symbol }}",
+        "soldOutText": "{{- 'collection.product.sold_out' | t -}}",
+        "chooseMoreText": "{{- 'collection.product.choose_options' | t -}}",
+        "addToCartText": "{{- 'collection.product.add_to_cart' | t -}}"
       } 
       window.shopifyVariables = shopifyVariables;
       

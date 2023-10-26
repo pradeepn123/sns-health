@@ -2618,7 +2618,7 @@
           _this.lastKnownY = window.scrollY;
         });
         fastdom.mutate(function () {
-          _this.element.style.top = "".concat(_this.currentTop + 70, "px");
+          _this.element.style.top = "".concat(_this.currentTop + 90, "px");
         });
       }
     }]);

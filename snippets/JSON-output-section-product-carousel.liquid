@@ -1,9 +1,5 @@
-{ "currencySymbol": "{{ cart.currency.symbol }}",
-  "mobileCarousel": "{{ section.settings.mobile_carousel }}",
-  "soldOutText": "{{- 'collection.product.sold_out' | t -}}",
-  "chooseMoreText": "{{- 'collection.product.choose_options' | t -}}",
-  "addToCartText": "{{- 'collection.product.add_to_cart' | t -}}",
- 
+{
+ "mobileCarousel": "{{ section.settings.mobile_carousel }}",
 "blocks":[
 {% for block in section.blocks %}
   { "text": "{{ block.settings.collection_text }}", "ruleId": "{{block.settings.rule_id }}" , 

@@ -1533,7 +1533,7 @@ function create_if_block_8(ctx) {
 	};
 }
 
-// (87:8) {#if bestseller}
+// (86:8) {#if bestseller}
 function create_if_block_7(ctx) {
 	let div;
 
@@ -1554,7 +1554,7 @@ function create_if_block_7(ctx) {
 	};
 }
 
-// (89:8) {#if onsale}
+// (88:8) {#if onsale}
 function create_if_block_6(ctx) {
 	let div;
 
@@ -1575,7 +1575,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (91:6) {#if rating}
+// (90:6) {#if rating}
 function create_if_block_5(ctx) {
 	let div;
 	let svg;
@@ -1621,7 +1621,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (100:4) {#if vendor}
+// (99:4) {#if vendor}
 function create_if_block_4(ctx) {
 	let div;
 
@@ -1643,7 +1643,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (111:6) {#if discountPercentage > 0}
+// (110:6) {#if discountPercentage > 0}
 function create_if_block_2(ctx) {
 	let div;
 
@@ -1678,9 +1678,9 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (120:10) {:else}
+// (119:10) {:else}
 function create_else_block_2(ctx) {
-	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[9] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[13]}{{amount}}`) + "";
+	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[12] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[9]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";
@@ -1708,9 +1708,9 @@ function create_else_block_2(ctx) {
 	};
 }
 
-// (114:10) {#if skipFormatMoney}
+// (113:10) {#if skipFormatMoney}
 function create_if_block_3(ctx) {
-	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[9], `${/*currencySymbol*/ ctx[13]}{{amount}}`) + "";
+	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[12], `${/*currencySymbol*/ ctx[9]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";
@@ -1738,9 +1738,9 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (136:8) {:else}
+// (135:8) {:else}
 function create_else_block_1(ctx) {
-	let t0_value = window.formatCurrency(/*price*/ ctx[10] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[13]}{{amount}}`) + "";
+	let t0_value = window.formatCurrency(/*price*/ ctx[13] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[9]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";
@@ -1768,9 +1768,9 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (130:8) {#if skipFormatMoney}
+// (129:8) {#if skipFormatMoney}
 function create_if_block_1(ctx) {
-	let t0_value = window.formatCurrency(/*price*/ ctx[10], `${/*currencySymbol*/ ctx[13]}{{amount}}`) + "";
+	let t0_value = window.formatCurrency(/*price*/ ctx[13], `${/*currencySymbol*/ ctx[9]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";
@@ -1798,7 +1798,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (157:8) {:else}
+// (156:8) {:else}
 function create_else_block(ctx) {
 	let a;
 	let t;
@@ -1806,8 +1806,8 @@ function create_else_block(ctx) {
 	return {
 		c() {
 			a = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
-			t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*chooseMoreText*/ ctx[14]);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", /*link*/ ctx[12]);
+			t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*chooseMoreText*/ ctx[10]);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", /*link*/ ctx[15]);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "class", "product-card__cta product-item__action-button product-item__action-button--list-view-only button button--small button--primary");
 		},
 		m(target, anchor) {
@@ -1823,14 +1823,14 @@ function create_else_block(ctx) {
 	};
 }
 
-// (149:8) {#if variants.length == 1 && enableAddToCart == true}
+// (148:8) {#if variants.length == 1 && enableAddToCart == true}
 function create_if_block(ctx) {
 	let button;
 
 	return {
 		c() {
 			button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
-			button.textContent = `${/*addToCartText*/ ctx[15]}`;
+			button.textContent = `${/*addToCartText*/ ctx[11]}`;
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "type", "submit");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", "product-item__action-button product-item__action-button--list-view-only button button--small button--primary");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "data-action", "add-to-cart");
@@ -1954,7 +1954,7 @@ function create_fragment(ctx) {
 			input0.value = "1";
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input1, "type", "hidden");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input1, "name", "id");
-			input1.value = /*variantId*/ ctx[11];
+			input1.value = /*variantId*/ ctx[14];
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(form, "method", "post");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(form, "action", "/cart/add");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(form, "accept-charset", "UTF-8");
@@ -1964,7 +1964,7 @@ function create_fragment(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "class", "product-card swiper-slide");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-redirect-click", "");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-js-click", "");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-url", /*link*/ ctx[12]);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-url", /*link*/ ctx[15]);
 		},
 		m(target, anchor) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div9, anchor);
@@ -2000,7 +2000,7 @@ function create_fragment(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, input1);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, t11);
 			if_block7.m(form, null);
-			/*div9_binding*/ ctx[22](div9);
+			/*div9_binding*/ ctx[21](div9);
 			current = true;
 		},
 		p(ctx, [dirty]) {
@@ -2071,17 +2071,22 @@ function create_fragment(ctx) {
 			if (if_block5) if_block5.d();
 			if_block6.d();
 			if_block7.d();
-			/*div9_binding*/ ctx[22](null);
+			/*div9_binding*/ ctx[21](null);
 		}
 	};
 }
 
+const soldOutText = "Sold Out";
+
 function instance($$self, $$props, $$invalidate) {
 	let { shopifyData } = $$props;
 	let { product } = $$props;
-	let { otherData } = $$props;
 	let ref;
 	const { image, variants = [], vendor, title, tags = [], metafields = [], handle, skipFormatMoney = false, discountPercentage: shopifyDiscountPercentage = 0, enableAddToCart = true } = product || shopifyData || {};
+	const currencySymbol = window.shopifyVariables.currencySymbol || "$";
+	const chooseMoreText = window.shopifyVariables.chooseMoreText || "See Options";
+	const addToCartText = window.shopifyVariables.addToCartText || "Add To Cart";
+	console.log(window.shopifyVariables.currency);
 	const [{ compare_at_price: comparePrice, price, id: variantId } = {}] = variants || [];
 	const link = `${window.Shopify.routes.root}products/${handle}?variant=${variantId}`;
 	let rating = false;
@@ -2102,7 +2107,6 @@ function instance($$self, $$props, $$invalidate) {
 		}
 	});
 
-	const { currencySymbol = "$", soldOutText = "Sold Out", chooseMoreText = "Choose Options", addToCartText = "Add To Cart" } = otherData || {};
 	const bestseller = tags.includes("bestseller");
 	const onsale = tags.includes("onsale");
 
@@ -2136,7 +2140,6 @@ function instance($$self, $$props, $$invalidate) {
 	$$self.$$set = $$props => {
 		if ('shopifyData' in $$props) $$invalidate(19, shopifyData = $$props.shopifyData);
 		if ('product' in $$props) $$invalidate(20, product = $$props.product);
-		if ('otherData' in $$props) $$invalidate(21, otherData = $$props.otherData);
 	};
 
 	return [
@@ -2149,19 +2152,18 @@ function instance($$self, $$props, $$invalidate) {
 		title,
 		skipFormatMoney,
 		enableAddToCart,
+		currencySymbol,
+		chooseMoreText,
+		addToCartText,
 		comparePrice,
 		price,
 		variantId,
 		link,
-		currencySymbol,
-		chooseMoreText,
-		addToCartText,
 		bestseller,
 		onsale,
 		srcTokens,
 		shopifyData,
 		product,
-		otherData,
 		div9_binding
 	];
 }
@@ -2169,12 +2171,7 @@ function instance($$self, $$props, $$invalidate) {
 class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, {
-			shopifyData: 19,
-			product: 20,
-			otherData: 21
-		});
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 19, product: 20 });
 	}
 
 	get shopifyData() {
@@ -2194,18 +2191,9 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 		this.$$set({ product });
 		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
 	}
-
-	get otherData() {
-		return this.$$.ctx[21];
-	}
-
-	set otherData(otherData) {
-		this.$$set({ otherData });
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
-	}
 }
 
-(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Product_card, {"shopifyData":{},"product":{},"otherData":{}}, [], [], true);
+(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Product_card, {"shopifyData":{},"product":{}}, [], [], true);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Product_card);
 
 /***/ }),
@@ -2234,28 +2222,28 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[17] = list[i];
-	child_ctx[19] = i;
+	child_ctx[12] = list[i];
+	child_ctx[14] = i;
 	return child_ctx;
 }
 
 function get_each_context_1(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[17] = list[i];
-	child_ctx[19] = i;
+	child_ctx[12] = list[i];
+	child_ctx[14] = i;
 	return child_ctx;
 }
 
 function get_each_context_2(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[21] = list[i];
+	child_ctx[16] = list[i];
 	return child_ctx;
 }
 
-// (78:0) {#if collectionTexts.length > 1}
+// (68:0) {#if collectionTexts.length > 1}
 function create_if_block_4(ctx) {
 	let div;
-	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[5]);
+	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[4]);
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value_2.length; i += 1) {
@@ -2282,8 +2270,8 @@ function create_if_block_4(ctx) {
 			}
 		},
 		p(ctx, dirty) {
-			if (dirty & /*selectedParams, collectionTexts, updateParams*/ 100) {
-				each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[5]);
+			if (dirty & /*selectedParams, collectionTexts, updateParams*/ 52) {
+				each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[4]);
 				let i;
 
 				for (i = 0; i < each_value_2.length; i += 1) {
@@ -2315,11 +2303,11 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (80:4) {#each collectionTexts as text}
+// (70:4) {#each collectionTexts as text}
 function create_each_block_2(ctx) {
 	let div;
 	let button;
-	let t0_value = /*text*/ ctx[21] + "";
+	let t0_value = /*text*/ ctx[16] + "";
 	let t0;
 	let button_class_value;
 	let t1;
@@ -2327,7 +2315,7 @@ function create_each_block_2(ctx) {
 	let dispose;
 
 	function click_handler(...args) {
-		return /*click_handler*/ ctx[8](/*text*/ ctx[21], ...args);
+		return /*click_handler*/ ctx[7](/*text*/ ctx[16], ...args);
 	}
 
 	return {
@@ -2336,7 +2324,7 @@ function create_each_block_2(ctx) {
 			button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t0_value);
 			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[21] && "product-category__button--active"}`);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[16] && "product-category__button--active"}`);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "featured-products__Category");
 		},
 		m(target, anchor) {
@@ -2353,7 +2341,7 @@ function create_each_block_2(ctx) {
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
 
-			if (dirty & /*selectedParams*/ 4 && button_class_value !== (button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[21] && "product-category__button--active"}`)) {
+			if (dirty & /*selectedParams*/ 4 && button_class_value !== (button_class_value = `button button--primary product-category__button ${/*selectedParams*/ ctx[2].text == /*text*/ ctx[16] && "product-category__button--active"}`)) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", button_class_value);
 			}
 		},
@@ -2368,7 +2356,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (104:0) {:else}
+// (94:0) {:else}
 function create_else_block(ctx) {
 	let previous_key = /*productData*/ ctx[0];
 	let key_block_anchor;
@@ -2417,7 +2405,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (94:0) {#if isLoading}
+// (84:0) {#if isLoading}
 function create_if_block(ctx) {
 	let div6;
 
@@ -2441,7 +2429,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (114:6) {#if productData.length > 0  }
+// (104:6) {#if productData.length > 0  }
 function create_if_block_2(ctx) {
 	let custom_carousel;
 	let div0;
@@ -2499,7 +2487,7 @@ function create_if_block_2(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (dirty & /*productData, otherData*/ 17) {
+			if (dirty & /*productData*/ 1) {
 				each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 				let i;
 
@@ -2554,21 +2542,15 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (118:14) {#if product.variants[0].price > 0}
+// (108:14) {#if product.variants[0].price > 0}
 function create_if_block_3(ctx) {
 	let p;
-	let t0_value = (/*product*/ ctx[17].enableAddToCart = false) + "";
+	let t0_value = (/*product*/ ctx[12].enableAddToCart = false) + "";
 	let t0;
 	let t1;
 	let productcard;
 	let current;
-
-	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
-			props: {
-				product: /*product*/ ctx[17],
-				otherData: /*otherData*/ ctx[4]
-			}
-		});
+	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({ props: { product: /*product*/ ctx[12] } });
 
 	return {
 		c() {
@@ -2586,9 +2568,9 @@ function create_if_block_3(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if ((!current || dirty & /*productData*/ 1) && t0_value !== (t0_value = (/*product*/ ctx[17].enableAddToCart = false) + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t0, t0_value);
+			if ((!current || dirty & /*productData*/ 1) && t0_value !== (t0_value = (/*product*/ ctx[12].enableAddToCart = false) + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t0, t0_value);
 			const productcard_changes = {};
-			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[17];
+			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[12];
 			productcard.$set(productcard_changes);
 		},
 		i(local) {
@@ -2611,11 +2593,11 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (117:12) {#each productData as product, index}
+// (107:12) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
-	let if_block = /*product*/ ctx[17].variants[0].price > 0 && create_if_block_3(ctx);
+	let if_block = /*product*/ ctx[12].variants[0].price > 0 && create_if_block_3(ctx);
 
 	return {
 		c() {
@@ -2628,7 +2610,7 @@ function create_each_block_1(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*product*/ ctx[17].variants[0].price > 0) {
+			if (/*product*/ ctx[12].variants[0].price > 0) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 
@@ -2670,17 +2652,11 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (169:8) {#if index < 4}
+// (159:8) {#if index < 4}
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
-
-	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
-			props: {
-				product: /*product*/ ctx[17],
-				otherData: /*otherData*/ ctx[4]
-			}
-		});
+	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({ props: { product: /*product*/ ctx[12] } });
 
 	return {
 		c() {
@@ -2692,7 +2668,7 @@ function create_if_block_1(ctx) {
 		},
 		p(ctx, dirty) {
 			const productcard_changes = {};
-			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[17];
+			if (dirty & /*productData*/ 1) productcard_changes.product = /*product*/ ctx[12];
 			productcard.$set(productcard_changes);
 		},
 		i(local) {
@@ -2710,11 +2686,11 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (168:6) {#each productData as product, index}
+// (158:6) {#each productData as product, index}
 function create_each_block(ctx) {
 	let if_block_anchor;
 	let current;
-	let if_block = /*index*/ ctx[19] < 4 && create_if_block_1(ctx);
+	let if_block = /*index*/ ctx[14] < 4 && create_if_block_1(ctx);
 
 	return {
 		c() {
@@ -2727,7 +2703,7 @@ function create_each_block(ctx) {
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*index*/ ctx[19] < 4) if_block.p(ctx, dirty);
+			if (/*index*/ ctx[14] < 4) if_block.p(ctx, dirty);
 		},
 		i(local) {
 			if (current) return;
@@ -2748,7 +2724,7 @@ function create_each_block(ctx) {
 	};
 }
 
-// (105:0) {#key productData}
+// (95:0) {#key productData}
 function create_key_block(ctx) {
 	let div2;
 	let div0;
@@ -2830,7 +2806,7 @@ function create_key_block(ctx) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.check_outros)();
 			}
 
-			if (dirty & /*productData, otherData*/ 17) {
+			if (dirty & /*productData*/ 1) {
 				each_value = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 				let i;
 
@@ -2894,7 +2870,7 @@ function create_fragment(ctx) {
 	let current_block_type_index;
 	let if_block1;
 	let current;
-	let if_block0 = /*collectionTexts*/ ctx[5].length > 1 && create_if_block_4(ctx);
+	let if_block0 = /*collectionTexts*/ ctx[4].length > 1 && create_if_block_4(ctx);
 	const if_block_creators = [create_if_block, create_else_block];
 	const if_blocks = [];
 
@@ -2922,7 +2898,7 @@ function create_fragment(ctx) {
 			current = true;
 		},
 		p(ctx, [dirty]) {
-			if (/*collectionTexts*/ ctx[5].length > 1) if_block0.p(ctx, dirty);
+			if (/*collectionTexts*/ ctx[4].length > 1) if_block0.p(ctx, dirty);
 			let previous_block_index = current_block_type_index;
 			current_block_type_index = select_block_type(ctx, dirty);
 
@@ -2973,14 +2949,7 @@ function instance($$self, $$props, $$invalidate) {
 	let { shopifyData } = $$props;
 	let productData = []; //to store api data
 	let isLoading = true;
-	const { currencySymbol = "$", soldOutText = "Sold Out", chooseMoreText = "See Options", addToCartText = "Add To Cart", mobileCarousel = false, blocks = [] } = shopifyData || {};
-
-	const otherData = {
-		currencySymbol,
-		soldOutText,
-		chooseMoreText,
-		addToCartText
-	};
+	const { mobileCarousel = false, blocks = [] } = shopifyData || {};
 
 	const paramsHash = blocks.reduce(
 		(accumulator, block) => {
@@ -3043,7 +3012,7 @@ function instance($$self, $$props, $$invalidate) {
 	};
 
 	$$self.$$set = $$props => {
-		if ('shopifyData' in $$props) $$invalidate(7, shopifyData = $$props.shopifyData);
+		if ('shopifyData' in $$props) $$invalidate(6, shopifyData = $$props.shopifyData);
 	};
 
 	return [
@@ -3051,7 +3020,6 @@ function instance($$self, $$props, $$invalidate) {
 		isLoading,
 		selectedParams,
 		mobileCarousel,
-		otherData,
 		collectionTexts,
 		updateParams,
 		shopifyData,
@@ -3062,11 +3030,11 @@ function instance($$self, $$props, $$invalidate) {
 class Product_carousel extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
 	constructor(options) {
 		super();
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 7 });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.init)(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal, { shopifyData: 6 });
 	}
 
 	get shopifyData() {
-		return this.$$.ctx[7];
+		return this.$$.ctx[6];
 	}
 
 	set shopifyData(shopifyData) {

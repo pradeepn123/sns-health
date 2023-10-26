@@ -5,7 +5,6 @@
   import {removeAttributesForCartBinding} from 'JsComponents/rebuy-cart-integration';
   export let shopifyData;
   export let product;
-  export let otherData;
   let ref ;
   const {
     image,
@@ -21,6 +20,11 @@
   } = product || shopifyData || {};
 
 
+  const currencySymbol = window.shopifyVariables.currencySymbol || "$"
+  const  soldOutText = "Sold Out"
+  const  chooseMoreText = window.shopifyVariables.chooseMoreText || "See Options"
+  const addToCartText = window.shopifyVariables.addToCartText || "Add To Cart"
+  console.log(window.shopifyVariables.currency);
 
   const [{ compare_at_price: comparePrice, price , id:variantId} = {}] =  variants || [];
   const link = `${window.Shopify.routes.root}products/${handle}?variant=${variantId}`;
@@ -37,11 +41,6 @@
       rating = parsedValue?.reviewAverageValue;
     }
   });
-  const { currencySymbol = "$",
-    soldOutText = "Sold Out",
-    chooseMoreText = "Choose Options",
-    addToCartText = "Add To Cart"} =
-    otherData || {};
 
   const bestseller = tags.includes("bestseller");
   const onsale = tags.includes("onsale");
