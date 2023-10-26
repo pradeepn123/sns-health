@@ -179,27 +179,28 @@ var boostPFSTemplate = {
         // Get Template
         // Customize API data to get the Shopify data
         data = prepareShopifyData(data);
-        const {price_min , 
-            compare_at_price_min = 0, 
+        const {
             images_info, 
             vendor,
+            variants:productVariants,
             title,
             tags,
             metafields=[],
             variant_id,
             handle,
             link = '' } = data || {};
-
+            const currentVariant = productVariants.find(variant => variant.id == variant_id)
             const reviewMetafields = metafields.filter(metafield => metafield.namespace == 'okendo' && metafield.key == "summaryData")
         const curatedData = {
             image:images_info[0]|| false,
-            variants: [{ compare_at_price: compare_at_price_min, price:price_min, id:variant_id }],
+            variants: [{ compare_at_price: currentVariant.compare_at_price * 100, price:currentVariant.price * 100, id:variant_id }],
             vendor,
             title,
             tags,
             metafields: reviewMetafields,
             link,
-            handle
+            handle,
+            skipFormatMoney: true
         }
             
         return `<custom-product-card>
