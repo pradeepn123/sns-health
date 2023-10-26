@@ -17,7 +17,7 @@
            assign promotion_creative_name = block.settings.promotion_creative_name
          %}
          <a class="swiper-slide featured-brand-section__item" 
-          data-js-click data-redirect-click data-url = "{{url}}"
+          data-js-click data-redirect-click data-url = "{% render 'render-metafield-local-aware-url', cta_url: url %}"
           {% if promotion and promotion_name != blank %}
             data-promotion
             data-promotion-name="{{- promotion_name -}}" 
@@ -74,7 +74,7 @@
             assign promotion_name = block.settings.promotion_name
             assign promotion_creative_name = block.settings.promotion_creative_name
           %}
-          <a class="swiper-slide featured-brand-section__item" {% if url%} href="{{url}}" {% endif%}>
+          <a class="swiper-slide featured-brand-section__item" {% if url%} href="{% render 'render-metafield-local-aware-url', cta_url: url %}" {% endif%}>
            {% render 'shopify-responsive-image',
              image: image,
              aspect_ratio: 2.5,
