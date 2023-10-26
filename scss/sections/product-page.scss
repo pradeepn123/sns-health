@@ -168,3 +168,14 @@
 .select-option.disabled {
     display:  none;
 }
+
+.modal__inner {
+    max-width: 95%;
+    margin: 0 auto;
+    button {
+        color: white;
+    }
+    .card {
+        padding: 20px;
+    }
+}

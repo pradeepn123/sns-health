@@ -3174,7 +3174,6 @@
           if (newVariant['compare_at_price'] > newVariant['price']) {
             productPrices.innerHTML += "<span class=\"price price--compare\"><span class=\"visually-hidden\">".concat(window.languages.productRegularPrice, "</span>").concat(Currency.formatMoney(newVariant['compare_at_price'], window.theme.moneyFormat), ` ${window.Shopify?.currency?.active} </span>`);
             productPrices.innerHTML += "<span class=\"price price--highlight\"><span class=\"visually-hidden\">".concat(window.languages.productSalePrice, "</span>").concat(Currency.formatMoney(newVariant['price'], window.theme.moneyFormat), `${window.Shopify?.currency?.active} </span>`);
-            productPrices.innerHTML += window.Shopify?.currency?.active
           } else {
             productPrices.innerHTML += "<span class=\"price\"><span class=\"visually-hidden\">".concat(window.languages.productSalePrice, "</span>").concat(Currency.formatMoney(newVariant['price'], window.theme.moneyFormat), ` ${window.Shopify?.currency?.active} </span>`);
           }

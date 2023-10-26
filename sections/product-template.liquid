@@ -1,3 +1,4 @@
+{{ 'product-page.css' | asset_url | stylesheet_tag }}
 {%- capture section_settings -%}
 {
   "showShippingEstimator": {% if template == 'product.quick-view' or product.available == false %}false{% else %}{{ section.settings.show_shipping_estimator | json }}{% endif %},

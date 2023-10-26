@@ -1,4 +1,3 @@
-{{ 'product-page.css' | asset_url | stylesheet_tag }}
 {%- assign selected_variant = product.selected_or_first_available_variant -%}
 
 <div class="card {% if product.media.size > 0 %}card--collapsed{% endif %} {% if template.name == 'product' %}card--sticky{% endif %} no-border">
@@ -280,12 +279,6 @@
                 {%- assign option_selector_type = 'block' -%}
               {%- endif -%}
             {%- endif -%}
-
-            {% if option.values.size > 3 %}
-              {%- assign option_selector_type = 'select' -%}
-            {% endif %}
-
-
              <div class="product-form__option" data-options-container data-selector-type="{{ option_selector_type }}">
               {%- case option_selector_type -%}
                 {%- when 'color' -%}
