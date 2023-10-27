@@ -652,7 +652,7 @@
             "image_desktop": "shopify:\/\/shop_images\/image_100_1.png",
             "image_mobile": "shopify:\/\/shop_images\/image_100_3.png",
             "eyebrow": "Trending in",
-            "heading": "Vitamins & <br> Supplements",
+            "heading": "Vitamins &  Supplements",
             "subheading": "",
             "cta_text": "Shop All",
             "cta_url": "shopify:\/\/collections\/vitamins-and-supplements",
@@ -667,6 +667,36 @@
       }
     },
     "2cc259d5-2ab8-4dbe-82ec-dc779bd2e01b": {
+      "type": "line-breaker",
+      "settings": {
+      }
+    },
+    "5d2508d0-7ea8-4a93-82be-e431ad31e47c": {
+      "type": "banner-product",
+      "blocks": {
+        "d69b4d85-122e-42e9-85af-d5ace6369f59": {
+          "type": "content",
+          "settings": {
+            "mobile_carousel": true,
+            "text_color": "rgba(0,0,0,0)",
+            "image_desktop": "shopify:\/\/shop_images\/555.png",
+            "image_mobile": "shopify:\/\/shop_images\/5556.png",
+            "eyebrow": "Trending in",
+            "heading": "Healthy Snacks",
+            "subheading": "",
+            "cta_text": "Shop All",
+            "cta_url": "shopify:\/\/collections\/food-drinks",
+            "collection": "us-selection"
+          }
+        }
+      },
+      "block_order": [
+        "d69b4d85-122e-42e9-85af-d5ace6369f59"
+      ],
+      "settings": {
+      }
+    },
+    "8e275cc5-b6cf-4d02-bfbc-04fc3d8a3e51": {
       "type": "line-breaker",
       "settings": {
       }
@@ -843,6 +873,8 @@
     "22c01918-3750-4804-952d-ffa0b068b2b4",
     "5043144c-a30c-45ba-b572-67c71a78f3d5",
     "2cc259d5-2ab8-4dbe-82ec-dc779bd2e01b",
+    "5d2508d0-7ea8-4a93-82be-e431ad31e47c",
+    "8e275cc5-b6cf-4d02-bfbc-04fc3d8a3e51",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
     "ed3c4144-6707-4fda-9a49-2f5e23ebeb69",
     "169278817168ac6906",
