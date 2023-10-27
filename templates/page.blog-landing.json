@@ -3,27 +3,27 @@
     "249743d0-f771-4be5-9404-cb9b358af298": {
       "type": "blog-banner",
       "blocks": {
-        "9eaf9850-a955-4dc3-a266-e53a9ac1f229": {
+        "32b60317-f305-4d52-b618-3e1d4b3373d7": {
           "type": "articles",
           "settings": {
-            "article": "fitness-and-nutrition\/high-protein-diet-benefits-and-weight-loss-supplements"
+            "article": "fitness-and-nutrition\/a-to-z-about-whey-protein-the-ultimate-guide-for-beginners"
           }
         },
         "3898df59-2d60-49a2-98c6-8c3363981197": {
           "type": "articles",
           "settings": {
-            "article": "mental-health\/unraveling-stress-and-anxiety-top-supplements-for-a-balanced-mind"
+            "article": "health\/top-10-immunity-boosting-supplements-for-antiviral-support"
           }
         },
         "471ed145-4036-4457-b09a-b149e12f3ea6": {
           "type": "articles",
           "settings": {
-            "article": "fitness-and-nutrition\/how-glutamine-and-creatine-supplements-enhance-muscle-growth-and-recovery"
+            "article": "health\/what-supplements-should-not-be-taken-together"
           }
         }
       },
       "block_order": [
-        "9eaf9850-a955-4dc3-a266-e53a9ac1f229",
+        "32b60317-f305-4d52-b618-3e1d4b3373d7",
         "3898df59-2d60-49a2-98c6-8c3363981197",
         "471ed145-4036-4457-b09a-b149e12f3ea6"
       ],
