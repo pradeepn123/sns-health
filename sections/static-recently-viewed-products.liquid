@@ -1,4 +1,4 @@
-
+{{ 'recently-view.css' | asset_url | stylesheet_tag }}
 
   {%- capture section_settings -%}
   {
@@ -6,14 +6,10 @@
   }
   {%- endcapture -%}
 
-  <section class="section" data-section-id="{{ section.id }}" data-section-type="recently-viewed-products" data-section-settings='{{ section_settings }}'>
-    <div class="container">
-      {%- if section.settings.title != blank -%}
-        <header class="section__header">
-          <h2 class="section__title heading h3">{{ section.settings.title | escape }}</h2>
-        </header>
-      {%- endif -%}
-      <div class="recently-viewed-products-placeholder {{ section.settings.custom_classes }}">
+  <section class="section recently-viewed" data-section-id="{{ section.id }}" data-section-type="recently-viewed-products" data-section-settings='{{ section_settings }}'>
+    <div class="recently-viewed-section">
+      {% render 'section-heading', heading: section.settings.heading %}
+      <div class="recently-viewed-section__wrapper recently-viewed-products-placeholder {{ section.settings.custom_classes }}">
         {%- if template.name == 'search' -%}
           <div class="scroller">
             <div class="scroller__inner">
@@ -40,7 +36,7 @@
                   {%- endfor -%}
                 {%- endfor -%}
 
-           <product-carousel data-type="product-carousel">
+                <product-carousel data-type="product-carousel">
                   <script id="product-data" type="text/json">
                     {
                       "data": {% render 'JSON-output-product-list-carousel' , product_list: product_items | strip_newlines %}
@@ -104,7 +100,7 @@
 
     {
       "type": "text",
-      "id": "title",
+      "id": "heading",
       "label": "Heading",
       "default": "Recently viewed"
     },

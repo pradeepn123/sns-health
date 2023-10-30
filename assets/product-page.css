@@ -1,6 +1,26 @@
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/product-page.scss ***!
   \****************************************************************************************************************************************************************************************************************************/
+@media (min-width: 768px) {
+  .product-container {
+    max-width: calc(100% - 2 * var(--base-margin));
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--section-margin);
+    padding: 0;
+  }
+}
+@media (min-width: 768px) and (min-width: 1440px) {
+  .product-container {
+    max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}
+@media (min-width: 768px) {
+  .product-container .card__section {
+    padding: 20px 0;
+  }
+}
+
 .product-form__info-item--quantity .product-form__info-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,7 +31,7 @@
 }
 .product-form__info-item--quantity .product-form__info-content .quantity-selector--product {
   height: 54px;
-  width: 52%;
+  width: 50%;
 }
 @media (min-width: 768px) {
   .product-form__info-item--quantity .product-form__info-content .quantity-selector--product {

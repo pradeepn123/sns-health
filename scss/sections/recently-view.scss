@@ -1,0 +1,28 @@
+@use 'StyleComponents/colors';
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'StyleComponents/breakpoints';
+
+
+.recently-viewed{
+
+    margin-top: var(--section-margin);
+    margin-bottom: 0;
+    padding: var(--section-padding) 0 0;
+ 
+        @include mixins.container;
+        // margin-top: var(--section-margin);
+       
+    
+
+    .featured-products__wrapper{
+       @media(--md){
+        max-width: 100%;
+       }
+    }
+
+    .section__heading-wrapper{
+        max-width: 100%;
+    }
+}

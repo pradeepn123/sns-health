@@ -3434,7 +3434,6 @@
     }, {
       key: "_onOptionChanged",
       value: function _onOptionChanged(event, target) {
-        debugger;
         this['option' + target.getAttribute('data-option-position')] = target.value; // We update the selected value
 
         var selectedValueElement = target.closest('.product-form__option').querySelector('.product-form__selected-value');
@@ -12465,7 +12464,9 @@
                   // changes of height.
                   setTimeout(function () {
                     _this2.productGalleryElement.style.height = null;
+                    window.dispatchEvent(new Event('resize'));
                   }, 1000);
+            
                 }
               }
             });
@@ -12477,6 +12478,7 @@
         this.delegateElement.on('click', '.product-gallery__thumbnail', this._onThumbnailClicked.bind(this));
 
         if (this.productThumbnailsListElement && this.flickityInstance) {
+          window.dispatchEvent(new Event('resize'));
           this.productThumbnailsCellsElements = this.productThumbnailsListElement.querySelectorAll('.product-gallery__thumbnail');
           this.flickityInstance.on('select', this._onGallerySlideChanged.bind(this));
 

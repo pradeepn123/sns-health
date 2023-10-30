@@ -5,6 +5,20 @@
 @import 'StyleComponents/breakpoints';
 
 
+.product-container{
+ 
+    @media (--sm) {
+        @include mixins.container;
+        margin-top: var(--section-margin);
+        padding: 0;
+    }
+    .card__section{
+        @media (--sm) {
+            padding: 20px 0;
+        }
+    }
+}
+
 
 .product-form__info-item--quantity{
     .product-form__info-content{
@@ -12,7 +26,7 @@
         column-gap: 14px;
         .quantity-selector--product {
             height: 54px;
-            width: 52%;
+            width: 50%;
             @media(--sm){
                 width: auto;
             }

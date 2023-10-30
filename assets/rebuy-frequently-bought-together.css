@@ -4,6 +4,7 @@
     padding: 20px;
     text-align: left;
     margin-top: 40px;
+    max-width: 100%;
 }
 .frequently-bought-together .rebuy-widget {
     padding: 0 !important;
