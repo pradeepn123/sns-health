@@ -964,7 +964,6 @@
       "static-recently-viewed-products": {
         "type": "static-recently-viewed-products",
         "settings": {
-          "title": "Recently viewed",
           "mobile_carousel": true
         }
       },

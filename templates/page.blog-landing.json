@@ -3,6 +3,12 @@
     "249743d0-f771-4be5-9404-cb9b358af298": {
       "type": "blog-banner",
       "blocks": {
+        "a890385f-3b90-4b0a-a8e5-1701291c2d8d": {
+          "type": "articles",
+          "settings": {
+            "article": "fitness-and-nutrition\/top-10-effective-mass-gainers-the-ultimate-guide"
+          }
+        },
         "32b60317-f305-4d52-b618-3e1d4b3373d7": {
           "type": "articles",
           "settings": {
@@ -23,6 +29,7 @@
         }
       },
       "block_order": [
+        "a890385f-3b90-4b0a-a8e5-1701291c2d8d",
         "32b60317-f305-4d52-b618-3e1d4b3373d7",
         "3898df59-2d60-49a2-98c6-8c3363981197",
         "471ed145-4036-4457-b09a-b149e12f3ea6"
