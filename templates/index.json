@@ -3,12 +3,23 @@
     "main": {
       "type": "Banner",
       "blocks": {
+        "d3b46f79-d129-4e10-bd7c-4fddc61583ff": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Vega Promotion",
+            "promotion_creative_name": "Main Banner 1",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/vega_giveway.jpg",
+            "cta_url": "https:\/\/www.instagram.com\/sportsnutritionsource\/?hl=en"
+          }
+        },
         "ed3ae549-9da0-4852-a64a-a2b2d379e7d7": {
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
             "promotion_name": "MuscleTech Promotion",
-            "promotion_creative_name": "Main Banner 1",
+            "promotion_creative_name": "Main Banner 2",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/Muscle_Tech_copy.webp",
             "cta_url": "shopify:\/\/collections\/muscletech"
@@ -62,6 +73,7 @@
         }
       },
       "block_order": [
+        "d3b46f79-d129-4e10-bd7c-4fddc61583ff",
         "ed3ae549-9da0-4852-a64a-a2b2d379e7d7",
         "ef49abc3-5256-4cf1-8510-acdd51d49689",
         "5984eb08-08b3-47e4-be13-5da21dbca50c",
