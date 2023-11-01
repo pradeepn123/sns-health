@@ -31,9 +31,9 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Corepower Promo",
-            "promotion_creative_name": "Main Banner 2",
+            "promotion_creative_name": "Main Banner 3",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/fairlife_free.png",
+            "image_desktop": "shopify:\/\/shop_images\/Vital_protein_copy.webp",
             "cta_url": "https:\/\/snshealth.com\/collections\/sale"
           }
         },
@@ -53,9 +53,9 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Progressive",
-            "promotion_creative_name": "Main Banner 3",
+            "promotion_creative_name": "Right Banner 2",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/progressive_922721b0-c8b6-4d85-9628-02c85a53eaca.png",
+            "image_desktop": "shopify:\/\/shop_images\/jamieson_copy.webp",
             "cta_url": "shopify:\/\/collections\/progressive"
           }
         },
