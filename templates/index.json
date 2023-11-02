@@ -731,18 +731,18 @@
             "text_position": "center center"
           }
         },
-        "9f264aba-de45-4d65-b645-670ea4d270f6": {
+        "4e326dc5-b877-4abb-a5ef-59fa7d42ddc3": {
           "type": "banner_grid",
           "settings": {
             "text_color": "",
-            "background_color": "#6381a7",
-            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_2.png",
+            "background_color": "#ffbd00",
+            "image_desktop": "shopify:\/\/shop_images\/GLU-2302_1.jpg",
             "eyebrow": "",
             "inline_heading": false,
-            "heading": "Up to<br> 15% OFF",
-            "subheading": "Sunscreen",
+            "heading": "Get <br> 75% OFF",
+            "subheading": "GluteNull",
             "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/sunscreen"
+            "cta_url": "shopify:\/\/collections\/glutenull"
           }
         },
         "9066e929-3a9c-404b-835a-797166835a14": {
@@ -753,25 +753,10 @@
             "image_desktop": "shopify:\/\/shop_images\/Screenshot_2023-10-23_124851.png",
             "eyebrow": "",
             "inline_heading": false,
-            "heading": "Up to <br>50% OFF",
+            "heading": "Up to <br>75% OFF",
             "subheading": "Himalaya Collection",
             "cta_text": "Shop",
             "cta_url": "shopify:\/\/collections\/himalaya"
-          }
-        },
-        "7bab0a26-8d2b-497d-ab26-0e0e9c996828": {
-          "type": "banner_grid",
-          "settings": {
-            "text_color": "",
-            "background_color": "#901712",
-            "image_desktop": "shopify:\/\/shop_images\/Screenshot_2023-10-23_183350.png",
-            "image_mobile": "shopify:\/\/shop_images\/Vector_dcb6d0f6-2d45-4897-8182-99e72271db48.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "Get <br> 15% OFF",
-            "subheading": "Pasta & Noodles",
-            "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/pasta-noodles"
           }
         },
         "a76ad1c6-b62d-4c66-82fc-d188f57570fe": {
@@ -787,14 +772,43 @@
             "cta_text": "Shop",
             "cta_url": "shopify:\/\/products\/vega-real-food-smoothie"
           }
+        },
+        "9f264aba-de45-4d65-b645-670ea4d270f6": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "",
+            "background_color": "#6381a7",
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_2.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Up to<br> 15% OFF",
+            "subheading": "Sunscreen",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/collections\/sunscreen"
+          }
+        },
+        "7bab0a26-8d2b-497d-ab26-0e0e9c996828": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "",
+            "background_color": "#901712",
+            "image_desktop": "shopify:\/\/shop_images\/Screenshot_2023-10-23_183350.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Get <br> 15% OFF",
+            "subheading": "Pasta & Noodles",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/collections\/pasta-noodles"
+          }
         }
       },
       "block_order": [
         "b100cd87-92eb-4868-b580-3b584ac8f527",
-        "9f264aba-de45-4d65-b645-670ea4d270f6",
+        "4e326dc5-b877-4abb-a5ef-59fa7d42ddc3",
         "9066e929-3a9c-404b-835a-797166835a14",
-        "7bab0a26-8d2b-497d-ab26-0e0e9c996828",
-        "a76ad1c6-b62d-4c66-82fc-d188f57570fe"
+        "a76ad1c6-b62d-4c66-82fc-d188f57570fe",
+        "9f264aba-de45-4d65-b645-670ea4d270f6",
+        "7bab0a26-8d2b-497d-ab26-0e0e9c996828"
       ],
       "settings": {
         "mobile_carousel": true
