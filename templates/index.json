@@ -106,17 +106,17 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Perfect Sports",
+            "promotion_name": "PS + ON Promo",
             "promotion_creative_name": "Sub banner 2",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/perfect_sport_1.webp",
-            "image_mobile": "shopify:\/\/shop_images\/perfect_sport_-_mobile_1.webp",
+            "image_desktop": "shopify:\/\/shop_images\/ONPS_DESKTOP.png",
+            "image_mobile": "shopify:\/\/shop_images\/ONPS_MOBILE.jpg",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/perfect-sports"
+            "cta_url": "shopify:\/\/collections\/stack-slash"
           }
         },
         "5379485b-f9f2-400b-8e8b-fb05de6685ec": {
