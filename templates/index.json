@@ -18,11 +18,11 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "MuscleTech Promotion",
+            "promotion_name": "Pre-Black Friday Blowout",
             "promotion_creative_name": "Main Banner 2",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Muscle_Tech_copy.webp",
-            "cta_url": "shopify:\/\/collections\/muscletech"
+            "image_desktop": "shopify:\/\/shop_images\/pre_black_friday.jpg",
+            "cta_url": "shopify:\/\/collections\/pre-blackfriday-sale"
           }
         },
         "ef49abc3-5256-4cf1-8510-acdd51d49689": {
