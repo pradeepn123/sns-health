@@ -37,7 +37,7 @@
     max-width: 60%;
   }
 }
-.collection-banner .collection-banner__heading.text__heading {
+.collection-banner .collection-banner__heading.text__heading, .collection-banner .collection-banner__title {
   font-family: "poppins";
   font-size: 14px;
   font-weight: 500;
@@ -46,7 +46,7 @@
   margin-bottom: 8px;
 }
 @media (min-width: 390px) {
-  .collection-banner .collection-banner__heading.text__heading {
+  .collection-banner .collection-banner__heading.text__heading, .collection-banner .collection-banner__title {
     font-family: "poppins";
     font-size: 20px;
     font-weight: 700;
@@ -54,7 +54,7 @@
   }
 }
 @media (min-width: 768px) {
-  .collection-banner .collection-banner__heading.text__heading {
+  .collection-banner .collection-banner__heading.text__heading, .collection-banner .collection-banner__title {
     font-family: "poppins";
     font-size: 24px;
     font-weight: 700;
@@ -63,7 +63,7 @@
   }
 }
 @media (min-width: 1200px) {
-  .collection-banner .collection-banner__heading.text__heading {
+  .collection-banner .collection-banner__heading.text__heading, .collection-banner .collection-banner__title {
     font-family: "poppins";
     font-size: 32px;
     font-weight: 700;
@@ -71,7 +71,29 @@
     margin-bottom: 19px;
   }
 }
-.collection-banner .collection-banner__subheading.text__subheading {
+.collection-banner .collection-banner__title {
+  font-family: "poppins";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  .collection-banner .collection-banner__title {
+    font-family: "poppins";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+@media (min-width: 1200px) {
+  .collection-banner .collection-banner__title {
+    font-family: "poppins";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+.collection-banner .collection-banner__subheading.text__subheading, .collection-banner .collection-banner__description {
   font-family: "poppins";
   font-size: 10px;
   font-weight: 600;
@@ -79,7 +101,7 @@
   font-weight: 400;
 }
 @media (min-width: 390px) {
-  .collection-banner .collection-banner__subheading.text__subheading {
+  .collection-banner .collection-banner__subheading.text__subheading, .collection-banner .collection-banner__description {
     font-family: "poppins";
     font-size: 12px;
     font-weight: 400;
@@ -88,7 +110,7 @@
   }
 }
 @media (min-width: 768px) {
-  .collection-banner .collection-banner__subheading.text__subheading {
+  .collection-banner .collection-banner__subheading.text__subheading, .collection-banner .collection-banner__description {
     font-family: "poppins";
     font-size: 14px;
     font-weight: 500;
@@ -96,7 +118,7 @@
   }
 }
 @media (min-width: 1024px) {
-  .collection-banner .collection-banner__subheading.text__subheading {
+  .collection-banner .collection-banner__subheading.text__subheading, .collection-banner .collection-banner__description {
     font-family: "poppins";
     font-size: 16px;
     font-weight: 400;
@@ -104,7 +126,7 @@
   }
 }
 @media (min-width: 1024px) {
-  .collection-banner .collection-banner__subheading.text__subheading {
+  .collection-banner .collection-banner__subheading.text__subheading, .collection-banner .collection-banner__description {
     display: inline;
     display: initial;
   }
@@ -128,6 +150,6 @@
 .collection-banner .responsive-image__wrapper {
   min-height: 145px;
 }
-.collection-banner .collection-banner__text-wrapper {
-  display: none;
+.collection-banner .collection-banner__description {
+  line-height: 2;
 }

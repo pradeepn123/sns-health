@@ -6,7 +6,6 @@
 
 @custom-selector :--list .breadcrumb__link;
 
-
 .breadcrumb {
    margin-top: var(--section-content-margin);
 
@@ -16,10 +15,10 @@
 
    :--list {
        @include use-text-style('body-regular');
-      // @media(--sm) {
-      //    @include use-text-style('body-alt');
-      //    font-weight: typography.$regular-weight;
-      // }
+      @media(--sm) {
+         @include use-text-style('body-alt');
+         
+      }
 
     }
 }

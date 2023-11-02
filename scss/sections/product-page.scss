@@ -118,6 +118,7 @@
 
 .page__sub-header{
     .breadcrumb__list{
+        @include use-text-style('body-alt');
         .breadcrumb__link[aria-current="page"]{
             font-weight: typography.$semi-weight;
         }
@@ -141,7 +142,7 @@
 
 .card--collapsed{
     .card__section {
-        padding-top: calc(2*var(--section-content-margin));
+        padding-top: 0;
         @media(--md){
             padding-top: 39px ;
         }

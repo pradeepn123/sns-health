@@ -12,13 +12,12 @@
           "type": "image_with_text_overlay",
           "source": "{{ collection.metafields.custom.collection_banner.value }}",
           "settings": {
-            "checkbox_description": false,
             "featured_image_desktop": "{{ collection.metafields.custom.collection_banner.value.desktop_image.value }}",
             "featured_image_mobile": "{{ collection.metafields.custom.collection_banner.value.mobile_image.value }}",
             "font-color": "#000000",
             "background-color": "rgba(0,0,0,0)",
-            "inline_cta": false,
-            "cta_text": "",
+            "inline_cta": true,
+            "cta_text": "read more",
             "cta_url": ""
           }
         }
@@ -73,7 +72,8 @@
     "55eea1c7-d33f-4ba0-9122-60d589c905c8": {
       "type": "static-recently-viewed-products",
       "settings": {
-        "title": "Recently viewed"
+        "heading": "Recently viewed",
+        "mobile_carousel": true
       }
     },
     "d0182ec5-3361-4ef2-892f-c87049bf4454": {

@@ -764,6 +764,10 @@ body .uwy .uai {
 
 .card .card__header{
 @include mixins.container;
+display: none;
+@media(--sm){
+    display: block;
+}
 }
 
 

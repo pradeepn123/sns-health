@@ -12,13 +12,16 @@
           display: none;
         }
       {% endif %}
-      {% if block.settings.checkbox_description == true %}
-        .collection-banner .collection-banner__text-wrapper{
-          display: block;
-        }
-      {% endif %}
   {% endfor %}
+  {% if collection.metafields.custom.collection_banner != blank and collection.description == blank %}
+    .text-image__text-wrapper  {
+      display: none;
+    }
+  
+  {% endif %}
 {% endstyle %}
+
+{% if collection.metafields.custom.collection_banner != blank %}
 
 <div class="collection-banner">
   <div class="colection-collection-banner__content">
@@ -64,6 +67,15 @@
   </div>
 </div>
 
+{% else %}
+
+  <div class="collection-banner display-text">
+    <h1 class= "collection-banner__title">{{collection.title}}</h1>
+    <p class="collection-banner__description">{{collection.description}}</p>
+  </div>
+
+{% endif %}
+
 {% schema %}
 {
   "name": "collection-banner",
@@ -78,12 +90,6 @@
         {
           "type": "header",
           "content": "Block Group"
-        },
-        {
-          "type": "checkbox",
-          "id":  "checkbox_description",
-          "label": "show collection Title and Description ",
-          "default": false
         },
         {
           "type": "image_picker",

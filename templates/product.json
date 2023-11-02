@@ -31,9 +31,9 @@
         "show_shipping_estimator": false,
         "shipping_estimator_default_country": "United States",
         "show_refunds_policy": false,
-        "complimentary__product": "",
-        "complimentary_title": "Add a title",
-        "complimentary_description": "<p>Add a title<\/p><p><\/p>"
+        "complimentary__product": "bucked-up-shaker",
+        "complimentary_title": "Free Shaker !!",
+        "complimentary_description": "<p>Get a complimentary Bucked Up shaker delivered right to your doorstep when you purchase any Bucked Up product!<\/p><p><\/p>"
       }
     },
     "de1ba06b-7729-47a3-a3dc-b7b1e0ba7a31": {
@@ -81,7 +81,7 @@
     "12115053-950b-44eb-9171-d513f0dc7ed9": {
       "type": "static-recently-viewed-products",
       "settings": {
-        "title": "Recently viewed",
+        "heading": "Recently viewed",
         "mobile_carousel": true
       }
     },

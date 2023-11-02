@@ -861,10 +861,16 @@ body .uwy .uai {
   max-width: calc(100% - 2 * var(--base-margin));
   margin-left: auto;
   margin-right: auto;
+  display: none;
 }
 @media (min-width: 1440px) {
   .card .card__header {
     max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}
+@media (min-width: 768px) {
+  .card .card__header {
+    display: block;
   }
 }
 

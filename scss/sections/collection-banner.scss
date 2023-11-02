@@ -11,6 +11,9 @@
 @custom-selector :--button .collection-banner__cta.button; 
 @custom-selector :--responsive-img .responsive-image__wrapper; 
 @custom-selector :--show-description .collection-banner__text-wrapper;
+@custom-selector :--collection-title .collection-banner__title; 
+@custom-selector :--collection-desc .collection-banner__description; 
+
 
 .collection-banner {
     margin-top: var(--section-content-margin);
@@ -38,7 +41,7 @@
 
 
 
-    :--heading {
+    :--heading , :--collection-title{
         @include use-text-style('body-title');
         font-weight: typography.$heading-weight;
         margin-bottom: 8px;
@@ -56,7 +59,17 @@
         }
     }
 
-    :--subheading {
+    :--collection-title{
+        @include use-text-style('heading-3');
+        @media (--sm){
+            @include use-text-style('heading-2');
+        }
+        @media(--md-large){
+            @include use-text-style('heading-1');
+        }
+    }
+
+    :--subheading , :--collection-desc{
         @include use-text-style('body-small');
         font-weight: typography.$regular-weight;
         @media(--xs){
@@ -95,7 +108,7 @@
         min-height: 145px;
     }
 
-    :--show-description{
-        display: none;
+    :--collection-desc {
+        line-height: 2;
     }
 }
