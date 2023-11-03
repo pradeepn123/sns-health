@@ -233,3 +233,7 @@ product-card .product-card {
 body {
   background: #fff;
 }
+
+.product-card__atc .btn-backinstock {
+  display: none !important;
+}

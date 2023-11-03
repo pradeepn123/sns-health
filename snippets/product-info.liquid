@@ -1,5 +1,14 @@
 {%- assign selected_variant = product.selected_or_first_available_variant -%}
 
+{% if selected_variant.available == false %}
+  {% style %}
+    .quantity-selector{
+      pointer-events: none;
+      opacity:0.5;
+    }
+  {% endstyle %}
+{% endif %}
+
 <div class="card {% if product.media.size > 0 %}card--collapsed{% endif %} {% if template.name == 'product' %}card--sticky{% endif %} no-border">
   {%- if section.settings.enable_image_zoom -%}
     <div id="product-zoom-{{ section.id }}" class="product__zoom-wrapper"></div>
@@ -616,7 +625,7 @@
                       </button>
                     {%- endif -%}
                   {%- else -%}
-                    <button type="submit" class="product-form__add-button button button--disabled" disabled>
+                    <button type="submit" class="product-form__add-button button button--disabled" disabled> 
                       {{ 'product.form.sold_out' | t }}
                     </button>
                   {%- endif -%}

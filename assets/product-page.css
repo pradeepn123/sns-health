@@ -56,6 +56,14 @@
           box-shadow: 0px 0px 0px 1px #ED1C24;
 }
 
+.product-form__info-list {
+  margin: -22px 0 0px;
+}
+@media (min-width: 768px) {
+  .product-form__info-list {
+    margin: -22px 0 6px;
+  }
+}
 .product-form__info-list .product-form__info-item .product-form__info-content .price-list {
   display: inline;
 }

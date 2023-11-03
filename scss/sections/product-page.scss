@@ -52,6 +52,10 @@
 }
 
 .product-form__info-list{
+    margin: -22px 0 0px;
+    @media(--sm){
+        margin: -22px 0 6px;
+    }
     .product-form__info-item{
         .product-form__info-content{
             .price-list{
