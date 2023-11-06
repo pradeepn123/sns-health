@@ -221,6 +221,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="{{ 'rebuy-cart.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'product-okendo-reviewcarousel.css' | asset_url }}">
 
+    {% render 'seo-hreflang' %}
+
   </head>
 
   <body class="warehouse--v1 {% if settings.animation_image_zoom %}features--animate-zoom{% endif%} template-{{ request.page_type | handle }} {% if request.page_type contains '/' %}template-{{ request.page_type | split: '/' | last | handle }}{% endif %}" data-instant-intensity="viewport">
