@@ -56,7 +56,7 @@
     discountPercentage = shopifyDiscountPercentage;
   }
   else {
-    discountPercentage = Math.round(((comparePrice - price) * 100) / price)
+    discountPercentage = Math.round(((comparePrice - price) * 100) / comparePrice)  
   }
 
   onMount(() => {

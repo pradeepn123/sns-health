@@ -200,9 +200,9 @@ var boostPFSTemplate = {
             metafields: reviewMetafields,
             link,
             handle,
-            skipFormatMoney: true
+            skipFormatMoney: true,
+            discountPercentage: Math.round((((currentVariant.compare_at_price * 100) - (currentVariant.price * 100)) * 100) / (currentVariant.compare_at_price * 100))  ,
         }
-            
         return `<custom-product-card>
         <div id="product-json" type="text/json" style="display: none">
         {
@@ -211,6 +211,9 @@ var boostPFSTemplate = {
     </script>
     </custom-product-card>`;
     };
+
+    
+ 
 
     /***************************** BUILD TOOLBAR *******************************/
     // Build Pagination

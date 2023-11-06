@@ -2122,7 +2122,7 @@ function instance($$self, $$props, $$invalidate) {
 	if (skipFormatMoney) {
 		discountPercentage = shopifyDiscountPercentage;
 	} else {
-		discountPercentage = Math.round((comparePrice - price) * 100 / price);
+		discountPercentage = Math.round((comparePrice - price) * 100 / comparePrice);
 	}
 
 	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(() => {
