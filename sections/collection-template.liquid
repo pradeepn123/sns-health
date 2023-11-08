@@ -204,11 +204,7 @@
 							{%- assign show_as_list = true -%}
 							{%- endif -%}
 
-							<div class="boost-pfs-filter-products product-list product-list--collection">
-							{%- for product in collection.products -%}
-								{%- include 'product-item', list: show_as_list, grid_classes: grid_classes -%}
-							{%- endfor -%}
-							</div>
+							{%- render 'collection-product-list' , collection: collection -%}
 							<div class="boost-pfs-filter-bottom-pagination pagination"></div>
 							<div class="boost-pfs-filter-load-more"></div>
 						</div>

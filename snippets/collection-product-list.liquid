@@ -1,0 +1,13 @@
+<div class="boost-pfs-filter-products product-list product-list--collection product-list--custom">
+    {%- for product in collection.products -%}
+      {% if product.available %}
+        <custom-product-card>
+          <script id="product-json" type="text/json" style="display: none">
+            {
+              "data": {% render 'JSON-product-card-data', product: product %}
+            }
+          </script>
+        </custom-product-card>
+      {% endif %}
+    {%- endfor -%}
+  </div>

@@ -1,12 +1,12 @@
 @use 'StyleComponents/mixins';
 @use 'StyleComponents/typography';
 @use 'StyleComponents/colors';
-@import 'Token';
-@import 'breakpoints';
+
 
 product-card {
   display: block;
   height: 100%;
+
   .product-card {
     height: 100%;
   }
@@ -18,7 +18,7 @@ product-card {
   flex-direction: column;
   row-gap: 10px;
   justify-content: space-between;
-  height:auto;
+  height: auto;
   // height: 100%;
   text-align: left;
 
@@ -44,7 +44,7 @@ product-card {
       column-gap: 10px;
       display: flex;
       flex-direction: column;
-      flex-wrap: wrap; 
+      flex-wrap: wrap;
       max-width: 80%;
       align-items: flex-start;
       row-gap: 5px;
@@ -66,9 +66,9 @@ product-card {
     @include use-text-style('body-title');
     font-weight: typography.$semi-weight;
     padding: 4px 10px;
-    border-radius: 100px;
     background: colors.$red;
     color: colors.$white;
+    border-radius: 100px;
   }
 
   &__vendor {
@@ -84,10 +84,12 @@ product-card {
     &-container {
       justify-content: space-between;
       display: flex;
-      @media(--md){
+
+      @media(--md) {
         min-height: 38px;
       }
-      @media(--md-large){
+
+      @media(--md-large) {
         min-height: 0;
       }
     }
@@ -115,51 +117,50 @@ product-card {
     -webkit-box-orient: vertical;
     overflow: hidden;
     display: -webkit-box;
+
     @media(--md) {
       font-size: typography.$body-alt-size;
       min-height: 38px;
     }
   }
 
-  .product-card__atc button , a {
-    width: 100%;
-    color: colors.$white;
-    @include use-text-style('body-regular'); 
-    font-weight: typography.$semi-weight;
-    margin-top:10px;
-    @media(--sm){
-      font-size: $body-small-size;
+  &__atc {
+
+    button,
+    a {
+
+      width: 100%;
+      color: colors.$white;
+      @include use-text-style('body-regular');
       font-weight: typography.$semi-weight;
+      margin-top: 10px;
+
+      @media(--sm) {
+        font-size: $body-small-size;
+        font-weight: typography.$semi-weight;
+      }
+
+      @media(--md) {
+        font-size: $body-regular-size;
+        font-weight: typography.$semi-weight;
+      }
     }
-    @media(--md){
-      font-size: $body-regular-size;
-      font-weight: typography.$semi-weight;
+
+    .button {
+      &--disabled {
+        background: colors.$white;
+        color: colors.$red;
+        border: 1px solid colors.$red;
+      }
+    }
+
+    .btn-backinstock {
+      display: none !important;
     }
   }
-
-  .product-card__atc .button--disabled {
-    background: colors.$white;
-    color: colors.$red;
-    border: 1px solid colors.$red;
-  }
-
-  .scroller__inner{
-    white-space: normal;
-  }
 }
 
-.product-list--custom {
-  @include mixins.product-grid-collection;
-  @include mixins.container;
-  @media(--md) {
-    max-width: 100%;
-  }
-}
+.scroller__inner {
+  white-space: normal;
+} 
 
-body {
-  background: #fff;
-}
-
-.product-card__atc .btn-backinstock{
-  display: none !important;
-}

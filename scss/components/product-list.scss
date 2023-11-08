@@ -1,0 +1,17 @@
+@use 'StyleComponents/mixins';
+@import 'breakpoints';
+
+.product-list{
+    &--custom {
+        @include mixins.product-grid-collection;
+        @include mixins.container;
+      
+        @media(--md) {
+          max-width: 100%;
+        }
+      }
+}
+
+.collection__toolbar-item--layout{
+  display: none;
+}
