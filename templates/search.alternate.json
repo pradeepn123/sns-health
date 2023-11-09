@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "e24ed829-a79a-4204-83df-ab2705d01f39": {
+      "type": "collection-template-json",
+      "settings": {
+        "show_collection_image": true,
+        "collapse_collection_description": false,
+        "collection_image_size": "small",
+        "products_per_row": "4",
+        "default_products_per_page": 24,
+        "default_view_layout": "grid",
+        "show_quick_buy": "list",
+        "show_quick_view": "list",
+        "quick_links": "",
+        "quick_links_show_products_count": true,
+        "show_filters": true,
+        "show_filter_color_swatch": true,
+        "filter_type": "tag",
+        "open_group_filters_mode": "all_closed",
+        "filter_group_order": ""
+      }
+    },
+    "55eea1c7-d33f-4ba0-9122-60d589c905c2": {
+      "type": "static-recently-viewed-products",
+      "settings": {
+        "heading": "Recently viewed",
+        "mobile_carousel": true
+      }
+    },
+    "d0182ec5-3361-4ef2-892f-c87049bf4451": {
+      "type": "product-carousel",
+      "blocks": {
+        "8ea7dad7-e251-4655-b1e0-2405f62dcb08": {
+          "type": "collection",
+          "settings": {
+            "collection_text": "default",
+            "rule_id": "105315",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "8ea7dad7-e251-4655-b1e0-2405f62dcb08"
+      ],
+      "settings": {
+        "heading": "Most Popular in this Collection",
+        "mobile_carousel": true
+      }
+    }
+  },
+  "order": [
+    "e24ed829-a79a-4204-83df-ab2705d01f39",
+    "55eea1c7-d33f-4ba0-9122-60d589c905c2",
+    "d0182ec5-3361-4ef2-892f-c87049bf4451"
+  ]
+}
