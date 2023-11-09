@@ -133,16 +133,7 @@
 						--------------------------------------------------------------------------------------
 						{%- endcomment -%}
 
-						<div class="boost-pfs-filter-products product-list product-list--collection">
-							{% comment %} Fix Shopify search term report {% endcomment %}
-							{% paginate search.results by 2 %}
-								{% if search.performed %}
-								{% for item in search.results %}
-									<div style="display: none !important"></div>
-								{% endfor %}
-								{% endif %}
-							{% endpaginate %}
-						</div>
+						{%- render 'collection-product-list' , collection: collection -%}
 						<div class="boost-pfs-filter-bottom-pagination pagination"></div>
 						<div class="boost-pfs-filter-load-more"></div>
 					</div>
