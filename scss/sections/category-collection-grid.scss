@@ -11,6 +11,7 @@
 @custom-selector :--image-text_wrapper .category-collection-grid__item__text-wrapper.text-image__text-wrapper;
 @custom-selector :--button .category-collection-grid__cta.button;
 @custom-selector :--transparent .category-collection-grid__cta.button--transparent ;
+@custom-selector :--btn-align .category-collection-grid__item__cta.button;
 
 
 .category-collection-grid {
@@ -84,11 +85,15 @@
         align-items: center;
     }
 
+    :--btn-align{
+        text-align: left;
+    }
+
     :--image-text_wrapper{
         top: 20px;
-        padding-right: 0;
         padding-left: 16px;
-
+        -webkit-transform: none;
+        transform: none;
         @media(--md) {
           top: 36px;
           padding-left: 24PX;

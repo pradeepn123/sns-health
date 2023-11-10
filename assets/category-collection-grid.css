@@ -115,10 +115,14 @@
       -ms-flex-align: center;
           align-items: center;
 }
+.category-collection-grid .category-collection-grid__item__cta.button {
+  text-align: left;
+}
 .category-collection-grid .category-collection-grid__item__text-wrapper.text-image__text-wrapper {
   top: 20px;
-  padding-right: 0;
   padding-left: 16px;
+  -webkit-transform: none;
+  transform: none;
 }
 @media (min-width: 1024px) {
   .category-collection-grid .category-collection-grid__item__text-wrapper.text-image__text-wrapper {
