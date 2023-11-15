@@ -27,13 +27,14 @@
         },
         "ef49abc3-5256-4cf1-8510-acdd51d49689": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Corepower Promo",
-            "promotion_creative_name": "Main Banner 3",
+            "promotion_creative_name": "Main Banner 2",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Vital_protein_copy.webp",
-            "cta_url": "shopify:\/\/collections\/vital-proteins"
+            "image_desktop": "shopify:\/\/shop_images\/fairlife_free.png",
+            "cta_url": "https:\/\/snshealth.com\/collections\/sale"
           }
         },
         "5984eb08-08b3-47e4-be13-5da21dbca50c": {
@@ -52,10 +53,10 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Progressive",
-            "promotion_creative_name": "Right Banner 2",
+            "promotion_creative_name": "Main Banner 3",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/jamieson_copy.webp",
-            "cta_url": "shopify:\/\/collections\/jamieson-progressive-special"
+            "image_desktop": "shopify:\/\/shop_images\/progressive_922721b0-c8b6-4d85-9628-02c85a53eaca.png",
+            "cta_url": "shopify:\/\/collections\/progressive"
           }
         },
         "eca00394-6765-4bb7-87eb-c0fa056b30ba": {
@@ -696,7 +697,7 @@
             "heading": "Healthy Snacks",
             "subheading": "",
             "cta_text": "Shop All",
-            "cta_url": "shopify:\/\/collections\/us-selection",
+            "cta_url": "shopify:\/\/collections\/food-drinks",
             "collection": "us-selection"
           }
         }

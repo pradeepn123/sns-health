@@ -380,7 +380,7 @@ var pageLoadEvent = () => {
     }
   }
 };
-var itemClickEvents = (item, url) => {
+var itemClickEvents = (item, url, event) => {
   //This events handles the promotion_select (anywhere) and select_item (plp)
   if (item.closest('[data-promotion]')) {
     if (!item.closest('[data-promotion = "false"]')) {
@@ -389,7 +389,13 @@ var itemClickEvents = (item, url) => {
       var creativeName = item.dataset.creativeName;
       (0,JsComponents_events__WEBPACK_IMPORTED_MODULE_0__.clickPromotion)(url, promotionName, promotionId, creativeName);
     } else {
-      window.location.href = url;
+      if (event.metaKey || event.ctrlKey) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.open(url, '_blank');
+      } else {
+        window.location.href = url;
+      }
     }
   }
   if (item.closest('[data-section-type="collection"]')) {
@@ -438,18 +444,24 @@ var viewPromotionTrigger = () => {
 /* harmony import */ var JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/gtm-event-trigger */ "./js/components/gtm-event-trigger.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dynamicElements => {
-  var handleRedirectOnDiv = item => {
+  var handleRedirectOnDiv = (item, event) => {
     var url = item.dataset.url || item.href;
     if (item.closest('[data-promotion]') || item.closest('[data-promotion-product-url]')) {
-      (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_0__.itemClickEvents)(item, url);
+      (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_0__.itemClickEvents)(item, url, event);
     } else if (url) {
-      window.location.href = url;
+      if (event.metaKey || event.ctrlKey) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.open(url, '_blank');
+      } else {
+        window.location.href = url;
+      }
     }
   };
   var clickHandle = dynamicElements ? dynamicElements.parentElement.querySelectorAll('[data-js-click]') : document.querySelectorAll('[data-js-click]');
   clickHandle.forEach(item => item.addEventListener('click', ev => {
     if (!ev.target.closest('.product-card__atc')) {
-      handleRedirectOnDiv(item);
+      handleRedirectOnDiv(item, ev);
     }
   }));
 });

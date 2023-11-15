@@ -24,7 +24,7 @@ export const pageLoadEvent = () => { 	//This handles the view_item_list (plp) an
 	}
 }
 
-export const itemClickEvents = (item, url) => { 
+export const itemClickEvents = (item, url, event) => { 
 	//This events handles the promotion_select (anywhere) and select_item (plp)
 	if (item.closest('[data-promotion]')) {
 		if (!(item.closest('[data-promotion = "false"]'))) {
@@ -34,7 +34,14 @@ export const itemClickEvents = (item, url) => {
 			clickPromotion(url, promotionName, promotionId,creativeName); 
 		}
 		else {
-			window.location.href = url;
+			if ((event.metaKey || event.ctrlKey)) {
+				event.preventDefault();
+				event.stopPropagation();
+				window.open(url, '_blank');
+			}
+			else {
+			  window.location.href = url;
+			}
 		}
 	}
 
