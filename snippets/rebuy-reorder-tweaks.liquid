@@ -1,0 +1,12 @@
+<script>
+  document.addEventListener('rebuy:reorderLandingPage.ready', function(){
+    if(Rebuy.ReorderLandingPage){
+      Rebuy.Cart.cart.items.forEach(item => {
+        if (item.final_price === 0) {
+          Rebuy.Cart.removeItem(item)
+        }
+      })
+    }
+  });
+
+</script>
