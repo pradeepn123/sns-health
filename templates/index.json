@@ -16,6 +16,7 @@
         },
         "d3b46f79-d129-4e10-bd7c-4fddc61583ff": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Vega Promotion",
