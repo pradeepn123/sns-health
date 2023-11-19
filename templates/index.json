@@ -5,6 +5,7 @@
       "blocks": {
         "ed3ae549-9da0-4852-a64a-a2b2d379e7d7": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Pre-Black Friday Blowout",
@@ -14,28 +15,15 @@
             "cta_url": "shopify:\/\/collections\/pre-blackfriday-sale"
           }
         },
-        "d3b46f79-d129-4e10-bd7c-4fddc61583ff": {
+        "bd305322-2e34-47fb-9aeb-e96bfa30761c": {
           "type": "image_with_text_overlay",
-          "disabled": true,
           "settings": {
-            "promotion": true,
-            "promotion_name": "Vega Promotion",
+            "promotion": false,
+            "promotion_name": "Mid-november sale",
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/vega_giveway.jpg",
-            "cta_url": "https:\/\/www.instagram.com\/p\/CzG1mnNu70F\/?hl=en"
-          }
-        },
-        "ef49abc3-5256-4cf1-8510-acdd51d49689": {
-          "type": "image_with_text_overlay",
-          "disabled": true,
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Corepower Promo",
-            "promotion_creative_name": "Main Banner 2",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/fairlife_free.png",
-            "cta_url": "https:\/\/snshealth.com\/collections\/sale"
+            "image_desktop": "shopify:\/\/shop_images\/Mid-November_2023_banner_c6e7f87b-5aef-4510-9f04-b8890732404c.png",
+            "cta_url": "shopify:\/\/collections\/pre-blackfriday-sale"
           }
         },
         "5984eb08-08b3-47e4-be13-5da21dbca50c": {
@@ -59,27 +47,13 @@
             "image_desktop": "shopify:\/\/shop_images\/progressive_922721b0-c8b6-4d85-9628-02c85a53eaca.png",
             "cta_url": "shopify:\/\/collections\/progressive"
           }
-        },
-        "eca00394-6765-4bb7-87eb-c0fa056b30ba": {
-          "type": "image_with_text_overlay",
-          "disabled": true,
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Jamieson & Progressive",
-            "promotion_creative_name": "Right Banner 2",
-            "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/jamieson-2_1.jpg",
-            "cta_url": "shopify:\/\/collections\/jamieson-progressive-special"
-          }
         }
       },
       "block_order": [
         "ed3ae549-9da0-4852-a64a-a2b2d379e7d7",
-        "d3b46f79-d129-4e10-bd7c-4fddc61583ff",
-        "ef49abc3-5256-4cf1-8510-acdd51d49689",
+        "bd305322-2e34-47fb-9aeb-e96bfa30761c",
         "5984eb08-08b3-47e4-be13-5da21dbca50c",
-        "56205fb4-b0ed-4e35-baaa-742afc2a67b9",
-        "eca00394-6765-4bb7-87eb-c0fa056b30ba"
+        "56205fb4-b0ed-4e35-baaa-742afc2a67b9"
       ],
       "settings": {
       }
