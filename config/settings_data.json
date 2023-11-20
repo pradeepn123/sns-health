@@ -859,6 +859,13 @@
               "answer": "<p>Thank you for coming to us with such an important decision! If your doctor has recommended you take a specific supplement or vitamin, we can definitely assist you. However, for all other inquiries we suggest contacting your doctor or healthcare provider as SNS Health cannot recommend treatments for medical diagnoses, conditions or diseases. <\/p>"
             }
           },
+          "0555aa89-d9ec-4bc1-b18c-9a454b8f490e": {
+            "type": "question",
+            "settings": {
+              "title": "Should I consult with a healthcare practitioner before using your products?",
+              "answer": "<p>Yes, we strongly recommend consulting with a qualified healthcare practitioner before using any of our products, especially if you have pre-existing health conditions or are taking medication. Individual responses to products may vary, and professional advice ensures that the product is suitable for your specific health needs. <\/p><p>Always follow the instructions on the product packaging and seek medical attention if you experience any discomfort or adverse reactions. Our products are not intended to diagnose, treat, cure, or prevent any disease, and the information provided on our product pages is not a substitute for professional medical advice.<\/p><p>For more information, please visit our <a href=\"https:\/\/snshealth.com\/pages\/disclaimer\" target=\"_blank\" title=\"https:\/\/snshealth.com\/pages\/disclaimer\">Disclaimer <\/a>page.<\/p>"
+            }
+          },
           "page-faq-template-7": {
             "type": "separator",
             "settings": {
@@ -931,6 +938,7 @@
           "a4202b69-99ec-496e-9c26-c28da27198e2",
           "page-faq-template-6",
           "786d24db-d3e7-467d-89c0-51edc8c2b9b2",
+          "0555aa89-d9ec-4bc1-b18c-9a454b8f490e",
           "page-faq-template-7",
           "70aeb85a-142c-420c-8c2c-695cb4158e2b",
           "page-faq-template-8",
