@@ -26,6 +26,17 @@
             "cta_url": "shopify:\/\/collections\/pre-blackfriday-sale"
           }
         },
+        "009a8070-a267-4f1a-ad82-846a05257985": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Vega",
+            "promotion_creative_name": "Main Banner 2",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/vega_0ace3aea-e9c6-46ee-acff-2f4f2f86671e.jpg",
+            "cta_url": "shopify:\/\/collections\/vega"
+          }
+        },
         "5984eb08-08b3-47e4-be13-5da21dbca50c": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -52,6 +63,7 @@
       "block_order": [
         "ed3ae549-9da0-4852-a64a-a2b2d379e7d7",
         "bd305322-2e34-47fb-9aeb-e96bfa30761c",
+        "009a8070-a267-4f1a-ad82-846a05257985",
         "5984eb08-08b3-47e4-be13-5da21dbca50c",
         "56205fb4-b0ed-4e35-baaa-742afc2a67b9"
       ],
