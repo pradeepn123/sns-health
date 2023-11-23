@@ -637,31 +637,39 @@
           {%- endif -%}
         {%- endif -%}
       </div>
+     
+    {%- assign collection_handle = '' -%}
+      {% for tag in product.tags %}
+        {% if tag contains '__collection:' %}
+          {%- assign collection_handle = tag | split:'__collection:' | last -%}
+        {% endif %}
+      {% endfor %}
+    
+      {% liquid  
+        assign collection = collections[collection_handle]
+        assign product_data = collection.metafields.custom.free_product.value
+       %}
 
-      {%- assign collection_handle = product.vendor | handle -%}
-      {% assign complimentary_product = all_products[section.settings.complimentary__product] %}
-
-      {% if collection_handle == 'bucked-up' and product.handle != complimentary_product.handle %}
-        {{ 'product-info.css' | asset_url | stylesheet_tag }}
-        {% if section.settings.complimentary__product != blank %}
+       {% if collection.handle.size > 0 %}
+        {{ 'product-info.css' | asset_url | stylesheet_tag }}   
           <div class="complimentary__wrapper">
-            {% for image in complimentary_product.images limit: 1 %}
-              <img class="complimentary__wrapper_image" src="{{ image.src | img_url: '85x' }}">
-            {% endfor %}
+          
+              <img class="complimentary__wrapper_image" src="{{ product_data.complimentary_product | img_url: '85x' }}">
+          
             <div class="complimentary__wrapper--content">
-              {% if section.settings.complimentary_title != blank %}
+              {% if product_data.complimentary_title != blank %}
                 <h2 class="cp__title">
                   {% render 'complimentary-check-icon' %}
-                  {{ section.settings.complimentary_title }}
+                  {{ product_data.complimentary_title }}
                 </h2>
               {% endif %}
-              {% if section.settings.complimentary_description != blank %}
-                <div class="complimentary__wrapper--description">{{ section.settings.complimentary_description }}</div>
+              {% if product_data.product_description != blank %}
+                <div class="complimentary__wrapper--description">{{product_data.product_description }}</div>
               {% endif %}
             </div>
+      
           </div>
-        {% endif %}
-      {% endif %}
+        {%endif %}
 
       <div class="product-form__payment-container">
         {% if product.tags contains 'free-VitaminD3' %}
