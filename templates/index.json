@@ -19,10 +19,10 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": false,
-            "promotion_name": "Black Friday",
+            "promotion_name": "Cyber Monday",
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/black_friday.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/SNS_cyber_monday.jpg",
             "cta_url": "shopify:\/\/collections\/pre-blackfriday-sale"
           }
         },
