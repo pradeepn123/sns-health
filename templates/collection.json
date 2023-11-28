@@ -101,6 +101,7 @@
       "blocks": {
         "31d3b0f9-1ec9-4ac7-a488-6a51090d30f9": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "heading-color": "#000000",
             "description-color": "#000000"
