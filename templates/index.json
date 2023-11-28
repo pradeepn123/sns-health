@@ -17,6 +17,7 @@
         },
         "bd305322-2e34-47fb-9aeb-e96bfa30761c": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": false,
             "promotion_name": "Cyber Monday",
