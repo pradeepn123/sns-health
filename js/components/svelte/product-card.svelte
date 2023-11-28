@@ -98,11 +98,11 @@
     </div>
     {#if vendor}
       <div class="product-card__vendor">
-        {vendor}
+        {@html vendor}
       </div>
     {/if}
     <div class="product-card__title">
-      {title}
+      {@html title}
     </div>
   </div>
   <div class="product-card__footer">
