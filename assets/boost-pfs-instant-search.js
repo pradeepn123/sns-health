@@ -75,4 +75,18 @@ var boostPFSInstantSearchConfig = {
 	// 	}
 	// }
 
+
+  InstantSearchApi.beforeCall = function(eventType, eventInfo) {
+
+      Globals.queryParams.h_options = []
+
+        if(Shopify.country){
+			let currentCountry = Shopify.country.toLowerCase();
+
+             Globals.queryParams.h_options.push('exclude_'+ currentCountry);
+		 }
+
+    
+  }
+
 })();  // Add this at the end
