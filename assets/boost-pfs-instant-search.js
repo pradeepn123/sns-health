@@ -78,12 +78,12 @@ var boostPFSInstantSearchConfig = {
 
   InstantSearchApi.beforeCall = function(searchTerm) {
 
-      Globals.queryParams.h_options = []
+      Globals.instantSearchQueryParams.h_options = []
 
         if(Shopify.country){
 			let currentCountry = Shopify.country.toLowerCase();
 
-             Globals.queryParams.h_options.push('exclude_'+ currentCountry);
+             Globals.instantSearchQueryParams.h_options.push('exclude_'+ currentCountry);
 		 }
 
     
