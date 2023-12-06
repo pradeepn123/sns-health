@@ -472,7 +472,7 @@ var boostPFSTemplate = {
 
 
 
-  //felippe boost 153817
+  
   FilterApi.beforeCall = function(eventType, eventInfo) {
 
       Globals.queryParams.h_options = []
