@@ -40,10 +40,10 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Progressive",
-            "promotion_creative_name": "Main Banner 3",
+            "promotion_name": "Matteo",
+            "promotion_creative_name": "Right Banner 1",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/progressive_922721b0-c8b6-4d85-9628-02c85a53eaca.png",
+            "image_desktop": "shopify:\/\/shop_images\/Matteo_s_Banner.jpg",
             "cta_url": "shopify:\/\/collections\/progressive"
           }
         },
