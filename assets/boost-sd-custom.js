@@ -15,4 +15,18 @@ window.__BoostCustomization__ = (window.__BoostCustomization__ ?? []).concat((re
       });
     },
   });
+
+  registry.useModulePlugin('SearchAPI', {
+    name: 'Search API before call',
+    apply(builder) {
+      builder.on('beforeMethodCall', 'get', (payload) => {
+        
+				 if(Shopify.country){
+					 let currentCountry = Shopify.country.toLowerCase();
+					 payload.args[0].h_options = payload.args[0].h_options || [];
+	         payload.args[0].h_options.push('exclude_'+ currentCountry);
+				 }
+      });
+    },
+  });
 });
