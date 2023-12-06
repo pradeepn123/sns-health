@@ -76,7 +76,7 @@ var boostPFSInstantSearchConfig = {
 	// }
 
 
-  InstantSearchApi.beforeCall = function(eventType, eventInfo) {
+  InstantSearchApi.beforeCall = function(searchTerm) {
 
       Globals.queryParams.h_options = []
 
