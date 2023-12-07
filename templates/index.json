@@ -51,11 +51,11 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Heal + Co",
+            "promotion_name": "Winter Banner",
             "promotion_creative_name": "Right Banner 2",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/mob-banner-healnco.jpg",
-            "cta_url": "shopify:\/\/collections\/heal-co"
+            "image_desktop": "shopify:\/\/shop_images\/Winter_Essentials.jpg",
+            "cta_url": "shopify:\/\/collections\/immune-support"
           }
         },
         "d3c9237b-a751-41e6-b4a3-0076d6d20abb": {
