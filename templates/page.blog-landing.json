@@ -3,6 +3,18 @@
     "249743d0-f771-4be5-9404-cb9b358af298": {
       "type": "blog-banner",
       "blocks": {
+        "608b7fcd-8e79-49e5-809d-67d3fee0f7f0": {
+          "type": "articles",
+          "settings": {
+            "article": "fitness-and-nutrition\/your-complete-guide-to-mass-gainer-supplements"
+          }
+        },
+        "d80981a2-94f4-412d-8087-d479152792bc": {
+          "type": "articles",
+          "settings": {
+            "article": "fitness-and-nutrition\/sports-hydration-drinks-enhance-performance-for-athletes"
+          }
+        },
         "32b60317-f305-4d52-b618-3e1d4b3373d7": {
           "type": "articles",
           "settings": {
@@ -14,18 +26,13 @@
           "settings": {
             "article": "health\/top-10-immunity-boosting-supplements-for-antiviral-support"
           }
-        },
-        "471ed145-4036-4457-b09a-b149e12f3ea6": {
-          "type": "articles",
-          "settings": {
-            "article": "health\/what-supplements-should-not-be-taken-together"
-          }
         }
       },
       "block_order": [
+        "608b7fcd-8e79-49e5-809d-67d3fee0f7f0",
+        "d80981a2-94f4-412d-8087-d479152792bc",
         "32b60317-f305-4d52-b618-3e1d4b3373d7",
-        "3898df59-2d60-49a2-98c6-8c3363981197",
-        "471ed145-4036-4457-b09a-b149e12f3ea6"
+        "3898df59-2d60-49a2-98c6-8c3363981197"
       ],
       "settings": {
       }
