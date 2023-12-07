@@ -470,21 +470,21 @@
             "type": "country_specific",
             "settings": {
               "country_iso": "CA, IN",
-              "announcement_text": "Free shipping in Canada for orders over $49+"
+              "announcement_text": "Free shipping in Canada on orders over $49+"
             }
           },
           "599da0e9-6abf-4fb3-ad51-f675e23a4ba0": {
             "type": "country_specific",
             "settings": {
               "country_iso": "GB",
-              "announcement_text": "Free Shipping in UK for orders above £60"
+              "announcement_text": "Free Shipping in UK on orders above £60"
             }
           },
           "ac89ab32-5fbf-4c19-ac77-09c827474b95": {
             "type": "country_specific",
             "settings": {
               "country_iso": "FR, BE, IT, DE, PT, NL, IE, AT, ES",
-              "announcement_text": "Free Shipping in EU for orders above €80"
+              "announcement_text": "Free Shipping in EU on orders above €80"
             }
           }
         },
@@ -497,7 +497,7 @@
           "show_announcement": true,
           "background": "#000000",
           "text_color": "#ffffff",
-          "text": "Free Shipping $49+",
+          "text": "Free Shipping for Canada on orders $49+",
           "text_discount": "| Discount SAVE15 Applied!",
           "text_position": "left",
           "link": "shopify:\/\/pages\/shipping-returns"
