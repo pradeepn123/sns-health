@@ -3,17 +3,6 @@
     "main": {
       "type": "Banner",
       "blocks": {
-        "ca6f972c-17ec-4e61-a3e7-813ff4258d83": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": false,
-            "promotion_name": "Stack & Slash",
-            "promotion_creative_name": "Main Banner 1",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/optimum_nutrition.jpg",
-            "cta_url": "shopify:\/\/collections\/stack-slash"
-          }
-        },
         "5984eb08-08b3-47e4-be13-5da21dbca50c": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -23,6 +12,17 @@
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/New_drinks_banner_First_week_of_December_e6ab07d6-8c78-4f2e-8c96-6e04d9fcde3b.jpg",
             "cta_url": "shopify:\/\/collections\/drinks"
+          }
+        },
+        "ca6f972c-17ec-4e61-a3e7-813ff4258d83": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": false,
+            "promotion_name": "Stack & Slash",
+            "promotion_creative_name": "Main Banner 1",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/optimum_nutrition.jpg",
+            "cta_url": "shopify:\/\/collections\/stack-slash"
           }
         },
         "009a8070-a267-4f1a-ad82-846a05257985": {
@@ -72,8 +72,8 @@
         }
       },
       "block_order": [
-        "ca6f972c-17ec-4e61-a3e7-813ff4258d83",
         "5984eb08-08b3-47e4-be13-5da21dbca50c",
+        "ca6f972c-17ec-4e61-a3e7-813ff4258d83",
         "009a8070-a267-4f1a-ad82-846a05257985",
         "56205fb4-b0ed-4e35-baaa-742afc2a67b9",
         "12173b4e-4224-40aa-a11f-cb0658bc859b",
