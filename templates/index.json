@@ -27,6 +27,7 @@
         },
         "ca6f972c-17ec-4e61-a3e7-813ff4258d83": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": false,
             "promotion_name": "Stack & Slash",
@@ -85,6 +86,23 @@
     "65868ffb-1036-425b-a0dc-ebc8bcff334b": {
       "type": "Banner-Grid",
       "blocks": {
+        "92e48489-641f-4c19-a3ef-6da69b441243": {
+          "type": "image_with_text_overlay",
+          "disabled": true,
+          "settings": {
+            "promotion": false,
+            "promotion_name": "",
+            "promotion_creative_name": "",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/New_drinks_banner_First_week_of_December_b021c76e-ff3a-4a50-8443-9e5439c22b8f.jpg",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": ""
+          }
+        },
         "5379485b-f9f2-400b-8e8b-fb05de6685ec": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -156,6 +174,7 @@
         }
       },
       "block_order": [
+        "92e48489-641f-4c19-a3ef-6da69b441243",
         "5379485b-f9f2-400b-8e8b-fb05de6685ec",
         "589380ac-62bc-453f-9b28-3a56b75e85b6",
         "2b7c62de-3b42-4539-92d9-5009549e88ee",
