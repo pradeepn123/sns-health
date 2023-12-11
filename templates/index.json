@@ -6,12 +6,12 @@
         "528e180e-68ab-49ab-bf7c-b10511cef8a9": {
           "type": "image_with_text_overlay",
           "settings": {
-            "promotion": false,
-            "promotion_name": "Birch Benders",
+            "promotion": true,
+            "promotion_name": "Green Monday",
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Birch_Benders_Banner.png",
-            "cta_url": "shopify:\/\/collections\/birch-benders"
+            "image_desktop": "shopify:\/\/shop_images\/Green_Monday_03060ea1-1170-4b4a-913c-862d71d8068c.jpg",
+            "cta_url": "shopify:\/\/collections\/green-monday-2"
           }
         },
         "5984eb08-08b3-47e4-be13-5da21dbca50c": {
