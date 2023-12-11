@@ -103,6 +103,23 @@
             "cta_url": ""
           }
         },
+        "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "PS + ON Promo",
+            "promotion_creative_name": "Sub banner 3",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/on_per_desk.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/on_per_Mob.jpg",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/stack-slash"
+          }
+        },
         "5379485b-f9f2-400b-8e8b-fb05de6685ec": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -110,31 +127,14 @@
             "promotion_name": "Inner Armour",
             "promotion_creative_name": "Sub banner 1",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/inner_armour_desk.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Inner_armour_mob.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/Inner_armour.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Inner_armour_mobile.png",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
             "cta_url": "shopify:\/\/collections\/inner-armour"
-          }
-        },
-        "589380ac-62bc-453f-9b28-3a56b75e85b6": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": false,
-            "promotion_name": "Bucked Up",
-            "promotion_creative_name": "Sub banner 2",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/bucked_up_1.webp",
-            "image_mobile": "shopify:\/\/shop_images\/bucked_up_-_mobile_1.webp",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/bucked-up"
           }
         },
         "2b7c62de-3b42-4539-92d9-5009549e88ee": {
@@ -154,31 +154,30 @@
             "cta_url": "shopify:\/\/collections\/birch-benders"
           }
         },
-        "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2": {
+        "589380ac-62bc-453f-9b28-3a56b75e85b6": {
           "type": "image_with_text_overlay",
-          "disabled": true,
           "settings": {
-            "promotion": true,
-            "promotion_name": "PS + ON Promo",
-            "promotion_creative_name": "Sub banner 3",
+            "promotion": false,
+            "promotion_name": "Bucked Up",
+            "promotion_creative_name": "Sub banner 2",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/on_per_desk.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/on_per_Mob.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/bucked_up_1.webp",
+            "image_mobile": "shopify:\/\/shop_images\/bucked_up_-_mobile_1.webp",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/stack-slash"
+            "cta_url": "shopify:\/\/collections\/bucked-up"
           }
         }
       },
       "block_order": [
         "92e48489-641f-4c19-a3ef-6da69b441243",
+        "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2",
         "5379485b-f9f2-400b-8e8b-fb05de6685ec",
-        "589380ac-62bc-453f-9b28-3a56b75e85b6",
         "2b7c62de-3b42-4539-92d9-5009549e88ee",
-        "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2"
+        "589380ac-62bc-453f-9b28-3a56b75e85b6"
       ],
       "settings": {
       }
