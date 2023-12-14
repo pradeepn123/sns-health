@@ -104,7 +104,7 @@
 @media (min-width: 768px) {
   .announcement-bar__content {
     font-family: "poppins";
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.2;
   }
