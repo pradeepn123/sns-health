@@ -1,13 +1,82 @@
 {
   "wrapper": "div",
   "sections": {
-    "main": {
-      "type": "collection-banner",
+    "5dd276c1-2608-44af-aab1-9174695d3a61": {
+      "type": "article-section",
+      "blocks": {
+        "12f44465-0850-47e2-a846-f51f8dcb62d9": {
+          "type": "social_media",
+          "settings": {
+            "title": "Follow us",
+            "show_rss": true
+          }
+        }
+      },
+      "block_order": [
+        "12f44465-0850-47e2-a846-f51f8dcb62d9"
+      ],
       "settings": {
+        "show_on_mobile": true
+      }
+    },
+    "6d30708a-8016-40f9-a9e4-9e44c27adde3": {
+      "type": "static-recently-viewed-products",
+      "settings": {
+        "heading": "Recently viewed",
+        "mobile_carousel": true
+      }
+    },
+    "5c8d0ed8-ee9f-468d-a75e-77e5d3655e20": {
+      "type": "product-carousel",
+      "blocks": {
+        "fbdf832e-3fe2-4478-8b8c-d2228a70dfb9": {
+          "type": "collection",
+          "settings": {
+            "collection_text": "",
+            "rule_id": "104943",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "fbdf832e-3fe2-4478-8b8c-d2228a70dfb9"
+      ],
+      "settings": {
+        "heading": "Trending Items",
+        "mobile_carousel": true
+      }
+    },
+    "50a3df27-5ec1-4eb2-abc0-37ea2dcae937": {
+      "type": "product-carousel",
+      "blocks": {
+        "c22da99b-fddb-482d-bdb2-923f9f8cc85c": {
+          "type": "collection",
+          "settings": {
+            "collection_text": "New arrival",
+            "rule_id": "96204",
+            "collection": "new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "c22da99b-fddb-482d-bdb2-923f9f8cc85c"
+      ],
+      "settings": {
+        "heading": "New arrival",
+        "mobile_carousel": true
       }
     }
   },
   "order": [
+<<<<<<< HEAD
     "main"
   ]
 }
+=======
+    "5dd276c1-2608-44af-aab1-9174695d3a61",
+    "6d30708a-8016-40f9-a9e4-9e44c27adde3",
+    "5c8d0ed8-ee9f-468d-a75e-77e5d3655e20",
+    "50a3df27-5ec1-4eb2-abc0-37ea2dcae937"
+  ]
+}
+>>>>>>> bc7449b (liquid to json converting template)

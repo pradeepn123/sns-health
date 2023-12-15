@@ -1,0 +1,258 @@
+<div class="container">
+  <div class="blog-container">
+
+      {% render 'article-template' , section: section %}
+
+      {% render 'blog-sidebar', section: section, blocks: blocks %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog sidebar",
+  "class": "shopify-section__blog-sidebar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "Show on mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category",
+      "label": "Show category",
+      "info": "The first article's tag will be shown as category.",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share buttons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gravatar",
+      "label": "Show comment avatar",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Customers who subscribe will have their email address added to the \"accepts marketing\" [customer list](/admin/customers?query=&accepts_marketing=1)."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Join Us"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Text",
+          "default": "<p>A short sentence describing what someone will receive by subscribing</p>"
+        },
+        {
+          "type": "text",
+          "id": "subtext",
+          "label": "Sub-text",
+          "default": "100% free, Unsubscribe any time!"
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "Background",
+          "default": "#1e2d7d"
+        },
+        {
+          "type": "color",
+          "id": "text",
+          "label": "Text",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "social_media",
+      "name": "Social media",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Make sure to have properly configured your social media in the theme settings."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Follow us"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_rss",
+          "label": "Show RSS",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "featured_posts",
+      "name": "Blog posts",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Popular posts"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_ranking",
+          "label": "Show ranking",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_category",
+          "label": "Show category",
+          "info": "The first article's tag will be shown as category.",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_date",
+          "label": "Show date",
+          "default": true
+        },
+        {
+          "type": "article",
+          "id": "article_1",
+          "label": "Blog post 1"
+        },
+        {
+          "type": "article",
+          "id": "article_2",
+          "label": "Blog post 2"
+        },
+        {
+          "type": "article",
+          "id": "article_3",
+          "label": "Blog post 3"
+        },
+        {
+          "type": "article",
+          "id": "article_4",
+          "label": "Blog post 4"
+        },
+        {
+          "type": "article",
+          "id": "article_5",
+          "label": "Blog post 5"
+        }
+      ]
+    },
+    {
+      "type": "rich_text",
+      "name": "Rich text",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Your text"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Text",
+          "default": "<p>You can use this text to write about your brand.</p>"
+        }
+      ]
+    },
+    {
+      "type": "featured_products",
+      "name": "Featured products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Featured products"
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Product 1"
+        },
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Product 2"
+        },
+        {
+          "type": "product",
+          "id": "product_3",
+          "label": "Product 3"
+        }
+      ]
+    },
+    {
+      "type": "links",
+      "name": "Links",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "info": "This menu won't show dropdown items."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "article",
+      "blocks": [
+        {
+          "type": "newsletter",
+          "settings": {}
+        },
+        {
+          "type": "social_media",
+          "settings": {}
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

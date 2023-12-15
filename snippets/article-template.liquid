@@ -1,4 +1,12 @@
-<article data-section-id="{{ section.id }}" data-section-type="blog-post">
+<style>
+  #shopify-section-article-template{
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0;
+  }
+</style>
+
+<article id="shopify-section-article-template" data-section-id="{{ section.id }}" data-section-type="blog-post">
   <header class="page__header page__header--stack">
     <h1 class="page__title heading h1">{{ article.title }}</h1>
 
@@ -225,49 +233,3 @@
   // Due to the presence of the possible sidebar, we have to move the header outside the section
   document.querySelector('.blog-container').insertAdjacentElement('beforebegin', document.querySelector('#shopify-section-' + {{ section.id | json }} + ' .page__header'));
 </script>
-
-{% schema %}
-{
-  "name": "Blog post page",
-  "class": "shopify-section__article",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_category",
-      "label": "Show category",
-      "info": "The first article's tag will be shown as category.",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_author",
-      "label": "Show author",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_date",
-      "label": "Show date",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_share_buttons",
-      "label": "Show share buttons",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_tags",
-      "label": "Show tags",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_gravatar",
-      "label": "Show comment avatar",
-      "default": true
-    }
-  ]
-}
-{% endschema %}

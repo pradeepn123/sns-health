@@ -23,6 +23,7 @@
  endif
 %}
 <product-card>
+  <a href="{{product.url}}" target="_blank" style="user-select: none;">  
   <div class="product-card" data-redirect-click data-js-click data-redirect-click data-url="{{product.url}}" 
     {% if is_promotion and promotion_name %}
        data-promotion 
@@ -98,4 +99,5 @@
       </div>
     </div>
   </div>
+</a>
 </product-card>

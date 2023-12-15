@@ -65,7 +65,7 @@
   })
 
 </script>
-
+<a href="{link}" target="_blank" style="user-select: none;">
 <div
   class="product-card swiper-slide"
   data-redirect-click
@@ -164,3 +164,4 @@
     </div>
   </div>
 </div>
+</a>

@@ -30,10 +30,7 @@
         "custom_security_badge_width": 200,
         "show_shipping_estimator": false,
         "shipping_estimator_default_country": "United States",
-        "show_refunds_policy": false,
-        "complimentary__product": "bucked-up-shaker",
-        "complimentary_title": "Free Shaker !!",
-        "complimentary_description": "<p>Get a complimentary Bucked Up shaker delivered right to your doorstep when you purchase any Bucked Up product!<\/p><p><\/p>"
+        "show_refunds_policy": false
       }
     },
     "de1ba06b-7729-47a3-a3dc-b7b1e0ba7a31": {
