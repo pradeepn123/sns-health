@@ -19,6 +19,25 @@
         line-height: 50%;
     }
 }
+
+@media(max-width:768px){
+    .image-flex-desktop{
+        display:none;
+    }
+    .image-flex-mobile{
+        display: block;
+    }
+}
+
+@media(min-width:768px){
+    .image-flex-desktop{
+        display:block;
+    }
+    .image-flex-mobile{
+        display: none;
+    }
+}
+
 {% endstyle %}
 
 <section>
@@ -145,12 +164,18 @@
             <!-- end part -->
             <!-- image and video part -->
 
+
             <div class="image-video-container">    
                 {% for block in collection.metafields.custom.image_video_section.value %}
+                    {% liquid 
+                        assign desktop_image = block.image | default: block.mobile_image
+                        assign mobile_image = block.mobile_image | default: block.image
+                        %}
                     {%- if block.video_url == blank -%}
                         <div class="items image-item">
                             <div class="image-flex-one">
-                                <img class="image-flex" src="{{ block.image | img_url : 'master' }}">
+                                <img class="image-flex image-flex-desktop" src="{{ desktop_image  | img_url : 'master' }}">
+                                <img class="image-flex image-flex-mobile" src="{{ mobile_image  | img_url : 'master' }}">
                                 <p class="image-item-text">
                                     {{ block.title }}
                                 </p>
@@ -166,7 +191,8 @@
                     {% else %}
                         <div class="items video-item">
                             <div class="video-sec video-flex-one">
-                                <img class="image-flex" src="{{ block.image | img_url : 'master' }}">
+                                <img class="image-flex image-flex-desktop" src="{{ desktop_image | img_url : 'master' }}">
+                                <img class="image-flex image-flex-mobile" src="{{ mobile_image  | img_url : 'master' }}">
                                 <button class="video-control" data-video-src="{{ block.video_url }}" data-video-button>
                                     <span class="video-control-play">
                                         <span class="video-control-symbol play-btn" aria-hidden="true">
