@@ -12,7 +12,7 @@
       {{- price | money_without_currency | replace: ',', '.' -}}
       ", "id": "{{variant_id}}" } ], "discountPercentage": {{ discount_percentage | default: 0 }}, "skipFormatMoney": true, "vendor" : "
       {{- product.vendor -}}
-      ", "title" : "{{ product.title }}", "handle": "{{ product.handle }}", "link": "{{ product.url }}", "tags" :
+      ", "title" : `{{ product.title }}`, "handle": "{{ product.handle }}", "link": "{{ product.url }}", "tags" :
       {{ product.tags | json }}, "metafields": [ { "namespace": "okendo", "key": "summaryData", "value":
       {{ product.metafields.okendo.summaryData | json }}
       } ] }

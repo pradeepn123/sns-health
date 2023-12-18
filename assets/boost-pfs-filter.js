@@ -195,7 +195,7 @@ var boostPFSTemplate = {
             image:images_info[0]|| false,
             variants: [{ compare_at_price: currentVariant.compare_at_price * 100, price:currentVariant.price * 100, id:variant_id }],
             vendor,
-            title,
+            title: `${title}`,
             tags,
             metafields: reviewMetafields,
             link,
