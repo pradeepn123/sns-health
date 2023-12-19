@@ -3,6 +3,18 @@
     "main": {
       "type": "Banner",
       "blocks": {
+        "ca6f972c-17ec-4e61-a3e7-813ff4258d83": {
+          "type": "image_with_text_overlay",
+          "disabled": true,
+          "settings": {
+            "promotion": false,
+            "promotion_name": "Christmas week",
+            "promotion_creative_name": "Main Banner 1",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/Christmas_week_banner.jpg",
+            "cta_url": "shopify:\/\/collections\/sale"
+          }
+        },
         "528e180e-68ab-49ab-bf7c-b10511cef8a9": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -36,18 +48,6 @@
             "cta_url": "shopify:\/\/collections\/immune-support"
           }
         },
-        "ca6f972c-17ec-4e61-a3e7-813ff4258d83": {
-          "type": "image_with_text_overlay",
-          "disabled": true,
-          "settings": {
-            "promotion": false,
-            "promotion_name": "Stack & Slash",
-            "promotion_creative_name": "Main Banner 2",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/optimum_nutrition.jpg",
-            "cta_url": "shopify:\/\/collections\/stack-slash"
-          }
-        },
         "009a8070-a267-4f1a-ad82-846a05257985": {
           "type": "image_with_text_overlay",
           "disabled": true,
@@ -74,10 +74,10 @@
         }
       },
       "block_order": [
+        "ca6f972c-17ec-4e61-a3e7-813ff4258d83",
         "528e180e-68ab-49ab-bf7c-b10511cef8a9",
         "5984eb08-08b3-47e4-be13-5da21dbca50c",
         "12173b4e-4224-40aa-a11f-cb0658bc859b",
-        "ca6f972c-17ec-4e61-a3e7-813ff4258d83",
         "009a8070-a267-4f1a-ad82-846a05257985",
         "56205fb4-b0ed-4e35-baaa-742afc2a67b9"
       ],
