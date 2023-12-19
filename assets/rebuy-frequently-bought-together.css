@@ -6,13 +6,13 @@
     margin-top: 40px;
     max-width: 100%;
 }
-.frequently-bought-together .rebuy-widget {
+[data-rebuy-widget-custom] .rebuy-widget {
     padding: 0 !important;
 }
-.frequently-bought-together .rebuy-widget .rebuy-product-block{
+[data-rebuy-widget-custom] .rebuy-widget .rebuy-product-block{
     width: 100% !important;
 }
-.frequently-bought-together .primary-title {
+[data-rebuy-widget-custom] .primary-title {
     text-align: center !important;
     font-size: 21px !important;
     color: #000 !important;
@@ -162,10 +162,10 @@
     cursor: pointer;
 }
 @media (max-width: 480px){
-    .frequently-bought-together .rebuy-widget .rebuy-product-block .rebuy-product-options{
+    [data-rebuy-widget-custom] .rebuy-widget .rebuy-product-block .rebuy-product-options{
         margin: 0 0 0 23px !important;
     }
-    .frequently-bought-together .rebuy-widget .rebuy-product-block{
+    [data-rebuy-widget-custom] .rebuy-widget .rebuy-product-block{
         padding-left: 0 !important;
         padding-right: 0 !important;
         padding-top: 0 !important
@@ -176,20 +176,20 @@
     .rebuy-bundle__actions-price{
         margin: 0 0 10px 0 !important;
     }
-    .frequently-bought-together .primary-title{
+    [data-rebuy-widget-custom] .primary-title{
         margin: 0 !important;
         margin-bottom: 30px !important;
     }
     .rebuy-widget.widget-type-dynamic-bundle .rebuy-bundle .rebuy-product-block {
         padding-top: 12px !important;
     }
-    .frequently-bought-together {
+    [data-rebuy-widget-custom] {
         border: none;
     }
     .product-meta__share-buttons {
         display: none;
     }
-    .frequently-bought-together {
+    [data-rebuy-widget-custom] {
         margin-top: 0px;
     }
     .section {

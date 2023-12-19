@@ -6,7 +6,7 @@
         v-bind:class="['widget-type-' + config.type.replace('_','-'), products.length > 0 ? 'is-visible' : 'is-hidden', 'widget-layout-' + currentLayout()]">
   
         <div
-            class="rebuy-widget-container"
+            class="rebuy-widget-container" data-rebuy-widget-custom
             v-bind:class="['widget-display-' + config.display_type, visible ? 'is-visible' : 'is-hidden' ]">
             <div class="rebuy-widget-content">
                 <div class="rebuy-timer" v-if="hasTimer()">

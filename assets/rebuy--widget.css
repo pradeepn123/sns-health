@@ -15,3 +15,83 @@
     max-width: calc(1440px - 2 * var(--base-margin));
   }
 }
+
+.widget-type-pre-purchase .super-title {
+  text-transform: lowercase;
+}
+.widget-type-pre-purchase .primary-title {
+  font-size: 20px !important;
+}
+.widget-type-pre-purchase .primary-title span {
+  color: #ED1C24;
+  background: none;
+  margin-left: 0;
+  padding: 0;
+}
+.widget-type-pre-purchase .rebuy-product-price {
+  display: block !important;
+}
+.widget-type-pre-purchase .rebuy-pre-purchase-actions {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+}
+@media (min-width: 768px) {
+  .widget-type-pre-purchase .rebuy-pre-purchase-actions {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    row-gap: 0;
+  }
+}
+.widget-type-pre-purchase .rebuy-product-block {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: reverse !important;
+      -ms-flex-direction: column-reverse !important;
+          flex-direction: column-reverse !important;
+}
+.widget-type-pre-purchase .rebuy-product-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (min-width: 768px) {
+  .widget-type-pre-purchase .rebuy-product-block {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: row-reverse !important;
+            flex-direction: row-reverse !important;
+  }
+}
+.widget-type-pre-purchase .rebuy-product-media {
+  float: inherit !important;
+}
+.widget-type-pre-purchase .rebuy-product-media {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .widget-type-pre-purchase .rebuy-product-media {
+    float: left !important;
+  }
+  .widget-type-pre-purchase .rebuy-product-media {
+    width: 40%;
+    margin: none;
+  }
+}
+.widget-type-pre-purchase .rebuy-product-info, .widget-type-pre-purchase .rebuy-product-options, .widget-type-pre-purchase .rebuy-product-actions {
+  width: 100% !important;
+}
+@media (min-width: 768px) {
+  .widget-type-pre-purchase .rebuy-product-info, .widget-type-pre-purchase .rebuy-product-options, .widget-type-pre-purchase .rebuy-product-actions {
+    width: 60%;
+  }
+}
