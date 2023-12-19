@@ -15,6 +15,9 @@
     max-width: calc(1440px - 2 * var(--base-margin));
   }
 }
+.rebuy-widget .rebuy-timer-title {
+  font-size: 20px !important;
+}
 
 .widget-type-pre-purchase .super-title {
   text-transform: lowercase;

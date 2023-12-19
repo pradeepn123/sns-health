@@ -9,6 +9,10 @@
    &__wrapper {
     @include mixins.container;
    }
+
+   .rebuy-timer-title {
+    font-size: 20px !important;
+   }
 }
 
 .widget-type-pre-purchase{
