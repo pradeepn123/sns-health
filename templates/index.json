@@ -5,7 +5,6 @@
       "blocks": {
         "ca6f972c-17ec-4e61-a3e7-813ff4258d83": {
           "type": "image_with_text_overlay",
-          "disabled": true,
           "settings": {
             "promotion": false,
             "promotion_name": "Christmas week",
@@ -20,7 +19,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Green Monday",
-            "promotion_creative_name": "Main Banner 1",
+            "promotion_creative_name": "Main Banner 2",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/Green_Monday_03060ea1-1170-4b4a-913c-862d71d8068c.jpg",
             "cta_url": "shopify:\/\/collections\/green-monday-2"
