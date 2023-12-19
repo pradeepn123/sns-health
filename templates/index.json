@@ -16,6 +16,7 @@
         },
         "528e180e-68ab-49ab-bf7c-b10511cef8a9": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Green Monday",
