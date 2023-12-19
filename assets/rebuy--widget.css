@@ -95,3 +95,15 @@
     width: 60%;
   }
 }
+.widget-type-pre-purchase .rebuy-widget-content .rebuy-money {
+  font-size: 16px !important;
+  color: #e00 !important;
+}
+.widget-type-pre-purchase .rebuy-widget-content .rebuy-money {
+  font-weight: 600;
+  margin-right: 0.25em;
+}
+.widget-type-pre-purchase .rebuy-widget-content .compare-at {
+  font-size: 16px !important;
+  color: #000 !important;
+}
