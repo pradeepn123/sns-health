@@ -470,14 +470,14 @@
             "type": "country_specific",
             "settings": {
               "country_iso": "CA, IN",
-              "announcement_text": "Deliveries might get delayed during the holiday season | Free shipping in Canada on orders over $49+"
+              "announcement_text": "Deliveries might get delayed during this holiday season | Free shipping in Canada on orders over $49+"
             }
           },
           "599da0e9-6abf-4fb3-ad51-f675e23a4ba0": {
             "type": "country_specific",
             "settings": {
               "country_iso": "GB",
-              "announcement_text": "Free Shipping in UK on orders above £60"
+              "announcement_text": "Deliveries might get delayed during this holiday season | Free Shipping in UK on orders above £60"
             }
           },
           "ac89ab32-5fbf-4c19-ac77-09c827474b95": {
