@@ -69,7 +69,7 @@
           transform: rotate(180deg);
 }
 .announcement-bar__localization-form-item .select-button svg {
-  position: static;
+  position: fixed;
   width: 18px;
   height: 18px;
   opacity: 1;
