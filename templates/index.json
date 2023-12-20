@@ -32,7 +32,7 @@
             "promotion": true,
             "promotion_name": "New drinks",
             "promotion_creative_name": "Right Banner 1",
-            "is_carousel_content": false,
+            "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/New_drinks_banner_First_week_of_December_b021c76e-ff3a-4a50-8443-9e5439c22b8f.jpg",
             "cta_url": "shopify:\/\/collections\/drinks"
           }
@@ -62,7 +62,6 @@
         },
         "56205fb4-b0ed-4e35-baaa-742afc2a67b9": {
           "type": "image_with_text_overlay",
-          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Matteo",
@@ -140,6 +139,7 @@
         },
         "5379485b-f9f2-400b-8e8b-fb05de6685ec": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Matteo's",
