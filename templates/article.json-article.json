@@ -16,7 +16,13 @@
         "12f44465-0850-47e2-a846-f51f8dcb62d9"
       ],
       "settings": {
-        "show_on_mobile": true
+        "show_on_mobile": true,
+        "show_category": true,
+        "show_author": false,
+        "show_date": true,
+        "show_share_buttons": true,
+        "show_tags": false,
+        "show_gravatar": true
       }
     },
     "6d30708a-8016-40f9-a9e4-9e44c27adde3": {
