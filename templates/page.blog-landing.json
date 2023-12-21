@@ -3,6 +3,12 @@
     "249743d0-f771-4be5-9404-cb9b358af298": {
       "type": "blog-banner",
       "blocks": {
+        "beb44882-ce58-4163-8262-32970edd54aa": {
+          "type": "articles",
+          "settings": {
+            "article": "fitness-and-nutrition\/creatine-and-muscle-building-a-comprehensive-guide"
+          }
+        },
         "608b7fcd-8e79-49e5-809d-67d3fee0f7f0": {
           "type": "articles",
           "settings": {
@@ -29,6 +35,7 @@
         }
       },
       "block_order": [
+        "beb44882-ce58-4163-8262-32970edd54aa",
         "608b7fcd-8e79-49e5-809d-67d3fee0f7f0",
         "d80981a2-94f4-412d-8087-d479152792bc",
         "32b60317-f305-4d52-b618-3e1d4b3373d7",
