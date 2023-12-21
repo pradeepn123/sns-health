@@ -122,6 +122,7 @@
         },
         "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "PS + ON Promo",
@@ -135,6 +136,23 @@
             "subheading": "",
             "cta_text": "",
             "cta_url": "shopify:\/\/collections\/stack-slash"
+          }
+        },
+        "589380ac-62bc-453f-9b28-3a56b75e85b6": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": false,
+            "promotion_name": "Bucked Up",
+            "promotion_creative_name": "Sub banner 4",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/bucked_up_1.webp",
+            "image_mobile": "shopify:\/\/shop_images\/bucked_up_-_mobile_1.webp",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/bucked-up"
           }
         },
         "5379485b-f9f2-400b-8e8b-fb05de6685ec": {
@@ -171,32 +189,15 @@
             "cta_text": "",
             "cta_url": "shopify:\/\/collections\/birch-benders"
           }
-        },
-        "589380ac-62bc-453f-9b28-3a56b75e85b6": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": false,
-            "promotion_name": "Bucked Up",
-            "promotion_creative_name": "Sub banner 4",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/bucked_up_1.webp",
-            "image_mobile": "shopify:\/\/shop_images\/bucked_up_-_mobile_1.webp",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/bucked-up"
-          }
         }
       },
       "block_order": [
         "92e48489-641f-4c19-a3ef-6da69b441243",
         "5ffa49dd-3faa-493e-92df-a8b6a6829847",
         "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2",
+        "589380ac-62bc-453f-9b28-3a56b75e85b6",
         "5379485b-f9f2-400b-8e8b-fb05de6685ec",
-        "2b7c62de-3b42-4539-92d9-5009549e88ee",
-        "589380ac-62bc-453f-9b28-3a56b75e85b6"
+        "2b7c62de-3b42-4539-92d9-5009549e88ee"
       ],
       "settings": {
       }
