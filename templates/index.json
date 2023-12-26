@@ -11,7 +11,7 @@
             "promotion_creative_name": "Main Banner 2",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/Boxing_week_banner_copy.webp",
-            "cta_url": "shopify:\/\/collections\/sale"
+            "cta_url": "shopify:\/\/collections\/exclusive-bundles-and-gift-sets"
           }
         },
         "ca6f972c-17ec-4e61-a3e7-813ff4258d83": {
@@ -39,6 +39,7 @@
         },
         "5984eb08-08b3-47e4-be13-5da21dbca50c": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "New drinks",
