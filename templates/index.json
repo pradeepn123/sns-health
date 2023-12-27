@@ -799,18 +799,32 @@
             "cta_url": "shopify:\/\/collections\/glutenull"
           }
         },
-        "9066e929-3a9c-404b-835a-797166835a14": {
+        "7bab0a26-8d2b-497d-ab26-0e0e9c996828": {
           "type": "banner_grid",
           "settings": {
             "text_color": "",
-            "background_color": "#417258",
-            "image_desktop": "shopify:\/\/shop_images\/Screenshot_2023-10-23_124851.png",
+            "background_color": "#901712",
+            "image_desktop": "shopify:\/\/shop_images\/Screenshot_2023-10-23_183350.png",
             "eyebrow": "",
             "inline_heading": false,
-            "heading": "Up to <br>50% OFF",
-            "subheading": "Himalaya Collection",
+            "heading": "Get <br> 50% OFF",
+            "subheading": "Pasta & Noodles",
             "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/himalaya"
+            "cta_url": "shopify:\/\/collections\/pasta-noodles"
+          }
+        },
+        "3fecbe56-c283-4e0b-9002-3fe17712480a": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "",
+            "background_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/crazy_mooskies.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Get <br> 50% OFF",
+            "subheading": "Crazy Mooskies",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/collections\/crazy-mooskies"
           }
         },
         "a76ad1c6-b62d-4c66-82fc-d188f57570fe": {
@@ -827,6 +841,20 @@
             "cta_url": "shopify:\/\/products\/vega-real-food-smoothie"
           }
         },
+        "9066e929-3a9c-404b-835a-797166835a14": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "",
+            "background_color": "#417258",
+            "image_desktop": "shopify:\/\/shop_images\/Screenshot_2023-10-23_124851.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Up to <br>50% OFF",
+            "subheading": "Himalaya Collection",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/collections\/himalaya"
+          }
+        },
         "1c384f17-9c60-4a7a-9a15-17ab60086f2e": {
           "type": "banner_grid",
           "settings": {
@@ -840,44 +868,16 @@
             "cta_text": "Shop",
             "cta_url": "shopify:\/\/collections\/performax-labs"
           }
-        },
-        "9f264aba-de45-4d65-b645-670ea4d270f6": {
-          "type": "banner_grid",
-          "settings": {
-            "text_color": "",
-            "background_color": "#6381a7",
-            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_2.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "Up to<br> 15% OFF",
-            "subheading": "Sunscreen",
-            "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/sunscreen"
-          }
-        },
-        "7bab0a26-8d2b-497d-ab26-0e0e9c996828": {
-          "type": "banner_grid",
-          "settings": {
-            "text_color": "",
-            "background_color": "#901712",
-            "image_desktop": "shopify:\/\/shop_images\/Screenshot_2023-10-23_183350.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "Get <br> 15% OFF",
-            "subheading": "Pasta & Noodles",
-            "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/pasta-noodles"
-          }
         }
       },
       "block_order": [
         "b100cd87-92eb-4868-b580-3b584ac8f527",
         "4e326dc5-b877-4abb-a5ef-59fa7d42ddc3",
-        "9066e929-3a9c-404b-835a-797166835a14",
+        "7bab0a26-8d2b-497d-ab26-0e0e9c996828",
+        "3fecbe56-c283-4e0b-9002-3fe17712480a",
         "a76ad1c6-b62d-4c66-82fc-d188f57570fe",
-        "1c384f17-9c60-4a7a-9a15-17ab60086f2e",
-        "9f264aba-de45-4d65-b645-670ea4d270f6",
-        "7bab0a26-8d2b-497d-ab26-0e0e9c996828"
+        "9066e929-3a9c-404b-835a-797166835a14",
+        "1c384f17-9c60-4a7a-9a15-17ab60086f2e"
       ],
       "settings": {
         "mobile_carousel": true
