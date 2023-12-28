@@ -22,6 +22,25 @@
 
 /***/ }),
 
+/***/ "./js/sections/bundle-cart.js":
+/*!************************************!*\
+  !*** ./js/sections/bundle-cart.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_bundle_cart_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/bundle-cart.svelte */ "./js/components/svelte/bundle-cart.svelte");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_bundle_cart_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'bundle-cart');
+});
+
+/***/ }),
+
 /***/ "./js/sections/category-section.js":
 /*!*****************************************!*\
   !*** ./js/sections/category-section.js ***!
@@ -34,6 +53,25 @@
 /* harmony import */ var JsComponents_scroll_on_click__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/scroll-on-click */ "./js/components/scroll-on-click.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => (0,JsComponents_scroll_on_click__WEBPACK_IMPORTED_MODULE_0__.scrollOnClick)('.collection-banner__cta', '.category-title-description', 200));
+
+/***/ }),
+
+/***/ "./js/sections/collection-grid.js":
+/*!****************************************!*\
+  !*** ./js/sections/collection-grid.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_collection_grid_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/collection-grid.svelte */ "./js/components/svelte/collection-grid.svelte");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  return (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_collection_grid_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'collection-grid');
+});
 
 /***/ }),
 
@@ -122,7 +160,11 @@
 /* harmony import */ var _customer_reviews__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./customer-reviews */ "./js/sections/customer-reviews.js");
 /* harmony import */ var _category_section__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./category-section */ "./js/sections/category-section.js");
 /* harmony import */ var _custom_product_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./custom-product-card */ "./js/sections/custom-product-card.js");
-/* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./product */ "./js/sections/product.js");
+/* harmony import */ var _collection_grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./collection-grid */ "./js/sections/collection-grid.js");
+/* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./product */ "./js/sections/product.js");
+/* harmony import */ var _bundle_cart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./bundle-cart */ "./js/sections/bundle-cart.js");
+
+
 
 
 
@@ -135,7 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_category_section__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_product_carousel__WEBPACK_IMPORTED_MODULE_3__["default"])();
   (0,_custom_product_card__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_product__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_collection_grid__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_product__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  (0,_bundle_cart__WEBPACK_IMPORTED_MODULE_7__["default"])();
   window.customProductCard = _custom_product_card__WEBPACK_IMPORTED_MODULE_4__["default"];
   window.productCarousel = _product_carousel__WEBPACK_IMPORTED_MODULE_3__["default"];
 });

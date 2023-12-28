@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
        const currentSliderTarget = ev.target.closest('[blog-list]');
         const slideIndex =currentSliderTarget.dataset.slideIndex; //add check 
         handleScroll(slideIndex, swiperInstance);
-        gsap.to(window,1, {scrollTo:{y:`#blog-post-${slideIndex}`, offsetY:225 , autoKill: false}, onComplete:()=>{
+        gsap.to(window,1, {scrollTo:{y:`#blog-post-${slideIndex}`, offsetY:250 , autoKill: false}, onComplete:()=>{
             navigateActive = true
         }});
     }))

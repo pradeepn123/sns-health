@@ -9,7 +9,7 @@
 .blog-page-list-section {
   padding: var(--section-content-margin) 0;
   position: sticky;
-  top: 93px;
+  top: calc(48px + var(--announcement-bar-height-sticky));
   z-index: 4;
   background: #fff;
   border-bottom: 1px solid #DADADA;

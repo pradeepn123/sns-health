@@ -69,8 +69,14 @@
         "filter_group_order": ""
       }
     },
+    "c412f4f1-a37f-40cd-b720-4c029719dc72": {
+      "type": "mini-cart",
+      "settings": {
+      }
+    },
     "55eea1c7-d33f-4ba0-9122-60d589c905c8": {
       "type": "static-recently-viewed-products",
+      "disabled": true,
       "settings": {
         "heading": "Recently viewed",
         "mobile_carousel": true
@@ -91,6 +97,7 @@
       "block_order": [
         "8ea7dad7-e251-4655-b1e0-2405f62dcb08"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Most Popular in this Collection",
         "mobile_carousel": true
@@ -119,6 +126,7 @@
     "1eb1277d-aa73-4a2b-b75f-2a5f8bec490c",
     "b1113ace-56c5-4f7c-805d-5d02a7a51bba",
     "e24ed829-a79a-4204-83df-ab2705d01f30",
+    "c412f4f1-a37f-40cd-b720-4c029719dc72",
     "55eea1c7-d33f-4ba0-9122-60d589c905c8",
     "d0182ec5-3361-4ef2-892f-c87049bf4454",
     "62f5d72e-aae3-439b-bb23-174170f75edd"

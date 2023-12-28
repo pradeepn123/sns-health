@@ -2,108 +2,18 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/sections/blog-post.js":
-/*!**********************************!*\
-  !*** ./js/sections/blog-post.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./js/sections/bundle-cart.js":
+/*!************************************!*\
+  !*** ./js/sections/bundle-cart.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* unused harmony export blogItemTriggers */
-/* harmony import */ var JsComponents_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! JsComponents/utils */ "./js/components/utils.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollToPlugin */ "./node_modules/gsap/ScrollToPlugin.js");
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_bundle_cart_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/bundle-cart.svelte */ "./js/components/svelte/bundle-cart.svelte");
 
 
-
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin);
-var navigateActive = true;
-var swiperInstance;
-var debounce = function debounce(callback) {
-  var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-  var timeoutId = null;
-  return function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    window.clearTimeout(timeoutId);
-    timeoutId = window.setTimeout(() => {
-      callback.apply(null, args);
-    }, wait);
-  };
-};
-var handleScroll = debounce((index, swiperInstance) => {
-  //add check for each element , code shouldnt run if element doesnt exist
-  var sectionIndex = index;
-  swiperInstance.slideTo(sectionIndex - 1);
-  var prevActiveSlider = document.querySelector('.blog-page-list-section__icon-text.active');
-  var prevActiveSliderIndex = prevActiveSlider.dataset.slideIndex;
-  if (prevActiveSliderIndex == sectionIndex) return;
-  var setActiveSlider = document.querySelector("[data-slide-index='".concat(sectionIndex, "']"));
-  setActiveSlider.classList.add('active'); //add check for eg , setActiveSlider?.classList.add('active');
-  prevActiveSlider.blur(); //we dont need this 
-  prevActiveSlider.classList.remove('active');
-}, 100);
-var blogItemTriggers = () => {
-  var _document$querySelect;
-  swiperInstance = (_document$querySelect = document.querySelector('.blog-page-list-section__content .swiper')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.swiper;
-  var blogItems = document.querySelectorAll('[data-blog-post-container]');
-  var callback = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        document.querySelector('.blog-page-list-section').classList.add('isSticky'); //add checl
-        if (navigateActive) {
-          handleScroll(entry.target.dataset.sectionIndex, swiperInstance);
-        }
-      }
-    });
-  };
-  var options = {
-    rootMargin: "40px",
-    threshold: 0.8
-  };
-  var blogObserver = new JsComponents_utils__WEBPACK_IMPORTED_MODULE_2__.IntersectObserver(callback, blogItems, options);
-  blogObserver.init();
-};
-
-// border add when section become sticky 
-
-(function (d) {
-  var newEl = d.createElement("div");
-  newEl.classList.add("myObserver");
-  var ref = d.querySelector(".blog-page-list-section");
-  ref.before(newEl);
-  var observer = new IntersectionObserver(_ref => {
-    var [entry] = _ref;
-    var blogSection = d.querySelector(".blog-page-list-section");
-    blogSection.classList.toggle("sticky-element", entry.intersectionRatio === 0);
-    blogSection.style.borderBottom = entry.intersectionRatio === 0 ? '1px solid #DADADA' : 'none';
-  }, {
-    threshold: [0, 1]
-  });
-  observer.observe(d.querySelector(".myObserver"));
-})(document);
-gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollToPlugin__WEBPACK_IMPORTED_MODULE_1__.ScrollToPlugin);
-document.addEventListener('DOMContentLoaded', () => {
-  blogItemTriggers();
-  document.querySelectorAll('[blog-list]').forEach(item => item.addEventListener('click', ev => {
-    var _document$querySelect2;
-    ev.preventDefault();
-    navigateActive = false;
-    swiperInstance = (_document$querySelect2 = document.querySelector('.blog-page-list-section__content .swiper')) === null || _document$querySelect2 === void 0 ? void 0 : _document$querySelect2.swiper;
-    var currentSliderTarget = ev.target.closest('[blog-list]');
-    var slideIndex = currentSliderTarget.dataset.slideIndex; //add check 
-    handleScroll(slideIndex, swiperInstance);
-    gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(window, 1, {
-      scrollTo: {
-        y: "#blog-post-".concat(slideIndex),
-        offsetY: 250,
-        autoKill: false
-      },
-      onComplete: () => {
-        navigateActive = true;
-      }
-    });
-  }));
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_bundle_cart_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'bundle-cart');
 });
 
 /***/ })
@@ -219,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"blog-post": 0
+/******/ 			"bundle-cart": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -269,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/blog-post.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/bundle-cart.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

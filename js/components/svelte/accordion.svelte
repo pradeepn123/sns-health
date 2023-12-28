@@ -10,7 +10,7 @@
     const handleClick = () => (open = !open);
 </script>
 
-<div class="accordion">
+<div class="accordion custom_filter_header">
     <div class="header" on:click={handleClick}>
         <div class="text">
             <slot name="head"></slot>	
@@ -36,22 +36,5 @@
 </div>
 
 <style>
-    div.accordion {
-        margin: 1rem 0;
-    }
-
-    div.header {
-        display: flex;
-        width: 100%;
-    }
-
-    div.header .text {
-        flex: 1;
-        margin-right: 5px;
-    }
-
-    div.details {
-        background-color: #cecece;
-        padding: 1rem;
-    }
+   
 </style>

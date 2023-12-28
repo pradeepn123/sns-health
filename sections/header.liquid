@@ -473,7 +473,21 @@
                 endif %}
               <li class="nav-bar__item {% if link.links.size > 0 %} hide-mobile {% endif%}">
                 {%- if link.links.size == 0 -%}
-                  <a href="{{ link.url }}" class="nav-bar__link link" data-type="menuitem">{% if is_special_item %}<img src="{{'fire-emo.png' | asset_url}}" height="17" width="17"/>  {% endif %}{{ link.title }}</a>
+                  {% assign url = link.url | split: "#" | last %}
+                  {% if url contains 'megamenu' %} 
+                    {% assign is_mega_menu = true %}
+                    {% assign megamenu_tag = url %}
+                    {% assign megamenu_url =  url | split: 'megamenu-' | last %}
+                    {% assign megamenu_url = routes.collections_url | append: '/' | append: megamenu_url %}
+                    {% else %}
+                    {% assign is_mega_menu = false %}
+                  {% endif %}
+                  {% if is_mega_menu %}
+                    <a href="{{ megamenu_url }}" class="nav-bar__link link link-megamenu" data-type="menuitem" aria-expanded="false" aria-controls="{{ megamenu_tag }}" aria-haspopup="true"> {% if is_special_item %}<img src="{{'fire-emo.png' | asset_url}}" height="17" width="17"/>  {% endif %}{{ link.title }}</a>
+                    <div id="{{ megamenu_tag }}" data-desktop-megamenu-target-{{megamenu_tag}}  class="mega-menu mega-menu--image-megamenu" data-type="menu" aria-hidden="true" role="list"> </div>
+                  {% else  %}
+                    <a href="{{ link.url }}" class="nav-bar__link link" data-type="menuitem">{% if is_special_item %}<img src="{{'fire-emo.png' | asset_url}}" height="17" width="17"/>  {% endif %}{{ link.title }}</a>
+                  {% endif %}
                 {%- else -%}
                   {%- capture index -%}desktop-menu-0-{{ forloop.index }}{%- endcapture -%}
 

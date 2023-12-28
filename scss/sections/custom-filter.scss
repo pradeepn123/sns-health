@@ -1,0 +1,66 @@
+
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+@import 'StyleComponents/icon-text';
+
+.custom-filter{
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    background: var(--secondary-background);
+    width: 288px;
+    margin: 0;
+    @media (--md) {
+        margin: 0 15px;
+    }
+
+    &_wrap{
+        // padding: 20px 25px;
+        padding: var(--section-margin);
+    }
+
+    &_list{
+        &_h3{
+            font-size: $body-title-size;
+            font-weight: $heading-weight;
+            text-transform: uppercase;
+            margin-bottom: 0;
+            line-height: var(--section-margin);
+            padding-bottom: 5px;
+            width: auto;
+            ::before{
+                content: "";
+                width: 0;
+                height: 0;
+                border: 5px solid transparent;
+                border-top-color: #000;
+                display: inline-block;
+                margin: 0 10px -2px 0;
+            }
+        }
+    }
+
+    &_list-value{
+        cursor: pointer;
+        margin: 7px 0 6px;
+        padding: 0 8px;
+        list-style: none;
+        line-height: 24px;
+        padding-left: 30px;
+    }
+
+    &_button-checkbox{
+        border: 1px solid rgba(0,0,0,.2);
+        width: 15px;
+        height: 15px;
+        background: 0 0;
+        display: inline-block;
+        position: absolute;
+        left: 9px;
+        top: 4px;
+    }
+
+
+}

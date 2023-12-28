@@ -1,4 +1,7 @@
 {{ 'default-collection.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'custom-filter.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{{ 'collection.css' | asset_url | stylesheet_tag }}
+
 {%- assign items_per_page = cart.attributes.collection_products_per_page
   | default: section.settings.default_products_per_page
 -%}
@@ -12,230 +15,235 @@
 }
 {%- endcapture -%}
 
-<section
-  data-section-id="{{ section.id }}"
-  data-section-type="collection"
-  data-section-settings="{{ section_settings }}"
->
-  <div>
-    <div class="layout container">
-      {%- comment -%}
-        --------------------------------------------------------------------------------------
-        FILTER BAR (DESKTOP)
-        --------------------------------------------------------------------------------------
-      {%- endcomment -%}
+{% assign is_custom_filter = collection.metafields.custom.custom_filter | default: false %}
+{% if is_custom_filter %}
+  <collection-grid></collection-grid>
+{% else %}
+  <section
+    data-section-id="{{ section.id }}"
+    data-section-type="collection"
+    data-section-settings="{{ section_settings }}"
+  >
+    <div>
+      <div class="layout container">
+        {%- comment -%}
+          --------------------------------------------------------------------------------------
+          FILTER BAR (DESKTOP)
+          --------------------------------------------------------------------------------------
+        {%- endcomment -%}
 
-      <div class="layout__section layout__section--secondary hidden-pocket">
-        <div class="card">
-          <div class="card__section card__section--tight">
-            <p class="card__title--small heading">{{ 'collection.filter.all' | t }}</p>
-            <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v">
-              {% include 'boost-pfs-filter-skeleton', type: 'filter-tree' %}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {%- paginate collection.products by items_per_page -%}
-        <div class="layout__section">
-          <div class="collection">
-            {%- unless collection.template_suffix == 'brand' -%}
-              {%- if section.settings.show_collection_image
-                and collection.image
-                and collection.all_products_count > 0
-              -%}
-                {%- if section.settings.collection_image_size == 'preserve_ratio' -%}
-                  {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,500,600,700,800,900,1000, 1200, 1400, 1600', image: collection.image -%}{%- endcapture -%}
-                  {%- assign image_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-
-                  <div class="collection__image-wrapper collection__image-wrapper--preserve-ratio">
-                    <div
-                      class="aspect-ratio"
-                      style="padding-bottom: {{ 100.0 | divided_by: collection.image.aspect_ratio }}%"
-                    >
-                      <img
-                        class="lazyload image--fade-in"
-                        data-src="{{ image_url }}"
-                        data-sizes="auto"
-                        data-widths="[{{ supported_sizes }}]"
-                        alt="{{ collection.image.alt | escape }}"
-                      >
-                    </div>
-                  </div>
-                {%- else -%}
-                  <div
-                    class="collection__image-wrapper collection__image-wrapper--{{ section.settings.collection_image_size }}"
-                    style="background-image: url({{ collection.image | img_url: '1x1' }})"
-                  >
-                    <div
-                      class="collection__image lazyload image--fade-in"
-                      data-bgset="{{ collection.image | img_url: '600x' }} 600w, {{ collection.image | img_url: '800x' }} 800w, {{ collection.image | img_url: '1000x' }} 1000w, {{ collection.image | img_url: '1200x' }} 1200w, {{ collection.image | img_url: '1500x' }} 1500w"
-                    ></div>
-                  </div>
-                {%- endif -%}
-              {%- endif -%}
-            {%- endunless -%}
-
-            {%- comment -%}
-              --------------------------------------------------------------------------------------
-              TOP PART (COLLECTION INFO + TOOLBAR)
-              --------------------------------------------------------------------------------------
-            {%- endcomment -%}
-
-            <div class="card">
-              <header class="card__header {% unless collection.template_suffix == 'brand' %}card__header--tight{% endunless %}">
-                <div class="collection__header {% if collection.template_suffix == 'brand' %}collection__header--brand{% endif %}">
-                  {%- if section.settings.show_collection_image
-                    and collection.image
-                    and collection.all_products_count > 0
-                    and collection.template_suffix == 'brand'
-                  -%}
-                  {%- endif -%}
-                </div>
-              </header>
-              <div class="collection__dynamic-part">
-                <div class="collection__toolbar {% if collection.description != blank %}collection__toolbar--bordered{% endif %}">
-                  <button
-                    class="collection__toolbar-item collection__toolbar-item--filter hidden-lap-and-up"
-                    data-action="open-drawer"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    aria-controls="mobile-collection-filters"
-                  >
-                    <span class="collection__filter-icon">{%- include 'icon' with 'filter' -%}</span>
-                    {{ 'collection.filter.title' | t }}
-                  </button>
-
-                  <div class="collection__toolbar-item collection__toolbar-item--count hidden-pocket">
-                    <span
-                      class="boost-pfs-filter-total-product collection__showing-count hidden-pocket hidden-lap"
-                    ></span>
-                    {% comment %}
-                      <div class="boost-pfs-filter-top-show-limit value-picker-wrapper"></div>
-                    {% endcomment %}
-                  </div>
-
-                  <div class="collection__toolbar-item collection__toolbar-item--sort">
-                    <div class="value-picker-wrapper boost-pfs-filter-top-sorting"></div>
-                  </div>
-
-                  <div class="collection__toolbar-item collection__toolbar-item--layout" style="display:none !important">
-                    <span class="collection__layout-label hidden-phone">{{ 'collection.layout.title' | t }}</span>
-
-                    {%- if section.settings.default_view_layout == 'grid' -%}
-                      <button
-                        type="button"
-                        class="collection__layout-button {% if view_mode == 'grid' %}is-selected{% endif %} link touch-area"
-                        aria-label="{{ 'collection.layout.grid' | t }}"
-                        data-action="change-layout"
-                        data-layout-mode="grid"
-                      >
-                        {% include 'icon' with 'grid' %}
-                      </button>
-                      <button
-                        type="button"
-                        class="collection__layout-button {% if view_mode == 'list' %}is-selected{% endif %} link touch-area"
-                        aria-label="{{ 'collection.layout.list' | t }}"
-                        data-action="change-layout"
-                        data-layout-mode="list"
-                      >
-                        {% include 'icon' with 'list' %}
-                      </button>
-                    {%- else -%}
-                      <button
-                        type="button"
-                        class="collection__layout-button {% if view_mode == 'list' %}is-selected{% endif %} link touch-area"
-                        aria-label="{{ 'collection.layout.list' | t }}"
-                        data-action="change-layout"
-                        data-layout-mode="list"
-                      >
-                        {% include 'icon' with 'list' %}
-                      </button>
-                      <button
-                        type="button"
-                        class="collection__layout-button {% if view_mode == 'grid' %}is-selected{% endif %} link touch-area"
-                        aria-label="{{ 'collection.layout.grid' | t }}"
-                        data-action="change-layout"
-                        data-layout-mode="grid"
-                      >
-                        {% include 'icon' with 'grid' %}
-                      </button>
-                    {%- endif -%}
-                  </div>
-                </div>
-
-                {%- comment -%}
-                  --------------------------------------------------------------------------------------
-                  COLLECTION PRODUCTS
-                  --------------------------------------------------------------------------------------
-                {%- endcomment -%}
-
-                {%- if view_mode == 'grid' -%}
-                  {%- assign show_as_list = false -%}
-                {%- else -%}
-                  {%- assign show_as_list = true -%}
-                {%- endif -%}
-
-                {%- render 'collection-product-list' , collection: collection -%}
-                <div class="boost-pfs-filter-bottom-pagination pagination"></div>
-                <div class="boost-pfs-filter-load-more"></div>
+        <div class="layout__section layout__section--secondary hidden-pocket">
+          <div class="card">
+            <div class="card__section card__section--tight">
+              <p class="card__title--small heading">{{ 'collection.filter.all' | t }}</p>
+              <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v">
+                {% include 'boost-pfs-filter-skeleton', type: 'filter-tree' %}
               </div>
             </div>
           </div>
         </div>
-      {%- endpaginate -%}
+
+        {%- paginate collection.products by items_per_page -%}
+          <div class="layout__section">
+            <div class="collection">
+              {%- unless collection.template_suffix == 'brand' -%}
+                {%- if section.settings.show_collection_image
+                  and collection.image
+                  and collection.all_products_count > 0
+                -%}
+                  {%- if section.settings.collection_image_size == 'preserve_ratio' -%}
+                    {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,500,600,700,800,900,1000, 1200, 1400, 1600', image: collection.image -%}{%- endcapture -%}
+                    {%- assign image_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                    <div class="collection__image-wrapper collection__image-wrapper--preserve-ratio">
+                      <div
+                        class="aspect-ratio"
+                        style="padding-bottom: {{ 100.0 | divided_by: collection.image.aspect_ratio }}%"
+                      >
+                        <img
+                          class="lazyload image--fade-in"
+                          data-src="{{ image_url }}"
+                          data-sizes="auto"
+                          data-widths="[{{ supported_sizes }}]"
+                          alt="{{ collection.image.alt | escape }}"
+                        >
+                      </div>
+                    </div>
+                  {%- else -%}
+                    <div
+                      class="collection__image-wrapper collection__image-wrapper--{{ section.settings.collection_image_size }}"
+                      style="background-image: url({{ collection.image | img_url: '1x1' }})"
+                    >
+                      <div
+                        class="collection__image lazyload image--fade-in"
+                        data-bgset="{{ collection.image | img_url: '600x' }} 600w, {{ collection.image | img_url: '800x' }} 800w, {{ collection.image | img_url: '1000x' }} 1000w, {{ collection.image | img_url: '1200x' }} 1200w, {{ collection.image | img_url: '1500x' }} 1500w"
+                      ></div>
+                    </div>
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endunless -%}
+
+              {%- comment -%}
+                --------------------------------------------------------------------------------------
+                TOP PART (COLLECTION INFO + TOOLBAR)
+                --------------------------------------------------------------------------------------
+              {%- endcomment -%}
+
+              <div class="card">
+                <header class="card__header {% unless collection.template_suffix == 'brand' %}card__header--tight{% endunless %}">
+                  <div class="collection__header {% if collection.template_suffix == 'brand' %}collection__header--brand{% endif %}">
+                    {%- if section.settings.show_collection_image
+                      and collection.image
+                      and collection.all_products_count > 0
+                      and collection.template_suffix == 'brand'
+                    -%}
+                    {%- endif -%}
+                  </div>
+                </header>
+                <div class="collection__dynamic-part">
+                  <div class="collection__toolbar {% if collection.description != blank %}collection__toolbar--bordered{% endif %}">
+                    <button
+                      class="collection__toolbar-item collection__toolbar-item--filter hidden-lap-and-up"
+                      data-action="open-drawer"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      aria-controls="mobile-collection-filters"
+                    >
+                      <span class="collection__filter-icon">{%- include 'icon' with 'filter' -%}</span>
+                      {{ 'collection.filter.title' | t }}
+                    </button>
+
+                    <div class="collection__toolbar-item collection__toolbar-item--count hidden-pocket">
+                      <span
+                        class="boost-pfs-filter-total-product collection__showing-count hidden-pocket hidden-lap"
+                      ></span>
+                      {% comment %}
+                        <div class="boost-pfs-filter-top-show-limit value-picker-wrapper"></div>
+                      {% endcomment %}
+                    </div>
+
+                    <div class="collection__toolbar-item collection__toolbar-item--sort">
+                      <div class="value-picker-wrapper boost-pfs-filter-top-sorting"></div>
+                    </div>
+
+                    <div class="collection__toolbar-item collection__toolbar-item--layout" style="display:none !important">
+                      <span class="collection__layout-label hidden-phone">{{ 'collection.layout.title' | t }}</span>
+
+                      {%- if section.settings.default_view_layout == 'grid' -%}
+                        <button
+                          type="button"
+                          class="collection__layout-button {% if view_mode == 'grid' %}is-selected{% endif %} link touch-area"
+                          aria-label="{{ 'collection.layout.grid' | t }}"
+                          data-action="change-layout"
+                          data-layout-mode="grid"
+                        >
+                          {% include 'icon' with 'grid' %}
+                        </button>
+                        <button
+                          type="button"
+                          class="collection__layout-button {% if view_mode == 'list' %}is-selected{% endif %} link touch-area"
+                          aria-label="{{ 'collection.layout.list' | t }}"
+                          data-action="change-layout"
+                          data-layout-mode="list"
+                        >
+                          {% include 'icon' with 'list' %}
+                        </button>
+                      {%- else -%}
+                        <button
+                          type="button"
+                          class="collection__layout-button {% if view_mode == 'list' %}is-selected{% endif %} link touch-area"
+                          aria-label="{{ 'collection.layout.list' | t }}"
+                          data-action="change-layout"
+                          data-layout-mode="list"
+                        >
+                          {% include 'icon' with 'list' %}
+                        </button>
+                        <button
+                          type="button"
+                          class="collection__layout-button {% if view_mode == 'grid' %}is-selected{% endif %} link touch-area"
+                          aria-label="{{ 'collection.layout.grid' | t }}"
+                          data-action="change-layout"
+                          data-layout-mode="grid"
+                        >
+                          {% include 'icon' with 'grid' %}
+                        </button>
+                      {%- endif -%}
+                    </div>
+                  </div>
+
+                  {%- comment -%}
+                    --------------------------------------------------------------------------------------
+                    COLLECTION PRODUCTS
+                    --------------------------------------------------------------------------------------
+                  {%- endcomment -%}
+
+                  {%- if view_mode == 'grid' -%}
+                    {%- assign show_as_list = false -%}
+                  {%- else -%}
+                    {%- assign show_as_list = true -%}
+                  {%- endif -%}
+
+                  {%- render 'collection-product-list' , collection: collection -%}
+                  <div class="boost-pfs-filter-bottom-pagination pagination"></div>
+                  <div class="boost-pfs-filter-load-more"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {%- endpaginate -%}
+      </div>
     </div>
-  </div>
 
-  {%- comment -%}
-    --------------------------------------------------------------------------------------
-    MOBILE FILTER SIDEBAR
-    --------------------------------------------------------------------------------------
-  {%- endcomment -%}
+    {%- comment -%}
+      --------------------------------------------------------------------------------------
+      MOBILE FILTER SIDEBAR
+      --------------------------------------------------------------------------------------
+    {%- endcomment -%}
 
-  <div id="mobile-collection-filters" class="drawer" aria-hidden="true">
-    <div class="drawer__inner">
-      <div class="collection-drawer">
-        <header class="collection-drawer__header">
-          <div>
-            <button class="collection-drawer__close" data-action="close-drawer">
-              {% include 'icon' with 'close' %}
+    <div id="mobile-collection-filters" class="drawer" aria-hidden="true">
+      <div class="drawer__inner">
+        <div class="collection-drawer">
+          <header class="collection-drawer__header">
+            <div>
+              <button class="collection-drawer__close" data-action="close-drawer">
+                {% include 'icon' with 'close' %}
+              </button>
+            </div>
+          </header>
+
+          <div class="collection-drawer__inner">
+            <p class="collection-drawer__section-title">{{ 'collection.filter.all' | t }}</p>
+            <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v"></div>
+          </div>
+
+          <div class="collection-drawer__footer">
+            <button class="button button--primary button--small button--full" data-action="close-drawer">
+              {{ 'collection.filter.view_results' | t }}
             </button>
           </div>
-        </header>
-
-        <div class="collection-drawer__inner">
-          <p class="collection-drawer__section-title">{{ 'collection.filter.all' | t }}</p>
-          <div class="boost-pfs-filter-tree boost-pfs-filter-tree-v"></div>
-        </div>
-
-        <div class="collection-drawer__footer">
-          <button class="button button--primary button--small button--full" data-action="close-drawer">
-            {{ 'collection.filter.view_results' | t }}
-          </button>
         </div>
       </div>
     </div>
-  </div>
 
-  {%- comment -%}
-    --------------------------------------------------------------------------------------
-    QUICK VIEW CONTAINER
-    --------------------------------------------------------------------------------------
-  {%- endcomment -%}
+    {%- comment -%}
+      --------------------------------------------------------------------------------------
+      QUICK VIEW CONTAINER
+      --------------------------------------------------------------------------------------
+    {%- endcomment -%}
 
-  <div id="modal-quick-view-{{ section.id }}" class="modal" aria-hidden="true">
-    <div class="modal__dialog modal__dialog--stretch" role="dialog">
-      <button class="modal__close link" data-action="close-modal">{%- include 'icon' with 'close' -%}</button>
+    <div id="modal-quick-view-{{ section.id }}" class="modal" aria-hidden="true">
+      <div class="modal__dialog modal__dialog--stretch" role="dialog">
+        <button class="modal__close link" data-action="close-modal">{%- include 'icon' with 'close' -%}</button>
 
-      <div class="modal__loader">
-        {%- include 'icon' with 'search-loader' -%}
+        <div class="modal__loader">
+          {%- include 'icon' with 'search-loader' -%}
+        </div>
+
+        <div class="modal__inner"></div>
       </div>
-
-      <div class="modal__inner"></div>
     </div>
-  </div>
-</section>
+  </section>
+{% endif %}
 
 <script>
   // Declare boostPFSConfig variable

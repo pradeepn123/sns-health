@@ -1,0 +1,88 @@
+{% liquid 
+    assign title = section.settings.title
+    assign block_size = section.block.size
+    assign blocks = section.blocks
+   %}
+     {% render 'collection-group-megamenu' , title: title, block_size: block_size , blocks: blocks %}
+     
+   {% schema %}
+   {
+     "name": "megamenu",
+     "class": "megamenu--hidden",
+     "settings": [
+       {
+         "type": "text",
+         "id": "title",
+         "label": "Megamenu Id",
+         "info": "just give unique identifier with prefix of megamenu, make sure to give same name as navigation url on eg: #megamenu-1"
+       }
+     ],
+     "blocks": [
+       {
+         "type": "banner",
+         "name": "Banner",
+         "limit": 5,
+         "settings": [
+          {
+            "type": "header",
+            "content": "Block Group"
+          },
+          {
+            "type": "header",
+            "content": "Block Contents"
+          },
+            {
+              "type": "image_picker",
+              "id": "image_desktop",
+              "label": "Image Desktop"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_mobile",
+              "label": "Image Mobile"
+            },
+            {
+              "type": "text",
+              "id": "eyebrow",
+              "label": "Eyebrow"
+            },
+            {
+              "type": "text",
+              "id":  "subheading",
+              "label": "Subheading"
+            },
+            {
+             "type": "color",
+             "id":  "color",
+             "label": "Text color"
+           },
+            {
+              "type": "collection",
+              "id":  "collection",
+              "label": "Collection"
+            },
+            {
+              "type": "text",
+              "id":  "tag",
+              "label": "Tag title"
+            },
+            {
+              "type": "checkbox",
+              "id":  "show_product_count",
+              "label": "Show product Count",
+              "default": false
+            }
+         ]
+        }
+     ],
+     "presets": [
+       {
+         "name": "Collection Group Megamenu"
+       }
+     ],
+     "enabled_on": {
+       "groups": ["header"]
+     }
+   }
+   {% endschema %}
+   

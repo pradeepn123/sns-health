@@ -184,7 +184,7 @@ var boostPFSTemplate = {
             vendor,
             variants:productVariants,
             title,
-            tags,
+        tags,
             metafields=[],
             variant_id,
             handle,

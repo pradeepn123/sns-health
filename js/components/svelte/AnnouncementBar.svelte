@@ -30,7 +30,7 @@
           '.overlay'
         );
         overlay.style.setProperty('--announcement-bar-height', `${announcementBar.offsetHeight}px`);
-        const announcementBarHeight = document.querySelector('#shopify-section-announcement-bar')?.clientHeight;
+        const announcementBarHeight = document.querySelector('#shopify-section-announcement-bar')?.getBoundingClientRect().height;
        document.querySelector('body').style.setProperty('--announcement-bar-height-sticky' ,`${announcementBarHeight}px`)
   };
   

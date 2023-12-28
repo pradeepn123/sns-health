@@ -1,0 +1,94 @@
+{% if title != blank %}
+    <div class="megamenu megamenu--mobile mega-menu--image-megamenu" data-megamenu-mobile data-megamenu-id="{{title}}">
+      <div class="megamenu__wrapper">
+        {% for block in blocks %}
+            {% liquid
+              assign id = block.id
+              assign color = block.settings.color
+              assign eyebrow = block.settings.eyebrow | default: blank
+              assign subheading = block.settings.subheading
+              assign image_desktop = block.settings.image_desktop
+              assign image_mobile = block.settings.image_mobile
+              assign inline_heading = block.settings.inline_heading
+              assign cta_url = block.settings.collection.url
+              assign product_count = block.settings.collection.products.size
+              assign tag_title = block.settings.tag | default: "Bundles to Choose"
+              assign show_product_count = block.settings.show_product_count
+            %}
+            <div class="megamenu__flex-wrapper">
+            {% render 'image-with-text-overlay',
+              wrapper_class: 'megamenu-content',
+              id: id,
+              color: color,
+              eyebrow: eyebrow,
+              overlay: false,
+              heading: heading,
+              subheading: subheading,
+              cta_text: cta_text,
+              cta_url: cta_url,
+              bottom_overlay: true,
+              image_desktop: image_desktop,
+              image_mobile: image_mobile,
+              text_wrapper_class: 'megamenu',
+              inline_heading: inline_heading,
+              mobile_aspect_ratio: 1.6,
+              mobile_crop: true,
+              button_type: button_type,
+              button_background_type: button_background_type,
+              cta_arrow: true
+            %}
+            <div class="megamenu__tag">
+              {% if show_product_count %} {{product_count}} {% endif %} {{tag_title}} 
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="megamenu megamenu--desktop" data-megamenu-desktop data-megamenu-id="{{title}}">
+      <div class="megamenu__wrapper" >
+        {% for block in blocks %}
+            {% liquid
+              assign id = block.id
+              assign color = block.settings.color
+              assign eyebrow = block.settings.eyebrow | default: blank
+              assign subheading = block.settings.subheading
+              assign image_desktop = block.settings.image_desktop
+              assign image_mobile = block.settings.image_mobile
+              assign inline_heading = block.settings.inline_heading
+              assign cta_url = block.settings.collection.url
+              assign product_count = block.settings.collection.products.size
+              assign tag_title = block.settings.tag | default: "Bundles to Choose"
+              assign show_product_count = block.settings.show_product_count
+            %}
+            <div class="megamenu__flex-wrapper">
+            {% render 'image-with-text-overlay',
+              wrapper_class: 'megamenu-content',
+              id: id,
+              color: color,
+              eyebrow: eyebrow,
+              overlay: false,
+              heading: heading,
+              bottom_overlay: true,
+              subheading: subheading,
+              cta_text: cta_text,
+              cta_url: cta_url,
+              image_desktop: image_desktop,
+              image_mobile: image_mobile,
+              text_wrapper_class: 'megamenu',
+              inline_heading: inline_heading,
+              desktop_crop: true,
+              button_type: button_type,
+              desktop_aspect_ratio: 1.6,
+              button_background_type: button_background_type,
+              cta_arrow: true,
+              max_height: 450
+            %}
+            <div class="megamenu__tag">
+              {% if show_product_count %} {{product_count}} {% endif %} {{tag_title}} 
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  

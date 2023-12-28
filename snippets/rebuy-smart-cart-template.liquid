@@ -181,7 +181,6 @@
 
                 <div
                   class="rebuy-cart__flyout-item-properties"
-                  v-if="hasItemProperties(item)"
                 >
                   <div
                     class="rebuy-cart__flyout-item-property rebuy-cart__flyout-item-property--delivery-frequency"
@@ -204,6 +203,11 @@
                       class="rebuy-cart__flyout-item-property-value"
                       v-html="property.value"
                     ></span>
+                  </div>
+                  <div class="bundle__items-list" v-if="item.has_components">
+                    <div class="bundle__items-item" v-for="item in JSON.parse(window.localStorage.getItem('addedBundleProducts') || '[]')">
+                      <span v-html="item"></span>
+                    </div>
                   </div>
                 </div>
 

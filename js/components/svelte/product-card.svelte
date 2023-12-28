@@ -1,11 +1,23 @@
 <script>
-    import { onMount } from "svelte";
+  import { afterUpdate, onMount } from "svelte";
   import ResponsiveImage from "SvelteComponents/responsive-image.svelte";
-  import handleClick from 'JsComponents/handleClick'; //js based handle click
-  import {removeAttributesForCartBinding} from 'JsComponents/rebuy-cart-integration';
+  import handleClick from "JsComponents/handleClick"; //js based handle click
+  import { removeAttributesForCartBinding } from "JsComponents/rebuy-cart-integration";
+  import {
+    cartContents,
+    updateQuantity,
+    addProduct
+  } from "SvelteComponents/bundle-store.js";
+
+
+
   export let shopifyData;
   export let product;
-  let ref ;
+  let curatedBundleProduct = {};
+  let isAddedToBundle = false;
+  let ref;
+
+
   const {
     image,
     variants = [],
@@ -16,17 +28,19 @@
     handle,
     skipFormatMoney = false,
     discountPercentage: shopifyDiscountPercentage = 0,
-    enableAddToCart = true
+    enableAddToCart = true,
   } = product || shopifyData || {};
 
+  const currencySymbol = window.shopifyVariables.currencySymbol || "$";
+  const soldOutText = "Sold Out";
+  const chooseMoreText =
+    window.shopifyVariables.chooseMoreText || "See Options";
+  const addToCartText = window.shopifyVariables.addToCartText || "Add To Cart";
+  const bundleText = window.shopifyVariables.bundleText || "Add To Bundle";
+  const bundleTextAdded = window.shopifyVariables.bundleTextAdded || "Added";
 
-  const currencySymbol = window.shopifyVariables.currencySymbol || "$"
-  const  soldOutText = "Sold Out"
-  const  chooseMoreText = window.shopifyVariables.chooseMoreText || "See Options"
-  const addToCartText = window.shopifyVariables.addToCartText || "Add To Cart"
-  console.log(window.shopifyVariables.currency);
-
-  const [{ compare_at_price: comparePrice, price , id:variantId} = {}] =  variants || [];
+  const [{ compare_at_price: comparePrice, price, id: variantId } = {}] =
+    variants || [];
   const link = `${window.Shopify.routes.root}products/${handle}?variant=${variantId}`;
   let rating = false;
   metafields.forEach((metafield) => {
@@ -43,6 +57,7 @@
   });
 
   const bestseller = tags.includes("bestseller");
+  const isBundle = (window.location.href).includes("build-your-own-box");
   const onsale = tags.includes("onsale");
   const srcTokens = {
     replacementToken: "?width=300&height=300",
@@ -50,20 +65,70 @@
     srcToken: "?width=300&height=300",
   };
 
+  const productFormattedPrice = skipFormatMoney
+    ? window.formatCurrency(price, `${currencySymbol}{{amount}}`)
+    : window.formatCurrency(
+        price * (window.Shopify?.currency?.rate * 100),
+        `${currencySymbol}{{amount}}`,
+      );
+
   //conflicting data between shopify and rebuy
   let discountPercentage = 0;
   if (skipFormatMoney) {
     discountPercentage = shopifyDiscountPercentage;
+  } else {
+    discountPercentage = Math.round(
+      ((comparePrice - price) * 100) / comparePrice,
+    );
   }
-  else {
-    discountPercentage = Math.round(((comparePrice - price) * 100) / comparePrice)  
+
+  if (isBundle) {
+    curatedBundleProduct = {
+      id: variantId,
+      image,
+      title,
+      price: productFormattedPrice,
+      quantity: 1
+    };
   }
+
+  $: isAddedToBundle = $cartContents && $cartContents[variantId];
+
+  const currentAddedBundleProduct = $cartContents[variantId];
+
+  const handleProductUpdate = (ev) => {
+    ev.preventDefault(); //override default behaviour
+    const curatedBundleProduct = {
+      id: variantId,
+      image,
+      title,
+      price: productFormattedPrice,
+      quantity: 1
+    };
+    //if [currentVariant] id exist on hash object(store), then update the product
+    isAddedToBundle ?  updateProduct(currentAddedBundleProduct,currentAddedBundleProduct.quantity + 1 ) : addProduct(curatedBundleProduct);
+    //else add [current variant] on the hash object
+  }
+
+  // const updateProduct = (ev) => {
+  //   ev.preventDefault();
+  //   cartContents.update((contents) => {
+  //     if (isAddedToBundle) {
+  //       const quantity = (contents[variantId].quantity += 1);
+  //       updateQuantity(contents[variantId], quantity);
+  //     } else {
+  //       const productObj = {
+  //         [variantId]: curatedBundleProduct,
+  //       };
+  //       return productObj;
+  //     }
+  //   });
+  // };
 
   onMount(() => {
     handleClick(ref);
-    removeAttributesForCartBinding(ref)
-  })
-
+    removeAttributesForCartBinding(ref);
+  });
 </script>
 <a href="{link}" target="_blank" style="user-select: none;">
 <div
@@ -80,12 +145,13 @@
     <div class="product-card__header">
       <div class="product-card__header-tags">
         {#if discountPercentage > 0}<div class="product-card__discount">
-            {discountPercentage }% off
+            {discountPercentage}% off
           </div>
         {/if}
         {#if bestseller}<div class="product-card__discount">Best Seller</div>
         {/if}
-        {#if onsale}<div class="product-card__discount">On Sale</div> {/if}
+        {#if onsale}<div class="product-card__discount">On Sale</div>
+        {/if}
       </div>
       {#if rating}
         <div class="product-card__star">
@@ -111,41 +177,97 @@
           class=" product-card__price product-card__price--compare"
         >
           {#if skipFormatMoney}
-          {window.formatCurrency(
-            comparePrice,
-            `${currencySymbol}{{amount}}`
-          )}
-          {window.Shopify?.currency?.active}
+            {window.formatCurrency(comparePrice, `${currencySymbol}{{amount}}`)}
+            {window.Shopify?.currency?.active}
           {:else}
             {window.formatCurrency(
               comparePrice * (window.Shopify?.currency?.rate * 100),
-              `${currencySymbol}{{amount}}`
+              `${currencySymbol}{{amount}}`,
             )}
             {window.Shopify?.currency?.active}
           {/if}
         </div>
       {/if}
       <div class="product-card__price">
-        {#if skipFormatMoney}
-        {window.formatCurrency(
-          price,
-          `${currencySymbol}{{amount}}`
-        )}
+        {productFormattedPrice}
         {window.Shopify?.currency?.active}
-        {:else}
-          {window.formatCurrency(
-            price * (window.Shopify?.currency?.rate * 100),
-            `${currencySymbol}{{amount}}`
-          )}
-          {window.Shopify?.currency?.active}
-        {/if}
       </div>
     </div>
     <div class="product-card__atc">
-      <form method="post" action="/cart/add" accept-charset="UTF-8" enctype="multipart/form-data">
+      <form
+        method="post"
+        action="/cart/add"
+        accept-charset="UTF-8"
+        enctype="multipart/form-data"
+      >
         <input type="hidden" name="quantity" value="1" />
         <input type="hidden" name="id" value={variantId} />
-        {#if variants.length == 1 && enableAddToCart == true}
+        {#if isBundle}
+          <div
+            class={`product-card__bundle-atc product-card__bundle-action-btn product-card__quantity-button-wrapp ${
+              isAddedToBundle ? "active" : ""
+            }`}
+          >
+          <div
+          class={`product-card__bundle-atc-quantity ${
+            isAddedToBundle?.quantity <=2 ? "active" : ""
+          }`}
+        >
+        <div>
+              <button
+                class="product-card__quantity-buttons"
+                name="remove"
+                on:click|preventDefault={() => {
+                  let currentQuantity = isAddedToBundle?.quantity;
+                  if (currentQuantity <= 1) {
+                    currentQuantity = 0;
+                  } else {
+                    currentQuantity = currentQuantity - 1;
+                  }
+                  updateQuantity(isAddedToBundle, currentQuantity);
+                }}>-</button
+              >
+            </div>
+              <div class="product-card__quantity-buttons">
+                <span>{isAddedToBundle?.quantity}</span>
+              </div>
+
+              <div>
+              <button
+                class="product-card__quantity-buttons"
+                name="add"
+                on:click|preventDefault={() =>
+                  updateQuantity(
+                    isAddedToBundle || {},
+                    isAddedToBundle?.quantity + 1,
+                  )}>+</button
+              >
+            </div>
+           </div>
+
+           <div class={`product-card__bundle-atc-added  ${
+            isAddedToBundle?.quantity > 2  ? "active" : ""
+          }`}
+        >
+              <button
+              class="product-card__quantity-buttons">
+              {bundleTextAdded}
+            </button>
+
+        </div>
+          </div>
+
+          <button
+            type="button"
+            class={`product-item__action-button product-item__action-button--list-view-only button button--small button--primary product-card__bundle-action-btn  ${
+              !isAddedToBundle ? "active" : ""
+            }`}
+            data-action="add-to-bundle"
+            on:click={handleProductUpdate}
+          >
+            {bundleText}
+          </button>
+        {:else if variants.length == 1 && enableAddToCart == true}
           <button
             type="submit"
             class="product-item__action-button product-item__action-button--list-view-only button button--small button--primary"

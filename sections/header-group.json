@@ -105,6 +105,86 @@
       "settings": {
         "title": "megamenu-personal-care"
       }
+    },
+    "cf1b6627-4f91-46e6-8f19-1c7d30d3e3a1": {
+      "type": "collection-group-megamenu",
+      "blocks": {
+        "70c998b5-d17d-4fd3-868c-ea0f245da91d": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/image.png",
+            "image_mobile": "shopify:\/\/shop_images\/image.png",
+            "eyebrow": "Build Your Own Snack Box",
+            "subheading": "This is the description for the bundles item.",
+            "color": "",
+            "collection": "3d-energy",
+            "tag": "BYOB",
+            "show_product_count": false
+          }
+        },
+        "014eece6-6772-498b-93de-43164d00b63b": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/image_1.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_1.png",
+            "eyebrow": "Supplement Bundles",
+            "subheading": "This is the description for the bundles item.",
+            "color": "",
+            "collection": "supplements-bundles",
+            "tag": "",
+            "show_product_count": true
+          }
+        },
+        "1edb242a-f08f-474c-b73d-858ed0d955a3": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/image_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_2.png",
+            "eyebrow": "Wellness Bundles",
+            "subheading": "This is the description for the bundles item.",
+            "color": "",
+            "collection": "wellness-bundles",
+            "tag": "",
+            "show_product_count": true
+          }
+        },
+        "b500933d-be92-43fd-b221-73e24614adf5": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/image_3.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_3.png",
+            "eyebrow": "Food & Snacks Bundles",
+            "subheading": "This is the description for the bundles item.",
+            "color": "",
+            "collection": "food-snacks-bundles",
+            "tag": "",
+            "show_product_count": true
+          }
+        },
+        "f09f8532-c434-48d3-af12-d0012769a36d": {
+          "type": "banner",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/image_4.png",
+            "image_mobile": "shopify:\/\/shop_images\/image_4.png",
+            "eyebrow": "Fitness Bundles",
+            "subheading": "This is the description for the bundles item.Typography",
+            "color": "",
+            "collection": "fitness-bundles",
+            "tag": "",
+            "show_product_count": true
+          }
+        }
+      },
+      "block_order": [
+        "70c998b5-d17d-4fd3-868c-ea0f245da91d",
+        "014eece6-6772-498b-93de-43164d00b63b",
+        "1edb242a-f08f-474c-b73d-858ed0d955a3",
+        "b500933d-be92-43fd-b221-73e24614adf5",
+        "f09f8532-c434-48d3-af12-d0012769a36d"
+      ],
+      "settings": {
+        "title": "megamenu-bundle-no-url"
+      }
     }
   },
   "order": [
@@ -113,6 +193,7 @@
     "8b4fd574-7ef8-48da-a983-71b280d8e161",
     "ffe7636d-671d-48ae-beb8-d5dce7d4b41b",
     "2b6a02d3-f8cc-490d-93b0-65cc5b7a5809",
-    "d9f1743c-ac85-46e4-91b2-616e2478dac7"
+    "d9f1743c-ac85-46e4-91b2-616e2478dac7",
+    "cf1b6627-4f91-46e6-8f19-1c7d30d3e3a1"
   ]
 }

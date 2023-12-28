@@ -12,6 +12,7 @@
 @custom-selector :--item-padded .mobile-menu__back-button,
 .mobile-menu__nav-link;
 @custom-selector :--item-flex .mobile-menu__nav-list-toggle;
+@custom-selector :--image-group-text-wrapper .mega-menu--image-megamenu .megamenu-content__text-wrapper.text-image__text-wrapper;
 
 
 #shopify-section-header {
@@ -29,6 +30,8 @@
   }
 
 .header {
+
+
     padding: 0;
     margin-bottom: 45px;
     // transition: margin-bottom 0.25s linear;
@@ -417,6 +420,11 @@
     align-items: flex-start;
 }
 
+.link.link-megamenu {
+    background: none !important;
+}
+
+
 .mega-menu {
     position: absolute;
     width: 100%;
@@ -439,6 +447,38 @@
     @media(--xlg) {
         left: 20%;
         width: 90%;
+    }
+
+    &--image-megamenu {
+        top: 45px;
+        left:0;
+        width: 100%;
+        .megamenu__wrapper {
+            @media(--md) {
+                @include mixins.container;
+            }
+            background: colors.$white;
+        }
+
+        .text__subheading {
+            @include use-text-style('body-alt');
+            font-weight: typography.$semi-weight;
+            margin-top: 5px;
+
+            @media(--md) {
+                font-weight: typography.$regular-weight;
+            }
+
+        }
+
+        .megamenu__wrapper {
+            column-gap: 30px;
+        }
+
+        .megamenu {
+            height: auto;
+            min-height: unset;
+        }
     }
 }
 
@@ -549,7 +589,7 @@
 }
 
 .nav-bar {
-    position: static;
+    position: relative;
     padding-bottom: 5px;
 
     &__item {
@@ -831,4 +871,46 @@ body .uwy .uai, body .uwy .uai img {
 .mobile-menu__section--loose{
     padding-bottom: calc(3* var(--base-margin) )!important;
     padding-top: calc(2* var(--header-padding) )!important
+}
+
+:--image-group-text-wrapper {
+    background: colors.$white;
+    color: colors.$black;
+    padding:10px;
+    text-align: left;
+}
+
+.megamenu__flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+
+    @media (--md) {
+        margin-bottom:0;
+    }
+
+    .megamenu__eyebrow {
+        display: none;
+
+        @media(--md) {
+            display: block;
+        }
+    }
+
+    .megamenu-content  {
+        width: 100%;
+    }
+}
+
+
+.megamenu__tag {
+    padding: 5px 9px;
+    @include use-text-style('body-small');
+    border: 1px solid rgba(128, 128, 128, 1);
+    color: rgba(128, 128, 128, 1);
+    border-radius: 10px;
+    display: inline-block;
+    width: fit-content;
+    margin: 0 10px;
 }

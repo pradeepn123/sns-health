@@ -10,6 +10,9 @@
 .logo-slider-flex-desktop .logo-container .metafield-multi_line_text_field{
     color: {{ collection.metafields.custom.color_schema.value.text_color }};
 }
+span.metafield-multi_line_text_field{
+    font-weight: normal !important;
+}
 @media screen and (min-width: 481px) and (max-width: 767px){
     span.metafield-multi_line_text_field {
         font-size: 15px;
@@ -48,27 +51,27 @@
                 {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank or collection.metafields.custom.collection_hero_section.value.description != blank %}
                     <div class="logo-container">
                         <header class="card__header">
-                            {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank %}
-                            <div class="collection__header collection__header--brand">
-                                <img
-                                    src="{{ collection.metafields.custom.collection_hero_section.value.hero_logo | img_url : 'master' }}"
-                                    style="{% unless collection.metafields.custom.collection_hero_section.value.description %}margin-bottom: 0{% endunless %}"
-                                >
-                           </div>
-                           <h1 class="title-hide">{{collection.title}}</h1> 
-                            {% endif %}
                             <div class="collection__header-inner">
                                 <div class="collection__meta">
                                     <h3 class="logo-heading">
                                         {{collection.title}}
                                     </h3>
+                                    <h1 class="boost-pfs-filter-collection-header brand_collection_title collection__title heading h1">
+                                        {{ collection.title }}
+                                    </h1>
                                     <div class="collection__meta-inner">
-                                        <h1 class="boost-pfs-filter-collection-header brand_collection_title collection__title heading h1 ssss">
-                                            <p>{{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}<p>
-                                        </h1>
+                                        <p class="boost-pfs-filter-collection-header brand_collection_title collection_description heading h1">
+                                            {{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}
+                                        <p>
                                     </div>
                                 </div>
                             </div>
+                            {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank %}
+                                <div class="collection__header collection__header--brand">
+                                    <img src="{{ collection.metafields.custom.collection_hero_section.value.hero_logo | img_url : 'master' }}" style="{% unless collection.metafields.custom.collection_hero_section.value.description %}margin-bottom: 0{% endunless %}" >
+                                </div>
+                                <h1 class="title-hide">{{collection.title}}</h1> 
+                            {% endif %}
                         </header>
                     </div>
                 {% endif %}
@@ -77,6 +80,18 @@
                 {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank or collection.metafields.custom.collection_hero_section.value.description != blank or collection.title != blank %}
                     <div class="logo-container logo-slider-flex-mobile">
                         <header class="card__header">
+                            <div class="collection__header-inner mobile">
+                                <div class="collection__meta">
+                                    <h1 class="boost-pfs-filter-collection-header brand_collection_title collection__title heading h1">
+                                        {{ collection.title }}
+                                    </h1>
+                                    <div class="collection__meta-inner">
+                                        <p class="boost-pfs-filter-collection-header collection__title heading h1">
+                                            {{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                             {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank %}
                             <div class="collection__header collection__header--brand">
                                 <img
@@ -84,20 +99,7 @@
                                     style="{% unless collection.metafields.custom.collection_hero_section.value.description %}margin-bottom: 0{% endunless %}"
                                 >
                             </div>
-                            <h1 class="title-hide">{{collection.title}}</h1> 
                             {% endif %}
-                            <div class="collection__header-inner">
-                                <div class="collection__meta">
-                                    <h3 class="logo-heading">
-                                        {{collection.title}}
-                                    </h3>
-                                    <div class="collection__meta-inner">
-                                        <h1 class="boost-pfs-filter-collection-header collection__title heading h1">
-                                            {{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}
-                                        </h1>
-                                    </div>
-                                </div>
-                            </div>
                         </header>
                     </div>
                 {% endif %}
@@ -112,14 +114,12 @@
                         <div class="sliding_images_container sliderimage-desktop">
                             {% if block.image != blank %}
                                 <div class="sliding_images_content" style="background-image: url({{ block.image | img_url : 'master'}})">
-                                    <h2>{{ block.description | metafield_tag }}</h2>
                                 </div>
                             {% endif %}
                         </div>
                         <div class="sliding_images_container sliderimage-mobile">
                             {% if block.mobile_image != blank %}
                             <div class="sliding_images_content" style="background-image: url({{ block.mobile_image | img_url : 'master'}})">
-                                <h2>{{ block.description | metafield_tag }}</h2>
                             </div>
                             {% endif %}
                         </div>

@@ -131,11 +131,16 @@
         {% assign panel_id = link.url | split: '#' | last %}
         {% assign megamenu_url =  link.url | split: 'megamenu-' | last %}
         {% assign megamenu_url = '/collections/' | append: megamenu_url %}
+        {% if megamenu_url contains 'no-url' %}
+          {% assign hide_view_all = true %} 
+        {% endif  %}
         <div class="mobile-menu__panel is-nested" id="{{ panel_id }}" aria-hidden="false" data-mobile-megamenu-target-{{panel_id}} >
           <div class="is-sticky">
             <button class="mobile-menu__back-button" data-action="close-panel">{% render 'icon', icon: 'arrow-right' %} {{ 'header.navigation.back' | t }}</button>
           </div>
+          {% unless hide_view_all %}
           <a class="mobile-menu__nav-list-toggle text--strong  mobile-menu__nav-list-toggle--link" href="{{ megamenu_url }}">View All</a>
+          {% endunless %}
         </div>
        
       {% endif %}

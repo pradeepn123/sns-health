@@ -22,6 +22,11 @@
     height: 70px;
 }
 .brand_collection_title.collection__title{
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+}
+.brand_collection_title.collection_description{
     font-weight: 400 !important;
     font-size: 15px !important;
     line-height: 22px !important;
@@ -137,7 +142,20 @@
         bottom: 19px;
     }
 }
-
+@media screen and (min-width: 768px){
+    .brand_collection_title.collection__title {
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+    }
+}
+@media screen and (min-width: 1200px){
+    .brand_collection_title.collection__title {
+        font-size: 30px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+    }
+}
 @media screen and (min-width: 641px) {
     .collection__toolbar--bordered {
         margin-top: 0 !important;
