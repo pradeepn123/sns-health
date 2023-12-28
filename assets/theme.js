@@ -1288,8 +1288,6 @@
       key: "_deactivateDropdown",
       value: function _deactivateDropdown(event, target) {
         var _this4 = this;
-      
-
         // event.relatedTarget is the new target. This allows to make sure to only close the dropdown if we leave the containing div
         if (this.openTrigger === 'hover' && target.contains(event.relatedTarget)) {
           return;

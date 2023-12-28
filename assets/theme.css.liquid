@@ -6858,8 +6858,12 @@ select::-ms-expand {
   white-space: nowrap;
   visibility: hidden;
   opacity: 0;
-  z-index: 1;
+  z-index: -1;
   transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.is-dropdown-open .nav-dropdown { 
+  z-index: 1;
 }
 
 .nav-dropdown:not(.nav-dropdown--floating) {
