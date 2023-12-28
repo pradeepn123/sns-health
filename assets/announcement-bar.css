@@ -135,6 +135,7 @@
 @media (min-width: 768px) {
   .announcement-bar .hide-mobile {
     display: block;
+    white-space: nowrap;
   }
 }
 .announcement-bar .value-picker__inner {

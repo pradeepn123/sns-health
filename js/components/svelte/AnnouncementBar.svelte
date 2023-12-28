@@ -7,6 +7,7 @@
   const blockData = shopifyData;
 
   const handleLocationBasedAnnouncement = () => {
+
     for (let countryBlock in blockData) {
       if (blockData[countryBlock]?.handle?.includes(country)) {
         const announcementBar = document.querySelector(
@@ -29,6 +30,8 @@
           '.overlay'
         );
         overlay.style.setProperty('--announcement-bar-height', `${announcementBar.offsetHeight}px`);
+        const announcementBarHeight = document.querySelector('#shopify-section-announcement-bar')?.clientHeight;
+       document.querySelector('body').style.setProperty('--announcement-bar-height-sticky' ,`${announcementBarHeight}px`)
   };
   
   onMount(async () => {

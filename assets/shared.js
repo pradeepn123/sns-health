@@ -691,6 +691,8 @@ function instance($$self, $$props, $$invalidate) {
 		const announcementBar = document.querySelector("[data-announcement-bar]");
 		const overlay = document.querySelector('.overlay');
 		overlay.style.setProperty('--announcement-bar-height', `${announcementBar.offsetHeight}px`);
+		const announcementBarHeight = document.querySelector('#shopify-section-announcement-bar')?.clientHeight;
+		document.querySelector('body').style.setProperty('--announcement-bar-height-sticky', `${announcementBarHeight}px`);
 	};
 
 	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(async () => {

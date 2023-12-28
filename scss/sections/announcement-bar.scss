@@ -108,6 +108,7 @@
         display: none;
         @media(--sm) {
             display: block;
+            white-space:nowrap;
         }
     }
 
