@@ -141,7 +141,7 @@
             "image_desktop": "shopify:\/\/shop_images\/image_2.png",
             "image_mobile": "shopify:\/\/shop_images\/image_2.png",
             "eyebrow": "Wellness Bundles",
-            "subheading": "This is the description for the bundles item.",
+            "subheading": "",
             "color": "",
             "collection": "wellness-bundles",
             "tag": "",
