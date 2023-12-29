@@ -483,7 +483,7 @@
               <li class="nav-bar__item {% if link.links.size > 0 or is_mega_menu %} hide-mobile {% endif%}">
                 {%- if link.links.size == 0 -%}
                   {% if is_mega_menu %}
-                    <a class="nav-bar__link link link-megamenu" data-type="menuitem" aria-expanded="false" aria-controls="{{ megamenu_tag }}" aria-haspopup="true"> {% if is_special_item %}<img src="{{'fire-emo.png' | asset_url}}" height="17" width="17"/>  {% endif %}{{ link.title }} 
+                    <a style="cursor:pointer" class="nav-bar__link link link-megamenu" data-type="menuitem" aria-expanded="false" aria-controls="{{ megamenu_tag }}" aria-haspopup="true"> {% if is_special_item %}<img src="{{'fire-emo.png' | asset_url}}" height="17" width="17"/>  {% endif %}{{ link.title }} 
                     {%- render 'icon', icon: 'arrow-bottom' -%}
                     </a>
                     <div id="{{ megamenu_tag }}" data-desktop-megamenu-target-{{megamenu_tag}}  class="mega-menu mega-menu--image-megamenu" data-type="menu" aria-hidden="true" role="list"> </div>
