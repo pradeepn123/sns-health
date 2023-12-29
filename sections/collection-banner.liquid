@@ -3,27 +3,28 @@
 <script src="{{ 'common.js' | asset_url }}" defer></script>
 
 {% style %}
+
+
   {% for block in section.blocks %}
-      .collection-banner{
+    .section-{{section.id}}  .collection-banner{
           background: {{ block.settings.background-color }};
       }
       {% if collection.description == blank %}
-        .collection-banner__cta .btn-text{
+        .section-{{section.id}} .collection-banner__cta .btn-text{
           display: none;
         }
       {% endif %}
   {% endfor %}
   {% if collection.metafields.custom.collection_banner != blank and collection.description == blank %}
-    .text-image__text-wrapper  {
+    .section-{{section.id}}  .text-image__text-wrapper  {
       display: none;
     }
-  
   {% endif %}
 {% endstyle %}
 
 {% if collection.metafields.custom.collection_banner != blank %}
 
-<div class="collection-banner">
+<div class="collection-banner section-{{section.id}}">
   <div class="colection-collection-banner__content">
     {% for block in section.blocks %}
       {% liquid 
