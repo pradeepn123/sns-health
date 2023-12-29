@@ -471,17 +471,17 @@
                 if special_nav_item == nav_item 
                   assign is_special_item = true
                 endif %}
-              <li class="nav-bar__item {% if link.links.size > 0 %} hide-mobile {% endif%}">
+                {% assign url = link.url | split: "#" | last %}
+                {% if url contains 'megamenu' %} 
+                {% assign is_mega_menu = true %}
+                {% assign megamenu_tag = url %}
+                {% assign megamenu_url =  url | split: 'megamenu-' | last %}
+                {% assign megamenu_url = routes.collections_url | append: '/' | append: megamenu_url %}
+                {% else %}
+                {% assign is_mega_menu = false %}
+              {% endif %}
+              <li class="nav-bar__item {% if link.links.size > 0 or is_mega_menu %} hide-mobile {% endif%}">
                 {%- if link.links.size == 0 -%}
-                  {% assign url = link.url | split: "#" | last %}
-                  {% if url contains 'megamenu' %} 
-                    {% assign is_mega_menu = true %}
-                    {% assign megamenu_tag = url %}
-                    {% assign megamenu_url =  url | split: 'megamenu-' | last %}
-                    {% assign megamenu_url = routes.collections_url | append: '/' | append: megamenu_url %}
-                    {% else %}
-                    {% assign is_mega_menu = false %}
-                  {% endif %}
                   {% if is_mega_menu %}
                     <a href="{{ megamenu_url }}" class="nav-bar__link link link-megamenu" data-type="menuitem" aria-expanded="false" aria-controls="{{ megamenu_tag }}" aria-haspopup="true"> {% if is_special_item %}<img src="{{'fire-emo.png' | asset_url}}" height="17" width="17"/>  {% endif %}{{ link.title }} 
                     {%- render 'icon', icon: 'arrow-bottom' -%}
