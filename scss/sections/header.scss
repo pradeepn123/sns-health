@@ -13,6 +13,8 @@
 .mobile-menu__nav-link;
 @custom-selector :--item-flex .mobile-menu__nav-list-toggle;
 @custom-selector :--image-group-text-wrapper .mega-menu--image-megamenu .megamenu-content__text-wrapper.text-image__text-wrapper;
+@custom-selector :--megamenu-eyebrows .megamenu__eyebrow.text__eyebrow;
+@custom-selector :--megamenu-subheading .megamenu__subheading.text__subheading;
 
 
 #shopify-section-header {
@@ -461,17 +463,6 @@
             background: colors.$white;
         }
 
-        .text__subheading {
-            @include use-text-style('body-alt');
-            font-weight: typography.$semi-weight;
-            margin-top: 5px;
-
-            @media(--md) {
-                font-weight: typography.$regular-weight;
-            }
-
-        }
-
         .megamenu__wrapper {
             column-gap: 30px;
         }
@@ -909,12 +900,14 @@ body .uwy .uai img {
         margin-bottom: 0;
     }
 
-    .megamenu__eyebrow {
-        display: none;
+    :--megamenu-subheading {
+      @include use-text-style('body-alt');
+      margin-top: 5px;
+    }
 
-        @media(--md) {
-            display: block;
-        }
+    :--megamenu-eyebrows {
+     @include use-text-style('body-alt');
+     font-weight: typography.$semi-weight;
     }
 
     .megamenu-content {
