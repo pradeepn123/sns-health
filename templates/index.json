@@ -16,6 +16,7 @@
         },
         "ca6f972c-17ec-4e61-a3e7-813ff4258d83": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": false,
             "promotion_name": "Christmas week",
