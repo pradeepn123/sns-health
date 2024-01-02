@@ -636,11 +636,11 @@
         },
         "20c59a9f-1066-4e49-9799-cb933f725ccc": {
           "type": "featured_brand",
-          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Organika",
             "promotion_creative_name": "Featured Brand",
+            "image": "shopify:\/\/shop_images\/images.png",
             "url": "shopify:\/\/collections\/organika"
           }
         }
