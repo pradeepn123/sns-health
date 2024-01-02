@@ -265,6 +265,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     {% render 'boost-pfs' %}
     {% render 'product-card-template' %}
+
+    <div data-rebuy-id="126548" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
    
     <!--end-boost-pfs-js-->
     <script type="sT_lazyLoad__init" data-src="https://a.klaviyo.com/media/js/onsite/onsite.js"></script>
@@ -332,7 +334,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {% render 'rebuy-pre-purchase-template' %}
 
 <div data-rebuy-id="117666"></div>
-<div data-rebuy-id="126548" data-rebuy-shopify-product-ids="{{ product.id }}"></div>
 
 <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
 {% if collection == 'bundle-test-collection' %}
