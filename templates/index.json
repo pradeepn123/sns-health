@@ -543,14 +543,34 @@
     "932e9d3c-0311-4a00-af68-f2426cae7d02": {
       "type": "featured-brands",
       "blocks": {
-        "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4": {
+        "c9336f2d-13e6-426d-932d-e2e033d0f054": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "Sproos",
+            "promotion_name": "Perfect Sport",
             "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/Brand_Banner.jpg",
-            "url": "shopify:\/\/collections\/sproos"
+            "image": "shopify:\/\/shop_images\/perfect-sports.webp",
+            "url": "shopify:\/\/collections\/perfect-sports"
+          }
+        },
+        "20c59a9f-1066-4e49-9799-cb933f725ccc": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Organika",
+            "promotion_creative_name": "Featured Brand",
+            "image": "shopify:\/\/shop_images\/images.png",
+            "url": "shopify:\/\/collections\/organika"
+          }
+        },
+        "a485b887-5abb-4a02-a705-8e110b9650aa": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Inner Armour",
+            "promotion_creative_name": "Featured Brands",
+            "image": "shopify:\/\/shop_images\/d553e40aab8654cc6700df9fa8c3.jpg",
+            "url": "shopify:\/\/collections\/inner-armour"
           }
         },
         "2cebe019-0265-45fc-8d1e-2abe7f03140f": {
@@ -563,16 +583,6 @@
             "url": "shopify:\/\/collections\/megafood"
           }
         },
-        "c9336f2d-13e6-426d-932d-e2e033d0f054": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Perfect Sport",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/perfect-sports.webp",
-            "url": "shopify:\/\/collections\/perfect-sports"
-          }
-        },
         "04f03284-64cf-4a23-9d73-d2a68ceced6a": {
           "type": "featured_brand",
           "settings": {
@@ -583,14 +593,14 @@
             "url": "shopify:\/\/collections\/heal-co"
           }
         },
-        "a485b887-5abb-4a02-a705-8e110b9650aa": {
+        "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "Inner Armour",
+            "promotion_name": "Sproos",
             "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/d553e40aab8654cc6700df9fa8c3.jpg",
-            "url": "shopify:\/\/collections\/inner-armour"
+            "image": "shopify:\/\/shop_images\/Brand_Banner.jpg",
+            "url": "shopify:\/\/collections\/sproos"
           }
         },
         "fbc747c2-c649-43e7-84f8-39fd5d61dae0": {
@@ -633,29 +643,19 @@
             "image": "shopify:\/\/shop_images\/PB_Me_Logo_-_2019_Medium_280x_2x_c9f69f48-50fd-41e5-a3c9-8d5ec3ef7c31.webp",
             "url": "shopify:\/\/collections\/pb-me"
           }
-        },
-        "20c59a9f-1066-4e49-9799-cb933f725ccc": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Organika",
-            "promotion_creative_name": "Featured Brand",
-            "image": "shopify:\/\/shop_images\/images.png",
-            "url": "shopify:\/\/collections\/organika"
-          }
         }
       },
       "block_order": [
-        "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4",
-        "2cebe019-0265-45fc-8d1e-2abe7f03140f",
         "c9336f2d-13e6-426d-932d-e2e033d0f054",
-        "04f03284-64cf-4a23-9d73-d2a68ceced6a",
+        "20c59a9f-1066-4e49-9799-cb933f725ccc",
         "a485b887-5abb-4a02-a705-8e110b9650aa",
+        "2cebe019-0265-45fc-8d1e-2abe7f03140f",
+        "04f03284-64cf-4a23-9d73-d2a68ceced6a",
+        "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4",
         "fbc747c2-c649-43e7-84f8-39fd5d61dae0",
         "7c34e228-2195-4327-bc21-0f1952b3fdf1",
         "04983965-b684-44dd-8743-9ba4217f2336",
-        "04adcf74-317d-4db4-b9f4-dae580946b48",
-        "20c59a9f-1066-4e49-9799-cb933f725ccc"
+        "04adcf74-317d-4db4-b9f4-dae580946b48"
       ],
       "settings": {
         "heading": "Featured Brands"
