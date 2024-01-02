@@ -573,6 +573,16 @@
             "url": "shopify:\/\/collections\/inner-armour"
           }
         },
+        "c0b43a9a-a988-44e1-9f3c-b88fa71a563e": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "RenewLife",
+            "promotion_creative_name": "Featured Brands",
+            "image": "shopify:\/\/shop_images\/renew-life-logo_06382d63-1d31-40d5-b0ef-813799615648.png",
+            "url": "shopify:\/\/collections\/renew-life-1"
+          }
+        },
         "2cebe019-0265-45fc-8d1e-2abe7f03140f": {
           "type": "featured_brand",
           "settings": {
@@ -581,6 +591,16 @@
             "promotion_creative_name": "Featured Brands",
             "image": "shopify:\/\/shop_images\/Megafood_280x_1.png",
             "url": "shopify:\/\/collections\/megafood"
+          }
+        },
+        "fbc747c2-c649-43e7-84f8-39fd5d61dae0": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Botanica",
+            "promotion_creative_name": "Featured Brands",
+            "image": "shopify:\/\/shop_images\/botanica-logo.svg",
+            "url": "shopify:\/\/collections\/botanica"
           }
         },
         "04f03284-64cf-4a23-9d73-d2a68ceced6a": {
@@ -601,16 +621,6 @@
             "promotion_creative_name": "Featured Brands",
             "image": "shopify:\/\/shop_images\/Brand_Banner.jpg",
             "url": "shopify:\/\/collections\/sproos"
-          }
-        },
-        "fbc747c2-c649-43e7-84f8-39fd5d61dae0": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Botanica",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/botanica-logo.svg",
-            "url": "shopify:\/\/collections\/botanica"
           }
         },
         "7c34e228-2195-4327-bc21-0f1952b3fdf1": {
@@ -649,10 +659,11 @@
         "c9336f2d-13e6-426d-932d-e2e033d0f054",
         "20c59a9f-1066-4e49-9799-cb933f725ccc",
         "a485b887-5abb-4a02-a705-8e110b9650aa",
+        "c0b43a9a-a988-44e1-9f3c-b88fa71a563e",
         "2cebe019-0265-45fc-8d1e-2abe7f03140f",
+        "fbc747c2-c649-43e7-84f8-39fd5d61dae0",
         "04f03284-64cf-4a23-9d73-d2a68ceced6a",
         "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4",
-        "fbc747c2-c649-43e7-84f8-39fd5d61dae0",
         "7c34e228-2195-4327-bc21-0f1952b3fdf1",
         "04983965-b684-44dd-8743-9ba4217f2336",
         "04adcf74-317d-4db4-b9f4-dae580946b48"
