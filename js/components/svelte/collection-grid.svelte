@@ -201,9 +201,11 @@
   //handling pagination
   function next() {
     currentPage < totalPages ? currentPage++ : totalPages;
+    scrollToTop();
   }
   function previous() {
     currentPage > 1 ? currentPage-- : 1;
+    scrollToTop();
   }
 
   function handlePagination(array) {
@@ -213,8 +215,18 @@
     );
   }
 
+  function scrollToTop() {
+    const productGrid = "collection-grid";
+    const header = '[data-section-type="header"]';
+    const productGridElement = document.querySelector(productGrid);
+    const headerHeight = document.querySelector(header)
+    const y = productGridElement.getBoundingClientRect().y - headerHeight.getBoundingClientRect().height + window.pageYOffset;
+    window.scrollTo({top: y, behavior: 'smooth'});
+  }
+
   //handle sort
   function handleSortClick(selectedValue) {
+    scrollToTop();
     appliedFilterObject.sortBy = selectedValue;
     appliedFilterObject = appliedFilterObject;
   }
@@ -452,7 +464,7 @@
           </div>
         </div>
         <CollectionProductGrid products={paginatedData} />
-        <CollectionPagination {totalPages} bind:currentPage {next} {previous} />
+        <CollectionPagination {totalPages} bind:currentPage {next} {previous} {scrollToTop} />
       </div>
     </div>
   {:else}

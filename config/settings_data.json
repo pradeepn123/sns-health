@@ -1275,15 +1275,6 @@
       "shop-by-brands": {
         "type": "shop-by-brands",
         "blocks": {
-          "01f85855-50a2-4b1d-b0d9-3b4520923e7d": {
-            "type": "selected_collection",
-            "settings": {
-              "featured_collection_item": "organika",
-              "featured_collection_image": "shopify:\/\/shop_images\/Organika_CCP_main.jpg",
-              "show_overlay": false,
-              "overlay_opacity": 20
-            }
-          },
           "3cd86bcc-f7a7-47e2-85a3-5ba1607c5964": {
             "type": "selected_collection",
             "settings": {
@@ -1370,7 +1361,6 @@
           }
         },
         "block_order": [
-          "01f85855-50a2-4b1d-b0d9-3b4520923e7d",
           "3cd86bcc-f7a7-47e2-85a3-5ba1607c5964",
           "8b483f29-1be8-4535-85f3-1ba77eb4caf6",
           "9bc5f936-751c-4dad-b624-f82973f0f533",

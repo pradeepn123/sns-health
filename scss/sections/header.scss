@@ -407,7 +407,9 @@
         .search-bar__top-wrapper {
             background: colors.$white;
             padding: 14px var(--base-margin);
-
+            position: absolute;
+            top: var(--announcement-bar-height-sticky);
+            width: 100%;
             @media(--md) {
                 padding: 0;
             }
@@ -925,4 +927,9 @@ body .uwy .uai img {
     display: inline-block;
     width: fit-content;
     margin: 0 10px;
+}
+
+.boost-pfs-search-suggestion {
+    max-height: 657px;
+    overflow-y: auto;
 }

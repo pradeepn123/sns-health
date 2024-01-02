@@ -3231,7 +3231,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (458:2) {:else}
+// (470:2) {:else}
 function create_else_block_1(ctx) {
 	let div6;
 	let div0;
@@ -3315,7 +3315,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (425:2) {#if firstFoldLoaded}
+// (437:2) {#if firstFoldLoaded}
 function create_if_block(ctx) {
 	let div4;
 	let div0;
@@ -3376,7 +3376,8 @@ function create_if_block(ctx) {
 	let collectionpagination_props = {
 		totalPages: /*totalPages*/ ctx[9],
 		next: /*next*/ ctx[11],
-		previous: /*previous*/ ctx[12]
+		previous: /*previous*/ ctx[12],
+		scrollToTop
 	};
 
 	if (/*currentPage*/ ctx[2] !== void 0) {
@@ -3530,7 +3531,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (467:8) {#each Array(20) as _, i}
+// (479:8) {#each Array(20) as _, i}
 function create_each_block(ctx) {
 	let productcardskeleton;
 	let current;
@@ -3559,7 +3560,7 @@ function create_each_block(ctx) {
 	};
 }
 
-// (428:8) {#key loading}
+// (440:8) {#key loading}
 function create_key_block(ctx) {
 	let colletionfiltergroup;
 	let updating_appliedFilterObject;
@@ -3621,7 +3622,7 @@ function create_key_block(ctx) {
 	};
 }
 
-// (446:79) {:else}
+// (458:79) {:else}
 function create_else_block(ctx) {
 	let span;
 
@@ -3642,7 +3643,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (446:50) {#if !loading}
+// (458:50) {#if !loading}
 function create_if_block_1(ctx) {
 	let t;
 
@@ -3744,6 +3745,15 @@ function create_fragment(ctx) {
 }
 
 const productsPerPage = 24;
+
+function scrollToTop() {
+	const productGrid = "collection-grid";
+	const header = '[data-section-type="header"]';
+	const productGridElement = document.querySelector(productGrid);
+	const headerHeight = document.querySelector(header);
+	const y = productGridElement.getBoundingClientRect().y - headerHeight.getBoundingClientRect().height + window.pageYOffset;
+	window.scrollTo({ top: y, behavior: 'smooth' });
+}
 
 function instance($$self, $$props, $$invalidate) {
 	let selectedSort;
@@ -3952,12 +3962,16 @@ function instance($$self, $$props, $$invalidate) {
 		currentPage < totalPages
 		? $$invalidate(2, currentPage++, currentPage)
 		: totalPages;
+
+		scrollToTop();
 	}
 
 	function previous() {
 		currentPage > 1
 		? $$invalidate(2, currentPage--, currentPage)
 		: 1;
+
+		scrollToTop();
 	}
 
 	function handlePagination(array) {
@@ -3966,6 +3980,7 @@ function instance($$self, $$props, $$invalidate) {
 
 	//handle sort
 	function handleSortClick(selectedValue) {
+		scrollToTop();
 		$$invalidate(4, appliedFilterObject.sortBy = selectedValue, appliedFilterObject);
 		$$invalidate(4, appliedFilterObject);
 	}
@@ -4240,11 +4255,11 @@ class Collection_grid extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svelt
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[7] = list[i];
+	child_ctx[8] = list[i];
 	return child_ctx;
 }
 
-// (26:2) {:else}
+// (23:2) {:else}
 function create_else_block_2(ctx) {
 	let div;
 
@@ -4264,7 +4279,7 @@ function create_else_block_2(ctx) {
 	};
 }
 
-// (23:2) {#if currentPage != 1}
+// (20:2) {#if currentPage != 1}
 function create_if_block_4(ctx) {
 	let button;
 	let mounted;
@@ -4301,12 +4316,12 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (31:6) {#if page >= 1 && page <= totalPages }
+// (28:6) {#if page >= 1 && page <= totalPages }
 function create_if_block_2(ctx) {
 	let if_block_anchor;
 
 	function select_block_type_1(ctx, dirty) {
-		if (/*currentPage*/ ctx[0] == /*page*/ ctx[7]) return create_if_block_3;
+		if (/*currentPage*/ ctx[0] == /*page*/ ctx[8]) return create_if_block_3;
 		return create_else_block_1;
 	}
 
@@ -4345,11 +4360,11 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (34:8) {:else}
+// (31:8) {:else}
 function create_else_block_1(ctx) {
 	let div;
 	let span;
-	let t_value = /*page*/ ctx[7] + "";
+	let t_value = /*page*/ ctx[8] + "";
 	let t;
 	let mounted;
 	let dispose;
@@ -4369,7 +4384,7 @@ function create_else_block_1(ctx) {
 
 			if (!mounted) {
 				dispose = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(div, "click", function () {
-					if ((0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.is_function)(/*updatePagination*/ ctx[5](/*page*/ ctx[7]))) /*updatePagination*/ ctx[5](/*page*/ ctx[7]).apply(this, arguments);
+					if ((0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.is_function)(/*updatePagination*/ ctx[5](/*page*/ ctx[8]))) /*updatePagination*/ ctx[5](/*page*/ ctx[8]).apply(this, arguments);
 				});
 
 				mounted = true;
@@ -4377,7 +4392,7 @@ function create_else_block_1(ctx) {
 		},
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
-			if (dirty & /*pagesArrays*/ 16 && t_value !== (t_value = /*page*/ ctx[7] + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t, t_value);
+			if (dirty & /*pagesArrays*/ 16 && t_value !== (t_value = /*page*/ ctx[8] + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t, t_value);
 		},
 		d(detaching) {
 			if (detaching) {
@@ -4390,11 +4405,11 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (32:8) {#if currentPage == page}
+// (29:8) {#if currentPage == page}
 function create_if_block_3(ctx) {
 	let div;
 	let span;
-	let t_value = /*page*/ ctx[7] + "";
+	let t_value = /*page*/ ctx[8] + "";
 	let t;
 	let mounted;
 	let dispose;
@@ -4414,7 +4429,7 @@ function create_if_block_3(ctx) {
 
 			if (!mounted) {
 				dispose = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(div, "click", function () {
-					if ((0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.is_function)(/*updatePagination*/ ctx[5](/*page*/ ctx[7]))) /*updatePagination*/ ctx[5](/*page*/ ctx[7]).apply(this, arguments);
+					if ((0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.is_function)(/*updatePagination*/ ctx[5](/*page*/ ctx[8]))) /*updatePagination*/ ctx[5](/*page*/ ctx[8]).apply(this, arguments);
 				});
 
 				mounted = true;
@@ -4422,7 +4437,7 @@ function create_if_block_3(ctx) {
 		},
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
-			if (dirty & /*pagesArrays*/ 16 && t_value !== (t_value = /*page*/ ctx[7] + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t, t_value);
+			if (dirty & /*pagesArrays*/ 16 && t_value !== (t_value = /*page*/ ctx[8] + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t, t_value);
 		},
 		d(detaching) {
 			if (detaching) {
@@ -4435,10 +4450,10 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (30:4) {#each pagesArrays as page}
+// (27:4) {#each pagesArrays as page}
 function create_each_block(ctx) {
 	let if_block_anchor;
-	let if_block = /*page*/ ctx[7] >= 1 && /*page*/ ctx[7] <= /*totalPages*/ ctx[1] && create_if_block_2(ctx);
+	let if_block = /*page*/ ctx[8] >= 1 && /*page*/ ctx[8] <= /*totalPages*/ ctx[1] && create_if_block_2(ctx);
 
 	return {
 		c() {
@@ -4450,7 +4465,7 @@ function create_each_block(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, if_block_anchor, anchor);
 		},
 		p(ctx, dirty) {
-			if (/*page*/ ctx[7] >= 1 && /*page*/ ctx[7] <= /*totalPages*/ ctx[1]) {
+			if (/*page*/ ctx[8] >= 1 && /*page*/ ctx[8] <= /*totalPages*/ ctx[1]) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
@@ -4473,7 +4488,7 @@ function create_each_block(ctx) {
 	};
 }
 
-// (39:4) {#if pagesArrays[4] < totalPages}
+// (36:4) {#if pagesArrays[4] < totalPages}
 function create_if_block_1(ctx) {
 	let div0;
 	let t1;
@@ -4527,7 +4542,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (47:2) {:else}
+// (44:2) {:else}
 function create_else_block(ctx) {
 	let div;
 
@@ -4547,7 +4562,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (44:2) {#if currentPage != totalPages}
+// (41:2) {#if currentPage != totalPages}
 function create_if_block(ctx) {
 	let button;
 	let mounted;
@@ -4732,19 +4747,14 @@ function instance($$self, $$props, $$invalidate) {
 	let { currentPage } = $$props;
 	let { next } = $$props;
 	let { previous } = $$props;
+	let { scrollToTop } = $$props;
 
 	function updatePagination(pageNumber) {
 		$$invalidate(0, currentPage = pageNumber);
+		scrollToTop();
 	}
 
 	function updatePageNumbers() {
-		const productGrid = "collection-grid";
-		const header = '[data-section-type="header"]';
-		const productGridElement = document.querySelector(productGrid);
-		const headerHeight = document.querySelector(header);
-		const y = productGridElement.getBoundingClientRect().y - headerHeight.getBoundingClientRect().height + window.pageYOffset;
-		window.scrollTo({ top: y, behavior: 'smooth' });
-
 		return [
 			currentPage + 2,
 			currentPage + 1,
@@ -4759,6 +4769,7 @@ function instance($$self, $$props, $$invalidate) {
 		if ('currentPage' in $$props) $$invalidate(0, currentPage = $$props.currentPage);
 		if ('next' in $$props) $$invalidate(2, next = $$props.next);
 		if ('previous' in $$props) $$invalidate(3, previous = $$props.previous);
+		if ('scrollToTop' in $$props) $$invalidate(6, scrollToTop = $$props.scrollToTop);
 	};
 
 	$$self.$$.update = () => {
@@ -4767,7 +4778,15 @@ function instance($$self, $$props, $$invalidate) {
 		}
 	};
 
-	return [currentPage, totalPages, next, previous, pagesArrays, updatePagination];
+	return [
+		currentPage,
+		totalPages,
+		next,
+		previous,
+		pagesArrays,
+		updatePagination,
+		scrollToTop
+	];
 }
 
 class Collection_pagination extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
@@ -4778,7 +4797,8 @@ class Collection_pagination extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__
 			totalPages: 1,
 			currentPage: 0,
 			next: 2,
-			previous: 3
+			previous: 3,
+			scrollToTop: 6
 		});
 	}
 
@@ -4817,9 +4837,18 @@ class Collection_pagination extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__
 		this.$$set({ previous });
 		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
 	}
+
+	get scrollToTop() {
+		return this.$$.ctx[6];
+	}
+
+	set scrollToTop(scrollToTop) {
+		this.$$set({ scrollToTop });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
+	}
 }
 
-(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Collection_pagination, {"totalPages":{},"currentPage":{},"next":{},"previous":{}}, [], [], true);
+(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Collection_pagination, {"totalPages":{},"currentPage":{},"next":{},"previous":{},"scrollToTop":{}}, [], [], true);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Collection_pagination);
 
 /***/ }),

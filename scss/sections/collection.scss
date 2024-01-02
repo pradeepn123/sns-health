@@ -9,8 +9,6 @@
     &-product-grid-header {
         display: flex;
         justify-content: space-between;
-        position: sticky;
-        top: calc(var(--header-height) - 36px);
         background-color: colors.$white;
         z-index: 4;
         padding: 0.5rem 0;

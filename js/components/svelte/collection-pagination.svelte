@@ -3,17 +3,14 @@ export let totalPages
 export let currentPage
 export let next
 export let previous
+export let scrollToTop
+
 function updatePagination(pageNumber) {
   currentPage = pageNumber;
+  scrollToTop()
 }
 
 function updatePageNumbers() {
-  const productGrid = "collection-grid";
-  const header = '[data-section-type="header"]';
-  const productGridElement = document.querySelector(productGrid);
-  const headerHeight = document.querySelector(header)
-  const y = productGridElement.getBoundingClientRect().y - headerHeight.getBoundingClientRect().height + window.pageYOffset;
-  window.scrollTo({top: y, behavior: 'smooth'});
   return [currentPage +2, currentPage +1, currentPage, currentPage -1, currentPage -2].reverse();
 }
 

@@ -404,6 +404,9 @@
 .header__search-bar-wrapper.is-fixed .search-bar__top-wrapper {
   background: #fff;
   padding: 14px var(--base-margin);
+  position: absolute;
+  top: var(--announcement-bar-height-sticky);
+  width: 100%;
 }
 @media (min-width: 1024px) {
   .header__search-bar-wrapper.is-fixed .search-bar__top-wrapper {
@@ -1043,4 +1046,9 @@ body .uwy .uai img {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 10px;
+}
+
+.boost-pfs-search-suggestion {
+  max-height: 657px;
+  overflow-y: auto;
 }
