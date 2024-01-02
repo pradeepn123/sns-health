@@ -863,7 +863,7 @@ body.no-mobile-scroll {
   overflow: hidden;
 }
 body.no-mobile-scroll .uwy {
-  z-index: -1;
+  z-index: -1 !important;
 }
 @media (min-width: 1024px) {
   body.no-mobile-scroll {

@@ -781,7 +781,7 @@ body.no-mobile-scroll {
     overflow: hidden;
 
     .uwy {
-        z-index: -1;
+        z-index: -1 !important;
     }
 
     @media(--md) {
