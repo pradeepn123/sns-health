@@ -10,7 +10,7 @@
             "promotion_name": "Back to the Gym",
             "promotion_creative_name": "Main banner 1",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Back_to_the_Gym_Banner.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/Back_to_the_Gym_Banner_37ab20a8-d3f7-46fc-bf93-5c7f09c86865.jpg",
             "cta_url": "shopify:\/\/collections\/supplements-bundles"
           }
         },
@@ -21,8 +21,8 @@
             "promotion_name": "Perfect Sports",
             "promotion_creative_name": "Main Banner 2",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Perfect_Sports_Banner.jpg",
-            "cta_url": "shopify:\/\/collections\/mass-gainers"
+            "image_desktop": "shopify:\/\/shop_images\/Perfect_Sports_Banner_b1f3043b-e576-46d9-9688-bf5f4f8af4af.jpg",
+            "cta_url": "shopify:\/\/products\/mass-gainer-bundle"
           }
         },
         "ca6f972c-17ec-4e61-a3e7-813ff4258d83": {
