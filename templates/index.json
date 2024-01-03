@@ -112,23 +112,6 @@
     "65868ffb-1036-425b-a0dc-ebc8bcff334b": {
       "type": "Banner-Grid",
       "blocks": {
-        "92e48489-641f-4c19-a3ef-6da69b441243": {
-          "type": "image_with_text_overlay",
-          "disabled": true,
-          "settings": {
-            "promotion": false,
-            "promotion_name": "",
-            "promotion_creative_name": "",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/New_drinks_banner_First_week_of_December_b021c76e-ff3a-4a50-8443-9e5439c22b8f.jpg",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": ""
-          }
-        },
         "5ffa49dd-3faa-493e-92df-a8b6a6829847": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -146,22 +129,55 @@
             "cta_url": "shopify:\/\/collections\/fitness-bundles"
           }
         },
-        "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2": {
+        "92e48489-641f-4c19-a3ef-6da69b441243": {
           "type": "image_with_text_overlay",
           "disabled": true,
           "settings": {
-            "promotion": true,
-            "promotion_name": "PS + ON Promo",
-            "promotion_creative_name": "Sub banner 1",
+            "promotion": false,
+            "promotion_name": "",
+            "promotion_creative_name": "",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/optimum_nutrition_desk.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/optimum_nutrition_mob.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/New_drinks_banner_First_week_of_December_b021c76e-ff3a-4a50-8443-9e5439c22b8f.jpg",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/stack-slash"
+            "cta_url": ""
+          }
+        },
+        "49c22a5d-ed10-4a49-b943-95e999f44f50": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": false,
+            "promotion_name": "Inner Armour",
+            "promotion_creative_name": "Banner Grid",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/Inner_armour.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Inner_armour_mobile.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/inner-armour"
+          }
+        },
+        "2b7c62de-3b42-4539-92d9-5009549e88ee": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Mega Foods",
+            "promotion_creative_name": "Sub banner 3",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/Mega_Food_Banner_desk.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Mega_Food_Banner_-_Mob.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/megafood"
           }
         },
         "589380ac-62bc-453f-9b28-3a56b75e85b6": {
@@ -198,32 +214,15 @@
             "cta_text": "",
             "cta_url": "shopify:\/\/collections\/matteos"
           }
-        },
-        "2b7c62de-3b42-4539-92d9-5009549e88ee": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Mega Foods",
-            "promotion_creative_name": "Sub banner 3",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Mega_Food_Banner_desk.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Mega_Food_Banner_-_Mob.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/megafood"
-          }
         }
       },
       "block_order": [
-        "92e48489-641f-4c19-a3ef-6da69b441243",
         "5ffa49dd-3faa-493e-92df-a8b6a6829847",
-        "f3e4e276-c26c-4d42-b9c1-ad1c24048cd2",
+        "92e48489-641f-4c19-a3ef-6da69b441243",
+        "49c22a5d-ed10-4a49-b943-95e999f44f50",
+        "2b7c62de-3b42-4539-92d9-5009549e88ee",
         "589380ac-62bc-453f-9b28-3a56b75e85b6",
-        "5379485b-f9f2-400b-8e8b-fb05de6685ec",
-        "2b7c62de-3b42-4539-92d9-5009549e88ee"
+        "5379485b-f9f2-400b-8e8b-fb05de6685ec"
       ],
       "settings": {
       }
