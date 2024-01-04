@@ -406,13 +406,7 @@
           <div class="rebuy-cart__flyout-empty-cart-footer" v-if="!hasItems()">
             <div data-app-target="empty_cart"></div>
           </div>
-
-          <div class="rebuy-cart__flyout-recommendations" v-if="hasCrossSells()">
-            <div
-              v-for="widget_id in settings.cross_sells"
-              v-bind:data-rebuy-id="widget_id"
-            ></div>
-          </div>
+          
 
           <div class="rebuy-cart__upsells" v-if="hasPrePurchase()">
             <div v-bind:data-rebuy-id="settings.pre_purchase.id"></div>

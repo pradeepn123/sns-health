@@ -18,6 +18,10 @@
 .rebuy-widget .rebuy-timer-title {
   font-size: 20px !important;
 }
+.rebuy-widget .rebuy-timer {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
 .widget-type-pre-purchase .super-title {
   text-transform: lowercase;
