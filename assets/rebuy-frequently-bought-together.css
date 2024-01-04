@@ -1,7 +1,7 @@
 .frequently-bought-together{
     border: 1px solid rgb(225, 227, 228);
     border-radius: 4px;
-    padding: 20px;
+    padding: 20px !important;
     text-align: left;
     margin-top: 40px;
     max-width: 100%;

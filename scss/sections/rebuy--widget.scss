@@ -82,5 +82,27 @@
       }
 }
 
+.rebuy-product-image.clickable img{
+    height: 195px !important;
+}
+
+.widget-type-product-upsell{
+    .rebuy-widget-content{
+        .primary-title{
+            text-align: center !important;
+        }
+    }
+    .rebuy-product-info{
+        display: grid !important;
+    }
+    .rebuy-product-price{
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto !important;
+    }
+}
+
+
+
 
 

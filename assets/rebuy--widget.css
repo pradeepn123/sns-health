@@ -110,3 +110,25 @@
   font-size: 16px !important;
   color: #000 !important;
 }
+
+.rebuy-product-image.clickable img {
+  height: 195px !important;
+}
+
+.widget-type-product-upsell .rebuy-widget-content .primary-title {
+  text-align: center !important;
+}
+.widget-type-product-upsell .rebuy-product-info {
+  display: grid !important;
+}
+.widget-type-product-upsell .rebuy-product-price {
+  margin: 0 auto !important;
+}
+.widget-type-product-upsell .rebuy-product-price {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
