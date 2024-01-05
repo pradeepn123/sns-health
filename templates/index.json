@@ -835,15 +835,29 @@
             "cta_url": "shopify:\/\/collections\/pasta-noodles"
           }
         },
+        "a76ad1c6-b62d-4c66-82fc-d188f57570fe": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "#ffffff",
+            "background_color": "#148114",
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_3_eaea037c-907f-4b3b-9eb1-a256b54d0c74.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Get <br> 50% OFF",
+            "subheading": "Vega Real Food Smoothie",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/products\/vega-real-food-smoothie"
+          }
+        },
         "0019d2b1-9982-411d-b308-086f8e5b58d7": {
           "type": "banner_grid",
           "settings": {
             "text_color": "",
             "background_color": "#3b6de3",
-            "image_desktop": "shopify:\/\/shop_images\/progressive_15b27b72-1601-46f6-aa12-403890c69a54.png",
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_4.png",
             "eyebrow": "",
             "inline_heading": false,
-            "heading": "Get <br> 50% OFF",
+            "heading": "Up to <br> 50% OFF",
             "subheading": "Progressive",
             "cta_text": "Shop",
             "cta_url": "shopify:\/\/collections\/progressive"
@@ -853,28 +867,14 @@
           "type": "banner_grid",
           "settings": {
             "text_color": "",
-            "background_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/crazy_mooskies.png",
+            "background_color": "#721a1a",
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_2_fbd27792-7b4e-480b-9550-6143275b4ab1.png",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "Get <br> 50% OFF",
             "subheading": "Crazy Mooskies",
             "cta_text": "Shop",
             "cta_url": "shopify:\/\/collections\/crazy-mooskies"
-          }
-        },
-        "a76ad1c6-b62d-4c66-82fc-d188f57570fe": {
-          "type": "banner_grid",
-          "settings": {
-            "text_color": "#ffffff",
-            "background_color": "#046d04",
-            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_23a08ab5-9cc5-41c7-9271-e49492bc87cb.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "Get <br> 50% OFF",
-            "subheading": "Vega Real Food Smoothie",
-            "cta_text": "Shop",
-            "cta_url": "shopify:\/\/products\/vega-real-food-smoothie"
           }
         },
         "9066e929-3a9c-404b-835a-797166835a14": {
@@ -910,9 +910,9 @@
         "b100cd87-92eb-4868-b580-3b584ac8f527",
         "aaac3336-1b42-475c-96ed-e525d043904c",
         "7bab0a26-8d2b-497d-ab26-0e0e9c996828",
+        "a76ad1c6-b62d-4c66-82fc-d188f57570fe",
         "0019d2b1-9982-411d-b308-086f8e5b58d7",
         "3fecbe56-c283-4e0b-9002-3fe17712480a",
-        "a76ad1c6-b62d-4c66-82fc-d188f57570fe",
         "9066e929-3a9c-404b-835a-797166835a14",
         "1c384f17-9c60-4a7a-9a15-17ab60086f2e"
       ],
