@@ -1331,6 +1331,7 @@
           },
           "6924a140-8ece-4ff6-98e4-66afc8b96dff": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "perfect-sports",
               "featured_collection_image": "shopify:\/\/shop_images\/brand_page_perfect_sports_thumbnail.webp",
