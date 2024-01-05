@@ -867,7 +867,7 @@
           "type": "banner_grid",
           "settings": {
             "text_color": "",
-            "background_color": "#721a1a",
+            "background_color": "#be3838",
             "image_desktop": "shopify:\/\/shop_images\/Untitled_design_2_fbd27792-7b4e-480b-9550-6143275b4ab1.png",
             "eyebrow": "",
             "inline_heading": false,
@@ -882,7 +882,7 @@
           "settings": {
             "text_color": "",
             "background_color": "#417258",
-            "image_desktop": "shopify:\/\/shop_images\/Screenshot_2023-10-23_124851.png",
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_5.png",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "Up to <br>50% OFF",
@@ -895,14 +895,14 @@
           "type": "banner_grid",
           "settings": {
             "text_color": "",
-            "background_color": "#0693e9",
-            "image_desktop": "shopify:\/\/shop_images\/AA1.png",
+            "background_color": "#2da6ef",
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_6.png",
             "eyebrow": "",
             "inline_heading": false,
-            "heading": "Get <br> 25% OFF",
-            "subheading": "Performax",
+            "heading": "Get <br> 50% OFF",
+            "subheading": "Lavido",
             "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/performax-labs"
+            "cta_url": "shopify:\/\/collections\/lavido"
           }
         }
       },
