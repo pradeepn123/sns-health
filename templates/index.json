@@ -807,20 +807,6 @@
             "text_position": "center center"
           }
         },
-        "4e326dc5-b877-4abb-a5ef-59fa7d42ddc3": {
-          "type": "banner_grid",
-          "settings": {
-            "text_color": "",
-            "background_color": "#ffbd00",
-            "image_desktop": "shopify:\/\/shop_images\/GLU-2302_1.jpg",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "Get <br> 75% OFF",
-            "subheading": "GluteNull",
-            "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/glutenull"
-          }
-        },
         "7bab0a26-8d2b-497d-ab26-0e0e9c996828": {
           "type": "banner_grid",
           "settings": {
@@ -833,6 +819,20 @@
             "subheading": "Pasta & Noodles",
             "cta_text": "Shop",
             "cta_url": "shopify:\/\/collections\/pasta-noodles"
+          }
+        },
+        "0019d2b1-9982-411d-b308-086f8e5b58d7": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "",
+            "background_color": "#3b6de3",
+            "image_desktop": "shopify:\/\/shop_images\/progressive_15b27b72-1601-46f6-aa12-403890c69a54.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Get <br> 50% OFF",
+            "subheading": "Progressive",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/collections\/progressive"
           }
         },
         "3fecbe56-c283-4e0b-9002-3fe17712480a": {
@@ -894,8 +894,8 @@
       },
       "block_order": [
         "b100cd87-92eb-4868-b580-3b584ac8f527",
-        "4e326dc5-b877-4abb-a5ef-59fa7d42ddc3",
         "7bab0a26-8d2b-497d-ab26-0e0e9c996828",
+        "0019d2b1-9982-411d-b308-086f8e5b58d7",
         "3fecbe56-c283-4e0b-9002-3fe17712480a",
         "a76ad1c6-b62d-4c66-82fc-d188f57570fe",
         "9066e929-3a9c-404b-835a-797166835a14",
