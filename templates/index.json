@@ -129,23 +129,6 @@
             "cta_url": "shopify:\/\/collections\/fitness-bundles"
           }
         },
-        "92e48489-641f-4c19-a3ef-6da69b441243": {
-          "type": "image_with_text_overlay",
-          "disabled": true,
-          "settings": {
-            "promotion": false,
-            "promotion_name": "",
-            "promotion_creative_name": "",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/New_drinks_banner_First_week_of_December_b021c76e-ff3a-4a50-8443-9e5439c22b8f.jpg",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": ""
-          }
-        },
         "49c22a5d-ed10-4a49-b943-95e999f44f50": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -178,6 +161,23 @@
             "subheading": "",
             "cta_text": "",
             "cta_url": "shopify:\/\/collections\/megafood"
+          }
+        },
+        "5e2a1f12-6722-4c39-9e34-f831cdab6797": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": false,
+            "promotion_name": "Muscletech",
+            "promotion_creative_name": "Sub banner 4",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/Desktop_MuscleTech.png",
+            "image_mobile": "shopify:\/\/shop_images\/mobile_MuscleTech.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/musclemeds"
           }
         },
         "589380ac-62bc-453f-9b28-3a56b75e85b6": {
@@ -218,9 +218,9 @@
       },
       "block_order": [
         "5ffa49dd-3faa-493e-92df-a8b6a6829847",
-        "92e48489-641f-4c19-a3ef-6da69b441243",
         "49c22a5d-ed10-4a49-b943-95e999f44f50",
         "2b7c62de-3b42-4539-92d9-5009549e88ee",
+        "5e2a1f12-6722-4c39-9e34-f831cdab6797",
         "589380ac-62bc-453f-9b28-3a56b75e85b6",
         "5379485b-f9f2-400b-8e8b-fb05de6685ec"
       ],
