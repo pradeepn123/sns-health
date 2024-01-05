@@ -1275,6 +1275,15 @@
       "shop-by-brands": {
         "type": "shop-by-brands",
         "blocks": {
+          "89b00157-38a2-4cc8-ba82-1efda2f10a17": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "megafood",
+              "featured_collection_image": "shopify:\/\/shop_images\/b.webp",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
           "62f53084-5c8f-4872-b487-96187474a464": {
             "type": "selected_collection",
             "settings": {
@@ -1380,6 +1389,7 @@
           }
         },
         "block_order": [
+          "89b00157-38a2-4cc8-ba82-1efda2f10a17",
           "62f53084-5c8f-4872-b487-96187474a464",
           "3f2dc464-d908-4c5f-8314-d7b0bf33122c",
           "3cd86bcc-f7a7-47e2-85a3-5ba1607c5964",
