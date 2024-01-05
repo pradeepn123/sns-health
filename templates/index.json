@@ -807,6 +807,20 @@
             "text_position": "center center"
           }
         },
+        "aaac3336-1b42-475c-96ed-e525d043904c": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "",
+            "background_color": "#e70092",
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_ef2d71f0-a111-4991-955b-8a72605afb0b.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Up to <br> 50% OFF",
+            "subheading": "Snacks & Cereals",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/collections\/healthy-snacks"
+          }
+        },
         "7bab0a26-8d2b-497d-ab26-0e0e9c996828": {
           "type": "banner_grid",
           "settings": {
@@ -894,6 +908,7 @@
       },
       "block_order": [
         "b100cd87-92eb-4868-b580-3b584ac8f527",
+        "aaac3336-1b42-475c-96ed-e525d043904c",
         "7bab0a26-8d2b-497d-ab26-0e0e9c996828",
         "0019d2b1-9982-411d-b308-086f8e5b58d7",
         "3fecbe56-c283-4e0b-9002-3fe17712480a",
