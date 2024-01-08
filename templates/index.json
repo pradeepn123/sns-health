@@ -932,7 +932,7 @@
       "type": "apps",
       "blocks": {
         "4b356d62-7172-47ca-95fe-7fc78c51448e": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
           "settings": {
             "publishId": "n38q9rjyb28rr"
           }
