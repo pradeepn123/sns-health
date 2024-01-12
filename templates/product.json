@@ -4,7 +4,7 @@
       "type": "product-template",
       "settings": {
         "show_vendor": true,
-        "show_sku": true,
+        "show_sku": false,
         "show_share_buttons": true,
         "show_taxes_included": false,
         "selector_mode": "dropdown",
