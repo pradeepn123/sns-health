@@ -1275,6 +1275,15 @@
       "shop-by-brands": {
         "type": "shop-by-brands",
         "blocks": {
+          "6924a140-8ece-4ff6-98e4-66afc8b96dff": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "perfect-sports",
+              "featured_collection_image": "shopify:\/\/shop_images\/brand_page_perfect_sports_thumbnail.webp",
+              "show_overlay": true,
+              "overlay_opacity": 0
+            }
+          },
           "fb4e013d-add8-45f0-9c18-0f8d96f4d8dc": {
             "type": "selected_collection",
             "settings": {
@@ -1338,15 +1347,6 @@
               "overlay_opacity": 20
             }
           },
-          "6924a140-8ece-4ff6-98e4-66afc8b96dff": {
-            "type": "selected_collection",
-            "settings": {
-              "featured_collection_item": "perfect-sports",
-              "featured_collection_image": "shopify:\/\/shop_images\/brand_page_perfect_sports_thumbnail.webp",
-              "show_overlay": true,
-              "overlay_opacity": 0
-            }
-          },
           "bb400c8f-8d0c-4edc-bbad-75dc68729659": {
             "type": "selected_collection",
             "disabled": true,
@@ -1398,6 +1398,7 @@
           }
         },
         "block_order": [
+          "6924a140-8ece-4ff6-98e4-66afc8b96dff",
           "fb4e013d-add8-45f0-9c18-0f8d96f4d8dc",
           "89b00157-38a2-4cc8-ba82-1efda2f10a17",
           "62f53084-5c8f-4872-b487-96187474a464",
@@ -1405,7 +1406,6 @@
           "3cd86bcc-f7a7-47e2-85a3-5ba1607c5964",
           "8b483f29-1be8-4535-85f3-1ba77eb4caf6",
           "9bc5f936-751c-4dad-b624-f82973f0f533",
-          "6924a140-8ece-4ff6-98e4-66afc8b96dff",
           "bb400c8f-8d0c-4edc-bbad-75dc68729659",
           "b15a96f0-9ac6-4347-8753-3da06590ee86",
           "e7be110f-aad6-4910-92f2-710cff6db42b",
