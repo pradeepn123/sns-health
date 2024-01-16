@@ -91,7 +91,7 @@
       product.variants.nodes.forEach((variant) => {
         let show_in_bundle = variant.metafields[0]?.value;
         if (typeof variant.metafields[0]?.value == 'undefined') {
-          show_in_bundle = "true";
+          show_in_bundle = "false";
         }
         if (variant.availableForSale && show_in_bundle == "true" && variant.quantityAvailable > 0) {
           //populate variant data
