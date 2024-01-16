@@ -1,11 +1,6 @@
 @import 'accoutrement/sass/plugin/type';
 @import 'StyleComponents/typography';
 
-
-$fonts: (
-  'poppins': ('source': 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,700&display=swap"')
-);
-
 $typography: (
   'heading-1' : ('font': 'poppins',
     'size': #{$heading-1-size},

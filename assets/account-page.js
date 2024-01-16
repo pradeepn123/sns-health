@@ -2,15 +2,19 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/sections/category-section.js":
-/*!*****************************************!*\
-  !*** ./js/sections/category-section.js ***!
-  \*****************************************/
+/***/ "./js/sections/account-page.js":
+/*!*************************************!*\
+  !*** ./js/sections/account-page.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* harmony import */ var JsComponents_scroll_on_click__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/scroll-on-click */ "./js/components/scroll-on-click.js");
+/* harmony import */ var JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/react-wrapper */ "./js/components/react-wrapper.js");
+/* harmony import */ var ReactComponents_AccountPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ReactComponents/AccountPage */ "./js/components/react/AccountPage.js");
 
-/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => (0,JsComponents_scroll_on_click__WEBPACK_IMPORTED_MODULE_0__.scrollOnClick)('.collection-banner__cta', '.category-title-description', 200));
+
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(ReactComponents_AccountPage__WEBPACK_IMPORTED_MODULE_1__["default"], 'account-page', '#account-data');
+});
 
 /***/ })
 
@@ -178,7 +182,7 @@
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"category-section": 0
+/******/ 			"account-page": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -228,7 +232,7 @@
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/category-section.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors","shared"], () => (__webpack_require__("./js/sections/account-page.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

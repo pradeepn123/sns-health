@@ -34,14 +34,11 @@
 }
 
 .sidebar-banner__cta.text__cta,.sidebar-banner__eyebrow.text__eyebrow,.sidebar-banner__subheading.text__subheading {
-  font-weight: 600 !important;
-}
-
-.sidebar-banner__cta.text__cta,.sidebar-banner__eyebrow.text__eyebrow,.sidebar-banner__subheading.text__subheading {
   font-family: "poppins";
   font-size: 12px;
   font-weight: 400;
   line-height: 1.2;
+  font-weight: 600 !important;
 }
 @media (min-width: 1024px) {
   .sidebar-banner__cta.text__cta,.sidebar-banner__eyebrow.text__eyebrow,.sidebar-banner__subheading.text__subheading {
@@ -70,15 +67,12 @@
 }
 
 .text__heading.sidebar-banner__heading {
-  font-weight: 700 !important;
-}
-
-.text__heading.sidebar-banner__heading {
   font-family: "poppins";
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
   margin-top: 2px;
+  font-weight: 700 !important;
 }
 @media (min-width: 1024px) {
   .text__heading.sidebar-banner__heading {

@@ -58,7 +58,7 @@
         justify-content: space-between;
         position: relative;
         @include mixins.container;
-        padding: var(--header-padding) 0;
+        padding: var(--section-padding);
         width: 100%;
     }
 
@@ -228,7 +228,7 @@
         padding: 0;
 
         @media(--md) {
-            padding: 10px var(--base-margin);
+            padding: var(--section-padding) !important;
         }
     }
 
@@ -932,4 +932,28 @@ body .uwy .uai img {
 .boost-pfs-search-suggestion {
     max-height: 657px;
     overflow-y: auto;
+}
+
+.popover--logged{
+    right: 20px !important;
+}
+
+.popover__link-item{
+    line-height: normal;
+    padding: 6px 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 16px;
+    &:last-child {
+        color: colors.$red;
+    }
+    span {
+        line-height: 0;
+    }
+}
+
+#account-popover{
+    width: 100%;
+    max-width: 272px;
 }

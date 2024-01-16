@@ -1,0 +1,1016 @@
+{%- layout none -%}
+<!-- Winter Breeze -->
+<!-- Common Base Styling -->
+{% assign primary_font = 'Poppins' %}
+{% assign primary_font_color = '#000000' %}
+<!-- Black text color -->
+{% assign primary_font_size = '13px' %}
+{% assign secondary_font = 'Poppins' %}
+{% assign secondary_font_color = '#333333' %}
+<!-- Grey text color -->
+{% assign theme_color = '#ed1c24' %}
+<script type="text/javascript">
+  var fHead = document.head || document.getElementsByTagName('head')[0];
+    {% assign font_weights = "300,400,700" | split: ',' %}
+    {% for font_weight in font_weights %}
+      var font1Id = 'font-{{ primary_font | replace: " ", "-" }}-{{ font_weight }}';
+      if (!document.getElementById(font1Id)) {
+        var linkElement = document.createElement('link');
+        linkElement.setAttribute('id', font1Id)
+        linkElement.setAttribute('rel', 'stylesheet');
+        linkElement.setAttribute('type', 'text/css');
+        linkElement.setAttribute('href', 'https://fonts.googleapis.com/css?family={{ primary_font | replace: " ", "+" }}:{{ font_weight }}&subset=latin-ext');
+        fHead.appendChild(linkElement);
+      };
+      {% if secondary_font != blank and secondary_font != primary_font %}
+        var font2Id = 'font-{{ secondary_font | replace: " ", "-" }}-{{ font_weight }}';
+        if (!document.getElementById(font2Id)) {
+          var linkElement = document.createElement('link');
+          linkElement.setAttribute('id', font2Id)
+          linkElement.setAttribute('rel', 'stylesheet');
+          linkElement.setAttribute('type', 'text/css');
+          linkElement.setAttribute('href', 'https://fonts.googleapis.com/css?family={{ secondary_font | replace: " ", "+" }}:{{ font_weight }}&subset=latin-ext');
+          fHead.appendChild(linkElement);
+        };
+      {% endif %}
+    {% endfor %}
+</script>
+<script>
+  var url = "https://www.orderprintertemplates.com/JsBarcode.all.min.js";
+  var options = {
+    format: "CODE128",
+    width: 1.5,
+    height: 18,
+    quite: 1,
+    margin: 0,
+    lineColor: "{{ primary_font_color }}",
+    displayValue: false, //Show the text below the barcode (can be true or false)
+    fontSize: "{{ primary_font_size | remove: "px" | minus: 1 }}",
+    font: "{{ primary_font }}",
+    textAlign: "left"
+  };
+  function updateInBatches(elems, chunksize, payload) {
+    var current = 0;
+    return function() {
+      // changes n elements in a loop
+      for (var i=0; i<chunksize; i++) {
+        // apply the payload function to current element
+        payload.apply(elems[current+i]);
+      }
+      current += chunksize;
+      // calls itself again after a short break
+      if (current < elems.length) {
+        setTimeout(arguments.callee, 10);
+      };
+    }
+  };
+  $.getScript( url, function() {
+    // Barcode Generator for Order Number
+    var barcodeElements = $('.barcode:not(.loaded)');
+    if (barcodeElements.length) {
+      updateInBatches(barcodeElements, 10, function(){
+        var barcodeVal = $(this).data('barcode')
+        $(this).JsBarcode(barcodeVal, options);
+      })(
+        barcodeElements.addClass('loaded')
+      );
+    };
+  });
+
+  function handleResponse(element) {
+    debugger;
+  }
+
+  function updateExpiryDate() {
+  	const expiryContainers = document.querySelectorAll('[data-expiry-date]')
+
+  	expiryContainers.forEach((element) => {
+  		fetch(element.dataset.productUrl)
+  		.then(response => response.json())
+  		.then(response => {
+  			const tmpDiv = document.createElement("div")
+  			tmpDiv.innerHTML = response["expiry-date"]
+  			if (tmpDiv.innerText.trim()) {
+  				element.innerHTML = tmpDiv.innerText
+  			} else {
+  				element.parentElement.remove()
+  			}
+  		})
+  	})
+  }
+  updateExpiryDate()
+</script>
+<script>
+  $(function () {
+    setTimeout(function () {
+      //  Fix for Chromium bug (crashing on print preview)
+      var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+      var isEdge = /Edg/.test(navigator.userAgent);
+
+      if (isChrome || isEdge) {
+        var printerInlinePreview = document.querySelector('.printer-inline-preview');
+        if (printerInlinePreview) {
+          var parentDiv = printerInlinePreview.parentNode;
+          parentDiv.classList.add('isChromium');
+        }
+      }
+    }, 600);
+  });
+</script>
+<style type="text/css">
+  /* ### BASE - PAGE SIZING AND MARGIN SETUP NORMALIZATION ACROSS BROWSERS ### */
+    @page {
+      margin: 12mm !important;
+      margin-top: 12mm !important;
+      margin-right: 12mm !important;
+      margin-bottom: 12mm !important;
+      margin-left: 12mm !important;
+    }
+    @media print {
+      .isChromium {
+        display: flex;
+        flex-direction: column;
+      }
+      .safari {
+        padding-top: 15px;
+        box-sizing: border-box;
+      }
+      .printer-preview-content:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .printer-preview-content .printer-preview-content {
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+      }
+    }
+    @media screen {
+      .printer-preview-content {
+        padding: 18px 0;
+        min-height: 800px;
+        /* background-image: url(http://basehold.it/i/18) */
+        background: #fff;
+      }
+      .printer-preview-content .printer-preview-content {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 680px;
+      }
+    }
+    @media screen,print {
+
+      /* ### BASE - TYPOGRAPHY AND REMOVAL OF STANDARD SHOPIFY STYLING ### */
+      .printer-preview-content .t145694 * {
+        color: {{ secondary_font_color }};
+        font-family: '{{ primary_font }}';
+        font-size: {{ primary_font_size }};
+        font-weight: 400;
+        line-height: 18px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        -webkit-print-color-adjust: exact;
+        overflow: visible !important;
+      }
+      .printer-preview-content .t145694 h1 {
+        font-size: 28px;
+        line-height: 36px;
+      }
+      .printer-preview-content .t145694 h2 {
+        font-size: 18px;
+        line-height: 36px;
+      }
+      .printer-preview-content .t145694 h3 {
+        font-size: 14px;
+        line-height: 18px;
+      }
+      .printer-preview-content .t145694 h1,
+      .printer-preview-content .t145694 h2,
+      .printer-preview-content .t145694 h3 {
+        margin-bottom: 18px;
+      }
+      .printer-preview-content .t145694 a,
+      .printer-preview-content .t145694 a * {
+        text-decoration: none !important;
+      }
+      .printer-preview-content .t145694 b,
+      .printer-preview-content .t145694 b * {
+        font-weight: bold;
+      }
+      .printer-preview-content .t145694 .text-right {
+        text-align: right;
+      }
+      .printer-preview-content .t145694 .text-center {
+        text-align: center;
+      }
+      .printer-preview-content .t145694 .no-wrap {
+        white-space: nowrap;
+      }
+
+      /* ### BASE - GRID AND RE-USABLE LAYOUT COMPONENTS ### */
+      .printer-preview-content .t145694 .row {
+        width: 100%;
+        display: block;
+        clear: both;
+      }
+      .printer-preview-content .t145694 .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .printer-preview-content .t145694 .col-xs-1,
+      .printer-preview-content .t145694 .col-xs-2,
+      .printer-preview-content .t145694 .col-xs-3,
+      .printer-preview-content .t145694 .col-xs-4,
+      .printer-preview-content .t145694 .col-xs-5,
+      .printer-preview-content .t145694 .col-xs-6,
+      .printer-preview-content .t145694 .col-xs-7,
+      .printer-preview-content .t145694 .col-xs-8,
+      .printer-preview-content .t145694 .col-xs-9,
+      .printer-preview-content .t145694 .col-xs-10,
+      .printer-preview-content .t145694 .col-xs-11,
+      .printer-preview-content .t145694 .col-xs-12 {
+        float: left;
+        min-height: 1px;
+        margin-bottom: 36px;
+      }
+      .printer-preview-content .t145694 .col-xs-12 {
+        width: 100%;
+      }
+      .printer-preview-content .t145694 .col-xs-11 {
+        width: 91.66666667%;
+      }
+      .printer-preview-content .t145694 .col-xs-10 {
+        width: 83.33333333%;
+      }
+      .printer-preview-content .t145694 .col-xs-9 {
+        width: 75%;
+      }
+      .printer-preview-content .t145694 .col-xs-8 {
+        width: 66.66666667%;
+      }
+      .printer-preview-content .t145694 .col-xs-7 {
+        width: 58.33333333%;
+      }
+      .printer-preview-content .t145694 .col-xs-6 {
+        width: 50%;
+      }
+      .printer-preview-content .t145694 .col-xs-5 {
+        width: 41.66666667%;
+      }
+      .printer-preview-content .t145694 .col-xs-4 {
+        width: 33.33333333%;
+      }
+      .printer-preview-content .t145694 .col-xs-3 {
+        width: 25%;
+      }
+      .printer-preview-content .t145694 .col-xs-2 {
+        width: 16.66666667%;
+      }
+      .printer-preview-content .t145694 .col-xs-1 {
+        width: 8.33333333%;
+      }
+      .printer-preview-content .t145694 .col-no-margin {
+        margin-bottom: 0 !important;
+      }
+      .printer-preview-content .t145694 .clear-fix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      .printer-preview-content .t145694 .half-margin-top {
+        margin-top: 9px !important;
+      }
+      .printer-preview-content .t145694 .half-margin-bottom {
+        margin-bottom: 9px !important;
+      }
+      .printer-preview-content .t145694 .margin-bottom {
+        margin-bottom: 18px !important;
+        margin-top: 1px;
+      }
+      .printer-preview-content .t145694 .margin-top {
+        margin-top: 18px !important;
+      }
+      .printer-preview-content .t145694 .double-margin-top {
+        margin-top: 36px !important;
+      }
+      .printer-preview-content .t145694 .double-margin-bottom {
+        margin-bottom: 36px !important;
+      }
+
+      .printer-preview-content .t145694 .strikethrough {
+        text-decoration: line-through !important;
+      }
+
+      .printer-preview-content .t145694 .break {
+        word-break: break-all !important;
+      }
+
+      /* ### BASE - TABLE STYLING ### */
+      .printer-preview-content .t145694 table,
+      .printer-preview-content .t145694 .table {
+        width: 100%;
+        max-width: 100%;
+        background-color: transparent;
+        border-collapse: collapse;
+      }
+      .printer-preview-content .t145694 table thead {
+        display: table-row-group;
+      }
+      .printer-preview-content .t145694 table tbody tr {
+        page-break-inside:avoid !important;
+        page-break-after:auto !important;
+      }
+      .printer-preview-content .t145694 table tbody tr td {
+        page-break-inside:avoid !important;
+      }
+      .printer-preview-content .t145694 th {
+        white-space: nowrap;
+        text-align: left;
+        vertical-align: middle;
+        border-top: 0;
+        border-bottom: 0;
+      }
+      .printer-preview-content .t145694 td {
+        vertical-align: middle;
+        border-top: 0;
+        border-bottom: 0;
+      }
+      .printer-preview-content .t145694 .order-table tbody > tr:nth-child(odd) td {
+        background-color: #f9f9f9;
+      }
+      .printer-preview-content .t145694 .pricing-table tbody > tr:nth-child(even) > td {
+        background-color: #f9f9f9;
+      }
+  /*    .printer-preview-content .t145694 .pricing-table tbody > tr > td.pricing-table-title {
+        word-break: break-all;
+      }*/
+      .printer-preview-content .t145694 th.order-table-qty {
+        width: 10%;
+      }
+      .printer-preview-content .t145694 th.order-table-price {
+        width: 10%;
+      }
+      .printer-preview-content .t145694 th.order-table-item-total,
+      .printer-preview-content .t145694 th.order-table-reason {
+        width: 17%;
+      }
+      .printer-preview-content .t145694 th.order-table-return-comments {
+        width: 30%;
+      }
+      .printer-preview-content .t145694 .pricing-table-text {
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      /* ### BASE - PRODUCT IMAGE SIZING TO RETAIN LINE HEIGHT RYTHM) ### */
+      .printer-preview-content .t145694 .product-image-wrapper {
+        width: 108px;
+        max-height: 108px;
+        vertical-align: middle;
+        text-align: center;
+      }
+      .printer-preview-content .t145694 .product-image {
+        padding: 0 4px;
+        page-break-inside:avoid !important;
+        max-width: 108px;
+        height: auto;
+        max-height: 108px;
+        object-fit: contain;
+  }
+
+      /* ### BASE - LISTS RESET ### */
+      .printer-preview-content .t145694 ul {
+        list-style: none;
+      }
+      .printer-preview-content .t145694 li {
+        color: {{ secondary_font_color }};
+        list-style: none;
+      }
+
+      /* ### BASE - LOGO ### */
+      .printer-preview-content .t145694 .logo-wrapper {
+        display: inline-block;
+        width: 100%;
+        padding-bottom: 9px;
+      }
+      .printer-preview-content .t145694 .logo {
+        float: left;
+        padding-right: 15px;
+        max-width: 80%;
+        max-height: 169.60000000000002px;
+      }
+
+      /* ### BASE - BARCODE ### */
+      .printer-preview-content .t145694 .order-number-barcode,
+      .printer-preview-content .t145694 .product-barcode {
+        display: block;
+      }
+
+      /* ### BASE - ADDITONAL COMMON SHARED TYPOGRAPHY AND ALIGNMENT ### */
+      .printer-preview-content .t145694 .address {
+        margin-right: 5%;
+      }
+      .printer-preview-content .t145694 .col-xs-8 .notes,
+      .printer-preview-content .t145694 .col-xs-6 .notes {
+        margin-right: 20%;
+      }
+      .printer-preview-content .t145694 .notes-title,
+      .printer-preview-content .t145694 .return-codes {
+        margin: 9px 0;
+      }
+      /* ### BASE - HORIZONTAL RULE MARKS ### */
+      .printer-preview-content .t145694 hr {
+        background: {{ theme_color }};
+        border-top: 0;
+        border: 0;
+        height: 2px;
+        width: 100%;
+        margin-bottom: -2px;
+      }
+
+    }
+</style>
+<!-- Template Specific Styling -->
+<style type="text/css">
+  @media screen,print {
+
+    /* ### DESIGN SPECIFIC - TYPOGRAPHY ### */
+    .printer-preview-content .t145694 h1,
+    .printer-preview-content .t145694 h1 * {
+      font-family: '{{ secondary_font }}';
+      color: {{ theme_color }};
+      font-weight: bold;
+    }
+    .printer-preview-content .t145694 h2,
+    .printer-preview-content .t145694 h2 * {
+      font-family: '{{ secondary_font }}';
+      color: {{ primary_font_color }};
+    }
+    .printer-preview-content .t145694 h3,
+    .printer-preview-content .t145694 h3 * {
+      font-family: '{{ secondary_font }}';
+      color: {{ primary_font_color }};
+    }
+
+    /* ### DESIGN SPECIFIC - LOGO POSITIONING ### */
+    .printer-preview-content .t145694 .logo {
+      float: right;
+      padding-right: 0;
+      margin-bottom: 18px;
+    }
+
+    /* ### DESIGN SPECIFIC - STORE DETAILS ### */
+    .printer-preview-content .t145694 .shop-block {
+      text-align: center;
+    }
+    .printer-preview-content .t145694 .shop-block .shop-address-block b,
+    .printer-preview-content .t145694 .shop-block .shop-address-block b * {
+      color: {{ primary_font_color }};
+    }
+    .printer-preview-content .t145694 .shop-block .shop-domain,
+    .printer-preview-content .t145694 .shop-block .shop-domain * {
+      font-weight: bold;
+    }
+
+    .printer-preview-content .t145694 .shop-return-address b,
+    .printer-preview-content .t145694 .shop-return-address b * {
+      color: {{ primary_font_color }};
+    }
+
+    /* ### DESIGN SPECIFIC - ORDER DETAILS ### */
+    .printer-preview-content .t145694 .order-details-title,
+    .printer-preview-content .t145694 .order-details-title * {
+      display: inline-block;
+      font-weight: bold;
+      color: {{ primary_font_color }};
+    }
+
+    /* ### DESIGN SPECIFIC - BILL TO AND SHIP TO ADDRESS ### */
+    .printer-preview-content .t145694 .address-title,
+    .printer-preview-content .t145694 .address-title * {
+      font-weight: bold;
+      color: {{ theme_color }};
+    }
+    .printer-preview-content .t145694 .address {
+      margin-left: 2%;
+    }
+
+    /* ### DESIGN SPECIFIC - TABLE HEADER ### */
+    .printer-preview-content .t145694 .order-table thead tr th {
+      padding-left: 4px;
+      padding-right: 4px;
+      border-top: 2px solid {{ theme_color }};
+      padding-top: 7px;
+      border-bottom: 2px solid {{ theme_color }};
+      padding-bottom:7px;
+      font-weight: bold;
+    }
+
+    /* ### DESIGN SPECIFIC - TABLE BODY (SHARED) ### */
+    .printer-preview-content .t145694 .order-table tbody tr td,
+    .printer-preview-content .t145694 .pricing-table tbody tr td {
+      padding-left: 4px;
+      padding-right: 4px;
+      border-top: 0;
+      padding-top: 9px;
+      border-bottom: 1px solid #efefef;
+      padding-bottom:8px;
+    }
+    /* ### DESIGN SPECIFIC - ORDER TABLE SPECIFIC ### */
+    .printer-preview-content .t145694 .order-table tbody > tr > td.line-item-description,
+    .printer-preview-content .t145694 .order-table tbody > tr > td.line-item-qty {
+      font-weight: bold;
+      color: {{ primary_font_color }};
+    }
+    .printer-preview-content .t145694 .order-table tbody > tr > td.line-item-description p.line-item-sku {
+      font-weight: normal;
+    }
+    .printer-preview-content .t145694 .order-table tbody > tr > td.line-item-description span.line-item-refund {
+      display: inline-block;
+      padding: 2px 8px;
+      margin-top: 4px;
+      background-color: #FFEA8A;
+      border-radius: 18px;
+    }
+    /* ### DESIGN SPECIFIC - PRICING TABLE SPECIFIC ### */
+    .printer-preview-content .t145694 .pricing-table tbody > tr.pricing-table-total-row > td {
+      border-top: 2px solid {{ theme_color }};
+      border-bottom: 2px solid {{ theme_color }};
+      padding-bottom:7px;
+    }
+    .printer-preview-content .t145694 .pricing-table tbody > tr > td.pricing-table-title,
+    .printer-preview-content .t145694 .pricing-table tbody > tr > td.pricing-table-title span,
+    .printer-preview-content .t145694 .pricing-table tbody > tr > td.pricing-table-title * {
+      font-weight: bold;
+      color: {{ primary_font_color }};
+    }
+    .printer-preview-content .t145694 .pricing-table tbody > tr.pricing-table-total-row .pricing-table-title,
+    .printer-preview-content .t145694 .pricing-table tbody > tr.pricing-table-total-row .pricing-table-title *,
+    .printer-preview-content .t145694 .pricing-table tbody > tr.pricing-table-total-row .pricing-table-text,
+    .printer-preview-content .t145694 .pricing-table tbody > tr.pricing-table-total-row .pricing-table-text * {
+      font-weight: bold;
+      color: {{ primary_font_color }};
+    }
+
+    /* ### DESIGN SPECIFIC - ORDER NOTES ### */
+    .printer-preview-content .t145694 .notes-title,
+    .printer-preview-content .t145694 .notes-title * {
+      font-weight: bold;
+      color: {{ primary_font_color }};
+    }
+
+    /* ### DESIGN SPECIFIC - RETURN FORM REASON CODES ### */
+    .printer-preview-content .t145694 .return-codes b,
+    .printer-preview-content .t145694 .return-code b * {
+      font-weight: bold;
+      color: {{ primary_font_color }};
+    }
+
+    /* ### DESIGN SPECIFIC - THANK YOU MESSAGE ### */
+    .printer-preview-content .t145694 .thanks-text {
+      text-align: center;
+      font-weight: bold;
+      color: {{ theme_color }};
+    }
+    .printer-preview-content .t145694 .thanks-text * {
+      font-weight: bold;
+      color: {{ theme_color }};
+    }
+
+    /* ### DESIGN SPECIFIC - GIFT MESSAGE ### */
+    .printer-preview-content .t145694 .gift-text {
+      text-align: center;
+      font-weight: bold;
+      width: 80%;
+      margin: 0 10%;
+      padding-bottom:18px;
+      font-size: 18px;
+    }
+    .printer-preview-content .t145694 .gift-text * {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .printer-preview-content .t145694 .gift-text svg {
+      padding-bottom:9px;
+    }
+
+    /* ### DESIGN SPECIFIC - TERMS AND CONDITIONS ### */
+    .printer-preview-content .t145694 .terms-text {
+      font-size: 11px;
+      text-align: center;
+    }
+    .printer-preview-content .t145694 .terms-text * {
+      font-size: 11px;
+    }
+
+    /* ### DESIGN SPECIFIC - SOCIAL ICONS ### */
+    .printer-preview-content .t145694 .social-icons {
+      display: inline;
+      width: 20px;
+      margin: 9px 4px;
+    }
+
+  }
+</style>
+<div
+  class="printer-preview-content"
+  contenteditable="true"
+  spellcheck="false"
+  title="Click to edit text (changes will be printed but not saved)"
+>
+  <div class="t145694">
+    <div class="row">
+      <div id="header-row">
+        <div class="col-xs-6">
+          <div class="template-title">
+            <h1 class="editable" data-key="template_type_name">Invoice</h1>
+          </div>
+          <ul class="order-details">
+            <li class="order-details-invoice">
+              <span class="order-details-title editable" data-key="invoice_number">Order No.</span>
+              <span class="order-details-text">{{ order.name }}</span>
+            </li>
+            {% if order.name != blank %}
+              <img data-barcode="{{ name | replace: '#', '' }}" class="barcode">
+            {% endif %}
+            <li class="order-details-date">
+              <span class="order-details-title editable" data-key="date">Order Date</span>
+              <span class="order-details-text">{{ order.created_at | date: '%m/%d/%Y' }}</span>
+            </li>
+            {% assign transaction_text = '' %}
+            {% for transaction in order.transactions %}
+              {% if transaction.status != 'failure' and transaction.status != 'error' %}
+                {% if transaction.kind == 'authorization' or transaction.kind == 'sale' %}
+                  {% if transaction.payment_details.credit_card_company != blank
+                    and transaction.payment_details.credit_card_company != 'unknown'
+                  %}
+                    {% capture t_text %}{{ transaction.payment_details.credit_card_company }}{% endcapture %}
+                  {% else %}
+                    {% capture t_text %}{{ transaction.gateway | replace: "_", " " | capitalize }}{% endcapture %}
+                  {% endif %}
+                  {% unless transaction_text contains t_text %}
+                    {% if transaction_text != blank %}
+                      {% assign transaction_text = transaction_text | append: ', ' %}
+                    {% endif %}
+                    {% assign transaction_text = transaction_text | append: t_text %}
+                  {% endunless %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            {% if transaction_text != blank and transaction_text != 'manual' %}
+              <li class="order-details-payment">
+                <span class="order-details-title editable" data-key="payment_method">Payment Method</span>
+                <span class="order-details-text">{{ transaction_text }}</span>
+              </li>
+            {% endif %}
+            {% if order.shipping_methods[0].title != blank %}
+              <li class="order-details-shipping">
+                <span class="order-details-title editable" data-key="shipping_method">Shipping</span>
+                <span class="order-details-text">{{ order.shipping_methods[0].title }}</span>
+              </li>
+            {% endif %}
+            {% assign total_weight = 0 %}
+            {% for line_item in order.line_items %}
+              {% assign line_weight = line_item.weight | times: line_item.quantity %}
+              {% assign total_weight = total_weight | plus: line_weight %}
+            {% endfor %}
+            <li class="order-details-total-weight">
+              <span class="order-details-title editable" data-key="total_weight">Order Weight</span>
+              <span class="order-details-text">{{ total_weight | weight_with_unit }}</span>
+            </li>
+            <li class="order-details-email">
+              <span class="order-details-title editable" data-key="customer_email">Email</span>
+              <span class="order-details-text">{{ order.email }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-no-margin">
+          <div class="logo-wrapper">
+            <a href="https://snshealth.com" target="_blank">
+              <img class="logo" alt="Logo" src="https://cdn.filestackcontent.com/api/file/lMGSmhFaTKS4IEccahDX">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="clear-fix"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2">
+        <div class="address-title bill-to-title editable" data-key="bill_to">Bill to</div>
+      </div>
+      <div class="col-xs-4">
+        <ul class="address">
+          {% assign billing_address = order.billing_address | default: customer.default_address %}
+          {% if billing_address and billing_address != blank %}
+            <li>{{ billing_address.name }}</li>
+            {% if billing_address.company != blank %}
+              <li>{{ billing_address.company }}</li>
+            {% endif %}
+            <li>{{ billing_address.address1 }}</li>
+            {% if billing_address.address2 != blank %}
+              <li>{{ billing_address.address2 }}</li>
+            {% endif %}
+            <li>
+              {{ billing_address.city }},
+              {% if billing_address.province_code != blank -%}
+                {{- billing_address.province_code -}}
+              {%- else -%}
+                {{- billing_address.province -}}
+              {%- endif %}
+              {{ billing_address.zip | upcase }}
+            </li>
+            <li>{{ billing_address.country }}</li>
+            <li>
+              <span class="editable" data-key="tel">Tel.</span> {{ billing_address.phone | default: customer.phone }}
+            </li>
+          {% elsif customer != blank %}
+            {% if customer.name != blank %}
+              <li>{{ customer.name }}</li>
+            {% endif %}
+            {% if customer.email != blank %}
+              <li>{{ customer.email }}</li>
+            {% endif %}
+            {% if customer.phone != blank %}
+              <li><span class="editable" data-key="tel">Tel.</span> {{ customer.phone }}</li>
+            {% endif %}
+          {% endif %}
+        </ul>
+      </div>
+      <div class="col-xs-2">
+        {% if order.shipping_address and order.shipping_address != '' and order.shipping_address != null %}
+          <div class="address-title ship-to-title editable" data-key="ship_to">Ship to</div>
+        {% endif %}
+      </div>
+      <div class="col-xs-4">
+        <ul class="address">
+          {% if order.shipping_address and order.shipping_address != blank %}
+            <li>{{ order.shipping_address.name }}</li>
+            {% if order.shipping_address.company != blank %}
+              <li>{{ order.shipping_address.company }}</li>
+            {% endif %}
+            <li>{{ order.shipping_address.address1 }}</li>
+            {% if order.shipping_address.address2 != blank %}
+              <li>{{ order.shipping_address.address2 }}</li>
+            {% endif %}
+            <li>
+              {{ order.shipping_address.city }},
+              {% if order.shipping_address.province_code != blank -%}
+                {{- order.shipping_address.province_code -}}
+              {%- else -%}
+                {{- order.shipping_address.province -}}
+              {%- endif %}
+              {{ order.shipping_address.zip | upcase }}
+            </li>
+            <li>{{ order.shipping_address.country }}</li>
+            <li><span class="editable" data-key="tel">Tel.</span> {{ order.shipping_address.phone }}</li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="clear-fix"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-no-margin">
+        <table class="order-table table">
+          <thead>
+            <tr>
+              <th colspan="2" class="order-table-title editable" data-key="item">Item Description</th>
+              <th class="order-table-qty text-center editable" data-key="qty">Qty</th>
+              <th class="order-table-price text-right editable" data-key="price">Price</th>
+              <th class="order-table-item-total text-right editable" data-key="item_total">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Bold Product Options Snippet 1 -->
+            {% assign hidden_variant_ids = '' %}
+            {% for line_item in order.line_items %}
+              {% if line_item.properties._boldVariantIds %}
+                {% assign hidden_variant_ids = hidden_variant_ids | append: ',' %}
+                {% assign hidden_variant_ids = hidden_variant_ids | append: line_item.properties._boldVariantIds %}
+              {% endif %}
+            {% endfor %}
+            {% assign hidden_variant_ids = hidden_variant_ids | split: ',' %}
+            <!-- END Bold Product Options Snippet 1 -->
+            {% for line_item in order.line_items %}
+              {% if line_item.quantity < 1 %}{% continue %}{% endif %}
+              <!-- Bold Product Options Snippet 2 -->
+              {% if hidden_variant_ids contains line_item.variant_id %}{% continue %}{% endif %}
+              {% assign adjusted_item_price = line_item.price %}
+              {% assign adjusted_line_price = line_item.line_price %}
+              {% for line_item2 in order.line_items %}
+                {% if line_item.properties._boldVariantIds contains line_item2.variant_id
+                  and line_item.properties._boldBuilderId == line_item2.properties._boldBuilderId
+                %}
+                  {% assign adjusted_item_price = adjusted_item_price | plus: line_item2.price %}
+                  {% assign adjusted_line_option_price = line_item2.line_price %}
+                  {% assign adjusted_line_price = adjusted_line_price | plus: adjusted_line_option_price %}
+                {% endif %}
+              {% endfor %}
+              <!-- END Bold Product Options Snippet 2 -->
+              <tr>
+                <td class="product-image-wrapper">
+                  {% if line_item.image != blank -%}
+                    <img class="product-image" src="{{ line_item.image | img_url: 'medium' }}">
+                  {%- endif %}
+                </td>
+                <td class="line-item-description">
+                  <p style="font-weight: 700;">
+                    <a
+                      href="https://snshealth.com/products/{{ line_item.product.handle }}"
+                      style="font-weight: 700;color: inherit;"
+                      target="_blank"
+                    >
+                      {{ line_item.title | replace: ' - Default Title', '' -}}
+                    </a>
+                  </p>
+                  <p class="expiry-date-container">
+                    <span style="font-weight: 700;">Best before:</span>
+                    <span
+                      data-expiry-date="{{ line_item.variant.id }}"
+                      data-product-url="https://snshealth.com/products/{{ line_item.product.handle }}?variant={{line_item.variant.id}}&sections=expiry-date"
+                    ></span>
+                  </p>
+                  {% if line_item.sku != blank %}
+                    <p class="line-item-sku">{{ line_item.sku }}</p>
+                  {% endif %}
+                  {% for p in line_item.properties %}
+                    {% assign p_internal = p.first | slice: 0 %}
+                    {% unless p.first contains 'builder_id'
+                      or p.first contains 'builder_info'
+                      or p.first contains 'master_builder'
+                      or p_internal == '_'
+                      or p.last == ''
+                      or p.last == blank
+                    %}
+                      {% if p.last contains 'cdn.shopify.com'
+                        or p.last contains '/uploads/'
+                        or p.last contains '.png?'
+                        or p.last contains '.jpg?'
+                        or p.last contains '//uploadery.s3'
+                      %}
+                        <p class="line-item-property">{{ p.first }}:<br></p>
+                        <a href="{{ p.last }}" target="_blank">
+                          <img src="{{ p.last }}" alt="{{ p.first }}" width="60" border="0" style="width: 60px; height: auto !important;">
+                        </a>
+                      {% else %}
+                        <p class="line-item-property">{{ p.first }}: {{ p.last | newline_to_br }}</p>
+                      {% endif %}
+                    {% endunless %}
+                  {% endfor %}
+                  {% if line_item.variant.barcode != blank %}
+                    <img data-barcode="{{ line_item.variant.barcode }}" class="barcode">
+                    <p class="line-item-sku">{{ line_item.variant.barcode }}</p>
+                    {% if line_item.properties.expiry_date != blank %}
+                      <p class="line-item-sku">{{ line_item.properties.expiry_date }}</p>
+                    {% endif %}
+                  {% endif %}
+                  {% assign refunded_quantity = 0 %}
+                  {% for refund in order.refunds %}
+                    {% for refund_line_item in refund.refund_line_items %}
+                      {% if line_item.id == refund_line_item.line_item_id %}
+                        {% assign refunded_quantity = refunded_quantity | plus: refund_line_item.quantity %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                  {% if refunded_quantity > 0 %}
+                    <span class="line-item-refund">Refunded × {{ refunded_quantity }}</span>
+                  {% endif %}
+                </td>
+                <td class="text-center line-item-qty">× {{ line_item.quantity }}</td>
+                <td class="text-right no-wrap line-item-price">
+                  {% if line_item.original_price and line_item.original_price > adjusted_item_price %}
+                    {% assign original_price = line_item.original_price %}
+                  {% elsif line_item.variant.compare_at_price
+                    and line_item.variant.compare_at_price > adjusted_item_price
+                  %}
+                    {% assign original_price = line_item.variant.compare_at_price %}
+                  {% elsif line_item.variant.price and line_item.variant.price > adjusted_item_price %}
+                    {% assign original_price = line_item.variant.price %}
+                  {% else %}
+                    {% assign original_price = 0 %}
+                  {% endif %}
+                  {% if original_price > 0 and original_price > adjusted_item_price %}
+                    <p class="strikethrough">
+                      <s>{{ original_price | money }}</s>
+                    </p>
+                  {% endif %}
+                  <p>{{ adjusted_item_price | money }}</p>
+                </td>
+                <td class="text-right no-wrap line-item-line-price">{{ adjusted_line_price | money }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="clear-fix"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="notes">
+          {% if order.note != blank %}
+            <div class="notes-title editable" data-key="order_notes">Notes</div>
+          {% endif %}
+          <div class="notes-text">
+            {{ order.note | newline_to_br }}
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div>
+          <table class="pricing-table table">
+            <tbody>
+              {% for discount in order.discounts %}
+                {% if discount.amount != 0.00 %}
+                  <tr>
+                    <td class="pricing-table-title">
+                      <span class="editable" data-key="discount">Discount</span>
+                      {%- if discount.code != blank %}
+                        <span class="break">{{ discount.code }}</span>
+                      {%- endif %}
+                    </td>
+                    <td class="pricing-table-text">-{{ discount.amount | money }}</td>
+                  </tr>
+                {% endif %}
+              {% else %}
+                {% if order.total_discounts != 0.00 %}
+                  <tr>
+                    <td class="pricing-table-title"><span class="editable" data-key="discount">Discount</span></td>
+                    <td class="pricing-table-text">-{{ order.total_discounts | money }}</td>
+                  </tr>
+                {% endif %}
+              {% endfor %}
+              <tr>
+                <td class="pricing-table-title editable" data-key="subtotal">Subtotal</td>
+                <td class="pricing-table-text">{{ order.subtotal_price | money }}</td>
+              </tr>
+              <tr>
+                <td class="pricing-table-title editable" data-key="shipping_handling">Shipping</td>
+                <td class="pricing-table-text">{{ order.shipping_price | default: 0 | money }}</td>
+              </tr>
+              {% for tax_line in order.tax_lines %}
+                <tr>
+                  <td class="pricing-table-title">{{ tax_line.title }} ({{ tax_line.rate | times: 100 }}%)</td>
+                  <td class="pricing-table-text">{{ tax_line.price | money }}</td>
+                </tr>
+              {% endfor %}
+              <tr class="pricing-table-total-row">
+                <td class="pricing-table-title">
+                  <span class="editable" data-key="total">Total</span> ({{ order.currency }})
+                </td>
+                <td class="pricing-table-text">{{ order.total_price | money }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="clear-fix"></div>
+      </div>
+      <div class="clear-fix"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 margin-bottom">
+        <div class="thanks-text full-editable" data-key="thanks">
+          <p>Thanks for your business!</p>
+        </div>
+        <div class="terms-text full-editable" data-key="terms_and_conditions">
+          <p>
+            <p>Have questions or need information? Chat with us! We're here to help.</p>
+          </p>
+        </div>
+      </div>
+      <div class="clear-fix"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 shop-block col-no-margin">
+        <div class="shop-address-block full-editable" data-key="shop_block">
+          <p>
+            <b>SNS Health</b>
+          </p>
+          <p>2500 Williams Parkway, Brampton, ON L6S5M9</p>
+          <p>Canada</p>
+        </div>
+        <a href="https://snshealth.com/" target="_blank">
+          <div class="shop-domain editable" data-key="shop_domain">snshealth.com</div>
+        </a>
+        <div class="shop-social">
+          <a href="https://www.facebook.com/sportsnutritionsource/" target="_blank">
+            <img
+              class="social-icons"
+              src="https://cdn.shopify.com/s/files/1/0398/5025/files/Fb_icon.jpg?11755453313570768267"
+            >
+          </a>
+          <a href="https://www.instagram.com/sportsnutritionsource/" target="_blank">
+            <img
+              class="social-icons"
+              src="https://cdn.shopify.com/s/files/1/0398/5025/files/instagram_9.png?576915513262272927"
+            >
+          </a>
+        </div>
+      </div>
+      <div class="clear-fix"></div>
+    </div>
+  </div>
+</div>

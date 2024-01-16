@@ -35,6 +35,7 @@ module.exports = {
       breakpoints: path.resolve(__dirname, 'scss/components/breakpoints.scss'),
       JsComponents: path.resolve(__dirname, 'js/components'),
       SvelteComponents: path.resolve(__dirname, 'js/components/svelte'),
+      ReactComponents: path.resolve(__dirname, 'js/components/react'),
       svelte: path.resolve('node_modules', 'svelte/src/runtime')
     },
     extensions: ['.mjs', '.js', '.svelte'],
@@ -114,7 +115,7 @@ if (mode === 'development') {
         scripts: ['echo Webpack build in progress...🛠']
       },
       onBuildEnd: {
-        scripts: ['echo Build Complete 📦',`shopify theme dev --poll --theme-editor-sync -s ${storeUrl} -t ${themeId}`],
+        scripts: ['echo Build Complete 📦', `shopify theme dev --poll --theme-editor-sync -s ${storeUrl} -t ${themeId}`],
         parallel: true //this is required to make webpack watch run in background.
       }
     })
@@ -128,7 +129,7 @@ if (mode === 'development') {
         Vendors: {  //create a seperate chunk for vendor
           test: /[\\/]node_modules[\\/]/, //required both / & \ to support cross platform between unix and windows
           name: 'vendors',//only create chunk for dependencies
-          chunks :'all', //create chunk for all sync , async and cjs modules
+          chunks: 'all', //create chunk for all sync , async and cjs modules
           type: /javascript/,
           enforce: true // ignores minSize: 2000, minChunks: 1,priority: 0,
         },
@@ -145,11 +146,11 @@ if (mode === 'development') {
   }
 }
 
-if(mode == "production") {
+if (mode == "production") {
   module.exports.optimization = {
     usedExports: true, //check for ununsed exports for treeshaking within file
     splitChunks: {
-      chunks :'all',//create chunk for all sync , async and cjs modules
+      chunks: 'all',//create chunk for all sync , async and cjs modules
       usedExports: true, //check for ununsed exports for treeshaking within chunk
       cacheGroups: {
         default: false, //override default
