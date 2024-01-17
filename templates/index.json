@@ -3,15 +3,15 @@
     "main": {
       "type": "Banner",
       "blocks": {
-        "b533d71a-e272-4353-b935-9e0fc67451c1": {
+        "image_with_text_overlay_EVHhPP": {
           "type": "image_with_text_overlay",
           "settings": {
-            "promotion": true,
-            "promotion_name": "Back to the Gym",
-            "promotion_creative_name": "Main banner 1",
+            "promotion": false,
+            "promotion_name": "Optimum Nutrition",
+            "promotion_creative_name": "Main Banner",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Back_to_the_Gym_Banner_37ab20a8-d3f7-46fc-bf93-5c7f09c86865.jpg",
-            "cta_url": "shopify:\/\/collections\/supplements-bundles"
+            "image_desktop": "shopify:\/\/shop_images\/Bundle_Save_ON.jpg",
+            "cta_url": "https:\/\/snshealth.com\/products\/optimum-nutrition-gold-standard-100-whey?variant=42028848742551"
           }
         },
         "29e42daa-54ef-4a2a-845b-730cfb95be0c": {
@@ -23,6 +23,17 @@
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/Perfect_Sports_Banner_33085d10-f6cc-4a9f-82bb-afcf3e7e66e0.jpg",
             "cta_url": "shopify:\/\/products\/mass-gainer-bundle"
+          }
+        },
+        "b533d71a-e272-4353-b935-9e0fc67451c1": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Back to the Gym",
+            "promotion_creative_name": "Main banner 1",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/Back_to_the_Gym_Banner_37ab20a8-d3f7-46fc-bf93-5c7f09c86865.jpg",
+            "cta_url": "shopify:\/\/collections\/supplements-bundles"
           }
         },
         "ca6f972c-17ec-4e61-a3e7-813ff4258d83": {
@@ -97,8 +108,9 @@
         }
       },
       "block_order": [
-        "b533d71a-e272-4353-b935-9e0fc67451c1",
+        "image_with_text_overlay_EVHhPP",
         "29e42daa-54ef-4a2a-845b-730cfb95be0c",
+        "b533d71a-e272-4353-b935-9e0fc67451c1",
         "ca6f972c-17ec-4e61-a3e7-813ff4258d83",
         "528e180e-68ab-49ab-bf7c-b10511cef8a9",
         "5984eb08-08b3-47e4-be13-5da21dbca50c",
@@ -682,7 +694,7 @@
       "type": "apps",
       "blocks": {
         "2ef5b914-b4e8-491e-93b1-73fa944ff8cb": {
-          "type": "shopify:\/\/apps\/okendo-product-reviews-ugc\/blocks\/reviews-carousel\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+          "type": "shopify:\/\/apps\/okendo\/blocks\/reviews-carousel\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
           "settings": {
             "show_heading": true,
             "heading": "Popular picks",
