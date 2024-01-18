@@ -263,12 +263,14 @@
 }
 @media (min-width: 1024px) {
   .footer-seo__content * {
+    line-height: 24px !important;
+  }
+  .footer-seo__content * {
     font-family: "poppins";
     font-size: 10px;
     font-weight: 600;
     line-height: 1.2;
     font-weight: 400;
-    line-height: 24px !important;
   }
 }
 .footer-seo-content {

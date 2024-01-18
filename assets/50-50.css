@@ -42,13 +42,15 @@
 }
 @media (min-width: 1024px) {
   .section-50-50__text {
+    -webkit-box-sizing: content-box !important;
+            box-sizing: content-box !important;
+  }
+  .section-50-50__text {
     padding: 40px 0 30px;
     text-align: left;
     width: 55%;
     padding-right: 61px;
     max-width: 620px;
-    -webkit-box-sizing: content-box !important;
-            box-sizing: content-box !important;
   }
 }
 .section-50-50__heading {
@@ -66,11 +68,13 @@
   }
 }
 .section-50-50__text p {
+  line-height: 1.4 !important;
+}
+.section-50-50__text p {
   font-family: "poppins";
   font-size: 12px;
   font-weight: 400;
   line-height: 1.2;
-  line-height: 1.4 !important;
 }
 @media (min-width: 1024px) {
   .section-50-50__text p {

@@ -18,27 +18,59 @@ export default ({ shopifyData }) => {
   const [currentPage, setCurrentPage] = useState("profile")
   const [selectedIndex, setSelectedIndex] = useState(0)
 
-  useEffect(() => {
-    handleURL();
-  }, [])
+  useEffect(()=>{
+    const url = window.location.search;
+    if(!url) {
+      let isAddressesPage = window.location.pathname.split('account/')[1];
+      if(isAddressesPage) setSelectedIndex(2)
+    } else {
+      (url == '?tab=orders') ? setSelectedIndex(1) : (url == '?tab=addresses') ? setSelectedIndex(2) : null      
+    }
+  },[])
 
   useEffect(() => {
     if (!popStateActive) {
-      console.log('selectedIndex', selectedIndex);
-      if (selectedIndex == 0) {
-        history.pushState({ tab: 'profile' }, "", "/account")
-        console.log('pushed p');
-      } else if (selectedIndex == 1) {
-        history.pushState({ tab: 'orders' }, "", "/account#orders")
-        console.log('pushed o');
-      } else if (selectedIndex == 2) {
-        history.pushState({ tab: 'addresses' }, "", "/account/addresses")
-        console.log('pushed a');
-      }
+    let tab = window.location.search.split("tab=")[1];
+    console.log('url', selectedIndex, tab)
+    if(selectedIndex == 1 && tab != 'orders') {
+      let params = new URLSearchParams(window.location.search);
+      params.set('tab','orders');
+      history.pushState({ "tab": "orders" }, "", window.location.pathname + "?" + params.toString());
+    } else if(selectedIndex == 2 && tab != 'addresses') {
+      let params = new URLSearchParams(window.location.search);
+      params.set('tab','addresses');
+      history.pushState({ "tab": "addresses" }, "", window.location.pathname + "?" + params.toString());
     } else {
-      popStateActive = false;
+      let params = new URLSearchParams(window.location.search);
+      params.set('tab','profile');
+      history.pushState({ "tab": "profile" }, "", window.location.pathname + "?" + params.toString());
     }
+  } else {
+        popStateActive = false;
+      }
   }, [selectedIndex])
+
+  // useEffect(() => {
+  //   handleURL();
+  // }, [])
+
+  // useEffect(() => {
+  //   if (!popStateActive) {
+  //     console.log('selectedIndex', selectedIndex);
+  //     if (selectedIndex == 0) {
+  //       history.pushState({ tab: 'profile' }, "", "/account")
+  //       console.log('pushed p');
+  //     } else if (selectedIndex == 1) {
+  //       history.pushState({ tab: 'orders' }, "", "/account#orders")
+  //       console.log('pushed o');
+  //     } else if (selectedIndex == 2) {
+  //       history.pushState({ tab: 'addresses' }, "", "/account/addresses")
+  //       console.log('pushed a');
+  //     }
+  //   } else {
+  //     popStateActive = false;
+  //   }
+  // }, [selectedIndex])
 
   window.addEventListener('popstate', (event) => {
     if ((event.state?.tab == 'orders' && selectedIndex != 1) || (event.state?.tab == 'addresses' && selectedIndex != 2) || selectedIndex != 0) {
@@ -49,18 +81,18 @@ export default ({ shopifyData }) => {
     tab == 'orders' ? setSelectedIndex(1) : tab == 'addresses' ? setSelectedIndex(2) : setSelectedIndex(0);
   })
 
-  function handleURL() {
-    const url = window.location.href.split('#')[1];
-    if (!url && window.location.pathname.split('account/')[1] == 'addresses') {
-      setSelectedIndex(2)
-    } else {
-      (url == 'orders') ? setSelectedIndex(1) : (url == 'addresses') ? setSelectedIndex(2) : null
-    }
-  }
+  // function handleURL() {
+  //   const url = window.location.href.split('#')[1];
+  //   if (!url && window.location.pathname.split('account/')[1] == 'addresses') {
+  //     setSelectedIndex(2)
+  //   } else {
+  //     (url == 'orders') ? setSelectedIndex(1) : (url == 'addresses') ? setSelectedIndex(2) : null
+  //   }
+  // }
 
-  window.addEventListener("hashchange", (event) => {
-    handleURL();
-  });
+  // window.addEventListener("hashchange", (event) => {
+  //   handleURL();
+  // });
 
   const image_aspect_ratio = 1; // Get it from line_item.image.aspect_ratio
   const image = shopifyData.orders.data[0].line_items[0].image // Get it from line_item.image

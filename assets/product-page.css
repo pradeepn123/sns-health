@@ -178,6 +178,9 @@
 
 .hidden-phone {
   display: block !important;
+}
+
+.hidden-phone {
   margin-top: var(--section-content-margin);
 }
 @media (min-width: 768px) {
