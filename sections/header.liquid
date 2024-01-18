@@ -311,7 +311,7 @@
             <div class="header__action-item header__action-item--account">
               <div class="header__action-item-content header__action-item-content--flex " aria-label="{{ 'header.general.account' | t }}" aria-controls="account-popover" aria-expanded="false" data-action="toggle-popover">
                 <div class="header-account__icon-wrapper ">
-                  {% render 'icon', icon: 'header-account' %} {%- if customer -%} My Account {%- else -%}Sign In {%- endif -%}
+                  {% render 'icon', icon: 'header-account' %} {%- if customer -%} Hello {{ customer.first_name | default: 'User'}} {%- else -%}Sign In {%- endif -%}
                 </div>
                 {% render 'icon', icon: 'arrow-right'%}
                 </a>
@@ -321,9 +321,10 @@
               {%- if customer -%}
                 <div class="popover__inner popover__inner--no-padding">
                   <div class="popover__linklist">
-                    <a class="popover__link-item" href="{{ routes.account_url }}">{{ 'customer.general.orders' | t }}</a>
-                    <a class="popover__link-item" href="{{ routes.account_addresses_url }}">{{ 'customer.general.addresses' | t }}</a>
-                    <a class="popover__link-item" href="{{ routes.account_logout_url }}" data-no-instant>{{ 'customer.general.logout' | t }}</a>
+                    <a class="popover__link-item" href="{{ routes.account_url }}"><span>{% render 'icon', icon: 'profile' %}</span> {{ 'customer.general.my_account' | t }}</a>
+                    <a class="popover__link-item" href="{{ routes.account_url }}#orders"><span>{% render 'icon', icon: 'account-cart' %}</span> {{ 'customer.general.orders' | t }}</a>
+                    <a class="popover__link-item" href="{{ routes.account_addresses_url }}#addresses"><span>{% render 'icon', icon: 'account-address' %}</span> {{ 'customer.general.addresses' | t }}</a>
+                    <a class="popover__link-item" href="{{ routes.account_logout_url }}" data-no-instant> <span>{% render 'icon', icon: 'logout' %}</span>{{ 'customer.general.logout' | t }}</a>
                   </div>
                 </div>
               {%- else -%}

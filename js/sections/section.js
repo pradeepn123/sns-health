@@ -6,6 +6,7 @@ import customProductCard from './custom-product-card';
 import collectionGrid from './collection-grid';
 import productTabs from "./product";
 import bundleCart from "./bundle-cart"
+import AccountPage from "./account-page"
 
 document.addEventListener('DOMContentLoaded', () => {
     announcementBar();
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     collectionGrid();
     productTabs();
     bundleCart();
+    AccountPage();
     window.customProductCard = customProductCard;
     window.productCarousel = productCarousel;
 });

@@ -41,7 +41,7 @@
   max-width: calc(100% - 2 * var(--base-margin));
   margin-left: auto;
   margin-right: auto;
-  padding: var(--header-padding) 0;
+  padding: var(--section-padding);
   width: 100%;
 }
 @media (min-width: 1440px) {
@@ -218,7 +218,7 @@
 }
 @media (min-width: 1024px) {
   .header .popover__inner {
-    padding: 10px var(--base-margin);
+    padding: var(--section-padding) !important;
   }
 }
 .header__action-item-link--search {
@@ -1034,4 +1034,36 @@ body .uwy .uai img {
 .boost-pfs-search-suggestion {
   max-height: 657px;
   overflow-y: auto;
+}
+
+.popover--logged {
+  right: 20px !important;
+}
+
+.popover__link-item {
+  line-height: normal;
+  padding: 6px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+}
+.popover__link-item:last-child {
+  color: #ED1C24;
+}
+.popover__link-item span {
+  line-height: 0;
+}
+
+#account-popover {
+  width: 100%;
+  max-width: 272px;
 }

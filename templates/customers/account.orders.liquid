@@ -1,0 +1,7 @@
+{%- layout none -%}
+{%- paginate customer.orders by 20 -%}
+{
+  "data": {%- render 'JSON-order-data' -%},
+  "hasNext": {{ paginate.pages | minus: paginate.current_page }}
+}
+{%- endpaginate -%}

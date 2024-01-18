@@ -25,9 +25,11 @@
   "author": "@jingleBaba",
   "license": "ISC",
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "ftdomdelegate": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-to-print": "^2.14.15",
     "svelte": "^4.2.0",
     "swiper": "^10.0.4"
   },
