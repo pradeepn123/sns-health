@@ -1,7 +1,34 @@
 {
   "header": {
     "search": {
-      "submit": "Suchen"
+      "submit": "Suchen",
+      "open_search": "Suche öffnen",
+      "close_search": "Schließen",
+      "clear": "Klar",
+      "input_placeholder": "Suchen Sie nach Dingen wie „Proteinpulver“",
+      "all_categories": "Alle Kategorien",
+      "no_results": "Es wurden keine Ergebnisse gefunden",
+      "view_products": "Alle Produkte ansehen",
+      "view_results": "Alle Ergebnisse anzeigen",
+      "products": "Produkte",
+      "blog_posts": "Blogeinträge",
+      "pages": "Seiten",
+      "blog_posts_and_pages": "Seiten und Blogbeiträge"
+    },
+    "general": {
+      "currency": "Währung",
+      "language": "Sprache",
+      "account": "Mein Konto",
+      "login": "Einloggen Anmelden",
+      "welcome": "Hallo {{first_name}}",
+      "cart": "Wagen"
+    },
+    "navigation": {
+      "menu": "Speisekarte",
+      "open_menu": "Menü öffnen",
+      "back": "Zurück",
+      "need_help": "Brauchen Sie Hilfe?",
+      "follow_us": "Folgen Sie uns"
     }
   },
   "search": {
@@ -20,7 +47,12 @@
         "zero": "Keine Ergebnisse",
         "one": "Angezeigt werden {{offset}} – {{page_size}} von {{count}} Ergebnissen",
         "other": "Es werden {{offset}} – {{page_size}} von {{count}} Ergebnissen angezeigt"
-      }
+      },
+      "title_with_terms": "Suchergebnisse für „ {{terms}} “",
+      "products_with_terms": "Produkte für „ {{terms}} „",
+      "articles_with_terms": "Blogbeiträge für „ {{terms}} “",
+      "pages_with_terms": "Seiten für „ {{terms}} „",
+      "pages_and_articles_with_terms": "Seiten und Blogbeiträge für „ {{terms}} “"
     }
   },
   "404": {
@@ -41,7 +73,8 @@
       "article_author": "Von Ihnen geschrieben",
       "article_category": "Kategorie",
       "article_excerpt": "Ihr Shop hat noch keine Blogbeiträge veröffentlicht. In einem Blog können Sie über neue Produkteinführungen, Tipps oder andere Neuigkeiten sprechen, die Sie Ihren Kunden mitteilen möchten. Im E-Commerce-Blog von Shopify finden Sie Inspiration und Ratschläge für Ihren eigenen Shop und Blog.",
-      "instagram_caption": "Dies ist ein Beispiel für eine Bildunterschrift."
+      "instagram_caption": "Dies ist ein Beispiel für eine Bildunterschrift.",
+      "instagram_likes": "28 Likes"
     },
     "newsletter": {
       "success": "Sie sind für unseren Newsletter registriert!",
@@ -373,5 +406,74 @@
   },
   "date_formats": {
     "month_day_year_time": "%B %d, %Y bei %H:%M%P"
+  },
+  "sections": {
+    "byob-subscription": {
+      "CTAbuttonText": "in den Warenkorb legen",
+      "purchaseOptions": "Kaufoptionen:",
+      "oneTimePurchase": "Einmaliger kauf",
+      "itemAddedAlert": "Die Abo-Artikel wurden dem Warenkorb hinzugefügt!",
+      "optionMissedAlert": "Bitte wählen Sie Ihre Abonnementoption aus!"
+    }
+  },
+  "general": {
+    "meta": {
+      "tags": "Markiert mit „ {{ tags }} “",
+      "page": "Seite {{ page }}"
+    },
+    "accessibility": {
+      "skip_to_content": "Zum Inhalt springen",
+      "close": "Schließen",
+      "next": "Nächste",
+      "previous": "Vorherige",
+      "new_window": "Öffnet in einem neuen Fenster."
+    },
+    "password": {
+      "enter_password": "Geben Sie mit dem Passwort ein",
+      "password_input": "Passwort",
+      "password_submit": "Eingeben",
+      "newsletter_input": "Ihre E-Mail-Adresse",
+      "newsletter_submit": "Benachrichtige mich",
+      "newsletter_success": "Danke für's Registrieren!",
+      "powered_by_html": "Dieser Shop wird betrieben von {{shopify_link}}",
+      "login_title": "Sind Sie der Ladenbesitzer?",
+      "login_link": "Hier anmelden",
+      "follow_us": "Folgen Sie uns"
+    },
+    "pagination": {
+      "previous_page": "Vorherige",
+      "next_page": "Nächste",
+      "go_to_page": "Navigieren Sie zur Seite {{page}}",
+      "page_count": "Seite {{current_page}} \/ {{pages}}"
+    },
+    "breadcrumb": {
+      "title": "Semmelbrösel",
+      "home": "Heim",
+      "account": "Mein Konto"
+    },
+    "social": {
+      "follow_label": "Folgen Sie uns auf {{social_media}}",
+      "facebook_share": "Auf Facebook teilen",
+      "pinterest_pin": "Auf Pinterest pinnen",
+      "twitter_tweet": "Twittern Sie auf Twitter",
+      "email_share": "Per E-Mail teilen"
+    },
+    "popup": {
+      "success": "Sie sind für unseren Newsletter registriert!",
+      "email_placeholder": "Deine E-Mail",
+      "subscribe": "Abonnieren"
+    }
+  },
+  "footer": {
+    "general": {
+      "currency": "Währung",
+      "language": "Sprache",
+      "follow_us": "Folgen Sie uns"
+    },
+    "newsletter": {
+      "success": "Sie sind für unseren Newsletter registriert!",
+      "input": "Deine E-Mail",
+      "submit": "Abonnieren"
+    }
   }
 }
