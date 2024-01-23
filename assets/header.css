@@ -1084,3 +1084,8 @@ body .uwy .uai img {
   width: 100%;
   max-width: 272px;
 }
+
+#boost-pfs-search-box-2 + .form__floating-label {
+  -webkit-transform: translateY(-6px) scale(0.8);
+  transform: translateY(-6px) scale(0.8);
+}
