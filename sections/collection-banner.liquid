@@ -33,7 +33,10 @@
         %}
       {% liquid
         assign id = block.id
-        assign color = block.settings['font-color']
+        assign color = block.settings['meta-font-color']
+        if color == blank
+          assign color = block.settings['font-color']
+        endif
         assign heading = collection.title
         assign subheading = collection.description | truncate: 100
         assign image_desktop = desktop_image
@@ -104,8 +107,13 @@
         },
         {
           "type": "color",
-          "id": "font-color",
+          "id": "meta-font-color",
           "label": "Font color"
+        },
+        {
+          "type": "color",
+          "id": "font-color",
+          "label": "Fallback font color"
         },
         {
           "type": "color",
