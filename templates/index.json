@@ -3,12 +3,23 @@
     "main": {
       "type": "Banner",
       "blocks": {
+        "009a8070-a267-4f1a-ad82-846a05257985": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Body Armor",
+            "promotion_creative_name": "Main Banner 1",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/BodyArmor_Banner.jpg",
+            "cta_url": "shopify:\/\/collections\/body-armor"
+          }
+        },
         "image_with_text_overlay_EVHhPP": {
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": false,
             "promotion_name": "Optimum Nutrition",
-            "promotion_creative_name": "Main Banner",
+            "promotion_creative_name": "Main Banner 2",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/Bundle_Save_ON_0c53eda4-021a-46ed-b3bc-0306e824221e.jpg",
             "cta_url": "https:\/\/snshealth.com\/products\/optimum-nutrition-gold-standard-100-whey?variant=42028848742551"
@@ -19,7 +30,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Mutant mass mass bundle",
-            "promotion_creative_name": "Main Banner 2",
+            "promotion_creative_name": "Main Banner 3",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/Muscle_mass_banner_mutant_3248c889-9eaf-4af7-9bbe-3d41bcfc0099.jpg",
             "cta_url": "shopify:\/\/products\/mass-gainer-bundle"
@@ -30,7 +41,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Back to the Gym",
-            "promotion_creative_name": "Main banner 1",
+            "promotion_creative_name": "Main banner 4",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/Back_to_the_Gym_Banner_37ab20a8-d3f7-46fc-bf93-5c7f09c86865.jpg",
             "cta_url": "shopify:\/\/collections\/supplements-bundles"
@@ -45,18 +56,6 @@
             "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/Organika_Banner_e6273adf-5027-4841-a94a-5e9b5547de81.jpg",
             "cta_url": "shopify:\/\/collections\/organika"
-          }
-        },
-        "009a8070-a267-4f1a-ad82-846a05257985": {
-          "type": "image_with_text_overlay",
-          "disabled": true,
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Vega",
-            "promotion_creative_name": "Main Banner 3",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/vega_0ace3aea-e9c6-46ee-acff-2f4f2f86671e.jpg",
-            "cta_url": "shopify:\/\/collections\/vega"
           }
         },
         "56205fb4-b0ed-4e35-baaa-742afc2a67b9": {
@@ -84,11 +83,11 @@
         }
       },
       "block_order": [
+        "009a8070-a267-4f1a-ad82-846a05257985",
         "image_with_text_overlay_EVHhPP",
         "29e42daa-54ef-4a2a-845b-730cfb95be0c",
         "b533d71a-e272-4353-b935-9e0fc67451c1",
         "12173b4e-4224-40aa-a11f-cb0658bc859b",
-        "009a8070-a267-4f1a-ad82-846a05257985",
         "56205fb4-b0ed-4e35-baaa-742afc2a67b9",
         "image_with_text_overlay_wcebif"
       ],
