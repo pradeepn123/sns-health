@@ -558,7 +558,6 @@ var SvgIcon = _ref => {
     shopifyData
   } = _ref2;
   // console.log('shopifydata', shopifyData);
-  var [currentPage, setCurrentPage] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("profile");
   var [selectedIndex, setSelectedIndex] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     var url = window.location.search;
@@ -596,29 +595,6 @@ var SvgIcon = _ref => {
       popStateActive = false;
     }
   }, [selectedIndex]);
-
-  // useEffect(() => {
-  //   handleURL();
-  // }, [])
-
-  // useEffect(() => {
-  //   if (!popStateActive) {
-  //     console.log('selectedIndex', selectedIndex);
-  //     if (selectedIndex == 0) {
-  //       history.pushState({ tab: 'profile' }, "", "/account")
-  //       console.log('pushed p');
-  //     } else if (selectedIndex == 1) {
-  //       history.pushState({ tab: 'orders' }, "", "/account#orders")
-  //       console.log('pushed o');
-  //     } else if (selectedIndex == 2) {
-  //       history.pushState({ tab: 'addresses' }, "", "/account/addresses")
-  //       console.log('pushed a');
-  //     }
-  //   } else {
-  //     popStateActive = false;
-  //   }
-  // }, [selectedIndex])
-
   window.addEventListener('popstate', event => {
     var _event$state, _event$state2, _event$state3;
     if (((_event$state = event.state) === null || _event$state === void 0 ? void 0 : _event$state.tab) == 'orders' && selectedIndex != 1 || ((_event$state2 = event.state) === null || _event$state2 === void 0 ? void 0 : _event$state2.tab) == 'addresses' && selectedIndex != 2 || selectedIndex != 0) {
@@ -628,27 +604,6 @@ var SvgIcon = _ref => {
     console.log(tab);
     tab == 'orders' ? setSelectedIndex(1) : tab == 'addresses' ? setSelectedIndex(2) : setSelectedIndex(0);
   });
-
-  // function handleURL() {
-  //   const url = window.location.href.split('#')[1];
-  //   if (!url && window.location.pathname.split('account/')[1] == 'addresses') {
-  //     setSelectedIndex(2)
-  //   } else {
-  //     (url == 'orders') ? setSelectedIndex(1) : (url == 'addresses') ? setSelectedIndex(2) : null
-  //   }
-  // }
-
-  // window.addEventListener("hashchange", (event) => {
-  //   handleURL();
-  // });
-
-  var image_aspect_ratio = 1; // Get it from line_item.image.aspect_ratio
-  var image = shopifyData.orders.data[0].line_items[0].image; // Get it from line_item.image
-  var srcTokens = {
-    replacementToken: "width=2000",
-    dataSrcToken: "{width}",
-    srcToken: "width=10"
-  };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "account-heading__wrap"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_headlessui_react__WEBPACK_IMPORTED_MODULE_1__.Tab.Group, {
