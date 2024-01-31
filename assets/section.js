@@ -161,9 +161,12 @@
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var JsComponents_tab_section_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/tab-section.js */ "./js/components/tab-section.js");
+/* harmony import */ var JsComponents_sticky_atc_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! JsComponents/sticky-atc.js */ "./js/components/sticky-atc.js");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
   (0,JsComponents_tab_section_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,JsComponents_sticky_atc_js__WEBPACK_IMPORTED_MODULE_1__.stickyATC)();
 });
 
 /***/ }),

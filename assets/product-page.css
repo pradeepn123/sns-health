@@ -178,9 +178,6 @@
 
 .hidden-phone {
   display: block !important;
-}
-
-.hidden-phone {
   margin-top: var(--section-content-margin);
 }
 @media (min-width: 768px) {
@@ -210,4 +207,23 @@
 }
 .modal__inner .card {
   padding: 20px;
+}
+
+/* Sticky add to cart on responsive devices */
+@media (max-width: 999px) { /* hardcoded max width to go with theme default layout breakpoint on PDP */
+  .product-form__add-button.button.button--primary.quick-add-to-cart.sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999999;
+    border: 15px solid white;
+  }
+  .product-form__info-item--quantity .product-form__info-content .quantity-selector--product {
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+  #chat-button {
+    bottom: 75px !important;
+  }
 }

@@ -55,15 +55,13 @@
   }
 }
 .widget-type-pre-purchase .rebuy-product-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: reverse !important;
       -ms-flex-direction: column-reverse !important;
           flex-direction: column-reverse !important;
-}
-.widget-type-pre-purchase .rebuy-product-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 @media (min-width: 768px) {
   .widget-type-pre-purchase .rebuy-product-block {
@@ -77,21 +75,17 @@
   }
 }
 .widget-type-pre-purchase .rebuy-product-media {
-  float: inherit !important;
-}
-.widget-type-pre-purchase .rebuy-product-media {
   width: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  float: inherit !important;
 }
 @media (min-width: 768px) {
   .widget-type-pre-purchase .rebuy-product-media {
-    float: left !important;
-  }
-  .widget-type-pre-purchase .rebuy-product-media {
     width: 40%;
     margin: none;
+    float: left !important;
   }
 }
 .widget-type-pre-purchase .rebuy-product-info, .widget-type-pre-purchase .rebuy-product-options, .widget-type-pre-purchase .rebuy-product-actions {
@@ -126,13 +120,11 @@
   display: grid !important;
 }
 .widget-type-product-upsell .rebuy-product-price {
-  margin: 0 auto !important;
-}
-.widget-type-product-upsell .rebuy-product-price {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0 auto !important;
 }
