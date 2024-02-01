@@ -38,6 +38,7 @@
         },
         "b533d71a-e272-4353-b935-9e0fc67451c1": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Back to the Gym",
