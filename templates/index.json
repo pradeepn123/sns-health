@@ -118,17 +118,17 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Gym accessories",
-            "promotion_creative_name": "Sub banner 1",
+            "promotion_name": "Mardi Gras",
+            "promotion_creative_name": "Sub banner 2",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Gym_Accessories_Banner_e0bb423f-be2f-4d17-8448-5bd508cc067c.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Gym_Accessories_Banner_mob.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/PB_Me.webp",
+            "image_mobile": "shopify:\/\/shop_images\/PB_Me-1.webp",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/fitness-bundles"
+            "cta_url": "shopify:\/\/collections\/nut-butters-and-spreads"
           }
         },
         "49c22a5d-ed10-4a49-b943-95e999f44f50": {
