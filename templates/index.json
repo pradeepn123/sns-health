@@ -555,46 +555,6 @@
             "url": "shopify:\/\/collections\/perfect-sports"
           }
         },
-        "20c59a9f-1066-4e49-9799-cb933f725ccc": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Organika",
-            "promotion_creative_name": "Featured Brand",
-            "image": "shopify:\/\/shop_images\/images.png",
-            "url": "shopify:\/\/collections\/organika"
-          }
-        },
-        "a485b887-5abb-4a02-a705-8e110b9650aa": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Inner Armour",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/d553e40aab8654cc6700df9fa8c3.jpg",
-            "url": "shopify:\/\/collections\/inner-armour"
-          }
-        },
-        "c0b43a9a-a988-44e1-9f3c-b88fa71a563e": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "RenewLife",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/renew-life-logo_06382d63-1d31-40d5-b0ef-813799615648.png",
-            "url": "shopify:\/\/collections\/renew-life-1"
-          }
-        },
-        "2cebe019-0265-45fc-8d1e-2abe7f03140f": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "MegaFood",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/Megafood_280x_1.png",
-            "url": "shopify:\/\/collections\/megafood"
-          }
-        },
         "fbc747c2-c649-43e7-84f8-39fd5d61dae0": {
           "type": "featured_brand",
           "settings": {
@@ -625,50 +585,34 @@
             "url": "shopify:\/\/collections\/sproos"
           }
         },
-        "7c34e228-2195-4327-bc21-0f1952b3fdf1": {
+        "featured_brand_F8Cyet": {
           "type": "featured_brand",
-          "disabled": true,
           "settings": {
             "promotion": true,
-            "promotion_name": "Iron Vegan",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/image_118.png",
-            "url": "shopify:\/\/collections\/iron-vegan"
+            "promotion_name": "Nature's Way",
+            "promotion_creative_name": "Featured brands",
+            "image": "shopify:\/\/shop_images\/natureswaylogo.png",
+            "url": "shopify:\/\/collections\/natures-way"
           }
         },
-        "04983965-b684-44dd-8743-9ba4217f2336": {
+        "featured_brand_Q9x6GF": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "Matteo's",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/a4e1003f-9f8b-4045-865f-36fd814b8007.__CR0_0_970_300_PT0_SX970_V1.jpg",
-            "url": "shopify:\/\/collections\/matteos"
-          }
-        },
-        "04adcf74-317d-4db4-b9f4-dae580946b48": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "PB&Me",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/PB_Me_Logo_-_2019_Medium_280x_2x_c9f69f48-50fd-41e5-a3c9-8d5ec3ef7c31.webp",
-            "url": "shopify:\/\/collections\/pb-me"
+            "promotion_name": "BodyArmor",
+            "promotion_creative_name": "Featured brands",
+            "image": "shopify:\/\/shop_images\/bodyarmorlogo.jpg",
+            "url": "shopify:\/\/collections\/body-armor"
           }
         }
       },
       "block_order": [
         "c9336f2d-13e6-426d-932d-e2e033d0f054",
-        "20c59a9f-1066-4e49-9799-cb933f725ccc",
-        "a485b887-5abb-4a02-a705-8e110b9650aa",
-        "c0b43a9a-a988-44e1-9f3c-b88fa71a563e",
-        "2cebe019-0265-45fc-8d1e-2abe7f03140f",
         "fbc747c2-c649-43e7-84f8-39fd5d61dae0",
         "04f03284-64cf-4a23-9d73-d2a68ceced6a",
         "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4",
-        "7c34e228-2195-4327-bc21-0f1952b3fdf1",
-        "04983965-b684-44dd-8743-9ba4217f2336",
-        "04adcf74-317d-4db4-b9f4-dae580946b48"
+        "featured_brand_F8Cyet",
+        "featured_brand_Q9x6GF"
       ],
       "settings": {
         "heading": "Featured Brands"
