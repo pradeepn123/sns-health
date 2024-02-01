@@ -759,28 +759,14 @@
           "type": "banner_grid",
           "settings": {
             "text_color": "",
-            "background_color": "#e70092",
-            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_ef2d71f0-a111-4991-955b-8a72605afb0b.png",
+            "background_color": "#e77200",
+            "image_desktop": "shopify:\/\/shop_images\/catalina.png",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "Up to <br> 50% OFF",
             "subheading": "Snacks & Cereals",
             "cta_text": "Shop",
             "cta_url": "shopify:\/\/collections\/healthy-snacks"
-          }
-        },
-        "7bab0a26-8d2b-497d-ab26-0e0e9c996828": {
-          "type": "banner_grid",
-          "settings": {
-            "text_color": "",
-            "background_color": "#8170b0",
-            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_1_43829bf6-60c6-4d01-ba52-4c097dc66ef6.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "Get <br> 50% OFF",
-            "subheading": "Pasta & Noodles",
-            "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/pasta-noodles"
           }
         },
         "a76ad1c6-b62d-4c66-82fc-d188f57570fe": {
@@ -809,20 +795,6 @@
             "subheading": "Progressive",
             "cta_text": "Shop",
             "cta_url": "shopify:\/\/collections\/progressive"
-          }
-        },
-        "3fecbe56-c283-4e0b-9002-3fe17712480a": {
-          "type": "banner_grid",
-          "settings": {
-            "text_color": "",
-            "background_color": "#be3838",
-            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_2_fbd27792-7b4e-480b-9550-6143275b4ab1.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "Get <br> 50% OFF",
-            "subheading": "Crazy Mooskies",
-            "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/crazy-mooskies"
           }
         },
         "9066e929-3a9c-404b-835a-797166835a14": {
@@ -857,10 +829,8 @@
       "block_order": [
         "b100cd87-92eb-4868-b580-3b584ac8f527",
         "aaac3336-1b42-475c-96ed-e525d043904c",
-        "7bab0a26-8d2b-497d-ab26-0e0e9c996828",
         "a76ad1c6-b62d-4c66-82fc-d188f57570fe",
         "0019d2b1-9982-411d-b308-086f8e5b58d7",
-        "3fecbe56-c283-4e0b-9002-3fe17712480a",
         "9066e929-3a9c-404b-835a-797166835a14",
         "1c384f17-9c60-4a7a-9a15-17ab60086f2e"
       ],
