@@ -18,11 +18,11 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": false,
-            "promotion_name": "Optimum Nutrition",
+            "promotion_name": "Chinese New Year",
             "promotion_creative_name": "Main Banner 2",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Bundle_Save_ON_0c53eda4-021a-46ed-b3bc-0306e824221e.jpg",
-            "cta_url": "https:\/\/snshealth.com\/products\/optimum-nutrition-gold-standard-100-whey?variant=42028848742551"
+            "image_desktop": "shopify:\/\/shop_images\/Chinese_New_Year.webp",
+            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
           }
         },
         "29e42daa-54ef-4a2a-845b-730cfb95be0c": {
