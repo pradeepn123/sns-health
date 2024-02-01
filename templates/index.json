@@ -84,6 +84,23 @@
     "65868ffb-1036-425b-a0dc-ebc8bcff334b": {
       "type": "Banner-Grid",
       "blocks": {
+        "image_with_text_overlay_VQbQDm": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Perfect Sports",
+            "promotion_creative_name": "Banner grid",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/perfect_sport_1.webp",
+            "image_mobile": "shopify:\/\/shop_images\/perfect_sport_-_mobile_1.webp",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/perfect-sports"
+          }
+        },
         "image_with_text_overlay_rxXg4D": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -135,24 +152,6 @@
             "cta_url": "shopify:\/\/collections\/inner-armour"
           }
         },
-        "2b7c62de-3b42-4539-92d9-5009549e88ee": {
-          "type": "image_with_text_overlay",
-          "disabled": true,
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Mega Foods",
-            "promotion_creative_name": "Sub banner 3",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Mega_Food_Banner_desk.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Mega_Food_Banner_-_Mob.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/megafood"
-          }
-        },
         "5e2a1f12-6722-4c39-9e34-f831cdab6797": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -186,34 +185,15 @@
             "cta_text": "",
             "cta_url": "shopify:\/\/collections\/bucked-up"
           }
-        },
-        "5379485b-f9f2-400b-8e8b-fb05de6685ec": {
-          "type": "image_with_text_overlay",
-          "disabled": true,
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Matteo's",
-            "promotion_creative_name": "Sub banner 2",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Matteo_s_Banner.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/matteo_s_mobile_banner_copy.webp",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/matteos"
-          }
         }
       },
       "block_order": [
+        "image_with_text_overlay_VQbQDm",
         "image_with_text_overlay_rxXg4D",
         "5ffa49dd-3faa-493e-92df-a8b6a6829847",
         "49c22a5d-ed10-4a49-b943-95e999f44f50",
-        "2b7c62de-3b42-4539-92d9-5009549e88ee",
         "5e2a1f12-6722-4c39-9e34-f831cdab6797",
-        "589380ac-62bc-453f-9b28-3a56b75e85b6",
-        "5379485b-f9f2-400b-8e8b-fb05de6685ec"
+        "589380ac-62bc-453f-9b28-3a56b75e85b6"
       ],
       "settings": {
       }
