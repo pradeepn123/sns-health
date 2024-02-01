@@ -769,6 +769,34 @@
             "cta_url": "shopify:\/\/collections\/healthy-snacks"
           }
         },
+        "1c384f17-9c60-4a7a-9a15-17ab60086f2e": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "",
+            "background_color": "#2da6ef",
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_6.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Get <br> 50% OFF",
+            "subheading": "Lavido",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/collections\/lavido"
+          }
+        },
+        "9066e929-3a9c-404b-835a-797166835a14": {
+          "type": "banner_grid",
+          "settings": {
+            "text_color": "",
+            "background_color": "#417258",
+            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_5.png",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "Up to <br>50% OFF",
+            "subheading": "Himalaya Collection",
+            "cta_text": "Shop",
+            "cta_url": "shopify:\/\/collections\/himalaya"
+          }
+        },
         "a76ad1c6-b62d-4c66-82fc-d188f57570fe": {
           "type": "banner_grid",
           "settings": {
@@ -796,43 +824,15 @@
             "cta_text": "Shop",
             "cta_url": "shopify:\/\/collections\/progressive"
           }
-        },
-        "9066e929-3a9c-404b-835a-797166835a14": {
-          "type": "banner_grid",
-          "settings": {
-            "text_color": "",
-            "background_color": "#417258",
-            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_5.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "Up to <br>50% OFF",
-            "subheading": "Himalaya Collection",
-            "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/himalaya"
-          }
-        },
-        "1c384f17-9c60-4a7a-9a15-17ab60086f2e": {
-          "type": "banner_grid",
-          "settings": {
-            "text_color": "",
-            "background_color": "#2da6ef",
-            "image_desktop": "shopify:\/\/shop_images\/Untitled_design_6.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "Get <br> 50% OFF",
-            "subheading": "Lavido",
-            "cta_text": "Shop",
-            "cta_url": "shopify:\/\/collections\/lavido"
-          }
         }
       },
       "block_order": [
         "b100cd87-92eb-4868-b580-3b584ac8f527",
         "aaac3336-1b42-475c-96ed-e525d043904c",
-        "a76ad1c6-b62d-4c66-82fc-d188f57570fe",
-        "0019d2b1-9982-411d-b308-086f8e5b58d7",
+        "1c384f17-9c60-4a7a-9a15-17ab60086f2e",
         "9066e929-3a9c-404b-835a-797166835a14",
-        "1c384f17-9c60-4a7a-9a15-17ab60086f2e"
+        "a76ad1c6-b62d-4c66-82fc-d188f57570fe",
+        "0019d2b1-9982-411d-b308-086f8e5b58d7"
       ],
       "settings": {
         "mobile_carousel": true
