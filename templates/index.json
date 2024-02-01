@@ -136,23 +136,6 @@
             "cta_url": "shopify:\/\/collections\/special-pancakes-collection"
           }
         },
-        "49c22a5d-ed10-4a49-b943-95e999f44f50": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": false,
-            "promotion_name": "Inner Armour",
-            "promotion_creative_name": "Banner Grid",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Inner_armour.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Inner_armour_mobile.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/inner-armour"
-          }
-        },
         "5e2a1f12-6722-4c39-9e34-f831cdab6797": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -192,7 +175,6 @@
         "image_with_text_overlay_rxXg4D",
         "5ffa49dd-3faa-493e-92df-a8b6a6829847",
         "image_with_text_overlay_XA8Ggi",
-        "49c22a5d-ed10-4a49-b943-95e999f44f50",
         "5e2a1f12-6722-4c39-9e34-f831cdab6797",
         "589380ac-62bc-453f-9b28-3a56b75e85b6"
       ],
