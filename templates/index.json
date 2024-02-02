@@ -3,6 +3,17 @@
     "main": {
       "type": "Banner",
       "blocks": {
+        "image_with_text_overlay_EVHhPP": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": false,
+            "promotion_name": "Chinese New Year",
+            "promotion_creative_name": "Main Banner 3",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/Chinese_New_Year.webp",
+            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
+          }
+        },
         "009a8070-a267-4f1a-ad82-846a05257985": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -23,17 +34,6 @@
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/Game_Day_Snack_Pack.webp",
             "cta_url": "shopify:\/\/products\/game-day-snack-pack"
-          }
-        },
-        "image_with_text_overlay_EVHhPP": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": false,
-            "promotion_name": "Chinese New Year",
-            "promotion_creative_name": "Main Banner 3",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Chinese_New_Year.webp",
-            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
           }
         },
         "b533d71a-e272-4353-b935-9e0fc67451c1": {
@@ -72,9 +72,9 @@
         }
       },
       "block_order": [
+        "image_with_text_overlay_EVHhPP",
         "009a8070-a267-4f1a-ad82-846a05257985",
         "29e42daa-54ef-4a2a-845b-730cfb95be0c",
-        "image_with_text_overlay_EVHhPP",
         "b533d71a-e272-4353-b935-9e0fc67451c1",
         "image_with_text_overlay_GyCehy",
         "image_with_text_overlay_hAWXBm"
@@ -85,6 +85,23 @@
     "65868ffb-1036-425b-a0dc-ebc8bcff334b": {
       "type": "Banner-Grid",
       "blocks": {
+        "image_with_text_overlay_BAiHkN": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Perfect Sports",
+            "promotion_creative_name": "Banner grid",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb_mobile.jpg",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/perfect-sports"
+          }
+        },
         "image_with_text_overlay_rxXg4D": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -100,23 +117,6 @@
             "subheading": "",
             "cta_text": "",
             "cta_url": "https:\/\/snshealth.com\/collections\/protein-powders"
-          }
-        },
-        "5ffa49dd-3faa-493e-92df-a8b6a6829847": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Mardi Gras",
-            "promotion_creative_name": "Sub banner 2",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/PB_Me.webp",
-            "image_mobile": "shopify:\/\/shop_images\/PB_Me-1.webp",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/nut-butters-and-spreads"
           }
         },
         "image_with_text_overlay_XA8Ggi": {
@@ -136,23 +136,6 @@
             "cta_url": "shopify:\/\/collections\/special-pancakes-collection"
           }
         },
-        "5e2a1f12-6722-4c39-9e34-f831cdab6797": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": false,
-            "promotion_name": "Muscletech",
-            "promotion_creative_name": "Sub banner 4",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Desktop_MuscleTech.png",
-            "image_mobile": "shopify:\/\/shop_images\/Muscletechbannermobile.png",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/musclemeds"
-          }
-        },
         "589380ac-62bc-453f-9b28-3a56b75e85b6": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -169,14 +152,31 @@
             "cta_text": "",
             "cta_url": "shopify:\/\/collections\/bucked-up"
           }
+        },
+        "5ffa49dd-3faa-493e-92df-a8b6a6829847": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Mardi Gras",
+            "promotion_creative_name": "Sub banner 2",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/PB_Me.webp",
+            "image_mobile": "shopify:\/\/shop_images\/PB_Me-1.webp",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/nut-butters-and-spreads"
+          }
         }
       },
       "block_order": [
+        "image_with_text_overlay_BAiHkN",
         "image_with_text_overlay_rxXg4D",
-        "5ffa49dd-3faa-493e-92df-a8b6a6829847",
         "image_with_text_overlay_XA8Ggi",
-        "5e2a1f12-6722-4c39-9e34-f831cdab6797",
-        "589380ac-62bc-453f-9b28-3a56b75e85b6"
+        "589380ac-62bc-453f-9b28-3a56b75e85b6",
+        "5ffa49dd-3faa-493e-92df-a8b6a6829847"
       ],
       "settings": {
       }
