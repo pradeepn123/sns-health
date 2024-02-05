@@ -34,8 +34,6 @@ export default ({ address }) => {
         <span>{address.city !== '' ? address.city + ', ' : ''}{address.province_code}{address.zip !== "" ? address.zip + ' ,' : ','}</span>
         <span>{address.country}</span>
       </div>
-      {/* <button data-action="open-modal" aria-controls={`modal-address-${address.id}`}>Edit</button>
-      <button onClick={() => { Shopify.CustomerAddress.destroy(address.id); return false }}>Delete</button> */}
     </div>
   )
 }

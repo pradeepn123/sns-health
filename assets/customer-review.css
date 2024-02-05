@@ -38,8 +38,10 @@
   }
 }
 .customer-review__container .customer-review__wrapper .reviews_header {
-  border-bottom: 1px solid #DADADA;
   padding-right: 90px !important;
+}
+.customer-review__container .customer-review__wrapper .reviews_header {
+  border-bottom: 1px solid #DADADA;
 }
 .customer-review__container .customer-review__wrapper .reviews_header .section_title {
   font-weight: 700;

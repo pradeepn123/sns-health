@@ -47,7 +47,7 @@ export default ({ data: orderData, search, downloadInvoice }) => {
     }, [search])
 
     // set order status and tracking url
-    let trackingUrl = lineItems.map(item => item.tracking_url)[0];;
+    let trackingUrl = lineItems.map(item => item.tracking_url)[0];
     let orderStatus = "";
     if (orderData.tags?.includes("order_delivered")) {
         orderStatus = "delivered"

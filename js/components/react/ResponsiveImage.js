@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import 'lazysizes';
 
-export default ({image_aspect_ratio, image, srcTokens }) => {
+export default ({ image_aspect_ratio, image, srcTokens }) => {
   const min = 100;
   const max = 10000;
   const diff = max - min;
@@ -17,9 +17,9 @@ export default ({image_aspect_ratio, image, srcTokens }) => {
   }
 
   const aspectRatio = image_aspect_ratio;
-  let {height:maxHeightImage, id:image_id , src:imageSrc , width:maxWidthImage} = displayImage;
-  const IMAGE_WIDTHS = [180,360,540,720,900,1080,1296,1512,1728,1944,2160,2376,2592,2808,3024]
-   const getImageWidths = nativeWidth => {
+  let { height: maxHeightImage, id: image_id, src: imageSrc, width: maxWidthImage } = displayImage;
+  const IMAGE_WIDTHS = [180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 1944, 2160, 2376, 2592, 2808, 3024]
+  const getImageWidths = nativeWidth => {
     const imageWidths = [];
     for (let i = 0; i < IMAGE_WIDTHS.length; i++) {
       const width = IMAGE_WIDTHS[i];
@@ -32,21 +32,21 @@ export default ({image_aspect_ratio, image, srcTokens }) => {
     }
     return imageWidths.join(',');
   }
-  
+
   const imageWidth = getImageWidths(displayImage.width);
   let urlTokens = srcTokens;
   let uriEncodedSrc = `${encodeURI(imageSrc)}?width=300&height=300`;
   let dataSrcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.dataSrcToken);
   let srcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.srcToken);
 
-  if(aspectRatio <= 1 ) {
-      maxWidthImage = parseInt(maxHeightImage) * aspectRatio;
-    }
-    else {
-      maxHeightImage = parseInt(maxWidthImage) / aspectRatio;
-    }
+  if (aspectRatio <= 1) {
+    maxWidthImage = parseInt(maxHeightImage) * aspectRatio;
+  }
+  else {
+    maxHeightImage = parseInt(maxWidthImage) / aspectRatio;
+  }
   const maxWidthImageFloat = maxWidthImage * 1.0;
-  
+
   const getWrapperStyles = () => {
     return {
       '--padding-top': `${(maxHeightImage / maxWidthImageFloat) * 100}%`,

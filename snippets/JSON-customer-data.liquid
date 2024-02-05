@@ -27,5 +27,13 @@
       "normal": `{% render 'icon', icon: 'account-address' %}`
     },
     "data": {{ customer.addresses | json }}
+  },
+  "discounts": {
+    "title": "Discounts",
+    "icon": {
+      "active":`{% render 'icon', icon: 'discount-active' %}`,
+      "normal": `{% render 'icon', icon: 'discount' %}`
+    },
+    "data": {%- render 'JSON-order-data' -%}
   }
 }

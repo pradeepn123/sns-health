@@ -1,7 +1,7 @@
- export default () => {
- 
- //mobile header megamenu
- document.querySelectorAll('[data-megamenu-mobile]').forEach(megamenu => {
+export default () => {
+
+  //mobile header megamenu
+  document.querySelectorAll('[data-megamenu-mobile]').forEach(megamenu => {
     const targetId = megamenu.dataset.megamenuId;
     if (targetId) {
       const targetContainer = document.querySelector(`[data-mobile-megamenu-target-${targetId}]`);
@@ -10,7 +10,7 @@
       }
     }
   })
-//desktop header megamenu
+  //desktop header megamenu
   document.querySelectorAll('[data-megamenu-desktop]').forEach(megamenu => {
     const targetId = megamenu.dataset.megamenuId;
     if (targetId) {
@@ -33,14 +33,14 @@
     searchBar.style.opacity = 1 - scrollTop / 85
     navBar.style.opacity = 1 - scrollTop / 10;
     searchIcon.style.opacity = 0 + scrollTop / 10;
-      if (scrollTop <= 150) {
-        if (headerWrapper.classList.contains('shopify-section__header--fixed')) {
-          headerWrapper.classList.remove('shopify-section__header--fixed');
-        }
+    if (scrollTop <= 150) {
+      if (headerWrapper.classList.contains('shopify-section__header--fixed')) {
+        headerWrapper.classList.remove('shopify-section__header--fixed');
       }
-      else {
-          headerWrapper.classList.add('shopify-section__header--fixed');
-      }
+    }
+    else {
+      headerWrapper.classList.add('shopify-section__header--fixed');
+    }
   }
 
 

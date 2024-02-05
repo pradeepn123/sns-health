@@ -171,6 +171,25 @@
 
 /***/ }),
 
+/***/ "./js/sections/react-modal.js":
+/*!************************************!*\
+  !*** ./js/sections/react-modal.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/react-wrapper */ "./js/components/react-wrapper.js");
+/* harmony import */ var ReactComponents_Modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ReactComponents/Modal */ "./js/components/react/Modal.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_react_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(ReactComponents_Modal__WEBPACK_IMPORTED_MODULE_1__["default"], 'react-modal');
+});
+
+/***/ }),
+
 /***/ "./js/sections/section.js":
 /*!********************************!*\
   !*** ./js/sections/section.js ***!
@@ -186,6 +205,8 @@
 /* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./product */ "./js/sections/product.js");
 /* harmony import */ var _bundle_cart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./bundle-cart */ "./js/sections/bundle-cart.js");
 /* harmony import */ var _account_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./account-page */ "./js/sections/account-page.js");
+/* harmony import */ var _react_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./react-modal */ "./js/sections/react-modal.js");
+
 
 
 
@@ -205,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_product__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_bundle_cart__WEBPACK_IMPORTED_MODULE_7__["default"])();
   (0,_account_page__WEBPACK_IMPORTED_MODULE_8__["default"])();
+  (0,_react_modal__WEBPACK_IMPORTED_MODULE_9__["default"])();
   window.customProductCard = _custom_product_card__WEBPACK_IMPORTED_MODULE_4__["default"];
   window.productCarousel = _product_carousel__WEBPACK_IMPORTED_MODULE_3__["default"];
 });

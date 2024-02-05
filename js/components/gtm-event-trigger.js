@@ -18,20 +18,20 @@ export const pageLoadEvent = () => { 	//This handles the view_item_list (plp) an
 		const productHandle = urlPArams.split('?')[0];
 		const { promotionId, promotionName, creativeName } = getPromotionParams() || {};
 		if (promotionId) {
-			viewItem(productHandle, promotionName, promotionId, creativeName )
+			viewItem(productHandle, promotionName, promotionId, creativeName)
 			AddPromotionAsItemProperty();
 		}
 	}
 }
 
-export const itemClickEvents = (item, url, event) => { 
+export const itemClickEvents = (item, url, event) => {
 	//This events handles the promotion_select (anywhere) and select_item (plp)
 	if (item.closest('[data-promotion]')) {
 		if (!(item.closest('[data-promotion = "false"]'))) {
 			const promotionName = item.dataset.promotionName;
 			const promotionId = item.dataset.promotionId;
 			const creativeName = item.dataset.creativeName;
-			clickPromotion(url, promotionName, promotionId,creativeName); 
+			clickPromotion(url, promotionName, promotionId, creativeName);
 		}
 		else {
 			if ((event.metaKey || event.ctrlKey)) {
@@ -40,7 +40,7 @@ export const itemClickEvents = (item, url, event) => {
 				window.open(url, '_blank');
 			}
 			else {
-			  window.location.href = url;
+				window.location.href = url;
 			}
 		}
 	}
@@ -64,7 +64,7 @@ export const viewPromotionTrigger = () => {
 					const promotionId = entry.target.dataset.promotionId;
 					const promotionName = entry.target.dataset.promotionName;
 					const creativeName = entry.target.dataset.creativeName;
-					viewPromotion(promotionName,promotionId,creativeName);
+					viewPromotion(promotionName, promotionId, creativeName);
 					observer.unobserve(entry.target);
 				}
 			}

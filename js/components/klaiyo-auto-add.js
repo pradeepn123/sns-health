@@ -7,7 +7,7 @@ export const rebuyAutoAdd = () => {
 			}
 		})
 		if (items.length) {
-			Rebuy.Cart.addItem({items});
+			Rebuy.Cart.addItem({ items });
 		}
 	}
 

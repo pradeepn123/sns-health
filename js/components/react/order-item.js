@@ -10,7 +10,6 @@ const srcTokens = {
 export default ({ data: lineItem, search }) => {
     let { total_price: lineTotalPrice = 0, title: variantName = '', quantity: singleQuantity, final_line_price: productPrice, image: image, url: productUrl } = lineItem || {};
     variantName = new DOMParser().parseFromString(variantName, "text/html").body.textContent;
-    console.log(variantName)
     return (
         <div className="account-orders__product-lane">
             <div className={`account-orders__product-info-wrap${search && variantName.toLowerCase().includes(search?.toLowerCase()) ? " search-highlight-border" : ""}`}>

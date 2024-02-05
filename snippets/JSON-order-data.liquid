@@ -8,6 +8,19 @@
       "cancelled_at": "{{ order.cancelled_at }}",
       "item_count": "{{ order.item_count }}",
       "url": "{{ order.customer_url }}",
+      "discount_applications": [
+        {%- for discount in order.discount_applications -%}
+          {
+            "target_selection": "{{ discounttarget_selection }}",
+            "target_type": "{{ discounttarget_type }}",
+            "title": "{{ discounttitle }}",
+            "total_allocated_amount": "{{ discounttotal_allocated_amount }}",
+            "type": "{{ discounttype }}",
+            "value": "{{ discountvalue }}",
+            "value_type": "{{ discountvalue_type }}"
+          }{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      ],
       "line_items": [
         {%- for line_item in order.line_items -%}
           {

@@ -529,9 +529,12 @@
   }
 
   &__heading-value{
-    font-size: typography.$body-title-size;
+    font-size: 13px;
     font-weight: typography.$regular-weight;
     line-height: 1.5;
+    @media(--xs){
+      font-size: typography.$body-title-size;
+    }
     @media (--md) {
       line-height: 1;
     }
@@ -562,9 +565,9 @@
 
   &__order-detail-wrap{
     @include mixins.grid(2,250,250);
-    column-gap: 20px;
-    @media(--xs){
-      column-gap: 40px;
+    column-gap: 10px;
+    @media(--xxs){
+      column-gap: 50px;
     }
     @media(--md){
       @include mixins.grid(4,250,250);
@@ -850,38 +853,7 @@
   }
  
 }
-
-// mark for search 
-mark.a0 { 
-  color: black; 
-  padding: 5px; 
-  background: greenyellow; 
-} 
-
-mark.a1 { 
-  color: black; 
-  padding: 5px; 
-  background: cyan; 
-} 
-
-mark.a2 { 
-  color: black; 
-  padding: 5px; 
-  background: red; 
-} 
-
-mark.a3 { 
-  color: white; 
-  padding: 5px; 
-  background: green; 
-} 
-
-mark.a4 { 
-  color: black; 
-  padding: 5px; 
-  background: pink; 
-} 
-
+//invoice download
 @media screen {
   #invoice-element {
     display: none;
@@ -895,4 +867,79 @@ mark.a4 {
 }
 .hidden {
   display: none!important;
+}
+
+.sidebar-title{
+  @include use-text-style('heading-3');
+    font-weight: typography.$semi-weight;
+    margin-bottom: var(--section-margin);
+}
+
+//  discount
+
+
+.discount{
+  &__container-data{
+      border: 1px solid colors.$gray-300;
+      border-radius: 4px;
+      padding: var(--section-padding);
+      margin-bottom: var(--section-margin);
+      @media(--sm){
+        padding: var(--section-padding) calc(2*var(--section-padding));
+        margin-bottom: 12px;
+      }
+      @media(--md-large){
+        width: 70%;
+      }
+  }
+
+  &__content-discount{
+    display: flex;
+    column-gap: 30px;
+    @media(--xs){
+      column-gap: 90px;
+    }
+    @media(--sm){
+      column-gap: 60px;
+    }
+  }
+
+  &__date , &__id{
+    @media(--md){
+      display: flex;
+      column-gap: 12px;
+    }
+  }
+
+  &__title{
+    font-size: typography.$heading-3-size-small;
+    font-weight: typography.$medium-weight;
+    padding-bottom: 10px;
+    line-height: normal;
+    @media(--sm){
+      padding-bottom: 10px;
+    }
+  }
+
+  &__date-id{
+    font-size: typography.$body-alt-size;
+    font-weight: typography.$medium-weight;
+    line-height: normal;
+  }
+
+  &__order-value{
+    font-size: typography.$body-alt-size;
+    font-weight: typography.$regular-weight;
+    line-height: normal;
+    text-align: left;
+  }
+
+  &__order-id{
+    color: colors.$red;
+  }
+
+  &__flex{
+    flex: 1 0 50%;
+  }
+
 }
