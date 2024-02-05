@@ -873,7 +873,7 @@
             "type": "question",
             "settings": {
               "title": "When will my order ship?",
-              "answer": "<p>Our fulfillment center is open from 9 am to 5 pm, Monday through Friday.<\/p><p>Your order will be dispatched within 48-72 hours. Please note that orders placed after 5 pm on Friday will be processed the following Monday.<\/p><p>During the holiday season, please be informed that our fulfillment center will be closed on the following days:<\/p><ul><li>For Christmas: from December 24th to December 26th.<\/li><li>For New Year: December 31st and January 1st. <\/li><\/ul><p>We currently offer 3 shipping methods: <\/p><ul><li>Standard shipping, with free shipping for orders over $49. You can choose whether you prefer to be delivered with or without a signature requirement.<\/li><li>UPS Standard.<\/li><li>UPS Expedited.<\/li><\/ul>"
+              "answer": "<p>Our fulfillment center is open from 9 am to 5 pm, Monday through Friday.<\/p><p>Your order will be dispatched 5 to 10 business days after its confirmation. Please note that orders placed after 5 pm on Friday will be processed the following Monday.<\/p><p>During the holiday season, please be informed that our fulfillment center will be closed on the following days:<\/p><ul><li>For Christmas: from December 24th to December 26th.<\/li><li>For New Year: December 31st and January 1st. <\/li><\/ul><p>We currently offer 3 shipping methods: <\/p><ul><li>Standard shipping, with free shipping for orders over $49. You can choose whether you prefer to be delivered with or without a signature requirement.<\/li><li>UPS Standard.<\/li><li>UPS Expedited.<\/li><\/ul>"
             }
           },
           "page-faq-template-8": {
