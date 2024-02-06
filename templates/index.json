@@ -22,7 +22,7 @@
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/BodyArmor_Banner.jpg",
-            "cta_url": "shopify:\/\/collections\/body-armor"
+            "cta_url": "shopify:\/\/collections\/bodyarmor"
           }
         },
         "29e42daa-54ef-4a2a-845b-730cfb95be0c": {
@@ -552,7 +552,7 @@
             "promotion_name": "BodyArmor",
             "promotion_creative_name": "Featured brands",
             "image": "shopify:\/\/shop_images\/bodyarmorlogo.jpg",
-            "url": "shopify:\/\/collections\/body-armor"
+            "url": "shopify:\/\/collections\/bodyarmor"
           }
         }
       },
