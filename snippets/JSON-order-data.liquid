@@ -11,13 +11,13 @@
       "discount_applications": [
         {%- for discount in order.discount_applications -%}
           {
-            "target_selection": "{{ discounttarget_selection }}",
-            "target_type": "{{ discounttarget_type }}",
-            "title": "{{ discounttitle }}",
-            "total_allocated_amount": "{{ discounttotal_allocated_amount }}",
-            "type": "{{ discounttype }}",
-            "value": "{{ discountvalue }}",
-            "value_type": "{{ discountvalue_type }}"
+            "target_selection": "{{ discount.target_selection }}",
+            "target_type": "{{ discount.target_type }}",
+            "title": "{{ discount.title }}",
+            "total_allocated_amount": "{{ discount.total_allocated_amount }}",
+            "type": "{{ discount.type }}",
+            "value": "{{ discount.value }}",
+            "value_type": "{{ discount.value_type }}"
           }{%- unless forloop.last -%},{%- endunless -%}
         {%- endfor -%}
       ],
