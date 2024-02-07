@@ -215,3 +215,36 @@
       bottom: 75px!important;
     }
   }
+
+.product-label{
+    margin-bottom: 10px;
+    margin-right: 5px
+}
+
+.product-meta__label-list .product-label+.product-label {
+    margin-left: 0px; 
+}
+
+.product-meta__reference~.product-meta__share-buttons{
+    position: unset;
+}
+
+.tag-button-flex{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @media(--sm){
+        flex-direction: row;
+    }
+}
+
+.tags{
+    width: 100%;
+    @media(--sm){
+        width: 70%;
+    }
+}
+
+.product-meta__label-list+.product-meta__share-buttons{
+    margin-top: 5px;
+}

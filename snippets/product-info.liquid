@@ -2,9 +2,9 @@
 
 {% if selected_variant.available == false %}
   {% style %}
-    .quantity-selector{
+    .quantity-selector {
       pointer-events: none;
-      opacity:0.5;
+      opacity: 0.5;
     }
   {% endstyle %}
 {% endif %}
@@ -114,7 +114,6 @@
             {%- else -%}
               {%- capture savings -%}<span>{{ selected_variant.compare_at_price | minus: selected_variant.price | money }}</span>{%- endcapture -%}
             {%- endif -%}
-
           {%- endif -%}
           <span
             class="product-label product-label--meta product-label--on-sale"
@@ -124,8 +123,6 @@
           >
             {{- 'collection.product.discount_html' | t: savings: savings -}}
           </span>
-
-
         </div>
 
         <h1 class="product-meta__title heading h1">{{ product.title }}</h1>
@@ -134,7 +131,7 @@
           <a href="{{ product.url }}">{{ product.title }}</a>
         </h3>
       {%- endif -%}
-     <div class="product-meta__additional-info">
+      <div class="product-meta__additional-info">
         <span class="product-meta__type">
           {% if product.type != blank %}
             {% assign type_display = product.type %}
@@ -192,11 +189,39 @@
         {% endif %}
       {%- endfor -%}
 
-      {%- if product_labels != blank -%}
-        <div class="product-meta__label-list">
-          {{- product_labels -}}
+     <div class="tag-button-flex">
+      <div class="product-meta__label-list tags">
+        {%- if product_labels != blank -%}
+          <span>{{- product_labels -}}</span>
+        {%- endif -%}
+        {%- for variant in product.variants -%}
+          {% if variant.metafields.custom.variant_tag %}
+            <span>
+              {% assign tag = variant.metafields.custom.variant_tag.value %}
+              {% for value in tag %}
+                <span
+                  data-o1="{{ variant.option1 }}"
+                  data-02="{{ variant.option2 }}"
+                  id="variantTag-{{ variant.id }}"
+                  class="variant-tag product-label product-label--custom1 no-bg variant-tag-{{ variant.id }}"
+                  {% if selected_variant.id != variant.id %}
+                    style="display: none"
+                  {% endif %}
+                  data-id="{{ variant.id }}"
+                >
+                  {{ value }}
+                </span>
+              {% endfor %}
+            </span>
+          {% endif %}
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.show_share_buttons -%}
+        <div class="product-meta__share-buttons hidden-phone">
+          {{ share_buttons }}
         </div>
       {%- endif -%}
+    </div>
 
       {%- if section.settings.show_reviews_badge -%}
         <a
@@ -214,12 +239,6 @@
             data-url="{{ shop.url }}{{ product.url }}"
           ></div>
         </a>
-      {%- endif -%}
-
-      {%- if section.settings.show_share_buttons -%}
-        <div class="product-meta__share-buttons hidden-phone">
-          {{ share_buttons }}
-        </div>
       {%- endif -%}
     </div>
 
@@ -288,11 +307,13 @@
                 {%- assign option_selector_type = 'block' -%}
               {%- endif -%}
             {%- endif -%}
-             <div class="product-form__option" data-options-container data-selector-type="{{ option_selector_type }}">
+            <div class="product-form__option" data-options-container data-selector-type="{{ option_selector_type }}">
               {%- case option_selector_type -%}
                 {%- when 'color' -%}
-         
-                  <span class="product-form__option-name text--strong">{{ option.name }}: <span class="product-form__selected-value">{{ option.selected_value }}</span></span>
+                  <span class="product-form__option-name text--strong">
+                    {{- option.name }}:
+                    <span class="product-form__selected-value">{{ option.selected_value }}</span></span
+                  >
 
                   <div class="color-swatch-list color-swatch-list--large">
                     {%- for value in option.values -%}
@@ -302,18 +323,44 @@
                       {%- assign color_swatch_name = value | handle | append: '.png' -%}
                       {%- assign color_swatch_image = images[color_swatch_name] -%}
 
-                      <div class="color-swatch {% if downcased_value == 'white' or downcased_value == 'blanc' %}color-swatch--white{% endif %}" data-option>
-                        <input class="color-swatch__radio product-form__single-selector" data-selector type="radio" name="{{ option_name }}" id="{{ color_id }}" value="{{ value | escape }}" {% if option.selected_value == value %}checked{% endif %} data-option-position="{{ option.position }}">
-                        <label class="color-swatch__item lazyload" for="{{ color_id }}" {% if color_swatch_image != blank %}data-bg="{{ color_swatch_image | img_url: '64x64' }}"{% else %}style="background-color: {{ value | replace: ' ', '' | downcase }}"{% endif %} title="{{ value | escape }}">
+                      <div
+                        class="color-swatch {% if downcased_value == 'white' or downcased_value == 'blanc' %}color-swatch--white{% endif %}"
+                        data-option
+                      >
+                        <input
+                          class="color-swatch__radio product-form__single-selector"
+                          data-selector
+                          type="radio"
+                          name="{{ option_name }}"
+                          id="{{ color_id }}"
+                          value="{{ value | escape }}"
+                          {% if option.selected_value == value %}
+                            checked
+                          {% endif %}
+                          data-option-position="{{ option.position }}"
+                        >
+                        <label
+                          class="color-swatch__item lazyload"
+                          for="{{ color_id }}"
+                          {% if color_swatch_image != blank %}
+                            data-bg="{{ color_swatch_image | img_url: '64x64' }}"
+                          {% else %}
+                            style="background-color: {{ value | replace: ' ', '' | downcase }}"
+                          {% endif %}
+                          title="{{ value | escape }}"
+                        >
                           <span class="visually-hidden">{{ value }}</span>
                           {%- render 'icon', icon: 'cross-sold-out' -%}
                         </label>
                       </div>
                     {%- endfor -%}
                   </div>
-  
+
                 {%- when 'variant' -%}
-                  <span class="product-form__option-name text--strong">{{ option.name }}: <span class="product-form__selected-value">{{ option.selected_value }}</span></span>
+                  <span class="product-form__option-name text--strong">
+                    {{- option.name }}:
+                    <span class="product-form__selected-value">{{ option.selected_value }}</span></span
+                  >
 
                   <div class="variant-swatch-list">
                     {%- capture option_name -%}option{{ option.position }}{%- endcapture -%}
@@ -324,10 +371,28 @@
                       {%- for variant in product.variants -%}
                         {%- if variant[option_name] == value and variant.image -%}
                           <div class="variant-swatch">
-                            <input class="variant-swatch__radio product-form__single-selector" data-selector type="radio" name="{{ option_name }}" id="{{ variant_swatch_id }}" value="{{ value | escape }}" {% if option.selected_value == value %}checked{% endif %} data-option-position="{{ option.position }}">
+                            <input
+                              class="variant-swatch__radio product-form__single-selector"
+                              data-selector
+                              type="radio"
+                              name="{{ option_name }}"
+                              id="{{ variant_swatch_id }}"
+                              value="{{ value | escape }}"
+                              {% if option.selected_value == value %}
+                                checked
+                              {% endif %}
+                              data-option-position="{{ option.position }}"
+                            >
 
-                            <label class="variant-swatch__item" for="{{ variant_swatch_id }}" title="{{ value | escape }}">
-                              <div class="aspect-ratio" style="padding-bottom: {{ 100.0 | divided_by: variant.image.aspect_ratio }}%">
+                            <label
+                              class="variant-swatch__item"
+                              for="{{ variant_swatch_id }}"
+                              title="{{ value | escape }}"
+                            >
+                              <div
+                                class="aspect-ratio"
+                                style="padding-bottom: {{ 100.0 | divided_by: variant.image.aspect_ratio }}%"
+                              >
                                 <img src="{{ variant.image | img_url: '120x' }}" alt="{{ variant.image.alt | escape }}">
                               </div>
 
@@ -341,73 +406,96 @@
                     {%- endfor -%}
                   </div>
                 {%- when 'block' -%}
-
-                      <span class="product-form__option-name text--strong">Select {{ option.name }}</span>
-                      <div class="block-swatch-list">
-                        {%- for value in option.values -%}
-                          {%- capture block_swatch_id -%}{{ option_name }}-{{ forloop.index }}{%- endcapture -%}
-                          <div class="block-swatch {{ forloop.index }}" >
-                            <input class="block-swatch__radio product-form__single-selector" data-selector type="radio" name="{{ option_name }}" id="{{ block_swatch_id }}" value="{{ value | escape }}" {% if option.selected_value == value %}checked{% endif %} data-option-position="{{ option.position }}">
-                            <label class="block-swatch__item" for="{{ block_swatch_id }}" title="{{ value | escape }}">
-                              <span class="block-swatch__item-text">{{ value }}</span>
-                            </label>
-                          </div>
-                        {%- endfor -%}
+                  <span class="product-form__option-name text--strong">Select {{ option.name }}</span>
+                  <div class="block-swatch-list">
+                    {%- for value in option.values -%}
+                      {%- capture block_swatch_id -%}{{ option_name }}-{{ forloop.index }}{%- endcapture -%}
+                      <div class="block-swatch {{ forloop.index }}">
+                        <input
+                          class="block-swatch__radio product-form__single-selector"
+                          data-selector
+                          type="radio"
+                          name="{{ option_name }}"
+                          id="{{ block_swatch_id }}"
+                          value="{{ value | escape }}"
+                          {% if option.selected_value == value %}
+                            checked
+                          {% endif %}
+                          data-option-position="{{ option.position }}"
+                        >
+                        <label class="block-swatch__item" for="{{ block_swatch_id }}" title="{{ value | escape }}">
+                          <span class="block-swatch__item-text">{{ value }}</span>
+                        </label>
                       </div>
-   
-      
+                    {%- endfor -%}
+                  </div>
+
                 {%- when 'select' -%}
-                  <label for="{{ option_name }}" class="product-form__option-name text--strong">Select {{ option.name }}</label>
-                    {% comment %} <label for="{{ option_name }}" class="product-form__option-name text--strong">{{ option.name }}: <span class="product-form__selected-value">{{ option.selected_value }}</span></label> {% endcomment %}
-                    <div class="select-wrapper select-wrapper--primary">
-                      <span class="pipeline-icon">{%- render 'icon', icon: 'pipeline-filled-red' -%}</span>
-                      {%- render 'icon', icon: 'arrow-bottom-filled' -%}
-                      
-                      <select class="product-form__single-selector" data-selector name="{{ option_name }}" id="{{ option_name }}" data-option-position="{{ option.position }}">
-                        {%- for value in option.values -%}
-                          <option  class="select-option" value="{{ value | escape }}" data-option {% if value == option.selected_value %}selected="selected"{% endif %}>{{ value }}</option>
-                        {%- endfor -%}
-                      </select>
-                    </div>
-            
+                  <label for="{{ option_name }}" class="product-form__option-name text--strong"
+                    >Select {{ option.name -}}
+                  </label>
+                  {% comment %} <label for="{{ option_name }}" class="product-form__option-name text--strong">{{ option.name }}: <span class="product-form__selected-value">{{ option.selected_value }}</span></label> {% endcomment %}
+                  <div class="select-wrapper select-wrapper--primary">
+                    <span class="pipeline-icon">{%- render 'icon', icon: 'pipeline-filled-red' -%}</span>
+                    {%- render 'icon', icon: 'arrow-bottom-filled' -%}
+
+                    <select
+                      class="product-form__single-selector"
+                      data-selector
+                      name="{{ option_name }}"
+                      id="{{ option_name }}"
+                      data-option-position="{{ option.position }}"
+                    >
+                      {%- for value in option.values -%}
+                        <option
+                          class="select-option"
+                          value="{{ value | escape }}"
+                          data-option
+                          {% if value == option.selected_value %}
+                            selected="selected"
+                          {% endif %}
+                        >
+                          {{ value }}
+                        </option>
+                      {%- endfor -%}
+                    </select>
+                  </div>
               {%- endcase -%}
             </div>
 
-       {% comment %} 
-           Experimental code. Do no
-            {% assign count_customer_seperator = option.values.size | append: '::custom-count-seperator' %}
-            {% assign sort_item = '' | prepend: count_customer_seperator | append: '::custom-seperator' %}
-            {% assign array_size = sorted_option_array | split: '::custom-seperator' %}
-            {% if array_size.size <= 0 %}
-              {% assign sorted_option_array = sorted_option_array | append: sort_item %}
-              {% assign sorted_option_index = sorted_option_index | append: optionForLoop | join: ',' %}
-            {% else %}
-              {% assign last_array_item = sorted_option_array | split: '::custom-seperator' | first %}
-              {% assign last_array_item_count = last_array_item | split: '::custom-count-seperator' | first | plus: 0 %}
-              {% if option.values.size <= last_array_item_count %}
-                {% assign sorted_option_array_list = sorted_option_array | split: '::custom-seperator' %}
-                {% for sorted_option in sorted_option_array_list %}
-                  {% assign current_option_size = sorted_option | split: '::custom-count-seperator' | first | plus: 0 %}
-                  {% if current_option_size <= option.values.size %}
-                    {% assign sorted_option_array = sorted_option_array | prepend: sort_item %}
-                     {% assign sorted_option_index = sorted_option_index | append: optionForLoop | minus: 1 | join: ',' %}
-                    {% break %}
-                  {% endif %}
-                  {% if forloop.last %} 
-                    {% assign sorted_option_array = sorted_option_array | append: sort_item %}
-                    {% assign sorted_option_index = sorted_option_index | append: optionForLoop | plus: 1 | join: ',' %}
-                  {% endif %}
-                {% endfor %}
-              {% else %}
-                {% assign sorted_option_array = sorted_option_array | prepend: sort_item %}
-                {% assign sorted_option_index = sorted_option_index | append: optionForLoop | minus: 1 | join: ',' %}
-              {% endif %}
-            {% endif %} {% endcomment %}
-
-
-
+            {% comment %}
+              Experimental code. Do no
+               {% assign count_customer_seperator = option.values.size | append: '::custom-count-seperator' %}
+               {% assign sort_item = '' | prepend: count_customer_seperator | append: '::custom-seperator' %}
+               {% assign array_size = sorted_option_array | split: '::custom-seperator' %}
+               {% if array_size.size <= 0 %}
+                 {% assign sorted_option_array = sorted_option_array | append: sort_item %}
+                 {% assign sorted_option_index = sorted_option_index | append: optionForLoop | join: ',' %}
+               {% else %}
+                 {% assign last_array_item = sorted_option_array | split: '::custom-seperator' | first %}
+                 {% assign last_array_item_count = last_array_item | split: '::custom-count-seperator' | first | plus: 0 %}
+                 {% if option.values.size <= last_array_item_count %}
+                   {% assign sorted_option_array_list = sorted_option_array | split: '::custom-seperator' %}
+                   {% for sorted_option in sorted_option_array_list %}
+                     {% assign current_option_size = sorted_option | split: '::custom-count-seperator' | first | plus: 0 %}
+                     {% if current_option_size <= option.values.size %}
+                       {% assign sorted_option_array = sorted_option_array | prepend: sort_item %}
+                        {% assign sorted_option_index = sorted_option_index | append: optionForLoop | minus: 1 | join: ',' %}
+                       {% break %}
+                     {% endif %}
+                     {% if forloop.last %}
+                       {% assign sorted_option_array = sorted_option_array | append: sort_item %}
+                       {% assign sorted_option_index = sorted_option_index | append: optionForLoop | plus: 1 | join: ',' %}
+                     {% endif %}
+                   {% endfor %}
+                 {% else %}
+                   {% assign sorted_option_array = sorted_option_array | prepend: sort_item %}
+                   {% assign sorted_option_index = sorted_option_index | append: optionForLoop | minus: 1 | join: ',' %}
+                 {% endif %}
+               {% endif %}
+            {% endcomment %}
           {%- endfor -%}
-  
+
           <div class="no-js product-form__option">
             <label for="product-select-{{ product.id }}">{{ 'product.form.variant' | t }}</label>
 
@@ -451,7 +539,6 @@
                   <span class="visually-hidden">{{ 'product.general.sale_price' | t }}</span>
                   {{- selected_variant.price | money_with_currency -}}
                 </span>
-
 
               {%- else -%}
                 <span class="price">
@@ -569,9 +656,11 @@
         {%- if product.template_suffix != 'contact' -%}
           {%- if section.settings.show_quantity_selector -%}
             <div class="product-form__info-item product-form__info-item--quantity">
-              {% comment %} <label for="{{ section.id }}-{{ product.id }}-quantity" class="product-form__info-title text--strong">
-                {{- 'product.form.quantity' | t }}:</label
-              > {% endcomment %}
+              {% comment %}
+                <label for="{{ section.id }}-{{ product.id }}-quantity" class="product-form__info-title text--strong">
+                  {{- 'product.form.quantity' | t }}:</label
+                >
+              {% endcomment %}
               <div class="product-form__info-content">
                 <div class="quantity-selector quantity-selector--product">
                   <button
@@ -625,7 +714,7 @@
                       </button>
                     {%- endif -%}
                   {%- else -%}
-                    <button type="submit" class="product-form__add-button button button--disabled" disabled> 
+                    <button type="submit" class="product-form__add-button button button--disabled" disabled>
                       {{ 'product.form.sold_out' | t }}
                     </button>
                   {%- endif -%}
@@ -637,39 +726,37 @@
           {%- endif -%}
         {%- endif -%}
       </div>
-     
-    {%- assign collection_handle = '' -%}
+
+      {%- assign collection_handle = '' -%}
       {% for tag in product.tags %}
         {% if tag contains '__collection:' %}
-          {%- assign collection_handle = tag | split:'__collection:' | last -%}
+          {%- assign collection_handle = tag | split: '__collection:' | last -%}
         {% endif %}
       {% endfor %}
-    
-      {% liquid  
+
+      {% liquid
         assign collection = collections[collection_handle]
         assign product_data = collection.metafields.custom.free_product.value
-       %}
+      %}
 
-       {% if collection.handle.size > 0 %}
-        {{ 'product-info.css' | asset_url | stylesheet_tag }}   
-          <div class="complimentary__wrapper">
-          
-              <img class="complimentary__wrapper_image" src="{{ product_data.complimentary_product | img_url: '85x' }}">
-          
-            <div class="complimentary__wrapper--content">
-              {% if product_data.complimentary_title != blank %}
-                <h2 class="cp__title">
-                  {% render 'complimentary-check-icon' %}
-                  {{ product_data.complimentary_title }}
-                </h2>
-              {% endif %}
-              {% if product_data.product_description != blank %}
-                <div class="complimentary__wrapper--description">{{product_data.product_description }}</div>
-              {% endif %}
-            </div>
-      
+      {% if collection.handle.size > 0 %}
+        {{ 'product-info.css' | asset_url | stylesheet_tag }}
+        <div class="complimentary__wrapper">
+          <img class="complimentary__wrapper_image" src="{{ product_data.complimentary_product | img_url: '85x' }}">
+
+          <div class="complimentary__wrapper--content">
+            {% if product_data.complimentary_title != blank %}
+              <h2 class="cp__title">
+                {% render 'complimentary-check-icon' %}
+                {{ product_data.complimentary_title }}
+              </h2>
+            {% endif %}
+            {% if product_data.product_description != blank %}
+              <div class="complimentary__wrapper--description">{{ product_data.product_description }}</div>
+            {% endif %}
           </div>
-        {%endif %}
+        </div>
+      {% endif %}
 
       <div class="product-form__payment-container">
         {% if product.tags contains 'free-VitaminD3' %}
@@ -706,29 +793,31 @@
         {% endif %}
 
         {%- if product.template_suffix != 'contact' -%}
-          {% comment %} {%- if selected_variant.available -%}
-            {%- if product.template_suffix == 'pre-order' -%}
-              <button
-                type="submit"
-                class="product-form__add-button button button--primary"
-                {% comment %} data-action="add-to-cart"{% endcomment %}
-              >
-                {{ 'product.form.pre_order' | t }}
-              </button>
+          {% comment %}
+            {%- if selected_variant.available -%}
+              {%- if product.template_suffix == 'pre-order' -%}
+                <button
+                  type="submit"
+                  class="product-form__add-button button button--primary"
+                  {% comment %} data-action="add-to-cart"{% endcomment %}
+                >
+                  {{ 'product.form.pre_order' | t }}
+                </button>
+              {%- else -%}
+                <button
+                  type="submit"
+                  class="product-form__add-button button button--primary quick-add-to-cart"
+                  {% comment %} data-action="add-to-cart"{% endcomment %}
+                >
+                  {{ 'product.form.add_to_cart' | t }}
+                </button>
+              {%- endif -%}
             {%- else -%}
-              <button
-                type="submit"
-                class="product-form__add-button button button--primary quick-add-to-cart"
-                {% comment %} data-action="add-to-cart"{% endcomment %}
-              >
-                {{ 'product.form.add_to_cart' | t }}
+              <button type="submit" class="product-form__add-button button button--disabled" disabled>
+                {{ 'product.form.sold_out' | t }}
               </button>
             {%- endif -%}
-          {%- else -%}
-            <button type="submit" class="product-form__add-button button button--disabled" disabled>
-              {{ 'product.form.sold_out' | t }}
-            </button>
-          {%- endif -%} {% endcomment %}
+          {% endcomment %}
 
           {%- if section.settings.show_payment_button and product.template_suffix != 'pre-order' -%}
             {{ form | payment_button }}
@@ -827,12 +916,11 @@
             for (let i = 0; i < formVarFirstSwatch.length; i++) {
               if (!formVarFirstSwatch[i].classList.contains('disabled')) {
                 const select = formVarFirstSwatch[i].closest('select');
-                if(select) {
+                if (select) {
                   select.value = formVarFirstSwatch[i].value;
-                  select.dispatchEvent(new Event('change', {bubbles:true}));
+                  select.dispatchEvent(new Event('change', { bubbles: true }));
                   break;
-                }
-                else {
+                } else {
                   formVarFirstSwatch[i].querySelector('data-selector').click();
                   break;
                 }
@@ -858,12 +946,11 @@
               for (let i = 0; i < formThirdVarSwatch.length; i++) {
                 if (!formThirdVarSwatch[i].classList.contains('disabled')) {
                   const select = formThirdVarSwatch[i].querySelector('select');
-                  if(select) {
+                  if (select) {
                     select.value = formThirdVarSwatch[i].value;
-                    select.dispatchEvent(new Event('change', {bubbles:true}));
+                    select.dispatchEvent(new Event('change', { bubbles: true }));
                     break;
-                  }
-                  else {
+                  } else {
                     formThirdVarSwatch[i].querySelector('data-selector').click();
                     break;
                   }
@@ -903,7 +990,15 @@
           mutationObserverThird.observe(formColorVarSwatch[i], { attributes: true });
         }
       }
-    }); 
+    });
+  </script>
+  <script>
+    document.addEventListener('variant:changed', function (event) {
+      $('.variant-tag').hide();
+      let variant = event.detail.variant;
+      let id = '.variant-tag-' + variant.id;
+      $(id).show();
+    });
   </script>
   <script>
     document.addEventListener('variant:changed', function (event) {
@@ -913,12 +1008,4 @@
       $(id).show();
     });
   </script>
-<script>
-  document.addEventListener('variant:changed', function(event) {
-    $('.variant-expiry-date').hide()
-    let variant = event.detail.variant
-    let id = '#expiry-'+variant.id
-    $(id).show();
-  });
-</script>
 </div>
