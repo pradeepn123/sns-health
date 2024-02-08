@@ -10,27 +10,21 @@
     </div>
         
     <div>
-        {% if description != blank %}
+      {% if description != blank %}
         <div class="text-wrap__content-wrapper " data-container>
-          <p> 
-          <span class="{{ wrapper_class }}__description text-wrap__description text-wrap__description--hidden" data-content-half>
-            {{ description | truncate: 844 }} 
-            {% if description.size > 844 %}   
+          {% if description.size > 844 %} 
+            <span class="{{ wrapper_class }}__description text-wrap__description text-wrap__description--hidden" data-content-half>
+              <script type="text/html" class="{{ wrapper_class }}__description-continer text-wrap__description-continer">
+              {{ description | truncate: 844 }} 
+              </script>
               <button data-test class="text-wrap__description--read-button">Read more</button>
-            {% endif %}
-           </span>
-
-          </p>
-          <p> 
-          <span class="{{ wrapper_class }}__description text-wrap__description" data-content-full>
-            {{ description }} </span>
-          </p>
-             
-
-        </div>   
-          
-        {% endif %}      
+            </span>
+          {% endif %}
+          <span class="{{ wrapper_class }}__description text-wrap__description" {% if description.size > 844 %}data-content-full{% else %}data-content-half{% endif %}>
+            {{ description }} 
+          </span>
+        </div>
+      {% endif %}      
     </div>
-    
   </div>
 </div>

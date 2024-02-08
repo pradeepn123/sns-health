@@ -3,8 +3,6 @@
   \***************************************************************************************************************************************************************************************************************************************/
 .rebuy-widget-content .primary-title {
   text-align: left !important;
-}
-.rebuy-widget-content .primary-title {
   font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 20px));
   font-weight: var(--heading-font-weight);
   font-style: var(--heading-font-style);
@@ -14,8 +12,6 @@
 @media (min-width: 768px) {
   .rebuy-widget-content .primary-title {
     font-size: 32px !important;
-  }
-  .rebuy-widget-content .primary-title {
     line-height: 1.5;
     font-weight: 700;
   }

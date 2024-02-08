@@ -14,7 +14,7 @@
       <p class="{{wrapper_class}}__heading text__heading">{{heading}} <span class="{{wrapper_class}}__subheading text__subheading">{{subheading}}</span></p>
       {% else %}
       {% if heading  != blank%}
-        <p class="text__heading {{wrapper_class}}__heading">{{heading}}</p>
+        <{{heading_tag | default: "p"}} class="text__heading {{wrapper_class}}__heading">{{heading}}</{{heading_tag | default: "p"}}>
         {% endif %}
         {% if subheading  != blank and inline_cta != true %}
           <p class="{{wrapper_class}}__subheading text__subheading">{{subheading}}</p>
