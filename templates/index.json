@@ -30,7 +30,7 @@
           "settings": {
             "promotion": true,
             "promotion_name": "Body Armor",
-            "promotion_creative_name": "Main Banner 1",
+            "promotion_creative_name": "Main Banner 3",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/BodyArmor_Banner.jpg",
             "cta_url": "shopify:\/\/collections\/bodyarmor"
