@@ -189,6 +189,8 @@ var boostPFSTemplate = {
             variant_id,
             handle,
             link = '' } = data || {};
+            console.log(variant_id);
+            console.log(productVariants);
             const currentVariant = productVariants.find(variant => variant.id == variant_id) || data.variants[0];
             const reviewMetafields = metafields.filter(metafield => metafield.namespace == 'okendo' && metafield.key == "summaryData")
         const curatedData = {
