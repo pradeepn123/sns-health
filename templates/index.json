@@ -107,16 +107,16 @@
           "settings": {
             "promotion": true,
             "promotion_name": "C4 promotion",
-            "promotion_creative_name": "banner grid",
+            "promotion_creative_name": "banner grid 2",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/C4_pre-workout_973f3e7e-7fc9-4fd5-84dd-ef9e1589ce19.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/C4_pre-workout_mobile_3c436f13-aaea-4606-993c-a12b087a805d.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/C4_pre-workout-1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/C4_pre-workout-2.jpg",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": "https:\/\/snshealth.com\/collections\/protein-powders"
+            "cta_url": "shopify:\/\/collections\/buy-more-save-more"
           }
         },
         "image_with_text_overlay_XA8Ggi": {
