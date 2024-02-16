@@ -123,17 +123,17 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Birch Benders",
-            "promotion_creative_name": "Banner grid",
+            "promotion_name": "Heart health",
+            "promotion_creative_name": "Banner grid 3",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Birch_Benders.webp",
-            "image_mobile": "shopify:\/\/shop_images\/Birch_Benders.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/progressive.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/C4_pre-workout_d7649130-8077-4ae4-a4de-41dbbc35b021.jpg",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/special-pancakes-collection"
+            "cta_url": "shopify:\/\/collections\/cardiovascular-health"
           }
         },
         "589380ac-62bc-453f-9b28-3a56b75e85b6": {
