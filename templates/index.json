@@ -3,17 +3,6 @@
     "main": {
       "type": "Banner",
       "blocks": {
-        "29e42daa-54ef-4a2a-845b-730cfb95be0c": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Valentines Day",
-            "promotion_creative_name": "Main Banner 1",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Valentine_s_day_SNS.jpg",
-            "cta_url": "shopify:\/\/collections\/exclusive-bundles-and-gift-sets"
-          }
-        },
         "image_with_text_overlay_EVHhPP": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -72,7 +61,6 @@
         }
       },
       "block_order": [
-        "29e42daa-54ef-4a2a-845b-730cfb95be0c",
         "image_with_text_overlay_EVHhPP",
         "009a8070-a267-4f1a-ad82-846a05257985",
         "b533d71a-e272-4353-b935-9e0fc67451c1",
