@@ -1,1 +1,46 @@
-.collection__toolbar{top:calc(var(--header-height)*0);top:calc(50px*0);top:calc(50px*var(--header-is-sticky, 0))}@media(min-width: 768px){.collection__toolbar{top:calc(var(--header-height)*0);top:calc(58px*0);top:calc(58px*var(--header-is-sticky, 0))}}@media(min-width: 1024px){.collection__toolbar{top:0}}.pagination{border-top:none !important}.layout.container{padding:0;margin-top:0}@media(min-width: 768px){.layout.container{margin-top:23px}}@media(min-width: 1024px){.layout.container{max-width:calc(100% - 2*var(--base-margin));margin-left:auto;margin-right:auto}}@media(min-width: 1024px)and (min-width: 1440px){.layout.container{max-width:calc(1440px - 2*var(--base-margin))}}
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/default-collection.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+.collection__toolbar {
+  top: calc(var(--header-height) * 0);
+  top: calc(50px * 0);
+  top: calc(50px * var(--header-is-sticky, 0));
+}
+@media (min-width: 768px) {
+  .collection__toolbar {
+    top: calc(var(--header-height) * 0);
+    top: calc(58px * 0);
+    top: calc(58px * var(--header-is-sticky, 0));
+  }
+}
+@media (min-width: 1024px) {
+  .collection__toolbar {
+    top: 0;
+  }
+}
+
+.pagination {
+  border-top: none !important;
+}
+
+.layout.container {
+  padding: 0;
+  margin-top: 0;
+}
+@media (min-width: 768px) {
+  .layout.container {
+    margin-top: 23px;
+  }
+}
+@media (min-width: 1024px) {
+  .layout.container {
+    max-width: calc(100% - 2 * var(--base-margin));
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 1024px) and (min-width: 1440px) {
+  .layout.container {
+    max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}

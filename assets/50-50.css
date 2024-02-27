@@ -1,1 +1,143 @@
-.section-50-50__wrapper{margin-top:var(--section-margin);background:#f5f5f5;border:1px solid #dadada;border-radius:10px}@media(min-width: 768px){.section-50-50__wrapper{padding:0;max-width:calc(100% - 2*var(--base-margin));margin-left:auto;margin-right:auto}}@media(min-width: 768px)and (min-width: 1440px){.section-50-50__wrapper{max-width:calc(1440px - 2*var(--base-margin))}}@media(min-width: 1024px){.section-50-50__wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-column-gap:20px;-moz-column-gap:20px;column-gap:20px;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}}.section-50-50__text{text-align:center;padding:20px var(--base-margin) 30px}@media(min-width: 1024px){.section-50-50__text{padding:40px 0 30px;text-align:left;width:55%;padding-right:61px;max-width:620px;-webkit-box-sizing:content-box !important;box-sizing:content-box !important}}.section-50-50__heading{font-family:"poppins";font-size:20px;font-weight:700;line-height:1.2}@media(min-width: 1024px){.section-50-50__heading{font-family:"poppins";font-size:32px;font-weight:700;line-height:1.2}}.section-50-50__text p{font-family:"poppins";font-size:12px;font-weight:400;line-height:1.2;line-height:1.4 !important}@media(min-width: 1024px){.section-50-50__text p{font-family:"poppins";font-size:16px;font-weight:400;line-height:1.2}}.section-50-50__image--desktop{display:none}.section-50-50__image--desktop .responsive-image__image{border-top-left-radius:8px;border-bottom-left-radius:8px}@media(min-width: 1024px){.section-50-50__image--desktop{width:45%;max-width:600px;display:block}}.section-50-50__image--mobile{display:block}.section-50-50__image--mobile .responsive-image__image{border-top-left-radius:10px;border-top-right-radius:10px}@media(min-width: 1024px){.section-50-50__image--mobile{display:none}}.section-50-50__cta{color:#fff;margin-top:10px;width:100%}@media(min-width: 1024px){.section-50-50__cta{margin-top:41px}}.section-50-50__cta .button{padding-top:9px;padding-bottom:9px}@media(min-width: 1024px){.section-50-50__cta .button{padding-top:12px;padding-bottom:12px}}@media(min-width: 1024px){.section-50-50__content{max-height:60px;overflow:scroll}}@media(min-width: 1200px){.section-50-50__content{max-height:50vh}}
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./scss/sections/50-50.scss ***!
+  \*********************************************************************************************************************************************************************************************************************/
+.section-50-50__wrapper {
+  margin-top: var(--section-margin);
+  background: #f5f5f5;
+  border: 1px solid #DADADA;
+  border-radius: 10px;
+}
+@media (min-width: 768px) {
+  .section-50-50__wrapper {
+    padding: 0;
+    max-width: calc(100% - 2 * var(--base-margin));
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 768px) and (min-width: 1440px) {
+  .section-50-50__wrapper {
+    max-width: calc(1440px - 2 * var(--base-margin));
+  }
+}
+@media (min-width: 1024px) {
+  .section-50-50__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+.section-50-50__text {
+  text-align: center;
+  padding: 20px var(--base-margin) 30px;
+}
+@media (min-width: 1024px) {
+  .section-50-50__text {
+    -webkit-box-sizing: content-box !important;
+            box-sizing: content-box !important;
+  }
+  .section-50-50__text {
+    padding: 40px 0 30px;
+    text-align: left;
+    width: 55%;
+    padding-right: 61px;
+    max-width: 620px;
+  }
+}
+.section-50-50__heading {
+  font-family: "poppins";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media (min-width: 1024px) {
+  .section-50-50__heading {
+    font-family: "poppins";
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+}
+.section-50-50__text p {
+  line-height: 1.4 !important;
+}
+.section-50-50__text p {
+  font-family: "poppins";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+@media (min-width: 1024px) {
+  .section-50-50__text p {
+    font-family: "poppins";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+}
+.section-50-50__image--desktop {
+  display: none;
+}
+.section-50-50__image--desktop .responsive-image__image {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+@media (min-width: 1024px) {
+  .section-50-50__image--desktop {
+    width: 45%;
+    max-width: 600px;
+    display: block;
+  }
+}
+.section-50-50__image--mobile {
+  display: block;
+}
+.section-50-50__image--mobile .responsive-image__image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+@media (min-width: 1024px) {
+  .section-50-50__image--mobile {
+    display: none;
+  }
+}
+.section-50-50__cta {
+  color: #fff;
+  margin-top: 10px;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .section-50-50__cta {
+    margin-top: 41px;
+  }
+}
+.section-50-50__cta .button {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+@media (min-width: 1024px) {
+  .section-50-50__cta .button {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+@media (min-width: 1024px) {
+  .section-50-50__content {
+    max-height: 60px;
+    overflow: scroll;
+  }
+}
+@media (min-width: 1200px) {
+  .section-50-50__content {
+    max-height: 50vh;
+  }
+}

@@ -77,6 +77,7 @@
         cursor: pointer;
         .header{
             margin-bottom: 0;
+            justify-content: space-between;
             .text{
                 @include use-text-style('body-alt');
                 font-weight: typography.$heading-weight;

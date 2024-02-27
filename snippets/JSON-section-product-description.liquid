@@ -1,4 +1,7 @@
-{ "description": `{{ product.description | remove: 'data-section-type="product"' }}`,
+
+{%  assign title = "<h2 class='tab-section__SEO-heading'>" | append: product.title | append: "</h2>"  %}
+
+{ "description": `{{ product.description | remove: 'data-section-type="product"' | prepend: title }}`,
 "Additional_Information": `
 {% for field in product.metafields.global %}
   {% assign field_name = field | first %}

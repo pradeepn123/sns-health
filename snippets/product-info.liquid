@@ -131,6 +131,16 @@
           <a href="{{ product.url }}">{{ product.title }}</a>
         </h3>
       {%- endif -%}
+      <div class="product__block--review">
+        <div class="product__reviews">
+          {% render 'okendo-reviews-product-rating-summary', product: product %} 
+        </div>
+        {%- if section.settings.show_share_buttons -%}
+          <div class="product-meta__share-buttons">
+            {{ share_buttons }}
+          </div>
+        {%- endif -%}
+       </div>
       <div class="product-meta__additional-info">
         <span class="product-meta__type">
           {% if product.type != blank %}
@@ -216,30 +226,7 @@
           {% endif %}
         {%- endfor -%}
       </div>
-      {%- if section.settings.show_share_buttons -%}
-        <div class="product-meta__share-buttons hidden-phone">
-          {{ share_buttons }}
-        </div>
-      {%- endif -%}
     </div>
-
-      {%- if section.settings.show_reviews_badge -%}
-        <a
-          href="{% if template.name != 'product' or template == 'product.quick-view' %}{{ product.url }}{% endif %}#product-reviews"
-          class="product-meta__reviews-badge link"
-          data-offset="30"
-        >
-          <div
-            class="yotpo bottomLine"
-            data-appkey="AlaG2GzHOSeeH1BpRHu56aGvz9s0BudbIHVVuFIp"
-            data-domain="{{shop.permanent_domain | escape }}"
-            data-product-id="{{ product.id }}"
-            data-product-models="{{ product.id }}"
-            data-name="{{ product.title | escape }}"
-            data-url="{{ shop.url }}{{ product.url }}"
-          ></div>
-        </a>
-      {%- endif -%}
     </div>
 
     <hr class="card__separator">
@@ -843,12 +830,6 @@
       </div>
     {%- endif -%}
 
-    {%- if section.settings.show_share_buttons -%}
-      <div class="product-meta__share-buttons hidden-tablet-and-up">
-        <span class="text--strong">{{ 'product.general.share' | t }}</span>
-        {{ share_buttons }}
-      </div>
-    {%- endif -%}
   </div>
 
   {%- if section.settings.show_payment_button and product.selected_or_first_available_variant.available == false -%}

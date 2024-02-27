@@ -248,3 +248,17 @@
 .product-meta__label-list+.product-meta__share-buttons{
     margin-top: 5px;
 }
+
+.product__reviews {
+    margin-bottom: 14px;
+}
+
+.product-meta__share-buttons {
+    margin-top: 0 !important;
+}
+
+.product__block--review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
