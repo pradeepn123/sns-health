@@ -1,10 +1,22 @@
 
+{%  assign flavorStrings = "flavour,flavours,flavor,flavors" %}
+{%  assign options = product.options %}
+{%  assign show_variant_title = false %}
+{%  for option in options %}   
+ {%  assign option_downcase = option | downcase %}
+    {%  if flavorStrings contains option_downcase %} 
+        {%  assign show_variant_title = true %}
+    {%  endif  %}
+{%  endfor %}
+
 {%  assign variant_title = product.selected_or_first_available_variant.title | split: '/' | first | prepend: " - " %}
 {%  assign variant_title_lowercase = variant_title | downcase %}
-{% if variant_title_lowercase contains "default" %}
+{% if variant_title_lowercase contains "default" or show_variant_title != true %}
     {%  assign variant_title = "" %}
 {% endif %}
-{%  assign title = "<h2 class='tab-section__SEO-heading'>" | append: product.title | append: variant_title | append: "</h2>"  %}
+
+{%  assign title = "<h2 class='tab-section__SEO-heading'>" | append: product.title | append: variant_title  | append: "</h2>"  %}
+
 { 
   "description": `{{ product.description | remove: 'data-section-type="product"' | prepend: title }}`,
 "Additional_Information": `
