@@ -1,9 +1,30 @@
 <script>
+    import JSON6 from 'json-6'
     import Accordion from "SvelteComponents/accordion.svelte";
     export let shopifyData;
-    const tabsData = JSON.parse(JSON.stringify(shopifyData));
-    const tabsTitle = Object.keys(shopifyData);
-    let selectedKey = tabsTitle[0];
+    let componentProps = shopifyData;
+
+    const updateTabProps = (updatedProps) => {
+        if(updatedProps) {
+        const {data:props} = JSON6.parse(updatedProps);
+        ((Object.keys(props)).forEach((propKey) => {
+            componentProps[propKey] = props[propKey]
+        }))
+        componentProps = componentProps
+        }
+    }
+
+    window["custom"] = {
+        ...window["custom"],
+        "svelte": {
+          "updateTabProps":updateTabProps
+        }
+    }
+
+    $:tabsData = JSON.parse(JSON.stringify(componentProps));
+    $:tabsTitle = Object.keys(componentProps);
+    $:selectedKey = tabsTitle[0];
+    
 </script>
 
 <div class="tab-section">

@@ -199,6 +199,7 @@
         {% endif %}
       {%- endfor -%}
 
+    {%  if variant.metafields.custom.variant_tag.size > 0 %}
      <div class="tag-button-flex">
       <div class="product-meta__label-list tags">
         {%- if product_labels != blank -%}
@@ -227,6 +228,7 @@
         {%- endfor -%}
       </div>
     </div>
+  {%  endif %}
     </div>
 
     <hr class="card__separator">

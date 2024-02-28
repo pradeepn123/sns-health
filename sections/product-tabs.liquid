@@ -11,6 +11,35 @@
     </div>
 </div>
 
+<script>
+  function debounce(func, timeout = 1000){
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    };
+  }
+
+const updateCurrentSelectedProductOnTabs = (variantId) => {
+  if(window.custom?.svelte?.updateTabProps) {
+    const productHandle = "{{ product.handle }}"
+  const url = `/products/${productHandle}?variant=${variantId}&view=getUpdatedData`;
+  (async () => {
+   const responseData = await fetch(url);
+   const updatedData = await responseData.text();
+   window.custom?.svelte?.updateTabProps(updatedData);
+  })();
+  }
+}
+
+
+document.addEventListener('variant:changed', (event = {}) => {
+ const {detail} = event;
+ const variantId = detail.variant?.id; 
+ debounce(updateCurrentSelectedProductOnTabs(variantId)); 
+})
+</script>
+
 
 
 {% schema %}
