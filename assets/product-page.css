@@ -278,6 +278,10 @@
   margin-top: 5px;
 }
 
+.product-meta__label-list {
+  margin-bottom: 0;
+}
+
 .product__reviews {
   margin-bottom: 14px;
 }
@@ -299,5 +303,4 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 4px;
-  margin-bottom: 12px;
 }
