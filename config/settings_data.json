@@ -1313,6 +1313,7 @@
           },
           "3f2dc464-d908-4c5f-8314-d7b0bf33122c": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "organika",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_6_copy.webp",
@@ -1322,6 +1323,7 @@
           },
           "3cd86bcc-f7a7-47e2-85a3-5ba1607c5964": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "matteos",
               "featured_collection_image": "shopify:\/\/shop_images\/Main_banner_copy_2_1.png",
@@ -1331,6 +1333,7 @@
           },
           "8b483f29-1be8-4535-85f3-1ba77eb4caf6": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "pb-me",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_3_3de1e795-1740-42dc-9940-daf46f5d8123.png",
@@ -1340,6 +1343,7 @@
           },
           "9bc5f936-751c-4dad-b624-f82973f0f533": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "inner-armour",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_5_copy.png",
@@ -1359,6 +1363,7 @@
           },
           "b15a96f0-9ac6-4347-8753-3da06590ee86": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "heal-co",
               "featured_collection_image": "shopify:\/\/shop_images\/heal_and_co_banner_preview.webp",
@@ -1378,7 +1383,6 @@
           },
           "39b41a6b-eb07-4785-a32c-7b217819eaf3": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "guayaki",
               "featured_collection_image": "shopify:\/\/shop_images\/guayaki-thumbnail-0.jpg",
@@ -1388,7 +1392,6 @@
           },
           "8b15715b-a5fd-47b1-ae17-61b175d622ae": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "smart-solutions",
               "featured_collection_image": "shopify:\/\/shop_images\/smart_sol_thumbnail.jpg",
