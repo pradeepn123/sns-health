@@ -487,6 +487,7 @@
         },
         "04f03284-64cf-4a23-9d73-d2a68ceced6a": {
           "type": "featured_brand",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Heal + Co",
@@ -497,6 +498,7 @@
         },
         "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4": {
           "type": "featured_brand",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Sproos",
@@ -505,24 +507,54 @@
             "url": "shopify:\/\/collections\/sproos"
           }
         },
-        "featured_brand_F8Cyet": {
+        "featured_brand_8kDUC4": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "Nature's Way",
-            "promotion_creative_name": "Featured brands",
-            "image": "shopify:\/\/shop_images\/natureswaylogo.png",
-            "url": "shopify:\/\/collections\/natures-way"
+            "promotion_name": "Host defense",
+            "promotion_creative_name": "Featured Brands",
+            "image": "shopify:\/\/shop_images\/host_defense_logo.webp",
+            "url": "shopify:\/\/collections\/host-defense"
           }
         },
-        "featured_brand_Q9x6GF": {
+        "featured_brand_pVMAkW": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "BodyArmor",
-            "promotion_creative_name": "Featured brands",
-            "image": "shopify:\/\/shop_images\/bodyarmorlogo.jpg",
-            "url": "shopify:\/\/collections\/bodyarmor"
+            "promotion_name": "MegaFood",
+            "promotion_creative_name": "Featured Brands",
+            "image": "shopify:\/\/shop_images\/Megafood_280x_1.png",
+            "url": "shopify:\/\/collections\/megafood"
+          }
+        },
+        "featured_brand_wQFKFM": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "RenewLife",
+            "promotion_creative_name": "Featured Brands",
+            "image": "shopify:\/\/shop_images\/RenewLife_logo.png",
+            "url": "shopify:\/\/collections\/renew-life-1"
+          }
+        },
+        "featured_brand_xPXBRJ": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Guayaki",
+            "promotion_creative_name": "Featured Brands",
+            "image": "shopify:\/\/shop_images\/Guayaki_logo.png",
+            "url": "shopify:\/\/collections\/guayaki"
+          }
+        },
+        "featured_brand_rdRMdj": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Smart Solutions",
+            "promotion_creative_name": "Featured Brands",
+            "image": "shopify:\/\/shop_images\/Smart_Solutions.png",
+            "url": "shopify:\/\/collections\/smart-solutions"
           }
         }
       },
@@ -531,8 +563,11 @@
         "fbc747c2-c649-43e7-84f8-39fd5d61dae0",
         "04f03284-64cf-4a23-9d73-d2a68ceced6a",
         "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4",
-        "featured_brand_F8Cyet",
-        "featured_brand_Q9x6GF"
+        "featured_brand_8kDUC4",
+        "featured_brand_pVMAkW",
+        "featured_brand_wQFKFM",
+        "featured_brand_xPXBRJ",
+        "featured_brand_rdRMdj"
       ],
       "settings": {
         "heading": "Featured Brands"
