@@ -82,17 +82,17 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "C4 promotion",
+            "promotion_name": "Guayaki promotion",
             "promotion_creative_name": "banner grid 2",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/C4_pre-workout-1.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/C4_pre-workout-2.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/GUAYAKI_9724a3e1-ca21-470f-a116-4a1219119657.webp",
+            "image_mobile": "shopify:\/\/shop_images\/GUAYAKI-1.webp",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/buy-more-save-more"
+            "cta_url": "shopify:\/\/collections\/guayaki"
           }
         },
         "image_with_text_overlay_XA8Ggi": {
