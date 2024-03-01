@@ -30,11 +30,11 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": false,
-            "promotion_name": "Optimum Nutrition",
+            "promotion_name": "International Women’s Day",
             "promotion_creative_name": "Banner right 1",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/Bundle_Save.jpg",
-            "cta_url": "https:\/\/snshealth.com\/products\/optimum-nutrition-gold-standard-100-whey"
+            "image_desktop": "shopify:\/\/shop_images\/C4_pre-workout.webp",
+            "cta_url": "shopify:\/\/collections\/womens-health"
           }
         },
         "image_with_text_overlay_hAWXBm": {
