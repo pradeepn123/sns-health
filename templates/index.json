@@ -3,17 +3,6 @@
     "main": {
       "type": "Banner",
       "blocks": {
-        "image_with_text_overlay_EVHhPP": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": false,
-            "promotion_name": "Perfect Sports",
-            "promotion_creative_name": "Main Banner 1",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/C4_pre-workout_b9e26a42-76bc-428b-afdc-4fa9b89790be.jpg",
-            "cta_url": "https:\/\/snshealth.com\/discount\/Perfect20Protein"
-          }
-        },
         "009a8070-a267-4f1a-ad82-846a05257985": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -61,7 +50,6 @@
         }
       },
       "block_order": [
-        "image_with_text_overlay_EVHhPP",
         "009a8070-a267-4f1a-ad82-846a05257985",
         "b533d71a-e272-4353-b935-9e0fc67451c1",
         "image_with_text_overlay_GyCehy",
