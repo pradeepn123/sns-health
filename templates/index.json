@@ -15,17 +15,6 @@
             "cta_url": "shopify:\/\/collections\/bodyarmor"
           }
         },
-        "image_with_text_overlay_TQMXzn": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": false,
-            "promotion_name": "March Madness",
-            "promotion_creative_name": "Main Banner 2",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/NBanner.jpg",
-            "cta_url": ""
-          }
-        },
         "b533d71a-e272-4353-b935-9e0fc67451c1": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -35,6 +24,17 @@
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/OWYN_01bc61a7-31a6-476c-9a0b-58c39b41a080.webp",
             "cta_url": "shopify:\/\/collections\/owyn"
+          }
+        },
+        "image_with_text_overlay_TQMXzn": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": false,
+            "promotion_name": "March Madness",
+            "promotion_creative_name": "Main Banner 2",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/NBanner.jpg",
+            "cta_url": ""
           }
         },
         "image_with_text_overlay_GyCehy": {
@@ -62,8 +62,8 @@
       },
       "block_order": [
         "009a8070-a267-4f1a-ad82-846a05257985",
-        "image_with_text_overlay_TQMXzn",
         "b533d71a-e272-4353-b935-9e0fc67451c1",
+        "image_with_text_overlay_TQMXzn",
         "image_with_text_overlay_GyCehy",
         "image_with_text_overlay_hAWXBm"
       ],
