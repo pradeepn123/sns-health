@@ -16,14 +16,13 @@
         },
         "b533d71a-e272-4353-b935-9e0fc67451c1": {
           "type": "image_with_text_overlay",
-          "disabled": true,
           "settings": {
             "promotion": true,
-            "promotion_name": "Back to the Gym",
-            "promotion_creative_name": "Main banner 4",
+            "promotion_name": "OWYN",
+            "promotion_creative_name": "Main banner 2",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Back_to_the_Gym_Banner_37ab20a8-d3f7-46fc-bf93-5c7f09c86865.jpg",
-            "cta_url": "shopify:\/\/collections\/supplements-bundles"
+            "image_desktop": "shopify:\/\/shop_images\/OWYN_01bc61a7-31a6-476c-9a0b-58c39b41a080.webp",
+            "cta_url": "shopify:\/\/collections\/owyn"
           }
         },
         "image_with_text_overlay_GyCehy": {
