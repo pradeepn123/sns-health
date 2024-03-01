@@ -5,6 +5,7 @@
       "blocks": {
         "009a8070-a267-4f1a-ad82-846a05257985": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Body Armor",
@@ -14,12 +15,23 @@
             "cta_url": "shopify:\/\/collections\/bodyarmor"
           }
         },
+        "image_with_text_overlay_TQMXzn": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": false,
+            "promotion_name": "March Madness",
+            "promotion_creative_name": "Main Banner 2",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/NBanner.jpg",
+            "cta_url": ""
+          }
+        },
         "b533d71a-e272-4353-b935-9e0fc67451c1": {
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
             "promotion_name": "OWYN",
-            "promotion_creative_name": "Main banner 2",
+            "promotion_creative_name": "Main banner 1",
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/OWYN_01bc61a7-31a6-476c-9a0b-58c39b41a080.webp",
             "cta_url": "shopify:\/\/collections\/owyn"
@@ -40,16 +52,17 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Botanica",
+            "promotion_name": "Host Defense",
             "promotion_creative_name": "Right Banner 2",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/BT_24.01_SNSHealth_Banner_1400x720_Botanica.jpg",
-            "cta_url": "shopify:\/\/collections\/botanica"
+            "image_desktop": "shopify:\/\/shop_images\/Host_Defense_b70c8f52-ce2e-4009-997d-a6228c512bfe.jpg",
+            "cta_url": "shopify:\/\/collections\/host-defense"
           }
         }
       },
       "block_order": [
         "009a8070-a267-4f1a-ad82-846a05257985",
+        "image_with_text_overlay_TQMXzn",
         "b533d71a-e272-4353-b935-9e0fc67451c1",
         "image_with_text_overlay_GyCehy",
         "image_with_text_overlay_hAWXBm"
@@ -60,23 +73,6 @@
     "65868ffb-1036-425b-a0dc-ebc8bcff334b": {
       "type": "Banner-Grid",
       "blocks": {
-        "image_with_text_overlay_BAiHkN": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Perfect Sports",
-            "promotion_creative_name": "Banner grid",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb_mobile.jpg",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/perfect-sports"
-          }
-        },
         "image_with_text_overlay_rxXg4D": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -111,6 +107,23 @@
             "cta_url": "shopify:\/\/collections\/ehp-labs"
           }
         },
+        "image_with_text_overlay_BAiHkN": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Perfect Sports",
+            "promotion_creative_name": "Banner grid",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb_mobile.jpg",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/perfect-sports"
+          }
+        },
         "589380ac-62bc-453f-9b28-3a56b75e85b6": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -130,9 +143,9 @@
         }
       },
       "block_order": [
-        "image_with_text_overlay_BAiHkN",
         "image_with_text_overlay_rxXg4D",
         "image_with_text_overlay_XA8Ggi",
+        "image_with_text_overlay_BAiHkN",
         "589380ac-62bc-453f-9b28-3a56b75e85b6"
       ],
       "settings": {
