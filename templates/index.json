@@ -28,6 +28,7 @@
         },
         "image_with_text_overlay_TQMXzn": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": false,
             "promotion_name": "March Madness",
