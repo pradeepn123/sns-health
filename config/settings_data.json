@@ -1275,6 +1275,15 @@
       "shop-by-brands": {
         "type": "shop-by-brands",
         "blocks": {
+          "selected_collection_iBUUcG": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "herbasante",
+              "featured_collection_image": "shopify:\/\/shop_images\/Frame_1000005752.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
           "selected_collection_XajHKc": {
             "type": "selected_collection",
             "settings": {
@@ -1410,6 +1419,7 @@
           }
         },
         "block_order": [
+          "selected_collection_iBUUcG",
           "selected_collection_XajHKc",
           "6924a140-8ece-4ff6-98e4-66afc8b96dff",
           "8b15715b-a5fd-47b1-ae17-61b175d622ae",
