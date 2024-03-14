@@ -21,6 +21,9 @@ product-card {
   height: auto;
   // height: 100%;
   text-align: left;
+  @media (--sm){
+    height: 100%;
+  }
 
   &__image {
     cursor: pointer;

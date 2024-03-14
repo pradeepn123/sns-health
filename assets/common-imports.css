@@ -1129,6 +1129,11 @@ product-card .product-card {
   height: auto;
   text-align: left;
 }
+@media (min-width: 768px) {
+  .product-card {
+    height: 100%;
+  }
+}
 .product-card__image {
   cursor: pointer;
   padding: 20px;
@@ -1432,4 +1437,22 @@ product-card .product-card {
 
 .collection__toolbar-item--layout {
   display: none;
+}
+
+.boost-pfs-filter-option-content-inner {
+  scrollbar-width: none !important;
+}
+.boost-pfs-filter-option-content-inner ul {
+  padding-right: 0 !important;
+  padding-right: initial !important;
+}
+
+.boost-popup-open .needsclick.kl-teaser-Rr74yr {
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .boost-popup-open .needsclick.kl-teaser-Rr74yr {
+    opacity: 1;
+  }
 }
