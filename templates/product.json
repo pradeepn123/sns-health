@@ -75,13 +75,6 @@
         "mobile_carousel": true
       }
     },
-    "12115053-950b-44eb-9171-d513f0dc7ed9": {
-      "type": "static-recently-viewed-products",
-      "settings": {
-        "heading": "Recently viewed",
-        "mobile_carousel": true
-      }
-    },
     "0d1f4044-ed06-406a-98a4-179b8b04b635": {
       "type": "product-carousel",
       "blocks": {
@@ -99,6 +92,13 @@
       ],
       "settings": {
         "heading": "Just For You",
+        "mobile_carousel": true
+      }
+    },
+    "12115053-950b-44eb-9171-d513f0dc7ed9": {
+      "type": "static-recently-viewed-products",
+      "settings": {
+        "heading": "Recently viewed",
         "mobile_carousel": true
       }
     },
@@ -128,8 +128,8 @@
     "de1ba06b-7729-47a3-a3dc-b7b1e0ba7a31",
     "388c6f5f-11f6-4787-93ed-b3a529c4d6e1",
     "1111dc5e-0853-433c-87f9-426668ab9166",
-    "12115053-950b-44eb-9171-d513f0dc7ed9",
     "0d1f4044-ed06-406a-98a4-179b8b04b635",
+    "12115053-950b-44eb-9171-d513f0dc7ed9",
     "1704349937a1123dc2"
   ]
 }
