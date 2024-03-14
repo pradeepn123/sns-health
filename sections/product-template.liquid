@@ -24,7 +24,7 @@
 <section data-section-id="{{ section.id }}" data-section-type="product" data-section-settings='{{ section_settings }}'>
   {%- if template != 'product.quick-view' -%}
     <div class="container container--flush product-container">
-      <div class="page__sub-header">
+      <div class="page__sub-header" data-breadcrumb-container style="opacity:0">
         <nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb">
           <ol class="breadcrumb__list" role="list">
             <li class="breadcrumb__item">
@@ -35,7 +35,7 @@
               {%- if collection -%}
                 <a class="breadcrumb__link link" href="{{ collection.url }}">{{ collection.title }}</a> {%- render 'icon', icon: 'arrow-right' -%}
               {%- else -%}
-                <a class="breadcrumb__link link" href="{{ routes.all_products_collection_url }}">{{- 'collection.general.all_products' | t -}}</a> {%- render 'icon', icon: 'arrow-right' -%}
+                <a class="breadcrumb__link link" data-dynamic-collection href="{{ routes.all_products_collection_url }}">{{- 'collection.general.all_products' | t -}}</a> {%- render 'icon', icon: 'arrow-right' -%}
               {%- endif -%}
             </li>
 
@@ -220,6 +220,28 @@
     </div>
   {%- endif -%}
 </section>
+
+<script>
+window.addEventListener("DOMContentLoaded", (event) => {
+  const dynamicCollectionEl = document.querySelector('[data-dynamic-collection]');
+  const parentEl =  document.querySelector('[data-breadcrumb-container]');
+  const searchParams = new URLSearchParams(window.location.search);
+  const collectionTitleBreadcrumb = searchParams.get('collectionTitle'); 
+  const collectionUrlBreadcrumb = searchParams.get('collectionURL'); 
+  if(!(dynamicCollectionEl && collectionTitleBreadcrumb && collectionUrlBreadcrumb) || collectionTitleBreadcrumb == "Products" ){
+    if(parentEl) {
+      parentEl.style.opacity = 1;
+      return;
+    }
+  }
+  dynamicCollectionEl.href = collectionUrlBreadcrumb;
+  dynamicCollectionEl.innerText = collectionTitleBreadcrumb;
+  if(parentEl) {
+    parentEl.style.opacity = 1;
+  }
+});
+
+</script>
 
 {% schema %}
 {
