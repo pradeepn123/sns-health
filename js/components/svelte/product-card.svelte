@@ -29,6 +29,7 @@
     skipFormatMoney = false,
     discountPercentage: shopifyDiscountPercentage = 0,
     enableAddToCart = true,
+    forceSeeOptions = false
   } = product || shopifyData || {};
 
   const currencySymbol = window.shopifyVariables.currencySymbol || "$";
@@ -134,6 +135,7 @@
     handleClick(ref);
     removeAttributesForCartBinding(ref);
   });
+
 </script>
 <a href="{link}" target="_blank" style="user-select: none;">
 <div
@@ -272,7 +274,7 @@
           >
             {bundleText}
           </button>
-        {:else if variants.length == 1 && enableAddToCart == true}
+        {:else if variants.length == 1 && enableAddToCart == true && !forceSeeOptions}
           <button
             type="submit"
             class="product-item__action-button product-item__action-button--list-view-only button button--small button--primary"

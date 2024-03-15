@@ -51,8 +51,8 @@ var collapsible = () => {
 var _excluded = ["breakpoints"],
   _excluded2 = ["pagination", "navigation"],
   _excluded3 = ["navigation", "pagination", "progressPagination"];
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 
 
@@ -198,18 +198,19 @@ class CustomCarousel extends HTMLElement {
             // handleClick(el);
           }
         },
+
         afterInit: () => {
           var _this$querySelector4;
           this.querySelector('.carousel__container').classList.remove('hide');
-          (_this$querySelector4 = this.querySelector('.carousel-placeholders')) === null || _this$querySelector4 === void 0 || _this$querySelector4.classList.add('hide');
+          (_this$querySelector4 = this.querySelector('.carousel-placeholders')) === null || _this$querySelector4 === void 0 ? void 0 : _this$querySelector4.classList.add('hide');
         }
       },
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
     }, carouselSettings));
     this.swiper.on('activeIndexChange', current => {
       var _this$querySelector5, _this$querySelectorAl;
-      (_this$querySelector5 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector5 === void 0 || _this$querySelector5.classList.remove('swiper-pagination-bullet-active');
-      (_this$querySelectorAl = this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _this$querySelectorAl === void 0 || _this$querySelectorAl.classList.add('swiper-pagination-bullet-active');
+      (_this$querySelector5 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector5 === void 0 ? void 0 : _this$querySelector5.classList.remove('swiper-pagination-bullet-active');
+      (_this$querySelectorAl = this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _this$querySelectorAl === void 0 ? void 0 : _this$querySelectorAl.classList.add('swiper-pagination-bullet-active');
     });
   }
 }
@@ -471,7 +472,6 @@ class ProductCard extends HTMLElement {
 (lazysizes__WEBPACK_IMPORTED_MODULE_0___default().cfg).loadMode = 1;
 document.addEventListener('DOMContentLoaded', () => {
   (0,JsComponents_header__WEBPACK_IMPORTED_MODULE_7__["default"])(); //header and megamenu
-  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.addFormDelegate)(); //rebuy integration 
   (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.removeCartToggleBinding)(); //remove toggle click
   (0,JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_9__["default"])();
   (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.pageLoadEvent)();
@@ -481,6 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_12__["default"])();
   (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_13__.collapsible)(); //collapsable
   (0,JsComponents_klaiyo_auto_add__WEBPACK_IMPORTED_MODULE_14__.rebuyAutoAdd)();
+  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.addFormDelegate)(); //rebuy integration 
 });
 
 /***/ })

@@ -21,7 +21,6 @@ lazysizes.cfg.loadMode = 1;
 
 document.addEventListener('DOMContentLoaded', () => {
   headerEvents(); //header and megamenu
-  addFormDelegate(); //rebuy integration 
   removeCartToggleBinding() //remove toggle click
   eventListeners();
   pageLoadEvent();
@@ -31,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   handleClick();
   collapsible(); //collapsable
   rebuyAutoAdd();
+  addFormDelegate(); //rebuy integration 
 })
 
 
