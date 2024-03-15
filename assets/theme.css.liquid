@@ -6860,10 +6860,12 @@ select::-ms-expand {
   opacity: 0;
   z-index: -1;
   transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  display: none;
 }
 
 .is-dropdown-open .nav-dropdown { 
   z-index: 1;
+  display: block;
 }
 
 .nav-dropdown:not(.nav-dropdown--floating) {
