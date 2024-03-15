@@ -21,7 +21,7 @@
             "promotion": false,
             "promotion_name": "Daylight savings",
             "promotion_creative_name": "Main Banner 1",
-            "is_carousel_content": true,
+            "is_carousel_content": false,
             "image_desktop": "shopify:\/\/shop_images\/Daylight_savings2.jpg",
             "cta_url": "shopify:\/\/collections\/stress-sleep-collection"
           }
@@ -39,6 +39,7 @@
         },
         "image_with_text_overlay_GyCehy": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": false,
             "promotion_name": "International Women’s Day",
