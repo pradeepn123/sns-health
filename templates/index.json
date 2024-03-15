@@ -21,20 +21,9 @@
             "promotion": false,
             "promotion_name": "Daylight savings",
             "promotion_creative_name": "Main Banner 1",
-            "is_carousel_content": false,
+            "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/Daylight_savings2_75f442d3-04d0-425d-8108-222de981925d.jpg",
             "cta_url": "shopify:\/\/collections\/stress-sleep-collection"
-          }
-        },
-        "b533d71a-e272-4353-b935-9e0fc67451c1": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "OWYN",
-            "promotion_creative_name": "Main banner 1",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/OWYN_01bc61a7-31a6-476c-9a0b-58c39b41a080.webp",
-            "cta_url": "shopify:\/\/collections\/owyn"
           }
         },
         "image_with_text_overlay_GyCehy": {
@@ -59,14 +48,25 @@
             "image_desktop": "shopify:\/\/shop_images\/Host_Defense_b70c8f52-ce2e-4009-997d-a6228c512bfe.jpg",
             "cta_url": "shopify:\/\/collections\/host-defense"
           }
+        },
+        "b533d71a-e272-4353-b935-9e0fc67451c1": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "OWYN",
+            "promotion_creative_name": "Main banner 1",
+            "is_carousel_content": false,
+            "image_desktop": "shopify:\/\/shop_images\/OWYN_01bc61a7-31a6-476c-9a0b-58c39b41a080.webp",
+            "cta_url": "shopify:\/\/collections\/owyn"
+          }
         }
       },
       "block_order": [
         "009a8070-a267-4f1a-ad82-846a05257985",
         "image_with_text_overlay_TQMXzn",
-        "b533d71a-e272-4353-b935-9e0fc67451c1",
         "image_with_text_overlay_GyCehy",
-        "image_with_text_overlay_hAWXBm"
+        "image_with_text_overlay_hAWXBm",
+        "b533d71a-e272-4353-b935-9e0fc67451c1"
       ],
       "settings": {
       }
