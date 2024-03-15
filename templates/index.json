@@ -74,6 +74,23 @@
     "65868ffb-1036-425b-a0dc-ebc8bcff334b": {
       "type": "Banner-Grid",
       "blocks": {
+        "image_with_text_overlay_BAiHkN": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Perfect Sports",
+            "promotion_creative_name": "Banner grid",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb_mobile.jpg",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/perfect-sports"
+          }
+        },
         "image_with_text_overlay_rxXg4D": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -108,23 +125,6 @@
             "cta_url": "shopify:\/\/collections\/ehp-labs"
           }
         },
-        "image_with_text_overlay_BAiHkN": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Perfect Sports",
-            "promotion_creative_name": "Banner grid",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb_mobile.jpg",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/perfect-sports"
-          }
-        },
         "589380ac-62bc-453f-9b28-3a56b75e85b6": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -144,9 +144,9 @@
         }
       },
       "block_order": [
+        "image_with_text_overlay_BAiHkN",
         "image_with_text_overlay_rxXg4D",
         "image_with_text_overlay_XA8Ggi",
-        "image_with_text_overlay_BAiHkN",
         "589380ac-62bc-453f-9b28-3a56b75e85b6"
       ],
       "settings": {
