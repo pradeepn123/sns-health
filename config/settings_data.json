@@ -530,13 +530,13 @@
             "settings": {
               "icon": "bi-fast-delivery",
               "title": "Free Canadian Shipping",
-              "content": "<p>On All Orders Over $49<\/p>"
+              "content": "<p><a href=\"https:\/\/snshealth.com\/policies\/shipping-policy\" target=\"_blank\" title=\"https:\/\/snshealth.com\/policies\/shipping-policy\">On All Orders Over $49<\/a><\/p>"
             }
           },
           "text-with-icons-2": {
             "type": "item",
             "settings": {
-              "icon": "bi-chat",
+              "icon": "bi-customer-support",
               "title": "Chat with us",
               "content": "<p>If you have any questions<\/p>"
             }
@@ -546,7 +546,7 @@
             "settings": {
               "icon": "bi-secure-payment",
               "title": "Secure Payments",
-              "content": "<p>Protected Checkout<\/p>"
+              "content": "<p><a href=\"\/policies\/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">Protected Checkout<\/a><\/p>"
             }
           },
           "7bc85f43-0eb3-4a93-aace-912d784f3c46": {
