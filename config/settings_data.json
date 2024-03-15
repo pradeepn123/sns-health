@@ -536,9 +536,9 @@
           "text-with-icons-2": {
             "type": "item",
             "settings": {
-              "icon": "bi-customer-support",
-              "title": "Chat with us",
-              "content": "<p>If you have any questions<\/p>"
+              "icon": "bi-email",
+              "title": "Leave us a message",
+              "content": "<p><a href=\"\/pages\/contact-us\" target=\"_blank\" title=\"Contact Us\">If you have any questions<\/a><\/p>"
             }
           },
           "text-with-icons-3": {
