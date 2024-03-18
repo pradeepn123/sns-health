@@ -817,23 +817,6 @@
         "mobile_carousel": true
       }
     },
-    "169278817168ac6906": {
-      "type": "apps",
-      "blocks": {
-        "4b356d62-7172-47ca-95fe-7fc78c51448e": {
-          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-ugc\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
-          "settings": {
-            "publishId": "n38q9rjyb28rr"
-          }
-        }
-      },
-      "block_order": [
-        "4b356d62-7172-47ca-95fe-7fc78c51448e"
-      ],
-      "settings": {
-        "heading": "<p>Follow along <a href=\"https:\/\/www.instagram.com\/sportsnutritionsource\/\" target=\"_blank\" title=\"SNS Nutrition Source\">@sportsnutritionsource<\/a><\/p>"
-      }
-    },
     "df161b5a-ead8-4c47-b060-be7aa2165e83": {
       "type": "blog-page-list",
       "blocks": {
@@ -897,7 +880,6 @@
     "8e275cc5-b6cf-4d02-bfbc-04fc3d8a3e51",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
     "ed3c4144-6707-4fda-9a49-2f5e23ebeb69",
-    "169278817168ac6906",
     "df161b5a-ead8-4c47-b060-be7aa2165e83",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
     "141ec0c0-f9a7-4483-8784-4b246321fcba",
