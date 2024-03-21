@@ -3,6 +3,17 @@
     "main": {
       "type": "Banner",
       "blocks": {
+        "image_with_text_overlay_TQMXzn": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Easter",
+            "promotion_creative_name": "Main Banner 1",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/Easter.jpg",
+            "cta_url": "shopify:\/\/collections\/chocolate"
+          }
+        },
         "009a8070-a267-4f1a-ad82-846a05257985": {
           "type": "image_with_text_overlay",
           "disabled": true,
@@ -13,17 +24,6 @@
             "is_carousel_content": true,
             "image_desktop": "shopify:\/\/shop_images\/BodyArmor_Banner.jpg",
             "cta_url": "shopify:\/\/collections\/bodyarmor"
-          }
-        },
-        "image_with_text_overlay_TQMXzn": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Easter",
-            "promotion_creative_name": "Main Banner 1",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Easter.jpg",
-            "cta_url": "shopify:\/\/collections\/chocolate"
           }
         },
         "image_with_text_overlay_GyCehy": {
@@ -62,8 +62,8 @@
         }
       },
       "block_order": [
-        "009a8070-a267-4f1a-ad82-846a05257985",
         "image_with_text_overlay_TQMXzn",
+        "009a8070-a267-4f1a-ad82-846a05257985",
         "image_with_text_overlay_GyCehy",
         "image_with_text_overlay_hAWXBm",
         "b533d71a-e272-4353-b935-9e0fc67451c1"
