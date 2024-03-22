@@ -4,7 +4,8 @@ export const customerLocation = async () => {
     return handle;
 }
 export const getProductData = async (additionalParams) => {
-    const { ruleId = '', text = '', ...otherparams } = additionalParams || {};
+    debugger;
+    const { ruleId = '', text = '',productId,...otherparams } = additionalParams || {};
     let url = '';
     url = new URL(`https://rebuyengine.com/api/v1/custom/id/${ruleId}`);
     const params = {
@@ -14,6 +15,9 @@ export const getProductData = async (additionalParams) => {
         key: "7af510977e690f362f5dae7f36a736bbeefdfc25", //rebuy key
         metafields: "yes",
         ...otherparams
+    }
+    if(productId) {
+        params.shopify_product_ids = `${productId}`;
     }
     Object.keys(params).forEach((param) => {
         url.searchParams.append(param, params[param]);

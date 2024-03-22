@@ -269,6 +269,8 @@
 .button--outline {
   background: transparent !important;
   color: currentColor !important;
+}
+.button--outline {
   border: 1px solid #fff;
   padding: 7px 15px;
   margin-top: 10px;
@@ -281,9 +283,11 @@
 }
 .button--outline:hover {
   border-color: #fff !important;
-  outline: 0;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+}
+.button--outline:hover {
+  outline: 0;
 }
 
 .needsclick {
@@ -291,7 +295,7 @@
 }
 
 /**
- * Swiper 10.3.1
+ * Swiper 10.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -299,7 +303,7 @@
  *
  * Released under the MIT License
  *
- * Released on: September 28, 2023
+ * Released on: August 17, 2023
  */
 @font-face {
   font-family: "swiper-icons";
@@ -357,6 +361,8 @@
   transition-property: transform, -webkit-transform;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
+  -webkit-transition-timing-function: var(--swiper-wrapper-transition-timing-function, ease);
+          transition-timing-function: var(--swiper-wrapper-transition-timing-function, ease);
   -webkit-transition-timing-function: initial;
           transition-timing-function: initial;
   -webkit-transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
@@ -680,10 +686,13 @@
 /* Navigation font start */
 .swiper-button-prev:after,
 .swiper-button-next:after {
+  text-transform: none !important;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
   font-family: swiper-icons;
   font-size: 44px;
   font-size: var(--swiper-navigation-size);
-  text-transform: none !important;
   letter-spacing: 0;
   -webkit-font-feature-settings: ;
           font-feature-settings: ;
@@ -949,15 +958,18 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-pagination {
+  left: 50% !important;
+  -webkit-transform: translateX(-50%) !important;
+          transform: translateX(-50%) !important;
+}
+
+.swiper-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   z-index: 1;
-  left: 50% !important;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  -webkit-transform: translateX(-50%) !important;
-          transform: translateX(-50%) !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -983,17 +995,19 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-navigation {
+  height: auto !important;
+  height: initial !important;
+}
+
+.swiper-navigation {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  height: auto !important;
-  height: initial !important;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   position: absolute;
-  height: auto;
   height: initial;
   z-index: 3;
   cursor: pointer;
@@ -1040,8 +1054,11 @@ img {
 
 .swiper-pagination-progressbar {
   position: relative !important;
-  margin-top: 10px;
   left: 50% !important;
+}
+
+.swiper-pagination-progressbar {
+  margin-top: 10px;
   max-width: 100%;
   z-index: 0;
   max-width: 100%;
@@ -1362,9 +1379,11 @@ product-card .product-card {
           justify-content: center;
 }
 .product-card__quantity-buttons {
+  background: none !important;
+}
+.product-card__quantity-buttons {
   line-height: 2;
   text-align: center;
-  background: none !important;
 }
 .product-card__quantity-button-wrapp {
   border: 1px solid #000;

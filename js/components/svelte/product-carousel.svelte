@@ -6,6 +6,7 @@
   export let shopifyData; //for parent level props
   let productData = []; //to store api data
   let isLoading = true;
+  debugger;
 
   const {
     mobileCarousel = false,
@@ -18,6 +19,7 @@
       [block.text]: {
         ruleId: `${block?.ruleId}`,
         text: block?.text,
+        productId: block.productId,
         collectionData: block?.collectionData || []
       },
     });

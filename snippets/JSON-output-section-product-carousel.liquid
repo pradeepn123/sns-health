@@ -3,6 +3,7 @@
 "blocks":[
 {% for block in section.blocks %}
   { "text": "{{ block.settings.collection_text }}", "ruleId": "{{ block.settings.rule_id }}" , 
+    "productId": {{ product.id | default: false}},
     "collectionData": [
       {% assign limit = 8 %}
       {% assign count = 0 %}
