@@ -17,7 +17,7 @@
 
 {% assign is_custom_filter = collection.metafields.custom.custom_filter | default: false %}
 {% if is_custom_filter %}
-  <collection-grid></collection-grid>
+  <collection-component />
 {% else %}
   <section
     data-section-id="{{ section.id }}"

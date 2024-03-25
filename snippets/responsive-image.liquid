@@ -26,6 +26,11 @@
     In your liquid template file, copy the following line
     - {% include 'responsive-image' with image: featured_image, image_class: "css-class", wrapper_class: "wrapper-css-class", max_width: 700, max_height: 800 %}
 {%- endcomment -%}
+{% liquid
+  assign image_width = image.width
+  assign image_height = image.height
+  assign image_alt = image.alt
+%}
 
 {%- comment -%} Added generated number to avoid conflict styling code when the same images are using this snippet {%- endcomment -%}
 {%- assign min = 100 -%}
@@ -116,31 +121,46 @@
 </style>
 
 {%- comment -%} Limit image widths to valid options based on image_width {%- endcomment -%}
-{%- assign image_widths = '180,360,540,720,900,1080,1296,1512,1728,1944,2160,2376,2592,2808,3024' | split: ',' -%}
+{%- assign image_widths_default = '180,360,540,720,900,1080,1296,1512,1728,1944,2160,2376,2592,2808,3024' | split: ',' -%}
+
 {%- capture image_widths -%}
-  {%- for width in image_widths -%}
+  {%- for width in image_widths_default -%}
     {%- comment -%} Check if image width is less or equal to width {%- endcomment -%}
     {%- assign width_num = width | plus: 0 | round -%}
-    {%- if image_width >= width_num -%}{{ width_num }},{%- endif -%}
+    {%- if image_width >= width_num -%}
+      {{ width_num }},
+    {%  else %}
+      {{ image_width }},
+      {% break %}
+    {%- endif -%}
   {%- endfor -%}
-  {{ image_width }}
 {%- endcapture -%}
-{%- assign image_widths = image_widths | strip_newlines -%}
 
+
+{%- assign image_widths = image_widths | split:',' -%}
+{%- capture srcset -%}
+  {%- for width in image_widths -%} 
+    {%- assign width_number = width | plus: 0 -%}
+    {%- if image.width >= width_number -%}
+      {{ image | image_url: width: width_number }} {{ width_number }}w,
+    {% else %}
+      {%- break -%}
+    {%- endif -%}
+    {% endfor %}
+{%- endcapture -%}
 
 <div id="ImageWrapper-{{ image_id }}-{{ generated_image_id }}" data-image-id="{{ image_id }}" class="responsive-image__wrapper {{ wrapper_class }}" {{ wrapper_attributes }}>
   <img id="Image-{{ image_id }}-{{ generated_image_id }}"
-    class="responsive-image__image lazyload {{ image_class }}"
+    class="responsive-image__image {{ image_class }}"
+    image-width = "{{ image_widths}}",
     src="{{ default_image_url }}"
-    srcset="{{default_image_url}}"
-    data-src="{{ lazy_image_url }}"
-    data-widths="[{{ image_widths }}]"
+    srcset="{{ srcset }}"
     data-aspectratio="{{ image_aspect_ratio }}"
     data-sizes="auto"
     tabindex="-1"
     alt="{{ image_alt | escape }}"
     {{ image_attributes }}
-    
+    loading="lazy"
   >
 </div>
 

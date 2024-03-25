@@ -1212,7 +1212,7 @@ function instance($$self, $$props, $$invalidate) {
 
 	let urlTokens = {
 		replacementToken: '?width=300&height=300',
-		dataSrcToken: '?{width}&{height}',
+		dataSrcToken: `?${width}&${height}`,
 		srcToken: '?width=300&height=300'
 	};
 

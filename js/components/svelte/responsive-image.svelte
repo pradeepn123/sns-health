@@ -3,7 +3,6 @@
 <script>  
 export let image_aspect_ratio;
 export let image;
-export let srcTokens; 
 let min = 100 ;
 let max = 10000;
 let diff = max - min;
@@ -34,15 +33,16 @@ const IMAGE_WIDTHS = [180,360,540,720,900,1080,1296,1512,1728,1944,2160,2376,259
       break;
     }
   }
-  return imageWidths.join(',');
+  return imageWidths
 }
 
-const imageWidth = getImageWidths(displayImage.width);
+
+const imageSizes = getImageWidths(displayImage.width);
+const imageSrcSet = imageSizes.map(width => {
+  return `${displayImage.src}&width=${width} ${width}w`
+}).join(",")
 const max_width_image_float = max_width_image * 1.0;
-let urlTokens = srcTokens;
-let uriEncodedSrc = `${encodeURI(displayImage.src)}?width=300&height=300`;
-let dataSrcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.dataSrcToken);
-let srcUrl = uriEncodedSrc.replace(urlTokens.replacementToken, urlTokens.srcToken);
+let srcUrl = `${displayImage.src}&width=10`;
 
  ((aspectRatio) => {
   if(aspectRatio <= 1 ) {
@@ -75,15 +75,13 @@ const getImageStyle = () => {
 
 <div id="ImageWrapper-{image_id}-{generated_image_id}" data-image-id="{ image_id }" class="responsive-image__wrapper" style={getWrapperStyles()}>
   <img id="Image-{image_id }-{generated_image_id}" 
-    class="responsive-image__image lazyload"
+    class="responsive-image__image"
     src={srcUrl}
-    srcset="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/u3zfwAJrQPhbkYXzAAAAABJRU5ErkJggg=="
-    data-src={dataSrcUrl}
-    data-widths=[{imageWidth}]
+    srcset={imageSrcSet}
     data-aspectratio="{image_aspect_ratio}"
-    data-sizes="auto"
     tabindex="-1"
     style={getImageStyle()}
+    loading="lazy"
   >
 </div>
 

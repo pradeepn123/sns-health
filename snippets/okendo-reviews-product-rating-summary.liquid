@@ -3,15 +3,15 @@
 {% endif %}
 
 {% assign reviewCount = product.metafields.okendo.summaryData.reviewCount | plus: 0 %}
-{% if reviewCount > 0 %}
+{% if reviewCount > 1 %}
   <div data-oke-star-rating {{ product_data_attribute }}>{{ product.metafields.okendo.StarRatingSnippet }}</div>
 {% else %}
   <div>
     <div class="okeReviews oke-sr">
-      <a class="oke-is-clickable" href="#product-reviews" >
-        <div class="oke-sr-rating"></div>
+      <div class="">
+        <div class="oke-sr-rating">0</div>
         <div class="oke-sr-stars">
-          <div class="oke-stars">
+          <div class="oke-stars"> 
             <div class="oke-stars-background">
               <svg height="15" viewBox="0 0 93.53333333333333 16" aria-hidden="true">
                 <use x="0" href="#oke-star-empty"></use><use x="19.133333333333333" href="#oke-star-empty"></use><use x="38.266666666666666" href="#oke-star-empty"></use><use x="57.4" href="#oke-star-empty"></use><use x="76.53333333333333" href="#oke-star-empty"></use>
@@ -20,9 +20,9 @@
           </div>
         </div>
         <div class="oke-sr-count">
-          <span class="oke-sr-count-number"></span><span class="oke-sr-label-text">No Reviews Yet</span>
+          <span class="oke-sr-count-number">0</span><span class="oke-sr-label-text"> Reviews</span>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 {% endif %}

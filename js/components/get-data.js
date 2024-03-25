@@ -51,3 +51,122 @@ export const getSingleProductData = async (productHandle) => {
     const product = await data.json();
     return product;
 }
+export const getSearchResult = async(query, limit) => {
+    const storeFrontKey = 'bc613e26638752aae34fdeeac6210cf0';
+    const url = "/api/2024-01/graphql.json";
+    let shopifyHeader = new Headers();
+    shopifyHeader.append("Content-Type", "application/json");
+    shopifyHeader.append("X-Shopify-Storefront-Access-Token", storeFrontKey);
+    const graphqlquery = {
+      query: `query searchProducts($query: String!, $first: Int) {
+        search(query: $query, first: $first, unavailableProducts:HIDE) {
+          totalCount
+          edges {
+            node {
+              ... on Product {
+              handle
+                productType
+                tags
+                vendor
+                title
+                featuredImage { 
+                  altText
+                  height
+                  width         
+                  id              
+                  src
+                } 
+                variants(first: 100) {
+                  nodes {
+                    metafields(identifiers: [{namespace: "custom", key: "show_in_bundle"}]) {
+                      value
+                    }
+                    id
+                    title
+                    availableForSale
+                    quantityAvailable
+                    price {
+                      amount
+                      currencyCode
+                    }
+                    compareAtPrice {
+                      amount
+                      currencyCode
+                    }
+                     image { 
+                          altText
+                          height
+                          width         
+                          id              
+                          src
+                      }
+                  selectedOptions {
+                  name
+                  value
+                }
+                  }
+       
+                }
+           
+              }
+            }
+          }
+        }
+      }`
+      ,
+      variables:{
+        "query":`${query}`,
+        "first": limit
+      }
+    }
+
+    let requestOptions = {
+      method: 'POST',
+      headers: shopifyHeader,
+      body: JSON.stringify(graphqlquery)
+    };
+
+    const data = await fetch(url, requestOptions);
+    const productData = await data.json();
+    return productData;
+}
+
+export const getPredictiveSearch = async(query) => {
+  const storeFrontKey = 'bc613e26638752aae34fdeeac6210cf0';
+  const url = "/api/2024-01/graphql.json";
+    let shopifyHeader = new Headers();
+    shopifyHeader.append("Content-Type", "application/json");
+    shopifyHeader.append("X-Shopify-Storefront-Access-Token", storeFrontKey);
+    const graphqlquery = {
+      query: `query suggestions($query: String!) {
+        predictiveSearch(query: $query, limit: 6, limitScope: EACH) {
+          queries {
+            text
+          }
+          collections {
+            handle
+            title
+          }
+          pages {
+              handle
+              title
+          }
+        }
+      }`
+      ,
+      variables:{
+        "query":`${query}`        
+      }
+    }
+
+    let requestOptions = {
+      method: 'POST',
+      headers: shopifyHeader,
+      body: JSON.stringify(graphqlquery)
+    };
+
+    const data = await fetch(url, requestOptions);
+    const searchData = await data.json();
+    // console.log(searchData, 'jiiiiii')
+    return searchData;
+}

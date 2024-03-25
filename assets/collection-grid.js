@@ -9,11 +9,11 @@
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 /* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
-/* harmony import */ var SvelteComponents_collection_grid_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/collection-grid.svelte */ "./js/components/svelte/collection-grid.svelte");
+/* harmony import */ var SvelteComponents_collection_component_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/collection-component.svelte */ "./js/components/svelte/collection-component.svelte");
 
 
 /* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  return (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_collection_grid_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'collection-grid');
+  return (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_collection_component_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'collection-component');
 });
 
 /***/ })

@@ -1,6 +1,7 @@
 const glob = require('glob');
 const path = require('path'); //get absolute paths
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //extract css from js imports
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const WebpackShellPluginNext = require('webpack-shell-plugin-next'); //execute shell commands
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts'); //remove unwanted js created while compiling scss
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
@@ -102,7 +103,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: './[name].css'
     })
-  ],
+  ]
 
 };
 
@@ -142,7 +143,11 @@ if (mode === 'development') {
           type: /javascript/
         }
       },
-    }
+    },
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ]
   }
 }
 
@@ -169,6 +174,9 @@ if (mode == "production") {
           type: /javascript/
         }
       },
-    }
+    },
+    minimizer: [
+      new CssMinimizerPlugin(),
+    ]
   }
 }

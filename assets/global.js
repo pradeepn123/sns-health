@@ -51,8 +51,8 @@ var collapsible = () => {
 var _excluded = ["breakpoints"],
   _excluded2 = ["pagination", "navigation"],
   _excluded3 = ["navigation", "pagination", "progressPagination"];
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 
 
 
@@ -198,19 +198,18 @@ class CustomCarousel extends HTMLElement {
             // handleClick(el);
           }
         },
-
         afterInit: () => {
           var _this$querySelector4;
           this.querySelector('.carousel__container').classList.remove('hide');
-          (_this$querySelector4 = this.querySelector('.carousel-placeholders')) === null || _this$querySelector4 === void 0 ? void 0 : _this$querySelector4.classList.add('hide');
+          (_this$querySelector4 = this.querySelector('.carousel-placeholders')) === null || _this$querySelector4 === void 0 || _this$querySelector4.classList.add('hide');
         }
       },
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
     }, carouselSettings));
     this.swiper.on('activeIndexChange', current => {
       var _this$querySelector5, _this$querySelectorAl;
-      (_this$querySelector5 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector5 === void 0 ? void 0 : _this$querySelector5.classList.remove('swiper-pagination-bullet-active');
-      (_this$querySelectorAl = this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _this$querySelectorAl === void 0 ? void 0 : _this$querySelectorAl.classList.add('swiper-pagination-bullet-active');
+      (_this$querySelector5 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector5 === void 0 || _this$querySelector5.classList.remove('swiper-pagination-bullet-active');
+      (_this$querySelectorAl = this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _this$querySelectorAl === void 0 || _this$querySelectorAl.classList.add('swiper-pagination-bullet-active');
     });
   }
 }
@@ -384,25 +383,6 @@ var rebuyAutoAdd = () => {
 
 /***/ }),
 
-/***/ "./js/components/product-card.js":
-/*!***************************************!*\
-  !*** ./js/components/product-card.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-class ProductCard extends HTMLElement {
-  constructor() {
-    super();
-    this.HTMLElement = this.innerHTML;
-  }
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductCard);
-
-/***/ }),
-
 /***/ "./js/components/registerCustomElements.js":
 /*!*************************************************!*\
   !*** ./js/components/registerCustomElements.js ***!
@@ -413,12 +393,9 @@ class ProductCard extends HTMLElement {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var JsComponents_custom_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/custom-carousel */ "./js/components/custom-carousel.js");
-/* harmony import */ var JsComponents_product_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! JsComponents/product-card */ "./js/components/product-card.js");
-
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
   customElements.define('custom-carousel', JsComponents_custom_carousel__WEBPACK_IMPORTED_MODULE_0__["default"]);
-  customElements.define('product-card', JsComponents_product_card__WEBPACK_IMPORTED_MODULE_1__["default"]);
 });
 
 /***/ }),
@@ -429,34 +406,22 @@ class ProductCard extends HTMLElement {
   \*******************************/
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
-/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lazysizes */ "./node_modules/lazysizes/lazysizes.js");
-/* harmony import */ var lazysizes__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lazysizes__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var lazysizes_plugins_object_fit_ls_object_fit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lazysizes/plugins/object-fit/ls.object-fit */ "./node_modules/lazysizes/plugins/object-fit/ls.object-fit.js");
-/* harmony import */ var lazysizes_plugins_object_fit_ls_object_fit__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_object_fit_ls_object_fit__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lazysizes/plugins/parent-fit/ls.parent-fit */ "./node_modules/lazysizes/plugins/parent-fit/ls.parent-fit.js");
-/* harmony import */ var lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_parent_fit_ls_parent_fit__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var lazysizes_plugins_rias_ls_rias__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lazysizes/plugins/rias/ls.rias */ "./node_modules/lazysizes/plugins/rias/ls.rias.js");
-/* harmony import */ var lazysizes_plugins_rias_ls_rias__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_rias_ls_rias__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lazysizes/plugins/bgset/ls.bgset */ "./node_modules/lazysizes/plugins/bgset/ls.bgset.js");
-/* harmony import */ var lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_bgset_ls_bgset__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lazysizes/plugins/respimg/ls.respimg */ "./node_modules/lazysizes/plugins/respimg/ls.respimg.js");
-/* harmony import */ var lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(lazysizes_plugins_respimg_ls_respimg__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! JsComponents/collapsible */ "./js/components/collapsible.js");
-/* harmony import */ var swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/element/bundle */ "./node_modules/swiper/swiper-element-bundle.mjs");
-/* harmony import */ var JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! JsComponents/gtm-event-trigger */ "./js/components/gtm-event-trigger.js");
-/* harmony import */ var JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! JsComponents/event-listeners */ "./js/components/event-listeners.js");
-/* harmony import */ var JsComponents_header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! JsComponents/header */ "./js/components/header.js");
-/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
-/* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
-/* harmony import */ var JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/rebuy-cart-integration */ "./js/components/rebuy-cart-integration.js");
-/* harmony import */ var JsComponents_klaiyo_auto_add__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! JsComponents/klaiyo-auto-add */ "./js/components/klaiyo-auto-add.js");
-
-
-
-
-
-
-//lazyload image dependencies
+/* harmony import */ var JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! JsComponents/collapsible */ "./js/components/collapsible.js");
+/* harmony import */ var swiper_element_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/element/bundle */ "./node_modules/swiper/swiper-element-bundle.mjs");
+/* harmony import */ var JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/gtm-event-trigger */ "./js/components/gtm-event-trigger.js");
+/* harmony import */ var JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! JsComponents/event-listeners */ "./js/components/event-listeners.js");
+/* harmony import */ var JsComponents_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! JsComponents/header */ "./js/components/header.js");
+/* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
+/* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
+/* harmony import */ var JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! JsComponents/rebuy-cart-integration */ "./js/components/rebuy-cart-integration.js");
+/* harmony import */ var JsComponents_klaiyo_auto_add__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/klaiyo-auto-add */ "./js/components/klaiyo-auto-add.js");
+// import lazysizes from 'lazysizes';
+// import 'lazysizes/plugins/object-fit/ls.object-fit';
+// import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+// import 'lazysizes/plugins/rias/ls.rias';
+// import 'lazysizes/plugins/bgset/ls.bgset';
+// import 'lazysizes/plugins/respimg/ls.respimg';
+// //lazyload image dependencies
 
 
  //needed for swiper
@@ -469,19 +434,20 @@ class ProductCard extends HTMLElement {
 
 
 //config lazyload to default settings
-(lazysizes__WEBPACK_IMPORTED_MODULE_0___default().cfg).loadMode = 1;
+// lazysizes.cfg.loadMode = 1;
+
 document.addEventListener('DOMContentLoaded', () => {
-  (0,JsComponents_header__WEBPACK_IMPORTED_MODULE_7__["default"])(); //header and megamenu
-  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.removeCartToggleBinding)(); //remove toggle click
-  (0,JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_9__["default"])();
-  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.pageLoadEvent)();
-  (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_6__.register)(); //swiper
-  (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_11__["default"])(); //carousel and product cards
-  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_10__.viewPromotionTrigger)();
-  (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_12__["default"])();
-  (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_13__.collapsible)(); //collapsable
-  (0,JsComponents_klaiyo_auto_add__WEBPACK_IMPORTED_MODULE_14__.rebuyAutoAdd)();
-  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_8__.addFormDelegate)(); //rebuy integration 
+  (0,JsComponents_header__WEBPACK_IMPORTED_MODULE_1__["default"])(); //header and megamenu
+  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_2__.removeCartToggleBinding)(); //remove toggle click
+  (0,JsComponents_event_listeners__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_4__.pageLoadEvent)();
+  (0,swiper_element_bundle__WEBPACK_IMPORTED_MODULE_0__.register)(); //swiper
+  (0,JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_5__["default"])(); //carousel and product cards
+  (0,JsComponents_gtm_event_trigger__WEBPACK_IMPORTED_MODULE_4__.viewPromotionTrigger)();
+  (0,JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_7__.collapsible)(); //collapsable
+  (0,JsComponents_klaiyo_auto_add__WEBPACK_IMPORTED_MODULE_8__.rebuyAutoAdd)();
+  (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_2__.addFormDelegate)(); //rebuy integration 
 });
 
 /***/ })

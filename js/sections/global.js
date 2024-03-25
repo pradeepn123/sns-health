@@ -1,10 +1,10 @@
-import lazysizes from 'lazysizes';
-import 'lazysizes/plugins/object-fit/ls.object-fit';
-import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-import 'lazysizes/plugins/rias/ls.rias';
-import 'lazysizes/plugins/bgset/ls.bgset';
-import 'lazysizes/plugins/respimg/ls.respimg';
-//lazyload image dependencies
+// import lazysizes from 'lazysizes';
+// import 'lazysizes/plugins/object-fit/ls.object-fit';
+// import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+// import 'lazysizes/plugins/rias/ls.rias';
+// import 'lazysizes/plugins/bgset/ls.bgset';
+// import 'lazysizes/plugins/respimg/ls.respimg';
+// //lazyload image dependencies
 
 import { collapsible } from "JsComponents/collapsible";
 import { register } from 'swiper/element/bundle'; //needed for swiper
@@ -17,7 +17,7 @@ import {addFormDelegate,removeCartToggleBinding} from 'JsComponents/rebuy-cart-i
 import { rebuyAutoAdd } from 'JsComponents/klaiyo-auto-add';
 
 //config lazyload to default settings
-lazysizes.cfg.loadMode = 1;
+// lazysizes.cfg.loadMode = 1;
 
 document.addEventListener('DOMContentLoaded', () => {
   headerEvents(); //header and megamenu

@@ -4,10 +4,12 @@ import reviews from "./customer-reviews";
 import categorySection from './category-section'
 import customProductCard from './custom-product-card';
 import collectionGrid from './collection-grid';
+import searchPage from './search-page';
 import productTabs from "./product";
 import bundleCart from "./bundle-cart"
 import AccountPage from "./account-page"
 import ReactModal from "./react-modal"
+import PredictiveSearch from "./predictive-search";
 
 document.addEventListener('DOMContentLoaded', () => {
     announcementBar();
@@ -20,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     bundleCart();
     AccountPage();
     ReactModal();
+    searchPage();
+    PredictiveSearch();
     window.customProductCard = customProductCard;
     window.productCarousel = productCarousel;
 });

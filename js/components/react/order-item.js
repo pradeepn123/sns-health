@@ -3,7 +3,7 @@ import ResponsiveImage from "./ResponsiveImage";
 
 const srcTokens = {
     replacementToken: "?width=90&height=90",
-    dataSrcToken: "?width={width}&height={height}",
+    dataSrcToken: `?width=width&height=height`,
     srcToken: "?width=90&height=90",
 };
 

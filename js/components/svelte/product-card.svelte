@@ -65,11 +65,6 @@
   const bestseller = tags.includes("bestseller");
   const isBundle = collectionHandle.includes("build-your-own-box") || false;
   const onsale = tags.includes("onsale");
-  const srcTokens = {
-    replacementToken: "?width=300&height=300",
-    dataSrcToken: "?{width}&{height}",
-    srcToken: "?width=300&height=300",
-  };
 
   const productFormattedPrice = skipFormatMoney
     ? window.formatCurrency(price, `${currencySymbol}{{amount}}`)
@@ -147,7 +142,7 @@
 >
   <div class="product-card__body">
     <div class="product-card__image">
-      <ResponsiveImage {image} image_aspect_ratio={1} {srcTokens} />
+      <ResponsiveImage {image} image_aspect_ratio={1} />
     </div>
     <div class="product-card__header">
       <div class="product-card__header-tags">

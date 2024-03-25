@@ -15,12 +15,6 @@ const {
   
   const formattedDate = new Intl.DateTimeFormat('en-US').format(new Date(date));
 
-  const srcTokens = {
-  replacementToken: '_x280.',
-  dataSrcToken: '_x{width}.',
-  srcToken: '_x280.',
-}
-
   const image= {
     id: Date.now(),
     width: 200,
@@ -31,7 +25,7 @@ const {
 
 <div class="swiper-slide review_container">
     <div class="review_image">
-        <ResponsiveImage image={image} srcTokens={srcTokens} image_aspect_ratio={1}/>
+        <ResponsiveImage image={image} image_aspect_ratio={1}/>
     </div>
     <div class="review_content">
         <div class="rating">

@@ -11,9 +11,13 @@
               {% for product in collection.products %} 
               {% if product.available %}  
               <div class="swiper-slide">
-               {% render 'custom-product-card',
-                product: product
-               %}
+                <custom-product-card>
+                  <script id="product-json" type="text/json" style="display: none">
+                    {
+                      "data": {% render 'JSON-product-card-data', product: product %}
+                    }
+                  </script>
+              </custom-product-card>
               </div>
             {% endif %}
               {% endfor %}
@@ -60,7 +64,13 @@
               {% if count >= limit %} {% break %} {% endif %}
               {% if product.available %}  
               {% assign count = count | plus: 1 %}
-                {% render 'custom-product-card', product: product %}
+              <custom-product-card>
+                <script id="product-json" type="text/json" style="display: none">
+                  {
+                    "data": {% render 'JSON-product-card-data', product: product %}
+                  }
+                </script>
+              </custom-product-card>
             {% endif %}
               {% endfor %}
             </div>

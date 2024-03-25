@@ -8,7 +8,11 @@ if (typeof boostPFSConfig != 'undefined'
 	&& boostPFSConfig.general.isInitFilter === true) { 
 	boostPFS.initFilter(); 
 } 
+
 BoostPFS.jQ(window).on('load', function(){
-	boostPFS.initSearchBox();
+
+	if(window.shopifyVariables.activateBoostSearch){
+		boostPFS.initSearchBox();
+	}
 	boostPFS.initAnalytics();
 });

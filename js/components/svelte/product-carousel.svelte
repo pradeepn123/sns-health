@@ -31,11 +31,11 @@
   const requestData = async (selectedParams) => {
     isLoading = true;
     if((selectedParams.collectionData).length > 0) {
-      productData = selectedParams.collectionData
+      productData = selectedParams.collectionData || []
     }
     else {
       const responseData = await getProductData(selectedParams);
-      productData = responseData.data;
+      productData = responseData.data || [];
     }
     isLoading = false;
   };

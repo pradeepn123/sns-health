@@ -1,6 +1,6 @@
 import svelteWrapper from "JsComponents/svelte-wrapper";
-import CollectionGrid from 'SvelteComponents/collection-grid.svelte';
+import CollectionComponent from 'SvelteComponents/collection-component.svelte';
 
 export default () => {
-  return svelteWrapper(CollectionGrid, 'collection-grid');
+  return svelteWrapper(CollectionComponent, 'collection-component');
 }

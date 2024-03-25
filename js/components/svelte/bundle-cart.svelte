@@ -8,12 +8,6 @@
   import { fade } from "svelte/transition";
   import ResponsiveImage from "SvelteComponents/responsive-image.svelte";
 
-  const srcTokens = {
-    replacementToken: "?width=300&height=300",
-    dataSrcToken: "?{width}&{height}",
-    srcToken: "?width=300&height=300",
-  };
-
 
   export let open = false;
 
@@ -142,7 +136,7 @@
               <div class="bundle-cart__image-wrapp">
                 <div class="bundle-cart__image">
                   <!-- <img src={item.image.src} alt={item.image.src} /> -->
-                  <ResponsiveImage image={item.image} image_aspect_ratio={0.8} {srcTokens} /> 
+                  <ResponsiveImage image={item.image} image_aspect_ratio={0.8} /> 
                 </div>
                 <div class="bundle-cart__title-and-price">
                   <p class="bundle-cart__title">{item.title}</p>

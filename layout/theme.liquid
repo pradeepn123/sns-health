@@ -332,7 +332,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "addToCartText": "{{- 'collection.product.add_to_cart' | t -}}",
         "collectionHandle": "{{ collection.handle }}",
         "collectionTitle": "{{ collection.title }}",
-        "isCollectionPage": {{ isCollectionPage }}
+        "isCollectionPage": {{ isCollectionPage }},
+        "activateBoostSearch": {{ settings.activate_boost_search | json }}
       } 
       window.shopifyVariables = shopifyVariables;
       

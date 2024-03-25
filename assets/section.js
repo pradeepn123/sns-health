@@ -85,11 +85,11 @@
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
-/* harmony import */ var SvelteComponents_collection_grid_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/collection-grid.svelte */ "./js/components/svelte/collection-grid.svelte");
+/* harmony import */ var SvelteComponents_collection_component_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/collection-component.svelte */ "./js/components/svelte/collection-component.svelte");
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  return (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_collection_grid_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'collection-grid');
+  return (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_collection_component_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'collection-component');
 });
 
 /***/ }),
@@ -128,6 +128,25 @@
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
   (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_customer_reviews_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'customer-reviews', '#customer-reviews-data');
+});
+
+/***/ }),
+
+/***/ "./js/sections/predictive-search.js":
+/*!******************************************!*\
+  !*** ./js/sections/predictive-search.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_predictive_search_index_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/predictive-search/index.svelte */ "./js/components/svelte/predictive-search/index.svelte");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_predictive_search_index_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'predictive-search-result');
 });
 
 /***/ }),
@@ -190,6 +209,25 @@
 
 /***/ }),
 
+/***/ "./js/sections/search-page.js":
+/*!************************************!*\
+  !*** ./js/sections/search-page.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_search_component_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/search-component.svelte */ "./js/components/svelte/search-component.svelte");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  return (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_search_component_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'search-component');
+});
+
+/***/ }),
+
 /***/ "./js/sections/section.js":
 /*!********************************!*\
   !*** ./js/sections/section.js ***!
@@ -202,10 +240,14 @@
 /* harmony import */ var _category_section__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./category-section */ "./js/sections/category-section.js");
 /* harmony import */ var _custom_product_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./custom-product-card */ "./js/sections/custom-product-card.js");
 /* harmony import */ var _collection_grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./collection-grid */ "./js/sections/collection-grid.js");
+/* harmony import */ var _search_page__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./search-page */ "./js/sections/search-page.js");
 /* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./product */ "./js/sections/product.js");
 /* harmony import */ var _bundle_cart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./bundle-cart */ "./js/sections/bundle-cart.js");
 /* harmony import */ var _account_page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./account-page */ "./js/sections/account-page.js");
 /* harmony import */ var _react_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./react-modal */ "./js/sections/react-modal.js");
+/* harmony import */ var _predictive_search__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./predictive-search */ "./js/sections/predictive-search.js");
+
+
 
 
 
@@ -227,6 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_bundle_cart__WEBPACK_IMPORTED_MODULE_7__["default"])();
   (0,_account_page__WEBPACK_IMPORTED_MODULE_8__["default"])();
   (0,_react_modal__WEBPACK_IMPORTED_MODULE_9__["default"])();
+  (0,_search_page__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  (0,_predictive_search__WEBPACK_IMPORTED_MODULE_11__["default"])();
   window.customProductCard = _custom_product_card__WEBPACK_IMPORTED_MODULE_4__["default"];
   window.productCarousel = _product_carousel__WEBPACK_IMPORTED_MODULE_3__["default"];
 });

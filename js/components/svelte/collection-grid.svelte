@@ -1,99 +1,31 @@
 <script>
-  import { onMount } from "svelte";
-  import CustomFilter from "SvelteComponents/custom-filter.svelte";
   import ProductCardSkeleton from "SvelteComponents/product-card-skeleton.svelte";
   import ColletionFilterGroup from "SvelteComponents/collection-filter-group.svelte";
   import CollectionProductGrid from "SvelteComponents/collection-product-grid.svelte";
   import CollectionPagination from "SvelteComponents/collection-pagination.svelte";
   import Dropdown from "SvelteComponents/dropdown.svelte";
 
-  let productData = [];
+  export let apiPaginatedData = [];
+  export let loading = false;
+  export let firstFoldLoaded = false;
+  export let disableBundleCheck = true;
   let variantData = [];
   let filteredVariants = [];
   let paginatedData = [];
-  let loading = true;
-  let firstFoldLoaded = false;
   let totalPages = 0;
   let currentPage = 1;
   const productsPerPage = 24;
   let filterDrawerOpen = false;
+  $:apiPaginatedData , setFilters();
 
-  let appliedFilterObject = {
-    brand: [],
-    productType: [],
-    diet: [],
-    flavor: [],
-    sortBy: "featured",
-  };
-  let sortNames = {
-    "featured": "Featured",
-    "top-rated": "Top rated",
-    "title-ascending": "Title ascending",
-    "title-descending": "Title descending",
-    "price-ascending": "Price ascending",
-    "price-descending": "Price descending",
-    "created-ascending": "Created ascending",
-    "created-descending": "Created descending",
-  };
-  let filterNames = {
-    brand: "Brand",
-    productType: "Product type",
-    diet: "Diet",
-    flavor: "Flavor"
-  };
-
-  let filtersTemp = {
-    brand: new Set(),
-    productType: new Set(),
-    diet: new Set(),
-    flavor: new Set(),
-  };
-  let filters = {
-    brand: {},
-    productType: {},
-    diet: {},
-    flavor: {},
-  };
-
-  async function loadProductData(cursor = "") {
-    let options = `products(first: 25)`;
-    if (cursor !== "" && cursor !== "end") {
-      options = `products(first: 250, after: "${cursor}")`;
-    }
-
-    let myHeaders = new Headers();
-    myHeaders.append(
-      "X-Shopify-Storefront-Access-Token",
-      "bc613e26638752aae34fdeeac6210cf0",
-    );
-    myHeaders.append("X-Shopify-Api-Features", "include-presentment-prices");
-    myHeaders.append("Content-Type", "application/json");
-
-    let graphql = JSON.stringify({
-      query: `query AllProducts @inContext(country: ${window.Shopify.country}) {\n  collection(handle: \"build-your-own-box\") {\n    handle\n    ${options} {\n      nodes {\n        id\n          title\n          onlineStoreUrl\n          handle\n          productType\n          tags\n          createdAt\n          vendor\n          featuredImage {\n          src\n          id\n          width\n          height\n          altText\n            }\n            metafield(key: \"summaryData\", namespace: \"okendo\") {\n            value\n            updatedAt\n            }\n          variants(first: 100) {\n            nodes {\n              metafields(identifiers: [{namespace: \"custom\", key: \"show_in_bundle\"}]) {\n                value\n              }\n              availableForSale\n              quantityAvailable\n              price {\n                amount\n                currencyCode\n              }\n              selectedOptions {\n                name\n                value \n              }\n              compareAtPrice {\n                amount\n                currencyCode\n              }\n              title\n              id\n              image {\n                altText\n                height\n                width\n                id\n                src\n              }\n            }\n          }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n        hasPreviousPage\n        startCursor\n      }\n    }\n  }\n}`,
-      variables: {},
-    });
-
-    const requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: graphql,
-      redirect: "follow",
-    };
-
-    let data = await fetch("/api/2023-10/graphql.json", requestOptions).then(
-      (response) => response.json(),
-    );
-    firstFoldLoaded = true;
-    productData = [...productData, ...data.data.collection.products.nodes];
-
-    data.data.collection.products.nodes.forEach((product) => {
+  const setFilters = () => {
+    apiPaginatedData.forEach((product) => {
       product.variants.nodes.forEach((variant) => {
-        let show_in_bundle = variant.metafields[0]?.value;
-        if (typeof variant.metafields[0]?.value == 'undefined') {
-          show_in_bundle = "false";
+        let show_in_bundle = variant.metafields[0]?.value || "false";
+        if(disableBundleCheck) {
+          show_in_bundle = "true"
         }
-        if (variant.availableForSale && show_in_bundle == "true" && variant.quantityAvailable > 0) {
+        if (variant.availableForSale && JSON.parse(show_in_bundle) && variant.quantityAvailable > 0) {
           //populate variant data
           let image = variant.image?.src
             ? variant.image
@@ -190,13 +122,46 @@
         }
       });
     });
-
-    if (data.data.collection.products.pageInfo.hasNextPage) {
-      loadProductData(data.data.collection.products.pageInfo.endCursor);
-    } else {
-      loading = false;
-    }
+    variantData = variantData;
   }
+
+  let appliedFilterObject = {
+    brand: [],
+    productType: [],
+    diet: [],
+    flavor: [],
+    sortBy: "featured",
+  };
+  let sortNames = {
+    "featured": "Featured",
+    "top-rated": "Top rated",
+    "title-ascending": "Title ascending",
+    "title-descending": "Title descending",
+    "price-ascending": "Price ascending",
+    "price-descending": "Price descending",
+    "created-ascending": "Created ascending",
+    "created-descending": "Created descending",
+  };
+  let filterNames = {
+    brand: "Brand",
+    productType: "Product type",
+    diet: "Diet",
+    flavor: "Flavor"
+  };
+
+  let filtersTemp = {
+    brand: new Set(),
+    productType: new Set(),
+    diet: new Set(),
+    flavor: new Set(),
+  };
+  let filters = {
+    brand: {},
+    productType: {},
+    diet: {},
+    flavor: {},
+  };
+
 
   //handling pagination
   function next() {
@@ -395,10 +360,6 @@
   $: totalPages = Math.ceil(totalProducts / productsPerPage);
   $: console.log(filters);
 
-  onMount(() => {
-    loadProductData();
-  });
-
   const sortDropdownData = {
     options: sortNames,
     title: "Sort by:",
@@ -451,6 +412,7 @@
             </span>
             Filter
           </button>
+          {#if paginatedData.length > 0}
           <span class="collection-filter-products-count"
             >Showing {(currentPage - 1) * productsPerPage + 1} - {currentPage ==
             totalPages
@@ -462,9 +424,14 @@
           <div class="collection__sort">
             <Dropdown dropdownData={sortDropdownData} />
           </div>
+          {/if}
         </div>
-        <CollectionProductGrid products={paginatedData} />
-        <CollectionPagination {totalPages} bind:currentPage {next} {previous} {scrollToTop} />
+        {#if paginatedData.length == 0}
+          <h1>Search results not found</h1>
+        {:else}
+          <CollectionProductGrid products={paginatedData} />
+          <CollectionPagination {totalPages} bind:currentPage {next} {previous} {scrollToTop} />
+        {/if}
       </div>
     </div>
   {:else}

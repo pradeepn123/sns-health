@@ -33,6 +33,7 @@
     "text_font": "poppins_n4",
     "underline_links": true,
     "animation_image_zoom": true,
+    "activate_boost_search": false,
     "search_mode": "product,page",
     "show_vendor": true,
     "show_secondary_image": true,
@@ -530,15 +531,15 @@
             "settings": {
               "icon": "bi-fast-delivery",
               "title": "Free Canadian Shipping",
-              "content": "<p><a href=\"https:\/\/snshealth.com\/policies\/shipping-policy\" target=\"_blank\" title=\"https:\/\/snshealth.com\/policies\/shipping-policy\">On All Orders Over $49<\/a><\/p>"
+              "content": "<p>On All Orders Over $49<\/p>"
             }
           },
           "text-with-icons-2": {
             "type": "item",
             "settings": {
-              "icon": "bi-email",
-              "title": "Leave us a message",
-              "content": "<p><a href=\"\/pages\/contact-us\" target=\"_blank\" title=\"Contact Us\">If you have any questions<\/a><\/p>"
+              "icon": "bi-chat",
+              "title": "Chat with us",
+              "content": "<p>If you have any questions<\/p>"
             }
           },
           "text-with-icons-3": {
@@ -546,7 +547,7 @@
             "settings": {
               "icon": "bi-secure-payment",
               "title": "Secure Payments",
-              "content": "<p><a href=\"\/policies\/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">Protected Checkout<\/a><\/p>"
+              "content": "<p>Protected Checkout<\/p>"
             }
           },
           "7bc85f43-0eb3-4a93-aace-912d784f3c46": {
@@ -1130,11 +1131,6 @@
       "search-template": {
         "type": "search-template",
         "settings": {
-          "products_per_row": "4",
-          "default_view_layout": "grid",
-          "show_quick_view": "list_grid",
-          "show_quick_buy": "list",
-          "quick_links": ""
         }
       },
       "16575689909e3ec3e4": {

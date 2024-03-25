@@ -262,6 +262,12 @@
     "name": "Search",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "activate_boost_search",
+        "label": "Activate boost search",
+        "default": false
+      },
+      {
         "type": "select",
         "id": "search_mode",
         "label": "Search only...",
