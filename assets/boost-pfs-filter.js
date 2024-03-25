@@ -179,7 +179,6 @@ var boostPFSTemplate = {
         // Get Template
         // Customize API data to get the Shopify data
         data = prepareShopifyData(data);
-        console.log(data, "data");
         const {
             images_info, 
             vendor,
@@ -203,6 +202,7 @@ var boostPFSTemplate = {
             handle,
             skipFormatMoney: true,
             discountPercentage: Math.round((((currentVariant.compare_at_price * 100) - (currentVariant.price * 100)) * 100) / (currentVariant.compare_at_price * 100))  ,
+            addConversionRate: true
         }
 
         if(!variant_id) {

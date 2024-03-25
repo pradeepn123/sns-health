@@ -29,7 +29,9 @@
     skipFormatMoney = false,
     discountPercentage: shopifyDiscountPercentage = 0,
     enableAddToCart = true,
-    forceSeeOptions = false
+    forceSeeOptions = false,
+    // flag for adding conversion rate
+    addConversionRate = false
   } = product || shopifyData || {};
 
   const currencySymbol = window.shopifyVariables.currencySymbol || "$";
@@ -42,8 +44,9 @@
   const bundleText = window.shopifyVariables.bundleText || "Add To Bundle";
   const bundleTextAdded = window.shopifyVariables.bundleTextAdded || "Added";
 
-  const [{ compare_at_price: comparePrice, price, id: variantId } = {}] =
+  let [{ compare_at_price: comparePrice, price, id: variantId } = {}] =
     variants || [];
+
   let link = `${window.Shopify.routes.root}products/${handle}?variant=${variantId}`;
   if(collectionTitle && collectionHandle) {
      link = `${link}&collectionTitle=${collectionTitle}&collectionURL=${window.Shopify.routes.root}collections/${collectionHandle}`
@@ -65,13 +68,23 @@
   const bestseller = tags.includes("bestseller");
   const isBundle = collectionHandle.includes("build-your-own-box") || false;
   const onsale = tags.includes("onsale");
-
-  const productFormattedPrice = skipFormatMoney
-    ? window.formatCurrency(price, `${currencySymbol}{{amount}}`)
-    : window.formatCurrency(
-        price * (window.Shopify?.currency?.rate * 100),
+  
+  const productFormattedPrice = (price) => {
+    let amount = parseFloat(price);
+    let formattedPrice;
+    if(addConversionRate && !(window.Shopify.currency.active).toLowerCase().includes('cad')) {
+      amount = parseFloat(amount + (0.10 * amount))
+    }
+    if(skipFormatMoney) {
+      formattedPrice = window.formatCurrency(amount, `${currencySymbol}{{amount}}`)
+     } else { 
+      formattedPrice = window.formatCurrency(
+        amount * (window.Shopify?.currency?.rate * 100),
         `${currencySymbol}{{amount}}`,
       );
+     }
+   return formattedPrice;
+  }
 
   //conflicting data between shopify and rebuy
   let discountPercentage = 0;
@@ -88,7 +101,7 @@
       id: variantId,
       image,
       title,
-      price: productFormattedPrice,
+      price: productFormattedPrice(price),
       quantity: 1
     };
   }
@@ -103,28 +116,13 @@
       id: variantId,
       image,
       title,
-      price: productFormattedPrice,
+      price: productFormattedPrice(price),
       quantity: 1
     };
     //if [currentVariant] id exist on hash object(store), then update the product
     isAddedToBundle ?  updateProduct(currentAddedBundleProduct,currentAddedBundleProduct.quantity + 1 ) : addProduct(curatedBundleProduct);
     //else add [current variant] on the hash object
   }
-
-  // const updateProduct = (ev) => {
-  //   ev.preventDefault();
-  //   cartContents.update((contents) => {
-  //     if (isAddedToBundle) {
-  //       const quantity = (contents[variantId].quantity += 1);
-  //       updateQuantity(contents[variantId], quantity);
-  //     } else {
-  //       const productObj = {
-  //         [variantId]: curatedBundleProduct,
-  //       };
-  //       return productObj;
-  //     }
-  //   });
-  // };
 
   onMount(() => {
     handleClick(ref);
@@ -178,20 +176,12 @@
       {#if discountPercentage > 0}<div
           class=" product-card__price product-card__price--compare"
         >
-          {#if skipFormatMoney}
-            {window.formatCurrency(comparePrice, `${currencySymbol}{{amount}}`)}
+            {productFormattedPrice(comparePrice)}
             {window.Shopify?.currency?.active}
-          {:else}
-            {window.formatCurrency(
-              comparePrice * (window.Shopify?.currency?.rate * 100),
-              `${currencySymbol}{{amount}}`,
-            )}
-            {window.Shopify?.currency?.active}
-          {/if}
         </div>
       {/if}
       <div class="product-card__price">
-        {productFormattedPrice}
+        {productFormattedPrice(price)}
         {window.Shopify?.currency?.active}
       </div>
     </div>

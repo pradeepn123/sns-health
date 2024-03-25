@@ -1,15 +1,15 @@
       { 
         "image" : { "src": "{{ product.featured_image | image_url }}", "height": "
       {{- product.featured_image.height | default: 1080 -}}
-      ", "width": "{{ product.featured_image.height | default: 1920 }}" }, "variants": [
+      ", "width": "{{ product.featured_image.height | default: 1920 }}" },"forceSeeOptions": true,"variants": [
       {% liquid
-        assign compare_price = product.compare_at_price | default: 0
-        assign price = product.price
+        assign compare_price = product.selected_or_first_available_variant.compare_at_price | default: 0
+        assign price = product.selected_or_first_available_variant.price
         assign discount_percentage = compare_price | minus: price | times: 100.0 | divided_by: compare_price | round
         assign variant_id = product.selected_or_first_available_variant.id
       %}
-      { "compare_at_price": "{{ compare_price | money_without_currency | replace: ',', '.' }}", "price": "
-      {{- price | money_without_currency | replace: ',', '.' -}}
+      { "compare_at_price": "{{ compare_price | money_without_currency | replace: ',', '.' | times: 100 }}", "price": "
+      {{- price | money_without_currency | replace: ',', '.' | times: 100 -}}
       ", "id": "{{variant_id}}" } ], "discountPercentage": {{ discount_percentage | default: 0 }}, "skipFormatMoney": true, "vendor" : "
       {{- product.vendor -}}
       ", "title" : `{{ product.title }}`, "handle": "{{ product.handle }}", "link": "{{ product.url }}", "tags" :

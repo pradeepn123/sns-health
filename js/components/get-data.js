@@ -4,7 +4,6 @@ export const customerLocation = async () => {
     return handle;
 }
 export const getProductData = async (additionalParams) => {
-    debugger;
     const { ruleId = '', text = '',productId,...otherparams } = additionalParams || {};
     let url = '';
     url = new URL(`https://rebuyengine.com/api/v1/custom/id/${ruleId}`);

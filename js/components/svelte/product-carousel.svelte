@@ -6,7 +6,6 @@
   export let shopifyData; //for parent level props
   let productData = []; //to store api data
   let isLoading = true;
-  debugger;
 
   const {
     mobileCarousel = false,
@@ -35,7 +34,8 @@
     }
     else {
       const responseData = await getProductData(selectedParams);
-      productData = responseData.data || [];
+      let responseProductData = responseData.data || [];
+      productData = responseProductData.map(item => {item["addConversionRate"] = true; return item})
     }
     isLoading = false;
   };
@@ -108,8 +108,8 @@
           <div class="custom-carousel__content hide" data-carousel-content>
             {#each productData as product, index}
               {#if product.variants[0].price > 0}
-                <p style="display: none !important">{product.enableAddToCart = false}</p> 
-                <ProductCard {product} />
+                <p style="display: none !important">{product.enableAddToCart = false}</p>
+                <ProductCard {product}/>
               {/if}
             {/each}
           </div>
