@@ -3,12 +3,11 @@ import { Listbox } from '@headlessui/react';
 import Order from "./Order";
 import { useReactToPrint } from 'react-to-print';
 
-export default ({ ordersData , downloadInvoice }) => {
+export default ({ ordersData }) => {
 
   const [ordersToRender, setOrdersToRender] = useState({ ...ordersData });
   const [searchQuery, setSearchQuery] = useState('')
-  const invoiceComponent = useRef();
-  const [invoiceData, setInvoiceData] = useState('');
+
 
   const filterOptions = [
     { name: "last 30 days", value: 30 },
@@ -58,10 +57,6 @@ export default ({ ordersData , downloadInvoice }) => {
     const value = event.target.value;
     setSearchQuery(value);
   }
-
-  const handlePrint = useReactToPrint({
-    content: () => invoiceComponent.current,
-  });
 
   return (
     <>
@@ -122,12 +117,12 @@ export default ({ ordersData , downloadInvoice }) => {
       </div>
       <div className="account_orders-content-wrapper">
         {Object.values(ordersToRender).length > 0 ?
-          Object.values(ordersToRender).map(order => <Order data={order} downloadInvoice={downloadInvoice} key={order.id} search={searchQuery} />)
+          Object.values(ordersToRender).map(order => <Order data={order} key={order.id} search={searchQuery} />)
           :
           <div>You haven't placed any orders yet.</div>
         }
       </div>
-      <div id="invoice-element" dangerouslySetInnerHTML={{ __html: invoiceData }} ref={invoiceComponent} />
+
     </>
   )
 }

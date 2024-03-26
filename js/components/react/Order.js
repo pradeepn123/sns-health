@@ -1,6 +1,7 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import OrderItem from "./order-item";
+import { useReactToPrint } from "react-to-print";
 
 // order status constants 
 const orderStatusConst = {
@@ -19,7 +20,7 @@ export const SvgIcon = ({ icon, svgClass }) => {
     return <span className={svgClass} dangerouslySetInnerHTML={{ __html: icon }}></span>
 }
 
-export default ({ data: orderData, search, downloadInvoice }) => {
+export default ({ data: orderData, search }) => {
     const { fulfillment_status = '', name = '', line_items: lineItems = [], total_price: totalPrice, created_at: savedTime, item_count: totalQuantity, id: orderId, url } = orderData || {};
     const [first, second, ...otherProducts] = lineItems || []
     const topFoldContents = [first, second].filter(item => item && item);
@@ -27,6 +28,27 @@ export default ({ data: orderData, search, downloadInvoice }) => {
     const [active, setActive] = useState(false);
     const [renderProducts, updateRenderProducts] = useState(topFoldContents);
     const [baseLineItems, setBaseLineItems] = useState([...lineItems])
+    const invoiceComponent = useRef();
+    const [invoiceData, setInvoiceData] = useState('');
+    
+    // on click of invoice button on any order call downloadInvoice with order url as params
+    function downloadInvoice(url, id) {
+      try {
+        fetch(url + "?view=invoice").then(res => res.text()).then((data) => {
+          setInvoiceData(data)
+          setTimeout(handlePrint, 100);
+        })
+      } catch (error) {
+        console.log(error)
+        alert("Something went wrong while fetching your invoice. Please try again after sometime")
+      }
+    }
+
+
+  const handlePrint = useReactToPrint({
+    content: () => invoiceComponent.current,
+  });
+
 
     useEffect(() => {
         active ?
@@ -108,7 +130,7 @@ export default ({ data: orderData, search, downloadInvoice }) => {
             }
 
             <a className="account-orders__btn" href={`https://snshealth.com/apps/rebuy/reorder?shopify_order_id=${orderId}&_kx=`}><div className="account-orders__repeat-order account-heading__desktop-hidden">Repeat Order</div></a>
-
+            <div id="invoice-element" dangerouslySetInnerHTML={{ __html: invoiceData }} ref={invoiceComponent} />
         </div >
 
     )

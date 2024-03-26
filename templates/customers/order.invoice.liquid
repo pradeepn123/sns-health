@@ -634,9 +634,6 @@
               <span class="order-details-title editable" data-key="invoice_number">Order No.</span>
               <span class="order-details-text">{{ order.name }}</span>
             </li>
-            {% if order.name != blank %}
-              <img data-barcode="{{ name | replace: '#', '' }}" class="barcode">
-            {% endif %}
             <li class="order-details-date">
               <span class="order-details-title editable" data-key="date">Order Date</span>
               <span class="order-details-text">{{ order.created_at | date: '%m/%d/%Y' }}</span>
@@ -861,7 +858,6 @@
                     {% endunless %}
                   {% endfor %}
                   {% if line_item.variant.barcode != blank %}
-                    <img data-barcode="{{ line_item.variant.barcode }}" class="barcode">
                     <p class="line-item-sku">{{ line_item.variant.barcode }}</p>
                     {% if line_item.properties.expiry_date != blank %}
                       <p class="line-item-sku">{{ line_item.properties.expiry_date }}</p>

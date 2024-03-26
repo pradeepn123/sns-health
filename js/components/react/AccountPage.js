@@ -88,18 +88,7 @@ export default ({ shopifyData }) => {
     }
   }
 
-  // on click of invoice button on any order call downloadInvoice with order url as params
-  function downloadInvoice(url, id) {
-    try {
-      fetch(url + "?view=invoice").then(res => res.text()).then((data) => {
-        setInvoiceData(data)
-        setTimeout(handlePrint, 100);
-      })
-    } catch (error) {
-      console.log(error)
-      alert("Something went wrong while fetching your invoice. Please try again after sometime")
-    }
-  }
+
 
   return (
     <div className="account-heading__wrap">
@@ -138,13 +127,13 @@ export default ({ shopifyData }) => {
             <Profile data={shopifyData.profile.data} />
           </Tab.Panel>
           <Tab.Panel>
-            <OrdersData ordersData={ordersData} allOrdersFetched={allOrdersFetched} downloadInvoice={downloadInvoice} />
+            <OrdersData ordersData={ordersData} allOrdersFetched={allOrdersFetched}  />
           </Tab.Panel>
           <Tab.Panel>
             <Addresses data={shopifyData.addresses.data} classNameName="account_addresses-container" />
           </Tab.Panel>
           <Tab.Panel>
-            <Discounts ordersData={ordersData} allOrdersFetched={allOrdersFetched} downloadInvoice={downloadInvoice} />
+            <Discounts ordersData={ordersData} allOrdersFetched={allOrdersFetched}/>
           </Tab.Panel>
 
         </Tab.Panels>

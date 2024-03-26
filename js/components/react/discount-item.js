@@ -1,7 +1,7 @@
 import React from "react";
 import Order from "./Order";
 
-export default ({ data, downloadInvoice, order }) => {
+export default ({ data, order }) => {
 	const { created_at: savedTime, name: orderId, title } = data || {};
 
 	const formatedDate = new Date(savedTime.replace(/(\d{4})-(\d{2})-(\d{2})/, '$1/$2/$3')).toLocaleString(
@@ -14,7 +14,7 @@ export default ({ data, downloadInvoice, order }) => {
 	);
 
 	function openModal() {
-		if (window.OpenReactModal) window.OpenReactModal(<Order data={order} search={""} downloadInvoice={downloadInvoice} />)
+		if (window.OpenReactModal) window.OpenReactModal(<Order data={order} search={""}/>)
 	}
 
 	return (

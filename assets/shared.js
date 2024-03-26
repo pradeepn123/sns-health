@@ -685,7 +685,7 @@ var SvgIcon = _ref => {
   });
   function getOrders() {
     return _getOrders.apply(this, arguments);
-  } // on click of invoice button on any order call downloadInvoice with order url as params
+  }
   function _getOrders() {
     _getOrders = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
@@ -712,17 +712,6 @@ var SvgIcon = _ref => {
       }
     });
     return _getOrders.apply(this, arguments);
-  }
-  function downloadInvoice(url, id) {
-    try {
-      fetch(url + "?view=invoice").then(res => res.text()).then(data => {
-        setInvoiceData(data);
-        setTimeout(handlePrint, 100);
-      });
-    } catch (error) {
-      console.log(error);
-      alert("Something went wrong while fetching your invoice. Please try again after sometime");
-    }
   }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("div", {
     className: "account-heading__wrap"
@@ -773,15 +762,13 @@ var SvgIcon = _ref => {
     data: shopifyData.profile.data
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_headlessui_react__WEBPACK_IMPORTED_MODULE_3__.Tab.Panel, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_ordersData__WEBPACK_IMPORTED_MODULE_5__["default"], {
     ordersData: ordersData,
-    allOrdersFetched: allOrdersFetched,
-    downloadInvoice: downloadInvoice
+    allOrdersFetched: allOrdersFetched
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_headlessui_react__WEBPACK_IMPORTED_MODULE_3__.Tab.Panel, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_Addresses__WEBPACK_IMPORTED_MODULE_6__["default"], {
     data: shopifyData.addresses.data,
     classNameName: "account_addresses-container"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_headlessui_react__WEBPACK_IMPORTED_MODULE_3__.Tab.Panel, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(_discount__WEBPACK_IMPORTED_MODULE_7__["default"], {
     ordersData: ordersData,
-    allOrdersFetched: allOrdersFetched,
-    downloadInvoice: downloadInvoice
+    allOrdersFetched: allOrdersFetched
   })))));
 });
 
@@ -992,7 +979,10 @@ var SvgIcon = _ref => {
 /* unused harmony export SvgIcon */
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _order_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./order-item */ "./js/components/react/order-item.js");
+/* harmony import */ var _order_item__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./order-item */ "./js/components/react/order-item.js");
+/* harmony import */ var react_to_print__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-to-print */ "./node_modules/react-to-print/lib/index.js");
+/* harmony import */ var react_to_print__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_to_print__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 
@@ -1021,8 +1011,7 @@ var SvgIcon = _ref => {
   var _orderData$tags, _orderData$tags2;
   var {
     data: orderData,
-    search,
-    downloadInvoice
+    search
   } = _ref2;
   var {
     fulfillment_status = '',
@@ -1040,6 +1029,24 @@ var SvgIcon = _ref => {
   var [active, setActive] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   var [renderProducts, updateRenderProducts] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(topFoldContents);
   var [baseLineItems, setBaseLineItems] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([...lineItems]);
+  var invoiceComponent = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var [invoiceData, setInvoiceData] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+
+  // on click of invoice button on any order call downloadInvoice with order url as params
+  function downloadInvoice(url, id) {
+    try {
+      fetch(url + "?view=invoice").then(res => res.text()).then(data => {
+        setInvoiceData(data);
+        setTimeout(handlePrint, 100);
+      });
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong while fetching your invoice. Please try again after sometime");
+    }
+  }
+  var handlePrint = (0,react_to_print__WEBPACK_IMPORTED_MODULE_1__.useReactToPrint)({
+    content: () => invoiceComponent.current
+  });
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     active ? updateRenderProducts([...renderProducts, ...hiddenContents]) : updateRenderProducts([...topFoldContents]);
   }, [active]);
@@ -1128,14 +1135,14 @@ var SvgIcon = _ref => {
     className: "account-orders__order-wrapp"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, !active && baseLineItems.map((item, index) => {
     if (index < 2) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_order_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_order_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
         data: item,
         key: index,
         search: search
       });
     }
   }), active && baseLineItems.map((item, index) => {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_order_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_order_item__WEBPACK_IMPORTED_MODULE_2__["default"], {
       data: item,
       key: index,
       search: search
@@ -1158,7 +1165,13 @@ var SvgIcon = _ref => {
     href: "https://snshealth.com/apps/rebuy/reorder?shopify_order_id=".concat(orderId, "&_kx=")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "account-orders__repeat-order account-heading__desktop-hidden"
-  }, "Repeat Order")));
+  }, "Repeat Order")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    id: "invoice-element",
+    dangerouslySetInnerHTML: {
+      __html: invoiceData
+    },
+    ref: invoiceComponent
+  }));
 });
 
 /***/ }),
@@ -1541,7 +1554,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {
   var {
     data,
-    downloadInvoice,
     order
   } = _ref;
   var {
@@ -1557,8 +1569,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
   function openModal() {
     if (window.OpenReactModal) window.OpenReactModal( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Order__WEBPACK_IMPORTED_MODULE_1__["default"], {
       data: order,
-      search: "",
-      downloadInvoice: downloadInvoice
+      search: ""
     }));
   }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -1603,8 +1614,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {
   var {
-    ordersData,
-    downloadInvoice
+    ordersData
   } = _ref;
   var discounts = [];
   Object.values(ordersData).forEach(order => {
@@ -1626,8 +1636,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
   }, "Used Discounts"), discounts.length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, discounts.map((discount, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_discount_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
     data: discount,
     key: discount.name + index,
-    order: ordersData[discount.id],
-    downloadInvoice: downloadInvoice
+    order: ordersData[discount.id]
   }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, "You have no discounts with your order.")));
 });
 
@@ -1720,13 +1729,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {
   var {
-    ordersData,
-    downloadInvoice
+    ordersData
   } = _ref;
   var [ordersToRender, setOrdersToRender] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(_objectSpread({}, ordersData));
   var [searchQuery, setSearchQuery] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');
-  var invoiceComponent = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
-  var [invoiceData, setInvoiceData] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');
   var filterOptions = [{
     name: "last 30 days",
     value: 30
@@ -1779,9 +1785,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     var value = event.target.value;
     setSearchQuery(value);
   }
-  var handlePrint = (0,react_to_print__WEBPACK_IMPORTED_MODULE_2__.useReactToPrint)({
-    content: () => invoiceComponent.current
-  });
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement((react__WEBPACK_IMPORTED_MODULE_1___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     className: "account-orders__orders-header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
@@ -1855,16 +1858,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     className: "account_orders-content-wrapper"
   }, Object.values(ordersToRender).length > 0 ? Object.values(ordersToRender).map(order => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_Order__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: order,
-    downloadInvoice: downloadInvoice,
     key: order.id,
     search: searchQuery
-  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, "You haven't placed any orders yet.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
-    id: "invoice-element",
-    dangerouslySetInnerHTML: {
-      __html: invoiceData
-    },
-    ref: invoiceComponent
-  }));
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, "You haven't placed any orders yet.")));
 });
 
 /***/ }),

@@ -1,7 +1,7 @@
 import React from "react";
 import DiscountItem from "./discount-item";
 
-export default ({ ordersData, downloadInvoice }) => {
+export default ({ ordersData }) => {
 
     let discounts = [];
     Object.values(ordersData).forEach(order => {
@@ -22,7 +22,7 @@ export default ({ ordersData, downloadInvoice }) => {
                 <h2 className="sidebar-title">Used Discounts</h2>
                 {discounts.length > 0 ?
                     <div>
-                        {discounts.map((discount, index) => <DiscountItem data={discount} key={discount.name + index} order={ordersData[discount.id]} downloadInvoice={downloadInvoice} />)}
+                        {discounts.map((discount, index) => <DiscountItem data={discount} key={discount.name + index} order={ordersData[discount.id]} />)}
                     </div>
                     :
                     <div>You have no discounts with your order.</div>
