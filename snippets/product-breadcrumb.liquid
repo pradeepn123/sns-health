@@ -1,0 +1,68 @@
+{% assign main_menu_handle = 'megamenu-desktop' %}
+{% assign main_menu = linklists[main_menu_handle] %}
+{% assign breadcrumb_arr = '' %}
+{% assign product_collections = product.collections | map: 'handle' %}
+{% assign product_collections = product_collections %}
+{% assign breadcrumb_limit = breadcrumb_limit_settings | plus : 0 %}
+{% for link in main_menu.links %}
+    {% for child_link in link.links %}
+      {% assign subnavigation = child_link %}
+      {%  assign related_collection_handle = child_link.url | split: '#megamenu-' | last %}
+      {%  assign related_collection = collections[related_collection_handle] %}
+      {%  if product_collections contains related_collection.handle %} 
+        {%  unless breadcrumb_arr contains related_collection.handle %}
+            {%  assign breadcrumb_arr = breadcrumb_arr | strip | append: related_collection.handle | append: ',' %}
+        {%  endunless %}
+      {%  endif %}
+
+      {%  assign subnavigation_handle = subnavigation.handle | append: '' %} 
+      {%  assign subnavigation_link = linklists[subnavigation_handle] %}
+      {% for subnavigation_link in subnavigation_link.links %}
+        {%  assign related_collection = subnavigation_link.object %}
+       
+         {%  if product_collections contains related_collection.handle %} 
+         {%  unless breadcrumb_arr contains related_collection.handle %}
+            {%  assign breadcrumb_arr = breadcrumb_arr | strip | append: related_collection.handle | append: ',' %}
+          {%  endunless %}
+         {%  endif %}
+
+         {%  if subnavigation_link.links %}
+         {% for child_subnavigation_link in subnavigation_link.links %}
+          {%  assign related_collection = child_subnavigation_link.object %}
+            {%  if product_collections contains related_collection.handle %} 
+            {%  unless breadcrumb_arr contains related_collection.handle %}
+              {%  assign breadcrumb_arr = breadcrumb_arr | strip | append: related_collection.handle | append: ',' %}
+            {%  endunless %}
+         {%  endif %}
+         {% endfor %} 
+        {%  endif %} 
+        {% endfor %}
+    {% endfor %}
+{% endfor %} 
+
+<nav aria-label="{{ 'general.breadcrumb.title' | t }}" class="breadcrumb">
+    <ol class="breadcrumb__list" role="list" style="flex-wrap: wrap; line-height: 1.6"> 
+      
+        <a class="breadcrumb__link link" href="{{ routes.root_url }}">{{ 'general.breadcrumb.home' | t }}</a> {%- render 'icon', icon: 'arrow-right' -%}
+        {%- if collection -%}
+          <a class="breadcrumb__link link" href="{{ collection.url }}">{{ collection.title }}</a> {%- render 'icon', icon: 'arrow-right' -%}
+        {%- else -%}
+        {%  assign  breadcrumb_path = breadcrumb_arr | split: ',' %}
+        {%  for collection_handle in breadcrumb_path limit: breadcrumb_limit  %}
+            {% liquid
+                assign collection = collections[collection_handle]
+                assign collection_url = routes.collections_url | append:'/' | append: collection_handle
+                assign collection_title =  collection.title
+            %}
+           {%  if collection_url != blank and collection_title != blank %}
+              <a class="breadcrumb__link link" href="{{ collection_url }}">{{ collection_title }}</a> {%- render 'icon', icon: 'arrow-right' -%}
+              {%  endif %} 
+        {% endfor %}
+        {%- endif -%}
+      
+
+      
+        <span class="breadcrumb__link" aria-current="page">{{ product.title | truncate: 40 }}</span>
+     
+    </ol>
+</nav>

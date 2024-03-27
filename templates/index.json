@@ -573,11 +573,23 @@
         "heading": "Featured Brands"
       }
     },
-    "7a81767f-f165-4cfe-9b54-3672c6ef1e61": {
-      "type": "featured-products",
+    "product_carousel_VbTW3T": {
+      "type": "product-carousel",
+      "blocks": {
+        "collection_Emnfna": {
+          "type": "collection",
+          "settings": {
+            "collection_text": "Featured",
+            "rule_id": "",
+            "collection": "featured-products"
+          }
+        }
+      },
+      "block_order": [
+        "collection_Emnfna"
+      ],
       "settings": {
         "heading": "Featured Products",
-        "collection": "featured-products",
         "mobile_carousel": true
       }
     },
@@ -808,11 +820,23 @@
         "mobile_carousel": true
       }
     },
-    "ed3c4144-6707-4fda-9a49-2f5e23ebeb69": {
-      "type": "featured-products",
+    "product_carousel_yUaQWR": {
+      "type": "product-carousel",
+      "blocks": {
+        "collection_aTfrDX": {
+          "type": "collection",
+          "settings": {
+            "collection_text": "New Arrivals",
+            "rule_id": "",
+            "collection": "new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "collection_aTfrDX"
+      ],
       "settings": {
         "heading": "New Arrivals",
-        "collection": "new-arrivals",
         "mobile_carousel": true
       }
     },
@@ -869,7 +893,7 @@
     "a35f16cd-bcb2-416a-9935-2b65ec0ddaa2",
     "b1ad9959-047f-438b-a92c-519409325971",
     "932e9d3c-0311-4a00-af68-f2426cae7d02",
-    "7a81767f-f165-4cfe-9b54-3672c6ef1e61",
+    "product_carousel_VbTW3T",
     "1693494264a39a783a",
     "502f21dc-a665-422e-8800-406228075385",
     "22c01918-3750-4804-952d-ffa0b068b2b4",
@@ -878,7 +902,7 @@
     "5d2508d0-7ea8-4a93-82be-e431ad31e47c",
     "8e275cc5-b6cf-4d02-bfbc-04fc3d8a3e51",
     "33b84d2a-cb32-4ec5-83b4-b10a81471d7e",
-    "ed3c4144-6707-4fda-9a49-2f5e23ebeb69",
+    "product_carousel_yUaQWR",
     "df161b5a-ead8-4c47-b060-be7aa2165e83",
     "9bf9e93f-9299-4d16-bc64-4ed6102ad3e7",
     "141ec0c0-f9a7-4483-8784-4b246321fcba",

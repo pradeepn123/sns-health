@@ -33,7 +33,6 @@
     "text_font": "poppins_n4",
     "underline_links": true,
     "animation_image_zoom": true,
-    "activate_boost_search": true,
     "search_mode": "product,page",
     "show_vendor": true,
     "show_secondary_image": true,
@@ -146,8 +145,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/logo_89d3edfc-755e-4650-8a79-e9bc9ca0d3da.png",
               "content": "<p>Discover Your full potential with SNS Health. Your trusted source for curated performance and wellness products.<\/p>",
-              "location": "<p><strong>Store: <\/strong>2280 Bovaird Dr E Unit 7, Brampton, ON L6R 3J5, Canada.<\/p><p><strong>Head Office: <\/strong>2500 Williams Parkway #25,<br\/>Brampton, ON L6S 5M9, Canada.<\/p>",
-              "contact": "<p><strong>Store<\/strong>: (905) 792-8990<\/p><p><strong>Head Office:<\/strong> (905) 792-1888<\/p>"
+              "location": "<p><strong>Store: <\/strong>2280 Bovaird Dr E Unit 7, Brampton, ON L6R 3J5, Canada.<\/p><p><strong>Head Office: <\/strong>2500 Williams Parkway #25,<br\/>Brampton, ON L6S 5M9, Canada.<\/p>"
             }
           },
           "footer-1": {
@@ -1271,24 +1269,6 @@
       "shop-by-brands": {
         "type": "shop-by-brands",
         "blocks": {
-          "selected_collection_iBUUcG": {
-            "type": "selected_collection",
-            "settings": {
-              "featured_collection_item": "alterra-herbasante",
-              "featured_collection_image": "shopify:\/\/shop_images\/Frame_1000005752.jpg",
-              "show_overlay": false,
-              "overlay_opacity": 20
-            }
-          },
-          "selected_collection_XajHKc": {
-            "type": "selected_collection",
-            "settings": {
-              "featured_collection_item": "host-defense",
-              "featured_collection_image": "shopify:\/\/shop_images\/Artboard_1_copy_3_1.jpg",
-              "show_overlay": false,
-              "overlay_opacity": 20
-            }
-          },
           "6924a140-8ece-4ff6-98e4-66afc8b96dff": {
             "type": "selected_collection",
             "settings": {
@@ -1298,28 +1278,10 @@
               "overlay_opacity": 0
             }
           },
-          "8b15715b-a5fd-47b1-ae17-61b175d622ae": {
-            "type": "selected_collection",
-            "settings": {
-              "featured_collection_item": "smart-solutions",
-              "featured_collection_image": "shopify:\/\/shop_images\/smart_sol_thumbnail.jpg",
-              "show_overlay": false,
-              "overlay_opacity": 20
-            }
-          },
-          "39b41a6b-eb07-4785-a32c-7b217819eaf3": {
-            "type": "selected_collection",
-            "settings": {
-              "featured_collection_item": "guayaki",
-              "featured_collection_image": "shopify:\/\/shop_images\/guayaki-thumbnail-0.jpg",
-              "show_overlay": false,
-              "overlay_opacity": 20
-            }
-          },
           "fb4e013d-add8-45f0-9c18-0f8d96f4d8dc": {
             "type": "selected_collection",
             "settings": {
-              "featured_collection_item": "renew-life",
+              "featured_collection_item": "renew-life-1",
               "featured_collection_image": "shopify:\/\/shop_images\/coll_b1756837-5aaf-4d30-9474-986537cab19e.webp",
               "show_overlay": false,
               "overlay_opacity": 20
@@ -1345,7 +1307,6 @@
           },
           "3f2dc464-d908-4c5f-8314-d7b0bf33122c": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "organika",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_6_copy.webp",
@@ -1355,7 +1316,6 @@
           },
           "3cd86bcc-f7a7-47e2-85a3-5ba1607c5964": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "matteos",
               "featured_collection_image": "shopify:\/\/shop_images\/Main_banner_copy_2_1.png",
@@ -1365,7 +1325,6 @@
           },
           "8b483f29-1be8-4535-85f3-1ba77eb4caf6": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "pb-me",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_3_3de1e795-1740-42dc-9940-daf46f5d8123.png",
@@ -1375,7 +1334,6 @@
           },
           "9bc5f936-751c-4dad-b624-f82973f0f533": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "inner-armour",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_5_copy.png",
@@ -1395,7 +1353,6 @@
           },
           "b15a96f0-9ac6-4347-8753-3da06590ee86": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "heal-co",
               "featured_collection_image": "shopify:\/\/shop_images\/heal_and_co_banner_preview.webp",
@@ -1412,14 +1369,30 @@
               "show_overlay": false,
               "overlay_opacity": 20
             }
+          },
+          "39b41a6b-eb07-4785-a32c-7b217819eaf3": {
+            "type": "selected_collection",
+            "disabled": true,
+            "settings": {
+              "featured_collection_item": "guayaki",
+              "featured_collection_image": "shopify:\/\/shop_images\/guayaki-thumbnail-0.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
+          "8b15715b-a5fd-47b1-ae17-61b175d622ae": {
+            "type": "selected_collection",
+            "disabled": true,
+            "settings": {
+              "featured_collection_item": "smart-solutions",
+              "featured_collection_image": "shopify:\/\/shop_images\/smart_sol_thumbnail.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
           }
         },
         "block_order": [
-          "selected_collection_iBUUcG",
-          "selected_collection_XajHKc",
           "6924a140-8ece-4ff6-98e4-66afc8b96dff",
-          "8b15715b-a5fd-47b1-ae17-61b175d622ae",
-          "39b41a6b-eb07-4785-a32c-7b217819eaf3",
           "fb4e013d-add8-45f0-9c18-0f8d96f4d8dc",
           "89b00157-38a2-4cc8-ba82-1efda2f10a17",
           "62f53084-5c8f-4872-b487-96187474a464",
@@ -1429,7 +1402,9 @@
           "9bc5f936-751c-4dad-b624-f82973f0f533",
           "bb400c8f-8d0c-4edc-bbad-75dc68729659",
           "b15a96f0-9ac6-4347-8753-3da06590ee86",
-          "e7be110f-aad6-4910-92f2-710cff6db42b"
+          "e7be110f-aad6-4910-92f2-710cff6db42b",
+          "39b41a6b-eb07-4785-a32c-7b217819eaf3",
+          "8b15715b-a5fd-47b1-ae17-61b175d622ae"
         ],
         "settings": {
           "title": "Shop By Brand",

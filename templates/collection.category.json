@@ -19,7 +19,6 @@
           "settings": {
             "featured_image_desktop": "{{ collection.metafields.custom.collection_banner.value.desktop_image.value }}",
             "featured_image_mobile": "{{ collection.metafields.custom.collection_banner.value.mobile_image.value }}",
-            "meta-font-color": "",
             "font-color": "#000000",
             "background-color": "#ecf0fa",
             "inline_cta": true,
@@ -360,6 +359,12 @@
       "settings": {
       }
     },
+    "16972253721fb7f56b": {
+      "type": "apps",
+      "settings": {
+        "heading": ""
+      }
+    },
     "c06c2ac2-8a0a-4934-a3e8-9034e4ec8551": {
       "type": "section-shop-by-category",
       "blocks": {
@@ -422,6 +427,7 @@
     "f3d74430-460e-4688-b34a-3a14c78bfaaa",
     "3dfc6cbf-518c-4847-8f7a-4c3eda0822a1",
     "3091f4b6-8878-4e0b-ba66-fc08676c4c11",
+    "16972253721fb7f56b",
     "c06c2ac2-8a0a-4934-a3e8-9034e4ec8551",
     "398fa20a-99f7-4200-ac45-f9ca3cd7d4b9",
     "23b87dc9-f589-4450-93db-c6892bbe59ff"

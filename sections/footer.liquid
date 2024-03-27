@@ -33,7 +33,10 @@
                       </svg>
                     </div>
 
-                    <div class="footer__location-text">{{block.settings.contact}}</div>
+                    <div class="footer__location-text">
+                     <a class="footer__location-phone" href="tel:{{block.settings.store_contact}}"><strong>Store:</strong> {{block.settings.store_contact}}</a>
+                     <a class="footer__location-phone" href="tel:{{block.settings.office_contact}}"><strong>Head Office:</strong> {{block.settings.office_contact}}</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -101,7 +104,11 @@
                     </svg>
                   </div>
 
-                  <div class="footer__location-text">{{block.settings.contact}}</div>
+                  <div class="footer__location-text">
+                    <a class="footer__location-phone" href="tel:{{block.settings.store_contact}}"><strong>Store:</strong> {{block.settings.store_contact}}</a>
+                    <a class="footer__location-phone" href="tel:{{block.settings.office_contact}}"><strong>Head Office:</strong> {{block.settings.office_contact}}</a>
+                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -424,9 +431,16 @@
           "label": "address"
         },
         {
-          "type": "richtext",
-          "id": "contact",
-          "label": "contact"
+          "type": "text",
+          "id": "store_contact",
+          "label": "Store contact",
+          "default": "(905) 792-8990"
+        },
+        {
+          "type": "text",
+          "id": "office_contact",
+          "label": "Office contact",
+          "default": "(905) 792-1888"
         }
       ]
     },

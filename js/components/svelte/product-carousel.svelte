@@ -10,7 +10,34 @@
   const {
     mobileCarousel = false,
     blocks = [],
+    carouselSettingValues = false
   } = shopifyData || {};
+
+  const defaultSettings = {
+              "slidesPerView": 2,
+              "spaceBetween": 10,
+              "overflowNagivation": true,
+              "progressPagination": true,
+              "pagination": true,
+              "navigation": false,
+              "breakpoints": {
+                "768": {
+                  "pagination": false,
+                  "navigation": true,
+                  "slidesPerView": 3,
+                  "spaceBetween": 27.5
+                },
+               "1024": {
+                  "pagination": false,
+                  "navigation": true,
+                  "slidesPerView": 5,
+                  "spaceBetween": 27.5
+                }
+              }
+            }
+
+   const carouselSettings = carouselSettingValues || defaultSettings;
+
 
   const paramsHash = blocks.reduce((accumulator, block) => {
     return (accumulator = {
@@ -123,30 +150,9 @@
             </div>
             <div class="lds-ring" />
           </div>
-          <script type="text/json" data-settings>
-      {
-        "slidesPerView": 2,
-        "spaceBetween": 10,
-      "overflowNagivation": true,
-        "progressPagination": true,
-        "pagination": true,
-        "navigation": false,
-        "breakpoints": {
-          "768": {
-            "pagination": false,
-            "navigation": true,
-            "slidesPerView": 3,
-            "spaceBetween": 27.5
-          },
-         "1024": {
-            "pagination": false,
-            "navigation": true,
-            "slidesPerView": 5,
-            "spaceBetween": 27.5
-          }
-        }
-      }
-          </script>
+          <div type="text/json" data-settings style="display: none;">
+               {JSON.stringify(carouselSettings)}
+          </div>
         </custom-carousel>
       {/if}
     </div>

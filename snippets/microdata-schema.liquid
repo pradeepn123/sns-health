@@ -21,7 +21,7 @@ or change the format of some info
   {%- capture main_entity_microdata -%}
     "@type": "Product",
     "offers": [
-      {%- for variant in product.variants -%}
+      {% comment %} {%- for variant in product.variants -%}
         {
           "@type": "Offer",
           "name": {{ variant.title | json }},
@@ -34,7 +34,19 @@ or change the format of some info
           {%- endif -%}
           "url": "{{ product.url }}?variant={{ variant.id }}"
         }{% unless forloop.last %},{% endunless %}
-      {%- endfor -%}
+      {%- endfor -%} {% endcomment %}
+      {
+        "@type": "Offer",
+        "name": {{ product.selected_or_first_available_variant.title | json }},
+        "availability": {%- if product.selected_or_first_available_variant.available -%}"https://schema.org/InStock"{%- else -%}"https://schema.org/OutOfStock"{%- endif -%},
+        "price": {{ product.selected_or_first_available_variant.price | divided_by: 100.0 | json }},
+        "priceCurrency": {{ cart.currency.iso_code | json }},
+        "priceValidUntil": "{{ 'now' | date: '%s' | plus: days_product_price_valid_until | date: '%Y-%m-%d'}}",
+        {%- if product.selected_or_first_available_variant.sku != blank -%}
+          "sku": {{ product.selected_or_first_available_variant.sku | json }},
+        {%- endif -%}
+        "url": "{{ product.url }}?variant={{ product.selected_or_first_available_variant.id }}"
+      }
     ],
     {%- if is_barcode_available and is_valid_gtin_length %}
       "{{gtin_option}}": {{ product.selected_or_first_available_variant.barcode | json }},

@@ -225,6 +225,11 @@
     font-weight: typography.$semi-weight;
 }
 
+&__location-phone {
+    display: flex;
+    gap:4px;
+}
+
 &__location-icon-text{
     display: flex;
     column-gap: 8px;

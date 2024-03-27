@@ -1,37 +1,12 @@
 {
   "sections": {
-    "review_carousel_CmWLWp": {
-      "type": "Review-carousel",
+    "main": {
+      "type": "Banner",
       "settings": {
-        "show_heading": true,
-        "heading": "Customers' voice",
-        "badge_link": "",
-        "product": ""
-      }
-    },
-    "17114386814b28bb04": {
-      "type": "apps",
-      "blocks": {
-        "okendo_reviews_carousel_AxwHj3": {
-          "type": "shopify:\/\/apps\/okendo\/blocks\/reviews-carousel\/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
-          "settings": {
-            "show_heading": true,
-            "heading": "Popular picks",
-            "badge_link": "",
-            "product": ""
-          }
-        }
-      },
-      "block_order": [
-        "okendo_reviews_carousel_AxwHj3"
-      ],
-      "settings": {
-        "heading": ""
       }
     }
   },
   "order": [
-    "review_carousel_CmWLWp",
-    "17114386814b28bb04"
+    "main"
   ]
 }

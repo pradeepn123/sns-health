@@ -36,8 +36,6 @@
 
   const currencySymbol = window.shopifyVariables.currencySymbol || "$";
   const soldOutText = "Sold Out";
-  const collectionHandle = window.shopifyVariables.collectionHandle;
-  const collectionTitle =  window.shopifyVariables.collectionTitle
   const chooseMoreText =
     window.shopifyVariables.chooseMoreText || "See Options";
   const addToCartText = window.shopifyVariables.addToCartText || "Add To Cart";
@@ -46,11 +44,7 @@
 
   let [{ compare_at_price: comparePrice, price, id: variantId } = {}] =
     variants || [];
-
   let link = `${window.Shopify.routes.root}products/${handle}?variant=${variantId}`;
-  if(collectionTitle && collectionHandle) {
-     link = `${link}&collectionTitle=${collectionTitle}&collectionURL=${window.Shopify.routes.root}collections/${collectionHandle}`
-  }
   let rating = false;
   metafields.forEach((metafield) => {
     const { namespace, key, value } = metafield || {};
@@ -66,7 +60,7 @@
   });
 
   const bestseller = tags.includes("bestseller");
-  const isBundle = collectionHandle.includes("build-your-own-box") || false;
+  const isBundle = (window.location.href).includes("build-your-own-box") || false;
   const onsale = tags.includes("onsale");
   
   const productFormattedPrice = (price) => {
