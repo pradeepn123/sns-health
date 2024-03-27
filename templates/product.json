@@ -30,7 +30,8 @@
         "custom_security_badge_width": 200,
         "show_shipping_estimator": false,
         "shipping_estimator_default_country": "United States",
-        "show_refunds_policy": false
+        "show_refunds_policy": false,
+        "breadcrumb_limit": 3
       }
     },
     "de1ba06b-7729-47a3-a3dc-b7b1e0ba7a31": {
@@ -71,33 +72,6 @@
       "settings": {
       }
     },
-    "0d1f4044-ed06-406a-98a4-179b8b04b635": {
-      "type": "product-carousel",
-      "blocks": {
-        "04d89d64-6c8b-4c4c-ae38-5bac8d9d6825": {
-          "type": "collection",
-          "settings": {
-            "collection_text": "Just for you",
-            "rule_id": "110176",
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "04d89d64-6c8b-4c4c-ae38-5bac8d9d6825"
-      ],
-      "settings": {
-        "heading": "Just For You",
-        "mobile_carousel": true
-      }
-    },
-    "12115053-950b-44eb-9171-d513f0dc7ed9": {
-      "type": "static-recently-viewed-products",
-      "settings": {
-        "heading": "Recently viewed",
-        "mobile_carousel": true
-      }
-    },
     "1111dc5e-0853-433c-87f9-426668ab9166": {
       "type": "product-carousel",
       "blocks": {
@@ -115,6 +89,35 @@
       ],
       "settings": {
         "heading": "Related Products",
+        "mobile_carousel": true,
+        "url": ""
+      }
+    },
+    "0d1f4044-ed06-406a-98a4-179b8b04b635": {
+      "type": "product-carousel",
+      "blocks": {
+        "04d89d64-6c8b-4c4c-ae38-5bac8d9d6825": {
+          "type": "collection",
+          "settings": {
+            "collection_text": "Just for you",
+            "rule_id": "110176",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "04d89d64-6c8b-4c4c-ae38-5bac8d9d6825"
+      ],
+      "settings": {
+        "heading": "Just For You",
+        "mobile_carousel": true,
+        "url": ""
+      }
+    },
+    "12115053-950b-44eb-9171-d513f0dc7ed9": {
+      "type": "static-recently-viewed-products",
+      "settings": {
+        "heading": "Recently viewed",
         "mobile_carousel": true
       }
     },
@@ -143,9 +146,9 @@
     "2da25216-802b-45a5-8961-40c1363dde7d",
     "de1ba06b-7729-47a3-a3dc-b7b1e0ba7a31",
     "388c6f5f-11f6-4787-93ed-b3a529c4d6e1",
+    "1111dc5e-0853-433c-87f9-426668ab9166",
     "0d1f4044-ed06-406a-98a4-179b8b04b635",
     "12115053-950b-44eb-9171-d513f0dc7ed9",
-    "1111dc5e-0853-433c-87f9-426668ab9166",
     "1704349937a1123dc2"
   ]
 }
