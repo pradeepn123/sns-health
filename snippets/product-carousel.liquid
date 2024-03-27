@@ -1,12 +1,11 @@
 {{ 'featured-products.css' | asset_url | stylesheet_tag }}
-
 {% if section.blocks.size > 0 %}
 <div class="featured-products">
     {% render 'section-heading', heading: section.settings.heading, url: section.settings.url %}
         <product-carousel>
           <script id="product-data" type="text/json">
             {
-              "data": {% render 'JSON-output-section-product-carousel' , section: section %}
+              "data": {% render 'JSON-output-section-product-carousel' , section: section , carouselSettingValues: carouselSettingValues %}
             }
           </script>
         </product-carousel>

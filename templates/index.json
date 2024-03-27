@@ -590,7 +590,8 @@
       ],
       "settings": {
         "heading": "Featured Products",
-        "mobile_carousel": true
+        "mobile_carousel": true,
+        "url": "shopify:\/\/collections\/featured-products"
       }
     },
     "1693494264a39a783a": {
@@ -837,7 +838,8 @@
       ],
       "settings": {
         "heading": "New Arrivals",
-        "mobile_carousel": true
+        "mobile_carousel": true,
+        "url": "shopify:\/\/collections\/new-arrivals"
       }
     },
     "df161b5a-ead8-4c47-b060-be7aa2165e83": {

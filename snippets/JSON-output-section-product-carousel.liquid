@@ -1,25 +1,7 @@
 {
-  "carouselSettingValues": {
-    "slidesPerView": 2,
-    "spaceBetween": 10,
-    "progressPagination": true,
-    "overflowNagivation": true,
-    "pagination": true,
-    "breakpoints": {
-        "768": {
-            "pagination": false,
-            "navigation": true,
-            "slidesPerView": 2.1,
-            "spaceBetween": 20
-        },
-        "1200": {
-            "pagination": false,
-            "navigation": true,
-            "slidesPerView": 4,
-            "spaceBetween": 27
-        }
-    }
-},
+  {%  if carouselSettingValues %}
+  "carouselSettingValues": {{carouselSettingValues}},
+  {%  endif %}
  "mobileCarousel": "{{ section.settings.mobile_carousel }}",
 "blocks":[
 {% for block in section.blocks %}
