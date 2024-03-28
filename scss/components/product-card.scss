@@ -29,6 +29,10 @@ product-card {
     cursor: pointer;
     padding: var(--section-padding);
     padding-bottom: 0;
+
+    @media(--md-large){
+      min-height: 230px !important;
+    }
   }
 
   &__body {
