@@ -33,6 +33,7 @@
     "text_font": "poppins_n4",
     "underline_links": true,
     "animation_image_zoom": true,
+    "activate_boost_search": false,
     "search_mode": "product,page",
     "show_vendor": true,
     "show_secondary_image": true,

@@ -85,8 +85,9 @@
         SEARCH COMPONENT
         --------------------------------------------------------------------------------------
         {%- endcomment -%}
-        {% assign search_enable = settings.activate_boost_search %}
-        {% if search_enable %}
+        {% comment %} Disable boost search  {% endcomment %}
+        {% assign enable_boost_search = true %}
+        {% if enable_boost_search %}
           {% render 'header-search-boost' %}
         {% else %}
           {% render 'header-search-shopify' %}

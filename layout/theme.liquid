@@ -318,7 +318,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <script src="{{'global.js' | asset_url }}" defer></script>  
   <script src="{{'shared.js' | asset_url }}" defer></script> 
   <script src="{{'section.js' | asset_url }}" defer></script>  
-
+{% comment %} Disable boost search {% endcomment %}
   <script>
       const shopifyVariables = {
         activeCurrency: "{{cart.currency.iso_code}}",
@@ -326,7 +326,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "soldOutText": "{{- 'collection.product.sold_out' | t -}}",
         "chooseMoreText": "{{- 'collection.product.choose_options' | t -}}",
         "addToCartText": "{{- 'collection.product.add_to_cart' | t -}}",
-        "activateBoostSearch": {{ settings.activate_boost_search | json }}
+        "activateBoostSearch": true
       } 
       window.shopifyVariables = shopifyVariables;
       
