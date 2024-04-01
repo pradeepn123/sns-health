@@ -94,17 +94,17 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "EHP Labs",
-            "promotion_creative_name": "Banner grid 3",
+            "promotion_name": "GAT Sport Nitraflex",
+            "promotion_creative_name": "Banner grid 2",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/EHP_LABS.webp",
-            "image_mobile": "shopify:\/\/shop_images\/EHP_LABS-1.webp",
+            "image_desktop": "shopify:\/\/shop_images\/GAT_SPORTS_desk.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/GAT_SPORTS_mob.jpg",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/ehp-labs"
+            "cta_url": "shopify:\/\/products\/gat-sport-nitraflex"
           }
         },
         "image_with_text_overlay_BAiHkN": {
