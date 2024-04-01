@@ -111,17 +111,17 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Perfect Sports",
-            "promotion_creative_name": "Banner grid",
+            "promotion_name": "Minor Figures",
+            "promotion_creative_name": "Banner grid 3",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb_mobile.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/MINOR_FIGURE_desk.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/MINOR_FIGURE_mob.jpg",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/perfect-sports"
+            "cta_url": "https:\/\/snshealth.com\/products\/minor-figures-latte?variant=43363394945175"
           }
         },
         "589380ac-62bc-453f-9b28-3a56b75e85b6": {
