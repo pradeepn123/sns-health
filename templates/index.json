@@ -77,17 +77,17 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Guayaki promotion",
-            "promotion_creative_name": "banner grid 2",
+            "promotion_name": "Perfect Sports",
+            "promotion_creative_name": "banner grid 1",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/GUAYAKI_9724a3e1-ca21-470f-a116-4a1219119657.webp",
-            "image_mobile": "shopify:\/\/shop_images\/GUAYAKI-1.webp",
+            "image_desktop": "shopify:\/\/shop_images\/Perfectsports_desk.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PERFECT_SPORT_MOBILE.jpg",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
-            "cta_url": "https:\/\/snshealth.com\/products\/guayaki-yerba-mate-energy-drink"
+            "cta_url": "shopify:\/\/collections\/perfect-sports"
           }
         },
         "image_with_text_overlay_XA8Ggi": {
