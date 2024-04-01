@@ -7,11 +7,11 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Easter",
+            "promotion_name": "World Health Day",
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Easter.jpg",
-            "cta_url": "shopify:\/\/collections\/chocolate"
+            "image_desktop": "shopify:\/\/shop_images\/World_health_day.jpg",
+            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
           }
         },
         "b533d71a-e272-4353-b935-9e0fc67451c1": {
