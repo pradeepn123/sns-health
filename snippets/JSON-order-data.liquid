@@ -1,53 +1,6 @@
 [
-  {%- for order in customer.orders limit: 9 -%}
-    {
-      "id": "{{ order.id }}",
-      "name": "{{ order.name }}",
-      "created_at": "{{ order.created_at }}",
-      "cancelled": "{{ order.cancelled }}",
-      "cancelled_at": "{{ order.cancelled_at }}",
-      "item_count": "{{ order.item_count }}",
-      "url": "{{ order.customer_url }}",
-      "discount_applications": [
-        {%- for discount in order.discount_applications -%}
-          {
-            "target_selection": "{{ discount.target_selection }}",
-            "target_type": "{{ discount.target_type }}",
-            "title": "{{ discount.title }}",
-            "total_allocated_amount": "{{ discount.total_allocated_amount }}",
-            "type": "{{ discount.type }}",
-            "value": "{{ discount.value }}",
-            "value_type": "{{ discount.value_type }}"
-          }{%- unless forloop.last -%},{%- endunless -%}
-        {%- endfor -%}
-      ],
-      "line_items": [
-        {%- for line_item in order.line_items -%}
-          {
-            "image": {
-              "id": "{{ line_item.image.id }}",
-              "src": "{{ line_item.image | image_url }}",
-              "width": "{{ line_item.image.width }}",
-              "height": "{{ line_item.image.height }}"
-            },
-            "quantity": "{{ line_item.quantity }}",
-            "final_line_price": "{{ line_item.final_line_price | money_with_currency }}",
-            "options_with_values": {{ options_with_values | json }},
-            "title": "{{ line_item.title }}",
-            "url": "{{ line_item.url }}",
-            "tracking_url": "{{ line_item.fulfillment.tracking_url }}",
-            "properties": {{ line_item.properties | json }}
-          }{%- unless forloop.last -%},{%- endunless -%}
-        {%- endfor -%}
-      ],
-      "fulfillment_status": "{{ order.fulfillment_status }}",
-      "total_discounts": "{{ order.total_discounts | money_with_currency }}",
-      "subtotal_price": "{{ order.subtotal_price | money_with_currency }}",
-      "shipping_price": "{{ order.shipping_price | default: 0 | money_with_currency }}",
-      "tax_lines": {{ order.tax_lines | json }},
-      "currency": "{{ order.currency }}",
-      "total_price": "{{ order.total_price | money_with_currency }}",
-      "tags": {{ order.tags | json }}
-    }{%- unless forloop.last -%},{%- endunless -%}
+  {%- for order in orders -%}
+      {%  render 'JSON-single-order', order: order%}
+      {%- unless forloop.last -%},{%- endunless -%}
   {%- endfor -%}
 ]

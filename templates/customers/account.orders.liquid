@@ -1,7 +1,10 @@
 {%- layout none -%}
-{%- paginate customer.orders by 20 -%}
+{% comment %} Order Pagination {% endcomment %}
+{% assign pagination_limit = settings.orders_pagination | default: 20 %}
+{%- paginate customer.orders by pagination_limit -%}
+{%  assign orders = customer.orders %}
 {
-  "data": {%- render 'JSON-order-data' -%},
+  "data": {%- render 'JSON-order-data' , limit: pagination_limit , orders: orders -%},
   "hasNext": {{ paginate.pages | minus: paginate.current_page }}
 }
 {%- endpaginate -%}

@@ -558,5 +558,17 @@
         "info": "96 x 96px .png recommended"
       }
     ]
+  },
+  {
+    "name": "Orders Pagination",
+    "settings": [
+      {
+        "type": "number",
+        "id": "orders_pagination",
+        "label": "Orders pagination",
+        "info": "Number of orders to show per page",
+        "default": 50
+      }
+    ]
   }
 ]

@@ -14,7 +14,6 @@ export const SvgIcon = ({ icon, svgClass }) => {
 }
 
 export default ({ shopifyData }) => {
-  console.log('shopifyData', shopifyData);
   let initialOrders = {}
   const [selectedIndex, setSelectedIndex] = useState(0)
   shopifyData.orders.data.forEach(item => initialOrders[item.id] = item);
@@ -63,23 +62,18 @@ export default ({ shopifyData }) => {
       popStateActive = true;
     }
     const tab = event.state?.tab
-    console.log("1111", tab)
     tab == 'orders' ? setSelectedIndex(1) : tab == 'addresses' ? setSelectedIndex(2) : tab == 'discount' ? setSelectedIndex(3) : setSelectedIndex(0);
   })
 
-  async function getOrders(page = 0) {
-    console.log('page', page);
+  async function getOrders(page = 1) {
     try {
-      let url = "/account?view=orders";
+      let url = `/account?page=${page}&view=orders`;
       let fetchedOrders = {};
-      if (page) {
-        url += `&page=${page}`;
-      }
       const response = await fetch(url).then(res => res.json());
       response.data.forEach(item => fetchedOrders[item.id] = item);
       setOrdersData({ ...ordersData, ...fetchedOrders });
       if (response.hasNext) {
-        getOrders(++page)
+        getOrders(++page);
       } else {
         setAllOrdersFetched(true)
       }
@@ -87,9 +81,6 @@ export default ({ shopifyData }) => {
       console.log({ page, error });
     }
   }
-
-
-
   return (
     <div className="account-heading__wrap">
       <Tab.Group

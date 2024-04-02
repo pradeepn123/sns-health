@@ -1,3 +1,5 @@
+{% comment %} Order Pagination {% endcomment %}
+{% assign pagination_limit = settings.orders_pagination | default: 50 %}
 {
   "profile": {
     "title": "My Profile",
@@ -18,7 +20,12 @@
       "active":`{% render 'icon', icon: 'account-cart-active' %}`,
       "normal": `{% render 'icon', icon: 'account-cart' %}`
     },
-    "data": {%- render 'JSON-order-data' -%}
+    "data": [
+      {% for order in customer.orders limit:10 %}
+        {% unless forloop.first %},{% endunless %}
+         {% render 'JSON-single-order', order:order %}
+      {%  endfor %}
+    ]
   },
   "addresses": {
     "title": "My Addresses",

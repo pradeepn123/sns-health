@@ -642,7 +642,6 @@ var SvgIcon = _ref => {
   var {
     shopifyData
   } = _ref2;
-  console.log('shopifyData', shopifyData);
   var initialOrders = {};
   var [selectedIndex, setSelectedIndex] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0);
   shopifyData.orders.data.forEach(item => initialOrders[item.id] = item);
@@ -697,7 +696,6 @@ var SvgIcon = _ref => {
       popStateActive = true;
     }
     var tab = (_event$state4 = event.state) === null || _event$state4 === void 0 ? void 0 : _event$state4.tab;
-    console.log("1111", tab);
     tab == 'orders' ? setSelectedIndex(1) : tab == 'addresses' ? setSelectedIndex(2) : tab == 'discount' ? setSelectedIndex(3) : setSelectedIndex(0);
   });
   function getOrders() {
@@ -705,14 +703,10 @@ var SvgIcon = _ref => {
   }
   function _getOrders() {
     _getOrders = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
-      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-      console.log('page', page);
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       try {
-        var url = "/account?view=orders";
+        var url = "/account?page=".concat(page, "&view=orders");
         var fetchedOrders = {};
-        if (page) {
-          url += "&page=".concat(page);
-        }
         var response = yield fetch(url).then(res => res.json());
         response.data.forEach(item => fetchedOrders[item.id] = item);
         setOrdersData(_objectSpread(_objectSpread({}, ordersData), fetchedOrders));
