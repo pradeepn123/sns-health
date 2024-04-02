@@ -567,7 +567,6 @@
           "type": "collection",
           "settings": {
             "collection_text": "Featured",
-            "rule_id": "",
             "collection": "featured-products"
           }
         }
@@ -824,7 +823,6 @@
           "type": "collection",
           "settings": {
             "collection_text": "New Arrivals",
-            "rule_id": "",
             "collection": "new-arrivals"
           }
         }

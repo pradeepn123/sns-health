@@ -79,7 +79,8 @@
           "type": "collection",
           "settings": {
             "collection_text": "related Items",
-            "rule_id": "104942",
+            "canada_rule_id": "104942",
+            "other_rule_id": "152432",
             "collection": ""
           }
         }
@@ -100,7 +101,8 @@
           "type": "collection",
           "settings": {
             "collection_text": "Just for you",
-            "rule_id": "110176",
+            "canada_rule_id": "",
+            "other_rule_id": "110176",
             "collection": ""
           }
         }

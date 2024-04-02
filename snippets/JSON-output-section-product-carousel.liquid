@@ -5,7 +5,11 @@
  "mobileCarousel": "{{ section.settings.mobile_carousel }}",
 "blocks":[
 {% for block in section.blocks %}
-  { "text": "{{ block.settings.collection_text }}", "ruleId": "{{ block.settings.rule_id }}" , 
+  { "text": "{{ block.settings.collection_text }}",
+     "rebuy": {
+            "canada": "{{block.settings.canada_rule_id}}",
+            "other": "{{block.settings.other_rule_id}}"
+    },
     "productId": {{ product.id | default: false}},
     "collectionData": [
       {% assign limit = 8 %}

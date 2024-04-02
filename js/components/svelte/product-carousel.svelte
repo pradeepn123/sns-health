@@ -2,11 +2,11 @@
   import { getProductData } from "JsComponents/get-data";
   import { onMount } from "svelte";
   import ProductCard from "SvelteComponents/product-card.svelte";
-
+  import { customerLocation } from "JsComponents/get-data";
+  import {countryMap} from 'JsComponents/constants';
   export let shopifyData; //for parent level props
   let productData = []; //to store api data
   let isLoading = true;
-
   const {
     mobileCarousel = false,
     blocks = [],
@@ -34,7 +34,15 @@
                   "spaceBetween": 27.5
                 }
               }
-            }
+  }
+
+  const getCurrentSelectedCountryHandle = (handle) => {
+    return Object.keys(countryMap).find((countryName) => {
+       if(countryMap[countryName].includes(handle.toLowerCase())) {
+        return countryName;
+       }
+    })
+  }
 
    const carouselSettings = carouselSettingValues || defaultSettings;
 
@@ -43,7 +51,7 @@
     return (accumulator = {
       ...accumulator,
       [block.text]: {
-        ruleId: `${block?.ruleId}`,
+        rebuy: block?.rebuy,
         text: block?.text,
         productId: block.productId,
         collectionData: block?.collectionData || []
@@ -60,7 +68,18 @@
       productData = selectedParams.collectionData || []
     }
     else {
-      const responseData = await getProductData(selectedParams);
+      const {rebuy, ...otherParams} = selectedParams;
+      const currentSelectedCountryHandle =  await customerLocation();
+      const currentCustomerCountry = getCurrentSelectedCountryHandle(currentSelectedCountryHandle);
+      let rebuyRuleId = rebuy['other'] || rebuy['canada'];
+      if(rebuy[currentCustomerCountry]) {
+        rebuyRuleId = rebuy[currentCustomerCountry];
+      }
+      const rebuyApiParams = {
+        ...otherParams,
+        ruleId: rebuyRuleId
+      }
+      const responseData = await getProductData(rebuyApiParams);
       let responseProductData = responseData.data || [];
       productData = responseProductData.map(item => {item["addConversionRate"] = true; return item})
     }
