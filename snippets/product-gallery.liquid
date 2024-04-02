@@ -56,12 +56,14 @@
                 {%- case media.media_type -%}
                   {%- when 'image' -%}
                     <div class="product-gallery__size-limiter" style="max-width: {{ media.width }}px">
-                      {%- capture supported_sizes -%}{%- render 'image-size', sizes: '1000,1100,1200', image: media -%}{%- endcapture -%}
-                      {%- assign image_url = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-
-                      <div style="display: flex;">
-                        <img class="product-gallery__image lazyload image--fade-in" data-src="{{ image_url }}" data-widths="[{{ supported_sizes }}]" data-sizes="auto" data-zoom="{{ media | img_url: '1600x' }}" data-zoom-width="{{ media.width | at_most: 1600 }}" alt="{{ media_alt | escape }}">
-
+                      <div>
+                        {% render 'shopify-responsive-image', 
+                          image: {{media}}, 
+                          aspect_ratio: 1.2, 
+                          image_class: 'product-gallery__image',
+                          contain: true,
+                          data-zoom: {{ media | img_url: '1600x' }}
+                        %}
                         <noscript>
                           <img src="{{ media | img_url: '800x' }}" alt="{{ media_alt | escape }}">
                         </noscript>

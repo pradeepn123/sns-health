@@ -130,10 +130,15 @@
 }
 
 .product-gallery__carousel-item{
+    @media(--md){
+        min-height: 450px;
+    }
     .product-gallery__size-limiter{
         img{
             object-fit: cover;
             padding-top: 15px;
+            right: 0;
+            text-align: center;
         }
     }
 }

@@ -77,25 +77,25 @@
     #Image-{{ image_id }}-{{ generated_image_id }} {
       object-fit: cover;
     }
-   {% endif %}
+  {% endif %}
 
-   {% if fill == true %} 
-   #Image-{{ image_id }}-{{ generated_image_id }} {
-    object-fit: fill;
-  }
-{% endif %}
+  {% if fill == true %} 
+    #Image-{{ image_id }}-{{ generated_image_id }} {
+      object-fit: fill;
+    }
+  {% endif %}
 
-{% if background == true %} 
-#Image-{{ image_id }}-{{ generated_image_id }} {
-  background-color:#fff;
-}
-{% endif %}
+  {% if background == true %} 
+    #Image-{{ image_id }}-{{ generated_image_id }} {
+      background-color:#fff;
+    }
+  {% endif %}
 
 
   {% if contain == true %} 
-  #Image-{{ image_id }}-{{ generated_image_id }} {
-   object-fit: contain;
- }
+    #Image-{{ image_id }}-{{ generated_image_id }} {
+      object-fit: contain;
+    }
   {% endif %}
 
 
@@ -140,7 +140,7 @@
 {%- assign image_widths = image_widths | split:',' -%}
 {%- capture srcset -%}
   {%- for width in image_widths -%} 
-    {%- assign width_number = width | plus: 0 | at_most: 3024  | at_least: 1-%}
+    {%- assign width_number = width | plus: 0 | at_least: 1 | at_most: 3016 -%}
     {%- if image.width >= width_number -%}
       {{ image | image_url: width: width_number }} {{ width_number }}w,
     {% else %}
@@ -158,6 +158,7 @@
     data-aspectratio="{{ image_aspect_ratio }}"
     data-sizes="auto"
     tabindex="-1"
+    data-zoom="{{ srcset }}"    
     alt="{{ image_alt | escape }}"
     {{ image_attributes }}
     loading="lazy"
