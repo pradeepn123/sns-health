@@ -1310,6 +1310,7 @@
           },
           "89b00157-38a2-4cc8-ba82-1efda2f10a17": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "megafood",
               "featured_collection_image": "shopify:\/\/shop_images\/b.webp",
@@ -1337,6 +1338,7 @@
           },
           "3cd86bcc-f7a7-47e2-85a3-5ba1607c5964": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "matteos",
               "featured_collection_image": "shopify:\/\/shop_images\/Main_banner_copy_2_1.png",
@@ -1346,6 +1348,7 @@
           },
           "8b483f29-1be8-4535-85f3-1ba77eb4caf6": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "pb-me",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_3_3de1e795-1740-42dc-9940-daf46f5d8123.png",
@@ -1355,6 +1358,7 @@
           },
           "9bc5f936-751c-4dad-b624-f82973f0f533": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "inner-armour",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_5_copy.png",
