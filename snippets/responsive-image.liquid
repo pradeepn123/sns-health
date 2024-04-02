@@ -128,9 +128,9 @@
     {%- comment -%} Check if image width is less or equal to width {%- endcomment -%}
     {%- assign width_num = width | plus: 0 | round -%}
     {%- if image_width >= width_num -%}
-      {{ width_num }},
+      {{ width_num  | at_most: 3024 }},
     {%  else %}
-      {{ image_width }},
+      {{ image_width | at_most: 1920}},
       {% break %}
     {%- endif -%}
   {%- endfor -%}
@@ -140,7 +140,7 @@
 {%- assign image_widths = image_widths | split:',' -%}
 {%- capture srcset -%}
   {%- for width in image_widths -%} 
-    {%- assign width_number = width | plus: 0 -%}
+    {%- assign width_number = width | plus: 0 | at_most: 3024  | at_least: 1-%}
     {%- if image.width >= width_number -%}
       {{ image | image_url: width: width_number }} {{ width_number }}w,
     {% else %}

@@ -11,9 +11,14 @@
               assign image_mobile = block.settings.image_mobile
               assign inline_heading = block.settings.inline_heading
               assign cta_url = block.settings.collection.url
-              assign product_count = block.settings.collection.products.size
+              assign product_count = 0
               assign tag_title = block.settings.tag | default: "Bundles to Choose"
               assign show_product_count = block.settings.show_product_count
+              for product in block.settings.collection.products
+                 if product.available
+                  assign product_count = product_count | plus: 1
+                endif
+              endfor
             %}
             <div class="megamenu__flex-wrapper">
             {% render 'image-with-text-overlay',
@@ -56,10 +61,16 @@
               assign image_mobile = block.settings.image_mobile
               assign inline_heading = block.settings.inline_heading
               assign cta_url = block.settings.collection.url
-              assign product_count = block.settings.collection.products.size
+              assign product_count = 0
               assign tag_title = block.settings.tag | default: "Bundles to Choose"
               assign show_product_count = block.settings.show_product_count
+              for product in block.settings.collection.products
+              if product.available
+               assign product_count = product_count | plus: 1
+               endif
+             endfor
             %}
+   
             <div class="megamenu__flex-wrapper">
             {% render 'image-with-text-overlay',
               wrapper_class: 'megamenu-content',
@@ -87,6 +98,7 @@
               {% if show_product_count %} {{product_count}} {% endif %} {{tag_title}} 
             </div>
           </div>
+
         {% endfor %}
       </div>
     </div>
