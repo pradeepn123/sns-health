@@ -10,10 +10,10 @@ export default ({ ordersData }) => {
 
 
   const filterOptions = [
-    { name: "last 30 days", value: 30 },
-    { name: "last 60 days", value: 60 },
-    { name: "last 90 days", value: 90 },
-    { name: "all orders", value: null }
+    { name: "All orders", value: null },
+    { name: "Last 30 days", value: 30 },
+    { name: "Last 60 days", value: 60 },
+    { name: "Last 90 days", value: 90 }
   ]
   const [filterDays, setFilterDays] = useState(filterOptions[0]);
 
