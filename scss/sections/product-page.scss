@@ -130,9 +130,9 @@
 }
 
 .product-gallery__carousel-item{
-    min-height: 350px;
+    height: 350px;
     @media(--md){
-        min-height: 450px;
+        height: 500px;
     }
     .product-gallery__size-limiter{
         img{
