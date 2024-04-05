@@ -7,22 +7,22 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Easter",
+            "promotion_name": "World Health Day",
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Easter.jpg",
-            "cta_url": "shopify:\/\/collections\/chocolate"
+            "image_desktop": "shopify:\/\/shop_images\/World_health_day.jpg",
+            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
           }
         },
         "b533d71a-e272-4353-b935-9e0fc67451c1": {
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "OWYN",
+            "promotion_name": "April Deals",
             "promotion_creative_name": "Main banner 2",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/OWYN_01bc61a7-31a6-476c-9a0b-58c39b41a080.webp",
-            "cta_url": "shopify:\/\/collections\/owyn"
+            "image_desktop": "shopify:\/\/shop_images\/stress_free.jpg",
+            "cta_url": "shopify:\/\/collections\/buy-more-save-more"
           }
         },
         "image_with_text_overlay_VNEBmR": {
@@ -40,11 +40,11 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Host Defense",
+            "promotion_name": "The Skinny Food",
             "promotion_creative_name": "Right Banner 2",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/Host_Defense_b70c8f52-ce2e-4009-997d-a6228c512bfe.jpg",
-            "cta_url": "shopify:\/\/collections\/host-defense"
+            "image_desktop": "shopify:\/\/shop_images\/SKINNY_FOOD.jpg",
+            "cta_url": "shopify:\/\/collections\/the-skinny-food-co"
           }
         }
       },
@@ -64,51 +64,51 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Guayaki promotion",
-            "promotion_creative_name": "banner grid 2",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/GUAYAKI_9724a3e1-ca21-470f-a116-4a1219119657.webp",
-            "image_mobile": "shopify:\/\/shop_images\/GUAYAKI-1.webp",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "https:\/\/snshealth.com\/products\/guayaki-yerba-mate-energy-drink"
-          }
-        },
-        "image_with_text_overlay_XA8Ggi": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "EHP Labs",
-            "promotion_creative_name": "Banner grid 3",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/EHP_LABS.webp",
-            "image_mobile": "shopify:\/\/shop_images\/EHP_LABS-1.webp",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/ehp-labs"
-          }
-        },
-        "image_with_text_overlay_BAiHkN": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
             "promotion_name": "Perfect Sports",
-            "promotion_creative_name": "Banner grid",
+            "promotion_creative_name": "banner grid 1",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Perfect_Sports_Banner_Feb_mobile.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/Perfectsports_desk.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/PERFECT_SPORT_MOBILE.jpg",
             "eyebrow": "",
             "inline_heading": false,
             "heading": "",
             "subheading": "",
             "cta_text": "",
             "cta_url": "shopify:\/\/collections\/perfect-sports"
+          }
+        },
+        "image_with_text_overlay_XA8Ggi": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "GAT Sport Nitraflex",
+            "promotion_creative_name": "Banner grid 2",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/GAT_SPORTS_desk.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/GAT_SPORTS_mob.jpg",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "https:\/\/snshealth.com\/products\/gat-sport-nitraflex?variant=42562647195799"
+          }
+        },
+        "image_with_text_overlay_BAiHkN": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Minor Figures",
+            "promotion_creative_name": "Banner grid 3",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/MINOR_FIGURE_desk.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/MINOR_FIGURE_mob.jpg",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "https:\/\/snshealth.com\/products\/minor-figures-latte?variant=43363394945175"
           }
         },
         "589380ac-62bc-453f-9b28-3a56b75e85b6": {
@@ -623,6 +623,9 @@
         "fa509466-9d60-4bd2-93ed-e0cabcf9d28d"
       ],
       "settings": {
+        "heading": "",
+        "mobile_carousel": true,
+        "url": ""
       }
     },
     "22c01918-3750-4804-952d-ffa0b068b2b4": {
@@ -653,6 +656,9 @@
         "0e0a1794-1825-4247-99ca-4a84de15d6c9"
       ],
       "settings": {
+        "heading": "",
+        "mobile_carousel": true,
+        "url": ""
       }
     },
     "2cc259d5-2ab8-4dbe-82ec-dc779bd2e01b": {
@@ -683,6 +689,9 @@
         "d69b4d85-122e-42e9-85af-d5ace6369f59"
       ],
       "settings": {
+        "heading": "",
+        "mobile_carousel": true,
+        "url": ""
       }
     },
     "8e275cc5-b6cf-4d02-bfbc-04fc3d8a3e51": {
