@@ -5,7 +5,6 @@
       "blocks": {
         "009a8070-a267-4f1a-ad82-846a05257985": {
           "type": "image_with_text_overlay",
-          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "April deals",
