@@ -8,11 +8,11 @@
           "disabled": true,
           "settings": {
             "promotion": true,
-            "promotion_name": "World Health Day",
+            "promotion_name": "April deals",
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/World_health_day.jpg",
-            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
+            "image_desktop": "shopify:\/\/shop_images\/April_deals.jpg",
+            "cta_url": "shopify:\/\/collections\/stress-management"
           }
         },
         "image_with_text_overlay_VNEBmR": {
