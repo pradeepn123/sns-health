@@ -146,7 +146,9 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/logo_89d3edfc-755e-4650-8a79-e9bc9ca0d3da.png",
               "content": "<p>Discover Your full potential with SNS Health. Your trusted source for curated performance and wellness products.<\/p>",
-              "location": "<p><strong>Store: <\/strong>2280 Bovaird Dr E Unit 7, Brampton, ON L6R 3J5, Canada.<\/p><p><strong>Head Office: <\/strong>2500 Williams Parkway #25,<br\/>Brampton, ON L6S 5M9, Canada.<\/p>"
+              "location": "<p><strong>Store: <\/strong>2280 Bovaird Dr E Unit 7, Brampton, ON L6R 3J5, Canada.<\/p><p><strong>Head Office: <\/strong>2500 Williams Parkway #25,<br\/>Brampton, ON L6S 5M9, Canada.<\/p>",
+              "store_contact": "(905) 792-8990",
+              "office_contact": "(905) 792-1888"
             }
           },
           "footer-1": {
@@ -1270,6 +1272,15 @@
       "shop-by-brands": {
         "type": "shop-by-brands",
         "blocks": {
+          "selected_collection_jjLTep": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "",
+              "featured_collection_image": "shopify:\/\/shop_images\/Yourtheory_12.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
           "selected_collection_kVNaQU": {
             "type": "selected_collection",
             "settings": {
@@ -1415,6 +1426,7 @@
           }
         },
         "block_order": [
+          "selected_collection_jjLTep",
           "selected_collection_kVNaQU",
           "selected_collection_cgtyxa",
           "6924a140-8ece-4ff6-98e4-66afc8b96dff",
