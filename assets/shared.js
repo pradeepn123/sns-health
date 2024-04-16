@@ -9451,7 +9451,7 @@ function create_if_block_1(ctx) {
 				? "active"
 				: ""}`);
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", div4_class_value = `product-card__bundle-atc-quantity ${/*isAddedToBundle*/ ctx[1]?.quantity <= 2
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", div4_class_value = `product-card__bundle-atc-quantity ${/*isAddedToBundle*/ ctx[1]?.quantity <= 2 && /*isAddedToBundle*/ ctx[1]?.quantity <= /*product*/ ctx[0].quantityAvailable
 			? "active"
 			: ""}`);
 
@@ -9513,7 +9513,7 @@ function create_if_block_1(ctx) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", div3_class_value);
 			}
 
-			if (dirty[0] & /*isAddedToBundle*/ 2 && div4_class_value !== (div4_class_value = `product-card__bundle-atc-quantity ${/*isAddedToBundle*/ ctx[1]?.quantity <= 2
+			if (dirty[0] & /*isAddedToBundle, product*/ 3 && div4_class_value !== (div4_class_value = `product-card__bundle-atc-quantity ${/*isAddedToBundle*/ ctx[1]?.quantity <= 2 && /*isAddedToBundle*/ ctx[1]?.quantity <= /*product*/ ctx[0].quantityAvailable
 			? "active"
 			: ""}`)) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", div4_class_value);

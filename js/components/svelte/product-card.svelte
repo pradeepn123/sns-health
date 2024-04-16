@@ -227,7 +227,7 @@
             >
             <div
             class={`product-card__bundle-atc-quantity ${
-              isAddedToBundle?.quantity <=2 ? "active" : ""
+              isAddedToBundle?.quantity <=2 && isAddedToBundle?.quantity <= product.quantityAvailable ? "active" : ""
             }`}
           >
           <div
