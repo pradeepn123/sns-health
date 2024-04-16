@@ -1,5 +1,6 @@
 <script>
-    import { searchQuery } from "./searchStore.js";
+    import { onMount } from "svelte";
+    import { searchQuery, updateSearchQuery } from "./searchStore.js";
     export let category;
     let queries = [];
     $:$searchQuery, updateText();
@@ -17,19 +18,27 @@
             if(!title) {
                title = text
             }
-            queries.push(boldString(title?.toLowerCase(), $searchQuery.toLowerCase()))
+            queries.push({title: boldString(title?.toLowerCase(), $searchQuery.toLowerCase()), handle: item?.handle})
         })
+    };
+    const updateQuery = (query) => {
+        updateSearchQuery(query);
     }
-    
     
 </script>
 <div class="predictive-search__category-block">
     {#if category?.content?.length}
         <p class="predictive-search__category-title">{category.title}</p>
-        <ul class="predictive-search__category-content">
-            {#each queries as query}
-                <li>{@html query}</li>
+        <div class="predictive-search__category-content">
+            {#each queries as query, index}
+                {#if query?.handle != undefined}
+                        <a href={`${category.title == 'collections' ? '/collections/' : '/pages/' }${query?.handle}`}>
+                            <p class="predictive-search__category-content-title">{@html query?.title}</p>
+                        </a>
+                {:else}
+                       <p class="predictive-search__category-item" on:click={event => updateQuery(category?.content[index]?.title || category?.content[index]?.text)}> {@html query?.title} </p>
+                {/if}
             {/each}
-        </ul>
+        </div>
     {/if}
 </div>

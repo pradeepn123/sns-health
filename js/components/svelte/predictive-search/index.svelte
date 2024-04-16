@@ -1,5 +1,5 @@
 <script>
-    import { updateSearchQuery } from './searchStore.js'
+    import { updateSearchQuery,searchQuery } from './searchStore.js'
     import { onMount } from "svelte";
     import Categories from "./categories.svelte";
     import Products from "./product.svelte";
@@ -9,12 +9,21 @@
 
     let data = {};
 
-    const handleSearchInputChange = async (ev) => {
+    $:$searchQuery, handleSearchInputChange();
+
+
+    const updateQueryParams = (ev) => {
+        updateSearchQuery(ev.target.value);
+    }
+
+    const handleSearchInputChange = async () => {
+        showPredictiveSearch = true
         isLoading = true
-        const input = ev.target;
-        const value = input.value;
+        const value = $searchQuery;
+        predictiveSearchInput.forEach((predictiveSearch => {
+            predictiveSearch.value = $searchQuery;
+        }))
         if(!value || [...value].length <= 3 ) return showPredictiveSearch = false;
-        updateSearchQuery(value);
         const predictiveData = await getPredictiveSearch(value);
         const searchData = await getSearchResult(value,6);
         const currentPredictiveData = predictiveData.data.predictiveSearch
@@ -24,9 +33,7 @@
             ...currentPredictiveData
         }
        data = {...curatedObj};
-       console.log(curatedObj, "curatedObj");
        data = data;
-      showPredictiveSearch = true
       isLoading = false
     }
 
@@ -42,10 +49,19 @@
     }
 
     onMount(() => {
+        
         predictiveSearchInput.forEach((predictiveSearch => {
-            predictiveSearch.addEventListener('input', debounce(handleSearchInputChange), 3000);
-            window.addEventListener('click', (e) => {
-                if(e.target.closest != predictiveSearch) return showPredictiveSearch = false
+            predictiveSearch.addEventListener('input', debounce(updateQueryParams), 3000);
+            document.addEventListener('click', (ev) => {
+               if(ev.target.closest('.header__search-bar-wrapper') || ev.target.closest('.predictive-search__category-content')) {
+                    if(ev.target.closest('.header__search-bar-wrapper--mobile').classList.contains('is-fixed')){
+                        showPredictiveSearch = true;
+                    }
+                    else showPredictiveSearch = false;
+               }
+               else {
+                showPredictiveSearch = false;
+               }
             })
         }))
     });

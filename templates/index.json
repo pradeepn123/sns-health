@@ -5,13 +5,25 @@
       "blocks": {
         "009a8070-a267-4f1a-ad82-846a05257985": {
           "type": "image_with_text_overlay",
+          "disabled": true,
           "settings": {
             "promotion": true,
-            "promotion_name": "April deals",
+            "promotion_name": "World Health Day",
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/April_deals.jpg",
-            "cta_url": "shopify:\/\/collections\/stress-management"
+            "image_desktop": "shopify:\/\/shop_images\/World_health_day.jpg",
+            "cta_url": "shopify:\/\/collections\/vitamins-and-supplements"
+          }
+        },
+        "b533d71a-e272-4353-b935-9e0fc67451c1": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "April Deals",
+            "promotion_creative_name": "Main banner 2",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/stress_free.jpg",
+            "cta_url": "shopify:\/\/collections\/buy-more-save-more"
           }
         },
         "image_with_text_overlay_VNEBmR": {
@@ -25,34 +37,22 @@
             "cta_url": "shopify:\/\/collections\/renew-life"
           }
         },
-        "b533d71a-e272-4353-b935-9e0fc67451c1": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "April Deals",
-            "promotion_creative_name": "Right banner 2",
-            "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/stress_free.jpg",
-            "cta_url": "shopify:\/\/collections\/buy-more-save-more"
-          }
-        },
         "image_with_text_overlay_hAWXBm": {
           "type": "image_with_text_overlay",
-          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "The Skinny Food",
             "promotion_creative_name": "Right Banner 2",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/Yourtheory_a08429e6-0e8a-42ad-84da-9d2eedf20113.jpg",
-            "cta_url": "shopify:\/\/collections\/youtheory"
+            "image_desktop": "shopify:\/\/shop_images\/SKINNY_FOOD.jpg",
+            "cta_url": "shopify:\/\/collections\/the-skinny-food-co"
           }
         }
       },
       "block_order": [
         "009a8070-a267-4f1a-ad82-846a05257985",
-        "image_with_text_overlay_VNEBmR",
         "b533d71a-e272-4353-b935-9e0fc67451c1",
+        "image_with_text_overlay_VNEBmR",
         "image_with_text_overlay_hAWXBm"
       ],
       "settings": {

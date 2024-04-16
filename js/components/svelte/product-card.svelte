@@ -12,11 +12,21 @@
 
 
   export let shopifyData;
-  export let product;
+  export let product; 
+  export let productCardSettings = {};
   let curatedBundleProduct = {};
   let isAddedToBundle = false;
   let ref;
 
+   let settings = {
+    vendor: true, 
+    price: true,
+    addToCartButton: true,
+    tags: true
+  }
+
+  settings = {...settings,...productCardSettings};
+  
 
   const {
     image,
@@ -123,6 +133,10 @@
     removeAttributesForCartBinding(ref);
   });
 
+  const {
+    enableTags,
+  } = settings
+
 </script>
 <a href="{link}" target="_blank" style="user-select: none;">
 <div
@@ -136,27 +150,33 @@
     <div class="product-card__image">
       <ResponsiveImage {image} image_aspect_ratio={1} />
     </div>
-    <div class="product-card__header">
-      <div class="product-card__header-tags">
-        {#if discountPercentage > 0}<div class="product-card__discount">
-            {discountPercentage}% off
+
+    {#if enableTags || rating }
+      <div class="product-card__header">
+        <div class="product-card__header-tags">
+          {#if discountPercentage > 0}<div class="product-card__discount">
+              {discountPercentage}% off
+            </div>
+          {/if}
+          {#if bestseller}
+            <div class="product-card__discount">Best Seller</div>
+          {/if}
+          {#if onsale}
+            <div class="product-card__discount">On Sale</div>
+          {/if}
+        </div>
+        {#if rating}
+          <div class="product-card__star">
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <use x="0" href="#oke-star-filled" />
+            </svg>
+            <span class="product-card__star-text">{rating ? rating : ""}</span>
           </div>
         {/if}
-        {#if bestseller}<div class="product-card__discount">Best Seller</div>
-        {/if}
-        {#if onsale}<div class="product-card__discount">On Sale</div>
-        {/if}
       </div>
-      {#if rating}
-        <div class="product-card__star">
-          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-            <use x="0" href="#oke-star-filled" />
-          </svg>
-          <span class="product-card__star-text">{rating ? rating : ""}</span>
-        </div>
-      {/if}
-    </div>
-    {#if vendor}
+    {/if}
+
+    {#if vendor && settings.vendor}
       <div class="product-card__vendor">
         {@html vendor}
       </div>
@@ -167,36 +187,53 @@
   </div>
   <div class="product-card__footer">
     <div class="product-card__price-container">
-      {#if discountPercentage > 0}<div
-          class=" product-card__price product-card__price--compare"
-        >
-            {productFormattedPrice(comparePrice)}
-            {window.Shopify?.currency?.active}
+      {#if settings.price }
+        {#if discountPercentage > 0}<div
+            class=" product-card__price product-card__price--compare"
+          >
+            {#if skipFormatMoney}
+              {window.formatCurrency(comparePrice, `${currencySymbol}{{amount}}`)}
+              {window.Shopify?.currency?.active}
+            {:else}
+              {window.formatCurrency(
+                comparePrice * (window.Shopify?.currency?.rate * 100),
+                `${currencySymbol}{{amount}}`,
+              )}
+              {window.Shopify?.currency?.active}
+            {/if}
+          </div>
+        {/if}
+        <div class="product-card__price">
+          {productFormattedPrice(price)}
+          {window.Shopify?.currency?.active}
         </div>
       {/if}
-      <div class="product-card__price">
-        {productFormattedPrice(price)}
-        {window.Shopify?.currency?.active}
-      </div>
     </div>
     <div class="product-card__atc">
-      <form
-        method="post"
-        action="/cart/add"
-        accept-charset="UTF-8"
-        enctype="multipart/form-data"
-      >
-        <input type="hidden" name="quantity" value="1" />
-        <input type="hidden" name="id" value={variantId} />
-        {#if isBundle}
-          <div
-            class={`product-card__bundle-atc product-card__bundle-action-btn product-card__quantity-button-wrapp ${
-              isAddedToBundle ? "active" : ""
+      {#if settings.addToCartButton }
+        <form
+          method="post"
+          action="/cart/add"
+          accept-charset="UTF-8"
+          enctype="multipart/form-data"
+        >
+          <input type="hidden" name="quantity" value="1" />
+          <input type="hidden" name="id" value={variantId} />
+          {#if isBundle}
+            <div
+              class={`product-card__bundle-atc product-card__bundle-action-btn product-card__quantity-button-wrapp ${
+                isAddedToBundle ? "active" : ""
+              }`}
+            >
+            <div
+            class={`product-card__bundle-atc-quantity ${
+              isAddedToBundle?.quantity <=2 ? "active" : ""
             }`}
           >
           <div
           class={`product-card__bundle-atc-quantity ${
-            isAddedToBundle?.quantity <=2 ? "active" : ""
+            product.quantityAvailable > 2 ? 
+            (isAddedToBundle?.quantity <= 2 ? "active" : "") : (isAddedToBundle?.quantity < product.quantityAvailable ? "active" : "")
           }`}
         >
         <div>
@@ -217,26 +254,32 @@
               <div class="product-card__quantity-buttons">
                 <span>{isAddedToBundle?.quantity}</span>
               </div>
+                <div class="product-card__quantity-buttons">
+                  <span>{isAddedToBundle?.quantity}</span>
+                </div>
 
-              <div>
-              <button
-                class="product-card__quantity-buttons"
-                name="add"
-                on:click|preventDefault={() =>
-                  updateQuantity(
-                    isAddedToBundle || {},
-                    isAddedToBundle?.quantity + 1,
-                  )}>+</button
-              >
+                <div>
+                <button
+                  class="product-card__quantity-buttons"
+                  name="add"
+                  on:click|preventDefault={() =>
+                    updateQuantity(
+                      isAddedToBundle || {},
+                      isAddedToBundle?.quantity + 1,
+                    )}>+</button
+                >
+              </div>
             </div>
            </div>
-
+ 
            <div class={`product-card__bundle-atc-added  ${
-            isAddedToBundle?.quantity > 2  ? "active" : ""
+            product.quantityAvailable > 2 ? 
+            (isAddedToBundle?.quantity > 2  ? "active" : "") : (isAddedToBundle?.quantity >= product.quantityAvailable  ? "active" : "")
+            
           }`}
-        >
+            onclick= {(e) => e.preventDefault()}>
               <button
-              class="product-card__quantity-buttons">
+              class="product-card__quantity-buttons" disabled=true>
               {bundleTextAdded}
             </button>
 
@@ -248,27 +291,42 @@
             class={`product-item__action-button product-item__action-button--list-view-only button button--small button--primary product-card__bundle-action-btn  ${
               !isAddedToBundle ? "active" : ""
             }`}
-            data-action="add-to-bundle"
-            on:click={handleProductUpdate}
           >
-            {bundleText}
-          </button>
-        {:else if variants.length == 1 && enableAddToCart == true && !forceSeeOptions}
-          <button
-            type="submit"
-            class="product-item__action-button product-item__action-button--list-view-only button button--small button--primary"
-            data-action="add-to-cart"
-          >
-            {addToCartText}
-          </button>
-        {:else}
-          <a
-            href={link}
-            class="product-card__cta product-item__action-button product-item__action-button--list-view-only button button--small button--primary"
-            >{chooseMoreText}</a
-          >
-        {/if}
-      </form>
+                <button
+                class="product-card__quantity-buttons">
+                {bundleTextAdded}
+              </button>
+
+          </div>
+            </div>
+
+            <button
+              type="button"
+              class={`product-item__action-button product-item__action-button--list-view-only button button--small button--primary product-card__bundle-action-btn  ${
+                !isAddedToBundle ? "active" : ""
+              }`}
+              data-action="add-to-bundle"
+              on:click={handleProductUpdate}
+            >
+              {bundleText}
+            </button>
+          {:else if variants.length == 1 && enableAddToCart == true && !forceSeeOptions}
+            <button
+              type="submit"
+              class="product-item__action-button product-item__action-button--list-view-only button button--small button--primary"
+              data-action="add-to-cart"
+            >
+              {addToCartText}
+            </button>
+          {:else}
+            <a
+              href={link}
+              class="product-card__cta product-item__action-button product-item__action-button--list-view-only button button--small button--primary"
+              >{chooseMoreText}</a
+            >
+          {/if}
+        </form>
+      {/if}
     </div>
   </div>
 </div>

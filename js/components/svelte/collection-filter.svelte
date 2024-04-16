@@ -39,6 +39,7 @@
     appliedFilterObject = appliedFilterObject;
   }
 </script>
+
 {#if totalCount > 0}
   <div class="custom-filter">
       <div class="custom-filer__header">

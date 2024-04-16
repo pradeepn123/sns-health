@@ -86,9 +86,9 @@
           "type": "collection",
           "settings": {
             "collection_text": "default",
-            "canada_rule_id": "105315",
-            "other_rule_id": "105315",
-            "collection": ""
+            "canada_rule_id": "",
+            "other_rule_id": "",
+            "collection": "bestsellers"
           }
         }
       },

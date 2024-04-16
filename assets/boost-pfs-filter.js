@@ -208,6 +208,10 @@ var boostPFSTemplate = {
         if(!variant_id) {
             curatedData["forceSeeOptions"] = true;
         }
+
+        if(!variant_id) {
+            curatedData["forceSeeOptions"] = true;
+        }
         return `<custom-product-card>
         <div id="product-json" type="text/json" style="display: none">
         {

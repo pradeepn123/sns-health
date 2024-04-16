@@ -4,8 +4,9 @@
 </script>
 
 <div class="predictive-search__categories">
-   {#each Object.keys(categories) as category}
-    <CategoryBlock category={{title: category, content:categories[category]}}/>
-   {/each}
-
+    <div class="predictive-search__categories-inner">
+        {#each Object.keys(categories) as category}
+            <CategoryBlock category={{title: category, content:categories[category]}}/>
+        {/each}
+    </div>
 </div>

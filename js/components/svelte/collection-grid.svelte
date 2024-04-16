@@ -22,11 +22,7 @@
     apiPaginatedData.forEach((product) => {
       product.variants.nodes.forEach((variant) => {
         let show_in_bundle = variant.metafields[0]?.value || "false";
-        if(disableBundleCheck) {
           show_in_bundle = "true"
-        }
-        if (variant.availableForSale && JSON.parse(show_in_bundle) && variant.quantityAvailable > 0) {
-          //populate variant data
           let image = variant.image?.src
             ? variant.image
             : product.featuredImage;
@@ -119,9 +115,8 @@
             }
           });
           variantData.push(variantObj);
-        }
-      });
-    });
+        })
+      });    
     variantData = variantData;
   }
 
