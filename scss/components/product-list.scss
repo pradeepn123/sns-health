@@ -9,6 +9,10 @@
         @media(--md) {
           max-width: 100%;
         }
+
+        .product-card__image {
+          min-height: auto !important;
+        }
       }
 }
 

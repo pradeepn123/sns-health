@@ -37,7 +37,7 @@
         firstFoldLoaded = true;
         loading = false;
         apiPaginatedData = [...data.data.collection.products.nodes];
- 
+         console.log(apiPaginatedData, "api paginatedData");
         if (data.data.collection.products.pageInfo.hasNextPage) {
         loading = true;
         loadProductData(data.data.collection.products.pageInfo.endCursor);

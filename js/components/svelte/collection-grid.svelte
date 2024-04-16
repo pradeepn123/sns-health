@@ -22,7 +22,6 @@
     apiPaginatedData.forEach((product) => {
       product.variants.nodes.forEach((variant) => {
         let show_in_bundle = variant.metafields[0]?.value || "false";
-          show_in_bundle = "true"
           let image = variant.image?.src
             ? variant.image
             : product.featuredImage;
@@ -97,8 +96,7 @@
               variantObj.diet = diet;
             }
           });
-
-          variant.selectedOptions.forEach((option) => {
+           variant.selectedOptions.forEach((option) => {
             let flavor = null;
             if (
               option.name.toLowerCase() == "flavor" ||
@@ -114,7 +112,7 @@
               variantObj.flavor = flavor;
             }
           });
-          variantData.push(variantObj);
+          JSON.parse(show_in_bundle) && variantData.push(variantObj);
         })
       });    
     variantData = variantData;
@@ -176,7 +174,7 @@
   }
 
   function scrollToTop() {
-    const productGrid = "collection-grid";
+    const productGrid = "collection-component";
     const header = '[data-section-type="header"]';
     const productGridElement = document.querySelector(productGrid);
     const headerHeight = document.querySelector(header)
