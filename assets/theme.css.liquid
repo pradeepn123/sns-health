@@ -8390,9 +8390,6 @@ select::-ms-expand {
 /* Implementation note: starting from version 1.8, the theme now supports media type in Shopify (including 3D models
      and video. As a consequence, the "zoom" now only makes sense for "images", for which the slideshow becomes draggable.
      We therefore scope this so that the notice is only shown for images */
-.product-gallery__zoom-notice {
-  display: none;
-}
 
 .product-gallery__zoom-notice svg {
   width: 10px;
@@ -8401,12 +8398,8 @@ select::-ms-expand {
   vertical-align: baseline;
 }
 
-.product-gallery__carousel--zoomable ~ .product-gallery__zoom-notice {
-  display: block;
-  margin: 12px 0 6px 0;
-  width: 100%;
-  text-align: center;
-  font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 12px));
+.product-gallery__zoom-notice {
+  display: none;
 }
 
 @media screen and (max-width: 640px) {
@@ -8435,6 +8428,14 @@ select::-ms-expand {
 
   .product-gallery--with-thumbnails .product-gallery__carousel-wrapper {
     flex: 1 0 auto;
+  }
+
+  .product-gallery__carousel--zoomable ~ .product-gallery__zoom-notice {
+    display: block;
+    margin: 12px 0 6px 0;
+    width: 100%;
+    text-align: center;
+    font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 12px));
   }
 }
 
