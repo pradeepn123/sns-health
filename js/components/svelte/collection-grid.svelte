@@ -114,7 +114,7 @@
             }
           });
           //check and add it to the variants list that renders the variant
-          JSON.parse(show_in_bundle) && JSON.parse(quantityAvailable) && variantData.push(variantObj);
+          JSON.parse(show_in_bundle) && quantityAvailable > 1 && variantData.push(variantObj);
         })
       });    
     variantData = variantData;
