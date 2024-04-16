@@ -254,10 +254,6 @@
               <div class="product-card__quantity-buttons">
                 <span>{isAddedToBundle?.quantity}</span>
               </div>
-                <div class="product-card__quantity-buttons">
-                  <span>{isAddedToBundle?.quantity}</span>
-                </div>
-
                 <div>
                 <button
                   class="product-card__quantity-buttons"
@@ -282,24 +278,8 @@
               class="product-card__quantity-buttons" disabled=true>
               {bundleTextAdded}
             </button>
-
         </div>
           </div>
-
-          <button
-            type="button"
-            class={`product-item__action-button product-item__action-button--list-view-only button button--small button--primary product-card__bundle-action-btn  ${
-              !isAddedToBundle ? "active" : ""
-            }`}
-          >
-                <button
-                class="product-card__quantity-buttons">
-                {bundleTextAdded}
-              </button>
-
-          </div>
-            </div>
-
             <button
               type="button"
               class={`product-item__action-button product-item__action-button--list-view-only button button--small button--primary product-card__bundle-action-btn  ${
