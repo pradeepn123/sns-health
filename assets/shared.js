@@ -9335,7 +9335,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (301:10) {:else}
+// (293:10) {:else}
 function create_else_block(ctx) {
 	let a;
 	let t;
@@ -9360,7 +9360,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (293:88) 
+// (285:88) 
 function create_if_block_2(ctx) {
 	let button;
 
@@ -9386,8 +9386,7 @@ function create_if_block_2(ctx) {
 
 // (222:10) {#if isBundle}
 function create_if_block_1(ctx) {
-	let div6;
-	let div4;
+	let div5;
 	let div3;
 	let div0;
 	let button0;
@@ -9400,13 +9399,12 @@ function create_if_block_1(ctx) {
 	let div2;
 	let button1;
 	let div3_class_value;
-	let div4_class_value;
 	let t5;
-	let div5;
+	let div4;
 	let button2;
+	let div4_class_value;
+	let div4_onclick_value;
 	let div5_class_value;
-	let div5_onclick_value;
-	let div6_class_value;
 	let t7;
 	let button3;
 	let t8;
@@ -9416,8 +9414,7 @@ function create_if_block_1(ctx) {
 
 	return {
 		c() {
-			div6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			button0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
@@ -9431,7 +9428,7 @@ function create_if_block_1(ctx) {
 			button1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
 			button1.textContent = "+";
 			t5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			button2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
 			button2.textContent = `${/*bundleTextAdded*/ ctx[17]}`;
 			t7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
@@ -9443,37 +9440,26 @@ function create_if_block_1(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button1, "class", "product-card__quantity-buttons");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button1, "name", "add");
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", div3_class_value = `product-card__bundle-atc-quantity ${/*product*/ ctx[0].quantityAvailable > 2
-			? /*isAddedToBundle*/ ctx[1]?.quantity <= 2
-				? "active"
-				: ""
-			: /*isAddedToBundle*/ ctx[1]?.quantity < /*product*/ ctx[0].quantityAvailable
-				? "active"
-				: ""}`);
-
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", div4_class_value = `product-card__bundle-atc-quantity ${/*isAddedToBundle*/ ctx[1]?.quantity <= 2 && /*isAddedToBundle*/ ctx[1]?.quantity <= /*product*/ ctx[0].quantityAvailable
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", div3_class_value = `product-card__bundle-atc-quantity ${/*isAddedToBundle*/ ctx[1]?.quantity <= 2 && /*isAddedToBundle*/ ctx[1]?.quantity <= /*product*/ ctx[0].quantityAvailable
 			? "active"
 			: ""}`);
 
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button2, "class", "product-card__quantity-buttons");
 			button2.disabled = "true";
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", div5_class_value = `product-card__bundle-atc-added  ${/*product*/ ctx[0].quantityAvailable > 2
-			? /*isAddedToBundle*/ ctx[1]?.quantity > 2 ? "active" : ""
-			: /*isAddedToBundle*/ ctx[1]?.quantity >= /*product*/ ctx[0].quantityAvailable
-				? "active"
-				: ""}`);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", div4_class_value = `product-card__bundle-atc-added  ${/*isAddedToBundle*/ ctx[1]?.quantity <= 2 && /*isAddedToBundle*/ ctx[1]?.quantity <= /*product*/ ctx[0].quantityAvailable
+			? ""
+			: "active"}`);
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "onclick", div5_onclick_value = func);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", div6_class_value = `product-card__bundle-atc product-card__bundle-action-btn product-card__quantity-button-wrapp ${/*isAddedToBundle*/ ctx[1] ? "active" : ""}`);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "onclick", div4_onclick_value = func);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", div5_class_value = `product-card__bundle-atc product-card__bundle-action-btn product-card__quantity-button-wrapp ${/*isAddedToBundle*/ ctx[1] ? "active" : ""}`);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button3, "type", "button");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button3, "class", button3_class_value = `product-item__action-button product-item__action-button--list-view-only button button--small button--primary product-card__bundle-action-btn  ${!/*isAddedToBundle*/ ctx[1] ? "active" : ""}`);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button3, "data-action", "add-to-bundle");
 		},
 		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div6, anchor);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div4);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, div3);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div5, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div3);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, div0);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div0, button0);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t1);
@@ -9483,9 +9469,9 @@ function create_if_block_1(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, t3);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div3, div2);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, button1);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, t5);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div6, div5);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, button2);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, t5);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div5, div4);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, button2);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, t7, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, button3, anchor);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(button3, t8);
@@ -9503,32 +9489,20 @@ function create_if_block_1(ctx) {
 		p(ctx, dirty) {
 			if (dirty[0] & /*isAddedToBundle*/ 2 && t2_value !== (t2_value = /*isAddedToBundle*/ ctx[1]?.quantity + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t2, t2_value);
 
-			if (dirty[0] & /*product, isAddedToBundle*/ 3 && div3_class_value !== (div3_class_value = `product-card__bundle-atc-quantity ${/*product*/ ctx[0].quantityAvailable > 2
-			? /*isAddedToBundle*/ ctx[1]?.quantity <= 2
-				? "active"
-				: ""
-			: /*isAddedToBundle*/ ctx[1]?.quantity < /*product*/ ctx[0].quantityAvailable
-				? "active"
-				: ""}`)) {
+			if (dirty[0] & /*isAddedToBundle, product*/ 3 && div3_class_value !== (div3_class_value = `product-card__bundle-atc-quantity ${/*isAddedToBundle*/ ctx[1]?.quantity <= 2 && /*isAddedToBundle*/ ctx[1]?.quantity <= /*product*/ ctx[0].quantityAvailable
+			? "active"
+			: ""}`)) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", div3_class_value);
 			}
 
-			if (dirty[0] & /*isAddedToBundle, product*/ 3 && div4_class_value !== (div4_class_value = `product-card__bundle-atc-quantity ${/*isAddedToBundle*/ ctx[1]?.quantity <= 2 && /*isAddedToBundle*/ ctx[1]?.quantity <= /*product*/ ctx[0].quantityAvailable
-			? "active"
-			: ""}`)) {
+			if (dirty[0] & /*isAddedToBundle, product*/ 3 && div4_class_value !== (div4_class_value = `product-card__bundle-atc-added  ${/*isAddedToBundle*/ ctx[1]?.quantity <= 2 && /*isAddedToBundle*/ ctx[1]?.quantity <= /*product*/ ctx[0].quantityAvailable
+			? ""
+			: "active"}`)) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "class", div4_class_value);
 			}
 
-			if (dirty[0] & /*product, isAddedToBundle*/ 3 && div5_class_value !== (div5_class_value = `product-card__bundle-atc-added  ${/*product*/ ctx[0].quantityAvailable > 2
-			? /*isAddedToBundle*/ ctx[1]?.quantity > 2 ? "active" : ""
-			: /*isAddedToBundle*/ ctx[1]?.quantity >= /*product*/ ctx[0].quantityAvailable
-				? "active"
-				: ""}`)) {
+			if (dirty[0] & /*isAddedToBundle*/ 2 && div5_class_value !== (div5_class_value = `product-card__bundle-atc product-card__bundle-action-btn product-card__quantity-button-wrapp ${/*isAddedToBundle*/ ctx[1] ? "active" : ""}`)) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div5, "class", div5_class_value);
-			}
-
-			if (dirty[0] & /*isAddedToBundle*/ 2 && div6_class_value !== (div6_class_value = `product-card__bundle-atc product-card__bundle-action-btn product-card__quantity-button-wrapp ${/*isAddedToBundle*/ ctx[1] ? "active" : ""}`)) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div6, "class", div6_class_value);
 			}
 
 			if (dirty[0] & /*isAddedToBundle*/ 2 && button3_class_value !== (button3_class_value = `product-item__action-button product-item__action-button--list-view-only button button--small button--primary product-card__bundle-action-btn  ${!/*isAddedToBundle*/ ctx[1] ? "active" : ""}`)) {
@@ -9537,7 +9511,7 @@ function create_if_block_1(ctx) {
 		},
 		d(detaching) {
 			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div6);
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div5);
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(t7);
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(button3);
 			}

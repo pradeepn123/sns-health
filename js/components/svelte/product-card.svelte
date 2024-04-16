@@ -225,15 +225,9 @@
                 isAddedToBundle ? "active" : ""
               }`}
             >
-            <div
-            class={`product-card__bundle-atc-quantity ${
-              isAddedToBundle?.quantity <=2 && isAddedToBundle?.quantity <= product.quantityAvailable ? "active" : ""
-            }`}
-          >
           <div
           class={`product-card__bundle-atc-quantity ${
-            product.quantityAvailable > 2 ? 
-            (isAddedToBundle?.quantity <= 2 ? "active" : "") : (isAddedToBundle?.quantity < product.quantityAvailable ? "active" : "")
+            isAddedToBundle?.quantity <= 2 && isAddedToBundle?.quantity <= product.quantityAvailable  ? "active" : ""
           }`}
         >
         <div>
@@ -266,12 +260,10 @@
                 >
               </div>
             </div>
-           </div>
+      
  
            <div class={`product-card__bundle-atc-added  ${
-            product.quantityAvailable > 2 ? 
-            (isAddedToBundle?.quantity > 2  ? "active" : "") : (isAddedToBundle?.quantity >= product.quantityAvailable  ? "active" : "")
-            
+              isAddedToBundle?.quantity <= 2 && isAddedToBundle?.quantity <= product.quantityAvailable  ? "" : "active"
           }`}
             onclick= {(e) => e.preventDefault()}>
               <button
