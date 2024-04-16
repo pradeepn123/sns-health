@@ -4803,7 +4803,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (430:2) {:else}
+// (432:2) {:else}
 function create_else_block_2(ctx) {
 	let div6;
 	let div0;
@@ -4887,7 +4887,7 @@ function create_else_block_2(ctx) {
 	};
 }
 
-// (391:2) {#if firstFoldLoaded}
+// (393:2) {#if firstFoldLoaded}
 function create_if_block(ctx) {
 	let div3;
 	let div0;
@@ -5047,7 +5047,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (439:8) {#each Array(20) as _, i}
+// (441:8) {#each Array(20) as _, i}
 function create_each_block(ctx) {
 	let productcardskeleton;
 	let current;
@@ -5076,7 +5076,7 @@ function create_each_block(ctx) {
 	};
 }
 
-// (394:8) {#key loading}
+// (396:8) {#key loading}
 function create_key_block(ctx) {
 	let colletionfiltergroup;
 	let updating_appliedFilterObject;
@@ -5138,7 +5138,7 @@ function create_key_block(ctx) {
 	};
 }
 
-// (408:10) {#if paginatedData.length > 0}
+// (410:10) {#if paginatedData.length > 0}
 function create_if_block_2(ctx) {
 	let span;
 	let t0;
@@ -5243,7 +5243,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (413:79) {:else}
+// (415:79) {:else}
 function create_else_block_1(ctx) {
 	let span;
 
@@ -5264,7 +5264,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (413:50) {#if !loading}
+// (415:50) {#if !loading}
 function create_if_block_3(ctx) {
 	let t;
 
@@ -5286,7 +5286,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (424:8) {:else}
+// (426:8) {:else}
 function create_else_block(ctx) {
 	let collectionproductgrid;
 	let t;
@@ -5365,7 +5365,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (422:8) {#if paginatedData.length == 0}
+// (424:8) {#if paginatedData.length == 0}
 function create_if_block_1(ctx) {
 	let h1;
 
@@ -5495,6 +5495,7 @@ function instance($$self, $$props, $$invalidate) {
 	const setFilters = () => {
 		apiPaginatedData.forEach(product => {
 			product.variants.nodes.forEach(variant => {
+				const { quantityAvailable } = variant;
 				let show_in_bundle = variant.metafields[0]?.value || "false";
 
 				let image = (variant.image?.src)
@@ -5536,7 +5537,7 @@ function instance($$self, $$props, $$invalidate) {
 					handle: product.handle,
 					skipFormatMoney: true,
 					availableForSale: variant.availableForSale,
-					quantityAvailable: variant.quantityAvailable,
+					quantityAvailable,
 					show_in_bundle
 				};
 
@@ -5596,7 +5597,8 @@ function instance($$self, $$props, $$invalidate) {
 					}
 				});
 
-				JSON.parse(show_in_bundle) && variantData.push(variantObj);
+				//check and add it to the variants list that renders the variant
+				JSON.parse(show_in_bundle) && JSON.parse(quantityAvailable) && variantData.push(variantObj);
 			});
 		});
 

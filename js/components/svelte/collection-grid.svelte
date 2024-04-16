@@ -21,6 +21,7 @@
   const setFilters = () => {
     apiPaginatedData.forEach((product) => {
       product.variants.nodes.forEach((variant) => {
+        const {quantityAvailable} = variant;
         let show_in_bundle = variant.metafields[0]?.value || "false";
           let image = variant.image?.src
             ? variant.image
@@ -60,7 +61,7 @@
             handle: product.handle,
             skipFormatMoney: true,
             availableForSale: variant.availableForSale,
-            quantityAvailable: variant.quantityAvailable,
+            quantityAvailable: quantityAvailable,
             show_in_bundle
           };
           const brand = product.vendor?.toLowerCase();
@@ -112,7 +113,8 @@
               variantObj.flavor = flavor;
             }
           });
-          JSON.parse(show_in_bundle) && variantData.push(variantObj);
+          //check and add it to the variants list that renders the variant
+          JSON.parse(show_in_bundle) && JSON.parse(quantityAvailable) && variantData.push(variantObj);
         })
       });    
     variantData = variantData;
