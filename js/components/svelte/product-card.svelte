@@ -151,7 +151,7 @@
       <ResponsiveImage {image} image_aspect_ratio={1} />
     </div>
 
-    {#if enableTags || rating }
+
       <div class="product-card__header">
         <div class="product-card__header-tags">
           {#if discountPercentage > 0}<div class="product-card__discount">
@@ -174,7 +174,7 @@
           </div>
         {/if}
       </div>
-    {/if}
+
 
     {#if vendor && settings.vendor}
       <div class="product-card__vendor">
