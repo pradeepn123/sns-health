@@ -485,46 +485,14 @@
             "url": "shopify:\/\/collections\/botanica"
           }
         },
-        "04f03284-64cf-4a23-9d73-d2a68ceced6a": {
-          "type": "featured_brand",
-          "disabled": true,
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Heal + Co",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/image_117_1.png",
-            "url": "shopify:\/\/collections\/heal-co"
-          }
-        },
-        "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4": {
-          "type": "featured_brand",
-          "disabled": true,
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Sproos",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/Brand_Banner.jpg",
-            "url": "shopify:\/\/collections\/sproos"
-          }
-        },
-        "featured_brand_8kDUC4": {
+        "featured_brand_YgPhaj": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "Host defense",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/host_defense_logo.webp",
-            "url": "shopify:\/\/collections\/host-defense"
-          }
-        },
-        "featured_brand_pVMAkW": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "MegaFood",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/Megafood_280x_1.png",
-            "url": "shopify:\/\/collections\/megafood"
+            "promotion_name": "Featured brand",
+            "promotion_creative_name": "Neocell",
+            "image": "shopify:\/\/shop_images\/NeoCell_Primary_Logo.jpg",
+            "url": ""
           }
         },
         "featured_brand_wQFKFM": {
@@ -537,37 +505,67 @@
             "url": "shopify:\/\/collections\/renew-life"
           }
         },
-        "featured_brand_xPXBRJ": {
+        "featured_brand_FVTEQT": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "Guayaki",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/Guayaki_logo.png",
-            "url": "shopify:\/\/collections\/guayaki"
+            "promotion_name": "Featured brand",
+            "promotion_creative_name": "Herbasante",
+            "image": "shopify:\/\/shop_images\/logo.webp",
+            "url": ""
           }
         },
-        "featured_brand_rdRMdj": {
+        "featured_brand_if76Tr": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "Smart Solutions",
+            "promotion_name": "Featured brand",
+            "promotion_creative_name": "Manuka Health",
+            "image": "shopify:\/\/shop_images\/Manuka_Health_Logo.jpg",
+            "url": ""
+          }
+        },
+        "featured_brand_jBwkJk": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Featured brand",
+            "promotion_creative_name": "Organika",
+            "image": "shopify:\/\/shop_images\/org_logo_google_display_1200x628_1200x_dec8c138-d2af-4b0b-b704-975559b9392d.webp",
+            "url": ""
+          }
+        },
+        "04f03284-64cf-4a23-9d73-d2a68ceced6a": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Heal + Co",
             "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/Smart_Solutions.png",
-            "url": "shopify:\/\/collections\/smart-solutions"
+            "image": "shopify:\/\/shop_images\/image_117_1.png",
+            "url": "shopify:\/\/collections\/heal-co"
+          }
+        },
+        "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Sproos",
+            "promotion_creative_name": "Featured Brands",
+            "image": "shopify:\/\/shop_images\/Brand_Banner.jpg",
+            "url": "shopify:\/\/collections\/sproos"
           }
         }
       },
       "block_order": [
         "c9336f2d-13e6-426d-932d-e2e033d0f054",
         "fbc747c2-c649-43e7-84f8-39fd5d61dae0",
-        "04f03284-64cf-4a23-9d73-d2a68ceced6a",
-        "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4",
-        "featured_brand_8kDUC4",
-        "featured_brand_pVMAkW",
+        "featured_brand_YgPhaj",
         "featured_brand_wQFKFM",
-        "featured_brand_xPXBRJ",
-        "featured_brand_rdRMdj"
+        "featured_brand_FVTEQT",
+        "featured_brand_if76Tr",
+        "featured_brand_jBwkJk",
+        "04f03284-64cf-4a23-9d73-d2a68ceced6a",
+        "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4"
       ],
       "settings": {
         "heading": "Featured Brands"
