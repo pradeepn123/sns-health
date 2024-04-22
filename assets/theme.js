@@ -1320,11 +1320,13 @@
             var index = _this4.openItems.indexOf(target);
 
             if (index > -1) {
-              _this4.openItems.splice(index, 1);
+              _this4.openItems.splice(index, 1); 
             }
           }
           if (!(document.querySelector('.nav-bar__container')?.querySelector('[data-type="menu"]').classList.contains('nav-dropdown--glued'))) {
-            document.querySelector('.overlay--active').classList.remove('overlay--active');
+            if(document.querySelector('.overlay--active')) {
+              document.querySelector('.overlay--active').classList.remove('overlay--active');
+            }
           }
 
         }; // If we are using on click, we can directly close, otherwise we apply a slight delay before closing the menu,
