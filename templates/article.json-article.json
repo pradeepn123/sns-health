@@ -39,7 +39,8 @@
           "type": "collection",
           "settings": {
             "collection_text": "",
-            "rule_id": "104943",
+            "canada_rule_id": "110176",
+            "other_rule_id": "110176",
             "collection": ""
           }
         }
@@ -49,7 +50,8 @@
       ],
       "settings": {
         "heading": "Trending Items",
-        "mobile_carousel": true
+        "mobile_carousel": true,
+        "url": ""
       }
     },
     "50a3df27-5ec1-4eb2-abc0-37ea2dcae937": {
@@ -59,7 +61,8 @@
           "type": "collection",
           "settings": {
             "collection_text": "New arrival",
-            "rule_id": "96204",
+            "canada_rule_id": "",
+            "other_rule_id": "",
             "collection": "new-arrivals"
           }
         }
@@ -69,7 +72,8 @@
       ],
       "settings": {
         "heading": "New arrival",
-        "mobile_carousel": true
+        "mobile_carousel": true,
+        "url": ""
       }
     }
   },

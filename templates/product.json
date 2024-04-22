@@ -101,7 +101,7 @@
           "type": "collection",
           "settings": {
             "collection_text": "Just for you",
-            "canada_rule_id": "",
+            "canada_rule_id": "110176",
             "other_rule_id": "110176",
             "collection": ""
           }
