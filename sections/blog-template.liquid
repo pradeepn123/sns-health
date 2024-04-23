@@ -1,10 +1,12 @@
-<section data-section-id="{{ section.id }}" data-section-type="blog">
+{{'blog.css' | asset_url | stylesheet_tag }}
+
+<section data-section-id="{{ section.id }}" data-section-type="blog" class="blog-container">
   {%- if blog.articles_count > 0 -%}
-    <header class="page__header">
-      <h1 class="page__title heading h1">{{ blog.title }}</h1>
+    <header class="page__header blog-category">
+      <h1 class="page__title heading  blog-container blog-container-heading">{{ blog.title }}</h1>
 
       {%- if section.settings.show_tags and blog.all_tags.size > 0 -%}
-        <ul class="page__tag-list hidden-pocket" role="list">
+        <ul class="page__tag-list hidden-pocket blog-category" role="list">
           <li class="page__tag-item link {% if current_tags == blank %}is-selected{% endif %}">
             <a href="{{ blog.url }}">{{ 'blog.general.all_tag' | t }}</a>
           </li>
@@ -16,7 +18,7 @@
 
         <div class="page__action-list hidden-lap-and-up">
           <div class="value-picker-wrapper">
-            <button class="value-picker-button" aria-haspopup="true" aria-expanded="false" aria-controls="blog-tag-selector" data-action="open-value-picker">
+            <button class="value-picker-button blog-category-arrow" aria-haspopup="true" aria-expanded="false" aria-controls="blog-tag-selector" data-action="open-value-picker">
               {%- if current_tags == blank -%}
                 {{- 'blog.general.all_tag' | t -}}
               {%- else -%}
@@ -142,6 +144,11 @@
       "id": "show_excerpt",
       "label": "Show excerpt",
       "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog-template"
     }
   ]
 }

@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "blog_template_VrFPHp": {
+      "type": "blog-template",
+      "settings": {
+        "articles_per_page": 12,
+        "highlight_first_article": true,
+        "show_tags": true,
+        "show_category": true,
+        "show_author": true,
+        "show_date": true,
+        "show_excerpt": false
+      }
+    },
+    "1111dc5e-0853-433c-87f9-426668ab9166": {
+      "type": "product-carousel",
+      "blocks": {
+        "e5b88f01-a9db-4876-b824-dd49f1018cfd": {
+          "type": "collection",
+          "settings": {
+            "collection_text": "Trending Items",
+            "canada_rule_id": "104942",
+            "other_rule_id": "152432",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "e5b88f01-a9db-4876-b824-dd49f1018cfd"
+      ],
+      "settings": {
+        "heading": "Trending Items",
+        "mobile_carousel": true,
+        "url": ""
+      }
+    },
+    "0d1f4044-ed06-406a-98a4-179b8b04b635": {
+      "type": "product-carousel",
+      "blocks": {
+        "04d89d64-6c8b-4c4c-ae38-5bac8d9d6825": {
+          "type": "collection",
+          "settings": {
+            "collection_text": "New Arrivals",
+            "canada_rule_id": "",
+            "other_rule_id": "",
+            "collection": "new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "04d89d64-6c8b-4c4c-ae38-5bac8d9d6825"
+      ],
+      "settings": {
+        "heading": "New Arrivals",
+        "mobile_carousel": true,
+        "url": ""
+      }
+    },
+    "12115053-950b-44eb-9171-d513f0dc7ed9": {
+      "type": "static-recently-viewed-products",
+      "settings": {
+        "heading": "Recently viewed",
+        "mobile_carousel": true
+      }
+    }
+  },
+  "order": [
+    "blog_template_VrFPHp",
+    "1111dc5e-0853-433c-87f9-426668ab9166",
+    "0d1f4044-ed06-406a-98a4-179b8b04b635",
+    "12115053-950b-44eb-9171-d513f0dc7ed9"
+  ]
+}
