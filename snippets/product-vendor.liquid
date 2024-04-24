@@ -1,6 +1,7 @@
 {% assign product_tags = product.tags | join: ', ' %}
 {%- assign vendor_handle = product.vendor | handle -%}
-{%- assign collection_for_vendor = collections[vendor_handle] -%}
+{%- assign collection_for_vendor = collections[vendor_handle] | default: product.metafields.custom.product_vendor_collection -%}
+
 {% if product.vendor %}
   {% assign manufacturer = product.vendor %}
 {% else %}
@@ -8,10 +9,10 @@
 {% endif %}
 
 By
-<a class="product-meta__vendor link link--accented" href="{{ collection_for_vendor.url }}"
-  ><span class="product-meta__vendor">{{ manufacturer }}</span></a
->
-<!-- {{ product.vendor }}</a> -->
+<a class="product-meta__vendor link link--accented" href="{% if collection_for_vendor == product.metafields.custom.product_vendor_collection %}{{ collection_for_vendor }}{% else %}{{ collection_for_vendor.url }}{% endif %}">
+  <span class="product-meta__vendor">{{ manufacturer }}</span>
+</a>
+
 {% if product_tags contains 'Vendor-Canadian' %}
   <a href="{{ collections['canadian-vendors'].url }}">
     <span class="canada-flag">&nbsp;</span>
