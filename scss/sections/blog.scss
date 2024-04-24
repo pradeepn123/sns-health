@@ -30,9 +30,12 @@ svg{
     @include use-text-style('heading-2'); 
     @media(--sm){
     @include use-text-style('heading-1'); 
+    margin-right: auto;
+    margin-left: unset;
+
     }
-    @media(min-width:768px) and (max-width:1023px){
-        margin-left: unset;
+    @media(--md){
+        margin-left: auto;
     }
 }
 
@@ -43,7 +46,7 @@ svg{
     @media(--xlg){
         margin: 0 160px;
     }
-    @media(min-width:1900px){
+    @media(--xxlg){
         margin: 0 280px;
     }
     
