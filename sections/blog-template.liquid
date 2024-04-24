@@ -69,7 +69,7 @@
     {%- endif -%}
 
     {%- paginate blog.articles by articles_per_page -%}
-      <div class="block-list block-list--loose block-list--no-flush blog-container">
+      <div class="block-list block-list--loose block-list--no-flush blog-s">
         {%- for article in blog.articles -%}
           {%- if section.settings.highlight_first_article and current_tags == blank and forloop.first -%}
             <div class="block-list__item 1/1 hidden-pocket hidden-lap">
