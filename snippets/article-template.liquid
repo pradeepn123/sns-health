@@ -134,7 +134,7 @@
         {%- endif -%}
 
         {%- if blog.previous_article -%}
-          <a href="{{ blog.previous_article.url }}" class="article__navigation-item article__navigation-item--next text--strong link" rel="next">{{- 'blog.article.next_article' | t -}} {%- render 'icon', icon: 'arrow-right' -%}</a>
+          <a href="{{ blog.previous_article.url }}" class="article__navigation-item article__navigation-item--next text--strong link" rel="next">{{- 'blog.article.next_article' | t -}} {%- render 'icon', icon: 'arrow-left' -%}</a>
         {%- endif -%}
       </div>
     {%- endif -%}
