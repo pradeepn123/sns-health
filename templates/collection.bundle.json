@@ -36,7 +36,6 @@
           "repeater": "{{ collection.metafields.custom.product_carousel.value }}",
           "settings": {
             "collection_text": "{{ block.repeater.rebuy_rule_id.value }}",
-            "rule_id": "{{ block.repeater.tab_text.value }}",
             "collection": "{{ block.repeater.collection.value }}"
           }
         }
@@ -89,7 +88,6 @@
           "type": "collection",
           "settings": {
             "collection_text": "default",
-            "rule_id": "105315",
             "collection": ""
           }
         }

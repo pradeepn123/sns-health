@@ -6,7 +6,10 @@
 
 .blog-container{
     @include mixins.container;
-    
+    @media(--md){
+        display: unset;
+    }
+   
 }
 
 .blog-category{
@@ -28,4 +31,14 @@ svg{
     @media(--sm){
     @include use-text-style('heading-1'); 
     }
+    @media(min-width:768px) and (max-width:1023px){
+        margin-left: unset;
+    }
+}
+
+.blog-alignment{
+    @media(--md){
+        margin: 0 35px;
+    }
+    
 }
