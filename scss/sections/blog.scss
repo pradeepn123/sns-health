@@ -40,5 +40,11 @@ svg{
     @media(--md){
         margin: 0 35px;
     }
+    @media(--xlg){
+        margin: 0 160px;
+    }
+    @media(min-width:1900px){
+        margin: 0 280px;
+    }
     
 }
