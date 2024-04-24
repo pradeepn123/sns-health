@@ -1,0 +1,53 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+
+
+.blog-container{
+    @include mixins.container;
+    @media(--md){
+        display: unset;
+    }
+   
+}
+
+.blog-category{
+    @include mixins.container;
+   
+}
+
+.blog-category-arrow
+svg{
+    @media(--xxs){ 
+        width: 11px !important;
+        height: 12px !important;
+    }
+ 
+}
+
+.blog-container-heading{
+    @include use-text-style('heading-2'); 
+    @media(--sm){
+    @include use-text-style('heading-1'); 
+    margin-right: auto;
+    margin-left: unset;
+
+    }
+    @media(--md){
+        margin-left: auto;
+    }
+}
+
+.blog-alignment{
+    @media(--md){
+        margin: 0 35px;
+    }
+    @media(--xlg){
+        margin: 0 160px;
+    }
+    @media(--xxlg){
+        margin: 0 280px;
+    }
+    
+}
