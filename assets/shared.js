@@ -9085,7 +9085,7 @@ function create_if_block_12(ctx) {
 	return {
 		c() {
 			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*discountPercentage*/ ctx[7]);
+			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*discountPercentage*/ ctx[5]);
 			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)("% off");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "product-card__discount");
 		},
@@ -9095,7 +9095,7 @@ function create_if_block_12(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, t1);
 		},
 		p(ctx, dirty) {
-			if (dirty[0] & /*discountPercentage*/ 128) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t0, /*discountPercentage*/ ctx[7]);
+			if (dirty[0] & /*discountPercentage*/ 32) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t0, /*discountPercentage*/ ctx[5]);
 		},
 		d(detaching) {
 			if (detaching) {
@@ -9105,7 +9105,7 @@ function create_if_block_12(ctx) {
 	};
 }
 
-// (194:10) {#if bestseller}
+// (180:10) {#if bestseller}
 function create_if_block_11(ctx) {
 	let div;
 
@@ -9126,7 +9126,7 @@ function create_if_block_11(ctx) {
 	};
 }
 
-// (197:10) {#if onsale}
+// (183:10) {#if onsale}
 function create_if_block_10(ctx) {
 	let div;
 
@@ -9147,7 +9147,7 @@ function create_if_block_10(ctx) {
 	};
 }
 
-// (200:12) {#if isFinalSale }
+// (186:12) {#if isFinalSale }
 function create_if_block_9(ctx) {
 	let div1;
 	let div0;
@@ -9176,14 +9176,14 @@ function create_if_block_9(ctx) {
 	};
 }
 
-// (204:8) {#if rating}
+// (190:8) {#if rating}
 function create_if_block_8(ctx) {
 	let div;
 	let svg;
 	let use;
 	let t0;
 	let span;
-	let t1_value = (/*rating*/ ctx[6] ? /*rating*/ ctx[6] : "") + "";
+	let t1_value = (/*rating*/ ctx[4] ? /*rating*/ ctx[4] : "") + "";
 	let t1;
 
 	return {
@@ -9212,7 +9212,7 @@ function create_if_block_8(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(span, t1);
 		},
 		p(ctx, dirty) {
-			if (dirty[0] & /*rating*/ 64 && t1_value !== (t1_value = (/*rating*/ ctx[6] ? /*rating*/ ctx[6] : "") + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, t1_value);
+			if (dirty[0] & /*rating*/ 16 && t1_value !== (t1_value = (/*rating*/ ctx[4] ? /*rating*/ ctx[4] : "") + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, t1_value);
 		},
 		d(detaching) {
 			if (detaching) {
@@ -9222,7 +9222,7 @@ function create_if_block_8(ctx) {
 	};
 }
 
-// (215:4) {#if vendor && settings.vendor}
+// (201:4) {#if vendor && settings.vendor}
 function create_if_block_7(ctx) {
 	let div;
 
@@ -9244,11 +9244,11 @@ function create_if_block_7(ctx) {
 	};
 }
 
-// (226:6) {#if settings.price }
+// (212:6) {#if settings.price }
 function create_if_block_4(ctx) {
 	let t0;
 	let div;
-	let if_block = /*discountPercentage*/ ctx[7] > 0 && create_if_block_5(ctx);
+	let if_block = /*discountPercentage*/ ctx[5] > 0 && create_if_block_5(ctx);
 
 	return {
 		c() {
@@ -9264,7 +9264,7 @@ function create_if_block_4(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
 		},
 		p(ctx, dirty) {
-			if (/*discountPercentage*/ ctx[7] > 0) {
+			if (/*discountPercentage*/ ctx[5] > 0) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
@@ -9288,7 +9288,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (227:8) {#if discountPercentage > 0}
+// (213:8) {#if discountPercentage > 0}
 function create_if_block_5(ctx) {
 	let div;
 
@@ -9323,7 +9323,7 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (233:12) {:else}
+// (219:12) {:else}
 function create_else_block_1(ctx) {
 	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[15] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[19]}{{amount}}`) + "";
 	let t0;
@@ -9353,7 +9353,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (230:12) {#if skipFormatMoney}
+// (216:12) {#if skipFormatMoney}
 function create_if_block_6(ctx) {
 	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[15], `${/*currencySymbol*/ ctx[19]}{{amount}}`) + "";
 	let t0;
@@ -9383,7 +9383,7 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (249:6) {#if settings.addToCartButton }
+// (235:6) {#if settings.addToCartButton }
 function create_if_block(ctx) {
 	let form;
 	let input0;
@@ -9391,7 +9391,7 @@ function create_if_block(ctx) {
 	let input1;
 	let t1;
 	let t2;
-	let if_block0 = /*isFinalSale*/ ctx[5] && create_if_block_3(ctx);
+	let if_block0 = /*isFinalSale*/ ctx[7] && create_if_block_3(ctx);
 
 	function select_block_type_1(ctx, dirty) {
 		if (/*isBundle*/ ctx[26]) return create_if_block_1;
@@ -9434,7 +9434,7 @@ function create_if_block(ctx) {
 			if_block1.m(form, null);
 		},
 		p(ctx, dirty) {
-			if (/*isFinalSale*/ ctx[5]) {
+			if (/*isFinalSale*/ ctx[7]) {
 				if (if_block0) {
 					if_block0.p(ctx, dirty);
 				} else {
@@ -9460,7 +9460,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (258:10) {#if isFinalSale}
+// (244:10) {#if isFinalSale}
 function create_if_block_3(ctx) {
 	let input;
 
@@ -9469,14 +9469,14 @@ function create_if_block_3(ctx) {
 			input = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("input");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input, "type", "hidden");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input, "name", "properties[best-before]");
-			input.value = /*expiryDate*/ ctx[4];
+			input.value = /*expiryDate*/ ctx[6];
 		},
 		m(target, anchor) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, input, anchor);
 		},
 		p(ctx, dirty) {
-			if (dirty[0] & /*expiryDate*/ 16) {
-				input.value = /*expiryDate*/ ctx[4];
+			if (dirty[0] & /*expiryDate*/ 64) {
+				input.value = /*expiryDate*/ ctx[6];
 			}
 		},
 		d(detaching) {
@@ -9487,7 +9487,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (333:10) {:else}
+// (319:10) {:else}
 function create_else_block(ctx) {
 	let a;
 	let t;
@@ -9512,7 +9512,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (325:88) 
+// (311:88) 
 function create_if_block_2(ctx) {
 	let button;
 
@@ -9536,7 +9536,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (262:10) {#if isBundle}
+// (248:10) {#if isBundle}
 function create_if_block_1(ctx) {
 	let div5;
 	let div3;
@@ -9630,8 +9630,8 @@ function create_if_block_1(ctx) {
 
 			if (!mounted) {
 				dispose = [
-					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button0, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(/*click_handler*/ ctx[33])),
-					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button1, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(/*click_handler_1*/ ctx[34])),
+					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button0, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(/*click_handler*/ ctx[34])),
+					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button1, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(/*click_handler_1*/ ctx[35])),
 					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button3, "click", /*handleProductUpdate*/ ctx[29])
 				];
 
@@ -9704,11 +9704,11 @@ function create_fragment(ctx) {
 			}
 		});
 
-	let if_block0 = /*discountPercentage*/ ctx[7] > 0 && create_if_block_12(ctx);
+	let if_block0 = /*discountPercentage*/ ctx[5] > 0 && create_if_block_12(ctx);
 	let if_block1 = /*bestseller*/ ctx[25] && create_if_block_11(ctx);
 	let if_block2 = /*onsale*/ ctx[27] && create_if_block_10(ctx);
-	let if_block3 = /*isFinalSale*/ ctx[5] && create_if_block_9(ctx);
-	let if_block4 = /*rating*/ ctx[6] && create_if_block_8(ctx);
+	let if_block3 = /*isFinalSale*/ ctx[7] && create_if_block_9(ctx);
+	let if_block4 = /*rating*/ ctx[4] && create_if_block_8(ctx);
 	let if_block5 = /*vendor*/ ctx[10] && /*settings*/ ctx[3].vendor && create_if_block_7(ctx);
 	let if_block6 = /*settings*/ ctx[3].price && create_if_block_4(ctx);
 	let if_block7 = /*settings*/ ctx[3].addToCartButton && create_if_block(ctx);
@@ -9789,11 +9789,11 @@ function create_fragment(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, t8);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, div6);
 			if (if_block7) if_block7.m(div6, null);
-			/*div8_binding*/ ctx[35](div8);
+			/*div8_binding*/ ctx[36](div8);
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*discountPercentage*/ ctx[7] > 0) {
+			if (/*discountPercentage*/ ctx[5] > 0) {
 				if (if_block0) {
 					if_block0.p(ctx, dirty);
 				} else {
@@ -9806,7 +9806,7 @@ function create_fragment(ctx) {
 				if_block0 = null;
 			}
 
-			if (/*isFinalSale*/ ctx[5]) {
+			if (/*isFinalSale*/ ctx[7]) {
 				if (if_block3) {
 					if_block3.p(ctx, dirty);
 				} else {
@@ -9819,7 +9819,7 @@ function create_fragment(ctx) {
 				if_block3 = null;
 			}
 
-			if (/*rating*/ ctx[6]) {
+			if (/*rating*/ ctx[4]) {
 				if (if_block4) {
 					if_block4.p(ctx, dirty);
 				} else {
@@ -9894,7 +9894,7 @@ function create_fragment(ctx) {
 			if (if_block5) if_block5.d();
 			if (if_block6) if_block6.d();
 			if (if_block7) if_block7.d();
-			/*div8_binding*/ ctx[35](null);
+			/*div8_binding*/ ctx[36](null);
 		}
 	};
 }
@@ -9903,8 +9903,11 @@ const soldOutText = "Sold Out";
 const func = e => e.preventDefault();
 
 function instance($$self, $$props, $$invalidate) {
+	let expiryDateData;
+	let isFinalSale;
+	let expiryDate;
 	let $cartContents;
-	(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.component_subscribe)($$self, SvelteComponents_bundle_store_js__WEBPACK_IMPORTED_MODULE_4__.cartContents, $$value => $$invalidate(32, $cartContents = $$value));
+	(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.component_subscribe)($$self, SvelteComponents_bundle_store_js__WEBPACK_IMPORTED_MODULE_4__.cartContents, $$value => $$invalidate(33, $cartContents = $$value));
 	let { shopifyData } = $$props;
 	let { product } = $$props;
 	let { productCardSettings = {} } = $$props;
@@ -9921,13 +9924,8 @@ function instance($$self, $$props, $$invalidate) {
 
 	settings = { ...settings, ...productCardSettings };
 
-	//to declare it as reactive
-	let expiryDate = false;
-
-	let isFinalSale = false;
-
 	const { image, variants = [], vendor, title, tags = [], metafields = [], handle, skipFormatMoney = false, discountPercentage: shopifyDiscountPercentage = 0, enableAddToCart = true, forceSeeOptions = false, // flag for adding conversion rate
-	addConversionRate = false, expiryDateData = false } = product || shopifyData || {};
+	addConversionRate = false } = product || shopifyData || {};
 
 	let [{ compare_at_price: comparePrice, price, id: variantId } = {}] = variants || [];
 
@@ -9935,20 +9933,13 @@ function instance($$self, $$props, $$invalidate) {
 		const expiryData = await fetch(`/products/${handle}?variant=${variantId}&view=get-expiry-date`);
 		const expiryDateJson = await expiryData.json();
 		const { isFinalSale: isFinalSaleFromJson, expiryDate: expiryDateFromJson } = expiryDateJson;
-		$$invalidate(4, expiryDate = expiryDateFromJson);
-		$$invalidate(5, isFinalSale = isFinalSaleFromJson);
-		$$invalidate(0, product.expiryDateData = { expiryDate, isFinalSale }, product);
-		$$invalidate(0, product);
+		$$invalidate(32, expiryDateData.isFinalSale = isFinalSaleFromJson, expiryDateData);
+		$$invalidate(32, expiryDateData.expiryDate = expiryDateFromJson, expiryDateData);
+		$$invalidate(32, expiryDateData); //reassigning value
 	};
 
 	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(async () => {
-		if (!expiryDateData) {
-			await getExpiryData(handle);
-		} else {
-			const { isFinalSale: isFinalSaleFromShopify, expiryDate: expiryDateFromShopify } = expiryDateData;
-			$$invalidate(4, expiryDate = expiryDateFromShopify);
-			$$invalidate(5, isFinalSale = isFinalSaleFromShopify);
-		}
+		await getExpiryData(handle);
 	});
 
 	const fireEmoji = `<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91.16 122.88"><defs><style>.cls-1{fill:#f77d02;}.cls-1,.cls-2,.cls-3{fill-rule:evenodd;}.cls-2{fill:#ffc928;}.cls-3{fill:#fff073;}</style></defs><title>flames</title><path class="cls-1" d="M14.45,35.35c1.82,14.45,4.65,25.4,9.44,29.45C24.48,30.87,43,27.4,38.18,0,53.52,3,67.77,33.33,71.36,66.15a37.5,37.5,0,0,0,6.53-19.46c13.76,15.72,21.31,56.82-.17,69.52-12.53,7.41-38.13,7.79-51.46,5.27a27.64,27.64,0,0,1-13.5-5.36c-19.2-14.66-15.17-62.25,1.69-80.77Z"/><path class="cls-2" d="M77.73,116.2h0c-8,4.74-21.42,6.61-33.51,6.67H42.45a95.69,95.69,0,0,1-16.19-1.39,27.64,27.64,0,0,1-13.5-5.36,2.43,2.43,0,0,0-.25-.2c-2.13-10.28,1.76-24,8.49-31.29a25.49,25.49,0,0,0,4.85,13.71C28.51,75.22,39.11,57,50.5,54.94c-3,19.1,11,24.21,10.62,42.45,3.56-2.85,5.66-10.57,7-20.75,9.12,9.49,13.59,26.32,9.59,39.56Z"/><path class="cls-3" d="M65.81,120.73a115,115,0,0,1-39.55.82l-1-.13c.06-5.73,2.21-12,5.47-15.73a17.18,17.18,0,0,0,2.93,8.84c1.61-14.91,8-26.63,14.88-28-1.79,12.32,6.65,15.61,6.4,27.37,2.15-1.84,3.42-6.82,4.23-13.38,4.47,5,7.09,12.84,6.63,20.19Z"/></svg>`;
@@ -9972,7 +9963,7 @@ function instance($$self, $$props, $$invalidate) {
 				parsedValue = JSON.parse(value) || {};
 			}
 
-			$$invalidate(6, rating = parsedValue?.reviewAverageValue);
+			$$invalidate(4, rating = parsedValue?.reviewAverageValue);
 		}
 	});
 
@@ -10070,23 +10061,26 @@ function instance($$self, $$props, $$invalidate) {
 	};
 
 	$$self.$$.update = () => {
-		if ($$self.$$.dirty[1] & /*$cartContents*/ 2) {
+		if ($$self.$$.dirty[1] & /*expiryDateData*/ 2) {
+			$: $$invalidate(7, { isFinalSale, expiryDate } = expiryDateData, isFinalSale, ($$invalidate(6, expiryDate), $$invalidate(32, expiryDateData)));
+		}
+
+		if ($$self.$$.dirty[1] & /*$cartContents*/ 4) {
 			$: $$invalidate(1, isAddedToBundle = $cartContents && $cartContents[variantId]);
 		}
 	};
 
-	$: $$invalidate(4, expiryDate = expiryDateData && expiryDateData.expiryDate || false);
-	$: $$invalidate(5, isFinalSale = expiryDateData && expiryDateData.isFinalSale || false);
+	$: $$invalidate(32, expiryDateData = {});
 
 	return [
 		product,
 		isAddedToBundle,
 		ref,
 		settings,
-		expiryDate,
-		isFinalSale,
 		rating,
 		discountPercentage,
+		expiryDate,
+		isFinalSale,
 		image,
 		variants,
 		vendor,
@@ -10111,6 +10105,7 @@ function instance($$self, $$props, $$invalidate) {
 		handleProductUpdate,
 		shopifyData,
 		productCardSettings,
+		expiryDateData,
 		$cartContents,
 		click_handler,
 		click_handler_1,
@@ -10216,7 +10211,7 @@ function get_each_context_2(ctx, list, i) {
 	return child_ctx;
 }
 
-// (116:0) {#if collectionTexts.length > 1}
+// (117:0) {#if collectionTexts.length > 1}
 function create_if_block_4(ctx) {
 	let div;
 	let each_value_2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*collectionTexts*/ ctx[5]);
@@ -10279,7 +10274,7 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (118:4) {#each collectionTexts as text}
+// (119:4) {#each collectionTexts as text}
 function create_each_block_2(ctx) {
 	let div;
 	let button;
@@ -10332,7 +10327,7 @@ function create_each_block_2(ctx) {
 	};
 }
 
-// (142:0) {:else}
+// (143:0) {:else}
 function create_else_block(ctx) {
 	let previous_key = /*productData*/ ctx[0];
 	let key_block_anchor;
@@ -10381,7 +10376,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (132:0) {#if isLoading}
+// (133:0) {#if isLoading}
 function create_if_block(ctx) {
 	let div6;
 
@@ -10405,14 +10400,19 @@ function create_if_block(ctx) {
 	};
 }
 
-// (152:6) {#if productData.length > 0  }
+// (153:6) {#if productData.length > 0  }
 function create_if_block_2(ctx) {
 	let custom_carousel;
+	let div1;
 	let div0;
 	let t0;
-	let div8;
-	let t6;
-	let div9;
+	let div2;
+	let t1;
+	let div3;
+	let t2;
+	let div4;
+	let t4;
+	let div11;
 	let current;
 	let each_value_1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.ensure_array_like)(/*productData*/ ctx[0]);
 	let each_blocks = [];
@@ -10428,6 +10428,7 @@ function create_if_block_2(ctx) {
 	return {
 		c() {
 			custom_carousel = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("custom-carousel");
+			div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
@@ -10435,21 +10436,31 @@ function create_if_block_2(ctx) {
 			}
 
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div8.innerHTML = `<div class="product-placeholders"><div></div> <div></div> <div></div> <div></div> <div></div></div> <div class="lds-ring"></div>`;
-			t6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div9 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div9.textContent = `${JSON.stringify(/*carouselSettings*/ ctx[4])}`;
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", "custom-carousel__content hide");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "data-carousel-content", "");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "class", "carousel-placeholders");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "type", "text/json");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div9, "data-settings", "");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_style)(div9, "display", "none");
+			div2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			div3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div4.textContent = `${JSON.stringify(/*carouselSettings*/ ctx[4])}`;
+			t4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			div11 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div11.innerHTML = `<div class="product-placeholders"><div></div> <div></div> <div></div> <div></div> <div></div></div>`;
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", "swiper-wrapper");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", "carousel__container swiper hide");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "data-swiper-container", "");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "swiper-pagination");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "class", "swiper-navigations");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div3, "data-swiper-navigations", "");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "type", "text/json");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div4, "data-settings", "");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_style)(div4, "display", "none");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div11, "class", "carousel-placeholders");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div11, "data-carousel-placeholder", "");
 		},
 		m(target, anchor) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, custom_carousel, anchor);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div0);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div1);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, div0);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				if (each_blocks[i]) {
@@ -10458,9 +10469,13 @@ function create_if_block_2(ctx) {
 			}
 
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t0);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div8);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t6);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div9);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div2);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t1);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div3);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t2);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div4);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, t4);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(custom_carousel, div11);
 			current = true;
 		},
 		p(ctx, dirty) {
@@ -10519,29 +10534,36 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (156:14) {#if product.variants[0].price > 0}
+// (158:20) {#if product.variants[0].price > 0}
 function create_if_block_3(ctx) {
+	let div;
 	let p;
 	let t0_value = (/*product*/ ctx[16].enableAddToCart = false) + "";
 	let t0;
 	let t1;
 	let productcard;
+	let t2;
 	let current;
 	productcard = new SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({ props: { product: /*product*/ ctx[16] } });
 
 	return {
 		c() {
+			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			p = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("p");
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(t0_value);
 			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_component)(productcard.$$.fragment);
+			t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_style)(p, "display", "none", 1);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "swiper-slide");
 		},
 		m(target, anchor) {
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, p, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, p);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(p, t0);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, t1, anchor);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.mount_component)(productcard, target, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, t1);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.mount_component)(productcard, div, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, t2);
 			current = true;
 		},
 		p(ctx, dirty) {
@@ -10561,16 +10583,15 @@ function create_if_block_3(ctx) {
 		},
 		d(detaching) {
 			if (detaching) {
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(p);
-				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(t1);
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div);
 			}
 
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_component)(productcard, detaching);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.destroy_component)(productcard);
 		}
 	};
 }
 
-// (155:12) {#each productData as product, index}
+// (157:20) {#each productData as product, index}
 function create_each_block_1(ctx) {
 	let if_block_anchor;
 	let current;
@@ -10629,7 +10650,7 @@ function create_each_block_1(ctx) {
 	};
 }
 
-// (186:8) {#if index < 4}
+// (192:8) {#if index < 4}
 function create_if_block_1(ctx) {
 	let productcard;
 	let current;
@@ -10663,7 +10684,7 @@ function create_if_block_1(ctx) {
 	};
 }
 
-// (185:6) {#each productData as product, index}
+// (191:6) {#each productData as product, index}
 function create_each_block(ctx) {
 	let if_block_anchor;
 	let current;
@@ -10701,7 +10722,7 @@ function create_each_block(ctx) {
 	};
 }
 
-// (143:0) {#key productData}
+// (144:0) {#key productData}
 function create_key_block(ctx) {
 	let div2;
 	let div0;

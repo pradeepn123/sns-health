@@ -62,6 +62,7 @@
   const collectionTexts = Object.keys(paramsHash);
   let selectedParams = { ...paramsHash[collectionTexts[0]] };
 
+
   const requestData = async (selectedParams) => {
     isLoading = true;
     if((selectedParams.collectionData).length > 0) {
@@ -151,15 +152,24 @@
     >
       {#if productData.length > 0  }
         <custom-carousel>
-          <div class="custom-carousel__content hide" data-carousel-content>
-            {#each productData as product, index}
-              {#if product.variants[0].price > 0}
-                <p style="display: none !important">{product.enableAddToCart = false}</p>
-                <ProductCard {product}/>
-              {/if}
-            {/each}
+            <div class="carousel__container swiper hide" data-swiper-container>
+              <div class="swiper-wrapper">
+                    {#each productData as product, index}
+                    {#if product.variants[0].price > 0}
+                    <div class="swiper-slide">
+                      <p style="display: none !important">{product.enableAddToCart = false}</p>
+                      <ProductCard {product}/>
+                    </div>
+                    {/if}
+                  {/each}
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-navigations" data-swiper-navigations></div>
+          <div type="text/json" data-settings style="display: none;">
+               {JSON.stringify(carouselSettings)}
           </div>
-          <div class="carousel-placeholders">
+          <div class="carousel-placeholders" data-carousel-placeholder>
             <div class="product-placeholders">
               <div />
               <div />
@@ -167,10 +177,6 @@
               <div />
               <div />
             </div>
-            <div class="lds-ring" />
-          </div>
-          <div type="text/json" data-settings style="display: none;">
-               {JSON.stringify(carouselSettings)}
           </div>
         </custom-carousel>
       {/if}
