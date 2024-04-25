@@ -259,6 +259,56 @@
 
 .product-meta__label-list {
         margin-bottom: 0;
+        .tooltip_wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        
+            &:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+        
+            .tooltiptext {
+                visibility: hidden;
+                width: 255px;
+                background-color: colors.$white;
+                color: colors.$black;
+                border: 1px solid #D2D2D2;
+                // text-align: center;
+                border-radius: 10px;
+                padding: 9px 12px;
+                visibility: hidden;
+                position: absolute;
+                z-index: 1;
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: opacity 0.3s;
+                left: 1101%;
+                top: -5px;
+                overflow-wrap: break-word; 
+                word-wrap: break-word;
+                font-size: typography.$body-regular-size;
+                line-height: typography.$heading-3-size-small;
+                &::after {
+                    content: "";
+                    position: absolute;    
+                    top: 10%;
+                    left: 0;
+                    margin-left: -12px;
+                    border-width: 12px;
+                    border-style: solid;
+                    border-color: colors.$white transparent transparent transparent; 
+                } 
+              
+            }
+
+            .tooltip-trigger {
+                cursor: pointer;
+              }
+        }
+        
+        
 }
 
 .product__reviews {

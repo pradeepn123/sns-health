@@ -6,9 +6,9 @@
   import Dropdown from "SvelteComponents/dropdown.svelte";
 
   export let apiPaginatedData = [];
+  export let handleTagMap = {};
   export let loading = false;
   export let firstFoldLoaded = false;
-  export let disableBundleCheck = true;
   let variantData = [];
   let filteredVariants = [];
   let paginatedData = [];
@@ -21,8 +21,13 @@
   const setFilters = () => {
     apiPaginatedData.forEach((product) => {
       product.variants.nodes.forEach((variant) => {
+        const collectionHandle = window.shopifyVariables.collectionHandle || '';
         const {quantityAvailable} = variant;
-        let show_in_bundle = variant.metafields[0]?.value || "false";
+        let shouldShowVariant = true;
+        if(handleTagMap[collectionHandle]){
+          const mappedVariant = ((variant.metafields).filter(item => item)).find(({key = false}) => key == handleTagMap[collectionHandle] )
+          shouldShowVariant = mappedVariant?.value || false;
+        }
           let image = variant.image?.src
             ? variant.image
             : product.featuredImage;
@@ -62,7 +67,7 @@
             skipFormatMoney: true,
             availableForSale: variant.availableForSale,
             quantityAvailable: quantityAvailable,
-            show_in_bundle
+            shouldShowVariant: shouldShowVariant
           };
           const brand = product.vendor?.toLowerCase();
           //populate filter
@@ -114,7 +119,7 @@
             }
           });
           //check and add it to the variants list that renders the variant
-          JSON.parse(show_in_bundle) && quantityAvailable > 1 && variantData.push(variantObj);
+          JSON.parse(shouldShowVariant) && quantityAvailable > 1 && variantData.push(variantObj);
         })
       });    
     variantData = variantData;

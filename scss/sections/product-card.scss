@@ -37,17 +37,18 @@ product-card {
   &__header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     @include use-text-style('body-regular');
     min-height: 33px;
 
     &-tags {
       column-gap: 10px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       flex-wrap: wrap; 
       max-width: 80%;
       align-items: flex-start;
-      row-gap: 5px;
+      gap: 5px;
     }
   }
 
@@ -63,12 +64,23 @@ product-card {
   }
 
   &__discount {
-    @include use-text-style('body-title');
+    @include use-text-style('body-regular');
     font-weight: typography.$semi-weight;
     padding: 4px 10px;
     border-radius: 100px;
-    background: colors.$red;
+    background: colors.$red; 
     color: colors.$white;
+
+    &--final-sale {
+      display: flex;
+      align-items: center;
+      background-color: colors.$black;
+      svg {
+        height: 19px;
+        width: 19px;
+        line-height: 1;
+      }
+    }
   }
 
   &__vendor {

@@ -1,0 +1,12 @@
+{% liquid
+    assign is_final_sale = false
+    assign expiry_date = product.selected_or_first_available_variant.metafields.custom.expiry_date.value | default: false
+    
+    if product.selected_or_first_available_variant.metafields.custom.expiry_date.value
+        assign is_final_sale = true
+    endif 
+    %}
+    {
+    "isFinalSale" : {{is_final_sale | json}}, 
+    "expiryDate": "{{ expiry_date }}"
+    }

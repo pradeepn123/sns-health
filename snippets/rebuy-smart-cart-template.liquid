@@ -193,13 +193,17 @@
                     v-bind:class="[ itemPropertyKeyClass(property), itemPropertyValueClass(property) ]"
                   >
                     <span
+                      v-if="property.key != 'best-before'"
                       class="rebuy-cart__flyout-item-property-name"
                       v-html="property.key"
                     ></span>
-                    <span class="rebuy-cart__flyout-item-property-separator">
+                    <span 
+                      v-if="property.key != 'best-before'"
+                      class="rebuy-cart__flyout-item-property-separator" >
                       :
                     </span>
                     <span
+                      v-if="property.key != 'best-before'"
                       class="rebuy-cart__flyout-item-property-value"
                       v-html="property.value"
                     ></span>
@@ -294,6 +298,21 @@
                     </span>
                   </div>
                 </div>
+
+                <div
+                  class="rebuy-cart__flyout-item-properties"
+                >
+                  <div
+                    class="rebuy-cart__flyout-item-property rebuy-cart__flyout-item-property--best-before"
+                    v-for="property in itemProperties(item)"
+                    v-bind:class="[ itemPropertyKeyClass(property), itemPropertyValueClass(property) ]"
+                  >
+                    <span
+                      v-if="property.key == 'best-before'"
+                      class="rebuy-cart__flyout-item-property-name" 
+                    >BEST USE BEFORE : {{property.value}}</span>
+                  </div>
+                </div>
               </div>
 
               <div
@@ -366,6 +385,7 @@
                   </optgroup>
                 </select>
               </div>
+
             </li>
           </ul>
           <div class="rebuy-cart__flyout-note" v-if="notesEnabled()">
@@ -400,8 +420,6 @@
               ></small>
             </div>
           </div>
-
-
           <div class="rebuy-cart__flyout-empty-cart" v-html="emptyCartMessage()" v-if="!hasItems()"></div>
           <div class="rebuy-cart__flyout-empty-cart-footer" v-if="!hasItems()">
             <div data-app-target="empty_cart"></div>

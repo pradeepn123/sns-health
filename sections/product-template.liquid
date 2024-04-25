@@ -52,8 +52,8 @@
           {%- endif -%}
 
           <div class="product-block-list__item product-block-list__item--info">
-            {% render 'product-info' %}
-          </div>
+            {% render 'product-info', tooltipText: section.settings.tooltipText %}
+          </div> 
 
           {% render 'rebuy-frequently_bought_together' %}
           
@@ -197,7 +197,7 @@
     {%- comment -%}We display the quick view within the product template so we can re-use the same settings{%- endcomment -%}
     <div class="featured-product">
       {%- render 'product-gallery' -%}
-      {%- render 'product-info' -%}
+      {%- render 'product-info', tooltipText: section.settings.tooltipText -%}
     </div>
   {%- endif -%}
 </section>
@@ -319,6 +319,12 @@
         }
       ],
       "default": "small"
+    },
+    {
+      "type": "richtext",
+      "id": "tooltipText",
+      "label": "tooltipText",
+      "default": "<p>'Best Use Before' date indicates the optimal period to enjoy your product before its peak freshness diminishes. Shop now and seize our final sale offer before it's too late!</p>"
     },
     {
       "type": "checkbox",

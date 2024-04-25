@@ -1,5 +1,5 @@
 <script>
-  import { afterUpdate, onMount } from "svelte";
+  import { onMount } from "svelte";
   import ResponsiveImage from "SvelteComponents/responsive-image.svelte";
   import handleClick from "JsComponents/handleClick"; //js based handle click
   import { removeAttributesForCartBinding } from "JsComponents/rebuy-cart-integration";
@@ -12,8 +12,9 @@
 
 
   export let shopifyData;
-  export let product; 
+  export let product;
   export let productCardSettings = {};
+  
   let curatedBundleProduct = {};
   let isAddedToBundle = false;
   let ref;
@@ -24,9 +25,11 @@
     addToCartButton: true,
     tags: true
   }
-
   settings = {...settings,...productCardSettings};
-  
+
+  //to declare it as reactive
+  let expiryDate = false
+  let isFinalSale = false;
 
   const {
     image,
@@ -41,9 +44,39 @@
     enableAddToCart = true,
     forceSeeOptions = false,
     // flag for adding conversion rate
-    addConversionRate = false
+    addConversionRate = false,
+    expiryDateData = false
   } = product || shopifyData || {};
 
+  $:expiryDate = expiryDateData && expiryDateData.expiryDate || false;
+  $:isFinalSale = expiryDateData && expiryDateData.isFinalSale || false;
+
+  let [{ compare_at_price: comparePrice, price, id: variantId } = {}] =
+    variants || [];
+
+  const getExpiryData = async(handle) => {
+    const expiryData = await fetch(`/products/${handle}?variant=${variantId}&view=get-expiry-date`);
+    const expiryDateJson = await expiryData.json();
+    const {isFinalSale:isFinalSaleFromJson, expiryDate:expiryDateFromJson} = expiryDateJson;
+    expiryDate = expiryDateFromJson
+    isFinalSale = isFinalSaleFromJson;
+    product.expiryDateData = {expiryDate, isFinalSale}
+    product = product;
+  } 
+
+  onMount(async() => {
+    if(!expiryDateData) {
+      await getExpiryData(handle);
+    }
+    else{
+      const {isFinalSale:isFinalSaleFromShopify, expiryDate:expiryDateFromShopify} = expiryDateData;
+      expiryDate = expiryDateFromShopify
+      isFinalSale = isFinalSaleFromShopify;
+    }
+  })
+
+
+  const fireEmoji = `<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91.16 122.88"><defs><style>.cls-1{fill:#f77d02;}.cls-1,.cls-2,.cls-3{fill-rule:evenodd;}.cls-2{fill:#ffc928;}.cls-3{fill:#fff073;}</style></defs><title>flames</title><path class="cls-1" d="M14.45,35.35c1.82,14.45,4.65,25.4,9.44,29.45C24.48,30.87,43,27.4,38.18,0,53.52,3,67.77,33.33,71.36,66.15a37.5,37.5,0,0,0,6.53-19.46c13.76,15.72,21.31,56.82-.17,69.52-12.53,7.41-38.13,7.79-51.46,5.27a27.64,27.64,0,0,1-13.5-5.36c-19.2-14.66-15.17-62.25,1.69-80.77Z"/><path class="cls-2" d="M77.73,116.2h0c-8,4.74-21.42,6.61-33.51,6.67H42.45a95.69,95.69,0,0,1-16.19-1.39,27.64,27.64,0,0,1-13.5-5.36,2.43,2.43,0,0,0-.25-.2c-2.13-10.28,1.76-24,8.49-31.29a25.49,25.49,0,0,0,4.85,13.71C28.51,75.22,39.11,57,50.5,54.94c-3,19.1,11,24.21,10.62,42.45,3.56-2.85,5.66-10.57,7-20.75,9.12,9.49,13.59,26.32,9.59,39.56Z"/><path class="cls-3" d="M65.81,120.73a115,115,0,0,1-39.55.82l-1-.13c.06-5.73,2.21-12,5.47-15.73a17.18,17.18,0,0,0,2.93,8.84c1.61-14.91,8-26.63,14.88-28-1.79,12.32,6.65,15.61,6.4,27.37,2.15-1.84,3.42-6.82,4.23-13.38,4.47,5,7.09,12.84,6.63,20.19Z"/></svg>`
   const currencySymbol = window.shopifyVariables.currencySymbol || "$";
   const soldOutText = "Sold Out";
   const chooseMoreText =
@@ -52,8 +85,7 @@
   const bundleText = window.shopifyVariables.bundleText || "Add To Bundle";
   const bundleTextAdded = window.shopifyVariables.bundleTextAdded || "Added";
 
-  let [{ compare_at_price: comparePrice, price, id: variantId } = {}] =
-    variants || [];
+
   let link = `${window.Shopify.routes.root}products/${handle}?variant=${variantId}`;
   let rating = false;
   metafields.forEach((metafield) => {
@@ -138,6 +170,7 @@
   } = settings
 
 </script>
+
 <a href="{link}" target="_blank" style="user-select: none;">
 <div
   class="product-card swiper-slide"
@@ -164,6 +197,9 @@
           {#if onsale}
             <div class="product-card__discount">On Sale</div>
           {/if}
+            {#if isFinalSale }
+              <div class="product-card__discount product-card__discount--final-sale"><div class="icon-holder">{@html fireEmoji}</div>Final sale</div>
+            {/if}
         </div>
         {#if rating}
           <div class="product-card__star">
@@ -219,6 +255,10 @@
         >
           <input type="hidden" name="quantity" value="1" />
           <input type="hidden" name="id" value={variantId} />
+          {#if isFinalSale} 
+           <input type="hidden" name="properties[best-before]" value="{expiryDate}" />
+          {/if}
+
           {#if isBundle}
             <div
               class={`product-card__bundle-atc product-card__bundle-action-btn product-card__quantity-button-wrapp ${

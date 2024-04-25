@@ -99,3 +99,13 @@
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
+
+.rebuy-cart__flyout-item-property{
+    &--best-before {
+        @include use-text-style('body-regular');
+        text-transform: uppercase;
+        margin-top: 12px;
+        font-weight: 500;
+        color: colors.$red !important; 
+    }
+}

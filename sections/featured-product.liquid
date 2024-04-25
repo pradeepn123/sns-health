@@ -34,7 +34,7 @@
     <div class="featured-product">
       {%- unless product.empty? -%}
         {%- render 'product-gallery', product: product -%}
-        {%- render 'product-info', product: product -%}
+        {%- render 'product-info', product: product, tooltipText: section.settings.tooltipText -%}
       {%- else -%}
         {% comment %}
         ------------------------------------------------------------------------------
@@ -207,6 +207,12 @@
       "id": "link_url",
       "label": "Link URL",
       "info": "If empty, the product URL is used."
+    },
+    {
+      "type": "richtext",
+      "id": "tooltipText",
+      "label": "tooltipText",
+      "default": "<p>'Best Use Before' date indicates the optimal period to enjoy your product before its peak freshness diminishes. Shop now and seize our final sale offer before it's too late!</p>" 
     },
     {
       "type": "checkbox",

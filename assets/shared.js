@@ -42,8 +42,8 @@ var countryMap = {
 /* harmony import */ var JsComponents_get_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! JsComponents/get-data */ "./js/components/get-data.js");
 
 
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 class GtmEvent {
   constructor(eventName, data) {
@@ -260,8 +260,8 @@ var viewPromotion = (promotionName, promotionId, creativeName) => {
 
 
 var _excluded = ["ruleId", "text", "productId"];
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var customerLocation = /*#__PURE__*/function () {
   var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* () {
     var data = yield fetch('/browsing_context_suggestions.json');
@@ -583,6 +583,7 @@ var viewPromotionTrigger = () => {
           props = json_6__WEBPACK_IMPORTED_MODULE_2___default().parse((_appTarget$querySelec = appTarget.querySelector(propsEl)) === null || _appTarget$querySelec === void 0 ? void 0 : _appTarget$querySelec.innerHTML) || {}; //get json from the script id 
         }
       }
+
       appTarget.dataset.initialized = true;
       var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(appTarget);
       root.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Component, {
@@ -616,8 +617,8 @@ var viewPromotionTrigger = () => {
 /* harmony import */ var _headlessui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/components/tabs/tabs.js");
 
 
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 
 
@@ -1202,8 +1203,8 @@ var SvgIcon = _ref => {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 
 
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ref => {
   var {
@@ -1229,7 +1230,7 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
     setCustomerInfo(_objectSpread({}, info));
     setInfoChanged(true);
     setFormError(false);
-    (_event$target$classLi = event.target.classList) === null || _event$target$classLi === void 0 || _event$target$classLi.remove('error');
+    (_event$target$classLi = event.target.classList) === null || _event$target$classLi === void 0 ? void 0 : _event$target$classLi.remove('error');
     if (event.target.value == '') event.target.classList.add('error');
   }
   function clearEdits() {
@@ -1239,7 +1240,7 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
     setFormError(false);
     Object.keys(customerInfo).forEach(info => {
       var _document$querySelect;
-      (_document$querySelect = document.querySelector("[name=\"".concat(info, "\"]")).classList) === null || _document$querySelect === void 0 || _document$querySelect.remove('error');
+      (_document$querySelect = document.querySelector("[name=\"".concat(info, "\"]")).classList) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.remove('error');
     });
   }
   function handlePasswordChange() {
@@ -1339,7 +1340,7 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
         } else if (error.key == 'password') {
           var _document$getElementB2;
           setPasswordError(true);
-          (_document$getElementB2 = document.getElementById('password')) === null || _document$getElementB2 === void 0 || _document$getElementB2.focus();
+          (_document$getElementB2 = document.getElementById('password')) === null || _document$getElementB2 === void 0 ? void 0 : _document$getElementB2.focus();
         } else if (((_error$key = error.key) === null || _error$key === void 0 ? void 0 : _error$key.length) > 0) {
           setFormError(true);
           document.querySelector('.account_profile-update-form-error span').textContent = error.data;
@@ -1732,8 +1733,8 @@ var srcTokens = {
 /* harmony import */ var react_to_print__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-to-print */ "./node_modules/react-to-print/lib/index.js");
 /* harmony import */ var react_to_print__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_to_print__WEBPACK_IMPORTED_MODULE_2__);
 
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 
 
@@ -1930,7 +1931,7 @@ var removeCartToggleBinding = () => {
     var _window$Rebuy;
     if ((_window$Rebuy = window.Rebuy) !== null && _window$Rebuy !== void 0 && (_window$Rebuy = _window$Rebuy.SmartCart) !== null && _window$Rebuy !== void 0 && _window$Rebuy.show) {
       var _window$Rebuy2;
-      (_window$Rebuy2 = window.Rebuy) === null || _window$Rebuy2 === void 0 || (_window$Rebuy2 = _window$Rebuy2.SmartCart) === null || _window$Rebuy2 === void 0 || _window$Rebuy2.show();
+      (_window$Rebuy2 = window.Rebuy) === null || _window$Rebuy2 === void 0 || (_window$Rebuy2 = _window$Rebuy2.SmartCart) === null || _window$Rebuy2 === void 0 ? void 0 : _window$Rebuy2.show();
     }
   });
 };
@@ -1954,7 +1955,7 @@ gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(gsap_ScrollToPlugin__WEBPA
 var scrollOnClick = function scrollOnClick(selector, target) {
   var _document$querySelect;
   var offset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-  (_document$querySelect = document.querySelectorAll(selector)) === null || _document$querySelect === void 0 || _document$querySelect.forEach(item => item.addEventListener('click', ev => {
+  (_document$querySelect = document.querySelectorAll(selector)) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.forEach(item => item.addEventListener('click', ev => {
     ev.preventDefault();
     gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.to(window, 1, {
       scrollTo: {
@@ -2030,6 +2031,7 @@ var stickyATC = () => {
           shopifyData: (_props = props) === null || _props === void 0 ? void 0 : _props.data //pass the prop on data prop as default
         }
       });
+
       appTarget.dataset.initialized = true;
       return instance;
     }
@@ -2054,8 +2056,8 @@ var stickyATC = () => {
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var svelte_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/store */ "./node_modules/svelte/src/runtime/store/index.js");
 
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 var cartContents = (0,svelte_store__WEBPACK_IMPORTED_MODULE_1__.writable)({});
 var finalBundlePrice = {
@@ -2184,7 +2186,7 @@ class IntersectObserver {
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
 /* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
 /* harmony import */ var JsComponents_get_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! JsComponents/get-data */ "./js/components/get-data.js");
-/* js/components/svelte/AnnouncementBar.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/AnnouncementBar.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -2262,7 +2264,7 @@ class AnnouncementBar extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svelt
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
 /* harmony import */ var svelte_transition__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte/transition */ "./node_modules/svelte/src/runtime/transition/index.js");
-/* js/components/svelte/accordion.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/accordion.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -2576,7 +2578,7 @@ class Accordion extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCompo
 /* harmony import */ var SvelteComponents_bundle_store_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! SvelteComponents/bundle-store.js */ "./js/components/svelte/bundle-store.js");
 /* harmony import */ var svelte_transition__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte/transition */ "./node_modules/svelte/src/runtime/transition/index.js");
 /* harmony import */ var SvelteComponents_responsive_image_svelte__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! SvelteComponents/responsive-image.svelte */ "./js/components/svelte/responsive-image.svelte");
-/* js/components/svelte/bundle-cart.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/bundle-cart.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -3101,11 +3103,11 @@ function create_each_block(ctx) {
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
 			const responsiveimage_changes = {};
-			if (dirty & /*$cartContents*/ 4) responsiveimage_changes.image = /*item*/ ctx[16].image;
+			if (dirty & /*Object, $cartContents*/ 4) responsiveimage_changes.image = /*item*/ ctx[16].image;
 			responsiveimage.$set(responsiveimage_changes);
-			if ((!current || dirty & /*$cartContents*/ 4) && t1_value !== (t1_value = /*item*/ ctx[16].title + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, t1_value);
-			if ((!current || dirty & /*$cartContents*/ 4) && raw_value !== (raw_value = /*item*/ ctx[16].price + "")) span0.innerHTML = raw_value;;
-			if ((!current || dirty & /*$cartContents*/ 4) && t6_value !== (t6_value = /*item*/ ctx[16].quantity + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t6, t6_value);
+			if ((!current || dirty & /*Object, $cartContents*/ 4) && t1_value !== (t1_value = /*item*/ ctx[16].title + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, t1_value);
+			if ((!current || dirty & /*Object, $cartContents*/ 4) && raw_value !== (raw_value = /*item*/ ctx[16].price + "")) span0.innerHTML = raw_value;;
+			if ((!current || dirty & /*Object, $cartContents*/ 4) && t6_value !== (t6_value = /*item*/ ctx[16].quantity + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t6, t6_value);
 		},
 		i(local) {
 			if (current) return;
@@ -3234,13 +3236,13 @@ function create_fragment(ctx) {
 			current = true;
 		},
 		p(ctx, [dirty]) {
-			if (dirty & /*$cartContents*/ 4) show_if = Object.keys(/*$cartContents*/ ctx[2]).length;
+			if (dirty & /*Object, $cartContents*/ 4) show_if = Object.keys(/*$cartContents*/ ctx[2]).length;
 
 			if (show_if) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 
-					if (dirty & /*$cartContents*/ 4) {
+					if (dirty & /*Object, $cartContents*/ 4) {
 						(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.transition_in)(if_block, 1);
 					}
 				} else {
@@ -3436,7 +3438,7 @@ class Bundle_cart extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCom
 /* harmony export */ });
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
-/* js/components/svelte/checkbox.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/checkbox.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -3589,7 +3591,7 @@ class Checkbox extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCompon
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
 /* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
 /* harmony import */ var _collection_grid_svelte__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./collection-grid.svelte */ "./js/components/svelte/collection-grid.svelte");
-/* js/components/svelte/collection-component.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/collection-component.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -3605,7 +3607,7 @@ function create_fragment(ctx) {
 				loading: /*loading*/ ctx[1],
 				firstFoldLoaded: /*firstFoldLoaded*/ ctx[2],
 				apiPaginatedData: /*apiPaginatedData*/ ctx[0],
-				disableBundleCheck: false
+				handleTagMap: /*handleTagMap*/ ctx[3]
 			}
 		});
 
@@ -3644,7 +3646,15 @@ function instance($$self, $$props, $$invalidate) {
 	let loading = true;
 	let firstFoldLoaded = false;
 
+	const handleTagMap = {
+		//handle and metafield value
+		"build-your-own-box": "show_in_bundle",
+		"sale": "show_in_sale",
+		"clearance": "show_in_clearance"
+	};
+
 	async function loadProductData(cursor = "") {
+		const collectionHandle = window.shopifyVariables.collectionHandle;
 		let options = `products(first: 25)`;
 
 		if (cursor !== "" && cursor !== "end") {
@@ -3657,7 +3667,69 @@ function instance($$self, $$props, $$invalidate) {
 		myHeaders.append("Content-Type", "application/json");
 
 		let graphql = JSON.stringify({
-			query: `query AllProducts @inContext(country: ${window.Shopify.country}) {\n  collection(handle: \"build-your-own-box\") {\n    handle\n    ${options} {\n      nodes {\n        id\n          title\n          onlineStoreUrl\n          handle\n          productType\n          tags\n          createdAt\n          vendor\n          featuredImage {\n          src\n          id\n          width\n          height\n          altText\n            }\n            metafield(key: \"summaryData\", namespace: \"okendo\") {\n            value\n            updatedAt\n            }\n          variants(first: 100) {\n            nodes {\n              metafields(identifiers: [{namespace: \"custom\", key: \"show_in_bundle\"}]) {\n                value\n              }\n              availableForSale\n              quantityAvailable\n              price {\n                amount\n                currencyCode\n              }\n              selectedOptions {\n                name\n                value \n              }\n              compareAtPrice {\n                amount\n                currencyCode\n              }\n              title\n              id\n              image {\n                altText\n                height\n                width\n                id\n                src\n              }\n            }\n          }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n        hasPreviousPage\n        startCursor\n      }\n    }\n  }\n}`,
+			query: `query AllProducts @inContext(country: ${window.Shopify.country}) {
+            collection(handle: "${collectionHandle}") {
+            handle ${options} { 
+							nodes {
+									id
+									title
+									onlineStoreUrl
+									handle
+									productType 
+									tags 
+									createdAt
+									vendor 
+									featuredImage { 
+										src
+										id
+										width
+										height 
+										altText 
+									}
+                  metafield(key: "summaryData",namespace: "okendo") { value  updatedAt}
+									variants(first: 100) {
+											nodes {
+													metafields(identifiers: [{namespace: "custom", key: "show_in_bundle"},
+													{namespace: "custom", key: "show_in_sale"},
+													{namespace: "custom", key: "show_in_clearance"}]) { 
+														key
+														value             
+													}
+													availableForSale
+													quantityAvailable              
+													price {   
+														amount
+														currencyCode 
+													}
+													selectedOptions { 
+															name
+															value        
+													}             
+													compareAtPrice {               
+															amount             
+															currencyCode            
+													}            
+													title            
+													id           
+													image {  
+														altText 
+															height 
+															width                
+															id           
+															src 
+													}
+											}          
+										}    
+                  }     
+									pageInfo {
+										endCursor
+										hasNextPage        
+										hasPreviousPage        
+										startCursor
+									}   
+							}  
+						}
+					}`,
 			variables: {}
 		});
 
@@ -3684,7 +3756,7 @@ function instance($$self, $$props, $$invalidate) {
 		await loadProductData();
 	});
 
-	return [apiPaginatedData, loading, firstFoldLoaded];
+	return [apiPaginatedData, loading, firstFoldLoaded, handleTagMap];
 }
 
 class Collection_component extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComponent {
@@ -3711,7 +3783,7 @@ class Collection_component extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
 /* harmony import */ var _collection_filter_svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./collection-filter.svelte */ "./js/components/svelte/collection-filter.svelte");
-/* js/components/svelte/collection-filter-group.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/collection-filter-group.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -4285,7 +4357,7 @@ class Collection_filter_group extends svelte_internal__WEBPACK_IMPORTED_MODULE_0
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
 /* harmony import */ var SvelteComponents_checkbox_svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! SvelteComponents/checkbox.svelte */ "./js/components/svelte/checkbox.svelte");
-/* js/components/svelte/collection-filter.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/collection-filter.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -4784,7 +4856,7 @@ class Collection_filter extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Sve
 /* harmony import */ var SvelteComponents_collection_product_grid_svelte__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! SvelteComponents/collection-product-grid.svelte */ "./js/components/svelte/collection-product-grid.svelte");
 /* harmony import */ var SvelteComponents_collection_pagination_svelte__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! SvelteComponents/collection-pagination.svelte */ "./js/components/svelte/collection-pagination.svelte");
 /* harmony import */ var SvelteComponents_dropdown_svelte__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! SvelteComponents/dropdown.svelte */ "./js/components/svelte/dropdown.svelte");
-/* js/components/svelte/collection-grid.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/collection-grid.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -4801,7 +4873,7 @@ function get_each_context(ctx, list, i) {
 	return child_ctx;
 }
 
-// (432:2) {:else}
+// (437:2) {:else}
 function create_else_block_2(ctx) {
 	let div6;
 	let div0;
@@ -4885,7 +4957,7 @@ function create_else_block_2(ctx) {
 	};
 }
 
-// (393:2) {#if firstFoldLoaded}
+// (398:2) {#if firstFoldLoaded}
 function create_if_block(ctx) {
 	let div3;
 	let div0;
@@ -5045,7 +5117,7 @@ function create_if_block(ctx) {
 	};
 }
 
-// (441:8) {#each Array(20) as _, i}
+// (446:8) {#each Array(20) as _, i}
 function create_each_block(ctx) {
 	let productcardskeleton;
 	let current;
@@ -5074,7 +5146,7 @@ function create_each_block(ctx) {
 	};
 }
 
-// (396:8) {#key loading}
+// (401:8) {#key loading}
 function create_key_block(ctx) {
 	let colletionfiltergroup;
 	let updating_appliedFilterObject;
@@ -5136,7 +5208,7 @@ function create_key_block(ctx) {
 	};
 }
 
-// (410:10) {#if paginatedData.length > 0}
+// (415:10) {#if paginatedData.length > 0}
 function create_if_block_2(ctx) {
 	let span;
 	let t0;
@@ -5241,7 +5313,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (415:79) {:else}
+// (420:79) {:else}
 function create_else_block_1(ctx) {
 	let span;
 
@@ -5262,7 +5334,7 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (415:50) {#if !loading}
+// (420:50) {#if !loading}
 function create_if_block_3(ctx) {
 	let t;
 
@@ -5284,7 +5356,7 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (426:8) {:else}
+// (431:8) {:else}
 function create_else_block(ctx) {
 	let collectionproductgrid;
 	let t;
@@ -5363,7 +5435,7 @@ function create_else_block(ctx) {
 	};
 }
 
-// (424:8) {#if paginatedData.length == 0}
+// (429:8) {#if paginatedData.length == 0}
 function create_if_block_1(ctx) {
 	let h1;
 
@@ -5480,9 +5552,9 @@ function instance($$self, $$props, $$invalidate) {
 	let selectedSort;
 	let totalProducts;
 	let { apiPaginatedData = [] } = $$props;
+	let { handleTagMap = {} } = $$props;
 	let { loading = false } = $$props;
 	let { firstFoldLoaded = false } = $$props;
-	let { disableBundleCheck = true } = $$props;
 	let variantData = [];
 	let filteredVariants = [];
 	let paginatedData = [];
@@ -5493,8 +5565,14 @@ function instance($$self, $$props, $$invalidate) {
 	const setFilters = () => {
 		apiPaginatedData.forEach(product => {
 			product.variants.nodes.forEach(variant => {
+				const collectionHandle = window.shopifyVariables.collectionHandle || '';
 				const { quantityAvailable } = variant;
-				let show_in_bundle = variant.metafields[0]?.value || "false";
+				let shouldShowVariant = true;
+
+				if (handleTagMap[collectionHandle]) {
+					const mappedVariant = variant.metafields.filter(item => item).find(({ key = false }) => key == handleTagMap[collectionHandle]);
+					shouldShowVariant = mappedVariant?.value || false;
+				}
 
 				let image = (variant.image?.src)
 				? variant.image
@@ -5536,7 +5614,7 @@ function instance($$self, $$props, $$invalidate) {
 					skipFormatMoney: true,
 					availableForSale: variant.availableForSale,
 					quantityAvailable,
-					show_in_bundle
+					shouldShowVariant
 				};
 
 				const brand = product.vendor?.toLowerCase();
@@ -5596,7 +5674,7 @@ function instance($$self, $$props, $$invalidate) {
 				});
 
 				//check and add it to the variants list that renders the variant
-				JSON.parse(show_in_bundle) && quantityAvailable > 1 && variantData.push(variantObj);
+				JSON.parse(shouldShowVariant) && quantityAvailable > 1 && variantData.push(variantObj);
 			});
 		});
 
@@ -5845,9 +5923,9 @@ function instance($$self, $$props, $$invalidate) {
 
 	$$self.$$set = $$props => {
 		if ('apiPaginatedData' in $$props) $$invalidate(15, apiPaginatedData = $$props.apiPaginatedData);
+		if ('handleTagMap' in $$props) $$invalidate(16, handleTagMap = $$props.handleTagMap);
 		if ('loading' in $$props) $$invalidate(0, loading = $$props.loading);
 		if ('firstFoldLoaded' in $$props) $$invalidate(1, firstFoldLoaded = $$props.firstFoldLoaded);
-		if ('disableBundleCheck' in $$props) $$invalidate(16, disableBundleCheck = $$props.disableBundleCheck);
 	};
 
 	$$self.$$.update = () => {
@@ -5914,7 +5992,7 @@ function instance($$self, $$props, $$invalidate) {
 		sortDropdownData,
 		toggleFilterDrawer,
 		apiPaginatedData,
-		disableBundleCheck,
+		handleTagMap,
 		colletionfiltergroup_appliedFilterObject_binding,
 		collectionpagination_currentPage_binding
 	];
@@ -5932,9 +6010,9 @@ class Collection_grid extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svelt
 			svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal,
 			{
 				apiPaginatedData: 15,
+				handleTagMap: 16,
 				loading: 0,
-				firstFoldLoaded: 1,
-				disableBundleCheck: 16
+				firstFoldLoaded: 1
 			},
 			null,
 			[-1, -1]
@@ -5947,6 +6025,15 @@ class Collection_grid extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svelt
 
 	set apiPaginatedData(apiPaginatedData) {
 		this.$$set({ apiPaginatedData });
+		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
+	}
+
+	get handleTagMap() {
+		return this.$$.ctx[16];
+	}
+
+	set handleTagMap(handleTagMap) {
+		this.$$set({ handleTagMap });
 		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
 	}
 
@@ -5967,18 +6054,9 @@ class Collection_grid extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svelt
 		this.$$set({ firstFoldLoaded });
 		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
 	}
-
-	get disableBundleCheck() {
-		return this.$$.ctx[16];
-	}
-
-	set disableBundleCheck(disableBundleCheck) {
-		this.$$set({ disableBundleCheck });
-		(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.flush)();
-	}
 }
 
-(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Collection_grid, {"apiPaginatedData":{},"loading":{"type":"Boolean"},"firstFoldLoaded":{"type":"Boolean"},"disableBundleCheck":{"type":"Boolean"}}, [], [], true);
+(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.create_custom_element)(Collection_grid, {"apiPaginatedData":{},"handleTagMap":{},"loading":{"type":"Boolean"},"firstFoldLoaded":{"type":"Boolean"}}, [], [], true);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Collection_grid);
 
 /***/ }),
@@ -5994,7 +6072,7 @@ class Collection_grid extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svelt
 /* harmony export */ });
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
-/* js/components/svelte/collection-pagination.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/collection-pagination.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -6611,7 +6689,7 @@ class Collection_pagination extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
 /* harmony import */ var SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! SvelteComponents/product-card.svelte */ "./js/components/svelte/product-card.svelte");
-/* js/components/svelte/collection-product-grid.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/collection-product-grid.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -6796,7 +6874,7 @@ class Collection_product_grid extends svelte_internal__WEBPACK_IMPORTED_MODULE_0
 /* harmony import */ var SvelteComponents_review_card_svelte__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! SvelteComponents/review-card.svelte */ "./js/components/svelte/review-card.svelte");
 /* harmony import */ var JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/get-data */ "./js/components/get-data.js");
 /* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
-/* js/components/svelte/customer-reviews.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/customer-reviews.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -7242,7 +7320,7 @@ class Customer_reviews extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 /* harmony export */ });
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
-/* js/components/svelte/dropdown.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/dropdown.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -7694,7 +7772,7 @@ class Dropdown extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCompon
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
 /* harmony import */ var _category_block_svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./category-block.svelte */ "./js/components/svelte/predictive-search/category-block.svelte");
-/* js/components/svelte/predictive-search/categories.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/predictive-search/categories.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -7892,7 +7970,7 @@ class Categories extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteComp
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
 /* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
 /* harmony import */ var _searchStore_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./searchStore.js */ "./js/components/svelte/predictive-search/searchStore.js");
-/* js/components/svelte/predictive-search/category-block.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/predictive-search/category-block.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -8227,7 +8305,7 @@ class Category_block extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svelte
 /* harmony import */ var _categories_svelte__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./categories.svelte */ "./js/components/svelte/predictive-search/categories.svelte");
 /* harmony import */ var _product_svelte__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./product.svelte */ "./js/components/svelte/predictive-search/product.svelte");
 /* harmony import */ var JsComponents_get_data__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! JsComponents/get-data */ "./js/components/get-data.js");
-/* js/components/svelte/predictive-search/index.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/predictive-search/index.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -8558,7 +8636,7 @@ class Predictive_search extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Sve
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
 /* harmony import */ var SvelteComponents_product_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! SvelteComponents/product-card */ "./js/components/svelte/product-card.svelte");
-/* js/components/svelte/predictive-search/product.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/predictive-search/product.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -8931,7 +9009,7 @@ class Product extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCompone
 /* harmony export */ });
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
-/* js/components/svelte/product-card-skeleton.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/product-card-skeleton.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -8987,7 +9065,7 @@ class Product_card_skeleton extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__
 /* harmony import */ var JsComponents_handleClick__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! JsComponents/handleClick */ "./js/components/handleClick.js");
 /* harmony import */ var JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! JsComponents/rebuy-cart-integration */ "./js/components/rebuy-cart-integration.js");
 /* harmony import */ var SvelteComponents_bundle_store_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! SvelteComponents/bundle-store.js */ "./js/components/svelte/bundle-store.js");
-/* js/components/svelte/product-card.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/product-card.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -8999,7 +9077,7 @@ class Product_card_skeleton extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__
 
 
 
-function create_if_block_10(ctx) {
+function create_if_block_12(ctx) {
 	let div;
 	let t0;
 	let t1;
@@ -9007,7 +9085,7 @@ function create_if_block_10(ctx) {
 	return {
 		c() {
 			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*discountPercentage*/ ctx[5]);
+			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*discountPercentage*/ ctx[7]);
 			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)("% off");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "product-card__discount");
 		},
@@ -9017,7 +9095,7 @@ function create_if_block_10(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div, t1);
 		},
 		p(ctx, dirty) {
-			if (dirty[0] & /*discountPercentage*/ 32) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t0, /*discountPercentage*/ ctx[5]);
+			if (dirty[0] & /*discountPercentage*/ 128) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t0, /*discountPercentage*/ ctx[7]);
 		},
 		d(detaching) {
 			if (detaching) {
@@ -9027,8 +9105,8 @@ function create_if_block_10(ctx) {
 	};
 }
 
-// (161:10) {#if bestseller}
-function create_if_block_9(ctx) {
+// (194:10) {#if bestseller}
+function create_if_block_11(ctx) {
 	let div;
 
 	return {
@@ -9048,8 +9126,8 @@ function create_if_block_9(ctx) {
 	};
 }
 
-// (164:10) {#if onsale}
-function create_if_block_8(ctx) {
+// (197:10) {#if onsale}
+function create_if_block_10(ctx) {
 	let div;
 
 	return {
@@ -9069,14 +9147,43 @@ function create_if_block_8(ctx) {
 	};
 }
 
-// (168:8) {#if rating}
-function create_if_block_7(ctx) {
+// (200:12) {#if isFinalSale }
+function create_if_block_9(ctx) {
+	let div1;
+	let div0;
+	let t;
+
+	return {
+		c() {
+			div1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			div0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)("Final sale");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", "icon-holder");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", "product-card__discount product-card__discount--final-sale");
+		},
+		m(target, anchor) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div1, anchor);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, div0);
+			div0.innerHTML = /*fireEmoji*/ ctx[18];
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, t);
+		},
+		p: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
+		d(detaching) {
+			if (detaching) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(div1);
+			}
+		}
+	};
+}
+
+// (204:8) {#if rating}
+function create_if_block_8(ctx) {
 	let div;
 	let svg;
 	let use;
 	let t0;
 	let span;
-	let t1_value = (/*rating*/ ctx[4] ? /*rating*/ ctx[4] : "") + "";
+	let t1_value = (/*rating*/ ctx[6] ? /*rating*/ ctx[6] : "") + "";
 	let t1;
 
 	return {
@@ -9105,7 +9212,7 @@ function create_if_block_7(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(span, t1);
 		},
 		p(ctx, dirty) {
-			if (dirty[0] & /*rating*/ 16 && t1_value !== (t1_value = (/*rating*/ ctx[4] ? /*rating*/ ctx[4] : "") + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, t1_value);
+			if (dirty[0] & /*rating*/ 64 && t1_value !== (t1_value = (/*rating*/ ctx[6] ? /*rating*/ ctx[6] : "") + "")) (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_data)(t1, t1_value);
 		},
 		d(detaching) {
 			if (detaching) {
@@ -9115,8 +9222,8 @@ function create_if_block_7(ctx) {
 	};
 }
 
-// (179:4) {#if vendor && settings.vendor}
-function create_if_block_6(ctx) {
+// (215:4) {#if vendor && settings.vendor}
+function create_if_block_7(ctx) {
 	let div;
 
 	return {
@@ -9126,7 +9233,7 @@ function create_if_block_6(ctx) {
 		},
 		m(target, anchor) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
-			div.innerHTML = /*vendor*/ ctx[8];
+			div.innerHTML = /*vendor*/ ctx[10];
 		},
 		p: svelte_internal__WEBPACK_IMPORTED_MODULE_0__.noop,
 		d(detaching) {
@@ -9137,18 +9244,18 @@ function create_if_block_6(ctx) {
 	};
 }
 
-// (190:6) {#if settings.price }
-function create_if_block_3(ctx) {
+// (226:6) {#if settings.price }
+function create_if_block_4(ctx) {
 	let t0;
 	let div;
-	let if_block = /*discountPercentage*/ ctx[5] > 0 && create_if_block_4(ctx);
+	let if_block = /*discountPercentage*/ ctx[7] > 0 && create_if_block_5(ctx);
 
 	return {
 		c() {
 			if (if_block) if_block.c();
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			div.textContent = `${/*productFormattedPrice*/ ctx[25](/*price*/ ctx[19])} ${window.Shopify?.currency?.active}`;
+			div.textContent = `${/*productFormattedPrice*/ ctx[28](/*price*/ ctx[16])} ${window.Shopify?.currency?.active}`;
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div, "class", "product-card__price");
 		},
 		m(target, anchor) {
@@ -9157,11 +9264,11 @@ function create_if_block_3(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, div, anchor);
 		},
 		p(ctx, dirty) {
-			if (/*discountPercentage*/ ctx[5] > 0) {
+			if (/*discountPercentage*/ ctx[7] > 0) {
 				if (if_block) {
 					if_block.p(ctx, dirty);
 				} else {
-					if_block = create_if_block_4(ctx);
+					if_block = create_if_block_5(ctx);
 					if_block.c();
 					if_block.m(t0.parentNode, t0);
 				}
@@ -9181,12 +9288,12 @@ function create_if_block_3(ctx) {
 	};
 }
 
-// (191:8) {#if discountPercentage > 0}
-function create_if_block_4(ctx) {
+// (227:8) {#if discountPercentage > 0}
+function create_if_block_5(ctx) {
 	let div;
 
 	function select_block_type(ctx, dirty) {
-		if (/*skipFormatMoney*/ ctx[10]) return create_if_block_5;
+		if (/*skipFormatMoney*/ ctx[12]) return create_if_block_6;
 		return create_else_block_1;
 	}
 
@@ -9216,9 +9323,9 @@ function create_if_block_4(ctx) {
 	};
 }
 
-// (197:12) {:else}
+// (233:12) {:else}
 function create_else_block_1(ctx) {
-	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[18] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[13]}{{amount}}`) + "";
+	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[15] * (window.Shopify?.currency?.rate * 100), `${/*currencySymbol*/ ctx[19]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";
@@ -9246,9 +9353,9 @@ function create_else_block_1(ctx) {
 	};
 }
 
-// (194:12) {#if skipFormatMoney}
-function create_if_block_5(ctx) {
-	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[18], `${/*currencySymbol*/ ctx[13]}{{amount}}`) + "";
+// (230:12) {#if skipFormatMoney}
+function create_if_block_6(ctx) {
+	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[15], `${/*currencySymbol*/ ctx[19]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";
@@ -9276,22 +9383,24 @@ function create_if_block_5(ctx) {
 	};
 }
 
-// (213:6) {#if settings.addToCartButton }
+// (249:6) {#if settings.addToCartButton }
 function create_if_block(ctx) {
 	let form;
 	let input0;
 	let t0;
 	let input1;
 	let t1;
+	let t2;
+	let if_block0 = /*isFinalSale*/ ctx[5] && create_if_block_3(ctx);
 
 	function select_block_type_1(ctx, dirty) {
-		if (/*isBundle*/ ctx[23]) return create_if_block_1;
-		if (/*variants*/ ctx[7].length == 1 && /*enableAddToCart*/ ctx[11] == true && !/*forceSeeOptions*/ ctx[12]) return create_if_block_2;
+		if (/*isBundle*/ ctx[26]) return create_if_block_1;
+		if (/*variants*/ ctx[9].length == 1 && /*enableAddToCart*/ ctx[13] == true && !/*forceSeeOptions*/ ctx[14]) return create_if_block_2;
 		return create_else_block;
 	}
 
 	let current_block_type = select_block_type_1(ctx, [-1, -1]);
-	let if_block = current_block_type(ctx);
+	let if_block1 = current_block_type(ctx);
 
 	return {
 		c() {
@@ -9300,13 +9409,15 @@ function create_if_block(ctx) {
 			t0 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			input1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("input");
 			t1 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			if_block.c();
+			if (if_block0) if_block0.c();
+			t2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			if_block1.c();
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "type", "hidden");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input0, "name", "quantity");
 			input0.value = "1";
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input1, "type", "hidden");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input1, "name", "id");
-			input1.value = /*variantId*/ ctx[20];
+			input1.value = /*variantId*/ ctx[17];
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(form, "method", "post");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(form, "action", "/cart/add");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(form, "accept-charset", "UTF-8");
@@ -9318,22 +9429,65 @@ function create_if_block(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, t0);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, input1);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, t1);
-			if_block.m(form, null);
+			if (if_block0) if_block0.m(form, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(form, t2);
+			if_block1.m(form, null);
 		},
 		p(ctx, dirty) {
-			if_block.p(ctx, dirty);
+			if (/*isFinalSale*/ ctx[5]) {
+				if (if_block0) {
+					if_block0.p(ctx, dirty);
+				} else {
+					if_block0 = create_if_block_3(ctx);
+					if_block0.c();
+					if_block0.m(form, t2);
+				}
+			} else if (if_block0) {
+				if_block0.d(1);
+				if_block0 = null;
+			}
+
+			if_block1.p(ctx, dirty);
 		},
 		d(detaching) {
 			if (detaching) {
 				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(form);
 			}
 
-			if_block.d();
+			if (if_block0) if_block0.d();
+			if_block1.d();
 		}
 	};
 }
 
-// (293:10) {:else}
+// (258:10) {#if isFinalSale}
+function create_if_block_3(ctx) {
+	let input;
+
+	return {
+		c() {
+			input = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("input");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input, "type", "hidden");
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(input, "name", "properties[best-before]");
+			input.value = /*expiryDate*/ ctx[4];
+		},
+		m(target, anchor) {
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.insert)(target, input, anchor);
+		},
+		p(ctx, dirty) {
+			if (dirty[0] & /*expiryDate*/ 16) {
+				input.value = /*expiryDate*/ ctx[4];
+			}
+		},
+		d(detaching) {
+			if (detaching) {
+				(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.detach)(input);
+			}
+		}
+	};
+}
+
+// (333:10) {:else}
 function create_else_block(ctx) {
 	let a;
 	let t;
@@ -9341,8 +9495,8 @@ function create_else_block(ctx) {
 	return {
 		c() {
 			a = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("a");
-			t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*chooseMoreText*/ ctx[14]);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", /*link*/ ctx[21]);
+			t = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*chooseMoreText*/ ctx[20]);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", /*link*/ ctx[24]);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "class", "product-card__cta product-item__action-button product-item__action-button--list-view-only button button--small button--primary");
 		},
 		m(target, anchor) {
@@ -9358,14 +9512,14 @@ function create_else_block(ctx) {
 	};
 }
 
-// (285:88) 
+// (325:88) 
 function create_if_block_2(ctx) {
 	let button;
 
 	return {
 		c() {
 			button = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
-			button.textContent = `${/*addToCartText*/ ctx[15]}`;
+			button.textContent = `${/*addToCartText*/ ctx[21]}`;
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "type", "submit");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "class", "product-item__action-button product-item__action-button--list-view-only button button--small button--primary");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button, "data-action", "add-to-cart");
@@ -9382,7 +9536,7 @@ function create_if_block_2(ctx) {
 	};
 }
 
-// (222:10) {#if isBundle}
+// (262:10) {#if isBundle}
 function create_if_block_1(ctx) {
 	let div5;
 	let div3;
@@ -9428,10 +9582,10 @@ function create_if_block_1(ctx) {
 			t5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			button2 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
-			button2.textContent = `${/*bundleTextAdded*/ ctx[17]}`;
+			button2.textContent = `${/*bundleTextAdded*/ ctx[23]}`;
 			t7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			button3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("button");
-			t8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*bundleText*/ ctx[16]);
+			t8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.text)(/*bundleText*/ ctx[22]);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button0, "class", "product-card__quantity-buttons");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(button0, "name", "remove");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", "product-card__quantity-buttons");
@@ -9476,9 +9630,9 @@ function create_if_block_1(ctx) {
 
 			if (!mounted) {
 				dispose = [
-					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button0, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(/*click_handler*/ ctx[30])),
-					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button1, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(/*click_handler_1*/ ctx[31])),
-					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button3, "click", /*handleProductUpdate*/ ctx[26])
+					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button0, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(/*click_handler*/ ctx[33])),
+					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button1, "click", (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.prevent_default)(/*click_handler_1*/ ctx[34])),
+					(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.listen)(button3, "click", /*handleProductUpdate*/ ctx[29])
 				];
 
 				mounted = true;
@@ -9534,28 +9688,30 @@ function create_fragment(ctx) {
 	let t3;
 	let t4;
 	let t5;
-	let div3;
 	let t6;
+	let div3;
+	let t7;
 	let div7;
 	let div5;
-	let t7;
+	let t8;
 	let div6;
 	let current;
 
 	responsiveimage = new SvelteComponents_responsive_image_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({
 			props: {
-				image: /*image*/ ctx[6],
+				image: /*image*/ ctx[8],
 				image_aspect_ratio: 1
 			}
 		});
 
-	let if_block0 = /*discountPercentage*/ ctx[5] > 0 && create_if_block_10(ctx);
-	let if_block1 = /*bestseller*/ ctx[22] && create_if_block_9(ctx);
-	let if_block2 = /*onsale*/ ctx[24] && create_if_block_8(ctx);
-	let if_block3 = /*rating*/ ctx[4] && create_if_block_7(ctx);
-	let if_block4 = /*vendor*/ ctx[8] && /*settings*/ ctx[3].vendor && create_if_block_6(ctx);
-	let if_block5 = /*settings*/ ctx[3].price && create_if_block_3(ctx);
-	let if_block6 = /*settings*/ ctx[3].addToCartButton && create_if_block(ctx);
+	let if_block0 = /*discountPercentage*/ ctx[7] > 0 && create_if_block_12(ctx);
+	let if_block1 = /*bestseller*/ ctx[25] && create_if_block_11(ctx);
+	let if_block2 = /*onsale*/ ctx[27] && create_if_block_10(ctx);
+	let if_block3 = /*isFinalSale*/ ctx[5] && create_if_block_9(ctx);
+	let if_block4 = /*rating*/ ctx[6] && create_if_block_8(ctx);
+	let if_block5 = /*vendor*/ ctx[10] && /*settings*/ ctx[3].vendor && create_if_block_7(ctx);
+	let if_block6 = /*settings*/ ctx[3].price && create_if_block_4(ctx);
+	let if_block7 = /*settings*/ ctx[3].addToCartButton && create_if_block(ctx);
 
 	return {
 		c() {
@@ -9577,14 +9733,16 @@ function create_fragment(ctx) {
 			t4 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			if (if_block4) if_block4.c();
 			t5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			if (if_block5) if_block5.c();
 			t6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			div3 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			t7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
 			div7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			div5 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
-			if (if_block5) if_block5.c();
-			t7 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
-			div6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
 			if (if_block6) if_block6.c();
+			t8 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.space)();
+			div6 = (0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.element)("div");
+			if (if_block7) if_block7.c();
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div0, "class", "product-card__image");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div1, "class", "product-card__header-tags");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div2, "class", "product-card__header");
@@ -9596,8 +9754,8 @@ function create_fragment(ctx) {
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "class", "product-card swiper-slide");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "data-redirect-click", "");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "data-js-click", "");
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "data-url", /*link*/ ctx[21]);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", /*link*/ ctx[21]);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(div8, "data-url", /*link*/ ctx[24]);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "href", /*link*/ ctx[24]);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.attr)(a, "target", "_blank");
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.set_style)(a, "user-select", "none");
 		},
@@ -9615,29 +9773,31 @@ function create_fragment(ctx) {
 			if (if_block1) if_block1.m(div1, null);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, t2);
 			if (if_block2) if_block2.m(div1, null);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t3);
-			if (if_block3) if_block3.m(div2, null);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t4);
-			if (if_block4) if_block4.m(div4, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div1, t3);
+			if (if_block3) if_block3.m(div1, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div2, t4);
+			if (if_block4) if_block4.m(div2, null);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t5);
+			if (if_block5) if_block5.m(div4, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, t6);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div4, div3);
-			div3.innerHTML = /*title*/ ctx[9];
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, t6);
+			div3.innerHTML = /*title*/ ctx[11];
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, t7);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div8, div7);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, div5);
-			if (if_block5) if_block5.m(div5, null);
-			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, t7);
+			if (if_block6) if_block6.m(div5, null);
+			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, t8);
 			(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.append)(div7, div6);
-			if (if_block6) if_block6.m(div6, null);
-			/*div8_binding*/ ctx[32](div8);
+			if (if_block7) if_block7.m(div6, null);
+			/*div8_binding*/ ctx[35](div8);
 			current = true;
 		},
 		p(ctx, dirty) {
-			if (/*discountPercentage*/ ctx[5] > 0) {
+			if (/*discountPercentage*/ ctx[7] > 0) {
 				if (if_block0) {
 					if_block0.p(ctx, dirty);
 				} else {
-					if_block0 = create_if_block_10(ctx);
+					if_block0 = create_if_block_12(ctx);
 					if_block0.c();
 					if_block0.m(div1, t1);
 				}
@@ -9646,56 +9806,69 @@ function create_fragment(ctx) {
 				if_block0 = null;
 			}
 
-			if (/*rating*/ ctx[4]) {
+			if (/*isFinalSale*/ ctx[5]) {
 				if (if_block3) {
 					if_block3.p(ctx, dirty);
 				} else {
-					if_block3 = create_if_block_7(ctx);
+					if_block3 = create_if_block_9(ctx);
 					if_block3.c();
-					if_block3.m(div2, null);
+					if_block3.m(div1, null);
 				}
 			} else if (if_block3) {
 				if_block3.d(1);
 				if_block3 = null;
 			}
 
-			if (/*vendor*/ ctx[8] && /*settings*/ ctx[3].vendor) {
+			if (/*rating*/ ctx[6]) {
 				if (if_block4) {
 					if_block4.p(ctx, dirty);
 				} else {
-					if_block4 = create_if_block_6(ctx);
+					if_block4 = create_if_block_8(ctx);
 					if_block4.c();
-					if_block4.m(div4, t5);
+					if_block4.m(div2, null);
 				}
 			} else if (if_block4) {
 				if_block4.d(1);
 				if_block4 = null;
 			}
 
-			if (/*settings*/ ctx[3].price) {
+			if (/*vendor*/ ctx[10] && /*settings*/ ctx[3].vendor) {
 				if (if_block5) {
 					if_block5.p(ctx, dirty);
 				} else {
-					if_block5 = create_if_block_3(ctx);
+					if_block5 = create_if_block_7(ctx);
 					if_block5.c();
-					if_block5.m(div5, null);
+					if_block5.m(div4, t6);
 				}
 			} else if (if_block5) {
 				if_block5.d(1);
 				if_block5 = null;
 			}
 
-			if (/*settings*/ ctx[3].addToCartButton) {
+			if (/*settings*/ ctx[3].price) {
 				if (if_block6) {
 					if_block6.p(ctx, dirty);
 				} else {
-					if_block6 = create_if_block(ctx);
+					if_block6 = create_if_block_4(ctx);
 					if_block6.c();
-					if_block6.m(div6, null);
+					if_block6.m(div5, null);
 				}
 			} else if (if_block6) {
 				if_block6.d(1);
 				if_block6 = null;
+			}
+
+			if (/*settings*/ ctx[3].addToCartButton) {
+				if (if_block7) {
+					if_block7.p(ctx, dirty);
+				} else {
+					if_block7 = create_if_block(ctx);
+					if_block7.c();
+					if_block7.m(div6, null);
+				}
+			} else if (if_block7) {
+				if_block7.d(1);
+				if_block7 = null;
 			}
 		},
 		i(local) {
@@ -9720,7 +9893,8 @@ function create_fragment(ctx) {
 			if (if_block4) if_block4.d();
 			if (if_block5) if_block5.d();
 			if (if_block6) if_block6.d();
-			/*div8_binding*/ ctx[32](null);
+			if (if_block7) if_block7.d();
+			/*div8_binding*/ ctx[35](null);
 		}
 	};
 }
@@ -9730,7 +9904,7 @@ const func = e => e.preventDefault();
 
 function instance($$self, $$props, $$invalidate) {
 	let $cartContents;
-	(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.component_subscribe)($$self, SvelteComponents_bundle_store_js__WEBPACK_IMPORTED_MODULE_4__.cartContents, $$value => $$invalidate(29, $cartContents = $$value));
+	(0,svelte_internal__WEBPACK_IMPORTED_MODULE_0__.component_subscribe)($$self, SvelteComponents_bundle_store_js__WEBPACK_IMPORTED_MODULE_4__.cartContents, $$value => $$invalidate(32, $cartContents = $$value));
 	let { shopifyData } = $$props;
 	let { product } = $$props;
 	let { productCardSettings = {} } = $$props;
@@ -9747,15 +9921,42 @@ function instance($$self, $$props, $$invalidate) {
 
 	settings = { ...settings, ...productCardSettings };
 
-	const { image, variants = [], vendor, title, tags = [], metafields = [], handle, skipFormatMoney = false, discountPercentage: shopifyDiscountPercentage = 0, enableAddToCart = true, forceSeeOptions = false, // flag for adding conversion rate
-	addConversionRate = false } = product || shopifyData || {};
+	//to declare it as reactive
+	let expiryDate = false;
 
+	let isFinalSale = false;
+
+	const { image, variants = [], vendor, title, tags = [], metafields = [], handle, skipFormatMoney = false, discountPercentage: shopifyDiscountPercentage = 0, enableAddToCart = true, forceSeeOptions = false, // flag for adding conversion rate
+	addConversionRate = false, expiryDateData = false } = product || shopifyData || {};
+
+	let [{ compare_at_price: comparePrice, price, id: variantId } = {}] = variants || [];
+
+	const getExpiryData = async handle => {
+		const expiryData = await fetch(`/products/${handle}?variant=${variantId}&view=get-expiry-date`);
+		const expiryDateJson = await expiryData.json();
+		const { isFinalSale: isFinalSaleFromJson, expiryDate: expiryDateFromJson } = expiryDateJson;
+		$$invalidate(4, expiryDate = expiryDateFromJson);
+		$$invalidate(5, isFinalSale = isFinalSaleFromJson);
+		$$invalidate(0, product.expiryDateData = { expiryDate, isFinalSale }, product);
+		$$invalidate(0, product);
+	};
+
+	(0,svelte__WEBPACK_IMPORTED_MODULE_2__.onMount)(async () => {
+		if (!expiryDateData) {
+			await getExpiryData(handle);
+		} else {
+			const { isFinalSale: isFinalSaleFromShopify, expiryDate: expiryDateFromShopify } = expiryDateData;
+			$$invalidate(4, expiryDate = expiryDateFromShopify);
+			$$invalidate(5, isFinalSale = isFinalSaleFromShopify);
+		}
+	});
+
+	const fireEmoji = `<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91.16 122.88"><defs><style>.cls-1{fill:#f77d02;}.cls-1,.cls-2,.cls-3{fill-rule:evenodd;}.cls-2{fill:#ffc928;}.cls-3{fill:#fff073;}</style></defs><title>flames</title><path class="cls-1" d="M14.45,35.35c1.82,14.45,4.65,25.4,9.44,29.45C24.48,30.87,43,27.4,38.18,0,53.52,3,67.77,33.33,71.36,66.15a37.5,37.5,0,0,0,6.53-19.46c13.76,15.72,21.31,56.82-.17,69.52-12.53,7.41-38.13,7.79-51.46,5.27a27.64,27.64,0,0,1-13.5-5.36c-19.2-14.66-15.17-62.25,1.69-80.77Z"/><path class="cls-2" d="M77.73,116.2h0c-8,4.74-21.42,6.61-33.51,6.67H42.45a95.69,95.69,0,0,1-16.19-1.39,27.64,27.64,0,0,1-13.5-5.36,2.43,2.43,0,0,0-.25-.2c-2.13-10.28,1.76-24,8.49-31.29a25.49,25.49,0,0,0,4.85,13.71C28.51,75.22,39.11,57,50.5,54.94c-3,19.1,11,24.21,10.62,42.45,3.56-2.85,5.66-10.57,7-20.75,9.12,9.49,13.59,26.32,9.59,39.56Z"/><path class="cls-3" d="M65.81,120.73a115,115,0,0,1-39.55.82l-1-.13c.06-5.73,2.21-12,5.47-15.73a17.18,17.18,0,0,0,2.93,8.84c1.61-14.91,8-26.63,14.88-28-1.79,12.32,6.65,15.61,6.4,27.37,2.15-1.84,3.42-6.82,4.23-13.38,4.47,5,7.09,12.84,6.63,20.19Z"/></svg>`;
 	const currencySymbol = window.shopifyVariables.currencySymbol || "$";
 	const chooseMoreText = window.shopifyVariables.chooseMoreText || "See Options";
 	const addToCartText = window.shopifyVariables.addToCartText || "Add To Cart";
 	const bundleText = window.shopifyVariables.bundleText || "Add To Bundle";
 	const bundleTextAdded = window.shopifyVariables.bundleTextAdded || "Added";
-	let [{ compare_at_price: comparePrice, price, id: variantId } = {}] = variants || [];
 	let link = `${window.Shopify.routes.root}products/${handle}?variant=${variantId}`;
 	let rating = false;
 
@@ -9771,7 +9972,7 @@ function instance($$self, $$props, $$invalidate) {
 				parsedValue = JSON.parse(value) || {};
 			}
 
-			$$invalidate(4, rating = parsedValue?.reviewAverageValue);
+			$$invalidate(6, rating = parsedValue?.reviewAverageValue);
 		}
 	});
 
@@ -9863,22 +10064,27 @@ function instance($$self, $$props, $$invalidate) {
 	}
 
 	$$self.$$set = $$props => {
-		if ('shopifyData' in $$props) $$invalidate(27, shopifyData = $$props.shopifyData);
+		if ('shopifyData' in $$props) $$invalidate(30, shopifyData = $$props.shopifyData);
 		if ('product' in $$props) $$invalidate(0, product = $$props.product);
-		if ('productCardSettings' in $$props) $$invalidate(28, productCardSettings = $$props.productCardSettings);
+		if ('productCardSettings' in $$props) $$invalidate(31, productCardSettings = $$props.productCardSettings);
 	};
 
 	$$self.$$.update = () => {
-		if ($$self.$$.dirty[0] & /*$cartContents*/ 536870912) {
+		if ($$self.$$.dirty[1] & /*$cartContents*/ 2) {
 			$: $$invalidate(1, isAddedToBundle = $cartContents && $cartContents[variantId]);
 		}
 	};
+
+	$: $$invalidate(4, expiryDate = expiryDateData && expiryDateData.expiryDate || false);
+	$: $$invalidate(5, isFinalSale = expiryDateData && expiryDateData.isFinalSale || false);
 
 	return [
 		product,
 		isAddedToBundle,
 		ref,
 		settings,
+		expiryDate,
+		isFinalSale,
 		rating,
 		discountPercentage,
 		image,
@@ -9888,14 +10094,15 @@ function instance($$self, $$props, $$invalidate) {
 		skipFormatMoney,
 		enableAddToCart,
 		forceSeeOptions,
+		comparePrice,
+		price,
+		variantId,
+		fireEmoji,
 		currencySymbol,
 		chooseMoreText,
 		addToCartText,
 		bundleText,
 		bundleTextAdded,
-		comparePrice,
-		price,
-		variantId,
 		link,
 		bestseller,
 		isBundle,
@@ -9922,9 +10129,9 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 			create_fragment,
 			svelte_internal__WEBPACK_IMPORTED_MODULE_0__.safe_not_equal,
 			{
-				shopifyData: 27,
+				shopifyData: 30,
 				product: 0,
-				productCardSettings: 28
+				productCardSettings: 31
 			},
 			null,
 			[-1, -1]
@@ -9932,7 +10139,7 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 	}
 
 	get shopifyData() {
-		return this.$$.ctx[27];
+		return this.$$.ctx[30];
 	}
 
 	set shopifyData(shopifyData) {
@@ -9950,7 +10157,7 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 	}
 
 	get productCardSettings() {
-		return this.$$.ctx[28];
+		return this.$$.ctx[31];
 	}
 
 	set productCardSettings(productCardSettings) {
@@ -9979,7 +10186,7 @@ class Product_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCo
 /* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
 /* harmony import */ var SvelteComponents_product_card_svelte__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! SvelteComponents/product-card.svelte */ "./js/components/svelte/product-card.svelte");
 /* harmony import */ var JsComponents_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/constants */ "./js/components/constants.js");
-/* js/components/svelte/product-carousel.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/product-carousel.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -10879,7 +11086,7 @@ class Product_carousel extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 /* harmony export */ });
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
-/* js/components/svelte/responsive-image.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/responsive-image.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -11084,7 +11291,7 @@ class Responsive_image extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 /* harmony import */ var svelte_internal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! svelte/internal */ "./node_modules/svelte/src/runtime/internal/index.js");
 /* harmony import */ var svelte_internal_disclose_version__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svelte/internal/disclose-version */ "./node_modules/svelte/src/runtime/internal/disclose-version/index.js");
 /* harmony import */ var SvelteComponents_responsive_image_svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! SvelteComponents/responsive-image.svelte */ "./js/components/svelte/responsive-image.svelte");
-/* js/components/svelte/review-card.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/review-card.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -11325,7 +11532,7 @@ class Review_card extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.SvelteCom
 /* harmony import */ var svelte__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svelte */ "./node_modules/svelte/src/runtime/index.js");
 /* harmony import */ var _collection_grid_svelte__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./collection-grid.svelte */ "./js/components/svelte/collection-grid.svelte");
 /* harmony import */ var JsComponents_get_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! JsComponents/get-data */ "./js/components/get-data.js");
-/* js/components/svelte/search-component.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/search-component.svelte generated by Svelte v4.2.0 */
 
 
 
@@ -11424,7 +11631,7 @@ class Search_component extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__.Svel
 /* harmony import */ var json_6__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! json-6 */ "./node_modules/json-6/dist/index.js");
 /* harmony import */ var json_6__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(json_6__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var SvelteComponents_accordion_svelte__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! SvelteComponents/accordion.svelte */ "./js/components/svelte/accordion.svelte");
-/* js/components/svelte/tab-section.svelte generated by Svelte v4.2.12 */
+/* js/components/svelte/tab-section.svelte generated by Svelte v4.2.0 */
 
 
 

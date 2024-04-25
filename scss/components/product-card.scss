@@ -45,16 +45,17 @@ product-card {
     display: flex;
     justify-content: space-between;
     @include use-text-style('body-regular');
-    min-height: 33px;
+    min-height: 50px;
+    align-items: center;
 
     &-tags {
       column-gap: 10px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       flex-wrap: wrap;
       max-width: 80%;
       align-items: flex-start;
-      row-gap: 5px;
+      gap: 5px;
     }
   }
 
@@ -70,12 +71,31 @@ product-card {
   }
 
   &__discount {
-    @include use-text-style('body-title');
+    @include use-text-style('body-regular');
     font-weight: typography.$semi-weight;
     padding: 4px 10px;
     background: colors.$red;
     color: colors.$white;
     border-radius: 100px;
+
+    &--final-sale {
+      display: flex;
+      align-items: center;
+      background-color: colors.$black;
+      gap: 5px;
+      font-size: 10px;
+      @media(--xs){
+        font-size: 12px;
+      }
+      .icon-holder {
+        height: 14px;
+        display: inline-block;
+      }
+      svg {
+        height: 14px;
+        width: 14px;
+      }
+    }
   }
 
   &__vendor {

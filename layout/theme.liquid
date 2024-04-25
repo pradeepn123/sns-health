@@ -326,30 +326,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "soldOutText": "{{- 'collection.product.sold_out' | t -}}",
         "chooseMoreText": "{{- 'collection.product.choose_options' | t -}}",
         "addToCartText": "{{- 'collection.product.add_to_cart' | t -}}",
-        "activateBoostSearch": true
+        "activateBoostSearch": true, 
+        "collectionHandle": "{{ collection.handle}}"
       } 
       window.shopifyVariables = shopifyVariables;
       
   </script>
 
-  {% if template == 'page.blog-landing'%} 
-    <script src="{{'blog-post.js' | asset_url }}" defer></script> 
-   {% endif %}
-  {% render 'rebuy-dynamic-bundle' %}
-  {% render 'rebuy-smart-cart-template' %}
-  {% render 'rebuy-pre-purchase-template' %}
+    {% if template == 'page.blog-landing'%} 
+      <script src="{{'blog-post.js' | asset_url }}" defer></script> 
+    {% endif %}
+    {% render 'rebuy-dynamic-bundle' %}
+    {% render 'rebuy-smart-cart-template' %}
+    {% render 'rebuy-pre-purchase-template' %}
+    {% render "rebuy-translations" %}
 
-<script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
-{% if collection == 'bundle-test-collection' %}
-{{ 'mini-cart.css' | asset_url | stylesheet_tag }}
-<div class="bundle-cart">
-    <div class="bundle-cart__info">
-      <bundle-cart> </bundle-cart>
-    </div>
-  </div>
-{% endif %}
+    <script async src="https://cdn.rebuyengine.com/onsite/js/rebuy.js?shop={{ shop.permanent_domain }}"></script>
+    {% if collection == 'bundle-test-collection' %}
+      {{ 'mini-cart.css' | asset_url | stylesheet_tag }}
+      <div class="bundle-cart">
+        <div class="bundle-cart__info">
+          <bundle-cart> </bundle-cart>
+        </div>
+      </div>
+    {% endif %}
     <div data-rebuy-id="126092"></div>
     {% render 'account-page-data' %}
-    <react-modal></react-modal>
-    </body>
+    <react-modal></react-modal>  
+  </body>
 </html>

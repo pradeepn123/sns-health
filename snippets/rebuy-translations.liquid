@@ -1,0 +1,153 @@
+<script>
+    const translations = {
+    fr: {
+        announcement_bar: {
+            messages: ['Test Message 1!', 'Test Message 2!'],
+        },
+        smart_cart: {
+            bmsm_discount_message:
+                "achetez <span class='bmsm-quantity'></span> économisez <span class='bmsm-discount'></span>",
+                cart_title: 'Votre Panier',
+                checking_out_label: 'Commande en cours...',
+                checkout_label: 'Commander',
+                continue_shopping_label: 'Continuer achats',
+                discount_button_label: 'Appliquer',
+                discount_code_label: 'Code de réduction',
+                discount_invalid_message: 'Code invalide',
+                discount_label: 'Code de réduction',
+                empty_cart: '<h4 class="ql-align-center">Votre panier est vide!</h4><p class="ql-align-center">Ajoutez vos articles préférés à votre panier.</p> <p class="ql-align-center"><a href="/fr/collections/all">Achetez maintenant</a></p>',
+                free_shipping_helper: '',
+                free_shipping_reached: '<b>Oui! Livraison gratuite! 🚐</b>',
+                free_shipping_remaining: "Ajouter <span class='helper-shipping'></span> pour bénéficier de la livraison gratuite",
+                free_product_tier_remaining:
+                "Dépensez <span class='helper-amount'></span> obtenez <span class='helper-product'></span>",
+                notes_label: 'Ajouter une note (facultatif)',
+                notes_placeholder: 'Écrivez votre note ici',
+                notes_remaining_characters: '',
+                subtotal_plural_text: "Sous-totaux (<span class='item-count'></span>)",
+                subtotal_singular_text: "Sous-total (<span class='item-count'></span>)",
+                view_cart_label: "Voir Panier d'achat",
+                view_cart_working_label: 'Panier ouvert...',
+            },
+            widget: {
+                add_to_cart: 'Ajouter au panier',
+                added_to_cart: 'hinzugefügt',
+                adding_to_cart: 'Hinzufügen in den Warenkorb',
+                cart_switch_to_onetime: 'Switch to One Time',
+                cart_switch_to_subscription: 'Switch to Subscription',
+                cart_switch_to_subscription_footer: '',
+                checkout: "Passer à la caisse",
+                continue: '',
+                decline: 'Non merci',
+                delivery_frequency_label: '',
+                description: '',
+                learn_more_label: '',
+                remove_body: '',
+                remove_confirm: '',
+                remove_deny: '',
+                remove_from_cart: 'Entfernen',
+                remove_title: '',
+                removed_from_cart: 'Entfernt',
+                removing_from_cart: 'Entfernen ...',
+                sold_out_label: 'Ausverkauft',
+                super_title: 'complétez votre achat',
+                thank_you_button: '',
+                thank_you_description: '',
+                thank_you_title: '',
+                title: '',
+                upgrade_to_subscription: 'Upgrade to Subscription',
+                variant_option: 'Größe',
+                variant_options: '',
+            },
+            12345: {
+                add_to_cart: 'Danish Add to Cart (Widget ID: 12345)',
+            },
+        },
+    };
+
+    updateSmartCartLanguage = () => {
+        const locale = Shopify?.locale;
+        const translation = translations[locale]?.smart_cart;
+
+        if (locale && translation) {
+            Object.assign(Rebuy.SmartCart.settings.language, translation);
+                if (translations[locale]?.announcement_bar) {
+                    Object.assign(Rebuy.SmartCart.settings.announcement_bar, translations[locale].announcement_bar);
+                }
+            }
+        };
+
+        updateWidgetLanguage = (widget) => {
+            const locale = Shopify?.locale;
+            const widgetTranslation = translations[locale]?.[widget.id];
+            const globalTranslation = translations[locale]?.widget;
+
+        if (locale && widgetTranslation) {
+            Object.assign(widget.data.settings.language, widgetTranslation);
+            widget.compileConfig();
+        } else if (locale && globalTranslation) {
+            Object.assign(widget.data.settings.language, globalTranslation);
+                widget.compileConfig();
+            }
+        };
+
+        updateRemaining = () => {
+        const locale = Shopify?.locale;
+        if (translations[locale]) {
+                const remainingAmount = document.querySelector('.rebuy-cart__flyout-subtotal-label .item-count');
+                if (remainingAmount) {
+                    remainingAmount.innerHTML = Rebuy.Cart.cart.item_count;
+                }
+
+                const tiers = Rebuy.SmartCart?.settings?.buy_more_save_more?.tiers;
+                if (tiers) {
+                    tiers.forEach((tier, index) => {
+                        if (document.querySelectorAll('.rebuy-cart__flyout-item-buy-more-save-more-button').length > 0) {
+                            document.querySelectorAll('.rebuy-cart__flyout-item-buy-more-save-more-button .bmsm-discount')[
+                            index
+                        ].innerHTML = tier.discount + '%';
+                        document.querySelectorAll('.rebuy-cart__flyout-item-buy-more-save-more-button .bmsm-quantity')[
+                            index
+                        ].innerHTML = tier.quantity;
+                    }
+                });
+            }
+
+            const bar = Rebuy.SmartCart.getCurrentTier(Rebuy.SmartCart?.progressBar);
+            const barEl = document.getElementById('rebuy-cart__progress-bar-meter-label');
+            const helperShipping = barEl.querySelector('.helper-shipping');
+            const helperProduct = barEl.querySelector('.helper-product');
+            if (bar && barEl) {
+                if (bar.type === 'shipping') {
+                    if (!helperShipping) {
+                        barEl.innerHTML = translations[locale]?.smart_cart?.free_shipping_remaining;
+                    }
+                    barEl.querySelector('.helper-shipping').innerHTML = Rebuy.util.formatMoney(-Math.round(-bar.minimum * 100) - Rebuy.SmartCart.shippingExcludedSubtotal());
+                } else {
+                    if (!helperProduct) {
+                        barEl.innerHTML = translations[locale]?.smart_cart?.free_product_tier_remaining;
+                    }
+                    barEl.querySelector('.helper-amount').innerHTML = Rebuy.util.formatMoney(-Math.round(-bar.minimum * 100) - Rebuy.SmartCart.shippingExcludedSubtotal());
+                    barEl.querySelector('.helper-product').innerHTML = bar.products[0].title ?? 'Free Product';
+                }
+            }
+        }
+    };
+
+    // Update Smart Cart with locale translations
+    document.addEventListener('rebuy:smartcart.ready', () => {
+        updateSmartCartLanguage();
+        setTimeout(updateRemaining, 0);
+    });
+
+    document.addEventListener('rebuy:cart.change', () => {
+        setTimeout(updateRemaining, 0);
+    });
+
+    // Update widgets with locale translations
+    document.addEventListener('rebuy.ready', (event) => {
+        const widget = event.detail.widget;
+        updateWidgetLanguage(widget);
+    });
+
+</script>
