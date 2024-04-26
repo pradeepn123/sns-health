@@ -36,20 +36,8 @@
             "cta_url": "shopify:\/\/collections\/renew-life"
           }
         },
-        "image_with_text_overlay_PzmaNz": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": false,
-            "promotion_name": "Banner right",
-            "promotion_creative_name": "Skinny food Co.",
-            "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/Yourtheory_13.jpg",
-            "cta_url": "shopify:\/\/collections\/youtheory"
-          }
-        },
         "image_with_text_overlay_hAWXBm": {
           "type": "image_with_text_overlay",
-          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "The Skinny Food",
@@ -58,14 +46,26 @@
             "image_desktop": "shopify:\/\/shop_images\/Yourtheory_a08429e6-0e8a-42ad-84da-9d2eedf20113.jpg",
             "cta_url": "shopify:\/\/collections\/youtheory"
           }
+        },
+        "image_with_text_overlay_PzmaNz": {
+          "type": "image_with_text_overlay",
+          "disabled": true,
+          "settings": {
+            "promotion": false,
+            "promotion_name": "Banner right",
+            "promotion_creative_name": "Skinny food Co.",
+            "is_carousel_content": false,
+            "image_desktop": "shopify:\/\/shop_images\/Yourtheory_13.jpg",
+            "cta_url": "shopify:\/\/collections\/youtheory"
+          }
         }
       },
       "block_order": [
         "b533d71a-e272-4353-b935-9e0fc67451c1",
         "009a8070-a267-4f1a-ad82-846a05257985",
         "image_with_text_overlay_VNEBmR",
-        "image_with_text_overlay_PzmaNz",
-        "image_with_text_overlay_hAWXBm"
+        "image_with_text_overlay_hAWXBm",
+        "image_with_text_overlay_PzmaNz"
       ],
       "settings": {
       }
