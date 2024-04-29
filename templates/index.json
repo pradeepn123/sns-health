@@ -476,6 +476,16 @@
             "url": "shopify:\/\/collections\/perfect-sports"
           }
         },
+        "featured_brand_HMrzXg": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Youtheory",
+            "promotion_creative_name": "Featured brands",
+            "image": "shopify:\/\/shop_images\/YouTheory-Logo.webp",
+            "url": "shopify:\/\/collections\/youtheory"
+          }
+        },
         "fbc747c2-c649-43e7-84f8-39fd5d61dae0": {
           "type": "featured_brand",
           "settings": {
@@ -559,6 +569,7 @@
       },
       "block_order": [
         "c9336f2d-13e6-426d-932d-e2e033d0f054",
+        "featured_brand_HMrzXg",
         "fbc747c2-c649-43e7-84f8-39fd5d61dae0",
         "featured_brand_YgPhaj",
         "featured_brand_wQFKFM",
