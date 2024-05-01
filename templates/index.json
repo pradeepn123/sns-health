@@ -30,11 +30,11 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "RenewLife",
+            "promotion_name": "Bundle & Save",
             "promotion_creative_name": "Banner right",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/RL_24.04_SNSHealth_Banner_1400x720_1.jpg",
-            "cta_url": "shopify:\/\/collections\/renew-life"
+            "image_desktop": "shopify:\/\/shop_images\/Bundle_save_cdf0f25b-9230-4024-9b7c-fdb52fd69c2c.jpg",
+            "cta_url": "shopify:\/\/collections\/mutant"
           }
         },
         "image_with_text_overlay_hAWXBm": {
