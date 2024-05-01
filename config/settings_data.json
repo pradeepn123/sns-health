@@ -1275,6 +1275,15 @@
           "selected_collection_FT3drG": {
             "type": "selected_collection",
             "settings": {
+              "featured_collection_item": "aor",
+              "featured_collection_image": "shopify:\/\/shop_images\/Frame_1000005965.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
+          "selected_collection_xg7Pgz": {
+            "type": "selected_collection",
+            "settings": {
               "featured_collection_item": "youtheory",
               "featured_collection_image": "shopify:\/\/shop_images\/Youtheory.jpg",
               "show_overlay": false,
@@ -1427,6 +1436,7 @@
         },
         "block_order": [
           "selected_collection_FT3drG",
+          "selected_collection_xg7Pgz",
           "selected_collection_kVNaQU",
           "selected_collection_cgtyxa",
           "6924a140-8ece-4ff6-98e4-66afc8b96dff",
