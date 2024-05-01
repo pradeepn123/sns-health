@@ -505,36 +505,6 @@
             "url": "shopify:\/\/collections\/youtheory"
           }
         },
-        "fbc747c2-c649-43e7-84f8-39fd5d61dae0": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Botanica",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/botanica-logo.svg",
-            "url": "shopify:\/\/collections\/botanica"
-          }
-        },
-        "featured_brand_YgPhaj": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Featured brand",
-            "promotion_creative_name": "Neocell",
-            "image": "shopify:\/\/shop_images\/NeoCell_Primary_Logo.jpg",
-            "url": ""
-          }
-        },
-        "featured_brand_wQFKFM": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "RenewLife",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/RenewLife_logo.png",
-            "url": "shopify:\/\/collections\/renew-life"
-          }
-        },
         "featured_brand_FVTEQT": {
           "type": "featured_brand",
           "settings": {
@@ -545,24 +515,24 @@
             "url": ""
           }
         },
-        "featured_brand_if76Tr": {
+        "featured_brand_hCYz3n": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "Featured brand",
-            "promotion_creative_name": "Manuka Health",
-            "image": "shopify:\/\/shop_images\/images_19a3f336-4045-4096-8cf0-f18e6bbab69e.png",
-            "url": ""
+            "promotion_name": "MegaFood",
+            "promotion_creative_name": "Featured Brands",
+            "image": "shopify:\/\/shop_images\/Megafood_280x_1.png",
+            "url": "shopify:\/\/collections\/megafood"
           }
         },
-        "featured_brand_jBwkJk": {
+        "featured_brand_PX4Xgp": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "Featured brand",
-            "promotion_creative_name": "Organika",
-            "image": "shopify:\/\/shop_images\/org_logo_google_display_1200x628_1200x_dec8c138-d2af-4b0b-b704-975559b9392d.webp",
-            "url": ""
+            "promotion_name": "Jamieson",
+            "promotion_creative_name": "Featured brands",
+            "image": "shopify:\/\/shop_images\/Jamieson_logo.png",
+            "url": "shopify:\/\/collections\/jamieson"
           }
         },
         "04f03284-64cf-4a23-9d73-d2a68ceced6a": {
@@ -589,12 +559,9 @@
       "block_order": [
         "c9336f2d-13e6-426d-932d-e2e033d0f054",
         "featured_brand_HMrzXg",
-        "fbc747c2-c649-43e7-84f8-39fd5d61dae0",
-        "featured_brand_YgPhaj",
-        "featured_brand_wQFKFM",
         "featured_brand_FVTEQT",
-        "featured_brand_if76Tr",
-        "featured_brand_jBwkJk",
+        "featured_brand_hCYz3n",
+        "featured_brand_PX4Xgp",
         "04f03284-64cf-4a23-9d73-d2a68ceced6a",
         "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4"
       ],
