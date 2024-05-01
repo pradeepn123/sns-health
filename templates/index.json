@@ -535,6 +535,16 @@
             "url": "shopify:\/\/collections\/jamieson"
           }
         },
+        "featured_brand_LqaK9J": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "AOR",
+            "promotion_creative_name": "Featured brands",
+            "image": "shopify:\/\/shop_images\/Frame_1000005906_2.jpg",
+            "url": "shopify:\/\/collections\/aor"
+          }
+        },
         "04f03284-64cf-4a23-9d73-d2a68ceced6a": {
           "type": "featured_brand",
           "settings": {
@@ -562,6 +572,7 @@
         "featured_brand_FVTEQT",
         "featured_brand_hCYz3n",
         "featured_brand_PX4Xgp",
+        "featured_brand_LqaK9J",
         "04f03284-64cf-4a23-9d73-d2a68ceced6a",
         "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4"
       ],
