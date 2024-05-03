@@ -3168,6 +3168,7 @@
         if(variantQuantity) {
           const input = this.element.querySelector('.quantity-selector__value');
           input.max = variantQuantity
+          input.value = 1
         }
       }
 
