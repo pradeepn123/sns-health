@@ -19,6 +19,7 @@
           "settings": {
             "featured_image_desktop": "{{ collection.metafields.custom.collection_banner.value.desktop_image.value }}",
             "featured_image_mobile": "{{ collection.metafields.custom.collection_banner.value.mobile_image.value }}",
+            "meta-font-color": "{{ collection.metafields.custom.collection_banner.value.title_description_color.value }}",
             "font-color": "#000000",
             "background-color": "#ecf0fa",
             "inline_cta": true,
@@ -198,6 +199,8 @@
           "repeater": "{{ collection.metafields.custom.product_carousel.value }}",
           "settings": {
             "collection_text": "{{ block.repeater.tab_text.value }}",
+            "canada_rule_id": "",
+            "other_rule_id": "",
             "collection": "{{ block.repeater.collection.value }}"
           }
         }
@@ -207,7 +210,8 @@
       ],
       "settings": {
         "heading": "Featured Products",
-        "mobile_carousel": true
+        "mobile_carousel": true,
+        "url": ""
       }
     },
     "4d89401b-332c-4ecb-9c2e-37615234ab7d": {
@@ -240,6 +244,8 @@
           "repeater": "{{ collection.metafields.custom.product_carousel.value }}",
           "settings": {
             "collection_text": "{{ block.repeater.tab_text.value }}",
+            "canada_rule_id": "",
+            "other_rule_id": "",
             "collection": ""
           }
         }
@@ -250,7 +256,8 @@
       "disabled": true,
       "settings": {
         "heading": "Recommended for you",
-        "mobile_carousel": true
+        "mobile_carousel": true,
+        "url": ""
       }
     },
     "7a0d2423-3835-49cd-87bf-aa13d0fda0c5": {
@@ -329,6 +336,9 @@
       ],
       "disabled": true,
       "settings": {
+        "heading": "",
+        "mobile_carousel": true,
+        "url": ""
       }
     },
     "3091f4b6-8878-4e0b-ba66-fc08676c4c11": {
@@ -355,6 +365,9 @@
         "6c1e9590-1827-4e83-9e34-9765aa27e128"
       ],
       "settings": {
+        "heading": "",
+        "mobile_carousel": true,
+        "url": ""
       }
     },
     "16972253721fb7f56b": {
