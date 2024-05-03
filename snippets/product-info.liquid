@@ -814,6 +814,11 @@
     {
       "product": {{ product | json }},
       "options_with_values": {{ product.options_with_values | json }},
+      "variantQuantityMap": { 
+        {% for variant in product.variants %} {% unless forloop.first %} , {% endunless %}
+        "{{variant.id}}": {{ variant.inventory_quantity | json }}  
+        {% endfor %} 
+      }, 
       "selected_variant_id": {{ selected_variant.id }}
       {%- if section.settings.show_inventory_quantity -%}
         ,"inventories": {

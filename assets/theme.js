@@ -3065,6 +3065,7 @@
       if (productJsonElement) {
         var jsonData = JSON.parse(productJsonElement.innerHTML);
         this.productData = jsonData['product'];
+        this.variantQuantityMap = jsonData['variantQuantityMap'];
         this.productOptionsWithValues = jsonData['options_with_values'];
         this.variantsInventories = jsonData['inventories'] || {};
         this.variantSelectors = this.element.querySelectorAll('.product-form__option[data-selector-type]');
@@ -3118,6 +3119,8 @@
     }, {
       key: "_onVariantChanged",
       value: function _onVariantChanged(previousVariant, newVariant) {
+
+
         // 1st: the prices
         this._updateProductPrices(newVariant, previousVariant); // 2th: update inventory
 
@@ -3142,6 +3145,8 @@
 
         this.storeAvailability.updateWithVariant(newVariant); // Finally, we send an event so that other system could hook and do their own logic
 
+        if(newVariant) {
+        this._limitVariantQuantity(newVariant?.id)
         this.element.dispatchEvent(new CustomEvent('variant:changed', {
           bubbles: true,
           detail: {
@@ -3149,12 +3154,24 @@
             previousVariant: previousVariant
           }
         }));
+       }
       }
       /**
        * Update the prices (optionally showing compare at price)
        */
 
     }, {
+      key: "_limitVariantQuantity",
+      value: function _limitVariantQuantity(variantId) { 
+        const variantQuantity = this.variantQuantityMap[variantId];
+        debugger;
+        if(variantQuantity) {
+          const input = this.element.querySelector('.quantity-selector__value');
+          input.max = variantQuantity
+        }
+      }
+
+    },{
       key: "_updateProductPrices",
       value: function _updateProductPrices(newVariant, previousVariant) {
         var productPrices = this.element.querySelector('.price-list');
