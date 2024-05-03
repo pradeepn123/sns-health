@@ -14,6 +14,7 @@
           "settings": {
             "featured_image_desktop": "{{ collection.metafields.custom.collection_banner.value.desktop_image.value }}",
             "featured_image_mobile": "{{ collection.metafields.custom.collection_banner.value.mobile_image.value }}",
+            "meta-font-color": "{{ collection.metafields.custom.collection_banner.value.title_description_color.value }}",
             "font-color": "#000000",
             "background-color": "rgba(0,0,0,0)",
             "inline_cta": true,
@@ -36,6 +37,8 @@
           "repeater": "{{ collection.metafields.custom.product_carousel.value }}",
           "settings": {
             "collection_text": "{{ block.repeater.rebuy_rule_id.value }}",
+            "canada_rule_id": "",
+            "other_rule_id": "",
             "collection": "{{ block.repeater.collection.value }}"
           }
         }
@@ -45,7 +48,8 @@
       ],
       "settings": {
         "heading": "Featured Products",
-        "mobile_carousel": true
+        "mobile_carousel": true,
+        "url": ""
       }
     },
     "e24ed829-a79a-4204-83df-ab2705d01f30": {
@@ -88,6 +92,8 @@
           "type": "collection",
           "settings": {
             "collection_text": "default",
+            "canada_rule_id": "",
+            "other_rule_id": "",
             "collection": ""
           }
         }
@@ -98,7 +104,8 @@
       "disabled": true,
       "settings": {
         "heading": "Most Popular in this Collection",
-        "mobile_carousel": true
+        "mobile_carousel": true,
+        "url": ""
       }
     },
     "62f5d72e-aae3-439b-bb23-174170f75edd": {
