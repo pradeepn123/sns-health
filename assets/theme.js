@@ -3066,6 +3066,7 @@
         var jsonData = JSON.parse(productJsonElement.innerHTML);
         this.productData = jsonData['product'];
         this.variantQuantityMap = jsonData['variantQuantityMap'];
+        this.variantExpiryDateMap = jsonData['variantExpiryDateMap'];
         this.productOptionsWithValues = jsonData['options_with_values'];
         this.variantsInventories = jsonData['inventories'] || {};
         this.variantSelectors = this.element.querySelectorAll('.product-form__option[data-selector-type]');
@@ -3147,6 +3148,7 @@
 
         if(newVariant) {
         this._limitVariantQuantity(newVariant?.id)
+        this._handleExpiryDate(newVariant?.id)
         this.element.dispatchEvent(new CustomEvent('variant:changed', {
           bubbles: true,
           detail: {
@@ -3169,6 +3171,20 @@
           const input = this.element.querySelector('.quantity-selector__value');
           input.max = variantQuantity
           input.value = 1
+        }
+      }
+
+    }, {
+      key: "_handleExpiryDate",
+      value: function _limitVariantQuantity(variantId) { 
+        const expiryDate = this.variantExpiryDateMap[variantId];
+        const input = this.element.querySelector('[data-expiry-date]');
+        if(!input) return;
+        if(expiryDate) {
+          input.value = expiryDate
+        }
+        else {
+          input.value = null;
         }
       }
 

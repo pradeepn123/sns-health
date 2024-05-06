@@ -610,7 +610,7 @@
                 >
               {% endcomment %}
               <div class="product-form__info-content">
-                <input type="hidden" name="properties[best-before]" value="{{selected_variant.metafields.custom.expiry_date }}" />
+                <input type="hidden" data-expiry-date name="properties[best-before]" value="{{selected_variant.metafields.custom.expiry_date }}" />
                 <div class="quantity-selector quantity-selector--product">
                   <button
                     type="button"
@@ -818,6 +818,11 @@
       "variantQuantityMap": { 
         {% for variant in product.variants %} {% unless forloop.first %} , {% endunless %}
         "{{variant.id}}": {{ variant.inventory_quantity | json }}  
+        {% endfor %} 
+      }, 
+      "variantExpiryDateMap": { 
+        {% for variant in product.variants %} {% unless forloop.first %} , {% endunless %}
+        "{{variant.id}}": "{{ variant.metafields.custom.expiry_date }}" 
         {% endfor %} 
       }, 
       "selected_variant_id": {{ selected_variant.id }}
