@@ -232,7 +232,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="{{ 'rebuy-cart.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'product-okendo-reviewcarousel.css' | asset_url }}">
 
-    {% comment %} Rebuy {% endcomment %}
     <script async src="https://cdn.rebuyengine.com/onsite/js/storefront-helper.js"></script>
     <!-- Utilize StorefrontHelper to enrich product JSON with locale-aware titles -->
     <script>
@@ -243,7 +242,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         widget.data.products.forEach((product) => storefrontHelper.updateProductJSON(product));
       });
     </script>
-    {% comment %} Rebuy {% endcomment %}
 
   </head>
 
