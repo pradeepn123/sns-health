@@ -9353,7 +9353,7 @@ function create_else_block_1(ctx) {
 
 // (216:12) {#if skipFormatMoney}
 function create_if_block_6(ctx) {
-	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[15], `${/*currencySymbol*/ ctx[19]}{{amount}}`) + "";
+	let t0_value = window.formatCurrency(/*comparePrice*/ ctx[15] / 1, `${/*currencySymbol*/ ctx[19]}{{amount}}`) + "";
 	let t0;
 	let t1;
 	let t2_value = window.Shopify?.currency?.active + "";

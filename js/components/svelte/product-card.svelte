@@ -214,8 +214,8 @@
             class=" product-card__price product-card__price--compare"
           >
             {#if skipFormatMoney}
-              {window.formatCurrency(comparePrice, `${currencySymbol}{{amount}}`)}
-              {window.Shopify?.currency?.active}
+            { window.formatCurrency((comparePrice / 1), `${currencySymbol}{{amount}}`)} 
+            {window.Shopify?.currency?.active}
             {:else}
               {window.formatCurrency(
                 comparePrice * (window.Shopify?.currency?.rate * 100),
