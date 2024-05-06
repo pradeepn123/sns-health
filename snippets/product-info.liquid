@@ -392,6 +392,7 @@
                       name="{{ option_name }}"
                       id="{{ option_name }}"
                       data-option-position="{{ option.position }}"
+                      data-variant-option = "{{product.id}}-{{forloop.index}}"
                     >
                       {%- for value in option.values -%}
                         <option

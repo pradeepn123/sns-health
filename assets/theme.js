@@ -3454,16 +3454,53 @@
       key: "_onOptionChanged",
       value: function _onOptionChanged(event, target) {
         this['option' + target.getAttribute('data-option-position')] = target.value; // We update the selected value
-
         var selectedValueElement = target.closest('.product-form__option').querySelector('.product-form__selected-value');
-
         if (selectedValueElement) {
           selectedValueElement.innerHTML = target.value;
         } // Finally, we get the new variant
 
-
         var previousVariant = this.currentVariant;
         this.currentVariant = this._getCurrentVariantFromOptions();
+
+        if(!this.currentVariant) {
+          let _this4 = this;
+            const parent = target.closest('form');
+            const currentOptionChangedDataId = target.dataset.variantOption;
+            let selectedVariant = null;
+            const allOptions = parent.querySelectorAll('[data-variant-option]');
+            const remainingSelects = [...allOptions].map((option, index) => {
+              const currentOptionDataId = option.dataset.variantOption;
+              if(currentOptionChangedDataId != currentOptionDataId) {
+              return {
+                el: option,
+                index
+              }
+              }
+            }).filter(item => item);
+            remainingSelects.forEach((select) => {
+              if(!selectedVariant) {
+              const {el,index} = select;
+              const availableOptions = el.querySelectorAll('option');
+              availableOptions.forEach(availableOption => {
+                if(availableOption?.value) {
+                if(index == 0) {
+                  el.value = availableOption?.value
+                  _this4.option1 = availableOption?.value
+                }
+                if(index == 1) {
+                  el.value = availableOption?.value
+                  _this4.option2 = availableOption?.value
+                }
+                if(index == 2) {
+                  el.value = availableOption?.value;
+                  _this4.option3 = availableOption?.value
+                }
+              }
+              })
+            }
+          })
+        }
+
 
         this._onVariantChanged(previousVariant, this.currentVariant);
 
@@ -3486,9 +3523,13 @@
 
     }, {
       key: "_getCurrentVariantFromOptions",
-      value: function _getCurrentVariantFromOptions() {
+      value: function _getCurrentVariantFromOptions(context) {
+        if(context) {
+          var _this3 = context;
+        }
+        else {
         var _this3 = this;
-
+        }
         var found = false;
         this.productData['variants'].forEach(function (variant) {
           if (variant['option1'] === _this3.option1 && variant['option2'] === _this3.option2 && variant['option3'] === _this3.option3) {
