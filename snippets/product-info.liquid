@@ -874,7 +874,7 @@
                   select.dispatchEvent(new Event('change', { bubbles: true }));
                   break;
                 } else {
-                  formVarFirstSwatch[i].querySelector('data-selector').click();
+                  formVarFirstSwatch[i].querySelector('[data-selector]').click();
                   break;
                 }
               }
@@ -896,15 +896,15 @@
         function callback(mutationsList, observer) {
           mutationsList.forEach((mutation) => {
             if (mutation.attributeName === 'class') {
-              for (let i = 0; i < formThirdVarSwatch.length; i++) {
+              for (let i = 0; i <= formThirdVarSwatch.length; i++) {
                 if (!formThirdVarSwatch[i].classList.contains('disabled')) {
-                  const select = formThirdVarSwatch[i].querySelector('select');
+                  const select = formThirdVarSwatch[i].closest('select');
                   if (select) {
                     select.value = formThirdVarSwatch[i].value;
                     select.dispatchEvent(new Event('change', { bubbles: true }));
                     break;
                   } else {
-                    formThirdVarSwatch[i].querySelector('data-selector').click();
+                    formThirdVarSwatch[i].querySelector('[data-selector]').click();
                     break;
                   }
                 }

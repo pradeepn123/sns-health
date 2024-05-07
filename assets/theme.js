@@ -3166,7 +3166,6 @@
       key: "_limitVariantQuantity",
       value: function _limitVariantQuantity(variantId) { 
         const variantQuantity = this.variantQuantityMap[variantId];
-        debugger;
         if(variantQuantity) {
           const input = this.element.querySelector('.quantity-selector__value');
           input.max = variantQuantity
@@ -3477,49 +3476,7 @@
 
         var previousVariant = this.currentVariant;
         this.currentVariant = this._getCurrentVariantFromOptions();
-
-        if(!this.currentVariant) {
-          let _this4 = this;
-            const parent = target.closest('form');
-            const currentOptionChangedDataId = target.dataset.variantOption;
-            let selectedVariant = null;
-            const allOptions = parent.querySelectorAll('[data-variant-option]');
-            const remainingSelects = [...allOptions].map((option, index) => {
-              const currentOptionDataId = option.dataset.variantOption;
-              if(currentOptionChangedDataId != currentOptionDataId) {
-              return {
-                el: option,
-                index
-              }
-              }
-            }).filter(item => item);
-            remainingSelects.forEach((select) => {
-              if(!selectedVariant) {
-              const {el,index} = select;
-              const availableOptions = el.querySelectorAll('option');
-              availableOptions.forEach(availableOption => {
-                if(availableOption?.value) {
-                if(index == 0) {
-                  el.value = availableOption?.value
-                  _this4.option1 = availableOption?.value
-                }
-                if(index == 1) {
-                  el.value = availableOption?.value
-                  _this4.option2 = availableOption?.value
-                }
-                if(index == 2) {
-                  el.value = availableOption?.value;
-                  _this4.option3 = availableOption?.value
-                }
-              }
-              })
-            }
-          })
-        }
-
-
         this._onVariantChanged(previousVariant, this.currentVariant);
-
         if (this.currentVariant) {
           if (this.options['enableHistoryState'] && history.replaceState) {
             var newUrl = "".concat(window.location.protocol, "//").concat(window.location.host).concat(window.location.pathname, "?variant=").concat(this.currentVariant.id);
@@ -3527,8 +3484,6 @@
               path: newUrl
             }, '', newUrl);
           } // We need to modify the hidden select that contain the id attribute as well
-
-
           this.masterSelector.querySelector('[selected]').removeAttribute('selected');
           this.masterSelector.querySelector("[value=\"".concat(this.currentVariant['id'], "\"]")).setAttribute('selected', 'selected');
         }
@@ -3539,13 +3494,8 @@
 
     }, {
       key: "_getCurrentVariantFromOptions",
-      value: function _getCurrentVariantFromOptions(context) {
-        if(context) {
-          var _this3 = context;
-        }
-        else {
+      value: function _getCurrentVariantFromOptions() {
         var _this3 = this;
-        }
         var found = false;
         this.productData['variants'].forEach(function (variant) {
           if (variant['option1'] === _this3.option1 && variant['option2'] === _this3.option2 && variant['option3'] === _this3.option3) {
