@@ -19,7 +19,9 @@
           "type": "collection",
           "settings": {
             "collection_text": "default",
-            "collection": ""
+            "canada_rule_id": "",
+            "other_rule_id": "",
+            "collection": "best-sellers"
           }
         }
       },
@@ -28,7 +30,8 @@
       ],
       "settings": {
         "heading": "Most Popular in this Collection",
-        "mobile_carousel": true
+        "mobile_carousel": true,
+        "url": ""
       }
     }
   },
