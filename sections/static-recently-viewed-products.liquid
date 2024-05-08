@@ -5,6 +5,29 @@
     "currentProductId": {{ product.id | json }}
   }
   {%- endcapture -%}
+  {%  capture carouselSettingValues %}
+  {
+    "slidesPerView": 2,
+    "spaceBetween": 10,
+    "progressPagination": true,
+    "overflowNagivation": true,
+    "pagination": true,
+    "breakpoints": { 
+        "768": {
+            "pagination": false,
+            "navigation": true,
+            "slidesPerView": 3,
+            "spaceBetween": 20
+        },
+        "1024": {
+          "pagination": false,
+          "navigation": true,
+          "slidesPerView": 5,
+          "spaceBetween": 20
+      }
+    }
+}
+  {% endcapture %}
 
   <section class="section recently-viewed" data-section-id="{{ section.id }}" data-section-type="recently-viewed-products" data-section-settings='{{ section_settings }}'>
     <div class="recently-viewed-section">
@@ -39,7 +62,7 @@
                 <product-carousel data-type="product-carousel">
                   <script id="product-data" type="text/json">
                     {
-                      "data": {% render 'JSON-output-product-list-carousel' , product_list: product_items | strip_newlines %}
+                      "data": {% render 'JSON-output-product-list-carousel', carouselSettingValues: carouselSettingValues, product_list: product_items | strip_newlines %}
                     }
                   </script>
                 </product-carousel>

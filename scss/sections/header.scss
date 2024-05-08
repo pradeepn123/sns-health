@@ -585,6 +585,10 @@
 .nav-bar {
     position: relative;
     padding-bottom: 5px;
+    @media(--md){
+        margin-top: -1px;
+    }
+
 
     &__item {
         margin: 0;

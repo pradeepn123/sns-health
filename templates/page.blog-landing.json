@@ -78,7 +78,7 @@
           "type": "blogpost",
           "settings": {
             "heading": "Beauty And Wellness",
-            "show_blogpost": false,
+            "show_blogpost": true,
             "url": "shopify:\/\/blogs\/beauty-and-wellness",
             "blog": "beauty-and-wellness"
           }
@@ -87,7 +87,7 @@
           "type": "blogpost",
           "settings": {
             "heading": "Stress and Anxiety",
-            "show_blogpost": false,
+            "show_blogpost": true,
             "url": "shopify:\/\/blogs\/stress-and-anxiety",
             "blog": "stress-and-anxiety"
           }

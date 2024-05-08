@@ -1,1 +1,15 @@
-{ "blocks":[{ "text": "default", "ruleId": "" , "collectionData": [{{product_list}}]}]}
+{ 
+    {%  if carouselSettingValues %}
+        "carouselSettingValues": {{carouselSettingValues}},
+    {%  endif %}
+    "mobileCarousel": "true", 
+    "blocks":[
+        { 
+            "text": "default", 
+            "ruleId": "" , 
+            "collectionData": [
+                {{product_list}}
+            ]
+        }
+    ]
+}
