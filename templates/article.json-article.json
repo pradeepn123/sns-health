@@ -6,6 +6,7 @@
       "blocks": {
         "12f44465-0850-47e2-a846-f51f8dcb62d9": {
           "type": "social_media",
+          "disabled": true,
           "settings": {
             "title": "Follow us",
             "show_rss": true
