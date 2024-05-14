@@ -22,7 +22,7 @@
             "promotion_name": "Celebrating all mothers",
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Victoria_Day.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/Victoria_Day_1.jpg",
             "cta_url": "shopify:\/\/collections\/sale"
           }
         },
@@ -98,7 +98,7 @@
             "promotion_name": "Perfect Sports",
             "promotion_creative_name": "banner grid 2",
             "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Perfectsports_desk.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/Perfectsports.jpg",
             "image_mobile": "shopify:\/\/shop_images\/PERFECT_SPORT_MOBILE.jpg",
             "eyebrow": "",
             "inline_heading": false,
