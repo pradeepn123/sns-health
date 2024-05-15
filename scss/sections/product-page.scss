@@ -113,11 +113,32 @@
     .product-gallery__thumbnail-list{
         margin-bottom: 10px;
         margin-top: 8px;
+        
+        @media(max-width: 640px){
+            margin-bottom: 25px;
+        }
         .product-gallery__thumbnail{
             border: 1px solid #E2E2E2;
         }
         .product-gallery__thumbnail.is-nav-selected {
             border-color: var(--accent-color);
+        }
+        @media(max-width: 999px){
+            overflow: auto;
+            display: flex;
+            flex-wrap: nowrap;
+            
+            .product-gallery__thumbnail{
+                min-width: 80px;
+                 img{
+                    @media(max-width: 999px){
+                        height: 75px !important;
+                        max-width: 75px !important;  
+                        object-fit: cover;
+                    }
+                   
+                }
+            }
         }
     }
 }
