@@ -103,7 +103,7 @@
 
         <div class="header__action-list">
           {%- if section.settings.show_condensed_search -%}
-            <div class="header__action-item hidden-tablet-and-up">
+            <div class="header__action-item hidden-lap-and-up">
               <a class="header__action-item-link header__action-item-link--search" href="{{ routes.search_url }}" data-action="toggle-search" aria-expanded="false" aria-label="{{ 'header.search.open_search' | t }}">{% render 'icon', icon: 'search' %}</a>
             </div>
           {%- endif -%}

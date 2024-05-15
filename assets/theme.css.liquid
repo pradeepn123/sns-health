@@ -5760,7 +5760,7 @@ select::-ms-expand {
   transform: scale(1.2);
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1023px) {
   /* This code is not optimal but the cart icon has a specific positioning so we override it this way */
   .header__cart-icon .icon-state__secondary.icon-state__secondary {
     left: 8px;
@@ -5791,6 +5791,7 @@ select::-ms-expand {
   .header__search-bar-wrapper.is-visible {
     display: block;
     margin-bottom: -40px;
+    margin-left: 0;
   }
 
   /* When the user focus it, it becomes a fixed element */
@@ -5803,7 +5804,7 @@ select::-ms-expand {
   }
 }
 
-@media screen and (min-width: 641px) {
+/* @media screen and (min-width: 641px) {
   .header__action-list {
     padding-left: 28px;
   }
@@ -5822,7 +5823,7 @@ select::-ms-expand {
   .header__action-item .icon--lock-2 {
     vertical-align: text-top;
   }
-}
+} */
 
 @media screen and (min-width: 1000px) {
   .header__action-list {
