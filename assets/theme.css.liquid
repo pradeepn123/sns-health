@@ -6210,6 +6210,9 @@ select::-ms-expand {
 }
 
 /* This is not really mobile-first for this specific part, but the mobile styles are way too specific so I prefer to have them here rather than having complex overwritings */
+.search-bar__close-button {
+  display: none;
+}
 @media screen and (max-width: 1024px) {
   .search-bar {
     opacity: 0;
@@ -13256,7 +13259,7 @@ select::-ms-expand {
 .drawer__inner {
   position: absolute;
   right: 0;
-  top: 0;
+  top: var(--announcement-bar-height-sticky);
   width: 100%;
   height: 100%;
   max-width: 345px;
