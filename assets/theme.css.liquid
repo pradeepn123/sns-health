@@ -2220,14 +2220,18 @@ img.lazyload[data-sizes=auto] {
     width: 100%;
     left: 0;
     border-radius: 3px 3px 0 0;
-    margin: 0 0 -1px 0;
+    margin: 0 auto -1px;
     /* This -1 allows to cover the border of the card */
     overflow: hidden;
+    max-width: 980px;
   }
 
   .article__image-wrapper + .card {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+
+    max-width: 980px;
+    margin: 0 auto;
   }
 
   .article__inner {
