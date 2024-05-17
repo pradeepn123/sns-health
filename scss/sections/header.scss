@@ -64,11 +64,25 @@
 
     &__mobile-nav {
         margin-right: 0;
+        display: block !important;
+        @media (--md) {
+            display: none !important;
+        }
     }
 
     &__action-list {
         margin-left: 0;
         column-gap: var(--grid-column-gap);
+        .referal_button_get_discount.referal_button_desktop{
+            display: none;
+            @media(--md-large){
+                display: block;
+            }
+            .oke-open-referrals{
+                color: colors.$red;
+                text-transform: uppercase;
+            }
+        }
     }
 
     &__logo {
@@ -370,8 +384,8 @@
     padding: 0;
 
     @media(--md) {
-        max-width: 650px;
-        margin-left: 2rem;
+        max-width: 500px;
+        margin: 0 2rem;
     }
 
     .search-bar {
@@ -660,6 +674,30 @@
         column-gap: 20px;
         justify-content: flex-start;
         text-transform: capitalize;
+        flex-wrap: wrap;
+
+        .referal_button_get_discount.referal_button_mobile{
+            display: block;
+            margin-bottom: 10px;
+            @media(--xxs){
+                margin-bottom: 0;
+            }
+            @media(--md-large){
+                display: none;
+            }
+            .oke-open-referrals{
+                color: colors.$red;
+                display: flex;
+                font-size: typography.$body-small-alt-size;
+                font-weight: typography.$medium-weight; 
+                white-space: nowrap;
+                text-transform: uppercase;
+                padding: 0 0 0 4px;
+                @media(--xxs){
+                    padding: 0;
+                }
+            }
+        }
     }
 
     &__container {
@@ -1044,4 +1082,18 @@ react-modal {
         top: 10px;
         right: 12px;
     }
+}
+
+// the below styles for referal pop up customization which is coming form okendo app
+
+.c-okeReferralsApp-closeButton{
+    background-color: colors.$black !important;
+    border: unset !important;
+    .c-icon.c-okeReferralsApp-closeButton-icon.c-icon--small{
+        background-color: colors.$black !important;
+        svg{
+            fill: colors.$white !important;
+        }
+    }
+
 }

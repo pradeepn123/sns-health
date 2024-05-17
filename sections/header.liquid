@@ -118,6 +118,11 @@
                 </a>
               </div>
             </div>
+            {% if section.settings.show_referal_button %}
+              <div class="referal_button_get_discount referal_button_desktop">
+               <button class="oke-open-referrals">{{ section.settings.refer_text | default: 'Refer and get 10%' }}</button>
+              </div>
+            {% endif %}
             <div id="account-popover" class="popover {% if customer %}popover--logged{% else %}popover--large popover--unlogged{% endif %}" aria-hidden="true">
               {%- if customer -%}
                 <div class="popover__inner popover__inner--no-padding">
@@ -307,6 +312,11 @@
                 {%- endif -%}
               </li>
             {%- endfor -%}
+            {% if section.settings.show_referal_button %}
+              <div class="referal_button_get_discount referal_button_mobile">
+               <button class="oke-open-referrals">{{ section.settings.refer_text | default: 'Refer and get 10%' }}</button>
+              </div>
+            {% endif %}
           </ul>
         </div>
       </div>
@@ -487,6 +497,17 @@
       "label": "Show search filter",
       "default": true,
       "info": "Refine by product type. [Learn more](https://support.maestrooo.com/article/184-navigation-filtering-search-results-by-product-type)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_referal_button",
+      "label": "Show referal button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "refer_text",
+      "label": "Refer text"
     },
     {
       "type": "link_list",
