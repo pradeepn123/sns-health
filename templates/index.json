@@ -1,5 +1,39 @@
 {
   "sections": {
+    "countdown_timer_banner_TqPqnK": {
+      "type": "countdown-timer-banner",
+      "settings": {
+        "section_width": "full-width-row",
+        "section_layout": "horizontal",
+        "subheading": "",
+        "heading": "CLEARANCE SALE",
+        "heading_size": "heading_1_alt",
+        "content": "",
+        "content_size": "medium",
+        "button_text": "SHOP NOW",
+        "button_link": "shopify:\/\/collections",
+        "timer_year": 2024,
+        "timer_month": "05",
+        "timer_day": "21",
+        "timer_hour": "02",
+        "timer_minute": "52",
+        "enable_auto_sale_timer": false,
+        "auto_timer_timezone": "-0400",
+        "auto_start_timer_day": "01",
+        "auto_start_timer_hour": "00",
+        "auto_start_timer_minute": "00",
+        "auto_end_timer_day": "01",
+        "auto_end_timer_hour": "00",
+        "auto_end_timer_minute": "00",
+        "color_bg": "#ed1c24",
+        "border_color_bg": "#930000",
+        "color_text": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
     "main": {
       "type": "Banner",
       "blocks": {
@@ -907,6 +941,7 @@
     }
   },
   "order": [
+    "countdown_timer_banner_TqPqnK",
     "main",
     "65868ffb-1036-425b-a0dc-ebc8bcff334b",
     "9915991f-ed29-484e-9e91-73c66c49a3a1",
