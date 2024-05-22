@@ -80,7 +80,8 @@
             }
             .oke-open-referrals{
                 color: colors.$red;
-                text-transform: uppercase;
+                font-weight: typography.$semi-weight; 
+                // text-transform: uppercase;
             }
         }
     }
@@ -689,9 +690,8 @@
                 color: colors.$red;
                 display: flex;
                 font-size: typography.$body-small-alt-size;
-                font-weight: typography.$medium-weight; 
+                font-weight: typography.$semi-weight; 
                 white-space: nowrap;
-                text-transform: uppercase;
                 padding: 0 0 0 4px;
                 @media(--xxs){
                     padding: 0;
