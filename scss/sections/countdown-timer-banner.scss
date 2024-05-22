@@ -39,8 +39,12 @@
         column-gap: 0;
 
         @media(--sm) {
-            column-gap: 32px;
+            column-gap: 26px;
             justify-content: center;
+        }
+
+        @media(--md) {
+            column-gap: 32px;
         }
 
         .button {
@@ -121,6 +125,13 @@
     }
 
     &--timer {
+        max-width: 145px;
+        width: 100%;
+
+        @media(--sm) {
+            max-width: 200px;
+        }
+
         .countdown-timer {
             display: flex;
             flex-direction: row;
@@ -130,7 +141,12 @@
                 flex-direction: column;
                 align-items: center;
                 position: relative;
-                padding: 0px 6px;
+                padding: 0px 3px;
+
+                @media(--xxs) {
+                    padding: 0px 6px;
+                }
+
                 @media(--sm) {
                     padding: 0px 8px;
                 }
