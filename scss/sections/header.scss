@@ -676,6 +676,9 @@
         justify-content: flex-start;
         text-transform: capitalize;
         flex-wrap: wrap;
+        @media(--xxs){
+            flex-wrap: nowrap; 
+        }
 
         .referal_button_get_discount.referal_button_mobile{
             display: block;
