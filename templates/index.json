@@ -25,7 +25,7 @@
         "auto_end_timer_hour": "00",
         "auto_end_timer_minute": "00",
         "color_bg": "#000000",
-        "border_color_bg": "#000000",
+        "border_color_bg": "#444444",
         "color_text": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 0,
