@@ -13,10 +13,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 12px;
+    padding: 6.5px 8px;
     position: relative;
     background: var(--color-bg);
     color: var(--color-text);
+    @media(--sm) {
+        padding: 12px;
+    }
 
     border-radius: 10px;
     border: 1px solid var(--color-bg-border);
@@ -37,38 +40,75 @@
         }
 
         .button {
-            background-color: var(--color-text);
-            color: var(--color-bg);
-            @include use-text-style('body-alt');
-            font-weight: typography.$semi-weight;
+            &--box {
+                background-color: var(--color-bg);
+                color: var(--color-text);
+                @include use-text-style('body-regular');
+                font-weight: typography.$semi-weight;
+                border: 1px solid var(--color-text);
+                padding: 7px 11px;
+                @media(--sm) {
+                    @include use-text-style('body-alt');
+                    font-weight: typography.$semi-weight;
+                    padding: 13px 28px;
+                }
+            }
         }
     }
 
     &--content {
+        max-width: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        @media(--sm) {
+            max-width: fit-content;
+        }
 
         .heading {
             color: var(--color-text);
+            margin: 0;
 
             &.heading-size--heading_1 {
-                @include use-text-style('heading-1');
+                @include use-text-style('body-alt');
                 font-weight: typography.$semi-weight;
+                line-height: 18px;
+                @media(--sm) {
+                    @include use-text-style('heading-1');
+                }
             }
             &.heading-size--heading_1_alt {
-                @include use-text-style('heading-1-alt');
+                @include use-text-style('body-regular');
                 font-weight: typography.$semi-weight;
+                line-height: 18px;
+                @media(--sm) {
+                    @include use-text-style('heading-1-alt');
+                }
             }
             &.heading-size--heading_2 {
-                @include use-text-style('heading-2');
+                @include use-text-style('body-small');
                 font-weight: typography.$semi-weight;
+                line-height: 18px;
+                @media(--sm) {
+                    @include use-text-style('heading-2');
+                }
             }
             &.heading-size--heading_3 {
-                @include use-text-style('heading-3');
+                @include use-text-style('body-small');
                 font-weight: typography.$semi-weight;
+                line-height: 18px;
+                @media(--sm) {
+                    @include use-text-style('heading-3');
+                }
             }
         }
         
         .subheading {
-          @include use-text-style('body-regular');
+            @include use-text-style('body-small');
+            @media(--sm) {
+                @include use-text-style('body-regular');
+            }
         }
     }
 
@@ -82,43 +122,66 @@
                 flex-direction: column;
                 align-items: center;
                 position: relative;
-                padding: 0px 8px;
+                padding: 0px 6px;
+                @media(--sm) {
+                    padding: 0px 8px;
+                }
 
                 &:not(:first-child):before {
                     content: ":";
                     display: inline-flex;
                     justify-content: center;
-                    width: 15px;
-                    font-size: 1.75rem;
+                    width: 5px;
+                    font-size: 1rem;
                     line-height: 2.25rem;
                     position: absolute;
                     top: 37%;
                     transform: translateY(-50%);
-                    left: -6px;
+                    left: -2px;
+                    @media(--sm) {
+                        font-size: 1.75rem;
+                        left: -6px;
+                        width: 15px;
+                    }
                 }
 
                 &--number {
                     &.number-size--heading_1 {
-                        @include use-text-style('heading-1');
-                        font-weight: typography.$semi-weight;
-                    }
-                    &.number-size--heading_1_alt {
-                        @include use-text-style('heading-1-alt');
-                        font-weight: typography.$semi-weight;
-                    }
-                    &.number-size--heading_2 {
                         @include use-text-style('heading-2');
                         font-weight: typography.$semi-weight;
+                        @media(--sm) {
+                            @include use-text-style('heading-1');
+                        }
                     }
-                    &.number-size--heading_3 {
+                    &.number-size--heading_1_alt {
                         @include use-text-style('heading-3');
                         font-weight: typography.$semi-weight;
+                        @media(--sm) {
+                            @include use-text-style('heading-1-alt');
+                        }
+                    }
+                    &.number-size--heading_2 {
+                        @include use-text-style('body-alt');
+                        font-weight: typography.$semi-weight;
+                        @media(--sm) {
+                            @include use-text-style('heading-2');
+                        }
+                    }
+                    &.number-size--heading_3 {
+                        @include use-text-style('body-title');
+                        font-weight: typography.$semi-weight;
+                        @media(--sm) {
+                            @include use-text-style('heading-3');
+                        }
                     }
                 }
 
                 &--text {
                     @include use-text-style('body-regular');
-                    font-size: 8px;
+                    font-size: 6px;
+                    @media(--sm) {
+                        font-size: 8px;
+                    }
                 }
             }
         }
