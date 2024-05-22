@@ -11,144 +11,146 @@
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 
-if (!customElements.get('countdown-timer')) {
-  class CountdownTimer extends HTMLElement {
-    constructor() {
-      super();
-      var timezone = this.dataset.timezone,
-        date = this.dataset.date.split('-'),
-        day = parseInt(date[0]),
-        month = parseInt(date[1]),
-        year = parseInt(date[2]);
-      var time = this.dataset.time,
-        tarhour,
-        tarmin;
-      if (time != null) {
-        time = time.split(':');
-        tarhour = parseInt(time[0]);
-        tarmin = parseInt(time[1]);
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  if (!customElements.get('countdown-timer')) {
+    class CountdownTimer extends HTMLElement {
+      constructor() {
+        super();
+        var timezone = this.dataset.timezone,
+          date = this.dataset.date.split('-'),
+          day = parseInt(date[0]),
+          month = parseInt(date[1]),
+          year = parseInt(date[2]);
+        var time = this.dataset.time,
+          tarhour,
+          tarmin;
+        if (time != null) {
+          time = time.split(':');
+          tarhour = parseInt(time[0]);
+          tarmin = parseInt(time[1]);
+        }
+
+        // Set the date we're counting down to
+        var date_string = month + '/' + day + '/' + year + ' ' + tarhour + ':' + tarmin;
+        // Time without timezone
+        this.countDownDate = new Date(year, month - 1, day, tarhour, tarmin, 0, 0).getTime();
+
+        // Time with timezone
+        this.automaticSaleTimer = this.dataset.automaticSaleTimer;
       }
+      convertDateForIos(date) {
+        var arr = date.split(/[- :]/);
+        date = new Date(arr[0], arr[1] - 1, arr[2], arr[3], arr[4], arr[5]);
+        return date;
+      }
+      connectedCallback() {
+        var getConvertedTime = dateInstance => {
+          var localTime = dateInstance.getTime();
+          var convertedTime = moment__WEBPACK_IMPORTED_MODULE_0___default()(localTime).utcOffset('-0400').format('YYYY-MM-DD HH:mm:ss');
+          return new Date(convertedTime);
+        };
+        var _this = this;
+        var updateTime = function updateTime() {
+          var now = new Date();
+          if (_this.automaticSaleTimer) {
+            //core logic for timer:
+            //Get the starting day , ending day and the timezone
+            //Based on the timezone , convert the current date based on the timezone
+            //if starting day is current day, just update the hours in current date ,and convert it based on the timezone
+            //else , do the calculations based on the current date and get the future date 
+            //update the hours in future date , and convert it based on the timezone
+            //check if timer has started ,if yes, just set the distance or remaining time as the end date, show the sale end timer
+            //else, set the distance as the starting date, to show when sale will start
 
-      // Set the date we're counting down to
-      var date_string = month + '/' + day + '/' + year + ' ' + tarhour + ':' + tarmin;
-      // Time without timezone
-      this.countDownDate = new Date(year, month - 1, day, tarhour, tarmin, 0, 0).getTime();
+            var dateData = _this.automaticSaleTimer.split(':'),
+              timeZoneOffset = "".concat(dateData[0]),
+              startDayIndex = parseInt(dateData[1]),
+              //indexed weekdays starting from sunday and 0 index, 0: sunday,
+              startHour = parseInt(dateData[2]),
+              startMinute = parseInt(dateData[3]),
+              endDayIndex = parseInt(dateData[4]),
+              //indexed weekdays starting from sunday and 0 index, 0: sunday,
+              endHour = parseInt(dateData[5]),
+              endMinute = parseInt(dateData[6]);
+            var getnextDay = (dateInstance, index) => {
+              if (!(dateInstance.getDay() == index)) {
+                dateInstance.setDate(dateInstance.getDate() + ((index + 7 - dateInstance.getDay()) % 7 || 7));
+              }
+              return dateInstance;
+            };
+            var _getConvertedTime = dateInstance => {
+              var localTime = dateInstance.getTime();
+              var convertedTime = moment__WEBPACK_IMPORTED_MODULE_0___default()(localTime).utcOffset(timeZoneOffset).format('YYYY-MM-DD HH:mm:ss');
+              return new Date(convertedTime);
+            };
+            var setHours = (dateInstance, hour, min) => {
+              return dateInstance.setHours(hour, min, 0, 0); //from shopify
+            };
 
-      // Time with timezone
-      this.automaticSaleTimer = this.dataset.automaticSaleTimer;
-    }
-    convertDateForIos(date) {
-      var arr = date.split(/[- :]/);
-      date = new Date(arr[0], arr[1] - 1, arr[2], arr[3], arr[4], arr[5]);
-      return date;
-    }
-    connectedCallback() {
-      var getConvertedTime = dateInstance => {
-        var localTime = dateInstance.getTime();
-        var convertedTime = moment__WEBPACK_IMPORTED_MODULE_0___default()(localTime).utcOffset('-0400').format('YYYY-MM-DD HH:mm:ss');
-        return new Date(convertedTime);
-      };
-      var _this = this;
-      var updateTime = function updateTime() {
-        var now = new Date();
-        if (_this.automaticSaleTimer) {
-          //core logic for timer:
-          //Get the starting day , ending day and the timezone
-          //Based on the timezone , convert the current date based on the timezone
-          //if starting day is current day, just update the hours in current date ,and convert it based on the timezone
-          //else , do the calculations based on the current date and get the future date 
-          //update the hours in future date , and convert it based on the timezone
-          //check if timer has started ,if yes, just set the distance or remaining time as the end date, show the sale end timer
-          //else, set the distance as the starting date, to show when sale will start
+            //convert current time into given timezone into needed timezone
+            now = _getConvertedTime(now);
+            _this.countDownDate = _getConvertedTime(this.countDownDate);
 
-          var dateData = _this.automaticSaleTimer.split(':'),
-            timeZoneOffset = "".concat(dateData[0]),
-            startDayIndex = parseInt(dateData[1]),
-            //indexed weekdays starting from sunday and 0 index, 0: sunday,
-            startHour = parseInt(dateData[2]),
-            startMinute = parseInt(dateData[3]),
-            endDayIndex = parseInt(dateData[4]),
-            //indexed weekdays starting from sunday and 0 index, 0: sunday,
-            endHour = parseInt(dateData[5]),
-            endMinute = parseInt(dateData[6]);
-          var getnextDay = (dateInstance, index) => {
-            if (!(dateInstance.getDay() == index)) {
-              dateInstance.setDate(dateInstance.getDate() + ((index + 7 - dateInstance.getDay()) % 7 || 7));
+            //Get start day in milliseconds
+            var startDay = new Date();
+            startDay = _getConvertedTime(startDay);
+            startDay = getnextDay(startDay, startDayIndex);
+            startDay = setHours(startDay, startHour, startMinute);
+
+            //Get end day in milliseconds with timezone difference added
+            //Get start day in milliseconds
+            var endDay = new Date();
+            endDay = _getConvertedTime(endDay);
+            endDay = getnextDay(endDay, endDayIndex);
+            endDay = setHours(endDay, endHour, endMinute);
+            console.log(new Date(startDay), "Start day");
+            console.log(new Date(endDay), "End day");
+            console.log(new Date(now), "now");
+            var saleText = 'Starts';
+            _this.countDownDate = startDay;
+            var startingDistance = startDay - now; //check if sale has already started
+            //it will return 0 if sale has ended, in such case, start counting from the date of next sale
+
+            if (startingDistance < 0) {
+              //sale has ended so , look for next sale starting date
+              _this.countDownDate = endDay;
+              saleText = 'ENDS';
+              document.querySelector('.countdown-banner--timer .button').classList.add('visible');
             }
-            return dateInstance;
-          };
-          var _getConvertedTime = dateInstance => {
-            var localTime = dateInstance.getTime();
-            var convertedTime = moment__WEBPACK_IMPORTED_MODULE_0___default()(localTime).utcOffset(timeZoneOffset).format('YYYY-MM-DD HH:mm:ss');
-            return new Date(convertedTime);
-          };
-          var setHours = (dateInstance, hour, min) => {
-            return dateInstance.setHours(hour, min, 0, 0); //from shopify
-          };
-
-          //convert current time into given timezone into needed timezone
-          now = _getConvertedTime(now);
-          _this.countDownDate = _getConvertedTime(this.countDownDate);
-
-          //Get start day in milliseconds
-          var startDay = new Date();
-          startDay = _getConvertedTime(startDay);
-          startDay = getnextDay(startDay, startDayIndex);
-          startDay = setHours(startDay, startHour, startMinute);
-
-          //Get end day in milliseconds with timezone difference added
-          //Get start day in milliseconds
-          var endDay = new Date();
-          endDay = _getConvertedTime(endDay);
-          endDay = getnextDay(endDay, endDayIndex);
-          endDay = setHours(endDay, endHour, endMinute);
-          console.log(new Date(startDay), "Start day");
-          console.log(new Date(endDay), "End day");
-          console.log(new Date(now), "now");
-          var saleText = 'Starts';
-          _this.countDownDate = startDay;
-          var startingDistance = startDay - now; //check if sale has already started
-          //it will return 0 if sale has ended, in such case, start counting from the date of next sale
-
-          if (startingDistance < 0) {
-            //sale has ended so , look for next sale starting date
-            _this.countDownDate = endDay;
-            saleText = 'ENDS';
-            document.querySelector('.countdown-banner--timer .button').classList.add('visible');
+            document.querySelector('[data-timer-heading]').innerHTML = "SALE ".concat(saleText, " IN");
           }
-          document.querySelector('[data-timer-heading]').innerHTML = "SALE ".concat(saleText, " IN");
-        }
-        now = getConvertedTime(now);
-        var distance = _this.countDownDate - now;
+          now = getConvertedTime(now);
+          var distance = _this.countDownDate - now;
 
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-        var minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
-        var seconds = Math.floor(distance % (1000 * 60) / 1000);
-        if (distance < 0) {
-          _this.querySelector('.days .countdown-timer--column--number').innerHTML = 0;
-          _this.querySelector('.hours .countdown-timer--column--number').innerHTML = 0;
-          _this.querySelector('.minutes .countdown-timer--column--number').innerHTML = 0;
-          _this.querySelector('.seconds .countdown-timer--column--number').innerHTML = 0;
-          // Add class to hide banner
-          document.querySelector('.countdown-banner').classList.add('hide_banner');
-        } else {
-          requestAnimationFrame(updateTime);
-          _this.querySelector('.days .countdown-timer--column--number').innerHTML = CountdownTimer.addZero(days);
-          _this.querySelector('.hours .countdown-timer--column--number').innerHTML = CountdownTimer.addZero(hours);
-          _this.querySelector('.minutes .countdown-timer--column--number').innerHTML = CountdownTimer.addZero(minutes);
-          _this.querySelector('.seconds .countdown-timer--column--number').innerHTML = CountdownTimer.addZero(seconds);
-        }
-      };
-      requestAnimationFrame(updateTime);
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+          var minutes = Math.floor(distance % (1000 * 60 * 60) / (1000 * 60));
+          var seconds = Math.floor(distance % (1000 * 60) / 1000);
+          if (distance < 0) {
+            _this.querySelector('.days .countdown-timer--column--number').innerHTML = 0;
+            _this.querySelector('.hours .countdown-timer--column--number').innerHTML = 0;
+            _this.querySelector('.minutes .countdown-timer--column--number').innerHTML = 0;
+            _this.querySelector('.seconds .countdown-timer--column--number').innerHTML = 0;
+            // Add class to hide banner
+            document.querySelector('.countdown-banner').classList.add('hide_banner');
+          } else {
+            requestAnimationFrame(updateTime);
+            _this.querySelector('.days .countdown-timer--column--number').innerHTML = CountdownTimer.addZero(days);
+            _this.querySelector('.hours .countdown-timer--column--number').innerHTML = CountdownTimer.addZero(hours);
+            _this.querySelector('.minutes .countdown-timer--column--number').innerHTML = CountdownTimer.addZero(minutes);
+            _this.querySelector('.seconds .countdown-timer--column--number').innerHTML = CountdownTimer.addZero(seconds);
+          }
+        };
+        requestAnimationFrame(updateTime);
+      }
+      static addZero(x) {
+        return x < 10 && x >= 0 ? "0" + x : x;
+      }
     }
-    static addZero(x) {
-      return x < 10 && x >= 0 ? "0" + x : x;
-    }
+    customElements.define('countdown-timer', CountdownTimer);
   }
-  customElements.define('countdown-timer', CountdownTimer);
-}
+});
 
 /***/ })
 

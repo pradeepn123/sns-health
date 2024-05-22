@@ -10,7 +10,7 @@ import bundleCart from "./bundle-cart"
 import AccountPage from "./account-page"
 import ReactModal from "./react-modal"
 import PredictiveSearch from "./predictive-search";
-import countdownBanner from './countdown-banner';
+import CountdownBanner from './countdown-banner';
 
 document.addEventListener('DOMContentLoaded', () => {
     announcementBar();
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactModal();
     searchPage();
     PredictiveSearch();
-    countdownBanner();
+    CountdownBanner();
     window.customProductCard = customProductCard;
     window.productCarousel = productCarousel;
 });
