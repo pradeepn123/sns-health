@@ -2,6 +2,7 @@
   "sections": {
     "countdown_timer_banner_TqPqnK": {
       "type": "countdown-timer-banner",
+      "disabled": true,
       "settings": {
         "heading": "CLEARANCE SALE",
         "subheading": "",
