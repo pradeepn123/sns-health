@@ -899,11 +899,25 @@
               "answer": "<p>Yes, in addition to serving our customers in Canada, we also cater to our international clientele. Currently, we offer shipping services to the following countries: Austria, Belgium, France, Germany, Ireland, Italy, Netherlands, Portugal, Slovenia, Spain, and the UK. <\/p><p>If your country is not listed here, please reach out to us, and we'll explore the possibility of accommodating your shipping needs.<\/p>"
             }
           },
-          "24408dbf-23fc-4ebf-9691-9036e5abdbad": {
+          "question_QK7Qk8": {
             "type": "question",
             "settings": {
-              "title": "How do I return an item?",
-              "answer": "<p>Take a look at our Shipping & Returns page <a href=\"https:\/\/snshealth.com\/pages\/shipping-returns\" title=\"https:\/\/snshealth.com\/pages\/shipping-returns\">here<\/a> for all the details on our return policy and practices. <\/p>"
+              "title": "Do you accept return or exchange?",
+              "answer": "<p>Yes, we accept returns and exchanges at SNS Health. If you are not completely satisfied with your purchase, you can return or exchange the item within 30 days of receiving your order. The item must be in its original condition and packaging.<br\/><br\/>To initiate a return or exchange, please follow these steps:<\/p><ol><li><strong>Contact Us<\/strong>: Reach out to our customer service team via email at<strong> info@snshealth.com <\/strong>or call us at <strong>905-792-8990 <\/strong>to request a return or exchange authorization.<\/li><li><strong>Return Authorization<\/strong>: Once your return or exchange is authorized, you will receive detailed instructions on how to proceed.<\/li><li><strong>Return Shipping:<\/strong> Pack the item securely. Ship the package to the address provided by our customer service team.<\/li><\/ol><p>Please note that return shipping costs are the responsibility of the customer unless the return is due to a mistake on our part or a defective product. In such scenarios, we will provide a prepaid return label. <\/p><p>For more information, please visit our <a href=\"https:\/\/snshealth.com\/policies\/refund-policy\" title=\"https:\/\/snshealth.com\/policies\/refund-policy\">Refund policy<\/a>. If you have any further questions, feel free to contact us. We are here to help.<\/p>"
+            }
+          },
+          "question_39A6Rx": {
+            "type": "question",
+            "settings": {
+              "title": "When can I ask for a refund?",
+              "answer": "<p>You can request a refund within 30 days of receiving your order. To be eligible for a refund, the item must be in its original condition, unused, and in the same packaging that you received it.<br\/><br\/>To request a refund, please follow these steps:<\/p><ol><li><strong>Contact us: <\/strong>Email our customer service team at info@snshealth.com or call us at 905-792-8990 to initiate your refund request. Provide your order number and the reason for the refund.<\/li><li><strong>Return Authorization: <\/strong>Once your refund request is authorized, you will receive instructions on how to return the item.<\/li><li><strong>Return the Item(s): <\/strong>Send the item back to the address provided by our customer service team, ensuring it is securely packed.<\/li><\/ol><p>Please note that return shipping costs are the responsibility of the customer unless the return is due to a mistake on our part or a defective product.<br\/><br\/>Once we receive and inspect the returned item, we will notify you about the status of your refund. Approved refunds will be processed, and a credit will automatically be applied to your original method of payment. For more information, please visit our <a href=\"https:\/\/snshealth.com\/policies\/refund-policy\" title=\"https:\/\/snshealth.com\/policies\/refund-policy\">Refund policy<\/a>. <\/p><p>If you have any further questions, feel free to contact us. We are here to help!<\/p>"
+            }
+          },
+          "question_cdwjTA": {
+            "type": "question",
+            "settings": {
+              "title": "What should I do if I'm unsatisfied with the taste, flavor, or texture of a product?",
+              "answer": "<p>At SNS Health, we strive to ensure our customers are completely satisfied with their purchases. However, we are unable to process returns or refunds for opened products or issues related to taste, flavor, or texture.<br\/><br\/>We can only initiate returns or refunds under the following circumstances:<\/p><ul><li><strong>Damaged Products:<\/strong> If your product arrives damaged.<\/li><li><strong>Product Error:<\/strong> If we made an error with your order, such as sending the wrong brand, product, or flavor.<\/li><li><strong>Expired Product:<\/strong> If the product you received is expired.<\/li><\/ul><p>If any of these issues apply to your purchase, please follow these steps:<\/p><ol><li><strong>Contact Us:<\/strong> Reach out to our customer service team via email at info@snshealth.com or call us at 905-792-8990. Provide details about the issue and include any relevant photos if possible.<\/li><li><strong>Return or Refund Process: <\/strong>Our team will guide you through the process of returning the product or receiving a refund based on the specific issue.<\/li><\/ol><p>We value your understanding and are dedicated to resolving any legitimate concerns you may have. <\/p><p>Should you have further questions or require assistance, please feel free to reach out to us. We are here to assist you!<\/p>"
             }
           },
           "891c0d2b-f832-43de-aa8f-74d46cbc5541": {
@@ -964,7 +978,9 @@
           "page-faq-template-8",
           "bd0524eb-1088-4bcf-ab9a-8e2551e2185a",
           "question_rQPqen",
-          "24408dbf-23fc-4ebf-9691-9036e5abdbad",
+          "question_QK7Qk8",
+          "question_39A6Rx",
+          "question_cdwjTA",
           "891c0d2b-f832-43de-aa8f-74d46cbc5541",
           "3556b77d-97d9-4ea9-ae69-9e3741c9cf4b",
           "7fc03da6-07d4-4820-b163-921ea6348002",
