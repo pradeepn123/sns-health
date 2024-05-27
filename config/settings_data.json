@@ -807,7 +807,7 @@
             "type": "question",
             "settings": {
               "title": "How to get in touch?",
-              "answer": "<p>The best way to get in touch with us is via chat.<\/p><p>You are guaranteed to get a response from our team within 1 to 2 business days. Thank you for your patience. We look forward to assisting you.<\/p>"
+              "answer": "<p>We are here to assist you with any questions or concerns you may have. You can reach out to us via phone or email:<\/p><ul><li><strong>Phone<\/strong>: You can call our customer service team at <strong>905-792-8990<\/strong>. Our phone lines are open Monday to Friday from 9 AM to 5 PM EST.<\/li><li><strong>Email<\/strong>: You can send us an email at <strong>info@snshealth.com<\/strong>, and we will respond to your inquiry as quickly as possible.<\/li><\/ul><p>We look forward to assisting you!<\/p>"
             }
           },
           "page-faq-template-1": {
@@ -841,7 +841,7 @@
             "type": "question",
             "settings": {
               "title": "What if I want something that is out of stock?",
-              "answer": "<p>From time to time, this can happen! At SNS Health we never sacrifice the quality or integrity of our products, which is why we never substitute an alternative brand, product, or flavor without your permission. If an item is not expected to arrive at our warehouse within 48 hours of your order, we’ll always contact you directly with a suggestion for an alternate product that fits your needs. If we can’t find something you like, we’ll issue you an immediate refund - no questions asked. <\/p><p><strong>In the meantime, you can request to be alerted when the product you’re eyeing is available for purchase by clicking on the “Notify When Back in Stock” button found on the product page. All you have to do is submit your email, and we’ll send you an automatic email with a link to purchase once its back on our (virtual!) shelves.<\/strong><\/p>"
+              "answer": "<p>At SNS Health, maintaining the quality and integrity of our products is paramount. Therefore, we never substitute an alternative brand, product, or flavor without your consent. If an item is not expected to arrive at our warehouse within 48 hours of your order, we'll promptly reach out to you with a suggestion for an alternative product that meets your requirements. Should we be unable to find a suitable replacement, we'll issue you an immediate store credit, no questions asked, which you can use for your future purchases.<br\/><br\/>Additionally, you can opt to receive an alert when the product you're interested in is back in stock by simply clicking the \"Notify When Back in Stock\" button on the product page. Just provide your email, and we'll send you an automatic notification with a purchase link once the item is available again on our (virtual!) shelves.<\/p>"
             }
           },
           "page-faq-template-6": {
@@ -875,7 +875,7 @@
             "type": "question",
             "settings": {
               "title": "When will my order ship?",
-              "answer": "<p>Our fulfillment center is open from 9 am to 5 pm, Monday through Friday.<\/p><p>Your order will be dispatched 5 to 10 business days after its confirmation. Please note that orders placed after 5 pm on Friday will be processed the following Monday.<\/p><p>During the holiday season, please be informed that our fulfillment center will be closed on the following days:<\/p><ul><li>For Christmas: from December 24th to December 26th.<\/li><li>For New Year: December 31st and January 1st. <\/li><\/ul><p>We currently offer 3 shipping methods: <\/p><ul><li>Standard shipping, with free shipping for orders over $49. You can choose whether you prefer to be delivered with or without a signature requirement.<\/li><li>UPS Standard.<\/li><li>UPS Expedited.<\/li><\/ul>"
+              "answer": "<p>Our fulfillment center is open from 9 am to 5 pm, Monday through Friday.<br\/><br\/>All orders within Canada will be dispatched within the next 5 business days after confirmation. International orders are dispatched within 5-10 business days after order confirmation. Please note that orders placed after 5 pm on Friday will be processed the following Monday.<br\/><br\/>During the holiday season, please be informed that our fulfillment center will be closed on the following days:<\/p><ul><li>For Christmas: from December 24th to December 26th.<\/li><li>For New Year: December 31st and January 1st.<\/li><\/ul><p>We currently offer 3 shipping methods:<\/p><ul><li>Standard shipping, with free shipping for orders over $49. You can choose whether you prefer to be delivered with or without a signature requirement.<\/li><li>UPS Standard.<\/li><li>UPS Expedited<\/li><\/ul>"
             }
           },
           "page-faq-template-8": {
@@ -890,6 +890,13 @@
             "settings": {
               "title": "Do you offer a signature requirement option during checkout?",
               "answer": "<p>Yes, we offer a signature requirement option during checkout. You can choose to require a signature at delivery for extra security, at no extra cost.<\/p><p>You can also choose to notify us  regarding your delivery preferences by leaving instructions at checkout. Orders with comment \"Leave at door\" will be reconsidered without signature service.<\/p><p><strong>If no signature is chosen, you will be fully responsible for any loss, theft, or damage to your package after delivery.<\/strong><\/p><p>If we don't have a selected option from you, we will select signature at delivery as default option, to protect you from porch pirates.<\/p>"
+            }
+          },
+          "question_rQPqen": {
+            "type": "question",
+            "settings": {
+              "title": "Do you ship to other countries?",
+              "answer": "<p>Yes, in addition to serving our customers in Canada, we also cater to our international clientele. Currently, we offer shipping services to the following countries: Austria, Belgium, France, Germany, Ireland, Italy, Netherlands, Portugal, Slovenia, Spain, and the UK. <\/p><p>If your country is not listed here, please reach out to us, and we'll explore the possibility of accommodating your shipping needs.<\/p>"
             }
           },
           "24408dbf-23fc-4ebf-9691-9036e5abdbad": {
@@ -925,6 +932,20 @@
               "title": "Is it possible to save even more on my order?",
               "answer": "<p>To stay up to date with seasonal promotions and sales, sign up to our newsletter.<\/p>"
             }
+          },
+          "question_TWCmEN": {
+            "type": "question",
+            "settings": {
+              "title": "Can I cancel my order?",
+              "answer": "<p>Absolutely! At SNS Health, we understand that circumstances can change. Whether you've had a change of heart or need to adjust your order for any reason, we're here to assist you.<\/p><p>If your order has not yet been shipped, we'll take all necessary steps to cancel it promptly. Simply reach out to us via <strong>email<\/strong>, <strong>phone<\/strong>, or <strong>chat<\/strong>, and provide your order number along with the reason for cancellation. Our customer service team will handle the rest for you. Your satisfaction is our priority, and we're committed to making your shopping experience as seamless as possible.<\/p>"
+            }
+          },
+          "question_TxLmwV": {
+            "type": "question",
+            "settings": {
+              "title": "What should I do if I did not receive my order?",
+              "answer": "<p>If you haven't received your order as expected, we're here to help. We encourage you to contact us promptly so we can investigate the status of your shipment. <\/p><p>You can reach out to us via <strong>phone<\/strong>, <strong>email<\/strong>, or <strong>chat<\/strong>, and our dedicated customer service team will assist you in resolving the issue promptly. We’re committed to ensuring you receive your order in a timely manner.<\/p>"
+            }
           }
         },
         "block_order": [
@@ -942,11 +963,14 @@
           "70aeb85a-142c-420c-8c2c-695cb4158e2b",
           "page-faq-template-8",
           "bd0524eb-1088-4bcf-ab9a-8e2551e2185a",
+          "question_rQPqen",
           "24408dbf-23fc-4ebf-9691-9036e5abdbad",
           "891c0d2b-f832-43de-aa8f-74d46cbc5541",
           "3556b77d-97d9-4ea9-ae69-9e3741c9cf4b",
           "7fc03da6-07d4-4820-b163-921ea6348002",
-          "35417663-1acf-482f-a121-20832415b45b"
+          "35417663-1acf-482f-a121-20832415b45b",
+          "question_TWCmEN",
+          "question_TxLmwV"
         ],
         "settings": {
           "show_contact_info": false,
