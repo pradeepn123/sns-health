@@ -960,6 +960,13 @@
               "title": "What should I do if I did not receive my order?",
               "answer": "<p>If you haven't received your order as expected, we're here to help. We encourage you to contact us promptly so we can investigate the status of your shipment. <\/p><p>You can reach out to us via <strong>phone<\/strong>, <strong>email<\/strong>, or <strong>chat<\/strong>, and our dedicated customer service team will assist you in resolving the issue promptly. We’re committed to ensuring you receive your order in a timely manner.<\/p>"
             }
+          },
+          "question_Kd9b34": {
+            "type": "question",
+            "settings": {
+              "title": "I bought something from the clearance section; can I return or get a refund?",
+              "answer": "<p>Items purchased from the clearance section are considered final sale and cannot be returned or refunded. However, there are exceptions in the following cases:<br\/><br\/>We can only initiate returns and replacements under the following circumstances:<\/p><ul><li><strong>Damaged Products:<\/strong> If your product arrives damaged.<\/li><li><strong>Product Error: <\/strong>If we made an error with your order, such as sending the wrong brand, product, or flavor.<\/li><li><strong>Expired Product:<\/strong> If the product you received is expired.<\/li><\/ul><p>If any of these issues apply to your clearance purchase, please follow these steps:<\/p><ol><li><strong>Contact Us:<\/strong> Reach out to our customer service team via email at info@snshealth.com or call us at 905-792-8990. Provide details about the issue and include any relevant photos if possible.<\/li><li><strong>Return or Refund Process:<\/strong> Our team will guide you through the process of returning the product or receiving a refund based on the specific issue.<\/li><\/ol><p>We appreciate your understanding and are committed to ensuring your satisfaction with our products. If you have any further questions or need assistance, please do not hesitate to contact us. We are here to help!<\/p>"
+            }
           }
         },
         "block_order": [
@@ -986,7 +993,8 @@
           "7fc03da6-07d4-4820-b163-921ea6348002",
           "35417663-1acf-482f-a121-20832415b45b",
           "question_TWCmEN",
-          "question_TxLmwV"
+          "question_TxLmwV",
+          "question_Kd9b34"
         ],
         "settings": {
           "show_contact_info": false,
