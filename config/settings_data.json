@@ -868,7 +868,7 @@
           "page-faq-template-7": {
             "type": "separator",
             "settings": {
-              "title": "Shipping & Returns"
+              "title": "Shipping & Delivery"
             }
           },
           "70aeb85a-142c-420c-8c2c-695cb4158e2b": {
@@ -899,6 +899,19 @@
               "answer": "<p>Yes, in addition to serving our customers in Canada, we also cater to our international clientele. Currently, we offer shipping services to the following countries: Austria, Belgium, France, Germany, Ireland, Italy, Netherlands, Portugal, Slovenia, Spain, and the UK. <\/p><p>If your country is not listed here, please reach out to us, and we'll explore the possibility of accommodating your shipping needs.<\/p>"
             }
           },
+          "question_TxLmwV": {
+            "type": "question",
+            "settings": {
+              "title": "What should I do if I did not receive my order?",
+              "answer": "<p>If you haven't received your order as expected, we're here to help. We encourage you to contact us promptly so we can investigate the status of your shipment. <\/p><p>You can reach out to us via <strong>phone<\/strong>, <strong>email<\/strong>, or <strong>chat<\/strong>, and our dedicated customer service team will assist you in resolving the issue promptly. We’re committed to ensuring you receive your order in a timely manner.<\/p>"
+            }
+          },
+          "separator_7hd8re": {
+            "type": "separator",
+            "settings": {
+              "title": "Returns & Refunds"
+            }
+          },
           "question_QK7Qk8": {
             "type": "question",
             "settings": {
@@ -918,6 +931,13 @@
             "settings": {
               "title": "What should I do if I'm unsatisfied with the taste, flavor, or texture of a product?",
               "answer": "<p>At SNS Health, we strive to ensure our customers are completely satisfied with their purchases. However, we are unable to process returns or refunds for opened products or issues related to taste, flavor, or texture.<br\/><br\/>We can only initiate returns or refunds under the following circumstances:<\/p><ul><li><strong>Damaged Products:<\/strong> If your product arrives damaged.<\/li><li><strong>Product Error:<\/strong> If we made an error with your order, such as sending the wrong brand, product, or flavor.<\/li><li><strong>Expired Product:<\/strong> If the product you received is expired.<\/li><\/ul><p>If any of these issues apply to your purchase, please follow these steps:<\/p><ol><li><strong>Contact Us:<\/strong> Reach out to our customer service team via email at info@snshealth.com or call us at 905-792-8990. Provide details about the issue and include any relevant photos if possible.<\/li><li><strong>Return or Refund Process: <\/strong>Our team will guide you through the process of returning the product or receiving a refund based on the specific issue.<\/li><\/ol><p>We value your understanding and are dedicated to resolving any legitimate concerns you may have. <\/p><p>Should you have further questions or require assistance, please feel free to reach out to us. We are here to assist you!<\/p>"
+            }
+          },
+          "question_Kd9b34": {
+            "type": "question",
+            "settings": {
+              "title": "I bought something from the clearance section; can I return or get a refund?",
+              "answer": "<p>Items purchased from the clearance section are considered final sale and cannot be returned or refunded. However, there are exceptions in the following cases:<br\/><br\/>We can only initiate returns and replacements under the following circumstances:<\/p><ul><li><strong>Damaged Products:<\/strong> If your product arrives damaged.<\/li><li><strong>Product Error: <\/strong>If we made an error with your order, such as sending the wrong brand, product, or flavor.<\/li><li><strong>Expired Product:<\/strong> If the product you received is expired.<\/li><\/ul><p>If any of these issues apply to your clearance purchase, please follow these steps:<\/p><ol><li><strong>Contact Us:<\/strong> Reach out to our customer service team via email at info@snshealth.com or call us at 905-792-8990. Provide details about the issue and include any relevant photos if possible.<\/li><li><strong>Return or Refund Process:<\/strong> Our team will guide you through the process of returning the product or receiving a refund based on the specific issue.<\/li><\/ol><p>We appreciate your understanding and are committed to ensuring your satisfaction with our products. If you have any further questions or need assistance, please do not hesitate to contact us. We are here to help!<\/p>"
             }
           },
           "891c0d2b-f832-43de-aa8f-74d46cbc5541": {
@@ -953,20 +973,6 @@
               "title": "Can I cancel my order?",
               "answer": "<p>Absolutely! At SNS Health, we understand that circumstances can change. Whether you've had a change of heart or need to adjust your order for any reason, we're here to assist you.<\/p><p>If your order has not yet been shipped, we'll take all necessary steps to cancel it promptly. Simply reach out to us via <strong>email<\/strong>, <strong>phone<\/strong>, or <strong>chat<\/strong>, and provide your order number along with the reason for cancellation. Our customer service team will handle the rest for you. Your satisfaction is our priority, and we're committed to making your shopping experience as seamless as possible.<\/p>"
             }
-          },
-          "question_TxLmwV": {
-            "type": "question",
-            "settings": {
-              "title": "What should I do if I did not receive my order?",
-              "answer": "<p>If you haven't received your order as expected, we're here to help. We encourage you to contact us promptly so we can investigate the status of your shipment. <\/p><p>You can reach out to us via <strong>phone<\/strong>, <strong>email<\/strong>, or <strong>chat<\/strong>, and our dedicated customer service team will assist you in resolving the issue promptly. We’re committed to ensuring you receive your order in a timely manner.<\/p>"
-            }
-          },
-          "question_Kd9b34": {
-            "type": "question",
-            "settings": {
-              "title": "I bought something from the clearance section; can I return or get a refund?",
-              "answer": "<p>Items purchased from the clearance section are considered final sale and cannot be returned or refunded. However, there are exceptions in the following cases:<br\/><br\/>We can only initiate returns and replacements under the following circumstances:<\/p><ul><li><strong>Damaged Products:<\/strong> If your product arrives damaged.<\/li><li><strong>Product Error: <\/strong>If we made an error with your order, such as sending the wrong brand, product, or flavor.<\/li><li><strong>Expired Product:<\/strong> If the product you received is expired.<\/li><\/ul><p>If any of these issues apply to your clearance purchase, please follow these steps:<\/p><ol><li><strong>Contact Us:<\/strong> Reach out to our customer service team via email at info@snshealth.com or call us at 905-792-8990. Provide details about the issue and include any relevant photos if possible.<\/li><li><strong>Return or Refund Process:<\/strong> Our team will guide you through the process of returning the product or receiving a refund based on the specific issue.<\/li><\/ol><p>We appreciate your understanding and are committed to ensuring your satisfaction with our products. If you have any further questions or need assistance, please do not hesitate to contact us. We are here to help!<\/p>"
-            }
           }
         },
         "block_order": [
@@ -985,16 +991,17 @@
           "page-faq-template-8",
           "bd0524eb-1088-4bcf-ab9a-8e2551e2185a",
           "question_rQPqen",
+          "question_TxLmwV",
+          "separator_7hd8re",
           "question_QK7Qk8",
           "question_39A6Rx",
           "question_cdwjTA",
+          "question_Kd9b34",
           "891c0d2b-f832-43de-aa8f-74d46cbc5541",
           "3556b77d-97d9-4ea9-ae69-9e3741c9cf4b",
           "7fc03da6-07d4-4820-b163-921ea6348002",
           "35417663-1acf-482f-a121-20832415b45b",
-          "question_TWCmEN",
-          "question_TxLmwV",
-          "question_Kd9b34"
+          "question_TWCmEN"
         ],
         "settings": {
           "show_contact_info": false,
