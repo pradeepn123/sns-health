@@ -540,7 +540,7 @@
             "settings": {
               "icon": "bi-customer-support",
               "title": "Customer support",
-              "content": "<p><a href=\"https:\/\/help.snshealth.com\/\" target=\"_blank\" title=\"https:\/\/help.snshealth.com\/\">If you have any questions<\/a><\/p>"
+              "content": "<p><a href=\"https:\/\/help.snshealth.com\/\" target=\"_blank\" title=\"https:\/\/help.snshealth.com\/\">Click here if you need help<\/a><\/p>"
             }
           },
           "text-with-icons-3": {
