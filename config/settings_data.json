@@ -538,9 +538,9 @@
           "text-with-icons-2": {
             "type": "item",
             "settings": {
-              "icon": "bi-chat",
-              "title": "Chat with us",
-              "content": "<p>If you have any questions<\/p>"
+              "icon": "bi-customer-support",
+              "title": "Customer support",
+              "content": "<p><a href=\"https:\/\/help.snshealth.com\/\" target=\"_blank\" title=\"https:\/\/help.snshealth.com\/\">If you have any questions<\/a><\/p>"
             }
           },
           "text-with-icons-3": {
