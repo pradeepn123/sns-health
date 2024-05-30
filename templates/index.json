@@ -129,26 +129,8 @@
             "cta_url": "shopify:\/\/collections\/perfect-sports"
           }
         },
-        "image_with_text_overlay_XA8Ggi": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "GAT Sport Nitraflex",
-            "promotion_creative_name": "Banner grid 2",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/GAT_SPORTS_desk.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/GAT_SPORTS_mob.jpg",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "https:\/\/snshealth.com\/products\/gat-sport-nitraflex?variant=42562647195799"
-          }
-        },
         "image_with_text_overlay_BAiHkN": {
           "type": "image_with_text_overlay",
-          "disabled": true,
           "settings": {
             "promotion": true,
             "promotion_name": "Minor Figures",
@@ -185,7 +167,6 @@
       "block_order": [
         "image_with_text_overlay_EjxbKe",
         "image_with_text_overlay_rxXg4D",
-        "image_with_text_overlay_XA8Ggi",
         "image_with_text_overlay_BAiHkN",
         "589380ac-62bc-453f-9b28-3a56b75e85b6"
       ],
