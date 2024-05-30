@@ -531,8 +531,8 @@
             "type": "item",
             "settings": {
               "icon": "bi-fast-delivery",
-              "title": "Free Canadian Shipping",
-              "content": "<p>On All Orders Over $49<\/p>"
+              "title": "Free Shipping",
+              "content": "<p>On all orders over $49, £60 and €80.<\/p>"
             }
           },
           "text-with-icons-2": {
@@ -548,7 +548,7 @@
             "settings": {
               "icon": "bi-secure-payment",
               "title": "Secure Payments",
-              "content": "<p>Protected Checkout<\/p>"
+              "content": "<p><a href=\"https:\/\/sports-nutrition-source-canada.myshopify.com\/pages\/privacy-policy\" target=\"_blank\" title=\"https:\/\/sports-nutrition-source-canada.myshopify.com\/pages\/privacy-policy\">Protected Checkout<\/a><\/p>"
             }
           },
           "7bc85f43-0eb3-4a93-aace-912d784f3c46": {
