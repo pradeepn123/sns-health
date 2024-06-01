@@ -146,23 +146,6 @@
             "cta_url": "https:\/\/www.google.ca\/maps\/dir\/43.6421661,-79.3739009\/SNS+Health+-+Store\/@43.7265263,-79.8611076,10z\/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x882b3d7fc3909cc5:0x404d86fbddef4cc5!2m2!1d-79.7377529!2d43.7520211?entry=tts"
           }
         },
-        "image_with_text_overlay_T9cYgF": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Special offer",
-            "promotion_creative_name": "Banner grid 1",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/Special_offer.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/Special_offer_1.jpg",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "https:\/\/www.google.ca\/maps\/dir\/43.6421661,-79.3739009\/SNS+Health+-+Store\/@43.7265263,-79.8611076,10z\/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x882b3d7fc3909cc5:0x404d86fbddef4cc5!2m2!1d-79.7377529!2d43.7520211?entry=tts"
-          }
-        },
         "589380ac-62bc-453f-9b28-3a56b75e85b6": {
           "type": "image_with_text_overlay",
           "settings": {
@@ -178,6 +161,24 @@
             "subheading": "",
             "cta_text": "",
             "cta_url": "shopify:\/\/collections\/bucked-up"
+          }
+        },
+        "image_with_text_overlay_T9cYgF": {
+          "type": "image_with_text_overlay",
+          "disabled": true,
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Special offer",
+            "promotion_creative_name": "Banner grid 1",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/Special_offer.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Special_offer_1.jpg",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "https:\/\/www.google.ca\/maps\/dir\/43.6421661,-79.3739009\/SNS+Health+-+Store\/@43.7265263,-79.8611076,10z\/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x882b3d7fc3909cc5:0x404d86fbddef4cc5!2m2!1d-79.7377529!2d43.7520211?entry=tts"
           }
         },
         "image_with_text_overlay_rxXg4D": {
@@ -221,8 +222,8 @@
         "image_with_text_overlay_EjxbKe",
         "image_with_text_overlay_fCtAn9",
         "image_with_text_overlay_bkK4mz",
-        "image_with_text_overlay_T9cYgF",
         "589380ac-62bc-453f-9b28-3a56b75e85b6",
+        "image_with_text_overlay_T9cYgF",
         "image_with_text_overlay_rxXg4D",
         "image_with_text_overlay_BAiHkN"
       ],
