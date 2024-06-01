@@ -24,6 +24,17 @@
     "main": {
       "type": "Banner",
       "blocks": {
+        "009a8070-a267-4f1a-ad82-846a05257985": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Celebrating all mothers",
+            "promotion_creative_name": "Main Banner 1",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/Health_fitness_1.jpg",
+            "cta_url": "https:\/\/snshealth.com\/products\/optimum-nutrition-serious-mass"
+          }
+        },
         "b533d71a-e272-4353-b935-9e0fc67451c1": {
           "type": "image_with_text_overlay",
           "disabled": true,
@@ -36,26 +47,15 @@
             "cta_url": "shopify:\/\/collections\/sustainable-brands"
           }
         },
-        "009a8070-a267-4f1a-ad82-846a05257985": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Celebrating all mothers",
-            "promotion_creative_name": "Main Banner 1",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Health_fitness_1.jpg",
-            "cta_url": "https:\/\/snshealth.com\/products\/optimum-nutrition-serious-mass"
-          }
-        },
         "image_with_text_overlay_VNEBmR": {
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Bundle & Save",
-            "promotion_creative_name": "Banner right",
+            "promotion_name": "Amplify your cardio with Burn Cycle",
+            "promotion_creative_name": "Banner right 1",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/Bundle_save_cdf0f25b-9230-4024-9b7c-fdb52fd69c2c.jpg",
-            "cta_url": "shopify:\/\/collections\/mutant"
+            "image_desktop": "shopify:\/\/shop_images\/Perfect_sports_75b9809c-e70f-42c9-8aa6-3a59735ac191.jpg",
+            "cta_url": "https:\/\/snshealth.com\/products\/perfect-sports-burn-cycle-thermogenic"
           }
         },
         "image_with_text_overlay_hAWXBm": {
@@ -83,8 +83,8 @@
         }
       },
       "block_order": [
-        "b533d71a-e272-4353-b935-9e0fc67451c1",
         "009a8070-a267-4f1a-ad82-846a05257985",
+        "b533d71a-e272-4353-b935-9e0fc67451c1",
         "image_with_text_overlay_VNEBmR",
         "image_with_text_overlay_hAWXBm",
         "image_with_text_overlay_PzmaNz"
