@@ -62,11 +62,11 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "The Skinny Food",
+            "promotion_name": "30% off all Progressive Products",
             "promotion_creative_name": "Right Banner 2",
             "is_carousel_content": false,
-            "image_desktop": "shopify:\/\/shop_images\/Yourtheory_14.jpg",
-            "cta_url": "shopify:\/\/collections\/youtheory"
+            "image_desktop": "shopify:\/\/shop_images\/Progressive_396aa3d2-bb7a-4ee8-8858-fbf225367b83.jpg",
+            "cta_url": "shopify:\/\/collections\/progressive"
           }
         },
         "image_with_text_overlay_PzmaNz": {
