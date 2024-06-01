@@ -99,6 +99,23 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
+            "promotion_name": "Find your Lyte hydration",
+            "promotion_creative_name": "Banner grid 1",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/Body_armor.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Body_armor_1.jpg",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/bodyarmor"
+          }
+        },
+        "image_with_text_overlay_fCtAn9": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
             "promotion_name": "Special offer",
             "promotion_creative_name": "Banner grid 1",
             "text_color": "",
@@ -129,6 +146,23 @@
             "cta_url": "shopify:\/\/collections\/perfect-sports"
           }
         },
+        "589380ac-62bc-453f-9b28-3a56b75e85b6": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": false,
+            "promotion_name": "Bucked Up",
+            "promotion_creative_name": "Sub banner 2",
+            "text_color": "",
+            "image_desktop": "shopify:\/\/shop_images\/bucked_up_1.webp",
+            "image_mobile": "shopify:\/\/shop_images\/bucked_up_-_mobile_1.webp",
+            "eyebrow": "",
+            "inline_heading": false,
+            "heading": "",
+            "subheading": "",
+            "cta_text": "",
+            "cta_url": "shopify:\/\/collections\/bucked-up"
+          }
+        },
         "image_with_text_overlay_BAiHkN": {
           "type": "image_with_text_overlay",
           "disabled": true,
@@ -146,30 +180,14 @@
             "cta_text": "",
             "cta_url": "https:\/\/snshealth.com\/products\/minor-figures-latte?variant=43363394945175"
           }
-        },
-        "589380ac-62bc-453f-9b28-3a56b75e85b6": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": false,
-            "promotion_name": "Bucked Up",
-            "promotion_creative_name": "Sub banner 2",
-            "text_color": "",
-            "image_desktop": "shopify:\/\/shop_images\/bucked_up_1.webp",
-            "image_mobile": "shopify:\/\/shop_images\/bucked_up_-_mobile_1.webp",
-            "eyebrow": "",
-            "inline_heading": false,
-            "heading": "",
-            "subheading": "",
-            "cta_text": "",
-            "cta_url": "shopify:\/\/collections\/bucked-up"
-          }
         }
       },
       "block_order": [
         "image_with_text_overlay_EjxbKe",
+        "image_with_text_overlay_fCtAn9",
         "image_with_text_overlay_rxXg4D",
-        "image_with_text_overlay_BAiHkN",
-        "589380ac-62bc-453f-9b28-3a56b75e85b6"
+        "589380ac-62bc-453f-9b28-3a56b75e85b6",
+        "image_with_text_overlay_BAiHkN"
       ],
       "settings": {
       }
