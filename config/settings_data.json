@@ -1327,6 +1327,15 @@
       "shop-by-brands": {
         "type": "shop-by-brands",
         "blocks": {
+          "6924a140-8ece-4ff6-98e4-66afc8b96dff": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "perfect-sports",
+              "featured_collection_image": "shopify:\/\/shop_images\/brand_page_perfect_sports_thumbnail.webp",
+              "show_overlay": true,
+              "overlay_opacity": 0
+            }
+          },
           "selected_collection_FT3drG": {
             "type": "selected_collection",
             "settings": {
@@ -1334,6 +1343,42 @@
               "featured_collection_image": "shopify:\/\/shop_images\/Frame_1000005965.jpg",
               "show_overlay": false,
               "overlay_opacity": 20
+            }
+          },
+          "3f2dc464-d908-4c5f-8314-d7b0bf33122c": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "organika",
+              "featured_collection_image": "shopify:\/\/shop_images\/Artboard_6_copy.webp",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
+          "selected_collection_DBgQkX": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "progressive",
+              "featured_collection_image": "shopify:\/\/shop_images\/Frame_1000006110_1.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
+          "b15a96f0-9ac6-4347-8753-3da06590ee86": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "heal-co",
+              "featured_collection_image": "shopify:\/\/shop_images\/heal_and_co_banner_preview.webp",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
+          "bb400c8f-8d0c-4edc-bbad-75dc68729659": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "sproos",
+              "featured_collection_image": "shopify:\/\/shop_images\/1_d2bb86f1-7a77-4dea-a43a-87b8dd79b6af.jpg",
+              "show_overlay": true,
+              "overlay_opacity": 0
             }
           },
           "selected_collection_xg7Pgz": {
@@ -1366,15 +1411,6 @@
               "overlay_opacity": 20
             }
           },
-          "6924a140-8ece-4ff6-98e4-66afc8b96dff": {
-            "type": "selected_collection",
-            "settings": {
-              "featured_collection_item": "perfect-sports",
-              "featured_collection_image": "shopify:\/\/shop_images\/brand_page_perfect_sports_thumbnail.webp",
-              "show_overlay": true,
-              "overlay_opacity": 0
-            }
-          },
           "fb4e013d-add8-45f0-9c18-0f8d96f4d8dc": {
             "type": "selected_collection",
             "disabled": true,
@@ -1405,15 +1441,6 @@
               "overlay_opacity": 20
             }
           },
-          "3f2dc464-d908-4c5f-8314-d7b0bf33122c": {
-            "type": "selected_collection",
-            "settings": {
-              "featured_collection_item": "organika",
-              "featured_collection_image": "shopify:\/\/shop_images\/Artboard_6_copy.webp",
-              "show_overlay": false,
-              "overlay_opacity": 20
-            }
-          },
           "3cd86bcc-f7a7-47e2-85a3-5ba1607c5964": {
             "type": "selected_collection",
             "disabled": true,
@@ -1440,25 +1467,6 @@
             "settings": {
               "featured_collection_item": "inner-armour",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_5_copy.png",
-              "show_overlay": false,
-              "overlay_opacity": 20
-            }
-          },
-          "bb400c8f-8d0c-4edc-bbad-75dc68729659": {
-            "type": "selected_collection",
-            "disabled": true,
-            "settings": {
-              "featured_collection_item": "sproos",
-              "featured_collection_image": "shopify:\/\/shop_images\/1_d2bb86f1-7a77-4dea-a43a-87b8dd79b6af.jpg",
-              "show_overlay": true,
-              "overlay_opacity": 0
-            }
-          },
-          "b15a96f0-9ac6-4347-8753-3da06590ee86": {
-            "type": "selected_collection",
-            "settings": {
-              "featured_collection_item": "heal-co",
-              "featured_collection_image": "shopify:\/\/shop_images\/heal_and_co_banner_preview.webp",
               "show_overlay": false,
               "overlay_opacity": 20
             }
@@ -1495,6 +1503,7 @@
           },
           "selected_collection_KQDxKz": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "alterra-herbasante",
               "featured_collection_image": "shopify:\/\/shop_images\/Frame_1000005755.jpg",
@@ -1504,20 +1513,21 @@
           }
         },
         "block_order": [
+          "6924a140-8ece-4ff6-98e4-66afc8b96dff",
           "selected_collection_FT3drG",
+          "3f2dc464-d908-4c5f-8314-d7b0bf33122c",
+          "selected_collection_DBgQkX",
+          "b15a96f0-9ac6-4347-8753-3da06590ee86",
+          "bb400c8f-8d0c-4edc-bbad-75dc68729659",
           "selected_collection_xg7Pgz",
           "selected_collection_kVNaQU",
           "selected_collection_cgtyxa",
-          "6924a140-8ece-4ff6-98e4-66afc8b96dff",
           "fb4e013d-add8-45f0-9c18-0f8d96f4d8dc",
           "89b00157-38a2-4cc8-ba82-1efda2f10a17",
           "62f53084-5c8f-4872-b487-96187474a464",
-          "3f2dc464-d908-4c5f-8314-d7b0bf33122c",
           "3cd86bcc-f7a7-47e2-85a3-5ba1607c5964",
           "8b483f29-1be8-4535-85f3-1ba77eb4caf6",
           "9bc5f936-751c-4dad-b624-f82973f0f533",
-          "bb400c8f-8d0c-4edc-bbad-75dc68729659",
-          "b15a96f0-9ac6-4347-8753-3da06590ee86",
           "e7be110f-aad6-4910-92f2-710cff6db42b",
           "39b41a6b-eb07-4785-a32c-7b217819eaf3",
           "8b15715b-a5fd-47b1-ae17-61b175d622ae",
