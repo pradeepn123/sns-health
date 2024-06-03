@@ -555,44 +555,14 @@
             "url": "shopify:\/\/collections\/perfect-sports"
           }
         },
-        "featured_brand_HMrzXg": {
+        "featured_brand_qkjhCa": {
           "type": "featured_brand",
           "settings": {
             "promotion": true,
-            "promotion_name": "Youtheory",
+            "promotion_name": "Progressive",
             "promotion_creative_name": "Featured brands",
-            "image": "shopify:\/\/shop_images\/YouTheory-Logo.webp",
-            "url": "shopify:\/\/collections\/youtheory"
-          }
-        },
-        "featured_brand_FVTEQT": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Featured brand",
-            "promotion_creative_name": "Herbasante",
-            "image": "shopify:\/\/shop_images\/logo.webp",
+            "image": "shopify:\/\/shop_images\/Progressive.png",
             "url": ""
-          }
-        },
-        "featured_brand_hCYz3n": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "MegaFood",
-            "promotion_creative_name": "Featured Brands",
-            "image": "shopify:\/\/shop_images\/Megafood_280x_1.png",
-            "url": "shopify:\/\/collections\/megafood"
-          }
-        },
-        "featured_brand_PX4Xgp": {
-          "type": "featured_brand",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "Jamieson",
-            "promotion_creative_name": "Featured brands",
-            "image": "shopify:\/\/shop_images\/Jamieson_logo.png",
-            "url": "shopify:\/\/collections\/jamieson"
           }
         },
         "featured_brand_LqaK9J": {
@@ -603,6 +573,26 @@
             "promotion_creative_name": "Featured brands",
             "image": "shopify:\/\/shop_images\/Frame_1000005906_2.jpg",
             "url": "shopify:\/\/collections\/aor"
+          }
+        },
+        "featured_brand_nkbGYh": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Organika",
+            "promotion_creative_name": "Featured brands",
+            "image": "shopify:\/\/shop_images\/org_logo_google_display_1200x628_1200x_8df496b6-e990-4f4b-b71d-612ee46e901f.webp",
+            "url": ""
+          }
+        },
+        "featured_brand_xNxqbX": {
+          "type": "featured_brand",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "Iron Vegan",
+            "promotion_creative_name": "Featured brands",
+            "image": "shopify:\/\/shop_images\/Frame_1000005906_3.jpg",
+            "url": ""
           }
         },
         "04f03284-64cf-4a23-9d73-d2a68ceced6a": {
@@ -628,11 +618,10 @@
       },
       "block_order": [
         "c9336f2d-13e6-426d-932d-e2e033d0f054",
-        "featured_brand_HMrzXg",
-        "featured_brand_FVTEQT",
-        "featured_brand_hCYz3n",
-        "featured_brand_PX4Xgp",
+        "featured_brand_qkjhCa",
         "featured_brand_LqaK9J",
+        "featured_brand_nkbGYh",
+        "featured_brand_xNxqbX",
         "04f03284-64cf-4a23-9d73-d2a68ceced6a",
         "f5fb3036-8fb0-4c01-8ca6-0a64f5a9c7a4"
       ],
