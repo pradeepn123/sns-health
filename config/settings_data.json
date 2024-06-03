@@ -1338,6 +1338,7 @@
           },
           "selected_collection_xg7Pgz": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "youtheory",
               "featured_collection_image": "shopify:\/\/shop_images\/Youtheory.jpg",
@@ -1386,6 +1387,7 @@
           },
           "89b00157-38a2-4cc8-ba82-1efda2f10a17": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "megafood",
               "featured_collection_image": "shopify:\/\/shop_images\/b.webp",
@@ -1405,7 +1407,6 @@
           },
           "3f2dc464-d908-4c5f-8314-d7b0bf33122c": {
             "type": "selected_collection",
-            "disabled": true,
             "settings": {
               "featured_collection_item": "organika",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_6_copy.webp",
@@ -1464,6 +1465,7 @@
           },
           "e7be110f-aad6-4910-92f2-710cff6db42b": {
             "type": "selected_collection",
+            "disabled": true,
             "settings": {
               "featured_collection_item": "jamieson",
               "featured_collection_image": "shopify:\/\/shop_images\/Frame_4_1.jpg",
