@@ -99,7 +99,7 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "Find your Lyte hydration",
+            "promotion_name": "BodyArmor",
             "promotion_creative_name": "Banner grid 1",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/Body_armor_2.jpg",
@@ -133,7 +133,7 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
-            "promotion_name": "A new class of sports drink",
+            "promotion_name": "O2",
             "promotion_creative_name": "Banner grid 3",
             "text_color": "",
             "image_desktop": "shopify:\/\/shop_images\/O2_1.jpg",
