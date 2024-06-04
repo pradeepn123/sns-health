@@ -1,6 +1,10 @@
 {%- liquid 
     assign brandReviewData = collection.metafields.custom.reviews_data.value
+    assign id = section.id
+    assign max_length = 150
+    assign collection_description = collection.metafields.custom.collection_hero_section.value.description | default: collection.description | truncate: max_length
 -%}
+
 
 {% style %}
 .logo-slider-flex-desktop .logo-container{
@@ -40,6 +44,14 @@ span.metafield-multi_line_text_field{
         display: none;
     }
 }
+.collection__meta-inner .collection-banner__cta.text__cta{
+    background: none;
+    margin-top: 0;
+    padding: 0;
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+    color: currentColor;
+}
 
 {% endstyle %}
 
@@ -61,7 +73,10 @@ span.metafield-multi_line_text_field{
                                     </h1>
                                     <div class="collection__meta-inner">
                                         <p class="boost-pfs-filter-collection-header brand_collection_title collection_description heading h1">
-                                            {{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}
+                                            <span>
+                                                {{ collection_description | metafield_tag }}
+                                                {% render 'read-more-button', section: section, collection_description: collection_description  %}
+                                            </span>                                
                                         <p>
                                     </div>
                                 </div>
@@ -87,7 +102,8 @@ span.metafield-multi_line_text_field{
                                     </h1>
                                     <div class="collection__meta-inner">
                                         <p class="boost-pfs-filter-collection-header collection__title heading h1">
-                                            {{ collection.metafields.custom.collection_hero_section.value.description | metafield_tag }}
+                                            {{ collection_description | metafield_tag }}
+                                            {% render 'read-more-button', section: section, collection_description: collection_description %}
                                         </p>
                                     </div>
                                 </div>
@@ -242,6 +258,20 @@ span.metafield-multi_line_text_field{
                 "id": "show_collection_image",
                 "label": "Show collection image",
                 "default": true
+            },
+            {
+                "type": "header",
+                "content": "Block Contents"
+            },
+            {
+                "type": "text",
+                "id": "cta_text",
+                "label": "CTA Text"
+            },
+            {
+                "type": "url",
+                "id": "cta_url",
+                "label": "CTA Url"
             }
         ],
         "blocks": [
