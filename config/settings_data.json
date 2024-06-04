@@ -1327,6 +1327,23 @@
       "shop-by-brands": {
         "type": "shop-by-brands",
         "blocks": {
+          "selected_collection_DBgQkX": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "progressive",
+              "featured_collection_image": "shopify:\/\/shop_images\/Frame_1000006110_1.jpg",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
+          "selected_collection_jEaKdW": {
+            "type": "selected_collection",
+            "settings": {
+              "featured_collection_item": "iron-vegan",
+              "show_overlay": false,
+              "overlay_opacity": 20
+            }
+          },
           "6924a140-8ece-4ff6-98e4-66afc8b96dff": {
             "type": "selected_collection",
             "settings": {
@@ -1350,15 +1367,6 @@
             "settings": {
               "featured_collection_item": "organika",
               "featured_collection_image": "shopify:\/\/shop_images\/Artboard_6_copy.webp",
-              "show_overlay": false,
-              "overlay_opacity": 20
-            }
-          },
-          "selected_collection_DBgQkX": {
-            "type": "selected_collection",
-            "settings": {
-              "featured_collection_item": "progressive",
-              "featured_collection_image": "shopify:\/\/shop_images\/Frame_1000006110_1.jpg",
               "show_overlay": false,
               "overlay_opacity": 20
             }
@@ -1513,10 +1521,11 @@
           }
         },
         "block_order": [
+          "selected_collection_DBgQkX",
+          "selected_collection_jEaKdW",
           "6924a140-8ece-4ff6-98e4-66afc8b96dff",
           "selected_collection_FT3drG",
           "3f2dc464-d908-4c5f-8314-d7b0bf33122c",
-          "selected_collection_DBgQkX",
           "b15a96f0-9ac6-4347-8753-3da06590ee86",
           "bb400c8f-8d0c-4edc-bbad-75dc68729659",
           "selected_collection_xg7Pgz",
