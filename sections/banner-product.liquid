@@ -40,34 +40,9 @@
         button_type: button_type,
         button_background_type: button_background_type
       %}
-
-      {%  capture carouselSettingValues %}
-      {
-        "slidesPerView": 2,
-        "spaceBetween": 10,
-        "progressPagination": true,
-        "overflowNagivation": true,
-        "pagination": true,
-        "breakpoints": { 
-            "768": {
-                "pagination": false,
-                "navigation": true,
-                "slidesPerView": 2.1,
-                "spaceBetween": 20
-            },
-            "1200": {
-                "pagination": false,
-                "navigation": true,
-                "slidesPerView": 4,
-                "spaceBetween": 27
-            }
-        }
-    }
-      {% endcapture %}
-
       <div class="banner-product__products-wrapper">
         <div class="banner-product__products-content banner-product__products-content--desktop {% if mobile_carousel %}banner-product__products-content--show-mobile{% endif %}">
-          {% render 'product-carousel', section: section, carouselSettingValues: carouselSettingValues, section: section %}
+            {%  render 'product-carousel-single-collection' , collection: collection %}
         </div>
         {% unless mobile_carousel %}
           <div class="banner-product__products-content  banner-product__products-content--mobile {% if mobile_carousel %}banner-product__products-content--hide{% endif %}">

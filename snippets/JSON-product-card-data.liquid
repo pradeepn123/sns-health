@@ -1,7 +1,6 @@
       { 
-        "image" : { "src": "{{ product.featured_image | image_url }}", "height": "
-      {{- product.featured_image.height | default: 1080 -}}
-      ", "width": "{{ product.featured_image.height | default: 1920 }}" },"forceSeeOptions": true,"variants": [
+        "image" : {% if product.featured_image %}{ "src": "{{ product.featured_image | image_url }}", "height": "
+      {{- product.featured_image.height | default: 1080 -}}","width": "{{ product.featured_image.height | default: 1920 }}" }{% else %}false{%  endif %},"forceSeeOptions": true,"variants": [
       {% liquid
         assign compare_price = product.selected_or_first_available_variant.compare_at_price | default: 0
         assign price = product.selected_or_first_available_variant.price

@@ -1,0 +1,44 @@
+{% assign product_items = '' %}
+{% assign limit = 8 %}
+{% assign count = 0 %}
+
+{%  capture carouselSettingValues %}
+{
+  "slidesPerView": 2,
+  "spaceBetween": 10,
+  "progressPagination": true,
+  "overflowNagivation": true,
+  "pagination": true,
+  "breakpoints": { 
+      "768": {
+          "pagination": false,
+          "navigation": true,
+          "slidesPerView": 2.1,
+          "spaceBetween": 20
+      },
+      "1200": {
+          "pagination": false,
+          "navigation": true,
+          "slidesPerView": 4,
+          "spaceBetween": 27
+      }
+  }
+}
+{% endcapture %}
+{%- for product in collection.products -%}
+    {% if count >= limit %} {% break %} {% endif %}
+    {% if product.available %}
+      {% capture product_data %}
+      {% if product_items.size > 1 %},{% endif %}
+      {%- render 'JSON-product-card-data', product: product -%}
+      {% endcapture %}
+      {% assign product_items = product_items | append: product_data %}
+    {% endif %}
+{%- endfor -%}
+  <product-carousel data-type="product-carousel">
+    <script id="product-data" type="text/json">
+      {
+        "data": {% render 'JSON-output-product-list-carousel', carouselSettingValues: carouselSettingValues, product_list: product_items | strip_newlines %}
+      }
+    </script>
+</product-carousel>
