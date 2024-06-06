@@ -28,6 +28,7 @@
 {%- for product in collection.products -%}
     {% if count >= limit %} {% break %} {% endif %}
     {% if product.available %}
+      {%  assign count = count | plus: 1 %}
       {% capture product_data %}
       {% if product_items.size > 1 %},{% endif %}
       {%- render 'JSON-product-card-data', product: product -%}
