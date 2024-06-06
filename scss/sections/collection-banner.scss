@@ -27,9 +27,9 @@
     }
 
     &__text-wrapper {
-        max-width: 50%;
+        max-width: 100%;
         @media(--sm){
-            max-width: 40%;
+            max-width: 52%;
         }
         @media(--md){
             max-width: 52%; 
