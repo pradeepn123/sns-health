@@ -8,6 +8,41 @@
         "filter_group_order": ""
       }
     },
+    "brand_collection_page_RQQ4r4": {
+      "type": "brand-collection-page",
+      "blocks": {
+        "image_with_text_overlay_n8Nxiw": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "",
+            "promotion_creative_name": "",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/Heal_co.jpg",
+            "cta_url": "shopify:\/\/pages\/faq"
+          }
+        },
+        "image_with_text_overlay_PhWTLU": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
+            "promotion_name": "",
+            "promotion_creative_name": "",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/Frame_1000006328.jpg",
+            "cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_overlay_n8Nxiw",
+        "image_with_text_overlay_PhWTLU"
+      ],
+      "settings": {
+        "readmore_cta_text": "readmore",
+        "readmore_cta_url": "shopify:\/\/collections\/3d-energy"
+      }
+    },
     "19c018de-3523-40ac-a377-435eed53aaa0": {
       "type": "collection-brand-heading",
       "blocks": {
@@ -42,6 +77,7 @@
         "34241124-cbfc-4240-a37a-a1da46f28a59",
         "76aa51b6-a9ce-41d6-af2e-61312d7f49ba"
       ],
+      "disabled": true,
       "settings": {
         "show_collection_image": true,
         "cta_text": "read more",
@@ -102,6 +138,7 @@
   },
   "order": [
     "breadcrumb",
+    "brand_collection_page_RQQ4r4",
     "19c018de-3523-40ac-a377-435eed53aaa0",
     "9b284a1b-cd08-43ac-b891-bc267741d964",
     "main-collection",

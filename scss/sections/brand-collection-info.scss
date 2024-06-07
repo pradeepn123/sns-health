@@ -1,0 +1,72 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+
+.brand-banner__collection-banner-wrapp{
+    .brand-banner__collection-info{
+        .logo-slider-flex-desktop{
+            // display: none;
+            height: 100%;
+            @media(--sm){
+                display: block;
+            }
+            .logo-container{
+                padding: 20px;
+                height: 100%;
+                @media(--sm){
+                    padding: 40px;
+                }
+                .card__header{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 100%;
+                    align-items: stretch;
+                    padding: 0 !important;
+                    .collection__header-inner{
+                        .collection__meta{
+                            .logo-heading{
+                                display: none;
+                            }
+                            .brand_collection_title.collection__title{
+                                @include use-text-style('heading-2');
+                                margin-bottom: 12px;
+                                color: colors.$black;
+                                @media(--sm){
+                                    @include use-text-style('heading-1-alt');
+                                    margin-bottom: 10px;
+                                }
+                            }
+                            .collection__meta-inner p{
+                                @include use-text-style('body-regular');
+                                color: colors.$black;
+                                @media(--sm){
+                                    @include use-text-style('body-alt');
+                                }
+                            }
+                        }
+                    }
+                    .title-hide{
+                        visibility: hidden;
+                        height: 0;
+                    }
+                }
+            }
+        }
+        .logo-slider-flex-mobile{
+            // display: block;
+            // @media(--sm){
+                display: none;
+            // }
+        }
+    }
+}
+
+
+.collection__header--brand{
+    img{
+        width: 160px;
+    }
+}

@@ -1,7 +1,7 @@
 
 {% liquid 
-    assign cta_text = section.settings.cta_text
-    assign cta_url = section.settings.cta_url
+    assign cta_text = section.settings.readmore_cta_text
+    assign cta_url = section.settings.readmore_cta_url
 %}
 {% if cta_text != blank and cta_url != blank or collection_description.size > max_length %}
     <a class=" button collection-banner__cta text__cta

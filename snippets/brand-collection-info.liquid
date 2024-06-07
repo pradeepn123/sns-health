@@ -1,0 +1,120 @@
+  {{ 'brand-collection-info.css' | asset_url | stylesheet_tag }}
+
+
+{%- liquid 
+        assign brandReviewData = collection.metafields.custom.reviews_data.value
+        assign id = section.id
+        assign max_length = 150
+        assign collection_description = collection.metafields.custom.collection_hero_section.value.description | default: collection.description | truncate: max_length
+    -%}
+ 
+  {% style %}
+.logo-slider-flex-desktop .logo-container{
+    background: {{ collection.metafields.custom.color_schema.value.background_color }};
+
+}
+.logo-slider-flex-desktop .logo-container .metafield-multi_line_text_field{
+    color: {{ collection.metafields.custom.color_schema.value.text_color }};
+}
+span.metafield-multi_line_text_field{
+    font-weight: normal !important;
+}
+@media screen and (min-width: 481px) and (max-width: 767px){
+    span.metafield-multi_line_text_field {
+        font-size: 15px;
+        line-height: initial;
+    }
+    .collection__meta .collection__title{
+        line-height: 50%;
+    }
+}
+
+@media(max-width:768px){
+    .image-flex-desktop{
+        display:none;
+    }
+    .image-flex-mobile{
+        display: block;
+    }
+}
+
+@media(min-width:768px){
+    .image-flex-desktop{
+        display:block;
+    }
+    .image-flex-mobile{
+        display: none;
+    }
+}
+.collection__meta-inner .collection-banner__cta.text__cta{
+    background: none;
+    margin-top: 0;
+    padding: 0;
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+    color: currentColor;
+}
+
+{% endstyle %}
+  
+  <div class="logo-slider-flex-desktop">
+        {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank or collection.metafields.custom.collection_hero_section.value.description != blank %}
+            <div class="logo-container">
+                <header class="card__header">
+                    <div class="collection__header-inner">
+                        <div class="collection__meta">
+                            <h3 class="logo-heading">
+                                {{collection.title}}
+                            </h3>
+                            <h1 class="boost-pfs-filter-collection-header brand_collection_title collection__title heading h1">
+                                {{ collection.title }}
+                            </h1>
+                            <div class="collection__meta-inner">
+                                <p class="boost-pfs-filter-collection-header brand_collection_title collection_description heading h1">
+                                    <span>
+                                        {{ collection_description | metafield_tag }}
+                                        {% render 'read-more-button', section: section, collection_description: collection_description  %}
+                                    </span>                                
+                                <p>
+                            </div>
+                        </div>
+                    </div>
+                    {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank %}
+                        <div class="collection__header collection__header--brand">
+                            <img src="{{ collection.metafields.custom.collection_hero_section.value.hero_logo | img_url : 'master' }}" style="{% unless collection.metafields.custom.collection_hero_section.value.description %}margin-bottom: 0{% endunless %}" >
+                        </div>
+                        <h1 class="title-hide">{{collection.title}}</h1> 
+                    {% endif %}
+                </header>
+            </div>
+        {% endif %}
+</div>
+    <div class="logo-slider-flex-mobile">
+        {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank or collection.metafields.custom.collection_hero_section.value.description != blank or collection.title != blank %}
+            <div class="logo-container logo-slider-flex-mobile">
+                <header class="card__header">
+                    <div class="collection__header-inner mobile">
+                        <div class="collection__meta">
+                            <h1 class="boost-pfs-filter-collection-header brand_collection_title collection__title heading h1">
+                                {{ collection.title }}
+                            </h1>
+                            <div class="collection__meta-inner">
+                                <p class="boost-pfs-filter-collection-header collection__title heading h1">
+                                    {{ collection_description | metafield_tag }}
+                                    {% render 'read-more-button', section: section, collection_description: collection_description %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% if collection.metafields.custom.collection_hero_section.value.hero_logo != blank %}
+                    <div class="collection__header collection__header--brand">
+                        <img
+                            src="{{ collection.metafields.custom.collection_hero_section.value.hero_logo | img_url : 'master' }}"
+                            style="{% unless collection.metafields.custom.collection_hero_section.value.description %}margin-bottom: 0{% endunless %}"
+                        >
+                    </div>
+                    {% endif %}
+                </header>
+            </div>
+        {% endif %}
+    </div>

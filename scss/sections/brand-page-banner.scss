@@ -1,0 +1,104 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@import 'Token';
+@import 'breakpoints';
+
+@custom-selector :--heading .brand-banner__heading.text__heading;
+@custom-selector :--subheading .brand-banner__subheading.text__subheading;
+@custom-selector :--mobile-image .image--mobile.brand-banner-content__image;
+@custom-selector :--image .brand-banner__item__image-wrapper;
+@custom-selector :--image-responsive .brand-banner__banner-info .responsive-image__wrapper ;
+
+
+.brand-banner {
+    @media (--sm) {
+        @include mixins.container;
+        max-width: 100%;
+    }
+
+    &__collection-banner-wrapp {
+        
+        @include mixins.grid(1,90px,150px);
+        @media(--sm){
+            @include mixins.container; 
+        }
+        @media(--md){
+            @include mixins.grid(3,90px,222px);
+        }
+    }
+
+    img {
+        object-fit: cover;
+        @media (--md) {
+            object-fit: unset;
+        }
+    }
+
+    &__item div:not(.brand-banner-content__text-wrapper,.brand-banner__text-wrapper, .content){
+        height: 100%;
+    }
+
+    &__carousel {
+        position: relative;
+    }
+
+    &__item {
+        @media (--md) {
+            grid-column: span 1;
+        }
+    }
+
+    &__banner-info{
+        grid-column: span 2;
+    }
+
+    &__text-wrapper {
+        max-width: 151px;
+    }
+
+    :--heading {
+            @include use-text-style('heading-1-alt');
+            font-weight: typography.$semi-weight;
+            line-height: 1;
+    }
+
+    :--subheading {
+     font-weight: typography.$semi-weight;
+     display: block; 
+
+     @media (--md) {
+        display: unset;
+     }
+    }
+
+    &--desktop {
+        display: none;
+
+        @media (--md) {
+            display: block;
+        }
+    }
+
+    &--mobile {
+        display: block;
+
+        @media(--md) {
+            display: none;
+        }
+    }
+
+    :--mobile-image .responsive-image__image {
+        border-radius: 0;
+    }
+
+    :--image{
+        img{
+            object-fit: cover;
+        }
+    }
+
+    :--image-responsive{
+        max-height: 400px !important;
+    }
+
+}
