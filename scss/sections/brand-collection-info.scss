@@ -62,6 +62,10 @@
             // }
         }
     }
+    .swiper-pagination-bullet-active{
+        background: colors.$red;
+        border: 2px solid colors.$red;
+    }
 }
 
 
@@ -70,3 +74,4 @@
         width: 160px;
     }
 }
+

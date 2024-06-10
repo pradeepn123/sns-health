@@ -13,30 +13,20 @@
       "blocks": {
         "image_with_text_overlay_n8Nxiw": {
           "type": "image_with_text_overlay",
+          "repeater": "{{ collection.metafields.custom.collection_header_slider.value }}",
           "settings": {
             "promotion": true,
             "promotion_name": "",
             "promotion_creative_name": "",
             "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Heal_co.jpg",
-            "cta_url": "shopify:\/\/pages\/faq"
-          }
-        },
-        "image_with_text_overlay_PhWTLU": {
-          "type": "image_with_text_overlay",
-          "settings": {
-            "promotion": true,
-            "promotion_name": "",
-            "promotion_creative_name": "",
-            "is_carousel_content": true,
-            "image_desktop": "shopify:\/\/shop_images\/Frame_1000006328.jpg",
+            "image_desktop": "{{ block.repeater.image.value }}",
+            "image_mobile": "{{ block.repeater.mobile_image.value }}",
             "cta_url": ""
           }
         }
       },
       "block_order": [
-        "image_with_text_overlay_n8Nxiw",
-        "image_with_text_overlay_PhWTLU"
+        "image_with_text_overlay_n8Nxiw"
       ],
       "settings": {
         "readmore_cta_text": "readmore",
