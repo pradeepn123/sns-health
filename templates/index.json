@@ -27,6 +27,17 @@
           "type": "image_with_text_overlay",
           "settings": {
             "promotion": true,
+            "promotion_name": "Father's Day",
+            "promotion_creative_name": "Main Banner 1",
+            "is_carousel_content": true,
+            "image_desktop": "shopify:\/\/shop_images\/Celebrating_all_mothers_1.jpg",
+            "cta_url": "https:\/\/snshealth.com\/collections\/mens-health-supplements"
+          }
+        },
+        "image_with_text_overlay_VynhBq": {
+          "type": "image_with_text_overlay",
+          "settings": {
+            "promotion": true,
             "promotion_name": "Optimum Nutrition",
             "promotion_creative_name": "Main Banner 1",
             "is_carousel_content": true,
@@ -83,6 +94,7 @@
       },
       "block_order": [
         "009a8070-a267-4f1a-ad82-846a05257985",
+        "image_with_text_overlay_VynhBq",
         "b533d71a-e272-4353-b935-9e0fc67451c1",
         "image_with_text_overlay_VNEBmR",
         "image_with_text_overlay_hAWXBm",
