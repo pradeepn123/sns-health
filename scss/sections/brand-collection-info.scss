@@ -83,6 +83,9 @@
         background: colors.$red;
         border: 2px solid colors.$red;
     }
+    .swiper-pagination:not(.swiper-pagination-progressbar) {
+        bottom: 10px !important;
+    }   
 }
 
 
