@@ -14,16 +14,18 @@
     @media (--sm) {
         @include mixins.container;
         max-width: 100%;
-    }
+    } 
 
     &__collection-banner-wrapp {
         
         @include mixins.grid(1,90px,150px);
+        column-gap: 0;
         @media(--sm){
             @include mixins.container; 
         }
         @media(--md){
             @include mixins.grid(3,90px,222px);
+            column-gap: var(--grid-row-gap-large);  
         }
     }
 
