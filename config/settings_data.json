@@ -906,6 +906,13 @@
               "answer": "<p>If you haven't received your order as expected, we're here to help. We encourage you to contact us promptly so we can investigate the status of your shipment. <\/p><p>You can reach out to us via <strong>phone<\/strong>, <strong>email<\/strong>, or <strong>chat<\/strong>, and our dedicated customer service team will assist you in resolving the issue promptly. We’re committed to ensuring you receive your order in a timely manner.<\/p>"
             }
           },
+          "question_UePAtE": {
+            "type": "question",
+            "settings": {
+              "title": "What is the procedure if my order faces customs issues?",
+              "answer": "<p>If your order encounters any customs-related challenges, like being held or destroyed by customs due to prohibited ingredients or clearance issues, we regret to inform you that we cannot provide refunds. <\/p><p>While we make every effort to comply with local customs regulations, it is ultimately your responsibility to ensure compliance with your country's laws before placing an order. We appreciate your understanding in this matter.<\/p>"
+            }
+          },
           "separator_7hd8re": {
             "type": "separator",
             "settings": {
@@ -992,6 +999,7 @@
           "bd0524eb-1088-4bcf-ab9a-8e2551e2185a",
           "question_rQPqen",
           "question_TxLmwV",
+          "question_UePAtE",
           "separator_7hd8re",
           "question_QK7Qk8",
           "question_39A6Rx",
