@@ -1,0 +1,38 @@
+
+{{ 'landing-page-review-carousel.css' | asset_url | stylesheet_tag }}
+
+<div class="landing-page-review-carousel">
+  <review-carousel>
+   <script id="review-carousel-data" type="text/json"> 
+      {
+         "data": {%  render 'JSON-output-review-carousel' %}
+    }
+   </script>
+ </review-carousel>
+</div>
+
+
+{%  schema %} 
+  {
+    "name": "landing banner-carousel",
+    "settings": [],
+    "blocks": [
+        {
+          "type": "image",
+          "name": "image",
+          "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "image"
+            }
+          ]
+        }
+    ],
+    "presets": [
+        {
+          "name": "Landing banner-carousel"
+        }
+    ]
+  }
+{%  endschema %}

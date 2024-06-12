@@ -3,6 +3,7 @@
 <script>  
 export let image_aspect_ratio;
 export let image;
+export let objectFit;
 let min = 100 ;
 let max = 10000;
 let diff = max - min;
@@ -66,7 +67,7 @@ const getImageStyle = () => {
     return `
     max-width: ${ max_width_image }px;
     max-height: ${ max_height_image }px;
-    object-fit: contain;`
+    object-fit: ${objectFit ? objectFit : 'contain'}`;
 }
 
 </script>

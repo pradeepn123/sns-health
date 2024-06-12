@@ -1,0 +1,14 @@
+{ "collectionId": {{ collection.id }}, "blocks": [
+{% for block in section.blocks %}
+  {% unless forloop.first %},{% endunless %}
+  { "image":
+  {% if block.settings.image -%}
+    { "src": "{{ block.settings.image | image_url }}", "height": "
+    {{- block.settings.image.height | default: 1080 -}}
+    ","width": "{{ block.settings.image.height | default: 1920 }}" }
+  {%- else -%}
+    false
+  {%- endif %}
+  }
+{% endfor %}
+] }

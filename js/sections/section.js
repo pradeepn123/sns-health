@@ -11,6 +11,7 @@ import AccountPage from "./account-page"
 import ReactModal from "./react-modal"
 import PredictiveSearch from "./predictive-search";
 import CountdownBanner from './countdown-banner';
+import brandLandingPage from "./brand-landing-page";
 
 document.addEventListener('DOMContentLoaded', () => {
     announcementBar();
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     searchPage();
     PredictiveSearch();
     CountdownBanner();
+    brandLandingPage();
     window.customProductCard = customProductCard;
     window.productCarousel = productCarousel;
 });

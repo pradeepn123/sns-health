@@ -1,0 +1,88 @@
+@use 'StyleComponents/mixins';
+
+.landing-page-review-carousel {
+	margin-top: var(--grid-row-gap-large);
+
+	&__wrapper {
+		@include mixins.container;
+	}
+
+	&__grid {
+		@include mixins.grid(3, 195px, 195px);
+		align-items: flex-start;
+
+		&-carousel {
+			grid-column: span 2;
+			position: relative;
+
+			.swiper-slide {
+				box-shadow: 0px 0px 10px 0px #0000001A;
+
+				img {
+					border-radius: 10px;
+				}
+			}
+		}
+
+		&-reviews {
+			grid-column: span 1;
+			box-shadow: 0px 0px 10px 0px #0000001A;
+			border-radius: 10px;
+		}
+	}
+}
+
+.landing-page-reviews {
+	padding: 0 16px;
+	max-height: 195px;
+	&__content {
+		margin-bottom: 30px;
+    max-height: 60%;
+    overflow: auto;
+	}
+	&__header {
+		position: sticky;
+		padding: 30px 0 10px;
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		top:0;
+
+		&-items {
+			display: flex;
+			column-gap: 16px;
+			align-items: center;
+		}
+	}
+
+	&__body {
+		overflow: auto;
+	}
+
+	&__stars {
+		display: flex;
+		column-gap: 4px;
+	}
+
+	.swiper-navigations {
+		display: flex;
+		column-gap: 10px;
+		flex-direction: row-reverse;
+	}
+
+	.swiper-navigation {
+    position: relative;
+		left: unset;
+		right: unset;
+		top: unset !important;
+		transform: none !important;
+		svg {
+			width: 36px;
+			height: 36px;
+		}
+	}
+
+	.swiper-wrapper {
+
+	}
+}

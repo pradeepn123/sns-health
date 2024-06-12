@@ -51,8 +51,8 @@ var collapsible = () => {
 var _excluded = ["breakpoints"],
   _excluded2 = ["pagination", "navigation"],
   _excluded3 = ["navigation", "pagination", "progressPagination"];
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
 
 
@@ -134,8 +134,9 @@ class CustomCarousel extends HTMLElement {
         otherSwiperSettings = (0,_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_this$carouselSetting2, _excluded3);
       carouselSettings = _objectSpread({}, otherSwiperSettings);
       if (navigation) {
-        var navigationNext = this.querySelector('.swiper-navigation--next');
-        var navigationPrev = this.querySelector('.swiper-navigation--prev');
+        var parentSelector = this.closest('[data-parent]') ? this.closest('[data-parent]') : this;
+        var navigationNext = parentSelector.querySelector('.swiper-navigation--next');
+        var navigationPrev = parentSelector.querySelector('.swiper-navigation--prev');
         carouselSettings = _objectSpread(_objectSpread({}, carouselSettings), {}, {
           navigation: {
             nextEl: navigationNext,
@@ -163,16 +164,18 @@ class CustomCarousel extends HTMLElement {
     return carouselSettings;
   }
   initCarousel() {
-    var _this$querySelector, _this$querySelector2, _this$querySelector3;
+    var _this$querySelector, _this$querySelector2, _parentSelector$query;
     this.carouselSettings = JSON.parse(((_this$querySelector = this.querySelector('[data-settings]')) === null || _this$querySelector === void 0 ? void 0 : _this$querySelector.innerHTML) || "{}");
+    var parentSelector = this.closest('[data-parent]') ? this.closest('[data-parent]') : this;
     this.carouselContent = (_this$querySelector2 = this.querySelector('[data-carousel-content]')) === null || _this$querySelector2 === void 0 ? void 0 : _this$querySelector2.innerHTML;
-    this.placeholders = (_this$querySelector3 = this.querySelector('[data-carousel-placeholder]')) === null || _this$querySelector3 === void 0 ? void 0 : _this$querySelector3.innerHTML;
-    this.navigations = this.querySelector('[data-swiper-navigations]');
+    this.placeholders = (_parentSelector$query = parentSelector.querySelector('[data-carousel-placeholder]')) === null || _parentSelector$query === void 0 ? void 0 : _parentSelector$query.innerHTML;
+    this.navigations = parentSelector.querySelector('[data-swiper-navigations]');
     this.currentWidth = window.innerWidth;
-    var swiperNavigationElements = "\n      <div class=\"swiper-navigation swiper-navigation--next ".concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    ");
+    var swiperNavigationElements = "\n      <div class=\"swiper-navigation swiper-navigation--next ".concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n      <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n      <path d=\"M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    <div class=\"swiper-navigation swiper-navigation--prev swiper-button-disabled  ").concat(this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : '', " \">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"42\" height=\"42\" viewBox=\"0 0 42 42\" fill=\"none\">\n        <circle cx=\"21\" cy=\"21\" r=\"21\" fill=\"#ED1C24\"/>\n        <path d=\"M22.7061 26.353L16.9413 20.5883L22.7061 14.8236\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"square\"/>\n      </svg>\n    </div>\n    ");
     this.carouselContent ? this.innerHTML = "<div class=\"carousel__container swiper hide\" data-swiper-container>\n    <div class=\"swiper-wrapper\">\n    ".concat(this.carouselContent, "\n    </div> </div>\n    <div class=\"swiper-pagination\"></div>\n    ").concat(this.carouselSettings['customNavigation'] ? '' : swiperNavigationElements, "\n    ").concat(this.placeholders ? this.placeholders : "<div class=\"carousel-placeholders\"></div>") : this.carouselSettings['customNavigation'] ? '' : this.navigations.innerHTML = swiperNavigationElements;
     this.container = this.querySelector('[data-swiper-container]');
     var carouselSettings = this.getCarouselSettings();
+    console.log(carouselSettings, "carousel settings");
     this.swiper = new swiper__WEBPACK_IMPORTED_MODULE_2__["default"](this.container, _objectSpread({
       on: {
         beforeInit: () => {
@@ -180,36 +183,41 @@ class CustomCarousel extends HTMLElement {
             navigation,
             pagination
           } = carouselSettings || {};
+          var parentSelector = this.closest('[data-parent]') ? this.closest('[data-parent]') : this;
           if (!navigation) {
-            this.querySelectorAll('.swiper-navigation').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
+            parentSelector.querySelectorAll('.swiper-navigation').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
           } else {
-            this.querySelector('.swiper-navigation--hide') && this.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            parentSelector.querySelector('.swiper-navigation--hide') && parentSelector.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
           }
           if (!pagination) {
-            this.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
+            parentSelector.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
           } else {
-            this.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            parentSelector.querySelector('.swiper-pagination--hide') && parentSelector.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
           }
         },
         init: swiper => {
           if (!!swiper.navigation) {
             swiper.navigation.destroy();
-            // const el = this.querySelector('.carousel__container')
-            // handleClick(el);
           }
         },
         afterInit: () => {
-          var _this$querySelector4;
-          this.querySelector('.carousel__container').classList.remove('hide');
-          (_this$querySelector4 = this.querySelector('.carousel-placeholders')) === null || _this$querySelector4 === void 0 || _this$querySelector4.classList.add('hide');
+          var _parentSelector$query2;
+          parentSelector.querySelector('.carousel__container').classList.remove('hide');
+          (_parentSelector$query2 = parentSelector.querySelector('.carousel-placeholders')) === null || _parentSelector$query2 === void 0 ? void 0 : _parentSelector$query2.classList.add('hide');
+        },
+        slideChange: swiper => {
+          var {
+            onSlideChange
+          } = carouselSettings;
+          window[onSlideChange] && window[onSlideChange](swiper);
         }
       },
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Navigation, swiper_modules__WEBPACK_IMPORTED_MODULE_3__.Pagination]
     }, carouselSettings));
     this.swiper.on('activeIndexChange', current => {
-      var _this$querySelector5, _this$querySelectorAl;
-      (_this$querySelector5 = this.querySelector('.swiper-pagination-bullet-active')) === null || _this$querySelector5 === void 0 || _this$querySelector5.classList.remove('swiper-pagination-bullet-active');
-      (_this$querySelectorAl = this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _this$querySelectorAl === void 0 || _this$querySelectorAl.classList.add('swiper-pagination-bullet-active');
+      var _parentSelector$query3, _parentSelector$query4;
+      (_parentSelector$query3 = parentSelector.querySelector('.swiper-pagination-bullet-active')) === null || _parentSelector$query3 === void 0 ? void 0 : _parentSelector$query3.classList.remove('swiper-pagination-bullet-active');
+      (_parentSelector$query4 = parentSelector.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]) === null || _parentSelector$query4 === void 0 ? void 0 : _parentSelector$query4.classList.add('swiper-pagination-bullet-active');
     });
   }
 }
@@ -415,14 +423,6 @@ var rebuyAutoAdd = () => {
 /* harmony import */ var JsComponents_registerCustomElements__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! JsComponents/registerCustomElements */ "./js/components/registerCustomElements.js");
 /* harmony import */ var JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! JsComponents/rebuy-cart-integration */ "./js/components/rebuy-cart-integration.js");
 /* harmony import */ var JsComponents_klaiyo_auto_add__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! JsComponents/klaiyo-auto-add */ "./js/components/klaiyo-auto-add.js");
-// import lazysizes from 'lazysizes';
-// import 'lazysizes/plugins/object-fit/ls.object-fit';
-// import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-// import 'lazysizes/plugins/rias/ls.rias';
-// import 'lazysizes/plugins/bgset/ls.bgset';
-// import 'lazysizes/plugins/respimg/ls.respimg';
-// //lazyload image dependencies
-
 
  //needed for swiper
  //gtm trigger event
@@ -431,10 +431,6 @@ var rebuyAutoAdd = () => {
  //js based handle click
  //register custom elements
  //disable add to cart form submit
-
-
-//config lazyload to default settings
-// lazysizes.cfg.loadMode = 1;
 
 document.addEventListener('DOMContentLoaded', () => {
   (0,JsComponents_header__WEBPACK_IMPORTED_MODULE_1__["default"])(); //header and megamenu

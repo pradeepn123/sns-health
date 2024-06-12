@@ -67,8 +67,9 @@ class CustomCarousel extends HTMLElement {
       const { navigation, pagination, progressPagination, ...otherSwiperSettings } = this.carouselSettings;
       carouselSettings = { ...otherSwiperSettings };
       if (navigation) {
-        const navigationNext = this.querySelector('.swiper-navigation--next');
-        const navigationPrev = this.querySelector('.swiper-navigation--prev');
+        const parentSelector = this.closest('[data-parent]') ? this.closest('[data-parent]') : this;
+        const navigationNext =  parentSelector.querySelector('.swiper-navigation--next');
+        const navigationPrev = parentSelector.querySelector('.swiper-navigation--prev');
         carouselSettings = {
           ...carouselSettings, navigation: {
             nextEl: navigationNext,
@@ -97,9 +98,10 @@ class CustomCarousel extends HTMLElement {
 
   initCarousel() {
     this.carouselSettings = JSON.parse(this.querySelector('[data-settings]')?.innerHTML || "{}");
+    const parentSelector = this.closest('[data-parent]') ? this.closest('[data-parent]') : this;
     this.carouselContent = this.querySelector('[data-carousel-content]')?.innerHTML;
-    this.placeholders = this.querySelector('[data-carousel-placeholder]')?.innerHTML;
-    this.navigations = this.querySelector('[data-swiper-navigations]');
+    this.placeholders = parentSelector.querySelector('[data-carousel-placeholder]')?.innerHTML;
+    this.navigations = parentSelector.querySelector('[data-swiper-navigations]');
     this.currentWidth = window.innerWidth;
     const swiperNavigationElements = `
       <div class="swiper-navigation swiper-navigation--next ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
@@ -108,7 +110,7 @@ class CustomCarousel extends HTMLElement {
       <path d="M18.9414 14.8237L24.7061 20.5884L18.9414 26.3531" stroke="white" stroke-width="2" stroke-linecap="square"/>
       </svg>
     </div>
-    <div class="swiper-navigation swiper-navigation--prev ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
+    <div class="swiper-navigation swiper-navigation--prev swiper-button-disabled  ${this.carouselSettings.overflowNagivation ? "swiper-navigation--overflow" : ''} ">
       <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
         <circle cx="21" cy="21" r="21" fill="#ED1C24"/>
         <path d="M22.7061 26.353L16.9413 20.5883L22.7061 14.8236" stroke="white" stroke-width="2" stroke-linecap="square"/>
@@ -126,34 +128,38 @@ class CustomCarousel extends HTMLElement {
       : this.carouselSettings['customNavigation'] ? '' : this.navigations.innerHTML = swiperNavigationElements;
     this.container = this.querySelector('[data-swiper-container]');
     const carouselSettings = this.getCarouselSettings();
+    console.log(carouselSettings, "carousel settings");
     this.swiper = new Swiper(this.container, {
       on: {
         beforeInit: () => {
-          const { navigation, pagination } = carouselSettings || {};
+          const { navigation, pagination} = carouselSettings || {};
+          const parentSelector = this.closest('[data-parent]') ? this.closest('[data-parent]') : this;
           if (!navigation) {
-            this.querySelectorAll('.swiper-navigation').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
+            parentSelector.querySelectorAll('.swiper-navigation').forEach(navigation => navigation.classList.add('swiper-navigation--hide'));
           }
           else {
-            this.querySelector('.swiper-navigation--hide') && this.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            parentSelector.querySelector('.swiper-navigation--hide') && parentSelector.querySelectorAll('.swiper-navigation--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
           }
 
           if (!pagination) {
-            this.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
+            parentSelector.querySelectorAll('.swiper-pagination').forEach(navigation => navigation.classList.add('swiper-pagination--hide'));
           }
           else {
-            this.querySelector('.swiper-pagination--hide') && this.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
+            parentSelector.querySelector('.swiper-pagination--hide') && parentSelector.querySelectorAll('.swiper-pagination--hide').forEach(navigation => navigation.classList.remove("swiper-pagination--hide"));
           }
         },
         init: (swiper) => {
           if (!!swiper.navigation) {
             swiper.navigation.destroy();
-            // const el = this.querySelector('.carousel__container')
-            // handleClick(el);
           }
         },
         afterInit: () => {
-          this.querySelector('.carousel__container').classList.remove('hide');
-          this.querySelector('.carousel-placeholders')?.classList.add('hide');
+          parentSelector.querySelector('.carousel__container').classList.remove('hide');
+          parentSelector.querySelector('.carousel-placeholders')?.classList.add('hide');
+        },
+        slideChange: (swiper) => {
+          const {onSlideChange} = carouselSettings;
+          window[onSlideChange] && window[onSlideChange](swiper);
         }
       },
       modules: [Navigation, Pagination],
@@ -161,8 +167,8 @@ class CustomCarousel extends HTMLElement {
     });
 
     this.swiper.on('activeIndexChange', (current) => {
-      this.querySelector('.swiper-pagination-bullet-active')?.classList.remove('swiper-pagination-bullet-active');
-      this.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]?.classList.add('swiper-pagination-bullet-active');
+      parentSelector.querySelector('.swiper-pagination-bullet-active')?.classList.remove('swiper-pagination-bullet-active');
+      parentSelector.querySelectorAll('.swiper-pagination-bullet')[current.activeIndex]?.classList.add('swiper-pagination-bullet-active');
     })
   }
 }

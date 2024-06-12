@@ -41,6 +41,25 @@
 
 /***/ }),
 
+/***/ "./js/sections/brand-landing-page.js":
+/*!*******************************************!*\
+  !*** ./js/sections/brand-landing-page.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! JsComponents/svelte-wrapper */ "./js/components/svelte-wrapper.js");
+/* harmony import */ var SvelteComponents_review_carousel_index_svelte__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! SvelteComponents/review-carousel/index.svelte */ "./js/components/svelte/review-carousel/index.svelte");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
+  (0,JsComponents_svelte_wrapper__WEBPACK_IMPORTED_MODULE_0__["default"])(SvelteComponents_review_carousel_index_svelte__WEBPACK_IMPORTED_MODULE_1__["default"], 'review-carousel', '#review-carousel-data');
+});
+
+/***/ }),
+
 /***/ "./js/sections/bundle-cart.js":
 /*!************************************!*\
   !*** ./js/sections/bundle-cart.js ***!
@@ -332,6 +351,8 @@
 /* harmony import */ var _react_modal__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./react-modal */ "./js/sections/react-modal.js");
 /* harmony import */ var _predictive_search__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./predictive-search */ "./js/sections/predictive-search.js");
 /* harmony import */ var _countdown_banner__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./countdown-banner */ "./js/sections/countdown-banner.js");
+/* harmony import */ var _brand_landing_page__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./brand-landing-page */ "./js/sections/brand-landing-page.js");
+
 
 
 
@@ -359,6 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_search_page__WEBPACK_IMPORTED_MODULE_10__["default"])();
   (0,_predictive_search__WEBPACK_IMPORTED_MODULE_11__["default"])();
   (0,_countdown_banner__WEBPACK_IMPORTED_MODULE_12__["default"])();
+  (0,_brand_landing_page__WEBPACK_IMPORTED_MODULE_13__["default"])();
   window.customProductCard = _custom_product_card__WEBPACK_IMPORTED_MODULE_4__["default"];
   window.productCarousel = _product_carousel__WEBPACK_IMPORTED_MODULE_3__["default"];
 });
