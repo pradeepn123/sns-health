@@ -6,9 +6,18 @@
     import Carousel from "./image-carousel.svelte";
     let reviewExist = reviews?.reviews?.length > 0
     let settings = `{
-        "slidesPerView": 2,
-        "navigation": true,
-        "spaceBetween": 20
+        "slidesPerView": 1.3,
+        "spaceBetween": 15,
+        "breakpoints": {
+            "320": {
+            "pagination": false
+            },
+            "768": {
+            "slidesPerView": 2,
+            "spaceBetween": 20,
+            "navigation": true
+            }
+        }
     }`
     if(!reviewExist) {
          settings = `{

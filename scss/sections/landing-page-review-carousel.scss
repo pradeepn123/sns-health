@@ -1,4 +1,5 @@
 @use 'StyleComponents/mixins';
+@import 'breakpoints';
 
 .landing-page-review-carousel {
 	margin-top: var(--grid-row-gap-large);
@@ -8,8 +9,12 @@
 	}
 
 	&__grid {
-		@include mixins.grid(3, 195px, 195px);
+		@include mixins.grid(1, 195px, 195px);
 		align-items: flex-start;
+		@media(--md){
+			@include mixins.grid(3, 195px, 195px);
+			align-items: flex-start;
+		}
 
 		&-carousel {
 			grid-column: span 2;
@@ -34,19 +39,36 @@
 
 .landing-page-reviews {
 	padding: 0 16px;
-	max-height: 195px;
+	@media(--md){
+		max-height: 195px;
+	}
 	&__content {
 		margin-bottom: 30px;
-    max-height: 60%;
-    overflow: auto;
+		max-height: 60%;
+		overflow-y: auto !important;
+		display: flex;
+		justify-content: center;
+		@media(--md){
+			justify-content: left;
+		}
+	}
+	&__author{
+		display: flex;
+		justify-content: center;
+			@media(--md){
+				justify-content: left;
+			}
 	}
 	&__header {
 		position: sticky;
 		padding: 30px 0 10px;
 		align-items: center;
 		display: flex;
-		justify-content: space-between;
 		top:0;
+		justify-content: center;
+			@media(--md){
+				justify-content: left;
+			}
 
 		&-items {
 			display: flex;
@@ -64,6 +86,25 @@
 		column-gap: 4px;
 	}
 
+	&--mobile{
+		display: block;
+		display: flex;
+		justify-content: center;
+		@media(--md){
+			display: none;
+		}
+		@media(--md){
+			justify-content: left;
+		}
+	}
+
+	&--desktop{
+		display: none;
+		@media(--md){
+			display: block;
+		}
+	} 
+
 	.swiper-navigations {
 		display: flex;
 		column-gap: 10px;
@@ -71,7 +112,7 @@
 	}
 
 	.swiper-navigation {
-    position: relative;
+    	position: relative;
 		left: unset;
 		right: unset;
 		top: unset !important;
@@ -82,7 +123,7 @@
 		}
 	}
 
-	.swiper-wrapper {
+.swiper-wrapper {
 
-	}
+}
 }

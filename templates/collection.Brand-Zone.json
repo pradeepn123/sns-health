@@ -33,19 +33,19 @@
         "readmore_cta_url": "shopify:\/\/collections\/3d-energy"
       }
     },
-    "landing_page_review_carousel_g7HFiJ": {
+    "landing_page_review_carousel_ckwFgx": {
       "type": "landing-page-review-carousel",
       "blocks": {
-        "image_DAhHih": {
+        "image_U6HPn3": {
           "type": "image",
           "repeater": "{{ collection.metafields.custom.image_video_section.value }}",
           "settings": {
-            "image": "{{ block.repeater.image.value }}"
+            "image": "{{ block.repeater.mobile_image.value }}"
           }
         }
       },
       "block_order": [
-        "image_DAhHih"
+        "image_U6HPn3"
       ],
       "settings": {
       }
@@ -146,7 +146,7 @@
   "order": [
     "breadcrumb",
     "brand_collection_page_RQQ4r4",
-    "landing_page_review_carousel_g7HFiJ",
+    "landing_page_review_carousel_ckwFgx",
     "19c018de-3523-40ac-a377-435eed53aaa0",
     "9b284a1b-cd08-43ac-b891-bc267741d964",
     "main-collection",
