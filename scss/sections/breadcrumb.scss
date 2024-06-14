@@ -22,3 +22,7 @@
 
     }
 }
+
+.breadcrumb__link[aria-current="page"]{
+   font-weight: typography.$semi-weight;
+} 
