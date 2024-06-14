@@ -144,8 +144,16 @@
 }
 
 .page__sub-header{
+    display: block;
+    margin: 23px 20px;
+    @media(--sm){
+        margin: 23px 0;
+    }
     .breadcrumb__list{
-        @include use-text-style('body-alt');
+        @include use-text-style('body-regular');
+        @media(--sm){
+            @include use-text-style('body-alt');
+        }
         .breadcrumb__link[aria-current="page"]{
             font-weight: typography.$semi-weight;
         }
