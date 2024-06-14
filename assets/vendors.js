@@ -13,12 +13,12 @@
 /* unused harmony exports default, _getBBox, _createElement, checkPrefix */
 /* harmony import */ var _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./gsap-core.js */ "./node_modules/gsap/gsap-core.js");
 /*!
- * CSSPlugin 3.12.5
- * https://gsap.com
+ * CSSPlugin 3.12.2
+ * https://greensock.com
  *
- * Copyright 2008-2024, GreenSock. All rights reserved.
- * Subject to the terms at https://gsap.com/standard-license or for
- * Club GSAP members, the agreement issued with that membership.
+ * Copyright 2008-2023, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
@@ -97,8 +97,7 @@ _renderRoundedCSSProp = function _renderRoundedCSSProp(ratio, data) {
   var _this = this;
 
   var target = this.target,
-      style = target.style,
-      cache = target._gsap;
+      style = target.style;
 
   if (property in _transformProps && style) {
     this.tfm = this.tfm || {};
@@ -107,9 +106,7 @@ _renderRoundedCSSProp = function _renderRoundedCSSProp(ratio, data) {
       property = _propertyAliases[property] || property;
       ~property.indexOf(",") ? property.split(",").forEach(function (a) {
         return _this.tfm[a] = _get(target, a);
-      }) : this.tfm[property] = cache.x ? cache[property] : _get(target, property); // note: scale would map to "scaleX,scaleY", thus we loop and apply them both.
-
-      property === _transformOriginProp && (this.tfm.zOrigin = cache.zOrigin);
+      }) : this.tfm[property] = target._gsap.x ? target._gsap[property] : _get(target, property); // note: scale would map to "scaleX,scaleY", thus we loop and apply them both.
     } else {
       return _propertyAliases.transform.split(",").forEach(function (p) {
         return _saveStyle.call(_this, p, isNotCSS);
@@ -120,7 +117,7 @@ _renderRoundedCSSProp = function _renderRoundedCSSProp(ratio, data) {
       return;
     }
 
-    if (cache.svg) {
+    if (target._gsap.svg) {
       this.svgo = target.getAttribute("data-svg-origin");
       this.props.push(_transformOriginProp, isNotCSS, "");
     }
@@ -165,13 +162,6 @@ _renderRoundedCSSProp = function _renderRoundedCSSProp(ratio, data) {
     if ((!i || !i.isStart) && !style[_transformProp]) {
       _removeIndependentTransforms(style);
 
-      if (cache.zOrigin && style[_transformOriginProp]) {
-        style[_transformOriginProp] += " " + cache.zOrigin + "px"; // since we're uncaching, we must put the zOrigin back into the transformOrigin so that we can pull it out accurately when we parse again. Otherwise, we'd lose the z portion of the origin since we extract it to protect from Safari bugs.
-
-        cache.zOrigin = 0;
-        cache.renderTransform();
-      }
-
       cache.uncache = 1; // if it's a startAt that's being reverted in the _initTween() of the core, we don't need to uncache transforms. This is purely a performance optimization.
     }
   }
@@ -194,7 +184,7 @@ _renderRoundedCSSProp = function _renderRoundedCSSProp(ratio, data) {
     _createElement = function _createElement(type, ns) {
   var e = _doc.createElementNS ? _doc.createElementNS((ns || "http://www.w3.org/1999/xhtml").replace(/^https/, "http"), type) : _doc.createElement(type); //some servers swap in https for http in the namespace which can break things, making "style" inaccessible.
 
-  return e && e.style ? e : _doc.createElement(type); //some environments won't allow access to the element's style when created with a namespace in which case we default to the standard createElement() to work around the issue. Also note that when GSAP is embedded directly inside an SVG file, createElement() won't allow access to the style object in Firefox (see https://gsap.com/forums/topic/20215-problem-using-tweenmax-in-standalone-self-containing-svg-file-err-cannot-set-property-csstext-of-undefined/).
+  return e.style ? e : _doc.createElement(type); //some environments won't allow access to the element's style when created with a namespace in which case we default to the standard createElement() to work around the issue. Also note that when GSAP is embedded directly inside an SVG file, createElement() won't allow access to the style object in Firefox (see https://greensock.com/forums/topic/20215-problem-using-tweenmax-in-standalone-self-containing-svg-file-err-cannot-set-property-csstext-of-undefined/).
 },
     _getComputedProperty = function _getComputedProperty(target, property, skipPrefixFallback) {
   var cs = getComputedStyle(target);
@@ -304,22 +294,19 @@ _renderRoundedCSSProp = function _renderRoundedCSSProp(ratio, data) {
     //reports if the element is an SVG on which getBBox() actually works
 _removeProperty = function _removeProperty(target, property) {
   if (property) {
-    var style = target.style,
-        first2Chars;
+    var style = target.style;
 
     if (property in _transformProps && property !== _transformOriginProp) {
       property = _transformProp;
     }
 
     if (style.removeProperty) {
-      first2Chars = property.substr(0, 2);
-
-      if (first2Chars === "ms" || property.substr(0, 6) === "webkit") {
+      if (property.substr(0, 2) === "ms" || property.substr(0, 6) === "webkit") {
         //Microsoft and some Webkit browsers don't conform to the standard of capitalizing the first prefix character, so we adjust so that when we prefix the caps with a dash, it's correct (otherwise it'd be "ms-transform" instead of "-ms-transform" for IE9, for example)
         property = "-" + property;
       }
 
-      style.removeProperty(first2Chars === "--" ? property : property.replace(_capsExp, "-$1").toLowerCase());
+      style.removeProperty(property.replace(_capsExp, "-$1").toLowerCase());
     } else {
       //note: old versions of IE use "removeAttribute()" instead of "removeProperty()"
       style.removeAttribute(property);
@@ -390,21 +377,13 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
   if (cache && toPercent && cache.width && horizontal && cache.time === _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._ticker.time && !cache.uncache) {
     return (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._round)(curValue / cache.width * amount);
   } else {
-    if (toPercent && (property === "height" || property === "width")) {
-      // if we're dealing with width/height that's inside a container with padding and/or it's a flexbox/grid container, we must apply it to the target itself rather than the _tempDiv in order to ensure complete accuracy, factoring in the parent's padding.
-      var v = target.style[property];
-      target.style[property] = amount + unit;
-      px = target[measureProperty];
-      v ? target.style[property] = v : _removeProperty(target, property);
-    } else {
-      (toPercent || curUnit === "%") && !_nonStandardLayouts[_getComputedProperty(parent, "display")] && (style.position = _getComputedProperty(target, "position"));
-      parent === target && (style.position = "static"); // like for borderRadius, if it's a % we must have it relative to the target itself but that may not have position: relative or position: absolute in which case it'd go up the chain until it finds its offsetParent (bad). position: static protects against that.
+    (toPercent || curUnit === "%") && !_nonStandardLayouts[_getComputedProperty(parent, "display")] && (style.position = _getComputedProperty(target, "position"));
+    parent === target && (style.position = "static"); // like for borderRadius, if it's a % we must have it relative to the target itself but that may not have position: relative or position: absolute in which case it'd go up the chain until it finds its offsetParent (bad). position: static protects against that.
 
-      parent.appendChild(_tempDiv);
-      px = _tempDiv[measureProperty];
-      parent.removeChild(_tempDiv);
-      style.position = "absolute";
-    }
+    parent.appendChild(_tempDiv);
+    px = _tempDiv[measureProperty];
+    parent.removeChild(_tempDiv);
+    style.position = "absolute";
 
     if (horizontal && toPercent) {
       cache = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._getCache)(parent);
@@ -443,7 +422,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
     _tweenComplexCSSString = function _tweenComplexCSSString(target, prop, start, end) {
   // note: we call _tweenComplexCSSString.call(pluginInstance...) to ensure that it's scoped properly. We may call it from within a plugin too, thus "this" would refer to the plugin.
   if (!start || start === "none") {
-    // some browsers like Safari actually PREFER the prefixed property and mis-report the unprefixed value like clipPath (BUG). In other words, even though clipPath exists in the style ("clipPath" in target.style) and it's set in the CSS properly (along with -webkit-clip-path), Safari reports clipPath as "none" whereas WebkitClipPath reports accurately like "ellipse(100% 0% at 50% 0%)", so in this case we must SWITCH to using the prefixed property instead. See https://gsap.com/forums/topic/18310-clippath-doesnt-work-on-ios/
+    // some browsers like Safari actually PREFER the prefixed property and mis-report the unprefixed value like clipPath (BUG). In other words, even though clipPath exists in the style ("clipPath" in target.style) and it's set in the CSS properly (along with -webkit-clip-path), Safari reports clipPath as "none" whereas WebkitClipPath reports accurately like "ellipse(100% 0% at 50% 0%)", so in this case we must SWITCH to using the prefixed property instead. See https://greensock.com/forums/topic/18310-clippath-doesnt-work-on-ios/
     var p = _checkPropPrefix(prop, target, 1),
         s = p && _getComputedProperty(target, p, 1);
 
@@ -451,7 +430,7 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
       prop = p;
       start = s;
     } else if (prop === "borderColor") {
-      start = _getComputedProperty(target, "borderTopColor"); // Firefox bug: always reports "borderColor" as "", so we must fall back to borderTopColor. See https://gsap.com/forums/topic/24583-how-to-return-colors-that-i-had-after-reverse/
+      start = _getComputedProperty(target, "borderTopColor"); // Firefox bug: always reports "borderColor" as "", so we must fall back to borderTopColor. See https://greensock.com/forums/topic/24583-how-to-return-colors-that-i-had-after-reverse/
     }
   }
 
@@ -477,10 +456,9 @@ _convertToUnit = function _convertToUnit(target, property, value, unit) {
   end += "";
 
   if (end === "auto") {
-    startValue = target.style[prop];
     target.style[prop] = end;
     end = _getComputedProperty(target, prop) || end;
-    startValue ? target.style[prop] = startValue : _removeProperty(target, prop);
+    target.style[prop] = start;
   }
 
   a = [start, end];
@@ -684,7 +662,7 @@ _specialProps = {
   		}
   	}
   	cache.classPT = plugin._pt = new PropTween(plugin._pt, target, "className", 0, 0, _renderClassName, data, 0, -11);
-  	if (style.cssText !== cssText) { //only apply if things change. Otherwise, in cases like a background-image that's pulled dynamically, it could cause a refresh. See https://gsap.com/forums/topic/20368-possible-gsap-bug-switching-classnames-in-chrome/.
+  	if (style.cssText !== cssText) { //only apply if things change. Otherwise, in cases like a background-image that's pulled dynamically, it could cause a refresh. See https://greensock.com/forums/topic/20368-possible-gsap-bug-switching-classnames-in-chrome/.
   		style.cssText = cssText; //we recorded cssText before we swapped classes and ran _getAllStyles() because in cases when a className tween is overwritten, we remove all the related tweening properties from that class change (otherwise class-specific stuff can't override properties we've directly set on the target's style object due to specificity).
   	}
   	_parseTransform(target, true); //to clear the caching of transforms
@@ -777,16 +755,13 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
   if (!originIsAbsolute) {
     bounds = _getBBox(target);
     xOrigin = bounds.x + (~originSplit[0].indexOf("%") ? xOrigin / 100 * bounds.width : xOrigin);
-    yOrigin = bounds.y + (~(originSplit[1] || originSplit[0]).indexOf("%") ? yOrigin / 100 * bounds.height : yOrigin); // if (!("xOrigin" in cache) && (xOrigin || yOrigin)) { // added in 3.12.3, reverted in 3.12.4; requires more exploration
-    // 	xOrigin -= bounds.x;
-    // 	yOrigin -= bounds.y;
-    // }
+    yOrigin = bounds.y + (~(originSplit[1] || originSplit[0]).indexOf("%") ? yOrigin / 100 * bounds.height : yOrigin);
   } else if (matrix !== _identity2DMatrix && (determinant = a * d - b * c)) {
     //if it's zero (like if scaleX and scaleY are zero), skip it to avoid errors with dividing by zero.
     x = xOrigin * (d / determinant) + yOrigin * (-c / determinant) + (c * ty - d * tx) / determinant;
     y = xOrigin * (-b / determinant) + yOrigin * (a / determinant) - (a * ty - b * tx) / determinant;
     xOrigin = x;
-    yOrigin = y; // theory: we only had to do this for smoothing and it assumes that the previous one was not originIsAbsolute.
+    yOrigin = y;
   }
 
   if (smooth || smooth !== false && cache.smooth) {
@@ -1022,7 +997,7 @@ _identity2DMatrix = [1, 0, 0, 1, 0, 0],
   cache.skewY = skewY + deg;
   cache.transformPerspective = perspective + px;
 
-  if (cache.zOrigin = parseFloat(origin.split(" ")[2]) || !uncache && cache.zOrigin || 0) {
+  if (cache.zOrigin = parseFloat(origin.split(" ")[2]) || 0) {
     style[_transformOriginProp] = _firstTwoOnly(origin);
   }
 
@@ -1412,7 +1387,7 @@ var CSSPlugin = {
           // in case someone hard-codes a complex value as the start, like top: "calc(2vh / 2)". Without this, it'd use the computed value (always in px)
           startValue = typeof startAt[p] === "function" ? startAt[p].call(tween, index, target, targets) : startAt[p];
           (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._isString)(startValue) && ~startValue.indexOf("random(") && (startValue = (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._replaceRandom)(startValue));
-          (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(startValue + "") || startValue === "auto" || (startValue += _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._config.units[p] || (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(_get(target, p)) || ""); // for cases when someone passes in a unitless value like {x: 100}; if we try setting translate(100, 0px) it won't work.
+          (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(startValue + "") || (startValue += _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__._config.units[p] || (0,_gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.getUnit)(_get(target, p)) || ""); // for cases when someone passes in a unitless value like {x: 100}; if we try setting translate(100, 0px) it won't work.
 
           (startValue + "").charAt(1) === "=" && (startValue = _get(target, p)); // can't work with relative values
         } else {
@@ -1603,12 +1578,12 @@ _gsap_core_js__WEBPACK_IMPORTED_MODULE_0__.gsap.registerPlugin(CSSPlugin);
 /* harmony export */ });
 /* unused harmony export default */
 /*!
- * ScrollToPlugin 3.12.5
- * https://gsap.com
+ * ScrollToPlugin 3.12.2
+ * https://greensock.com
  *
- * @license Copyright 2008-2024, GreenSock. All rights reserved.
- * Subject to the terms at https://gsap.com/standard-license or for
- * Club GSAP members, the agreement issued with that membership.
+ * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
@@ -1730,7 +1705,7 @@ var gsap,
 };
 
 var ScrollToPlugin = {
-  version: "3.12.5",
+  version: "3.12.2",
   name: "scrollTo",
   rawVars: 1,
   register: function register(core) {
@@ -1855,8 +1830,7 @@ var ScrollToPlugin = {
     ScrollTrigger && ScrollTrigger.update();
   },
   kill: function kill(property) {
-    var both = property === "scrollTo",
-        i = this._props.indexOf(property);
+    var both = property === "scrollTo";
 
     if (both || property === "scrollTo_x") {
       this.skipX = 1;
@@ -1865,9 +1839,6 @@ var ScrollToPlugin = {
     if (both || property === "scrollTo_y") {
       this.skipY = 1;
     }
-
-    i > -1 && this._props.splice(i, 1);
-    return !this._props.length;
   }
 };
 ScrollToPlugin.max = _max;
@@ -1918,12 +1889,12 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
 
 /*!
- * GSAP 3.12.5
- * https://gsap.com
+ * GSAP 3.12.2
+ * https://greensock.com
  *
- * @license Copyright 2008-2024, GreenSock. All rights reserved.
- * Subject to the terms at https://gsap.com/standard-license or for
- * Club GSAP members, the agreement issued with that membership.
+ * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
 */
 
@@ -2646,7 +2617,7 @@ distribute = function distribute(v) {
 
         while (max < (max = a[wrapAt++].getBoundingClientRect().left) && wrapAt < l) {}
 
-        wrapAt < l && wrapAt--;
+        wrapAt--;
       }
 
       distances = cache[l] = [];
@@ -2916,11 +2887,10 @@ distribute = function distribute(v) {
     _quickTween,
     _registerPluginQueue = [],
     _createPlugin = function _createPlugin(config) {
-  if (!config) return;
-  config = !config.name && config["default"] || config; // UMD packaging wraps things oddly, so for example MotionPathHelper becomes {MotionPathHelper:MotionPathHelper, default:MotionPathHelper}.
-
-  if (_windowExists() || config.headless) {
+  if (_windowExists() && config) {
     // edge case: some build tools may pass in a null/undefined value
+    config = !config.name && config["default"] || config; //UMD packaging wraps things oddly, so for example MotionPathHelper becomes {MotionPathHelper:MotionPathHelper, default:MotionPathHelper}.
+
     var name = config.name,
         isFunc = _isFunction(config),
         Plugin = name && !isFunc && config.init ? function () {
@@ -2971,7 +2941,7 @@ distribute = function distribute(v) {
 
     config.register && config.register(gsap, Plugin, PropTween);
   } else {
-    _registerPluginQueue.push(config);
+    config && _registerPluginQueue.push(config);
   }
 },
 
@@ -3210,7 +3180,7 @@ _tickerActive,
         time,
         frame;
 
-    (elapsed > _lagThreshold || elapsed < 0) && (_startTime += elapsed - _adjustedLag);
+    elapsed > _lagThreshold && (_startTime += elapsed - _adjustedLag);
     _lastUpdate += elapsed;
     time = _lastUpdate - _startTime;
     overlap = time - _nextTime;
@@ -3252,10 +3222,11 @@ _tickerActive,
 
           _install(_installScope || _win.GreenSockGlobals || !_win.gsap && _win || {});
 
+          _raf = _win.requestAnimationFrame;
+
           _registerPluginQueue.forEach(_createPlugin);
         }
 
-        _raf = typeof requestAnimationFrame !== "undefined" && requestAnimationFrame;
         _id && _self.sleep();
 
         _req = _raf || function (f) {
@@ -3268,7 +3239,7 @@ _tickerActive,
       }
     },
     sleep: function sleep() {
-      (_raf ? cancelAnimationFrame : clearTimeout)(_id);
+      (_raf ? _win.cancelAnimationFrame : clearTimeout)(_id);
       _tickerActive = 0;
       _req = _emptyFunc;
     },
@@ -3652,11 +3623,11 @@ var Animation = /*#__PURE__*/function () {
   };
 
   _proto.totalProgress = function totalProgress(value, suppressEvents) {
-    return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.rawTime() > 0 ? 1 : 0;
+    return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.ratio;
   };
 
   _proto.progress = function progress(value, suppressEvents) {
-    return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.rawTime() > 0 ? 1 : 0;
+    return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.ratio;
   };
 
   _proto.iteration = function iteration(value, suppressEvents) {
@@ -3675,7 +3646,7 @@ var Animation = /*#__PURE__*/function () {
   // }
   ;
 
-  _proto.timeScale = function timeScale(value, suppressEvents) {
+  _proto.timeScale = function timeScale(value) {
     if (!arguments.length) {
       return this._rts === -_tinyNum ? 0 : this._rts; // recorded timeScale. Special case: if someone calls reverse() on an animation with timeScale of 0, we assign it -_tinyNum to remember it's reversed.
     }
@@ -3692,7 +3663,7 @@ var Animation = /*#__PURE__*/function () {
     this._rts = +value || 0;
     this._ts = this._ps || value === -_tinyNum ? 0 : this._rts; // _ts is the functional timeScale which would be 0 if the animation is paused.
 
-    this.totalTime(_clamp(-Math.abs(this._delay), this._tDur, tTime), suppressEvents !== false);
+    this.totalTime(_clamp(-Math.abs(this._delay), this._tDur, tTime), true);
 
     _setEnd(this); // if parent.smoothChildTiming was false, the end time didn't get updated in the _alignPlayhead() method, so do it here.
 
@@ -3768,11 +3739,11 @@ var Animation = /*#__PURE__*/function () {
         time = arguments.length ? rawTime : animation.rawTime();
 
     while (animation) {
-      time = animation._start + time / (Math.abs(animation._ts) || 1);
+      time = animation._start + time / (animation._ts || 1);
       animation = animation._dp;
     }
 
-    return !this.parent && this._sat ? this._sat.globalTime(rawTime) : time; // the _startAt tweens for .fromTo() and .from() that have immediateRender should always be FIRST in the timeline (important for context.revert()). "_sat" stands for _startAtTween, referring to the parent tween that created the _startAt. We must discern if that tween had immediateRender so that we can know whether or not to prioritize it in revert().
+    return !this.parent && this._sat ? this._sat.vars.immediateRender ? -Infinity : this._sat.globalTime(rawTime) : time; // the _startAt tweens for .fromTo() and .from() that have immediateRender should always be FIRST in the timeline (important for context.revert()). "_sat" stands for _startAtTween, referring to the parent tween that created the _startAt. We must discern if that tween had immediateRender so that we can know whether or not to prioritize it in revert().
   };
 
   _proto.repeat = function repeat(value) {
@@ -4073,7 +4044,7 @@ var Timeline = /*#__PURE__*/function (_Animation) {
         }
 
         prevIteration = _animationCycle(this._tTime, cycleDuration);
-        !prevTime && this._tTime && prevIteration !== iteration && this._tTime - prevIteration * cycleDuration - this._dur <= 0 && (prevIteration = iteration); // edge case - if someone does addPause() at the very beginning of a repeating timeline, that pause is technically at the same spot as the end which causes this._time to get set to 0 when the totalTime would normally place the playhead at the end. See https://gsap.com/forums/topic/23823-closing-nav-animation-not-working-on-ie-and-iphone-6-maybe-other-older-browser/?tab=comments#comment-113005 also, this._tTime - prevIteration * cycleDuration - this._dur <= 0 just checks to make sure it wasn't previously in the "repeatDelay" portion
+        !prevTime && this._tTime && prevIteration !== iteration && this._tTime - prevIteration * cycleDuration - this._dur <= 0 && (prevIteration = iteration); // edge case - if someone does addPause() at the very beginning of a repeating timeline, that pause is technically at the same spot as the end which causes this._time to get set to 0 when the totalTime would normally place the playhead at the end. See https://greensock.com/forums/topic/23823-closing-nav-animation-not-working-on-ie-and-iphone-6-maybe-other-older-browser/?tab=comments#comment-113005 also, this._tTime - prevIteration * cycleDuration - this._dur <= 0 just checks to make sure it wasn't previously in the "repeatDelay" portion
 
         if (yoyo && iteration & 1) {
           time = dur - time;
@@ -4785,6 +4756,8 @@ _forceAllPropTweens,
       immediateRender = vars.immediateRender,
       lazy = vars.lazy,
       onUpdate = vars.onUpdate,
+      onUpdateParams = vars.onUpdateParams,
+      callbackScope = vars.callbackScope,
       runBackwards = vars.runBackwards,
       yoyoEase = vars.yoyoEase,
       keyframes = vars.keyframes,
@@ -4847,9 +4820,9 @@ _forceAllPropTweens,
         lazy: !prevStartAt && _isNotFalse(lazy),
         startAt: null,
         delay: 0,
-        onUpdate: onUpdate && function () {
-          return _callback(tween, "onUpdate");
-        },
+        onUpdate: onUpdate,
+        onUpdateParams: onUpdateParams,
+        callbackScope: callbackScope,
         stagger: 0
       }, startAt))); //copy the properties/values into a new object to avoid collisions, like var to = {x:0}, from = {x:500}; timeline.fromTo(e, from, to).fromTo(e, to, from);
 
@@ -4958,7 +4931,7 @@ _forceAllPropTweens,
 
   keyframes && time <= 0 && tl.render(_bigNum, true, true); // if there's a 0% keyframe, it'll render in the "before" state for any staggered/delayed animations thus when the following tween initializes, it'll use the "before" state instead of the "after" state as the initial values.
 },
-    _updatePropTweens = function _updatePropTweens(tween, property, value, start, startIsRelative, ratio, time, skipRecursion) {
+    _updatePropTweens = function _updatePropTweens(tween, property, value, start, startIsRelative, ratio, time) {
   var ptCache = (tween._pt && tween._ptCache || (tween._ptCache = {}))[property],
       pt,
       rootPT,
@@ -4993,7 +4966,7 @@ _forceAllPropTweens,
         _initTween(tween, time);
 
         _forceAllPropTweens = 0;
-        return skipRecursion ? _warn(property + " not eligible for reset") : 1; // if someone tries to do a quickTo() on a special property like borderRadius which must get split into 4 different properties, that's not eligible for .resetTo().
+        return 1;
       }
 
       ptCache.push(pt);
@@ -5116,7 +5089,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         curTarget,
         staggerFunc,
         staggerVarsToMerge;
-    _this3._targets = parsedTargets.length ? _harness(parsedTargets) : _warn("GSAP target " + targets + " not found. https://gsap.com", !_config.nullTargetWarn) || [];
+    _this3._targets = parsedTargets.length ? _harness(parsedTargets) : _warn("GSAP target " + targets + " not found. https://greensock.com", !_config.nullTargetWarn) || [];
     _this3._ptLookup = []; //PropTween lookup. An array containing an object for each target, having keys for each tweening property
 
     _this3._overwrite = overwrite;
@@ -5287,7 +5260,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         } else {
           iteration = ~~(tTime / cycleDuration);
 
-          if (iteration && iteration === _roundPrecise(tTime / cycleDuration)) {
+          if (iteration && iteration === tTime / cycleDuration) {
             time = dur;
             iteration--;
           }
@@ -5304,7 +5277,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
 
         prevIteration = _animationCycle(this._tTime, cycleDuration);
 
-        if (time === prevTime && !force && this._initted && iteration === prevIteration) {
+        if (time === prevTime && !force && this._initted) {
           //could be during the repeatDelay part. No need to render and fire callbacks.
           this._tTime = tTime;
           return this;
@@ -5313,8 +5286,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         if (iteration !== prevIteration) {
           timeline && this._yEase && _propagateYoyoEase(timeline, isYoyo); //repeatRefresh functionality
 
-          if (this.vars.repeatRefresh && !isYoyo && !this._lock && this._time !== cycleDuration && this._initted) {
-            // this._time will === cycleDuration when we render at EXACTLY the end of an iteration. Without this condition, it'd often do the repeatRefresh render TWICE (again on the very next tick).
+          if (this.vars.repeatRefresh && !isYoyo && !this._lock) {
             this._lock = force = 1; //force, otherwise if lazy is true, the _attemptInitTween() will return and we'll jump out and get caught bouncing on each tick.
 
             this.render(_roundPrecise(cycleDuration * iteration), true).invalidate()._lock = 0;
@@ -5329,8 +5301,8 @@ var Tween = /*#__PURE__*/function (_Animation2) {
           return this;
         }
 
-        if (prevTime !== this._time && !(force && this.vars.repeatRefresh && iteration !== prevIteration)) {
-          // rare edge case - during initialization, an onUpdate in the _startAt (.fromTo()) might force this tween to render at a different spot in which case we should ditch this render() call so that it doesn't revert the values. But we also don't want to dump if we're doing a repeatRefresh render!
+        if (prevTime !== this._time) {
+          // rare edge case - during initialization, an onUpdate in the _startAt (.fromTo()) might force this tween to render at a different spot in which case we should ditch this render() call so that it doesn't revert the values.
           return this;
         }
 
@@ -5371,7 +5343,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
         pt = pt._next;
       }
 
-      timeline && timeline.render(totalTime < 0 ? totalTime : timeline._dur * timeline._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
+      timeline && timeline.render(totalTime < 0 ? totalTime : !time && isYoyo ? -_tinyNum : timeline._dur * timeline._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
 
       if (this._onUpdate && !suppressEvents) {
         isNegative && _rewindStartAt(this, totalTime, suppressEvents, force); //note: for performance reasons, we tuck this conditional logic inside less traveled areas (most tweens don't have an onUpdate). We'd just have it at the end before the onComplete, but the values should be updated before any onUpdate is called, so we ALSO put it here and then if it's not called, we do so later near the onComplete.
@@ -5410,7 +5382,7 @@ var Tween = /*#__PURE__*/function (_Animation2) {
     return _Animation2.prototype.invalidate.call(this, soft);
   };
 
-  _proto3.resetTo = function resetTo(property, value, start, startIsRelative, skipRecursion) {
+  _proto3.resetTo = function resetTo(property, value, start, startIsRelative) {
     _tickerActive || _ticker.wake();
     this._ts || this.play();
     var time = Math.min(this._dur, (this._dp._time - this._start) * this._ts),
@@ -5426,8 +5398,8 @@ var Tween = /*#__PURE__*/function (_Animation2) {
     // 	}
     // } else {
 
-    if (_updatePropTweens(this, property, value, start, startIsRelative, ratio, time, skipRecursion)) {
-      return this.resetTo(property, value, start, startIsRelative, 1); // if a PropTween wasn't found for the property, it'll get forced with a re-initialization so we need to jump out and start over again.
+    if (_updatePropTweens(this, property, value, start, startIsRelative, ratio, time)) {
+      return this.resetTo(property, value, start, startIsRelative); // if a PropTween wasn't found for the property, it'll get forced with a re-initialization so we need to jump out and start over again.
     } //}
 
 
@@ -5808,9 +5780,7 @@ var _media = [],
     _dispatch("matchMediaRevert");
 
     matches.forEach(function (c) {
-      return c.onMatch(c, function (func) {
-        return c.add(null, func);
-      });
+      return c.onMatch(c);
     });
     _lastMediaTime = time;
 
@@ -5861,9 +5831,7 @@ var Context = /*#__PURE__*/function () {
     };
 
     self.last = f;
-    return name === _isFunction ? f(self, function (func) {
-      return self.add(null, func);
-    }) : name ? self[name] = f : f;
+    return name === _isFunction ? f(self) : name ? self[name] = f : f;
   };
 
   _proto5.ignore = function ignore(func) {
@@ -5889,57 +5857,37 @@ var Context = /*#__PURE__*/function () {
     var _this4 = this;
 
     if (revert) {
-      (function () {
-        var tweens = _this4.getTweens(),
-            i = _this4.data.length,
-            t;
-
-        while (i--) {
-          // Flip plugin tweens are very different in that they should actually be pushed to their end. The plugin replaces the timeline's .revert() method to do exactly that. But we also need to remove any of those nested tweens inside the flip timeline so that they don't get individually reverted.
-          t = _this4.data[i];
-
-          if (t.data === "isFlip") {
-            t.revert();
-            t.getChildren(true, true, false).forEach(function (tween) {
-              return tweens.splice(tweens.indexOf(tween), 1);
-            });
-          }
-        } // save as an object so that we can cache the globalTime for each tween to optimize performance during the sort
-
-
-        tweens.map(function (t) {
-          return {
-            g: t._dur || t._delay || t._sat && !t._sat.vars.immediateRender ? t.globalTime(0) : -Infinity,
-            t: t
-          };
-        }).sort(function (a, b) {
-          return b.g - a.g || -Infinity;
-        }).forEach(function (o) {
-          return o.t.revert(revert);
-        }); // note: all of the _startAt tweens should be reverted in reverse order that they were created, and they'll all have the same globalTime (-1) so the " || -1" in the sort keeps the order properly.
-
-        i = _this4.data.length;
-
-        while (i--) {
-          // make sure we loop backwards so that, for example, SplitTexts that were created later on the same element get reverted first
-          t = _this4.data[i];
-
-          if (t instanceof Timeline) {
-            if (t.data !== "nested") {
-              t.scrollTrigger && t.scrollTrigger.revert();
-              t.kill(); // don't revert() the timeline because that's duplicating efforts since we already reverted all the tweens
-            }
-          } else {
-            !(t instanceof Tween) && t.revert && t.revert(revert);
-          }
+      var tweens = this.getTweens();
+      this.data.forEach(function (t) {
+        // Flip plugin tweens are very different in that they should actually be pushed to their end. The plugin replaces the timeline's .revert() method to do exactly that. But we also need to remove any of those nested tweens inside the flip timeline so that they don't get individually reverted.
+        if (t.data === "isFlip") {
+          t.revert();
+          t.getChildren(true, true, false).forEach(function (tween) {
+            return tweens.splice(tweens.indexOf(tween), 1);
+          });
         }
+      }); // save as an object so that we can cache the globalTime for each tween to optimize performance during the sort
 
-        _this4._r.forEach(function (f) {
-          return f(revert, _this4);
-        });
+      tweens.map(function (t) {
+        return {
+          g: t.globalTime(0),
+          t: t
+        };
+      }).sort(function (a, b) {
+        return b.g - a.g || -Infinity;
+      }).forEach(function (o) {
+        return o.t.revert(revert);
+      }); // note: all of the _startAt tweens should be reverted in reverse order that they were created, and they'll all have the same globalTime (-1) so the " || -1" in the sort keeps the order properly.
 
-        _this4.isReverted = true;
-      })();
+      this.data.forEach(function (e) {
+        return !(e instanceof Tween) && e.revert && e.revert(revert);
+      });
+
+      this._r.forEach(function (f) {
+        return f(revert, _this4);
+      });
+
+      this.isReverted = true;
     } else {
       this.data.forEach(function (e) {
         return e.kill && e.kill();
@@ -5969,7 +5917,6 @@ var MatchMedia = /*#__PURE__*/function () {
   function MatchMedia(scope) {
     this.contexts = [];
     this.scope = scope;
-    _context && _context.data.push(this);
   }
 
   var _proto6 = MatchMedia.prototype;
@@ -6003,9 +5950,7 @@ var MatchMedia = /*#__PURE__*/function () {
       }
     }
 
-    active && func(context, function (f) {
-      return context.add(null, f);
-    });
+    active && func(context);
     return this;
   } // refresh() {
   // 	let time = _lastMediaTime,
@@ -6375,7 +6320,7 @@ var gsap = _gsap.registerPlugin({
   }
 }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap; //to prevent the core plugins from being dropped via aggressive tree shaking, we must include them in the variable declaration in this way.
 
-Tween.version = Timeline.version = gsap.version = "3.12.5";
+Tween.version = Timeline.version = gsap.version = "3.12.2";
 _coreReady = 1;
 _windowExists() && _wake();
 var Power0 = _easeMap.Power0,
@@ -64757,19 +64702,19 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ toPrimitive)
+/* harmony export */   "default": () => (/* binding */ _toPrimitive)
 /* harmony export */ });
 /* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
 
-function toPrimitive(t, r) {
-  if ("object" != (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(t) || !t) return t;
-  var e = t[Symbol.toPrimitive];
-  if (void 0 !== e) {
-    var i = e.call(t, r || "default");
-    if ("object" != (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i)) return i;
+function _toPrimitive(input, hint) {
+  if ((0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(input) !== "object" || input === null) return input;
+  var prim = input[Symbol.toPrimitive];
+  if (prim !== undefined) {
+    var res = prim.call(input, hint || "default");
+    if ((0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(res) !== "object") return res;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return ("string" === r ? String : Number)(t);
+  return (hint === "string" ? String : Number)(input);
 }
 
 /***/ }),
@@ -64782,15 +64727,15 @@ function toPrimitive(t, r) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ toPropertyKey)
+/* harmony export */   "default": () => (/* binding */ _toPropertyKey)
 /* harmony export */ });
 /* harmony import */ var _typeof_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./typeof.js */ "./node_modules/@babel/runtime/helpers/esm/typeof.js");
 /* harmony import */ var _toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toPrimitive.js */ "./node_modules/@babel/runtime/helpers/esm/toPrimitive.js");
 
 
-function toPropertyKey(t) {
-  var i = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(t, "string");
-  return "symbol" == (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(i) ? i : i + "";
+function _toPropertyKey(arg) {
+  var key = (0,_toPrimitive_js__WEBPACK_IMPORTED_MODULE_1__["default"])(arg, "string");
+  return (0,_typeof_js__WEBPACK_IMPORTED_MODULE_0__["default"])(key) === "symbol" ? key : String(key);
 }
 
 /***/ }),
@@ -64805,14 +64750,14 @@ function toPropertyKey(t) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ _typeof)
 /* harmony export */ });
-function _typeof(o) {
+function _typeof(obj) {
   "@babel/helpers - typeof";
 
-  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
-    return typeof o;
-  } : function (o) {
-    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-  }, _typeof(o);
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) {
+    return typeof obj;
+  } : function (obj) {
+    return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  }, _typeof(obj);
 }
 
 /***/ }),
@@ -66473,17 +66418,7 @@ function make_dirty(component, i) {
 	component.$$.dirty[(i / 31) | 0] |= 1 << i % 31;
 }
 
-// TODO: Document the other params
-/**
- * @param {SvelteComponent} component
- * @param {import('./public.js').ComponentConstructorOptions} options
- *
- * @param {import('./utils.js')['not_equal']} not_equal Used to compare props and state values.
- * @param {(target: Element | ShadowRoot) => void} [append_styles] Function that appends styles to the DOM when the component is first initialised.
- * This will be the `add_css` function from the compiled component.
- *
- * @returns {void}
- */
+/** @returns {void} */
 function init(
 	component,
 	options,
@@ -66491,7 +66426,7 @@ function init(
 	create_fragment,
 	not_equal,
 	props,
-	append_styles = null,
+	append_styles,
 	dirty = [-1]
 ) {
 	const parent_component = _lifecycle_js__WEBPACK_IMPORTED_MODULE_1__.current_component;
@@ -66538,9 +66473,8 @@ function init(
 	if (options.target) {
 		if (options.hydrate) {
 			(0,_dom_js__WEBPACK_IMPORTED_MODULE_3__.start_hydrating)();
-			// TODO: what is the correct type here?
-			// @ts-expect-error
 			const nodes = (0,_dom_js__WEBPACK_IMPORTED_MODULE_3__.children)(options.target);
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			$$.fragment && $$.fragment.l(nodes);
 			nodes.forEach(_dom_js__WEBPACK_IMPORTED_MODULE_3__.detach);
 		} else {
@@ -66616,7 +66550,7 @@ if (typeof HTMLElement === 'function') {
 			if (!this.$$c) {
 				// We wait one tick to let possible child slot elements be created/mounted
 				await Promise.resolve();
-				if (!this.$$cn || this.$$c) {
+				if (!this.$$cn) {
 					return;
 				}
 				function create_slot(name) {
@@ -66659,13 +66593,6 @@ if (typeof HTMLElement === 'function') {
 						this.$$d[name] = get_custom_element_value(name, attribute.value, this.$$p_d, 'toProp');
 					}
 				}
-				// Port over props that were set programmatically before ce was initialized
-				for (const key in this.$$p_d) {
-					if (!(key in this.$$d) && this[key] !== undefined) {
-						this.$$d[key] = this[key]; // don't transform, these were set through JavaScript
-						delete this[key]; // remove the property that shadows the getter/setter
-					}
-				}
 				this.$$c = new this.$$ctor({
 					target: this.shadowRoot || this,
 					props: {
@@ -66690,7 +66617,7 @@ if (typeof HTMLElement === 'function') {
 								'toAttribute'
 							);
 							if (attribute_value == null) {
-								this.removeAttribute(this.$$p_d[key].attribute || key);
+								this.removeAttribute(key);
 							} else {
 								this.setAttribute(this.$$p_d[key].attribute || key, attribute_value);
 							}
@@ -67642,11 +67569,9 @@ if (typeof window !== 'undefined')
 /* harmony export */   svg_element: () => (/* binding */ svg_element),
 /* harmony export */   text: () => (/* binding */ text)
 /* harmony export */ });
-/* unused harmony exports element_is, object_without_properties, comment, stop_propagation, stop_immediate_propagation, self, trusted, set_attributes, set_svg_attributes, set_custom_element_data_map, set_custom_element_data, set_dynamic_element_data, xlink_attr, get_svelte_dataset, get_binding_group_value, init_binding_group, init_binding_group_dynamic, to_number, time_ranges_to_array, claim_element, claim_svg_element, claim_text, claim_space, claim_comment, claim_html_tag, set_data_contenteditable, set_data_maybe_contenteditable, set_input_value, set_input_type, select_option, select_options, select_value, select_multiple_value, is_crossorigin, add_iframe_resize_listener, resize_observer_content_box, resize_observer_border_box, resize_observer_device_pixel_content_box, toggle_class, query_selector_all, head_selector, HtmlTagHydration, attribute_to_object, stringify_spread, construct_svelte_component */
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils.js */ "./node_modules/svelte/src/runtime/internal/utils.js");
-/* harmony import */ var _ResizeObserverSingleton_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ResizeObserverSingleton.js */ "./node_modules/svelte/src/runtime/internal/ResizeObserverSingleton.js");
-
-
+/* unused harmony exports element_is, object_without_properties, comment, stop_propagation, stop_immediate_propagation, self, trusted, set_attributes, set_svg_attributes, set_custom_element_data_map, set_custom_element_data, set_dynamic_element_data, xlink_attr, get_svelte_dataset, get_binding_group_value, init_binding_group, init_binding_group_dynamic, to_number, time_ranges_to_array, claim_element, claim_svg_element, claim_text, claim_space, claim_comment, claim_html_tag, set_data_contenteditable, set_data_maybe_contenteditable, set_input_value, set_input_type, select_option, select_options, select_value, select_multiple_value, is_crossorigin, add_iframe_resize_listener, resize_observer_content_box, resize_observer_border_box, resize_observer_device_pixel_content_box, toggle_class, query_selector_all, head_selector, HtmlTagHydration, attribute_to_object, construct_svelte_component */
+/* harmony import */ var _ResizeObserverSingleton_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ResizeObserverSingleton.js */ "./node_modules/svelte/src/runtime/internal/ResizeObserverSingleton.js");
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils.js */ "./node_modules/svelte/src/runtime/internal/utils.js");
 
 
 // Track which nodes are claimed during hydration. Unclaimed nodes can then be removed from the DOM
@@ -67699,14 +67624,14 @@ function init_hydrate(target) {
 	let children = /** @type {ArrayLike<NodeEx2>} */ (target.childNodes);
 	// If target is <head>, there may be children without claim_order
 	if (target.nodeName === 'HEAD') {
-		const my_children = [];
+		const myChildren = [];
 		for (let i = 0; i < children.length; i++) {
 			const node = children[i];
 			if (node.claim_order !== undefined) {
-				my_children.push(node);
+				myChildren.push(node);
 			}
 		}
-		children = my_children;
+		children = myChildren;
 	}
 	/*
 	 * Reorder claimed children optimally.
@@ -67736,15 +67661,15 @@ function init_hydrate(target) {
 		// Find the largest subsequence length such that it ends in a value less than our current value
 		// upper_bound returns first greater value, so we subtract one
 		// with fast path for when we are on the current longest subsequence
-		const seq_len =
+		const seqLen =
 			(longest > 0 && children[m[longest]].claim_order <= current
 				? longest + 1
 				: upper_bound(1, longest, (idx) => children[m[idx]].claim_order, current)) - 1;
-		p[i] = m[seq_len] + 1;
-		const new_len = seq_len + 1;
+		p[i] = m[seqLen] + 1;
+		const newLen = seqLen + 1;
 		// We can guarantee that current is the smallest value. Otherwise, we would have generated a longer sequence.
-		m[new_len] = i;
-		longest = Math.max(new_len, longest);
+		m[newLen] = i;
+		longest = Math.max(newLen, longest);
 	}
 	// The longest increasing subsequence of nodes (initially reversed)
 
@@ -67757,28 +67682,28 @@ function init_hydrate(target) {
 	/**
 	 * @type {NodeEx2[]}
 	 */
-	const to_move = [];
+	const toMove = [];
 	let last = children.length - 1;
 	for (let cur = m[longest] + 1; cur != 0; cur = p[cur - 1]) {
 		lis.push(children[cur - 1]);
 		for (; last >= cur; last--) {
-			to_move.push(children[last]);
+			toMove.push(children[last]);
 		}
 		last--;
 	}
 	for (; last >= 0; last--) {
-		to_move.push(children[last]);
+		toMove.push(children[last]);
 	}
 	lis.reverse();
 	// We sort the nodes being moved to guarantee that their insertion order matches the claim order
-	to_move.sort((a, b) => a.claim_order - b.claim_order);
+	toMove.sort((a, b) => a.claim_order - b.claim_order);
 	// Finally, we move the nodes
-	for (let i = 0, j = 0; i < to_move.length; i++) {
-		while (j < lis.length && to_move[i].claim_order >= lis[j].claim_order) {
+	for (let i = 0, j = 0; i < toMove.length; i++) {
+		while (j < lis.length && toMove[i].claim_order >= lis[j].claim_order) {
 			j++;
 		}
 		const anchor = j < lis.length ? lis[j] : null;
-		target.insertBefore(to_move[i], anchor);
+		target.insertBefore(toMove[i], anchor);
 	}
 }
 
@@ -67949,7 +67874,7 @@ function object_without_properties(obj, exclude) {
 	const target = /** @type {Pick<T, Exclude<keyof T, K>>} */ ({});
 	for (const k in obj) {
 		if (
-			(0,_utils_js__WEBPACK_IMPORTED_MODULE_0__.has_prop)(obj, k) &&
+			(0,_utils_js__WEBPACK_IMPORTED_MODULE_1__.has_prop)(obj, k) &&
 			// @ts-ignore
 			exclude.indexOf(k) === -1
 		) {
@@ -68127,10 +68052,7 @@ function set_custom_element_data_map(node, data_map) {
 /**
  * @returns {void} */
 function set_custom_element_data(node, prop, value) {
-	const lower = prop.toLowerCase(); // for backwards compatibility with existing behavior we do lowercase first
-	if (lower in node) {
-		node[lower] = typeof node[lower] === 'boolean' && value === '' ? true : value;
-	} else if (prop in node) {
+	if (prop in node) {
 		node[prop] = typeof node[prop] === 'boolean' && value === '' ? true : value;
 	} else {
 		attr(node, prop, value);
@@ -68276,26 +68198,26 @@ function init_claim_info(nodes) {
  * @template {ChildNodeEx} R
  * @param {ChildNodeArray} nodes
  * @param {(node: ChildNodeEx) => node is R} predicate
- * @param {(node: ChildNodeEx) => ChildNodeEx | undefined} process_node
- * @param {() => R} create_node
- * @param {boolean} dont_update_last_index
+ * @param {(node: ChildNodeEx) => ChildNodeEx | undefined} processNode
+ * @param {() => R} createNode
+ * @param {boolean} dontUpdateLastIndex
  * @returns {R}
  */
-function claim_node(nodes, predicate, process_node, create_node, dont_update_last_index = false) {
+function claim_node(nodes, predicate, processNode, createNode, dontUpdateLastIndex = false) {
 	// Try to find nodes in an order such that we lengthen the longest increasing subsequence
 	init_claim_info(nodes);
-	const result_node = (() => {
+	const resultNode = (() => {
 		// We first try to find an element after the previous one
 		for (let i = nodes.claim_info.last_index; i < nodes.length; i++) {
 			const node = nodes[i];
 			if (predicate(node)) {
-				const replacement = process_node(node);
+				const replacement = processNode(node);
 				if (replacement === undefined) {
 					nodes.splice(i, 1);
 				} else {
 					nodes[i] = replacement;
 				}
-				if (!dont_update_last_index) {
+				if (!dontUpdateLastIndex) {
 					nodes.claim_info.last_index = i;
 				}
 				return node;
@@ -68306,13 +68228,13 @@ function claim_node(nodes, predicate, process_node, create_node, dont_update_las
 		for (let i = nodes.claim_info.last_index - 1; i >= 0; i--) {
 			const node = nodes[i];
 			if (predicate(node)) {
-				const replacement = process_node(node);
+				const replacement = processNode(node);
 				if (replacement === undefined) {
 					nodes.splice(i, 1);
 				} else {
 					nodes[i] = replacement;
 				}
-				if (!dont_update_last_index) {
+				if (!dontUpdateLastIndex) {
 					nodes.claim_info.last_index = i;
 				} else if (replacement === undefined) {
 					// Since we spliced before the last_index, we decrease it
@@ -68322,11 +68244,11 @@ function claim_node(nodes, predicate, process_node, create_node, dont_update_las
 			}
 		}
 		// If we can't find any matching node, we create a new one
-		return create_node();
+		return createNode();
 	})();
-	result_node.claim_order = nodes.claim_info.total_claimed;
+	resultNode.claim_order = nodes.claim_info.total_claimed;
 	nodes.claim_info.total_claimed += 1;
-	return result_node;
+	return resultNode;
 }
 
 /**
@@ -68388,13 +68310,13 @@ function claim_text(nodes, data) {
 		(node) => node.nodeType === 3,
 		/** @param {Text} node */
 		(node) => {
-			const data_str = '' + data;
-			if (node.data.startsWith(data_str)) {
-				if (node.data.length !== data_str.length) {
-					return node.splitText(data_str.length);
+			const dataStr = '' + data;
+			if (node.data.startsWith(dataStr)) {
+				if (node.data.length !== dataStr.length) {
+					return node.splitText(dataStr.length);
 				}
 			} else {
-				node.data = data_str;
+				node.data = dataStr;
 			}
 		},
 		() => text(data),
@@ -68454,9 +68376,6 @@ function claim_html_tag(nodes, is_svg) {
 	detach(html_tag_nodes[0]);
 	detach(html_tag_nodes[html_tag_nodes.length - 1]);
 	const claimed_nodes = html_tag_nodes.slice(1, html_tag_nodes.length - 1);
-	if (claimed_nodes.length === 0) {
-		return new HtmlTagHydration(is_svg);
-	}
 	for (const n of claimed_nodes) {
 		n.claim_order = nodes.claim_info.total_claimed;
 		nodes.claim_info.total_claimed += 1;
@@ -68493,7 +68412,7 @@ function set_data_contenteditable(text, data) {
  * @returns {void}
  */
 function set_data_maybe_contenteditable(text, data, attr_value) {
-	if (~_utils_js__WEBPACK_IMPORTED_MODULE_0__.contenteditable_truthy_values.indexOf(attr_value)) {
+	if (~_utils_js__WEBPACK_IMPORTED_MODULE_1__.contenteditable_truthy_values.indexOf(attr_value)) {
 		set_data_contenteditable(text, data);
 	} else {
 		set_data(text, data);
@@ -68633,13 +68552,13 @@ function add_iframe_resize_listener(node, fn) {
 		detach(iframe);
 	};
 }
-const resize_observer_content_box = /* @__PURE__ */ new _ResizeObserverSingleton_js__WEBPACK_IMPORTED_MODULE_1__.ResizeObserverSingleton({
+const resize_observer_content_box = /* @__PURE__ */ new _ResizeObserverSingleton_js__WEBPACK_IMPORTED_MODULE_0__.ResizeObserverSingleton({
 	box: 'content-box'
 });
-const resize_observer_border_box = /* @__PURE__ */ new _ResizeObserverSingleton_js__WEBPACK_IMPORTED_MODULE_1__.ResizeObserverSingleton({
+const resize_observer_border_box = /* @__PURE__ */ new _ResizeObserverSingleton_js__WEBPACK_IMPORTED_MODULE_0__.ResizeObserverSingleton({
 	box: 'border-box'
 });
-const resize_observer_device_pixel_content_box = /* @__PURE__ */ new _ResizeObserverSingleton_js__WEBPACK_IMPORTED_MODULE_1__.ResizeObserverSingleton(
+const resize_observer_device_pixel_content_box = /* @__PURE__ */ new _ResizeObserverSingleton_js__WEBPACK_IMPORTED_MODULE_0__.ResizeObserverSingleton(
 	{ box: 'device-pixel-content-box' }
 );
 
@@ -68825,36 +68744,6 @@ function attribute_to_object(attributes) {
 		result[attribute.name] = attribute.value;
 	}
 	return result;
-}
-
-const escaped = {
-	'"': '&quot;',
-	'&': '&amp;',
-	'<': '&lt;'
-};
-
-const regex_attribute_characters_to_escape = /["&<]/g;
-
-/**
- * Note that the attribute itself should be surrounded in double quotes
- * @param {any} attribute
- */
-function escape_attribute(attribute) {
-	return String(attribute).replace(regex_attribute_characters_to_escape, (match) => escaped[match]);
-}
-
-/**
- * @param {Record<string, string>} attributes
- */
-function stringify_spread(attributes) {
-	let str = ' ';
-	for (const key in attributes) {
-		if (attributes[key] != null) {
-			str += `${key}="${escape_attribute(attributes[key])}" `;
-		}
-	}
-
-	return str;
 }
 
 /**
@@ -69267,7 +69156,7 @@ function beforeUpdate(fn) {
  *
  * If a function is returned _synchronously_ from `onMount`, it will be called when the component is unmounted.
  *
- * `onMount` does not run inside a [server-side component](https://svelte.dev/docs#run-time-server-side-component-api).
+ * `onMount` does not run inside a [server-side component](/docs#run-time-server-side-component-api).
  *
  * https://svelte.dev/docs/svelte#onmount
  * @template T
@@ -69306,7 +69195,7 @@ function onDestroy(fn) {
 }
 
 /**
- * Creates an event dispatcher that can be used to dispatch [component events](https://svelte.dev/docs#template-syntax-component-directives-on-eventname).
+ * Creates an event dispatcher that can be used to dispatch [component events](/docs#template-syntax-component-directives-on-eventname).
  * Event dispatchers are functions that can take two arguments: `name` and `detail`.
  *
  * Component events created with `createEventDispatcher` create a
@@ -71242,7 +71131,7 @@ function draw(node, { delay = 0, speed, duration, easing = _easing_index_js__WEB
 }
 
 /**
- * The `crossfade` function creates a pair of [transitions](https://svelte.dev/docs#template-syntax-element-directives-transition-fn) called `send` and `receive`. When an element is 'sent', it looks for a corresponding element being 'received', and generates a transition that transforms the element to its counterpart's position and fades it out. When an element is 'received', the reverse happens. If there is no counterpart, the `fallback` transition is used.
+ * The `crossfade` function creates a pair of [transitions](/docs#template-syntax-element-directives-transition-fn) called `send` and `receive`. When an element is 'sent', it looks for a corresponding element being 'received', and generates a transition that transforms the element to its counterpart's position and fades it out. When an element is 'received', the reverse happens. If there is no counterpart, the `fallback` transition is used.
  *
  * https://svelte.dev/docs/svelte-transition#crossfade
  * @param {import('./public').CrossfadeParams & {
@@ -71440,7 +71329,7 @@ function is_svg(name) {
  * https://svelte.dev/docs/svelte-compiler#svelte-version
  * @type {string}
  */
-const VERSION = '4.2.12';
+const VERSION = '4.2.0';
 const PUBLIC_VERSION = '4';
 
 
@@ -73400,8 +73289,7 @@ function freeMode(_ref) {
 function Grid(_ref) {
   let {
     swiper,
-    extendParams,
-    on
+    extendParams
   } = _ref;
   extendParams({
     grid: {
@@ -73412,7 +73300,6 @@ function Grid(_ref) {
   let slidesNumberEvenToRows;
   let slidesPerRow;
   let numFullColumns;
-  let wasMultiRow;
   const getSpaceBetween = () => {
     let spaceBetween = swiper.params.spaceBetween;
     if (typeof spaceBetween === 'string' && spaceBetween.indexOf('%') >= 0) {
@@ -73503,30 +73390,6 @@ function Grid(_ref) {
       snapGrid.push(...newSlidesGrid);
     }
   };
-  const onInit = () => {
-    wasMultiRow = swiper.params.grid && swiper.params.grid.rows > 1;
-  };
-  const onUpdate = () => {
-    const {
-      params,
-      el
-    } = swiper;
-    const isMultiRow = params.grid && params.grid.rows > 1;
-    if (wasMultiRow && !isMultiRow) {
-      el.classList.remove(`${params.containerModifierClass}grid`, `${params.containerModifierClass}grid-column`);
-      numFullColumns = 1;
-      swiper.emitContainerClasses();
-    } else if (!wasMultiRow && isMultiRow) {
-      el.classList.add(`${params.containerModifierClass}grid`);
-      if (params.grid.fill === 'column') {
-        el.classList.add(`${params.containerModifierClass}grid-column`);
-      }
-      swiper.emitContainerClasses();
-    }
-    wasMultiRow = isMultiRow;
-  };
-  on('init', onInit);
-  on('update', onUpdate);
   swiper.grid = {
     initSlides,
     updateSlide,
@@ -74765,11 +74628,7 @@ function Navigation(_ref) {
     } = swiper.navigation;
     nextEl = makeElementsArray(nextEl);
     prevEl = makeElementsArray(prevEl);
-    if (swiper.enabled) {
-      update();
-      return;
-    }
-    [...nextEl, ...prevEl].filter(el => !!el).forEach(el => el.classList.add(swiper.params.navigation.lockClass));
+    [...nextEl, ...prevEl].filter(el => !!el).forEach(el => el.classList[swiper.enabled ? 'remove' : 'add'](swiper.params.navigation.lockClass));
   });
   on('click', (_s, e) => {
     let {
@@ -74911,24 +74770,16 @@ function Pagination(_ref) {
       const realIndex = swiper.realIndex;
       const newSlideIndex = swiper.getSlideIndexByData(index);
       const currentSlideIndex = swiper.getSlideIndexByData(swiper.realIndex);
-      const loopFix = dir => {
+      if (newSlideIndex > swiper.slides.length - swiper.loopedSlides) {
         const indexBeforeLoopFix = swiper.activeIndex;
         swiper.loopFix({
-          direction: dir,
+          direction: newSlideIndex > currentSlideIndex ? 'next' : 'prev',
           activeSlideIndex: newSlideIndex,
           slideTo: false
         });
         const indexAfterFix = swiper.activeIndex;
         if (indexBeforeLoopFix === indexAfterFix) {
           swiper.slideToLoop(realIndex, 0, false, true);
-        }
-      };
-      if (newSlideIndex > swiper.slides.length - swiper.loopedSlides) {
-        loopFix(newSlideIndex > currentSlideIndex ? 'next' : 'prev');
-      } else if (swiper.params.centeredSlides) {
-        const slidesPerView = swiper.params.slidesPerView === 'auto' ? swiper.slidesPerViewDynamic() : Math.ceil(parseFloat(swiper.params.slidesPerView, 10));
-        if (newSlideIndex < Math.floor(slidesPerView / 2)) {
-          loopFix('prev');
         }
       }
       swiper.slideToLoop(index);
@@ -76085,9 +75936,7 @@ function Virtual(_ref) {
     if (!params.renderSlide) {
       slideEl.innerHTML = slide;
     }
-    if (params.cache) {
-      swiper.virtual.cache[index] = slideEl;
-    }
+    if (params.cache) swiper.virtual.cache[index] = slideEl;
     return slideEl;
   }
   function update(force) {
@@ -76194,14 +76043,14 @@ function Virtual(_ref) {
       return slideIndex;
     };
     if (force) {
-      swiper.slides.filter(el => el.matches(`.${swiper.params.slideClass}, swiper-slide`)).forEach(slideEl => {
+      swiper.slidesEl.querySelectorAll(`.${swiper.params.slideClass}, swiper-slide`).forEach(slideEl => {
         slideEl.remove();
       });
     } else {
       for (let i = previousFrom; i <= previousTo; i += 1) {
         if (i < from || i > to) {
           const slideIndex = getSlideIndex(i);
-          swiper.slides.filter(el => el.matches(`.${swiper.params.slideClass}[data-swiper-slide-index="${slideIndex}"], swiper-slide[data-swiper-slide-index="${slideIndex}"]`)).forEach(slideEl => {
+          swiper.slidesEl.querySelectorAll(`.${swiper.params.slideClass}[data-swiper-slide-index="${slideIndex}"], swiper-slide[data-swiper-slide-index="${slideIndex}"]`).forEach(slideEl => {
             slideEl.remove();
           });
         }
@@ -76283,34 +76132,18 @@ function Virtual(_ref) {
     let activeIndex = swiper.activeIndex;
     if (Array.isArray(slidesIndexes)) {
       for (let i = slidesIndexes.length - 1; i >= 0; i -= 1) {
+        swiper.virtual.slides.splice(slidesIndexes[i], 1);
         if (swiper.params.virtual.cache) {
           delete swiper.virtual.cache[slidesIndexes[i]];
-          // shift cache indexes
-          Object.keys(swiper.virtual.cache).forEach(key => {
-            if (key > slidesIndexes) {
-              swiper.virtual.cache[key - 1] = swiper.virtual.cache[key];
-              swiper.virtual.cache[key - 1].setAttribute('data-swiper-slide-index', key - 1);
-              delete swiper.virtual.cache[key];
-            }
-          });
         }
-        swiper.virtual.slides.splice(slidesIndexes[i], 1);
         if (slidesIndexes[i] < activeIndex) activeIndex -= 1;
         activeIndex = Math.max(activeIndex, 0);
       }
     } else {
+      swiper.virtual.slides.splice(slidesIndexes, 1);
       if (swiper.params.virtual.cache) {
         delete swiper.virtual.cache[slidesIndexes];
-        // shift cache indexes
-        Object.keys(swiper.virtual.cache).forEach(key => {
-          if (key > slidesIndexes) {
-            swiper.virtual.cache[key - 1] = swiper.virtual.cache[key];
-            swiper.virtual.cache[key - 1].setAttribute('data-swiper-slide-index', key - 1);
-            delete swiper.virtual.cache[key];
-          }
-        });
       }
-      swiper.virtual.slides.splice(slidesIndexes, 1);
       if (slidesIndexes < activeIndex) activeIndex -= 1;
       activeIndex = Math.max(activeIndex, 0);
     }
@@ -76346,7 +76179,9 @@ function Virtual(_ref) {
     swiper.classNames.push(`${swiper.params.containerModifierClass}virtual`);
     swiper.params.watchSlidesProgress = true;
     swiper.originalParams.watchSlidesProgress = true;
-    update();
+    if (!swiper.params.initialSlide) {
+      update();
+    }
   });
   on('setTranslate', () => {
     if (!swiper.params.virtual.enabled) return;
@@ -76482,7 +76317,7 @@ function Zoom(_ref) {
       y: null
     };
     const box = gesture.imageEl.getBoundingClientRect();
-    return [(evCache[0].pageX + (evCache[1].pageX - evCache[0].pageX) / 2 - box.x - window.scrollX) / currentScale, (evCache[0].pageY + (evCache[1].pageY - evCache[0].pageY) / 2 - box.y - window.scrollY) / currentScale];
+    return [(evCache[0].pageX + (evCache[1].pageX - evCache[0].pageX) / 2 - box.x) / currentScale, (evCache[0].pageY + (evCache[1].pageY - evCache[0].pageY) / 2 - box.y) / currentScale];
   }
   function getSlideSelector() {
     return swiper.isElement ? `swiper-slide` : `.${swiper.params.slideClass}`;
@@ -77290,9 +77125,7 @@ function getParams(element, propName, propValue) {
   if (typeof propName === 'string' && typeof propValue !== 'undefined') {
     attrsList.push({
       name: propName,
-      value: (0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.i)(propValue) ? {
-        ...propValue
-      } : propValue
+      value: propValue
     });
   }
   attrsList.forEach(attr => {
@@ -77311,11 +77144,11 @@ function getParams(element, propName, propValue) {
       const name = (0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.c)(attr.name);
       if (!allowedParams.includes(name)) return;
       const value = formatValue(attr.value);
-      if (passedParams[name] && modulesParamsList.includes(attr.name) && !(0,_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_0__.i)(value)) {
+      if (passedParams[name] && modulesParamsList.includes(attr.name)) {
         if (passedParams[name].constructor !== Object) {
           passedParams[name] = {};
         }
-        passedParams[name].enabled = !!value;
+        passedParams[name].enabled = value;
       } else {
         passedParams[name] = value;
       }
@@ -78422,17 +78255,7 @@ const processLazyPreloader = (swiper, imageEl) => {
   if (slideEl) {
     let lazyEl = slideEl.querySelector(`.${swiper.params.lazyPreloaderClass}`);
     if (!lazyEl && swiper.isElement) {
-      if (slideEl.shadowRoot) {
-        lazyEl = slideEl.shadowRoot.querySelector(`.${swiper.params.lazyPreloaderClass}`);
-      } else {
-        // init later
-        requestAnimationFrame(() => {
-          if (slideEl.shadowRoot) {
-            lazyEl = slideEl.shadowRoot.querySelector(`.${swiper.params.lazyPreloaderClass}`);
-            if (lazyEl) lazyEl.remove();
-          }
-        });
-      }
+      lazyEl = slideEl.shadowRoot.querySelector(`.${swiper.params.lazyPreloaderClass}`);
     }
     if (lazyEl) lazyEl.remove();
   }
@@ -78566,25 +78389,18 @@ function updateActiveIndex(newActiveIndex) {
   }
   swiper.emit('activeIndexChange');
   swiper.emit('snapIndexChange');
+  if (previousRealIndex !== realIndex) {
+    swiper.emit('realIndexChange');
+  }
   if (swiper.initialized || swiper.params.runCallbacksOnInit) {
-    if (previousRealIndex !== realIndex) {
-      swiper.emit('realIndexChange');
-    }
     swiper.emit('slideChange');
   }
 }
 
-function updateClickedSlide(el, path) {
+function updateClickedSlide(e) {
   const swiper = this;
   const params = swiper.params;
-  let slide = el.closest(`.${params.slideClass}, swiper-slide`);
-  if (!slide && swiper.isElement && path && path.length > 1 && path.includes(el)) {
-    [...path.slice(path.indexOf(el) + 1, path.length)].forEach(pathEl => {
-      if (!slide && pathEl.matches && pathEl.matches(`.${params.slideClass}, swiper-slide`)) {
-        slide = pathEl;
-      }
-    });
-  }
+  const slide = e.closest(`.${params.slideClass}, swiper-slide`);
   let slideFound = false;
   let slideIndex;
   if (slide) {
@@ -79083,12 +78899,6 @@ function slideNext(speed, runCallbacks, internal) {
     });
     // eslint-disable-next-line
     swiper._clientLeft = swiper.wrapperEl.clientLeft;
-    if (swiper.activeIndex === swiper.slides.length - 1 && params.cssMode) {
-      requestAnimationFrame(() => {
-        swiper.slideTo(swiper.activeIndex + increment, speed, runCallbacks, internal);
-      });
-      return true;
-    }
   }
   if (params.rewind && swiper.isEnd) {
     return swiper.slideTo(0, speed, runCallbacks, internal);
@@ -79155,11 +78965,6 @@ function slidePrev(speed, runCallbacks, internal) {
   if (params.rewind && swiper.isBeginning) {
     const lastIndex = swiper.params.virtual && swiper.params.virtual.enabled && swiper.virtual ? swiper.virtual.slides.length - 1 : swiper.slides.length - 1;
     return swiper.slideTo(lastIndex, speed, runCallbacks, internal);
-  } else if (params.loop && swiper.activeIndex === 0 && params.cssMode) {
-    requestAnimationFrame(() => {
-      swiper.slideTo(prevIndex, speed, runCallbacks, internal);
-    });
-    return true;
   }
   return swiper.slideTo(prevIndex, speed, runCallbacks, internal);
 }
@@ -79739,9 +79544,8 @@ function onTouchMove(event) {
   swiper.swipeDirection = diff > 0 ? 'prev' : 'next';
   swiper.touchesDirection = touchesDiff > 0 ? 'prev' : 'next';
   const isLoop = swiper.params.loop && !params.cssMode;
-  const allowLoopFix = swiper.swipeDirection === 'next' && swiper.allowSlideNext || swiper.swipeDirection === 'prev' && swiper.allowSlidePrev;
   if (!data.isMoved) {
-    if (isLoop && allowLoopFix) {
+    if (isLoop) {
       swiper.loopFix({
         direction: swiper.swipeDirection
       });
@@ -79763,7 +79567,7 @@ function onTouchMove(event) {
     swiper.emit('sliderFirstMove', e);
   }
   let loopFixed;
-  if (data.isMoved && prevTouchesDirection !== swiper.touchesDirection && isLoop && allowLoopFix && Math.abs(diff) >= 1) {
+  if (data.isMoved && prevTouchesDirection !== swiper.touchesDirection && isLoop && Math.abs(diff) >= 1) {
     // need another loop fix
     swiper.loopFix({
       direction: swiper.swipeDirection,
@@ -79780,7 +79584,7 @@ function onTouchMove(event) {
     resistanceRatio = 0;
   }
   if (diff > 0) {
-    if (isLoop && allowLoopFix && !loopFixed && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.size / 2 : swiper.minTranslate())) {
+    if (isLoop && !loopFixed && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.size / 2 : swiper.minTranslate())) {
       swiper.loopFix({
         direction: 'prev',
         setTranslate: true,
@@ -79794,7 +79598,7 @@ function onTouchMove(event) {
       }
     }
   } else if (diff < 0) {
-    if (isLoop && allowLoopFix && !loopFixed && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.size / 2 : swiper.maxTranslate())) {
+    if (isLoop && !loopFixed && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.size / 2 : swiper.maxTranslate())) {
       swiper.loopFix({
         direction: 'next',
         setTranslate: true,
@@ -79903,7 +79707,7 @@ function onTouchEnd(event) {
   // Tap, doubleTap, Click
   if (swiper.allowClick) {
     const pathTree = e.path || e.composedPath && e.composedPath();
-    swiper.updateClickedSlide(pathTree && pathTree[0] || e.target, pathTree);
+    swiper.updateClickedSlide(pathTree && pathTree[0] || e.target);
     swiper.emit('tap click', e);
     if (timeDiff < 300 && touchEndTime - data.lastClickTime < 300) {
       swiper.emit('doubleTap doubleClick', e);
@@ -80244,13 +80048,11 @@ function setBreakpoint() {
   });
   const directionChanged = breakpointParams.direction && breakpointParams.direction !== params.direction;
   const needsReLoop = params.loop && (breakpointParams.slidesPerView !== params.slidesPerView || directionChanged);
-  const wasLoop = params.loop;
   if (directionChanged && initialized) {
     swiper.changeDirection();
   }
   (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.q)(swiper.params, breakpointParams);
   const isEnabled = swiper.params.enabled;
-  const hasLoop = swiper.params.loop;
   Object.assign(swiper, {
     allowTouchMove: swiper.params.allowTouchMove,
     allowSlideNext: swiper.params.allowSlideNext,
@@ -80263,17 +80065,10 @@ function setBreakpoint() {
   }
   swiper.currentBreakpoint = breakpoint;
   swiper.emit('_beforeBreakpoint', breakpointParams);
-  if (initialized) {
-    if (needsReLoop) {
-      swiper.loopDestroy();
-      swiper.loopCreate(realIndex);
-      swiper.updateSlides();
-    } else if (!wasLoop && hasLoop) {
-      swiper.loopCreate(realIndex);
-      swiper.updateSlides();
-    } else if (wasLoop && !hasLoop) {
-      swiper.loopDestroy();
-    }
+  if (needsReLoop && initialized) {
+    swiper.loopDestroy();
+    swiper.loopCreate(realIndex);
+    swiper.updateSlides();
   }
   swiper.emit('breakpoint', breakpointParams);
 }
@@ -80550,20 +80345,19 @@ function moduleExtendParams(params, allModulesParams) {
       (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.q)(allModulesParams, obj);
       return;
     }
-    if (params[moduleParamName] === true) {
+    if (['navigation', 'pagination', 'scrollbar'].indexOf(moduleParamName) >= 0 && params[moduleParamName] === true) {
       params[moduleParamName] = {
-        enabled: true
+        auto: true
       };
-    }
-    if (moduleParamName === 'navigation' && params[moduleParamName] && params[moduleParamName].enabled && !params[moduleParamName].prevEl && !params[moduleParamName].nextEl) {
-      params[moduleParamName].auto = true;
-    }
-    if (['pagination', 'scrollbar'].indexOf(moduleParamName) >= 0 && params[moduleParamName] && params[moduleParamName].enabled && !params[moduleParamName].el) {
-      params[moduleParamName].auto = true;
     }
     if (!(moduleParamName in params && 'enabled' in moduleParams)) {
       (0,_utils_mjs__WEBPACK_IMPORTED_MODULE_1__.q)(allModulesParams, obj);
       return;
+    }
+    if (params[moduleParamName] === true) {
+      params[moduleParamName] = {
+        enabled: true
+      };
     }
     if (typeof params[moduleParamName] === 'object' && !('enabled' in params[moduleParamName])) {
       params[moduleParamName].enabled = true;
@@ -80842,7 +80636,6 @@ class Swiper {
       activeIndex
     } = swiper;
     let spv = 1;
-    if (typeof params.slidesPerView === 'number') return params.slidesPerView;
     if (params.centeredSlides) {
       let slideSize = slides[activeIndex] ? slides[activeIndex].swiperSlideSize : 0;
       let breakLoop;
@@ -81193,19 +80986,18 @@ Swiper.use([Resize, Observer]);
 /* harmony export */   b: () => (/* binding */ needsScrollbar),
 /* harmony export */   c: () => (/* binding */ attrToProp),
 /* harmony export */   e: () => (/* binding */ extend),
-/* harmony export */   i: () => (/* binding */ isObject),
 /* harmony export */   n: () => (/* binding */ needsNavigation),
 /* harmony export */   p: () => (/* binding */ paramsList),
 /* harmony export */   u: () => (/* binding */ updateSwiper)
 /* harmony export */ });
-/* unused harmony exports d, w */
+/* unused harmony exports d, i, w */
 /* underscore in name -> watch for changes */
-const paramsList = ['eventsPrefix', 'injectStyles', 'injectStylesUrls', 'modules', 'init', '_direction', 'oneWayMovement', 'touchEventsTarget', 'initialSlide', '_speed', 'cssMode', 'updateOnWindowResize', 'resizeObserver', 'nested', 'focusableElements', '_enabled', '_width', '_height', 'preventInteractionOnTransition', 'userAgent', 'url', '_edgeSwipeDetection', '_edgeSwipeThreshold', '_freeMode', '_autoHeight', 'setWrapperSize', 'virtualTranslate', '_effect', 'breakpoints', 'breakpointsBase', '_spaceBetween', '_slidesPerView', 'maxBackfaceHiddenSlides', '_grid', '_slidesPerGroup', '_slidesPerGroupSkip', '_slidesPerGroupAuto', '_centeredSlides', '_centeredSlidesBounds', '_slidesOffsetBefore', '_slidesOffsetAfter', 'normalizeSlideIndex', '_centerInsufficientSlides', '_watchOverflow', 'roundLengths', 'touchRatio', 'touchAngle', 'simulateTouch', '_shortSwipes', '_longSwipes', 'longSwipesRatio', 'longSwipesMs', '_followFinger', 'allowTouchMove', '_threshold', 'touchMoveStopPropagation', 'touchStartPreventDefault', 'touchStartForcePreventDefault', 'touchReleaseOnEdges', 'uniqueNavElements', '_resistance', '_resistanceRatio', '_watchSlidesProgress', '_grabCursor', 'preventClicks', 'preventClicksPropagation', '_slideToClickedSlide', '_loop', 'loopedSlides', 'loopPreventsSliding', '_rewind', '_allowSlidePrev', '_allowSlideNext', '_swipeHandler', '_noSwiping', 'noSwipingClass', 'noSwipingSelector', 'passiveListeners', 'containerModifierClass', 'slideClass', 'slideActiveClass', 'slideVisibleClass', 'slideNextClass', 'slidePrevClass', 'wrapperClass', 'lazyPreloaderClass', 'lazyPreloadPrevNext', 'runCallbacksOnInit', 'observer', 'observeParents', 'observeSlideChildren',
+const paramsList = ['eventsPrefix', 'injectStyles', 'injectStylesUrls', 'modules', 'init', '_direction', 'oneWayMovement', 'touchEventsTarget', 'initialSlide', '_speed', 'cssMode', 'updateOnWindowResize', 'resizeObserver', 'nested', 'focusableElements', '_enabled', '_width', '_height', 'preventInteractionOnTransition', 'userAgent', 'url', '_edgeSwipeDetection', '_edgeSwipeThreshold', '_freeMode', '_autoHeight', 'setWrapperSize', 'virtualTranslate', '_effect', 'breakpoints', '_spaceBetween', '_slidesPerView', 'maxBackfaceHiddenSlides', '_grid', '_slidesPerGroup', '_slidesPerGroupSkip', '_slidesPerGroupAuto', '_centeredSlides', '_centeredSlidesBounds', '_slidesOffsetBefore', '_slidesOffsetAfter', 'normalizeSlideIndex', '_centerInsufficientSlides', '_watchOverflow', 'roundLengths', 'touchRatio', 'touchAngle', 'simulateTouch', '_shortSwipes', '_longSwipes', 'longSwipesRatio', 'longSwipesMs', '_followFinger', 'allowTouchMove', '_threshold', 'touchMoveStopPropagation', 'touchStartPreventDefault', 'touchStartForcePreventDefault', 'touchReleaseOnEdges', 'uniqueNavElements', '_resistance', '_resistanceRatio', '_watchSlidesProgress', '_grabCursor', 'preventClicks', 'preventClicksPropagation', '_slideToClickedSlide', '_loop', 'loopedSlides', 'loopPreventsSliding', '_rewind', '_allowSlidePrev', '_allowSlideNext', '_swipeHandler', '_noSwiping', 'noSwipingClass', 'noSwipingSelector', 'passiveListeners', 'containerModifierClass', 'slideClass', 'slideActiveClass', 'slideVisibleClass', 'slideNextClass', 'slidePrevClass', 'wrapperClass', 'lazyPreloaderClass', 'lazyPreloadPrevNext', 'runCallbacksOnInit', 'observer', 'observeParents', 'observeSlideChildren',
 // modules
 'a11y', '_autoplay', '_controller', 'coverflowEffect', 'cubeEffect', 'fadeEffect', 'flipEffect', 'creativeEffect', 'cardsEffect', 'hashNavigation', 'history', 'keyboard', 'mousewheel', '_navigation', '_pagination', 'parallax', '_scrollbar', '_thumbs', 'virtual', 'zoom', 'control'];
 
 function isObject(o) {
-  return typeof o === 'object' && o !== null && o.constructor && Object.prototype.toString.call(o).slice(8, -1) === 'Object' && !o.__swiper__;
+  return typeof o === 'object' && o !== null && o.constructor && Object.prototype.toString.call(o).slice(8, -1) === 'Object';
 }
 function extend(target, src) {
   const noExtend = ['__proto__', 'constructor', 'prototype'];
@@ -81775,7 +81567,7 @@ function elementOuterSize(el, size, includeMargins) {
 /* harmony import */ var _modules_effect_creative_mjs__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/effect-creative.mjs */ "./node_modules/swiper/modules/effect-creative.mjs");
 /* harmony import */ var _modules_effect_cards_mjs__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./modules/effect-cards.mjs */ "./node_modules/swiper/modules/effect-cards.mjs");
 /**
- * Swiper 10.3.1
+ * Swiper 10.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -81783,7 +81575,7 @@ function elementOuterSize(el, size, includeMargins) {
  *
  * Released under the MIT License
  *
- * Released on: September 28, 2023
+ * Released on: August 17, 2023
  */
 
 
@@ -81836,7 +81628,7 @@ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S.use(modules);
 /* harmony import */ var _shared_get_element_params_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./shared/get-element-params.mjs */ "./node_modules/swiper/shared/get-element-params.mjs");
 /* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shared/swiper-core.mjs */ "./node_modules/swiper/shared/swiper-core.mjs");
 /**
- * Swiper Custom Element 10.3.1
+ * Swiper Custom Element 10.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -81844,7 +81636,7 @@ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S.use(modules);
  *
  * Released under the MIT License
  *
- * Released on: September 28, 2023
+ * Released on: August 17, 2023
  */
 
 
@@ -81854,7 +81646,7 @@ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S.use(modules);
 
 /* eslint-disable spaced-comment */
 
-const SwiperCSS = `:host{--swiper-theme-color:#007aff}:host{position:relative;display:block;margin-left:auto;margin-right:auto;z-index:1}.swiper{width:100%;height:100%;margin-left:auto;margin-right:auto;position:relative;overflow:hidden;overflow:clip;list-style:none;padding:0;z-index:1;display:block}.swiper-vertical>.swiper-wrapper{flex-direction:column}.swiper-wrapper{position:relative;width:100%;height:100%;z-index:1;display:flex;transition-property:transform;transition-timing-function:var(--swiper-wrapper-transition-timing-function,initial);box-sizing:content-box}.swiper-android ::slotted(swiper-slide),.swiper-ios ::slotted(swiper-slide),.swiper-wrapper{transform:translate3d(0px,0,0)}.swiper-horizontal{touch-action:pan-y}.swiper-vertical{touch-action:pan-x}::slotted(swiper-slide){flex-shrink:0;width:100%;height:100%;position:relative;transition-property:transform;display:block}::slotted(.swiper-slide-invisible-blank){visibility:hidden}.swiper-autoheight,.swiper-autoheight ::slotted(swiper-slide){height:auto}.swiper-autoheight .swiper-wrapper{align-items:flex-start;transition-property:transform,height}.swiper-backface-hidden ::slotted(swiper-slide){transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}.swiper-3d.swiper-css-mode .swiper-wrapper{perspective:1200px}.swiper-3d .swiper-wrapper{transform-style:preserve-3d}.swiper-3d{perspective:1200px}.swiper-3d .swiper-cube-shadow,.swiper-3d ::slotted(swiper-slide){transform-style:preserve-3d}.swiper-css-mode>.swiper-wrapper{overflow:auto;scrollbar-width:none;-ms-overflow-style:none}.swiper-css-mode>.swiper-wrapper::-webkit-scrollbar{display:none}.swiper-css-mode ::slotted(swiper-slide){scroll-snap-align:start start}.swiper-css-mode.swiper-horizontal>.swiper-wrapper{scroll-snap-type:x mandatory}.swiper-css-mode.swiper-vertical>.swiper-wrapper{scroll-snap-type:y mandatory}.swiper-css-mode.swiper-free-mode>.swiper-wrapper{scroll-snap-type:none}.swiper-css-mode.swiper-free-mode ::slotted(swiper-slide){scroll-snap-align:none}.swiper-css-mode.swiper-centered>.swiper-wrapper::before{content:'';flex-shrink:0;order:9999}.swiper-css-mode.swiper-centered ::slotted(swiper-slide){scroll-snap-align:center center;scroll-snap-stop:always}.swiper-css-mode.swiper-centered.swiper-horizontal ::slotted(swiper-slide):first-child{margin-inline-start:var(--swiper-centered-offset-before)}.swiper-css-mode.swiper-centered.swiper-horizontal>.swiper-wrapper::before{height:100%;min-height:1px;width:var(--swiper-centered-offset-after)}.swiper-css-mode.swiper-centered.swiper-vertical ::slotted(swiper-slide):first-child{margin-block-start:var(--swiper-centered-offset-before)}.swiper-css-mode.swiper-centered.swiper-vertical>.swiper-wrapper::before{width:100%;min-width:1px;height:var(--swiper-centered-offset-after)}.swiper-virtual ::slotted(swiper-slide){-webkit-backface-visibility:hidden;transform:translateZ(0)}.swiper-virtual.swiper-css-mode .swiper-wrapper::after{content:'';position:absolute;left:0;top:0;pointer-events:none}.swiper-virtual.swiper-css-mode.swiper-horizontal .swiper-wrapper::after{height:1px;width:var(--swiper-virtual-size)}.swiper-virtual.swiper-css-mode.swiper-vertical .swiper-wrapper::after{width:1px;height:var(--swiper-virtual-size)}:host{--swiper-navigation-size:44px}.swiper-button-next,.swiper-button-prev{position:absolute;top:var(--swiper-navigation-top-offset,50%);width:calc(var(--swiper-navigation-size)/ 44 * 27);height:var(--swiper-navigation-size);margin-top:calc(0px - (var(--swiper-navigation-size)/ 2));z-index:10;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--swiper-navigation-color,var(--swiper-theme-color))}.swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled{opacity:.35;cursor:auto;pointer-events:none}.swiper-button-next.swiper-button-hidden,.swiper-button-prev.swiper-button-hidden{opacity:0;cursor:auto;pointer-events:none}.swiper-navigation-disabled .swiper-button-next,.swiper-navigation-disabled .swiper-button-prev{display:none!important}.swiper-button-next svg,.swiper-button-prev svg{width:100%;height:100%;object-fit:contain;transform-origin:center}.swiper-rtl .swiper-button-next svg,.swiper-rtl .swiper-button-prev svg{transform:rotate(180deg)}.swiper-button-prev,.swiper-rtl .swiper-button-next{left:var(--swiper-navigation-sides-offset,10px);right:auto}.swiper-button-next,.swiper-rtl .swiper-button-prev{right:var(--swiper-navigation-sides-offset,10px);left:auto}.swiper-button-lock{display:none}.swiper-pagination{position:absolute;text-align:center;transition:.3s opacity;transform:translate3d(0,0,0);z-index:10}.swiper-pagination.swiper-pagination-hidden{opacity:0}.swiper-pagination-disabled>.swiper-pagination,.swiper-pagination.swiper-pagination-disabled{display:none!important}.swiper-horizontal>.swiper-pagination-bullets,.swiper-pagination-bullets.swiper-pagination-horizontal,.swiper-pagination-custom,.swiper-pagination-fraction{bottom:var(--swiper-pagination-bottom,8px);top:var(--swiper-pagination-top,auto);left:0;width:100%}.swiper-pagination-bullets-dynamic{overflow:hidden;font-size:0}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{transform:scale(.33);position:relative}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active{transform:scale(1)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main{transform:scale(1)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev{transform:scale(.66)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev{transform:scale(.33)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next{transform:scale(.66)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next{transform:scale(.33)}.swiper-pagination-bullet{width:var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,8px));height:var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,8px));display:inline-block;border-radius:var(--swiper-pagination-bullet-border-radius,50%);background:var(--swiper-pagination-bullet-inactive-color,#000);opacity:var(--swiper-pagination-bullet-inactive-opacity, .2)}button.swiper-pagination-bullet{border:none;margin:0;padding:0;box-shadow:none;-webkit-appearance:none;appearance:none}.swiper-pagination-clickable .swiper-pagination-bullet{cursor:pointer}.swiper-pagination-bullet:only-child{display:none!important}.swiper-pagination-bullet-active{opacity:var(--swiper-pagination-bullet-opacity, 1);background:var(--swiper-pagination-color,var(--swiper-theme-color))}.swiper-pagination-vertical.swiper-pagination-bullets,.swiper-vertical>.swiper-pagination-bullets{right:var(--swiper-pagination-right,8px);left:var(--swiper-pagination-left,auto);top:50%;transform:translate3d(0px,-50%,0)}.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,.swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin:var(--swiper-pagination-bullet-vertical-gap,6px) 0;display:block}.swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,.swiper-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{top:50%;transform:translateY(-50%);width:8px}.swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,.swiper-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{display:inline-block;transition:.2s transform,.2s top}.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{margin:0 var(--swiper-pagination-bullet-horizontal-gap,4px)}.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{left:50%;transform:translateX(-50%);white-space:nowrap}.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{transition:.2s transform,.2s left}.swiper-horizontal.swiper-rtl>.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{transition:.2s transform,.2s right}.swiper-pagination-fraction{color:var(--swiper-pagination-fraction-color,inherit)}.swiper-pagination-progressbar{background:var(--swiper-pagination-progressbar-bg-color,rgba(0,0,0,.25));position:absolute}.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{background:var(--swiper-pagination-color,var(--swiper-theme-color));position:absolute;left:0;top:0;width:100%;height:100%;transform:scale(0);transform-origin:left top}.swiper-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{transform-origin:right top}.swiper-horizontal>.swiper-pagination-progressbar,.swiper-pagination-progressbar.swiper-pagination-horizontal,.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,.swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{width:100%;height:var(--swiper-pagination-progressbar-size,4px);left:0;top:0}.swiper-horizontal>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,.swiper-pagination-progressbar.swiper-pagination-horizontal.swiper-pagination-progressbar-opposite,.swiper-pagination-progressbar.swiper-pagination-vertical,.swiper-vertical>.swiper-pagination-progressbar{width:var(--swiper-pagination-progressbar-size,4px);height:100%;left:0;top:0}.swiper-pagination-lock{display:none}.swiper-scrollbar{border-radius:var(--swiper-scrollbar-border-radius,10px);position:relative;touch-action:none;background:var(--swiper-scrollbar-bg-color,rgba(0,0,0,.1))}.swiper-scrollbar-disabled>.swiper-scrollbar,.swiper-scrollbar.swiper-scrollbar-disabled{display:none!important}.swiper-horizontal>.swiper-scrollbar,.swiper-scrollbar.swiper-scrollbar-horizontal{position:absolute;left:var(--swiper-scrollbar-sides-offset,1%);bottom:var(--swiper-scrollbar-bottom,4px);top:var(--swiper-scrollbar-top,auto);z-index:50;height:var(--swiper-scrollbar-size,4px);width:calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%))}.swiper-scrollbar.swiper-scrollbar-vertical,.swiper-vertical>.swiper-scrollbar{position:absolute;left:var(--swiper-scrollbar-left,auto);right:var(--swiper-scrollbar-right,4px);top:var(--swiper-scrollbar-sides-offset,1%);z-index:50;width:var(--swiper-scrollbar-size,4px);height:calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%))}.swiper-scrollbar-drag{height:100%;width:100%;position:relative;background:var(--swiper-scrollbar-drag-bg-color,rgba(0,0,0,.5));border-radius:var(--swiper-scrollbar-border-radius,10px);left:0;top:0}.swiper-scrollbar-cursor-drag{cursor:move}.swiper-scrollbar-lock{display:none}::slotted(.swiper-slide-zoomed){cursor:move;touch-action:none}.swiper .swiper-notification{position:absolute;left:0;top:0;pointer-events:none;opacity:0;z-index:-1000}.swiper-free-mode>.swiper-wrapper{transition-timing-function:ease-out;margin:0 auto}.swiper-grid>.swiper-wrapper{flex-wrap:wrap}.swiper-grid-column>.swiper-wrapper{flex-wrap:wrap;flex-direction:column}.swiper-fade.swiper-free-mode ::slotted(swiper-slide){transition-timing-function:ease-out}.swiper-fade ::slotted(swiper-slide){pointer-events:none;transition-property:opacity}.swiper-fade ::slotted(swiper-slide) ::slotted(swiper-slide){pointer-events:none}.swiper-fade ::slotted(.swiper-slide-active){pointer-events:auto}.swiper-fade ::slotted(.swiper-slide-active) ::slotted(.swiper-slide-active){pointer-events:auto}.swiper-cube{overflow:visible}.swiper-cube ::slotted(swiper-slide){pointer-events:none;-webkit-backface-visibility:hidden;backface-visibility:hidden;z-index:1;visibility:hidden;transform-origin:0 0;width:100%;height:100%}.swiper-cube ::slotted(swiper-slide) ::slotted(swiper-slide){pointer-events:none}.swiper-cube.swiper-rtl ::slotted(swiper-slide){transform-origin:100% 0}.swiper-cube ::slotted(.swiper-slide-active),.swiper-cube ::slotted(.swiper-slide-active) ::slotted(.swiper-slide-active){pointer-events:auto}.swiper-cube ::slotted(.swiper-slide-active),.swiper-cube ::slotted(.swiper-slide-next),.swiper-cube ::slotted(.swiper-slide-prev){pointer-events:auto;visibility:visible}.swiper-cube .swiper-cube-shadow{position:absolute;left:0;bottom:0px;width:100%;height:100%;opacity:.6;z-index:0}.swiper-cube .swiper-cube-shadow:before{content:'';background:#000;position:absolute;left:0;top:0;bottom:0;right:0;filter:blur(50px)}.swiper-cube ::slotted(.swiper-slide-next)+::slotted(swiper-slide){pointer-events:auto;visibility:visible}.swiper-flip{overflow:visible}.swiper-flip ::slotted(swiper-slide){pointer-events:none;-webkit-backface-visibility:hidden;backface-visibility:hidden;z-index:1}.swiper-flip ::slotted(swiper-slide) ::slotted(swiper-slide){pointer-events:none}.swiper-flip ::slotted(.swiper-slide-active),.swiper-flip ::slotted(.swiper-slide-active) ::slotted(.swiper-slide-active){pointer-events:auto}.swiper-creative ::slotted(swiper-slide){-webkit-backface-visibility:hidden;backface-visibility:hidden;overflow:hidden;transition-property:transform,opacity,height}.swiper-cards{overflow:visible}.swiper-cards ::slotted(swiper-slide){transform-origin:center bottom;-webkit-backface-visibility:hidden;backface-visibility:hidden;overflow:hidden}`
+const SwiperCSS = `:host{--swiper-theme-color:#007aff}:host{position:relative;display:block;margin-left:auto;margin-right:auto;z-index:1}.swiper{width:100%;height:100%;margin-left:auto;margin-right:auto;position:relative;overflow:hidden;overflow:clip;list-style:none;padding:0;z-index:1;display:block}.swiper-vertical>.swiper-wrapper{flex-direction:column}.swiper-wrapper{position:relative;width:100%;height:100%;z-index:1;display:flex;transition-property:transform;transition-timing-function:var(--swiper-wrapper-transition-timing-function,initial);box-sizing:content-box}.swiper-android ::slotted(swiper-slide),.swiper-ios ::slotted(swiper-slide),.swiper-wrapper{transform:translate3d(0px,0,0)}.swiper-horizontal{touch-action:pan-y}.swiper-vertical{touch-action:pan-x}::slotted(swiper-slide){flex-shrink:0;width:100%;height:100%;position:relative;transition-property:transform;display:block}::slotted(.swiper-slide-invisible-blank){visibility:hidden}.swiper-autoheight,.swiper-autoheight ::slotted(swiper-slide){height:auto}.swiper-autoheight .swiper-wrapper{align-items:flex-start;transition-property:transform,height}.swiper-backface-hidden ::slotted(swiper-slide){transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden}.swiper-3d.swiper-css-mode .swiper-wrapper{perspective:1200px}.swiper-3d .swiper-wrapper{transform-style:preserve-3d}.swiper-3d{perspective:1200px}.swiper-3d .swiper-cube-shadow,.swiper-3d ::slotted(swiper-slide){transform-style:preserve-3d}.swiper-css-mode>.swiper-wrapper{overflow:auto;scrollbar-width:none;-ms-overflow-style:none}.swiper-css-mode>.swiper-wrapper::-webkit-scrollbar{display:none}.swiper-css-mode ::slotted(swiper-slide){scroll-snap-align:start start}.swiper-css-mode.swiper-horizontal>.swiper-wrapper{scroll-snap-type:x mandatory}.swiper-css-mode.swiper-vertical>.swiper-wrapper{scroll-snap-type:y mandatory}.swiper-css-mode.swiper-free-mode>.swiper-wrapper{scroll-snap-type:none}.swiper-css-mode.swiper-free-mode ::slotted(swiper-slide){scroll-snap-align:none}.swiper-css-mode.swiper-centered>.swiper-wrapper::before{content:'';flex-shrink:0;order:9999}.swiper-css-mode.swiper-centered ::slotted(swiper-slide){scroll-snap-align:center center;scroll-snap-stop:always}.swiper-css-mode.swiper-centered.swiper-horizontal ::slotted(swiper-slide):first-child{margin-inline-start:var(--swiper-centered-offset-before)}.swiper-css-mode.swiper-centered.swiper-horizontal>.swiper-wrapper::before{height:100%;min-height:1px;width:var(--swiper-centered-offset-after)}.swiper-css-mode.swiper-centered.swiper-vertical ::slotted(swiper-slide):first-child{margin-block-start:var(--swiper-centered-offset-before)}.swiper-css-mode.swiper-centered.swiper-vertical>.swiper-wrapper::before{width:100%;min-width:1px;height:var(--swiper-centered-offset-after)}.swiper-virtual ::slotted(swiper-slide){-webkit-backface-visibility:hidden;transform:translateZ(0)}.swiper-virtual.swiper-css-mode .swiper-wrapper::after{content:'';position:absolute;left:0;top:0;pointer-events:none}.swiper-virtual.swiper-css-mode.swiper-horizontal .swiper-wrapper::after{height:1px;width:var(--swiper-virtual-size)}.swiper-virtual.swiper-css-mode.swiper-vertical .swiper-wrapper::after{width:1px;height:var(--swiper-virtual-size)}:host{--swiper-navigation-size:44px}.swiper-button-next,.swiper-button-prev{position:absolute;top:var(--swiper-navigation-top-offset,50%);width:calc(var(--swiper-navigation-size)/ 44 * 27);height:var(--swiper-navigation-size);margin-top:calc(0px - (var(--swiper-navigation-size)/ 2));z-index:10;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--swiper-navigation-color,var(--swiper-theme-color))}.swiper-button-next.swiper-button-disabled,.swiper-button-prev.swiper-button-disabled{opacity:.35;cursor:auto;pointer-events:none}.swiper-button-next.swiper-button-hidden,.swiper-button-prev.swiper-button-hidden{opacity:0;cursor:auto;pointer-events:none}.swiper-navigation-disabled .swiper-button-next,.swiper-navigation-disabled .swiper-button-prev{display:none!important}.swiper-button-next svg,.swiper-button-prev svg{width:100%;height:100%;object-fit:contain;transform-origin:center}.swiper-rtl .swiper-button-next svg,.swiper-rtl .swiper-button-prev svg{transform:rotate(180deg)}.swiper-button-prev,.swiper-rtl .swiper-button-next{left:var(--swiper-navigation-sides-offset,10px);right:auto}.swiper-button-next,.swiper-rtl .swiper-button-prev{right:var(--swiper-navigation-sides-offset,10px);left:auto}.swiper-button-lock{display:none}.swiper-pagination{position:absolute;text-align:center;transition:.3s opacity;transform:translate3d(0,0,0);z-index:10}.swiper-pagination.swiper-pagination-hidden{opacity:0}.swiper-pagination-disabled>.swiper-pagination,.swiper-pagination.swiper-pagination-disabled{display:none!important}.swiper-horizontal>.swiper-pagination-bullets,.swiper-pagination-bullets.swiper-pagination-horizontal,.swiper-pagination-custom,.swiper-pagination-fraction{bottom:var(--swiper-pagination-bottom,8px);top:var(--swiper-pagination-top,auto);left:0;width:100%}.swiper-pagination-bullets-dynamic{overflow:hidden;font-size:0}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{transform:scale(.33);position:relative}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active{transform:scale(1)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main{transform:scale(1)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev{transform:scale(.66)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev{transform:scale(.33)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next{transform:scale(.66)}.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next{transform:scale(.33)}.swiper-pagination-bullet{width:var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,8px));height:var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,8px));display:inline-block;border-radius:var(--swiper-pagination-bullet-border-radius,50%);background:var(--swiper-pagination-bullet-inactive-color,#000);opacity:var(--swiper-pagination-bullet-inactive-opacity, .2)}button.swiper-pagination-bullet{border:none;margin:0;padding:0;box-shadow:none;-webkit-appearance:none;appearance:none}.swiper-pagination-clickable .swiper-pagination-bullet{cursor:pointer}.swiper-pagination-bullet:only-child{display:none!important}.swiper-pagination-bullet-active{opacity:var(--swiper-pagination-bullet-opacity, 1);background:var(--swiper-pagination-color,var(--swiper-theme-color))}.swiper-pagination-vertical.swiper-pagination-bullets,.swiper-vertical>.swiper-pagination-bullets{right:var(--swiper-pagination-right,8px);left:var(--swiper-pagination-left,auto);top:50%;transform:translate3d(0px,-50%,0)}.swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet,.swiper-vertical>.swiper-pagination-bullets .swiper-pagination-bullet{margin:var(--swiper-pagination-bullet-vertical-gap,6px) 0;display:block}.swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,.swiper-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{top:50%;transform:translateY(-50%);width:8px}.swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,.swiper-vertical>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{display:inline-block;transition:.2s transform,.2s top}.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{margin:0 var(--swiper-pagination-bullet-horizontal-gap,4px)}.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{left:50%;transform:translateX(-50%);white-space:nowrap}.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{transition:.2s transform,.2s left}.swiper-horizontal.swiper-rtl>.swiper-pagination-bullets-dynamic .swiper-pagination-bullet{transition:.2s transform,.2s right}.swiper-pagination-fraction{color:var(--swiper-pagination-fraction-color,inherit)}.swiper-pagination-progressbar{background:var(--swiper-pagination-progressbar-bg-color,rgba(0,0,0,.25));position:absolute}.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{background:var(--swiper-pagination-color,var(--swiper-theme-color));position:absolute;left:0;top:0;width:100%;height:100%;transform:scale(0);transform-origin:left top}.swiper-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{transform-origin:right top}.swiper-horizontal>.swiper-pagination-progressbar,.swiper-pagination-progressbar.swiper-pagination-horizontal,.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,.swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{width:100%;height:var(--swiper-pagination-progressbar-size,4px);left:0;top:0}.swiper-horizontal>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,.swiper-pagination-progressbar.swiper-pagination-horizontal.swiper-pagination-progressbar-opposite,.swiper-pagination-progressbar.swiper-pagination-vertical,.swiper-vertical>.swiper-pagination-progressbar{width:var(--swiper-pagination-progressbar-size,4px);height:100%;left:0;top:0}.swiper-pagination-lock{display:none}.swiper-scrollbar{border-radius:var(--swiper-scrollbar-border-radius,10px);position:relative;-ms-touch-action:none;background:var(--swiper-scrollbar-bg-color,rgba(0,0,0,.1))}.swiper-scrollbar-disabled>.swiper-scrollbar,.swiper-scrollbar.swiper-scrollbar-disabled{display:none!important}.swiper-horizontal>.swiper-scrollbar,.swiper-scrollbar.swiper-scrollbar-horizontal{position:absolute;left:var(--swiper-scrollbar-sides-offset,1%);bottom:var(--swiper-scrollbar-bottom,4px);top:var(--swiper-scrollbar-top,auto);z-index:50;height:var(--swiper-scrollbar-size,4px);width:calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%))}.swiper-scrollbar.swiper-scrollbar-vertical,.swiper-vertical>.swiper-scrollbar{position:absolute;left:var(--swiper-scrollbar-left,auto);right:var(--swiper-scrollbar-right,4px);top:var(--swiper-scrollbar-sides-offset,1%);z-index:50;width:var(--swiper-scrollbar-size,4px);height:calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%))}.swiper-scrollbar-drag{height:100%;width:100%;position:relative;background:var(--swiper-scrollbar-drag-bg-color,rgba(0,0,0,.5));border-radius:var(--swiper-scrollbar-border-radius,10px);left:0;top:0}.swiper-scrollbar-cursor-drag{cursor:move}.swiper-scrollbar-lock{display:none}::slotted(.swiper-slide-zoomed){cursor:move;touch-action:none}.swiper .swiper-notification{position:absolute;left:0;top:0;pointer-events:none;opacity:0;z-index:-1000}.swiper-free-mode>.swiper-wrapper{transition-timing-function:ease-out;margin:0 auto}.swiper-grid>.swiper-wrapper{flex-wrap:wrap}.swiper-grid-column>.swiper-wrapper{flex-wrap:wrap;flex-direction:column}.swiper-fade.swiper-free-mode ::slotted(swiper-slide){transition-timing-function:ease-out}.swiper-fade ::slotted(swiper-slide){pointer-events:none;transition-property:opacity}.swiper-fade ::slotted(swiper-slide) ::slotted(swiper-slide){pointer-events:none}.swiper-fade ::slotted(.swiper-slide-active){pointer-events:auto}.swiper-fade ::slotted(.swiper-slide-active) ::slotted(.swiper-slide-active){pointer-events:auto}.swiper-cube{overflow:visible}.swiper-cube ::slotted(swiper-slide){pointer-events:none;-webkit-backface-visibility:hidden;backface-visibility:hidden;z-index:1;visibility:hidden;transform-origin:0 0;width:100%;height:100%}.swiper-cube ::slotted(swiper-slide) ::slotted(swiper-slide){pointer-events:none}.swiper-cube.swiper-rtl ::slotted(swiper-slide){transform-origin:100% 0}.swiper-cube ::slotted(.swiper-slide-active),.swiper-cube ::slotted(.swiper-slide-active) ::slotted(.swiper-slide-active){pointer-events:auto}.swiper-cube ::slotted(.swiper-slide-active),.swiper-cube ::slotted(.swiper-slide-next),.swiper-cube ::slotted(.swiper-slide-prev){pointer-events:auto;visibility:visible}.swiper-cube .swiper-cube-shadow{position:absolute;left:0;bottom:0px;width:100%;height:100%;opacity:.6;z-index:0}.swiper-cube .swiper-cube-shadow:before{content:'';background:#000;position:absolute;left:0;top:0;bottom:0;right:0;filter:blur(50px)}.swiper-cube ::slotted(.swiper-slide-next)+::slotted(swiper-slide){pointer-events:auto;visibility:visible}.swiper-flip{overflow:visible}.swiper-flip ::slotted(swiper-slide){pointer-events:none;-webkit-backface-visibility:hidden;backface-visibility:hidden;z-index:1}.swiper-flip ::slotted(swiper-slide) ::slotted(swiper-slide){pointer-events:none}.swiper-flip ::slotted(.swiper-slide-active),.swiper-flip ::slotted(.swiper-slide-active) ::slotted(.swiper-slide-active){pointer-events:auto}.swiper-creative ::slotted(swiper-slide){-webkit-backface-visibility:hidden;backface-visibility:hidden;overflow:hidden;transition-property:transform,opacity,height}.swiper-cards{overflow:visible}.swiper-cards ::slotted(swiper-slide){transform-origin:center bottom;-webkit-backface-visibility:hidden;backface-visibility:hidden;overflow:hidden}`
 const SwiperSlideCSS = `::slotted(.swiper-slide-shadow),::slotted(.swiper-slide-shadow-bottom),::slotted(.swiper-slide-shadow-left),::slotted(.swiper-slide-shadow-right),::slotted(.swiper-slide-shadow-top){position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:10}::slotted(.swiper-slide-shadow){background:rgba(0,0,0,.15)}::slotted(.swiper-slide-shadow-left){background-image:linear-gradient(to left,rgba(0,0,0,.5),rgba(0,0,0,0))}::slotted(.swiper-slide-shadow-right){background-image:linear-gradient(to right,rgba(0,0,0,.5),rgba(0,0,0,0))}::slotted(.swiper-slide-shadow-top){background-image:linear-gradient(to top,rgba(0,0,0,.5),rgba(0,0,0,0))}::slotted(.swiper-slide-shadow-bottom){background-image:linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,0))}.swiper-lazy-preloader{animation:swiper-preloader-spin 1s infinite linear;width:42px;height:42px;position:absolute;left:50%;top:50%;margin-left:-21px;margin-top:-21px;z-index:10;transform-origin:50%;box-sizing:border-box;border:4px solid var(--swiper-preloader-color,var(--swiper-theme-color));border-radius:50%;border-top-color:transparent}@keyframes swiper-preloader-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}::slotted(.swiper-slide-shadow-cube.swiper-slide-shadow-bottom),::slotted(.swiper-slide-shadow-cube.swiper-slide-shadow-left),::slotted(.swiper-slide-shadow-cube.swiper-slide-shadow-right),::slotted(.swiper-slide-shadow-cube.swiper-slide-shadow-top){z-index:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}::slotted(.swiper-slide-shadow-flip.swiper-slide-shadow-bottom),::slotted(.swiper-slide-shadow-flip.swiper-slide-shadow-left),::slotted(.swiper-slide-shadow-flip.swiper-slide-shadow-right),::slotted(.swiper-slide-shadow-flip.swiper-slide-shadow-top){z-index:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}::slotted(.swiper-zoom-container){width:100%;height:100%;display:flex;justify-content:center;align-items:center;text-align:center}::slotted(.swiper-zoom-container)>canvas,::slotted(.swiper-zoom-container)>img,::slotted(.swiper-zoom-container)>svg{max-width:100%;max-height:100%;object-fit:contain}`
 
 class DummyHTMLElement {}
@@ -82004,7 +81796,7 @@ class SwiperContainer extends ClassToExtend {
         }
         const event = new CustomEvent(eventName, {
           detail: args,
-          bubbles: name !== 'hashChange',
+          bubbles: true,
           cancelable: true
         });
         _this.dispatchEvent(event);
@@ -82076,7 +81868,7 @@ _shared_update_swiper_mjs__WEBPACK_IMPORTED_MODULE_1__.p.forEach(paramName => {
       if (!this.passedParams) this.passedParams = {};
       this.passedParams[paramName] = value;
       if (!this.initialized) return;
-      this.updateSwiperOnPropChange(paramName, value);
+      this.updateSwiperOnPropChange(paramName);
     }
   });
 });
@@ -82135,7 +81927,7 @@ if (typeof window !== 'undefined') {
 /* harmony export */ });
 /* harmony import */ var _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/swiper-core.mjs */ "./node_modules/swiper/shared/swiper-core.mjs");
 /**
- * Swiper 10.3.1
+ * Swiper 10.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -82143,7 +81935,7 @@ if (typeof window !== 'undefined') {
  *
  * Released under the MIT License
  *
- * Released on: September 28, 2023
+ * Released on: August 17, 2023
  */
 
 
