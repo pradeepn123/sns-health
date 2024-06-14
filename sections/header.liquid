@@ -132,7 +132,8 @@
                     <a class="popover__link-item" href="{{ routes.account_addresses_url }}?tab=addresses"><span>{% render 'icon', icon: 'account-address' %}</span> {{ 'customer.general.addresses' | t }}</a>
                     {% comment %} <a class="popover__link-item" href="{{ routes.account_url }}?tab=wishlist"><span>{% render 'icon', icon: 'wishlist' %}</span> Wishlists</a> {% endcomment %}
                     <a class="popover__link-item" href="{{ routes.account_url }}?tab=discount"><span>{% render 'icon', icon: 'discount' %}</span> Discounts</a>
-                                        <a class="popover__link-item" href="{{ routes.account_logout_url }}" data-no-instant> <span>{% render 'icon', icon: 'logout' %}</span>{{ 'customer.general.logout' | t }}</a>
+                     <a class="popover__link-item" href="https://help.snshealth.com/"><span>{% render 'icon', icon: 'help-center' %}</span>Help Center</a>
+                    <a class="popover__link-item" href="{{ routes.account_logout_url }}" data-no-instant> <span>{% render 'icon', icon: 'logout' %}</span>{{ 'customer.general.logout' | t }}</a>
                   </div>
                 </div>
               {%- else -%}
