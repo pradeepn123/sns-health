@@ -1,24 +1,28 @@
 @use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
 @import 'breakpoints';
 
 .landing-page-review-carousel {
-	margin-top: var(--grid-row-gap-large);
 
 	&__wrapper {
 		@include mixins.container;
 	}
 
 	&__grid {
-		@include mixins.grid(1, 195px, 195px);
-		align-items: flex-start;
 		@media(--md){
 			@include mixins.grid(3, 195px, 195px);
 			align-items: flex-start;
 		}
-
 		&-carousel {
+			margin-top: 40px;
 			grid-column: span 2;
 			position: relative;
+
+			@media(--md) {
+				margin-top:0;
+			}
 
 			.swiper-slide {
 				box-shadow: 0px 0px 10px 0px #0000001A;
@@ -30,31 +34,55 @@
 		}
 
 		&-reviews {
-			grid-column: span 1;
-			box-shadow: 0px 0px 10px 0px #0000001A;
-			border-radius: 10px;
+			@media(--md) {
+				grid-column: span 1;
+				box-shadow: 0px 0px 10px 0px #0000001A;
+				border-radius: 10px;
+			}
 		}
+
+		&--full {
+			.landing-page-review-carousel__grid-carousel {
+				grid-column: span 3;
+			}
+		}
+	}
+	@media(--md) {
+		margin-top: var(--grid-row-gap-large);
+		margin-bottom: 50px;
 	}
 }
 
 .landing-page-reviews {
 	padding: 0 16px;
+	position: relative;
 	@media(--md){
 		max-height: 195px;
+		margin-bottom: 0;
 	}
 	&__content {
-		margin-bottom: 30px;
-		max-height: 60%;
-		overflow-y: auto !important;
+		margin-bottom: 10px;
 		display: flex;
 		justify-content: center;
-		@media(--md){
+		text-align: center;
+		@include use-text-style('body-small');
+		@media(--md) {
+			max-height: 60%;
+			margin-bottom: 30px;
+			overflow: auto;
+			text-align: left;
+			@include use-text-style('body-alt');
 			justify-content: left;
+			line-height: 28px;
 		}
+		font-weight: typography.$regular-weight !important;
 	}
 	&__author{
 		display: flex;
 		justify-content: center;
+		@include use-text-style('body-title');
+		font-weight: typography.$heading-weight;
+
 			@media(--md){
 				justify-content: left;
 			}
@@ -67,7 +95,7 @@
 		top:0;
 		justify-content: center;
 			@media(--md){
-				justify-content: left;
+				justify-content: space-between;
 			}
 
 		&-items {
@@ -75,10 +103,6 @@
 			column-gap: 16px;
 			align-items: center;
 		}
-	}
-
-	&__body {
-		overflow: auto;
 	}
 
 	&__stars {
@@ -123,7 +147,24 @@
 		}
 	}
 
-.swiper-wrapper {
+	.swiper-pagination{
+		transform: none !important;
+		position: static;
+		padding-top: 40px;
+        padding-bottom: 30px;
+		display: flex;
+		align-items: center;
+	}
 
-}
+	.swiper-pagination-bullet {
+		background: colors.$gray-600;
+		width: 10px;
+		height: 10px;
+		&-active {
+			border: 0;
+			width: 13px;
+			height: 13px;
+			background: colors.$red;
+		}
+	}
 }

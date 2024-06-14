@@ -8,7 +8,7 @@
     <div class="swiper-wrapper">
        {#each items as item}
          <div class="swiper-slide">
-            <ResponsiveImage image={item.image} image_aspect_ratio={2.25} objectFit="cover" />
+            <ResponsiveImage image={item.image} image_aspect_ratio={2.25} objectFit="contain" />
          </div>
        {/each}
     </div>

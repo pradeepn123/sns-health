@@ -15,18 +15,16 @@
 
 	const carouselSettings = `
 	   {
-		   "slidesPerView": 1,
-			 "onSlideChange": "reviewChangeCallBack",
+		   "slidesPerView": "1",
+		   "autoplay": "false",
+		   "onSlideChange": "reviewChangeCallBack",
+		   "pagination": "true",
 			 "breakpoints": {
-				"320": {
-					"autoplay": false,
-					"pagination": true
-				},
 				"1024": {
+					"autoplay": "true",
 					"onSlideChange": "reviewChangeCallBack",
-			 		"autoplay": true,
-					 "slidesPerView": 1,
-					 "navigation": true
+					"slidesPerView": "1",
+					"navigation": "true"
             }
         }
 		 }
@@ -54,7 +52,6 @@
 			</div>
 		</div>
 		<div class="swiper-navigations" data-swiper-navigations></div>
-		<div class="swiper-pagination"></div>
 	</div>
 	<custom-carousel>
 		<div class="carousel__container swiper" data-swiper-container>
@@ -64,9 +61,6 @@
 						<div class="landing-page-reviews__content">
 							{singleReview.body}
 						</div>
-						<div class="landing-page-reviews__author landing-page-reviews--mobile">
-							{reviewer?.displayName}
-						</div>
 					</div>
 				{/each}
 				<div data-settings style="display:none">
@@ -75,4 +69,8 @@
 			</div>
 		</div>
 	</custom-carousel>
+	<div class="landing-page-reviews__author landing-page-reviews--mobile">
+		{reviewer?.displayName}
+	</div>
+	<div class="swiper-pagination"></div>
 </div>

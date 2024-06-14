@@ -9,22 +9,30 @@
         "slidesPerView": 1.3,
         "spaceBetween": 15,
         "breakpoints": {
-            "320": {
-            "pagination": false
-            },
             "768": {
-            "slidesPerView": 2,
-            "spaceBetween": 20,
-            "navigation": true
+                "slidesPerView": 2,
+                "spaceBetween": 20,
+                "navigation": true
             }
         }
     }`
     if(!reviewExist) {
-         settings = `{
-            "slidesPerView": 3,
-            "navigation": true,
-            "spaceBetween": 20
-       }`
+        settings = `{
+        "slidesPerView": 1.3,
+        "spaceBetween": 15,
+        "breakpoints": {
+            "768": {
+                "slidesPerView": 2,
+                "spaceBetween": 20,
+                "navigation": true
+            },
+            "1024": {
+                "slidesPerView": 3,
+                "spaceBetween": 20,
+                "navigation": true
+            }
+        }
+    }`
     }
 </script>
 

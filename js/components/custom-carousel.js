@@ -78,7 +78,8 @@ class CustomCarousel extends HTMLElement {
         }
       }
       if (pagination) {
-        const swiperPagination = this.querySelector('.swiper-pagination');
+        const parentSelector = this.closest('[data-parent]') ? this.closest('[data-parent]') : this;
+        const swiperPagination = parentSelector.querySelector('.swiper-pagination');
         let pagination = {
           el: swiperPagination,
           clickable: true
