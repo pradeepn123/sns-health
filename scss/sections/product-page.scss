@@ -150,6 +150,15 @@
         margin: 23px 0;
     }
     .breadcrumb__list{
+        display: flex;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+        white-space: nowrap; 
+        flex-wrap: nowrap !important;
         @include use-text-style('body-regular');
         @media(--sm){
             @include use-text-style('body-alt');

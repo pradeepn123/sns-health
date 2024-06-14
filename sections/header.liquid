@@ -120,7 +120,7 @@
             </div>
             {% if section.settings.show_referal_button %}
               <div class="referal_button_get_discount referal_button_desktop">
-               <button class="oke-open-referrals">{{ section.settings.refer_text | default: 'Refer and get 10%' }}</button>
+               <button class="oke-open-referrals">{{ section.settings.refer_text | default: 'Refer and get $10' }}</button>
               </div>
             {% endif %}
             <div id="account-popover" class="popover {% if customer %}popover--logged{% else %}popover--large popover--unlogged{% endif %}" aria-hidden="true">
@@ -132,7 +132,7 @@
                     <a class="popover__link-item" href="{{ routes.account_addresses_url }}?tab=addresses"><span>{% render 'icon', icon: 'account-address' %}</span> {{ 'customer.general.addresses' | t }}</a>
                     {% comment %} <a class="popover__link-item" href="{{ routes.account_url }}?tab=wishlist"><span>{% render 'icon', icon: 'wishlist' %}</span> Wishlists</a> {% endcomment %}
                     <a class="popover__link-item" href="{{ routes.account_url }}?tab=discount"><span>{% render 'icon', icon: 'discount' %}</span> Discounts</a>
-                    <a class="popover__link-item" href="{{ routes.account_logout_url }}" data-no-instant> <span>{% render 'icon', icon: 'logout' %}</span>{{ 'customer.general.logout' | t }}</a>
+                                        <a class="popover__link-item" href="{{ routes.account_logout_url }}" data-no-instant> <span>{% render 'icon', icon: 'logout' %}</span>{{ 'customer.general.logout' | t }}</a>
                   </div>
                 </div>
               {%- else -%}
@@ -314,7 +314,7 @@
             {%- endfor -%}
             {% if section.settings.show_referal_button %}
               <div class="referal_button_get_discount referal_button_mobile">
-               <button class="oke-open-referrals">{{ section.settings.refer_text | default: 'Refer and get 10%' }}</button>
+               <button class="oke-open-referrals">{{ section.settings.refer_text | default: 'Refer and get $10' }}</button>
               </div>
             {% endif %}
           </ul>
