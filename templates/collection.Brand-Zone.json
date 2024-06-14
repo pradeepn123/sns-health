@@ -40,7 +40,7 @@
           "type": "image",
           "repeater": "{{ collection.metafields.custom.image_video_section.value }}",
           "settings": {
-            "image": "{{ block.repeater.mobile_image.value }}"
+            "image": "{{ block.repeater.image.value }}"
           }
         }
       },
