@@ -27,6 +27,9 @@
             @include mixins.grid(3,90px,222px);
             column-gap: var(--grid-row-gap-large);  
         }
+        @media(--xlg) {
+			max-width: calc(1480px - 2*var(--base-margin)) !important;
+		}
     }
 
     img {

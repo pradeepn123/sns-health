@@ -28,7 +28,7 @@
           {% if button_type %} button--{{button_type}} {% endif %}
            {% if button_background_type %} button--{{button_background_type}} {% endif %}
            {% if secondary_button_type %} button--{{secondary_button_type}} {% endif %}
-          " {% if cta_url %} href="{% render 'render-metafield-local-aware-url', cta_url: cta_url %} {% endif%}"><span class="btn-text"> {{ cta_text }} </span>
+          " {% if cta_url %} href="{% render 'render-metafield-local-aware-url', cta_url: cta_url %} {% endif%}"><span class="btn-text">  {{ cta_text }} </span>
           <span class= "arrow-icon">{% if button_type == "text" or button_type == "outline"%}{% render 'chevron-right-icon'%}{% endif%}</span>
           <span class= "arrow ">{% if secondary_button_type and  secondary_button_type == "link" %} {% render 'right-arrow'%} {% endif%}</span>
          </a> 

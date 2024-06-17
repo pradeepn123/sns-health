@@ -56,12 +56,13 @@
                                     text-decoration: none !important; 
                                     .btn-text{
                                         @include use-text-style('body-regular');
-                                        font-weight: typography.$medium-weight;
+                                        font-weight: typography.$heading-weight;
                                         border-bottom: 1px solid colors.$black;
                                         border-radius: unset;
+                                        margin-left: 6px;
                                         @media(--sm){
                                             @include use-text-style('body-alt');
-                                            font-weight: typography.$medium-weight;
+                                            font-weight: typography.$semi-weight;
                                         }
                                     }
                                 }
