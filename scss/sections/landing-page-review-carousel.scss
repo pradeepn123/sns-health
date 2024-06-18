@@ -86,8 +86,11 @@
 			@include use-text-style('body-alt');
 			justify-content: left;
 			line-height: 28px;
-			max-height: 25%;
+			max-height: 18%;
 			overflow: auto;
+		}
+		@media(--md-large){
+			max-height: 25%;
 		}
 		font-weight: typography.$regular-weight !important;
 	}
