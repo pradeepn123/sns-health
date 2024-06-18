@@ -24,7 +24,13 @@
 			margin-top: 40px;
 			grid-column: span 2;
 			position: relative;
+			.carousel__container {
+                padding: 0 var(--base-margin);
 
+				@media(--md) {
+					padding:0
+				}
+			}
 			@media(--md) {
 				margin-top:0;
 			}
@@ -80,6 +86,8 @@
 			@include use-text-style('body-alt');
 			justify-content: left;
 			line-height: 28px;
+			max-height: 25%;
+			overflow: auto;
 		}
 		font-weight: typography.$regular-weight !important;
 	}
