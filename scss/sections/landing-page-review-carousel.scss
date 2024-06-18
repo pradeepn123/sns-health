@@ -18,6 +18,7 @@
 	&__grid {
 		@media(--md){
 			@include mixins.grid(3, 195px, 195px);
+			grid-auto-rows: minmax(195px,195px); 
 			align-items: flex-start;
 		}
 		&-carousel {
