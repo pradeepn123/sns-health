@@ -68,9 +68,12 @@
 	padding: 30px 30px 0px;
 	position: relative;
 	@media(--md){
-		max-height: 195px;
+		max-height: 137px;
 		padding: 0 16px;
 		margin-bottom: 0;
+	}
+	@media (--md-large) {
+		max-height: 195px;
 	}
 	&__content {
 		margin-bottom: 10px;
@@ -86,11 +89,11 @@
 			@include use-text-style('body-alt');
 			justify-content: left;
 			line-height: 28px;
-			max-height: 18%;
+			max-height: 20%;
 			overflow: auto;
 		}
 		@media(--md-large){
-			max-height: 25%;
+			max-height: 50%;
 		}
 		font-weight: typography.$regular-weight !important;
 	}
@@ -112,7 +115,11 @@
 		top:0;
 		justify-content: center;
 			@media(--md){
+				padding: 15px 0 10px;
 				justify-content: space-between;
+			}
+			@media(--md-large){
+				padding: 30px 0 10px;
 			}
 
 		&-items {
