@@ -315,8 +315,8 @@ var getProductData = /*#__PURE__*/function () {
 }();
 var getReviewData = /*#__PURE__*/function () {
   var _ref4 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(function* (id) {
-    var url = new URL("https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/reviews?/collections/".concat(id, "&orderBy=rating%20desc")); //to test with reviews
-    // const url = new URL(`https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/collections/${id}/reviews?&orderBy=rating%20desc`); //url to be used on prod
+    // const url = new URL(`https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/reviews?/collections/${id}&orderBy=rating%20desc`); //to test with reviews
+    var url = new URL("https://api.okendo.io/v1/stores/c07e5fe4-26c5-43e5-9d58-7295ba6f5596/collections/".concat(id, "/reviews?&orderBy=rating%20desc")); //url to be used on prod
     var data = yield fetch(url);
     var reviewData = yield data.json();
     return reviewData;
