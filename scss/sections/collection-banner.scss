@@ -111,4 +111,25 @@
     :--collection-desc {
         line-height: 2;
     }
+
+    &__content {
+        &--desktop {
+            display:  none;
+
+            @media(--md) {
+                display: block;
+            }
+        }
+
+        &--mobile {
+            display: block;
+            .collection-banner__text-wrapper {
+                max-width: 58%;
+            }
+
+            @media(--md) {
+                display: none;
+            }
+        }
+    }
 }

@@ -49,6 +49,7 @@
         assign inline_cta = block.settings.inline_cta
       %}
 
+      <div class="collection-banner__content--desktop">
       {% render 'image-with-text-overlay',
         id: id,
         color: color,
@@ -68,7 +69,32 @@
         contain: true,
         is_half_width: is_half_width
       %}
+      </div>
+
+      <div class="collection-banner__content--mobile">
+        {% assign subheading = collection.description | truncate: 30 %}
+        {% render 'image-with-text-overlay',
+          id: id,
+          color: color,
+          heading: heading,
+          heading_tag: "h1",
+          subheading: subheading,
+          image_desktop: image_desktop,
+          image_mobile: image_mobile,
+          wrapper_class: 'collection-banner-content',
+          text_wrapper_class: 'collection-banner',
+          inline_heading: inline_heading,
+          desktop_aspect_ratio: 6.26,
+          mobile_aspect_ratio: 2.24,
+          inline_cta: inline_cta,
+          cta_text: cta_text,
+          cta_url: cta_url,
+          contain: true,
+          is_half_width: is_half_width
+        %}
+        </div>
     {% endfor %}
+ 
   </div>
 </div>
 
