@@ -76,7 +76,7 @@
                 <div class="shop_by_brands_child_container">
                   <div class="shop_by_brands_child_container_wrap">
                   <p class="collection-block-item__title heading h2">{{ collection.title }}</p>
-                  <div class="collection-block-item__description">{{ collection.description | truncatewords: 17}}</div>
+                  <div class="collection-block-item__description">{{ collection.description | strip_html | truncate: 120 }}</div> 
                     <div class="shop_by_brands_metafield_tags_parent">
                       {% if collectionMetafield != blank %}
                         {% for item in collectionMetafield.value %}

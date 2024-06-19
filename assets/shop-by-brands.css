@@ -119,11 +119,13 @@
 .shop_by_brands_parent .flickity-prev-next-button.next{
     right: 0;
     top: -80px;
+    opacity: 1 !important;
 }
 .shop_by_brands_parent .flickity-prev-next-button.previous{
     left: unset;
     top: -80px;
     right: 60px;
+    opacity: 1 !important;
 }
 .shop_by_brands_parent.flickity-enabled:hover .flickity-prev-next-button:not([disabled]){
     transform: scale(0.7);
