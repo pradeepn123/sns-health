@@ -6,7 +6,7 @@
 
 
 .product-container{
- 
+    --body-small-mobile-size: 8px;
     @media (--sm) {
         @include mixins.container;
         margin-top: var(--section-margin);
@@ -158,10 +158,16 @@
         -ms-scroll-snap-type: x mandatory;
         scroll-snap-type: x mandatory;
         white-space: nowrap; 
-        flex-wrap: nowrap !important;
-        @include use-text-style('body-regular');
+        flex-wrap: wrap !important;
+        font-size: var(--body-small-mobile-size);
+        font-weight: typography.$regular-weight;   
+        @media(--xxs){
+            @include use-text-style('body-small');
+            font-weight: typography.$regular-weight; 
+        }
         @media(--sm){
             @include use-text-style('body-alt');
+            font-weight: typography.$regular-weight;
         }
         .breadcrumb__link[aria-current="page"]{
             font-weight: typography.$semi-weight;
@@ -346,7 +352,6 @@
               }
         }
         
-        
 }
 
 .product__reviews {
@@ -364,3 +369,7 @@
     flex-wrap: wrap;
     gap: 4px;
 }
+
+.breadcrumb__list svg {
+    margin: 0 2px;
+} 

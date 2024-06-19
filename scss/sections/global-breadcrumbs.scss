@@ -1,0 +1,18 @@
+@use 'StyleComponents/mixins';
+@use 'StyleComponents/typography';
+@use 'StyleComponents/colors';
+@import 'Token';
+@import 'breakpoints';
+
+.breadcrumb__link[aria-current="page"]{
+    font-weight: typography.$semi-weight;
+ } 
+ 
+ .page__sub-header{
+    display: block !important;
+    font-size: 12px !important;
+    @media(--sm){
+       margin: 10px 20px;
+       font-size: 16px !important;
+   }
+ }
