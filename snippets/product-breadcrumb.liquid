@@ -19,7 +19,8 @@
       {%  assign subnavigation_link = linklists[subnavigation_handle] %}
       {% for subnavigation_link in subnavigation_link.links %}
         {%  assign related_collection = subnavigation_link.object %}
-       
+        {% comment %} if subnavigation parent linked collection is diet skip the loop , which will go to another megamenu item {%  endcomment %}
+         {%  if related_collection.handle == 'diet' %} {% break %} {% endif %}
          {%  if product_collections contains related_collection.handle %} 
          {%  unless breadcrumb_arr contains related_collection.handle %}
             {%  assign breadcrumb_arr = breadcrumb_arr | strip | append: related_collection.handle | append: ',' %}
