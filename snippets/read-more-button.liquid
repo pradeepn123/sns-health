@@ -3,7 +3,9 @@
     assign cta_text = section.settings.readmore_cta_text
     assign cta_url = section.settings.readmore_cta_url
 %}
-{% if cta_text != blank and cta_url != blank or collection_description.size > max_length %}
+
+{% if cta_text != blank and cta_url != blank  %}
+    {%  if collection_description.size >= max_length %}
     <a class=" button collection-banner__cta text__cta
         {% if button_type %} button--{{button_type}} {% endif %}
         {% if button_background_type %} button--{{button_background_type}} {% endif %}
@@ -13,4 +15,5 @@
         <span class= "arrow-icon">{% if button_type == "text" or button_type == "outline"%}{% render 'chevron-right-icon'%}{% endif%}</span>
         <span class= "arrow ">{% if secondary_button_type and  secondary_button_type == "link" %} {% render 'right-arrow'%} {% endif%}</span>
     </a> 
+    {%  endif %}
 {% endif %}
