@@ -17,8 +17,8 @@
        @include use-text-style('body-regular');
       @media(--sm) {
          @include use-text-style('body-alt');
-         
       }
+      line-height: 1.6;
 
     }
 }

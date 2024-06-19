@@ -90,10 +90,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     {% render 'social-meta-tags' %}
     {% render 'css-variables' %}
  {% unless template == 'index' %}
- {{ 'collection-shop-by-brands.css' | asset_url | stylesheet_tag }} 
+    {{ 'collection-shop-by-brands.css' | asset_url | stylesheet_tag }} 
     {{ 'featured-products.css' | asset_url | stylesheet_tag }}
     {{ 'most-popular-collection.css' | asset_url | stylesheet_tag }}
-     {{ 'global-breadcrumbs.css' | asset_url | stylesheet_tag }}
+    {{ 'breadcrumb.css' | asset_url | stylesheet_tag }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" async></script>      
         <!-- starapps_scripts_start -->
   {% endunless %}

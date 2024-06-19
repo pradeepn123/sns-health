@@ -370,6 +370,11 @@
     gap: 4px;
 }
 
+
 .breadcrumb__list svg {
     margin: 0 2px;
+
+    @media(--md) {
+        margin: 0 7px;
+    }
 } 
