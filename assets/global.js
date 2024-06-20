@@ -445,6 +445,9 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,JsComponents_collapsible__WEBPACK_IMPORTED_MODULE_7__.collapsible)(); //collapsable
   (0,JsComponents_klaiyo_auto_add__WEBPACK_IMPORTED_MODULE_8__.rebuyAutoAdd)();
   (0,JsComponents_rebuy_cart_integration__WEBPACK_IMPORTED_MODULE_2__.addFormDelegate)(); //rebuy integration 
+  if (window.Shopify.PaymentButton) {
+    window.Shopify.PaymentButton.init();
+  }
 });
 
 /***/ })

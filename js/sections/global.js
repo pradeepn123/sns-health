@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
   collapsible(); //collapsable
   rebuyAutoAdd();
   addFormDelegate(); //rebuy integration 
+  if(window.Shopify.PaymentButton){
+    window.Shopify.PaymentButton.init();
+  }
 })
 
 
